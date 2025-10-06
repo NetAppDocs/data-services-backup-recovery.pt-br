@@ -1,0 +1,42 @@
+= Ressincronização do SnapMirror para a Nuvem para migrações de volume
+:allow-uri-read: 
+
+
+
+
+=== Ressincronização do SnapMirror para a Nuvem para migrações de volume
+
+O recurso SnapMirror to Cloud Resync simplifica a proteção de dados e a continuidade durante migrações de volume em ambientes NetApp .  Quando um volume é migrado usando o SnapMirror Logical Replication (LRSE), de uma implantação NetApp local para outra, ou para uma solução baseada em nuvem, como o Cloud Volumes ONTAP ou o Cloud Volumes Service, o SnapMirror para o Cloud Resync garante que os backups em nuvem existentes permaneçam intactos e operacionais.
+
+Esse recurso elimina a necessidade de uma operação de redefinição de linha de base demorada e que exige muitos recursos, permitindo que as operações de backup continuem após a migração.  Esse recurso é valioso em cenários de migração de carga de trabalho, oferecendo suporte a FlexVols e FlexGroups, e está disponível a partir da versão 9.16.1 do ONTAP .
+
+Ao manter a continuidade do backup em todos os ambientes, o SnapMirror to Cloud Resync aumenta a eficiência operacional e reduz a complexidade do gerenciamento de dados híbridos e multinuvem.
+
+Para obter detalhes sobre como executar a operação de ressincronização, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-migrate-resync.html["Migrar volumes usando o SnapMirror para o Cloud Resync"] .
+
+
+
+=== Suporte para armazenamento de objetos MinIO de terceiros (visualização)
+
+O NetApp Backup and Recovery agora estende seu suporte a armazenamentos de objetos de terceiros com foco principal no MinIO.  Este novo recurso de visualização permite que você aproveite qualquer armazenamento de objetos compatível com S3 para suas necessidades de backup e recuperação.
+
+Com esta versão de pré-visualização, esperamos garantir uma integração robusta com armazenamentos de objetos de terceiros antes que a funcionalidade completa seja lançada.  Você é incentivado a explorar esse novo recurso e fornecer feedback para ajudar a melhorar o serviço.
+
+
+IMPORTANT: Este recurso não deve ser usado em produção.
+
+*Limitações do modo de visualização*
+
+Embora esse recurso esteja em versão prévia, há certas limitações:
+
+* Traga seu próprio balde (BYOB) não é suportado.
+* A ativação do DataLock na política não é suportada.
+* A ativação do modo de arquivamento na política não é suportada.
+* Somente ambientes ONTAP locais são suportados.
+* O MetroCluster não é suportado.
+* Opções para habilitar criptografia em nível de bucket não são suportadas.
+
+
+*Começando*
+
+Para começar a usar este recurso de visualização, você deve habilitar um sinalizador no agente do Console.  Você pode então inserir os detalhes de conexão do seu armazenamento de objetos de terceiros MinIO no fluxo de trabalho de proteção escolhendo Armazenamento de objetos *Compatível com terceiros* na seção de backup.

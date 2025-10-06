@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Você pode proteger máquinas virtuais Oracle de sistemas ONTAP locais até Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantindo que seus dados estejam protegidos. 
+---
+= Visão geral da proteção de cargas de trabalho do Oracle Database
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Proteja seus bancos de dados e logs Oracle com o NetApp Backup and Recovery.  O NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com economia de espaço, consistentes em caso de falhas e consistentes em banco de dados.  Você pode fazer backup de cargas de trabalho do Oracle no Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage ou ONTAP S3 e restaurá-las em um host Oracle local.
+
+image:../media/diagram-backup-recovery-general.png["Diagrama de arquitetura de backup e recuperação em geral"]
+
+Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
+
+* Várias cópias de dados fornecem proteção multicamadas contra ameaças de segurança cibernética internas e externas.
+* Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.
+* A cópia no local facilita restaurações rápidas, com cópias externas disponíveis caso a cópia no local seja comprometida.
+
+
+
+NOTE: Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+
+Você pode usar o NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do Oracle:
+
+* link:br-start-discover-oracle.html["Descubra as cargas de trabalho da Oracle"]
+* link:br-use-oracle-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho Oracle"]
+* link:br-use-oracle-backup.html["Fazer backup de cargas de trabalho Oracle"]
+* link:br-use-oracle-restore.html["Restaurar cargas de trabalho Oracle"]
+

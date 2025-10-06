@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-azure-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: O NetApp Backup and Recovery oferece suporte a uma camada de acesso de arquivamento do Azure e à maioria das regiões. 
+---
+= Camadas de acesso ao arquivo do Azure com suporte ao NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery oferece suporte a uma camada de acesso de arquivamento do Azure e à maioria das regiões.
+
+[]
+====
+*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+
+====
+
+
+== Camadas de acesso do Azure Blob com suporte para backup e recuperação do NetApp
+
+Quando os arquivos de backup são criados inicialmente, eles são armazenados na camada de acesso _Cool_.  Esta camada é otimizada para armazenar dados que são acessados com pouca frequência, mas que podem ser acessados imediatamente quando necessário.
+
+Se seus clusters de origem estiverem executando o ONTAP 9.10.1 ou superior, você poderá optar por dividir os backups em camadas do armazenamento _Cool_ para o _Azure Archive_ após um determinado número de dias (normalmente mais de 30 dias) para otimizar ainda mais os custos.  Os dados nesta camada não podem ser acessados ​​imediatamente quando necessário e exigirão um custo de recuperação mais alto, então você precisa considerar com que frequência pode precisar restaurar dados desses arquivos de backup arquivados.  Consulte a seção nesta página sobre restauração de dados do armazenamento de arquivo.
+
+Observe que, ao configurar o NetApp Backup and Recovery com esse tipo de regra de ciclo de vida, você não deve configurar nenhuma regra de ciclo de vida ao configurar o contêiner na sua conta do Azure.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Saiba mais sobre as camadas de acesso do Azure Blob"^] .
+
+
+
+== Restaurar dados do armazenamento de arquivo
+
+Embora armazenar arquivos de backup mais antigos no armazenamento de arquivo seja muito mais barato do que no armazenamento frio, acessar dados de um arquivo de backup no Azure Archive para operações de restauração levará mais tempo e custará mais dinheiro.
+
+Quanto custa restaurar dados do Arquivo do Azure?:: Há duas prioridades de restauração que você pode escolher ao recuperar dados do Arquivo do Azure:
++
+--
+* *Alto*: Recuperação mais rápida, custo mais alto
+* *Padrão*: Recuperação mais lenta, menor custo
+
+
+Cada método tem uma taxa diferente de recuperação por GB e por solicitação.  Para obter preços detalhados do Azure Archive por região do Azure, visite o https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Página de preços do Azure"^] .
+
+--
+
+
+
+NOTE: A alta prioridade não é suportada ao restaurar dados do Azure para sistemas StorageGRID .
+
+Quanto tempo levará para restaurar meus dados arquivados no Arquivo do Azure?:: Existem 2 partes que compõem o tempo de restauração:
++
+--
+* *Tempo de recuperação*: o tempo para recuperar o arquivo de backup arquivado do Azure Archive e colocá-lo no armazenamento frio.  Às vezes, isso é chamado de período de "reidratação".  O tempo de recuperação é diferente dependendo da prioridade de restauração escolhida:
++
+** *Alto*: < 1 hora
+** *Padrão*: < 15 horas
+
+
+* *Tempo de restauração*: O tempo para restaurar os dados do arquivo de backup no armazenamento Cool.  Desta vez não é diferente da operação típica de restauração diretamente do armazenamento Cool, quando não se usa uma camada de arquivamento.
+
+
+Para obter mais informações sobre as opções de recuperação do Azure Archive, consulte https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["estas perguntas frequentes do Azure"^] .
+
+--
+

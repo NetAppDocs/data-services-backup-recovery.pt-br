@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-backup-aws.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web, services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, bluexp 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Faça backup de datastores no Amazon Web Services no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode fazer backup e arquivar um ou mais armazenamentos de dados com o NetApp Backup and Recovery para Amazon Web Services para melhorar a eficiência do armazenamento e a transição para a nuvem.
+
+Se o armazenamento de dados estiver associado a uma política de arquivamento, você terá a opção de selecionar a camada de arquivamento.  Os níveis de arquivamento suportados são Glacier e Glacier Deep.
+
+[]
+====
+*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
+====
+.Antes de começar
+Certifique-se de ter cumprido todos oslink:prev-vmware-prereqs.html["requisitos de proteção de máquina virtual"] antes de fazer backup dos armazenamentos de dados na nuvem.
+
+.Passos
+. Na interface do usuário do console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
+. Selecioneimage:icon-action.png["Ação"] correspondente ao armazenamento de dados que você deseja fazer backup e clique em *Ativar backup*.
+. Na página Atribuir política, selecione a política e selecione *Avançar*.
+. Adicione o sistema.
++
+Configure o LIF de gerenciamento de cluster que você deseja que o Console descubra.  Depois de adicionar o sistema para um dos datastores, ele pode ser reutilizado para todos os outros datastores que residem no mesmo cluster ONTAP .
+
++
+.. Selecione *Adicionar sistema* correspondente ao SVM.
+.. No assistente Adicionar sistema:
++
+... Especifique o endereço IP do LIF de gerenciamento do cluster.
+... Especifique as credenciais do usuário do cluster ONTAP .
+
+
+.. Selecione *Adicionar sistema*.
+
+
+. Selecione *Amazon Web Services* para configurá-lo como o provedor de nuvem.
++
+.. Especifique a conta da AWS.
+.. No campo Chave de acesso da AWS, especifique a chave para criptografia de dados.
+.. No campo Chave secreta da AWS, especifique a senha para criptografia de dados.
+.. Selecione a região onde você deseja criar os backups.
+.. Especifique os endereços IP do LIF de gerenciamento de cluster que foram adicionados como sistemas.
+.. Selecione a camada de arquivamento.
++
+É recomendável definir a camada de arquivamento porque essa é uma atividade única e não pode ser configurá-la posteriormente.
+
+
+
+. Revise os detalhes e selecione *Ativar backup*.
+

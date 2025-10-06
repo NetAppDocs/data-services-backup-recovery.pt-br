@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-backup-targets.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, 
+summary: 'Conclua algumas etapas para descobrir alvos de backup externos no NetApp Backup and Recovery.  Esses alvos podem incluir Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage e StorageGRID.' 
+---
+= Descubra alvos de backup externos no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Conclua algumas etapas para descobrir ou adicionar manualmente destinos de backup externos no NetApp Backup and Recovery.
+
+
+
+== Descubra um alvo de backup
+
+Antes de usar o NetApp Backup and Recovery, você deve configurar seus destinos de backup do Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage ou StorageGRID.
+
+Você pode descobrir esses alvos automaticamente ou adicioná-los manualmente.
+
+Forneça as credenciais necessárias para acessar o sistema de conta de armazenamento.  Essas credenciais são usadas para descobrir as cargas de trabalho que você deseja fazer backup.
+
+.Antes de começar
+Para adicionar um destino de backup externo, pelo menos uma carga de trabalho precisa ser descoberta.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione a aba *Destinos de backup externo*.
+. Selecione *Descobrir destino de backup*.
+. Selecione um dos tipos de destino de backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* ou * ONTAP S3*.
+. Na seção *Escolher local das credenciais*, escolha o local onde as credenciais residem e, em seguida, escolha como associá-las.
+. Selecione *Avançar*.
+. Insira as informações de credenciais. As informações variam dependendo do tipo de destino de backup selecionado e do local das credenciais escolhido.
++
+** Para AWS:
++
+*** *Nome da credencial*: insira o nome da credencial da AWS.
+*** *Chave de acesso*: Digite o segredo da AWS.
+*** *Chave secreta*: Insira a chave secreta da AWS.
+
+
+** Para o Azure:
++
+*** *Nome da credencial*: insira o nome da credencial do Armazenamento de Blobs do Azure.
+*** *Segredo do cliente*: insira o segredo do cliente do Armazenamento de Blobs do Azure.
+*** *ID do aplicativo (cliente)*: selecione o ID do aplicativo do Armazenamento de Blobs do Azure.
+*** *ID do locatário do diretório*: insira o ID do locatário do Armazenamento de Blobs do Azure.
+
+
+** Para StorageGRID:
++
+*** *Nome da credencial*: insira o nome da credencial do StorageGRID .
+*** *FQDN do nó de gateway*: insira um nome de FQDN para StorageGRID.
+*** *Porta*: Insira o número da porta para StorageGRID.
+*** *Chave de acesso*: Insira a chave de acesso do StorageGRID S3.
+*** *Chave secreta*: Insira a chave secreta do StorageGRID S3.
+
+
+** Para ONTAP S3:
++
+*** *Nome da credencial*: insira o nome da credencial do ONTAP S3.
+*** *FQDN do nó do gateway*: insira um nome FQDN para o ONTAP S3.
+*** *Porta*: Digite o número da porta para o ONTAP S3.
+*** *Chave de acesso*: Digite a chave de acesso do ONTAP S3.
+*** *Chave secreta*: Digite a chave secreta do ONTAP S3.
+
+
+
+
+. Selecione *Descobrir*.
+
+
+
+
+== Adicionar um bucket para um destino de backup
+
+Em vez de o NetApp Backup and Recovery descobrir buckets automaticamente, você pode adicionar manualmente um bucket a um destino de backup externo.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione *Destinos de backup externos*.
+. Selecione o alvo e à direita, selecione *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Adicionar bucket*.
+. Insira as informações do bucket.  As informações variam dependendo do tipo de destino de backup selecionado.
++
+** Para AWS:
++
+*** *Nome do bucket*: insira o nome do bucket S3. O prefixo "netapp-backup" é um prefixo obrigatório e é adicionado automaticamente ao nome fornecido.
+*** *Conta AWS*: Insira o nome da conta AWS.
+*** *Região do bucket*: insira a região da AWS para o bucket.
+*** *Habilitar bloqueio de objeto S3*: selecione esta opção para habilitar o bloqueio de objeto S3 para o bucket.  O S3 Object Lock impede que objetos sejam excluídos ou substituídos por um período de retenção especificado, fornecendo uma camada adicional de proteção de dados.  Você pode habilitar isso somente quando estiver criando um bucket e não poderá desativá-lo mais tarde.
++
+**** *Modo de governança*: selecione esta opção para habilitar o modo de governança para o bucket de bloqueio de objeto do S3.  O modo de governança permite que você proteja objetos de serem excluídos ou substituídos pela maioria dos usuários, mas permite que certos usuários alterem as configurações de retenção.
+**** *Modo de conformidade*: selecione esta opção para habilitar o modo de conformidade para o bucket de bloqueio de objeto do S3.  O modo de conformidade impede que qualquer usuário, incluindo o usuário root, altere as configurações de retenção ou exclua objetos até que o período de retenção expire.
+
+
+*** *Controle de versão*: selecione esta opção para habilitar o controle de versão para o bucket S3.  O controle de versão permite que você mantenha várias versões de objetos no bucket, o que pode ser útil para fins de backup e recuperação.
+*** *Tags*: Selecione tags para o bucket S3.  Tags são pares de chave-valor que podem ser usados para organizar e gerenciar seus recursos do S3.
+*** *Criptografia*: Selecione o tipo de criptografia para o bucket S3.  As opções são chaves gerenciadas pelo AWS S3 ou chaves do AWS Key Management Service.  Se você selecionar chaves do AWS Key Management Service, deverá fornecer o ID da chave.
+
+
+** Para o Azure:
++
+*** *Assinatura*: Selecione o nome do contêiner do Azure Blob Storage.
+*** *Grupo de recursos*: selecione o nome do grupo de recursos do Azure.
+*** *Detalhes da instância*:
++
+**** *Nome da conta de armazenamento*: insira o nome do contêiner do Armazenamento de Blobs do Azure.
+**** *Região do Azure*: insira a região do Azure para o contêiner.
+**** *Tipo de desempenho*: selecione o tipo de desempenho padrão ou premium para o contêiner do Azure Blob Storage, indicando o nível de desempenho necessário.
+**** *Criptografia*: Selecione o tipo de criptografia para o contêiner do Azure Blob Storage.  As opções são chaves gerenciadas pela Microsoft ou chaves gerenciadas pelo cliente.  Se você selecionar chaves gerenciadas pelo cliente, deverá fornecer o nome do cofre de chaves e o nome da chave.
+
+
+
+
+** Para StorageGRID:
++
+*** *Nome do destino do backup*: Selecione o nome do bucket do StorageGRID .
+*** *Nome do bucket*: insira o nome do bucket do StorageGRID .
+*** *Região*: insira a região StorageGRID para o bucket.
+*** *Habilitar controle de versão*: selecione esta opção para habilitar o controle de versão para o bucket StorageGRID .  O controle de versão permite que você mantenha várias versões de objetos no bucket, o que pode ser útil para fins de backup e recuperação.
+*** *Bloqueio de objeto*: selecione esta opção para habilitar o bloqueio de objeto para o bucket StorageGRID .  O bloqueio de objetos impede que objetos sejam excluídos ou substituídos por um período de retenção especificado, fornecendo uma camada adicional de proteção de dados.  Você pode habilitar isso somente quando estiver criando um bucket e não poderá desativá-lo mais tarde.
+*** *Capacidade*: insira a capacidade do bucket StorageGRID .  Esta é a quantidade máxima de dados que podem ser armazenados no bucket.
+
+
+** Para ONTAP S3:
++
+*** *Nome do destino do backup*: Selecione o nome do bucket ONTAP S3.
+*** *Nome de destino do bucket*: insira o nome do bucket ONTAP S3.
+*** *Capacidade*: insira a capacidade do bucket ONTAP S3.  Esta é a quantidade máxima de dados que podem ser armazenados no bucket.
+*** *Habilitar controle de versão*: selecione esta opção para habilitar o controle de versão para o bucket ONTAP S3.  O controle de versão permite que você mantenha várias versões de objetos no bucket, o que pode ser útil para fins de backup e recuperação.
+*** *Bloqueio de objeto*: selecione esta opção para habilitar o bloqueio de objeto para o bucket ONTAP S3.  O bloqueio de objetos impede que objetos sejam excluídos ou substituídos por um período de retenção especificado, fornecendo uma camada adicional de proteção de dados.  Você pode habilitar isso somente quando estiver criando um bucket e não poderá desativá-lo mais tarde.
+
+
+
+
+. Selecione *Adicionar*.
+
+
+
+
+== Alterar credenciais para um destino de backup
+
+Insira as credenciais necessárias para acessar o destino de backup.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione *Destinos de backup externos*.
+. Selecione o alvo e à direita, selecione *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Alterar credenciais*.
+. Insira as novas credenciais para o destino de backup.  As informações variam dependendo do tipo de destino de backup selecionado.
+. Selecione *Concluído*.
+

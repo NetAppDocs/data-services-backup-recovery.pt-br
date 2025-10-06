@@ -1,0 +1,159 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-restore.html 
+keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho Oracle com o NetApp Backup and Recovery. 
+---
+= Restaure bancos de dados Oracle com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure bancos de dados Oracle de cópias de snapshot, de um backup replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
+
+.Restaurar a partir desses locais
+Você pode restaurar bancos de dados de diferentes locais de partida:
+
+* Restaurar de um local primário (instantâneo local)
+* Restaurar de um recurso replicado no armazenamento secundário
+* Restaurar de um backup de armazenamento de objetos
+
+
+.Restaurar esses pontos
+Você pode restaurar dados para o local original; restaurar para um local alternativo não está disponível nesta versão de visualização privada.
+
+* Restaurar para o local original
+
+
+
+
+== Como funciona a restauração de bancos de dados Oracle
+
+Ao restaurar bancos de dados Oracle, ocorre o seguinte:
+
+* Quando você restaura um banco de dados de um snapshot local, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
+* Ao restaurar a partir do armazenamento replicado, você pode restaurá-lo para o local original.
+* Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o armazenamento de origem ou para um sistema ONTAP local e recuperar o banco de dados de lá.
+
+
+Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode restaurar um banco de dados, mesmo que não se lembre do nome exato, do local em que ele reside ou da data em que esteve em boas condições pela última vez.  Você pode pesquisar no banco de dados usando filtros.
+
+
+
+== Restaurar um banco de dados Oracle
+
+Dependendo de suas necessidades, restaure um banco de dados Oracle para um ponto específico no tempo, para um número de alteração do sistema (SCN) específico ou para o último estado bom.  Você também pode simplesmente restaurar o banco de dados a partir de instantâneos e pular o processo de recuperação automatizado.  Talvez você queira pular o processo de recuperação automatizado se quiser executar a recuperação manualmente.  Você pode pesquisar o banco de dados usando seu nome ou com filtros específicos.
+
+*Função de console necessária* Administrador da organização, Administrador de pasta ou projeto, Superadministrador de backup e recuperação, Função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. No menu NetApp Backup and Recovery, selecione *Restaurar*.
+. Na lista suspensa à direita do campo de pesquisa de nome, selecione *Oracle*.
+. Digite o nome do banco de dados que você deseja restaurar ou filtre pelo host do banco de dados onde o banco de dados que você deseja restaurar está localizado.
++
+Aparece uma lista de instantâneos que correspondem aos seus critérios de pesquisa.
+
+. Selecione o botão *Restaurar* para o banco de dados que você deseja restaurar.
+. Escolha uma opção de restauração:
++
+[role="tabbed-block"]
+====
+.Restaurar para um ponto específico no tempo
+--
+.. Selecione *Restaurar para um ponto específico no tempo*.
+.. Selecione *Avançar*.
+.. Escolha uma data no menu suspenso e selecione *Pesquisar*.
++
+Uma lista de instantâneos correspondentes na data especificada é exibida.
+
+
+
+--
+.Restaurar para um número de alteração do sistema (SCN) específico
+--
+.. Selecione *Restaurar para um número de alteração do sistema (SCN) específico*.
+.. Selecione *Avançar*.
+.. Digite o SCN a ser usado como ponto de restauração e selecione *Pesquisar*.
++
+Uma lista de instantâneos correspondentes para o SCN especificado é exibida.
+
+
+
+--
+.Restaurar para o backup mais recente (último estado bom)
+--
+.. Selecione *Restaurar para o backup mais recente*.
+.. Selecione *Avançar*.
++
+Os backups completos e de log mais recentes são exibidos.
+
+
+
+--
+.Restaurar de instantâneos sem recuperação
+--
+.. Selecione *Restaurar de instantâneos sem recuperação*.
+.. Selecione *Avançar*.
++
+Os instantâneos correspondentes são exibidos.
+
+
+
+--
+====
+. Selecione um local de origem para o instantâneo.
+. Selecione *Avançar* para continuar para a página Restaurar configurações de destino.
++
+Em seguida, você pode escolher as configurações de destino e as opções de pré e pós-restauração.
+
+
+
+[discrete]
+===== Seleção de destino
+
+. Escolha as configurações de destino e as opções de pré e pós-restauração.
+
+
+[role="tabbed-block"]
+====
+.Restaurar para o local original
+--
+. *Configurações de destino*:
++
+** Escolha restaurar o banco de dados inteiro ou apenas os tablespaces do banco de dados.
+** *Arquivos de controle*: Opcionalmente, habilite esta opção para restaurar também os arquivos de controle do banco de dados.
+
+
+. *Opções de pré-restauração*:
++
+** Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
+** Escolha um valor de tempo limite para o script.  Se o script não for executado dentro desse período, a restauração continuará de qualquer maneira.
+
+
+. *Opções pós-restauração*:
++
+** *Postscript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+** *Abra o banco de dados ou o banco de dados contêiner no modo LEITURA-GRAVAÇÃO após a recuperação*: Após a conclusão da operação de restauração, o Backup e Recuperação habilitará o modo LEITURA-GRAVAÇÃO para o banco de dados.
+
+
+. Seção *Notificação*:
++
+** *Ativar notificações por e-mail*: selecione esta opção para receber notificações por e-mail sobre a operação de restauração e indique que tipo de notificação você deseja receber.
+
+
+. Selecione *Restaurar*.
+
+
+--
+.Restaurar para local alternativo
+--
+Não disponível para visualização de cargas de trabalho Oracle.
+
+--
+====

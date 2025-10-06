@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: br-use-protect-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: O NetApp Backup and Recovery permite que você gerencie informações de host de carga de trabalho, informações de banco de dados e informações de instâncias.  Você pode visualizar, editar e excluir configurações de proteção do seu inventário. 
+---
+= Adicionar e proteger aplicativos Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery permite que você descubra facilmente seus clusters Kubernetes, sem gerar e carregar arquivos kubeconfig.  Você pode conectar clusters do Kubernetes e instalar o software necessário usando comandos simples copiados da interface do usuário do NetApp Console.
+
+.Função necessária do NetApp Console
+Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+
+== Adicionar e proteger um novo aplicativo Kubernetes
+
+O primeiro passo para proteger aplicativos Kubernetes é criar um aplicativo no NetApp Backup and Recovery.  Ao criar um aplicativo, você torna o Console ciente do aplicativo em execução no cluster do Kubernetes.
+
+.Antes de começar
+Antes de poder adicionar e proteger um aplicativo Kubernetes, você precisa link:br-start-discover.html["descubra as cargas de trabalho do Kubernetes"] .
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Selecione *Criar aplicativo*.
+. Digite um nome para o aplicativo.
+. Opcionalmente, escolha qualquer um dos seguintes campos para pesquisar os recursos que você deseja proteger:
++
+** Cluster associado
+** Espaços de nomes associados
+** Tipos de recursos
+** Seletores de rótulos
+
+
+. Opcionalmente, selecione *Recursos com Escopo de Cluster* para escolher quaisquer recursos com escopo no nível do cluster. Se você incluí-los, eles serão adicionados ao aplicativo quando você o criar.
+. Opcionalmente, selecione *Pesquisar* para encontrar os recursos com base nos seus critérios de pesquisa.
++
+
+NOTE: O Console não armazena os parâmetros ou resultados da pesquisa; os parâmetros são usados para pesquisar no cluster Kubernetes selecionado recursos que podem ser incluídos no aplicativo.
+
+. O Console exibe uma lista de recursos que correspondem aos seus critérios de pesquisa.
+. Se a lista contiver os recursos que você deseja proteger, selecione *Avançar*.
+. Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você podelink:br-use-policies-create.html#create-a-policy["adicionar uma política de proteção"] mais tarde.
+. Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Para habilitar prescrições ou pós-escritos, você deve ter criado pelo menos umlink:br-use-manage-execution-hook-templates.html["modelo de gancho de execução"] .
+. Selecione *Criar*.
+
+
+.Resultado
+O aplicativo é criado e aparece na lista de aplicativos na guia *Aplicativos* do inventário do Kubernetes.  O NetApp Console permite a proteção do aplicativo com base em suas configurações, e você pode monitorar o progresso na área *Monitoramento* de backup e recuperação.
+
+
+
+== Proteja um aplicativo Kubernetes existente
+
+Habilite uma política de proteção em um aplicativo Kubernetes que você já adicionou.
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Na lista de aplicativos, escolha um aplicativo que você deseja proteger e selecione o menu Ações associado.
+. Selecione *Proteger*.
+. Na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova política. Consultelink:br-use-policies-create.html#create-a-policy["Criar uma política"] para obter mais informações sobre a criação de políticas de proteção.
+. Na área *Prescrições e pós-scripts*, habilite e configure quaisquer ganchos de execução de prescrições ou pós-scripts que você deseja executar antes ou depois das operações de backup.  Você pode configurar o tipo de gancho de execução, o modelo que ele usa, argumentos e seletores de rótulos.
+. Selecione *Concluído*.
+
+
+.Resultado
+O Console ativa a proteção do aplicativo com base em suas configurações, e você pode monitorar o progresso na área *Monitoramento* de backup e recuperação.  Assim que você habilita a proteção para um aplicativo, o Console cria um backup completo do aplicativo. Quaisquer backups incrementais futuros são criados com base no agendamento definido na política de proteção associada ao aplicativo.
+
+
+
+== Faça backup de um aplicativo Kubernetes agora
+
+Crie manualmente um backup de um aplicativo Kubernetes para estabelecer uma linha de base para futuros backups e snapshots ou para garantir que os dados mais recentes estejam protegidos.
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Na lista de aplicativos, escolha um aplicativo que você deseja fazer backup e selecione o menu Ações associado.
+. Selecione *Fazer backup agora*.
+. Certifique-se de que o nome correto do aplicativo esteja selecionado.
+. Selecione *Fazer backup*.
+
+
+.Resultado
+O Console cria um backup do aplicativo e exibe o progresso na área *Monitoramento* de Backup e Recuperação. O backup é criado com base na política de proteção associada ao aplicativo.

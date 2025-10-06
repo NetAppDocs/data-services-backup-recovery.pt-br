@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-clusters.html 
+keywords: discover, backup and recovery, snapcenter, kubernetes, k8s, clusters, applications, inventory 
+summary: O NetApp Backup and Recovery permite que você descubra e gerencie seus clusters Kubernetes para que possa proteger os recursos hospedados pelos clusters. 
+---
+= Gerenciar clusters do Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery permite que você descubra e gerencie seus clusters Kubernetes para que possa proteger os recursos hospedados pelos clusters.
+
+.Função necessária do NetApp Console
+Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+NOTE: Para descobrir clusters do Kubernetes, consulte link:br-start-discover.html["Descubra as cargas de trabalho do Kubernetes"] .
+
+
+
+== Editar informações do cluster Kubernetes
+
+Você pode editar um cluster se precisar alterar seu nome.
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
+. Na lista de clusters, escolha um cluster que você deseja editar e selecione o menu Ações associado.
+. Selecione *Editar cluster*.
+. Faça as alterações necessárias no nome do cluster. O nome do cluster precisa corresponder ao nome que você usou com o comando Helm durante o processo de descoberta.
+. Selecione *Concluído*.
+
+
+
+
+== Remover um cluster do Kubernetes
+
+Se você não precisar mais proteger os recursos hospedados por um cluster Kubernetes, poderá removê-lo do NetApp Backup and Recovery.  A remoção de um cluster não exclui o cluster nem seus recursos; apenas remove o cluster do inventário do NetApp Console.  Antes de remover um cluster, você precisa desabilitar a proteção e excluir os aplicativos associados do NetApp Backup and Recovery.
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
+. Na lista de clusters, escolha um cluster que você deseja editar e selecione o menu Ações associado.
+. Selecione *Remover cluster*.
+. Revise as informações na caixa de diálogo de confirmação e selecione *Remover*.
+

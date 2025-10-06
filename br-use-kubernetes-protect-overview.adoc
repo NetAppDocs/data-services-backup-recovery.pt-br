@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: br-use-kubernetes-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Você pode proteger aplicativos e dados de aplicativos do Kubernetes de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantindo que seus dados estejam protegidos. 
+---
+= Visão geral do gerenciamento de cargas de trabalho do Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gerenciar cargas de trabalho do Kubernetes no NetApp Backup and Recovery permite que você descubra, gerencie e proteja seus clusters e aplicativos do Kubernetes em um só lugar. Você pode gerenciar recursos e aplicações hospedados em seus clusters do Kubernetes. Você também pode criar e associar políticas de proteção às suas cargas de trabalho do Kubernetes, tudo usando uma única interface.
+
+O diagrama a seguir mostra os componentes e a arquitetura básica de backup e recuperação para cargas de trabalho do Kubernetes e como diferentes cópias dos seus dados podem ser armazenadas em diferentes locais:
+
+image:../media/backup-recovery-architecture-diagram.png["Diagrama de arquitetura de backup e recuperação para cargas de trabalho do Kubernetes"]
+
+O NetApp Backup and Recovery oferece os seguintes benefícios para o gerenciamento de cargas de trabalho do Kubernetes:
+
+* Um único plano de controle para proteger aplicativos executados em vários clusters do Kubernetes. Esses aplicativos podem incluir contêineres ou máquinas virtuais em execução nos seus clusters do Kubernetes.
+* Integração nativa com o NetApp SnapMirror, permitindo recursos de descarregamento de armazenamento para todos os fluxos de trabalho de backup e recuperação.
+* Backups incrementais permanentes para aplicativos Kubernetes, o que se traduz em Objetivos de Ponto de Recuperação (RPOs) e Objetivos de Tempo de Recuperação (RTOs) mais baixos.
+
+
+
+NOTE: Esta documentação é fornecida como uma prévia da tecnologia.  Durante a visualização, a funcionalidade do Kubernetes não é recomendada para cargas de trabalho de produção. Com esta oferta de visualização, a NetApp reserva-se o direito de modificar os detalhes, o conteúdo e o cronograma da oferta antes da disponibilidade geral.
+
+Você pode realizar as seguintes tarefas relacionadas ao gerenciamento de cargas de trabalho do Kubernetes:
+
+* link:br-start-discover-kubernetes.html["Descubra as cargas de trabalho do Kubernetes"] .
+* link:br-use-manage-kubernetes-clusters.html["Gerenciar clusters do Kubernetes"] .
+* link:br-use-protect-kubernetes-applications.html["Adicionar e proteger aplicativos Kubernetes"] .
+* link:br-use-manage-kubernetes-applications.html["Gerenciar aplicativos Kubernetes"] .
+* link:br-use-restore-kubernetes-applications.html["Restaurar aplicativos Kubernetes"] .
+

@@ -1,0 +1,45 @@
+= Restaurar volumes menores que 1 GB
+:allow-uri-read: 
+
+
+
+
+=== Restaurar volumes menores que 1 GB
+
+Com esta versão, agora você pode restaurar volumes criados no ONTAP com menos de 1 GB.  O tamanho mínimo de volume que você pode criar usando o ONTAP é 20 MB.
+
+
+
+=== Dicas sobre como mitigar os custos do DataLock
+
+O recurso DataLock protege seus arquivos de backup contra modificações ou exclusão por um período de tempo especificado.  Isso é útil para proteger seus arquivos contra ataques de ransomware.
+
+Para obter detalhes sobre o DataLock e dicas sobre como mitigar os custos associados, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
+
+
+
+=== Integração do AWS IAM Roles Anywhere
+
+O serviço Amazon Web Services (AWS) Identity and Access Roles Anywhere permite que você use funções do IAM e credenciais de curto prazo para suas cargas de trabalho _fora_ da AWS para acessar APIs da AWS com segurança, da mesma forma que você usa funções do IAM para cargas de trabalho _na_ AWS.  Ao usar a infraestrutura de chave privada do IAM Roles Anywhere e os tokens da AWS, você não precisa de chaves de acesso e chaves secretas da AWS de longo prazo.  Isso permite que você gire as credenciais com mais frequência, melhorando a segurança.
+
+Com esta versão, o suporte ao serviço AWS IAM Roles Anywhere é uma prévia da tecnologia.
+
+ifdef::aws[]
+
+Isto se aplica alink:prev-ontap-backup-cvo-aws.html["fazendo backup do Cloud Volumes ONTAP para AWS"] .
+
+endif::aws[]
+
+Consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog de lançamento do NetApp Backup and Recovery de julho de 2024"] .
+
+
+
+=== Restauração de pasta ou diretório FlexGroup agora disponível
+
+Anteriormente, os volumes FlexVol podiam ser restaurados, mas não era possível restaurar pastas ou diretórios FlexGroup .  Com o ONTAP 9.15.1 p2, você pode restaurar pastas FlexGroup usando a opção Procurar e restaurar.
+
+Com esta versão, o suporte para restauração de pastas FlexGroup é uma prévia da tecnologia.
+
+Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Restaurar pastas e arquivos usando Navegar e Restaurar"] .
+
+Para obter detalhes sobre como habilitá-lo manualmente, consulte https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog de lançamento do NetApp Backup and Recovery de julho de 2024"] .

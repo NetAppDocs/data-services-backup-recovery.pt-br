@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: br-use-settings-advanced.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Algumas configurações avançadas podem ser úteis para manter seu ambiente de backup e recuperação.  Você pode configurar definições avançadas para gerenciar seu inventário, excluir backups, cancelar o registro de recursos, excluir relacionamentos, desproteger recursos para interromper cobranças de serviço, definir a taxa máxima de transferência para o relacionamento SnapMirror , exportar cópias de instantâneos para um armazenamento de objetos, habilitar a exclusão automática anual de instantâneos, habilitar o modo de manutenção e atualizar o Plug-in do Aplicativo. 
+---
+= Configurar configurações avançadas no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Algumas configurações avançadas podem ser úteis para manter seu ambiente de backup e recuperação.  Você pode configurar definições avançadas para gerenciar seu inventário, excluir backups, cancelar o registro de recursos, excluir relacionamentos, desproteger recursos para interromper cobranças de serviço, definir a taxa máxima de transferência para o relacionamento SnapMirror , exportar cópias de instantâneos para um armazenamento de objetos, habilitar a exclusão automática anual de instantâneos, habilitar o modo de manutenção e atualizar o Plug-in do Aplicativo.
+
+Configure as configurações avançadas do NetApp Backup and Recovery das seguintes maneiras:
+
+* Excluir backups.
+* Cancele o registro de backups, bancos de dados, instâncias ou hosts de aplicativos.
+* Exclua os relacionamentos.
+* Desproteja bancos de dados, instâncias, hosts de aplicativos e ambientes de trabalho para interromper as cobranças de serviço.
+* Defina a taxa máxima de transferência para o relacionamento do SnapMirror - gerencie o uso da largura de banda, garantindo que as operações do SnapMirror não interfiram em outras atividades da rede.
+* Exporte cópias de instantâneos para um armazenamento de objetos para inicializar backups na nuvem movendo cópias de instantâneos mais antigas para a cópia de backup de base.
+* Habilitar exclusão automática de instantâneos anuais
+* Habilite o modo de manutenção para que atualizações ou tarefas de manutenção possam ser executadas.
+* Atualize o plugin do aplicativo.
+
+
+
+
+== Excluir backups
+
+Você pode excluir backups para liberar espaço no seu armazenamento.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Excluir backups**.
+. Selecione o backup que você deseja excluir.
+. Selecione **Excluir**.
+
+
+
+
+== Cancelar o registro de backups, bancos de dados, instâncias ou hosts de aplicativos
+
+Você pode cancelar o registro de backups, bancos de dados, instâncias ou hosts de aplicativos para removê-los do inventário.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Cancelar registro de recursos**.
+. Selecione o recurso cujo registro você deseja cancelar.
+. Selecione **Cancelar registro**.
+
+
+
+
+== Excluir relacionamentos
+
+Você pode excluir relacionamentos para removê-los do inventário.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Excluir relacionamentos**.
+. Selecione o relacionamento que você deseja excluir.
+. Selecione **Excluir**.
+
+
+
+
+== Desproteja bancos de dados, instâncias, hosts de aplicativos e ambientes de trabalho
+
+Você pode desproteger bancos de dados, instâncias, hosts de aplicativos e ambientes de trabalho para interromper as cobranças de serviço.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Desproteger recursos**.
+
+
+
+
+== Defina a taxa máxima de transferência para o relacionamento SnapMirror
+
+Você pode definir a taxa máxima de transferência para o relacionamento do SnapMirror para gerenciar o uso da largura de banda, garantindo que as operações do SnapMirror não interfiram em outras atividades da rede.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Definir a taxa máxima de transferência para o relacionamento SnapMirror **.
+. Insira a taxa máxima de transferência.
+. Selecione **Salvar**.
+
+
+
+
+== Exportar cópias de instantâneos para um armazenamento de objetos
+
+Você pode exportar cópias de instantâneos para um armazenamento de objetos para inicializar backups na nuvem movendo cópias de instantâneos mais antigas para a cópia de backup de base.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Exportar cópias de instantâneo para um armazenamento de objetos**.
+. Selecione a cópia do instantâneo que você deseja exportar.
+. Selecione **Exportar**.
+
+
+
+
+== Habilitar exclusão automática de instantâneos anuais
+
+Você pode habilitar a exclusão automática anual de snapshots para excluir snapshots com mais de um ano.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Ativar exclusão automática de instantâneos anuais**.
+. Selecione **Ativar**.
+
+
+
+
+== Habilitar modo de manutenção
+
+Você pode habilitar o modo de manutenção para que atualizações ou tarefas de manutenção possam ser executadas.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Ativar modo de manutenção**.
+. Selecione **Ativar**.
+
+
+
+
+== Atualizar o plugin do aplicativo
+
+Você pode atualizar o Plugin do Aplicativo para garantir que os recursos mais recentes estejam disponíveis.
+
+. No console do NetApp Backup and Recovery, selecione **Configurações**.
+. Selecione **Configurações avançadas**.
+. Selecione **Atualizar o plugin do aplicativo**.
+. Selecione **Atualizar**.
+

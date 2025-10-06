@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protection-groups.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, vmware, vm, virtual machines, workloads, volumes, snapshots 
+summary: Crie e gerencie grupos de proteção para cargas de trabalho do VMware no NetApp Backup and Recovery. 
+---
+= Crie e gerencie grupos de proteção para cargas de trabalho VMware com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de cargas de trabalho. Um grupo de proteção é um agrupamento lógico de recursos, como VMs e armazenamentos de dados, que você deseja proteger juntos.
+
+Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
+
+* Crie um grupo de proteção.
+* Ver detalhes da proteção.
+* Crie um grupo de proteção agora. Ver link:br-use-vmware-backup.html["Faça backup das cargas de trabalho do VMware agora"] .
+* Suspenda e retome o agendamento de backup de um grupo de proteção.
+* Excluir um grupo de proteção.
+
+
+
+
+== Crie um grupo de proteção
+
+Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção. Você pode criar um grupo de proteção para um conjunto de cargas de trabalho que deseja fazer backup e restaurar juntas.
+
+*Função de console necessária* Administrador da organização, administrador de pasta ou projeto, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione *Criar grupo de proteção*.
+. Forneça um nome para o grupo de proteção.
+. Selecione as VMs ou bancos de dados que você deseja incluir no grupo de proteção.
+. Selecione *Avançar*.
+. Selecione a *Política de backup* que você deseja aplicar ao grupo de proteção.
++
+Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política. Ver link:br-use-policies-create.html["Criar políticas"] para maiores informações.
+
+. Selecione *Avançar*.
+. Revise a configuração.
+. Selecione *Criar* para criar o grupo de proteção.
+
+
+
+
+== Suspender o agendamento de backup de um grupo de proteção
+
+Suspender um grupo de proteção pausa os backups agendados para o grupo de proteção. Talvez você queira suspender um grupo de proteção se quiser interromper temporariamente os backups das cargas de trabalho nesse grupo.
+
+O status da proteção muda para "Em manutenção" quando você suspende um grupo de proteção. Você pode retomar o agendamento de backup a qualquer momento.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Suspender grupo de proteção*.
+. Revise a mensagem de confirmação e selecione *Suspender*.
+
+
+
+
+== Retomar o cronograma de backup de um grupo de proteção
+
+Retomar um grupo de proteção suspenso reinicia os backups agendados para o grupo de proteção.
+
+O status da proteção muda de "Em manutenção" quando você suspende um grupo de proteção para "Protegido" quando você o retoma. Você pode retomar o agendamento de backup a qualquer momento.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Grupo de proteção de currículos*.
+. Revise a mensagem de confirmação e selecione *Continuar*.
+
+
+.Resultado
+O sistema valida os agendamentos e altera o status da proteção para "Protegido" se os agendamentos forem válidos. Se os agendamentos não forem válidos, o sistema exibirá uma mensagem de erro e não retomará o grupo de proteção.
+
+
+
+== Excluir um grupo de proteção
+
+A exclusão de um grupo de proteção o remove, juntamente com todos os agendamentos de backup associados. Talvez você queira excluir um grupo de proteção se ele não for mais necessário.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione o grupo de proteção que você deseja excluir.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Excluir*.
+. Revise a mensagem de confirmação sobre a exclusão dos backups associados e confirme a exclusão.
+

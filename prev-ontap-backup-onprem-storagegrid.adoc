@@ -1,0 +1,490 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-backup-onprem-storagegrid.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus sistemas ONTAP primários locais para um sistema de armazenamento secundário e para o armazenamento de objetos nos seus sistemas NetApp StorageGRID . 
+---
+= Faça backup de dados ONTAP locais no StorageGRID com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus sistemas ONTAP primários locais para um sistema de armazenamento secundário e para o armazenamento de objetos nos seus sistemas NetApp StorageGRID .
+
+
+NOTE: Os "sistemas ONTAP locais" incluem sistemas FAS, AFF e ONTAP Select .
+
+[]
+====
+*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
+====
+
+
+== Identifique o método de conexão
+
+A imagem a seguir mostra cada componente ao fazer backup de um sistema ONTAP local no StorageGRID e as conexões que você precisa preparar entre eles.
+
+Opcionalmente, você pode se conectar a um sistema ONTAP secundário no mesmo local para replicar volumes.
+
+image:diagram_cloud_backup_onprem_storagegrid.png["Um diagrama mostrando como o NetApp Backup and Recovery se comunica com os volumes nos sistemas de origem e no armazenamento de destino onde os arquivos de backup estão localizados."]
+
+Quando o agente do Console e o sistema ONTAP local são instalados em um local local sem acesso à Internet (um "dark site"), o sistema StorageGRID deve estar localizado no mesmo data center local.  O arquivamento de arquivos de backup mais antigos na nuvem pública não é suportado em configurações de site escuro.
+
+
+
+== Prepare seu agente de console
+
+O agente do Console é o software principal para a funcionalidade do Console.  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
+
+
+
+=== Criar ou alternar agentes do Console
+
+Ao fazer backup de dados no StorageGRID, um agente do Console deve estar disponível em suas instalações.  Você precisará instalar um novo agente do Console ou certificar-se de que o agente do Console selecionado atualmente resida no local.  O agente do Console pode ser instalado em um site com ou sem acesso à Internet.
+
+* https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Instalando o agente do Console em um host Linux com acesso à Internet"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instalando o agente do Console em um host Linux sem acesso à Internet"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Alternando entre agentes do Console"^]
+
+
+
+
+=== Preparar os requisitos de rede do agente do console
+
+Certifique-se de que a rede onde o agente do Console está instalado habilite as seguintes conexões:
+
+* Uma conexão HTTPS pela porta 443 para o nó do gateway StorageGRID
+* Uma conexão HTTPS pela porta 443 para seu LIF de gerenciamento de cluster ONTAP
+* Uma conexão de saída de internet pela porta 443 para o NetApp Backup and Recovery (não necessária quando o agente do Console está instalado em um site "escuro")
+
+
+
+
+==== Considerações sobre o modo privado (site escuro)
+
+* A funcionalidade de backup e recuperação do NetApp está integrada ao agente do Console.  Quando instalado no modo privado, você precisará atualizar o software do agente do Console periodicamente para ter acesso a novos recursos.  Verifique olink:whats-new.html["Novidades do NetApp Backup and Recovery"] para ver os novos recursos em cada versão do NetApp Backup and Recovery.  Quando você quiser usar os novos recursos, siga as etapas para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualizar o software do agente do Console"^] .
++
+A nova versão do NetApp Backup and Recovery, que inclui a capacidade de agendar e criar cópias de snapshot e volumes replicados, além de criar backups para armazenamento de objetos, exige que você esteja usando a versão 3.9.31 ou superior do agente do Console.  Portanto, é recomendável que você obtenha esta versão mais recente para gerenciar todos os seus backups.
+
+* Quando você usa o NetApp Backup and Recovery em um ambiente SaaS, os dados de configuração do NetApp Backup and Recovery são armazenados em backup na nuvem.  Quando você usa o NetApp Backup and Recovery em um site sem acesso à Internet, os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID onde seus backups estão sendo armazenados.
+
+
+
+
+== Verificar requisitos de licença
+
+Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp.  Esta licença é para a conta e pode ser usada em vários sistemas.
+
+Você precisará do número de série da NetApp que lhe permitirá usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"] .
+
+
+TIP: O licenciamento PAYGO não é suportado ao fazer backup de arquivos no StorageGRID.
+
+
+
+== Prepare seus clusters ONTAP
+
+Você precisará preparar seu sistema ONTAP local de origem e quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP .
+
+Preparar seus clusters ONTAP envolve as seguintes etapas:
+
+* Descubra seus sistemas ONTAP no NetApp Console
+* Verifique os requisitos do sistema ONTAP
+* Verifique os requisitos de rede ONTAP para fazer backup de dados no armazenamento de objetos
+* Verifique os requisitos de rede ONTAP para replicar volumes
+
+
+
+
+=== Descubra seus sistemas ONTAP no NetApp Console
+
+Tanto o sistema ONTAP local de origem quanto quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP devem estar disponíveis na página *Sistemas* do NetApp Console.
+
+Você precisará saber o endereço IP de gerenciamento do cluster e a senha da conta de usuário administrador para adicionar o cluster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda como descobrir um cluster"^] .
+
+
+
+=== Verifique os requisitos do sistema ONTAP
+
+Certifique-se de que os seguintes requisitos do ONTAP sejam atendidos:
+
+* Mínimo de ONTAP 9.8; ONTAP 9.8P13 e posterior é recomendado.
+* Uma licença do SnapMirror (incluída como parte do Pacote Premium ou Pacote de Proteção de Dados).
++
+*Observação:* O "Hybrid Cloud Bundle" não é necessário ao usar o NetApp Backup and Recovery.
+
++
+Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gerencie suas licenças de cluster"^] .
+
+* A hora e o fuso horário estão definidos corretamente.  Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure o tempo do seu cluster"^] .
+* Se você for replicar dados, verifique se os sistemas de origem e destino estão executando versões compatíveis do ONTAP antes de replicar os dados.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versões ONTAP compatíveis para relacionamentos SnapMirror"^] .
+
+
+
+
+
+=== Verifique os requisitos de rede ONTAP para fazer backup de dados no armazenamento de objetos
+
+Você deve configurar os seguintes requisitos no sistema que se conecta ao armazenamento de objetos.
+
+* Ao usar uma arquitetura de backup fan-out, as seguintes configurações devem ser definidas no sistema de armazenamento _primário_.
+* Ao usar uma arquitetura de backup em cascata, as seguintes configurações devem ser definidas no sistema de armazenamento _secundário_.
+
+
+Os seguintes requisitos de rede de cluster ONTAP são necessários:
+
+* O cluster ONTAP inicia uma conexão HTTPS por meio de uma porta especificada pelo usuário do LIF intercluster para o nó do gateway StorageGRID para operações de backup e restauração.  A porta é configurável durante a configuração do backup.
++
+ONTAP lê e grava dados de e para armazenamento de objetos. O armazenamento de objetos nunca inicia, ele apenas responde.
+
+* O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.  O agente do Console deve residir em suas instalações.
+* Um LIF intercluster é necessário em cada nó ONTAP que hospeda os volumes dos quais você deseja fazer backup.  O LIF deve ser associado ao _IPspace_ que o ONTAP deve usar para se conectar ao armazenamento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Saiba mais sobre IPspaces"^] .
++
+Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o IPspace a ser usado. Você deve escolher o IPspace ao qual cada LIF está associado. Pode ser o IPspace "padrão" ou um IPspace personalizado que você criou.
+
+* Os LIFs intercluster dos nós podem acessar o armazenamento de objetos (não é necessário quando o agente do Console está instalado em um site "escuro").
+* Os servidores DNS foram configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurar serviços DNS para o SVM"^] .
+* Se você estiver usando um IPspace diferente do Padrão, talvez seja necessário criar uma rota estática para obter acesso ao armazenamento de objetos.
+* Atualize as regras de firewall, se necessário, para permitir conexões de serviço do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta especificada (normalmente a porta 443) e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).
+
+
+
+
+=== Verifique os requisitos de rede ONTAP para replicar volumes
+
+Se você planeja criar volumes replicados em um sistema ONTAP secundário usando o NetApp Backup and Recovery, certifique-se de que os sistemas de origem e destino atendam aos seguintes requisitos de rede.
+
+
+
+==== Requisitos de rede ONTAP local
+
+* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem.  Normalmente, essa é uma conexão VPN.
+* Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
++
+Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
+
+
+
+
+
+==== Requisitos de rede do Cloud Volumes ONTAP
+
+* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105.  Essas regras estão incluídas no grupo de segurança predefinido.
+
+
+
+
+== Prepare o StorageGRID como seu destino de backup
+
+O StorageGRID deve atender aos seguintes requisitos. Veja o https://docs.netapp.com/us-en/storagegrid-117/["Documentação do StorageGRID"^] para mais informações.
+
+Para obter detalhes sobre os requisitos de proteção do DataLock e do Ransomware para StorageGRID, consultelink:prev-ontap-policy-object-options.html["Opções de política de backup para objeto"] .
+
+Versões do StorageGRID suportadas:: O StorageGRID 10.3 e versões posteriores são suportados.
++
+--
+Para usar o DataLock & Ransomware Protection para seus backups, seus sistemas StorageGRID devem estar executando a versão 11.6.0.3 ou superior.
+
+Para colocar backups mais antigos em camadas no armazenamento de arquivo em nuvem, seus sistemas StorageGRID devem estar executando a versão 11.3 ou superior.  Além disso, seus sistemas StorageGRID devem ser descobertos na página *Sistemas* do Console.
+
+Para usar o armazenamento de arquivo, é necessário acesso IP ao nó de administração.
+
+O acesso IP do gateway é sempre necessário.
+
+--
+Credenciais S3:: Você deve ter criado uma conta de locatário do S3 para controlar o acesso ao seu armazenamento StorageGRID . https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["Veja a documentação do StorageGRID para mais detalhes"^] .
++
+--
+Ao configurar o backup no StorageGRID, o assistente de backup solicita uma chave de acesso S3 e uma chave secreta para uma conta de locatário.  A conta do locatário permite que o NetApp Backup and Recovery autentique e acesse os buckets do StorageGRID usados ​​para armazenar backups.  As chaves são necessárias para que o StorageGRID saiba quem está fazendo a solicitação.
+
+Essas chaves de acesso devem ser associadas a um usuário que tenha as seguintes permissões:
+
+[source, json]
+----
+"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject",
+"s3:CreateBucket"
+----
+--
+Controle de versão de objetos:: Você não deve habilitar o controle de versão do objeto StorageGRID manualmente no bucket do armazenamento de objetos.
+
+
+
+
+=== Prepare-se para arquivar arquivos de backup mais antigos no armazenamento em nuvem pública
+
+Colocar arquivos de backup mais antigos em níveis de armazenamento de arquivamento economiza dinheiro ao usar uma classe de armazenamento mais barata para backups que você pode não precisar.  O StorageGRID é uma solução local (nuvem privada) que não fornece armazenamento de arquivo, mas você pode mover arquivos de backup mais antigos para armazenamento de arquivo em nuvem pública.  Quando usado dessa forma, os dados que são colocados em camadas no armazenamento em nuvem ou restaurados do armazenamento em nuvem vão entre o StorageGRID e o armazenamento em nuvem - o Console não está envolvido nessa transferência de dados.
+
+O suporte atual permite arquivar backups no armazenamento AWS _S3 Glacier_/_S3 Glacier Deep Archive_ ou _Azure Archive_.
+
+* Requisitos ONTAP *
+
+* Seu cluster deve estar usando o ONTAP 9.12.1 ou superior.
+
+
+* Requisitos do StorageGRID *
+
+* Seu StorageGRID deve estar usando 11.4 ou superior.
+* Seu StorageGRID deve ser https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["descoberto e disponível no Console"^] .
+
+
+*Requisitos do Amazon S3*
+
+* Você precisará criar uma conta Amazon S3 para o espaço de armazenamento onde seus backups arquivados estarão localizados.
+* Você pode optar por fazer backups em camadas no armazenamento AWS S3 Glacier ou S3 Glacier Deep Archive. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre as camadas de arquivamento da AWS"] .
+* O StorageGRID deve ter acesso de controle total ao bucket(`s3:*` ); no entanto, se isso não for possível, a política de bucket deve conceder as seguintes permissões S3 ao StorageGRID:
++
+** `s3:AbortMultipartUpload`
+** `s3:DeleteObject`
+** `s3:GetObject`
+** `s3:ListBucket`
+** `s3:ListBucketMultipartUploads`
+** `s3:ListMultipartUploadParts`
+** `s3:PutObject`
+** `s3:RestoreObject`
+
+
+
+
+*Requisitos do Azure Blob*
+
+* Você precisará se inscrever em uma Assinatura do Azure para o espaço de armazenamento onde seus backups arquivados estarão localizados.
+* O assistente de ativação permite que você use um Grupo de Recursos existente para gerenciar o contêiner de Blobs que armazenará os backups, ou você pode criar um novo Grupo de Recursos.
+
+
+Ao definir as configurações de arquivamento para a política de backup do seu cluster, você inserirá as credenciais do seu provedor de nuvem e selecionará a classe de armazenamento que deseja usar.  O NetApp Backup and Recovery cria o bucket de nuvem quando você ativa o backup para o cluster.  As informações necessárias para armazenamento de arquivo na AWS e no Azure são mostradas abaixo.
+
+image:screenshot_sg_archive_to_cloud.png["Uma captura de tela das informações que você precisará para arquivar arquivos de backup do StorageGRID no AWS S3 ou no Azure Blob."]
+
+As configurações de política de arquivamento selecionadas gerarão uma política de gerenciamento do ciclo de vida das informações (ILM) no StorageGRID e adicionarão as configurações como "regras".
+
+* Se houver uma política de ILM ativa, novas regras serão adicionadas à política de ILM para mover os dados para a camada de arquivamento.
+* Se houver uma política de ILM existente no estado "proposta", a criação e ativação de uma nova política de ILM não será possível. https://docs.netapp.com/us-en/storagegrid-117/ilm/index.html["Saiba mais sobre as políticas e regras do StorageGRID ILM"^] .
+
+
+
+
+== Ative backups em seus volumes ONTAP
+
+Ative backups a qualquer momento diretamente do seu sistema local.
+
+Um assistente guia você pelas seguintes etapas principais:
+
+* <<Selecione os volumes dos quais deseja fazer backup>>
+* <<Defina a estratégia de backup>>
+* <<Revise suas seleções>>
+
+
+Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que você possa copiar o código para automatizar a ativação de backup para sistemas futuros.
+
+
+
+=== Inicie o assistente
+
+.Passos
+. Acesse o assistente Ativar backup e recuperação usando uma das seguintes maneiras:
++
+** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de Backup e recuperação no painel direito.
++
+Se o destino dos seus backups existir como um sistema na página *Sistemas* do Console, você poderá arrastar o cluster ONTAP para o armazenamento de objetos.
+
+** Selecione *Volumes* na barra Backup e recuperação.  Na guia Volumes, selecione a opção *Ações (...)* e selecione *Ativar backup* para um único volume (que ainda não tenha replicação ou backup para armazenamento de objetos habilitado).
+
+
++
+A página Introdução do assistente mostra as opções de proteção, incluindo instantâneos locais, replicação e backups.  Se você escolheu a segunda opção nesta etapa, a página Definir estratégia de backup aparecerá com um volume selecionado.
+
+. Continue com as seguintes opções:
++
+** Se você já tem um agente do Console, está tudo pronto.  Basta selecionar *Avançar*.
+** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida. Consulte <<Prepare seu agente de console>> .
+
+
+
+
+
+
+=== Selecione os volumes dos quais deseja fazer backup
+
+Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que tem um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup em objeto.
+
+Você pode optar por proteger volumes FlexVol ou FlexGroup ; no entanto, não é possível selecionar uma mistura desses volumes ao ativar o backup de um sistema.  Veja comolink:prev-ontap-backup-manage.html["ativar backup para volumes adicionais no sistema"] (FlexVol ou FlexGroup) depois de configurar o backup para os volumes iniciais.
+
+[NOTE]
+====
+* Você pode ativar um backup somente em um único volume FlexGroup por vez.
+* Os volumes selecionados devem ter a mesma configuração SnapLock .  Todos os volumes devem ter o SnapLock Enterprise habilitado ou o SnapLock desabilitado.
+
+
+====
+.Passos
+Se os volumes escolhidos já tiverem políticas de snapshot ou replicação aplicadas, as políticas selecionadas posteriormente substituirão essas políticas existentes.
+
+. Na página Selecionar volumes, selecione o volume ou volumes que você deseja proteger.
++
+** Opcionalmente, filtre as linhas para mostrar apenas volumes com determinados tipos de volume, estilos e muito mais para facilitar a seleção.
+** Depois de selecionar o primeiro volume, você pode selecionar todos os volumes FlexVol (os volumes FlexGroup podem ser selecionados apenas um de cada vez).  Para fazer backup de todos os volumes FlexVol existentes, marque primeiro um volume e depois marque a caixa na linha de título.
+** Para fazer backup de volumes individuais, marque a caixa de cada volume.
+
+
+. Selecione *Avançar*.
+
+
+
+
+=== Defina a estratégia de backup
+
+Definir a estratégia de backup envolve definir as seguintes opções:
+
+* Se você deseja uma ou todas as opções de backup: instantâneos locais, replicação e backup para armazenamento de objetos
+* Arquitetura
+* Política de instantâneo local
+* Destino e política de replicação
++
+
+NOTE: Se os volumes escolhidos tiverem políticas de snapshot e replicação diferentes das políticas selecionadas nesta etapa, as políticas existentes serão substituídas.
+
+* Backup para informações de armazenamento de objetos (provedor, criptografia, rede, política de backup e opções de exportação).
+
+
+.Passos
+. Na página Definir estratégia de backup, escolha uma ou todas as opções a seguir.  Todos os três são selecionados por padrão:
++
+** *Instantâneos locais*: se você estiver executando replicação ou backup no armazenamento de objetos, instantâneos locais deverão ser criados.
+** *Replicação*: Cria volumes replicados em outro sistema de armazenamento ONTAP .
+** *Backup*: Faz backup de volumes no armazenamento de objetos.
+
+
+. *Arquitetura*: Se você escolher replicação e backup, escolha um dos seguintes fluxos de informações:
++
+** *Cascata*: As informações fluem do primário para o secundário e, depois, do secundário para o armazenamento de objetos.
+** *Fan out*: As informações fluem do primário para o secundário _e_ do primário para o armazenamento de objetos.
++
+Para obter detalhes sobre essas arquiteturas, consultelink:prev-ontap-protect-journey.html["Planeje sua jornada de proteção"] .
+
+
+
+. *Instantâneo local*: escolha uma política de instantâneo existente ou crie uma nova.
++
+
+TIP: Para criar uma política personalizada, consultelink:br-use-policies-create.html["Criar uma política"] .
+
++
+Para criar uma política, selecione *Criar nova política* e faça o seguinte:
+
++
+** Digite o nome da política.
+** Selecione até cinco programações, normalmente com frequências diferentes.
+** Selecione *Criar*.
+
+
+. *Replicação*: Defina as seguintes opções:
++
+** *Destino de replicação*: Selecione o sistema de destino e o SVM.  Opcionalmente, selecione o(s) agregado(s) de destino e o prefixo ou sufixo que serão adicionados ao nome do volume replicado.
+** *Política de replicação*: Escolha uma política de replicação existente ou crie uma.
++
+
+TIP: Para criar uma política personalizada, consultelink:br-use-policies-create.html["Criar uma política"] .
+
++
+Para criar uma política, selecione *Criar nova política* e faça o seguinte:
+
++
+*** Digite o nome da política.
+*** Selecione até cinco programações, normalmente com frequências diferentes.
+*** Selecione *Criar*.
+
+
+
+
+. *Fazer backup no objeto*: Se você selecionou *Backup*, defina as seguintes opções:
++
+** *Provedor*: Selecione * StorageGRID*.
+** *Configurações do provedor*: insira os detalhes do FQDN do nó do gateway do provedor, porta, chave de acesso e chave secreta.
++
+A chave de acesso e a chave secreta são para o usuário do IAM que você criou para dar ao cluster ONTAP acesso ao bucket.
+
+** *Rede*: Escolha o espaço IP no cluster ONTAP onde residem os volumes que você deseja fazer backup.  Os LIFs intercluster para este IPspace devem ter acesso de saída à Internet (não necessário quando o agente do Console está instalado em um site "escuro").
++
+
+TIP: Selecionar o IPspace correto garante que o NetApp Backup and Recovery possa configurar uma conexão do ONTAP para seu armazenamento de objetos StorageGRID .
+
+** *Política de backup*: Selecione uma política de backup para armazenamento de objetos existente ou crie uma.
++
+
+TIP: Para criar uma política personalizada, consultelink:br-use-policies-create.html["Criar uma política"] .
+
++
+Para criar uma política, selecione *Criar nova política* e faça o seguinte:
+
++
+*** Digite o nome da política.
+*** Selecione até cinco programações, normalmente com frequências diferentes.
+*** Para políticas de backup para objeto, defina as configurações de DataLock e Proteção contra Ransomware.  Para obter detalhes sobre DataLock e proteção contra ransomware, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
++
+Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você pode optar por proteger seus backups contra exclusão e ataques de ransomware configurando o _DataLock e a proteção contra ransomware_.  O _DataLock_ protege seus arquivos de backup contra modificações ou exclusão, e a _Proteção contra Ransomware_ verifica seus arquivos de backup para procurar evidências de um ataque de ransomware em seus arquivos de backup.
+
+*** Selecione *Criar*.
+
+
+
+
++
+Se o seu cluster estiver usando o ONTAP 9.12.1 ou superior e o seu sistema StorageGRID estiver usando a versão 11.4 ou superior, você poderá optar por colocar backups mais antigos em camadas de arquivamento em nuvem pública após um determinado número de dias.  O suporte atual é para níveis de armazenamento AWS S3 Glacier/S3 Glacier Deep Archive ou Azure Archive. <<Prepare-se para arquivar arquivos de backup mais antigos no armazenamento em nuvem pública,Veja como configurar seus sistemas para essa funcionalidade>> .
+
++
+** *Backup em camadas para nuvem pública*: Selecione o provedor de nuvem para o qual você deseja fazer backups em camadas e insira os detalhes do provedor.
++
+Selecione ou crie um novo cluster StorageGRID .  Para obter detalhes sobre como criar um cluster StorageGRID para que o Console possa descobri-lo, consulte https://docs.netapp.com/us-en/storagegrid-117/["Documentação do StorageGRID"^] .
+
+** *Exportar cópias de snapshot existentes para armazenamento de objetos como cópias de backup*: Se houver cópias de snapshot locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar para este sistema (por exemplo, diário, semanal, etc.), este prompt adicional será exibido.  Marque esta caixa para que todos os instantâneos históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
+
+
+. Selecione *Avançar*.
+
+
+
+
+=== Revise suas seleções
+
+Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
+
+.Passos
+. Na página Revisão, revise suas seleções.
+. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de instantâneo com os rótulos da política de replicação e backup*.  Isso cria instantâneos com um rótulo que corresponde aos rótulos nas políticas de replicação e backup.
+. Selecione *Ativar Backup*.
+
+
+.Resultado
+O NetApp Backup and Recovery começa a fazer os backups iniciais dos seus volumes.  A transferência de linha de base do volume replicado e do arquivo de backup inclui uma cópia completa dos dados de origem.  Transferências subsequentes contêm cópias diferenciais dos dados de armazenamento primário contidos em cópias de Snapshot.
+
+Um volume replicado é criado no cluster de destino que será sincronizado com o volume de armazenamento primário.
+
+Um bucket S3 é criado na conta de serviço indicada pela chave de acesso S3 e pela chave secreta que você inseriu, e os arquivos de backup são armazenados lá.
+
+O Painel de Backup de Volume é exibido para que você possa monitorar o estado dos backups.
+
+Você também pode monitorar o status dos trabalhos de backup e restauração usando olink:br-use-monitor-tasks.html["Página de monitoramento de tarefas"^] .
+
+
+
+=== Mostrar os comandos da API
+
+Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.
+
+.Passos
+. No assistente Ativar backup e recuperação, selecione *Exibir solicitação de API*.
+. Para copiar os comandos para a área de transferência, selecione o ícone *Copiar*.
+

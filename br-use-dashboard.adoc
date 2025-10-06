@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: Monitorar a integridade de suas cargas de trabalho garante que você esteja ciente dos problemas com a proteção da carga de trabalho e possa tomar medidas para resolvê-los.  Visualize o status dos seus backups e restaurações e responda a quaisquer alertas que apareçam no Painel de Backup e Recuperação da NetApp .  Você pode revisar o resumo de proteção, o resumo de restauração, o resumo do sistema e muito mais. 
+---
+= Visualize a integridade da proteção no Painel de Backup e Recuperação do NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitorar a integridade de suas cargas de trabalho garante que você esteja ciente dos problemas com a proteção da carga de trabalho e possa tomar medidas para resolvê-los.  Veja o status dos seus backups e restaurações no Painel de Backup e Recuperação da NetApp .  Você pode revisar o resumo do sistema, o resumo da proteção, o resumo do trabalho, o resumo da restauração e muito mais.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clone de backup e recuperação ou função de visualizador de backup e recuperação. Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Painel*.
++
+** Número de hosts ou VMs descobertos
+** Número de clusters do Kubernetes descobertos
+** Número de destinos de backup no armazenamento de objetos
+** Número de vCenters
+** Número de clusters de armazenamento no ONTAP
+
+
+
+
+
+
+== Ver o resumo da proteção
+
+Revise as seguintes informações no resumo de proteção:
+
+* O número total de bancos de dados, VMs e armazenamentos de dados protegidos e desprotegidos.
++
+
+TIP: Um banco de dados protegido é aquele que tem uma política de backup atribuída.  Um banco de dados desprotegido é aquele que não tem uma política de backup atribuída a ele.
+
+* O número de backups que foram bem-sucedidos, apresentaram um aviso ou falharam.
+* A capacidade total descoberta pelo serviço de backup e a capacidade protegida versus desprotegida.  Passe o mouse sobre o ícone "*i*" para ver os detalhes.
+
+
+
+
+== Ver o resumo do trabalho
+
+Revise o total de trabalhos concluídos, em execução ou com falha no Resumo do trabalho.
+
+.Passos
+. Para cada distribuição de trabalho, altere um filtro para mostrar o resumo de tarefas com falha, em execução e concluídas com base no número de dias, por exemplo, os últimos 30 dias, os últimos 7 dias, as últimas 24 horas ou o último 1 ano.
+. Veja detalhes dos trabalhos com falha, em execução e concluídos selecionando *Exibir monitoramento de trabalhos*.
+
+
+
+
+== Ver o resumo da restauração
+
+Revise as seguintes informações no resumo da restauração:
+
+* O número total de trabalhos de restauração realizados
+* A quantidade total de capacidade que foi restaurada
+* O número de trabalhos de restauração executados no armazenamento local, secundário e de objetos.  Passe o mouse sobre o gráfico para ver os detalhes.
+

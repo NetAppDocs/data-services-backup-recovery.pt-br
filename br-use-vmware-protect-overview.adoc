@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Visão geral da proteção de cargas de trabalho do VMware com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Proteja suas VMs e armazenamentos de dados VMware com o NetApp Backup and Recovery.  O NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com economia de espaço, consistentes em caso de falhas e consistentes com VMs. Você pode fazer backup de cargas de trabalho do VMware no Amazon Web Services S3 ou StorageGRID e restaurar cargas de trabalho do VMware em um host VMware local.
+
+
+NOTE: Esta versão do NetApp Backup and Recovery oferece suporte apenas ao VMware vCenter e não descobre vVols ou VMs em vVols.
+
+Use o NetApp Backup and Recovery para implementar uma estratégia 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
+
+* Várias cópias de dados fornecem proteção multicamadas contra ameaças de segurança cibernética internas e externas.
+* Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.
+* A cópia no local facilita restaurações rápidas, com cópias externas disponíveis caso a cópia no local seja comprometida.
+
+
+[]
+====
+*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+
+====
+Você pode usar o NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do VMware:
+
+* link:br-use-vmware-discovery.html["Descubra as cargas de trabalho da VMware"]
+* link:br-use-vmware-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do VMware"]
+* link:br-use-vmware-backup.html["Fazer backup de cargas de trabalho do VMware"]
+* link:br-use-vmware-restore.html["Restaurar cargas de trabalho do VMware"]
+

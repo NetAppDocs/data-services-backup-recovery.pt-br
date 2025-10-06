@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Gerencie a proteção de datastores e VMs no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode visualizar políticas, armazenamentos de dados e máquinas virtuais antes de fazer backup e restaurar dados com o NetApp Backup and Recovery.  Dependendo da alteração no banco de dados, nas políticas ou nos grupos de recursos, você pode visualizar as atualizações na interface do usuário do NetApp Console.
+
+[]
+====
+*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
+====
+
+
+== Ver políticas
+
+Você pode visualizar todas as políticas padrão predefinidas.  Para cada uma dessas políticas, quando você visualiza os detalhes, todas as políticas e máquinas virtuais associadas são listadas.
+
+. Na interface do usuário do console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
+. No menu suspenso *Configurações*, selecione *Políticas*.
+. Selecione *Exibir detalhes* correspondente à apólice cujos detalhes você deseja visualizar.
+
+
+As políticas e máquinas virtuais associadas são listadas.
+
+
+
+== Exibir armazenamentos de dados e máquinas virtuais
+
+Os datastores e máquinas virtuais protegidos usando o SnapCenter Plug-in for VMware vSphere são exibidos.
+
+.Passos
+. Na interface do usuário do console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais* > *Configurações* > * SnapCenter Plug-in for VMware vSphere*.
+. Selecione o SnapCenter Plug-in for VMware vSphere cujos datastores e máquinas virtuais você deseja ver.
+
+
+
+
+== Desproteger armazenamentos de dados
+
+Você pode desproteger um armazenamento de dados que já estava protegido anteriormente.  Você pode desproteger um armazenamento de dados quando quiser excluir os backups na nuvem ou não quiser mais fazer backup na nuvem.  O armazenamento de dados pode ser protegido novamente após a desproteção ser bem-sucedida.
+
+.Passos
+. Na interface do usuário do console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
+. Selecione o ícone Açõesimage:icon-action.png["Ação"] correspondente ao armazenamento de dados que você deseja desproteger e selecione *Desproteger*.
+
+
+
+
+== Editar o SnapCenter Plug-in for VMware vSphere
+
+Você pode editar os detalhes do SnapCenter Plug-in for VMware vSphere no Console.
+
+.Passos
+. Na interface do usuário do console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais* > *Configurações* > * SnapCenter Plug-in for VMware vSphere*.
+. Selecione o ícone Açõesimage:icon-action.png["Ação"] e selecione *Editar*.
+. Modifique os detalhes conforme necessário.
+. Selecione *Salvar*.
+
+
+
+
+== Atualizar recursos e backups
+
+Se quiser visualizar os últimos armazenamentos de dados e backups que foram adicionados ao aplicativo, atualize os recursos e backups.  Isso iniciará a descoberta dos recursos e backups e os detalhes mais recentes serão exibidos.
+
+. Selecione *Backup e Recuperação* > *Máquinas Virtuais*.
+. No menu suspenso *Configurações*, selecione * SnapCenter Plug-in for VMware vSphere*.
+. Selecione o ícone Açõesimage:icon-action.png["Ação"] correspondente ao SnapCenter Plug-in for VMware vSphere e selecione *Atualizar recursos e backups*.
+
+
+
+
+== Atualizar política ou grupo de recursos
+
+Se houver uma alteração na política ou no grupo de recursos, você deverá atualizar o relacionamento de proteção.
+
+. Selecione *Backup e Recuperação* > *Máquinas Virtuais*.
+. Selecione o ícone Açõesimage:icon-action.png["Ação"] correspondente ao armazenamento de dados e selecione *Atualizar proteção*.
+
+
+
+
+== Cancelar registro do SnapCenter Plug-in for VMware vSphere
+
+Todos os armazenamentos de dados e máquinas virtuais associados ao SnapCenter Plug-in for VMware vSphere ficarão desprotegidos.
+
+. Selecione *Backup e Recuperação* > *Máquinas Virtuais*.
+. No menu suspenso *Configurações*, selecione * SnapCenter Plug-in for VMware vSphere*.
+. Selecione o ícone Açõesimage:icon-action.png["Ação"] correspondente ao SnapCenter Plug-in for VMware vSphere e selecione *Cancelar registro*.
+
+
+
+
+== Monitorar empregos
+
+Os trabalhos são criados para todas as operações de backup e recuperação do NetApp .  Você pode monitorar todos os trabalhos e todas as subtarefas que são executadas como parte de cada tarefa.
+
+. Selecione *Backup e recuperação* > *Monitoramento de tarefas*.
++
+Quando você inicia uma operação, uma janela aparece informando que o trabalho foi iniciado.  Você pode selecionar o link para monitorar o trabalho.
+
+. Selecione a tarefa principal para visualizar as subtarefas e o status de cada uma delas.
+

@@ -1,0 +1,245 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-restore.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Restaure cargas de trabalho de banco de dados de uma cópia de instantâneo, um backup de carga de trabalho replicado para armazenamento secundário ou de backups armazenados no armazenamento de objetos. 
+---
+= Restaure cargas de trabalho do Microsoft SQL Server com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure cargas de trabalho do Microsoft SQL Server de cópias de snapshot, de um backup de carga de trabalho replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.  Você pode restaurar uma carga de trabalho para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
+
+.Restaurar a partir desses locais
+Você pode restaurar cargas de trabalho de diferentes locais de partida:
+
+* Restaurar de um local primário
+* Restaurar de um recurso replicado
+* Restaurar de um backup de armazenamento de objetos
+
+
+.Restaurar esses pontos
+Você pode restaurar dados para o snapshot mais recente ou para estes pontos:
+
+* Restaurar a partir de instantâneos
+* Restaurar para um ponto específico no tempo.  Isso é útil se você souber o nome e a localização do arquivo, além da data em que ele esteve em boas condições pela última vez.
+* Restaurar para o backup mais recente
+
+
+.Considerações sobre restauração de armazenamento de objetos
+Se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você execute a verificação.
+
+
+TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.
+
+
+
+== Como funciona a restauração de cargas de trabalho
+
+Ao restaurar cargas de trabalho, ocorre o seguinte:
+
+* Quando você restaura uma carga de trabalho de um arquivo de backup, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
+* Ao restaurar uma carga de trabalho replicada, você pode restaurar a carga de trabalho para o sistema original ou para um sistema ONTAP local.
++
+image:diagram_browse_restore_volume-unified.png["Um diagrama que mostra o fluxo para restaurar um recurso"]
+
+* Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o sistema original ou para um sistema ONTAP local.
+
+
+
+
+== Métodos de restauração
+
+Você pode restaurar cargas de trabalho usando um dos seguintes métodos.  Normalmente, escolha um dos seguintes métodos com base nas suas necessidades de restauração:
+
+* *Da página Restaurar*: Use isto quando precisar restaurar um recurso, mas não se lembra do nome exato ou do local em que ele reside, ou da data em que esteve em boas condições pela última vez. Você pode pesquisar o instantâneo usando filtros.
+* *Da página Inventário*: Use isto quando precisar restaurar um recurso específico da última semana ou mês — e você souber o nome e a localização do recurso, além da data em que ele esteve em boas condições pela última vez.  Navegue por uma lista de recursos para encontrar aquele que deseja restaurar.
+
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+
+== Restaurar dados de carga de trabalho a partir da opção Restaurar
+
+Restaure cargas de trabalho do banco de dados usando a opção Restaurar.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Restaurar*.
+. Selecione o banco de dados que você deseja restaurar.  Utilize os filtros para pesquisar.
+. Selecione a opção de restauração:
++
+** Restaurar a partir de instantâneos
+** Restaurar para um ponto específico no tempo.  Isso é útil se você souber o nome e a localização do arquivo, além da data em que ele esteve em boas condições pela última vez.
+** Restaurar para o backup mais recente
+
+
+
+
+
+
+=== Restaurar cargas de trabalho de snapshots
+
+. Continuando na página Opções de restauração, selecione *Restaurar de instantâneos*.
++
+Uma lista de instantâneos é exibida.
+
+. Selecione o instantâneo que você deseja restaurar.
+. Selecione *Avançar*.
++
+Você verá as opções de destino em seguida.
+
+. Na página Detalhes do destino, insira as seguintes informações:
++
+** *Configurações de destino*: escolha se deseja restaurar os dados para o local original ou para um local alternativo.  Para um local alternativo, selecione o nome do host e a instância, insira o nome do banco de dados e insira o caminho de destino onde deseja restaurar o instantâneo.
+** *Opções de pré-restauração*:
++
+*** *Substituir o banco de dados com o mesmo nome durante a restauração*: Durante a restauração, o nome original do banco de dados é preservado.
+*** *Manter configurações de replicação do banco de dados SQL*: mantém as configurações de replicação do banco de dados SQL após a operação de restauração.
+*** *Criar backup do log de transações antes da restauração*: Cria um backup do log de transações antes da operação de restauração.***  *Encerrar a restauração se o backup do log de transações antes da restauração falhar*: Interrompe a operação de restauração se o backup do log de transações falhar.
+*** *Prescript*: Insira o caminho completo para um script que deve ser executado antes da operação de restauração, quaisquer argumentos que o script use e quanto tempo esperar para que o script seja concluído.
+
+
+** *Opções pós-restauração*:
++
+*** *Operacional*, mas indisponível para restaurar logs de transações adicionais.  Isso coloca o banco de dados online novamente depois que os backups do log de transações são aplicados.
+*** *Não operacional*, mas disponível para restaurar logs de transações adicionais.  Mantém o banco de dados em um estado não operacional após a operação de restauração enquanto restaura backups do log de transações.  Esta opção é útil para restaurar logs de transações adicionais.
+*** *Modo somente leitura* e disponível para restaurar logs de transações adicionais.  Restaura o banco de dados em modo somente leitura e aplica backups de log de transações.
+*** *Postscript*: Insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+
+
+
+
+. Selecione *Restaurar*.
+
+
+
+
+=== Restaurar para um ponto específico no tempo
+
+O NetApp Backup and Recovery usa logs e os snapshots mais recentes para criar uma restauração pontual dos seus dados.
+
+. Continuando na página Opções de restauração, selecione *Restaurar para um ponto específico no tempo*.
+. Selecione *Avançar*.
+. Na página Restaurar para um ponto específico no tempo, insira as seguintes informações:
++
+** *Data e hora para restauração de dados*: Insira a data e hora exatas dos dados que você deseja restaurar.  Esta data e hora são do host do banco de dados Microsoft SQL Server.
+
+
+. Selecione *Pesquisar*.
+. Selecione o instantâneo que você deseja restaurar.
+. Selecione *Avançar*.
+. Na página Detalhes do destino, insira as seguintes informações:
++
+** *Configurações de destino*: escolha se deseja restaurar os dados para o local original ou para um local alternativo.  Para um local alternativo, selecione o nome do host e a instância, insira o nome do banco de dados e insira o caminho de destino.
+** *Opções de pré-restauração*:
++
+*** *Preservar nome original do banco de dados*: Durante a restauração, o nome original do banco de dados é preservado.
+*** *Manter configurações de replicação do banco de dados SQL*: mantém as configurações de replicação do banco de dados SQL após a operação de restauração.
+*** *Prescript*: Insira o caminho completo para um script que deve ser executado antes da operação de restauração, quaisquer argumentos que o script use e quanto tempo esperar para que o script seja concluído.
+
+
+** *Opções pós-restauração*:
++
+*** *Operacional*, mas indisponível para restaurar logs de transações adicionais.  Isso coloca o banco de dados online novamente depois que os backups do log de transações são aplicados.
+*** *Não operacional*, mas disponível para restaurar logs de transações adicionais.  Mantém o banco de dados em um estado não operacional após a operação de restauração enquanto restaura backups do log de transações.  Esta opção é útil para restaurar logs de transações adicionais.
+*** *Modo somente leitura* e disponível para restaurar logs de transações adicionais.  Restaura o banco de dados em modo somente leitura e aplica backups de log de transações.
+*** *Postscript*: Insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+
+
+
+
+. Selecione *Restaurar*.
+
+
+
+
+=== Restaurar para o backup mais recente
+
+Esta opção usa os backups completos e de log mais recentes para restaurar seus dados ao último estado bom.  O sistema verifica os logs do último instantâneo até o presente.  O processo rastreia alterações e atividades para restaurar a versão mais recente e precisa dos seus dados.
+
+. Continuando na página Opções de restauração, selecione *Restaurar para o backup mais recente*.
++
+O NetApp Backup and Recovery mostra os snapshots disponíveis para a operação de restauração.
+
+. Na página Restaurar para o estado mais recente, selecione o local do instantâneo do armazenamento local, secundário ou de objeto.
+. Selecione *Avançar*.
+. Na página Detalhes do destino, insira as seguintes informações:
++
+** *Configurações de destino*: escolha se deseja restaurar os dados para o local original ou para um local alternativo.  Para um local alternativo, selecione o nome do host e a instância, insira o nome do banco de dados e insira o caminho de destino.
+** *Opções de pré-restauração*:
++
+*** *Substituir o banco de dados com o mesmo nome durante a restauração*: Durante a restauração, o nome original do banco de dados é preservado.
+*** *Manter configurações de replicação do banco de dados SQL*: mantém as configurações de replicação do banco de dados SQL após a operação de restauração.
+*** *Criar backup do log de transações antes da restauração*: Cria um backup do log de transações antes da operação de restauração.
+*** *Encerrar a restauração se o backup do log de transações antes da restauração falhar*: Interrompe a operação de restauração se o backup do log de transações falhar.
+*** *Prescript*: Insira o caminho completo para um script que deve ser executado antes da operação de restauração, quaisquer argumentos que o script use e quanto tempo esperar para que o script seja concluído.
+
+
+** *Opções pós-restauração*:
++
+*** *Operacional*, mas indisponível para restaurar logs de transações adicionais.  Isso coloca o banco de dados online novamente depois que os backups do log de transações são aplicados.
+*** *Não operacional*, mas disponível para restaurar logs de transações adicionais.  Mantém o banco de dados em um estado não operacional após a operação de restauração enquanto restaura backups do log de transações.  Esta opção é útil para restaurar logs de transações adicionais.
+*** *Modo somente leitura* e disponível para restaurar logs de transações adicionais.  Restaura o banco de dados em modo somente leitura e aplica backups de log de transações.
+*** *Postscript*: Insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+
+
+
+
+. Selecione *Restaurar*.
+
+
+
+
+== Restaurar dados de carga de trabalho da opção Inventário
+
+Restaure cargas de trabalho do banco de dados na página Inventário.  Usando a opção Inventário, você pode restaurar apenas bancos de dados, não instâncias.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha o host onde o recurso que você deseja restaurar está localizado.
+. Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Ver detalhes*.
+. Na página do Microsoft SQL Server, selecione a guia *Bancos de dados*.
+. Na guia Bancos de dados, selecione o banco de dados que mostra o status "Protegido", indicando que há um backup que você pode restaurar.
+. Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Restaurar*.
++
+As mesmas três opções aparecem quando você restaura na página Restaurar:
+
++
+** Restaurar a partir de instantâneos
+** Restaurar para um ponto específico no tempo
+** Restaurar para o backup mais recente
+
+
+. Continue com os mesmos passos para a opção de restauração na página Restaurar
+
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

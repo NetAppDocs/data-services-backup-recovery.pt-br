@@ -1,0 +1,121 @@
+---
+indexpage:
+  title: Documentação do NetApp Backup and Recovery
+  summary: O NetApp Backup and Recovery é um serviço de dados que fornece proteção
+    de dados eficiente, segura e econômica para todas as suas cargas de trabalho ONTAP
+    , incluindo volumes, bancos de dados, máquinas virtuais e cargas de trabalho do
+    Kubernetes.
+  keywords: netapp console, netapp backup recovery, ontap, on-premises, data protection,
+    sql, workloads, backup,
+  lead: O NetApp Backup and Recovery é um serviço de dados que fornece proteção de
+    dados eficiente, segura e econômica para todas as suas cargas de trabalho ONTAP
+    , incluindo volumes, bancos de dados, máquinas virtuais e cargas de trabalho do
+    Kubernetes.
+  tiles:
+  - title: Começar
+    links:
+    - title: Saiba mais sobre o NetApp Backup and Recovery
+      url: concept-backup-to-cloud.html
+    - title: O que há de novo
+      url: whats-new.html
+    - title: Pré-requisitos
+      url: concept-start-prereq.html
+    - title: Configure destinos de backup antes de usar o NetApp Backup and Recovery
+      url: br-start-setup.html
+    - title: Configurar as configurações de backup e recuperação do NetApp
+      url: br-start-configure.html
+  - title: Proteja cargas de trabalho de volumes ONTAP
+    links:
+    - title: Visão geral das cargas de trabalho de volumes Protect ONTAP
+      url: prev-ontap-protect-overview.html
+    - title: Planeje sua jornada de proteção para cargas de trabalho de volumes ONTAP
+      url: prev-ontap-protect-journey.html
+    - title: Gerenciar políticas para cargas de trabalho de volumes ONTAP
+      url: prev-ontap-policy-manage.html
+    - title: Opções de política de backup para objeto para volumes ONTAP
+      url: prev-ontap-policy-object-options.html
+    - title: Restaurar cargas de trabalho de volumes ONTAP
+      url: prev-ontap-restore.html
+  - title: Proteja as cargas de trabalho do Microsoft SQL Server
+    links:
+    - title: Visão geral da proteção de cargas de trabalho do Microsoft SQL Server
+      url: br-use-mssql-protect-overview.html
+    - title: Descubra cargas de trabalho do Microsoft SQL Server e, opcionalmente,
+        importe recursos do SnapCenter
+      url: br-start-discover.html
+    - title: Fazer backup de cargas de trabalho do Microsoft SQL Server
+      url: br-use-mssql-backup.html
+    - title: Restaurar cargas de trabalho do Microsoft SQL Server
+      url: br-use-mssql-restore.html
+    - title: Clonar cargas de trabalho do Microsoft SQL Server
+      url: br-use-mssql-clone.html
+  - title: Proteja as cargas de trabalho do VMware (visualização privada)
+    links:
+    - title: Visão geral das cargas de trabalho do Protect VMware
+      url: br-use-vmware-protect-overview.html
+    - title: Descubra as cargas de trabalho da VMware
+      url: br-use-vmware-discovery.html
+    - title: Crie e gerencie grupos de proteção para cargas de trabalho do VMware
+      url: br-use-vmware-protection-groups.html
+    - title: Fazer backup de cargas de trabalho do VMware
+      url: br-use-vmware-backup.html
+    - title: Restaurar cargas de trabalho do VMware
+      url: br-use-vmware-restore.html
+  - title: Proteja cargas de trabalho do KVM (visualização privada)
+    links:
+    - title: Visão geral das cargas de trabalho de proteção do KVM
+      url: "/br-use-kvm-protect-overview.html"
+    - title: Descubra cargas de trabalho KVM
+      url: "/br-start-discover-kvm.html"
+    - title: Crie e gerencie grupos de proteção para cargas de trabalho KVM
+      url: "/br-use-kvm-protection-groups.html"
+    - title: Fazer backup de cargas de trabalho do KVM
+      url: "/br-use-kvm-backup.html"
+    - title: Restaurar cargas de trabalho do KVM
+      url: "/br-use-kvm-restore.html"
+  - title: Proteja cargas de trabalho do Hyper-V (visualização privada)
+    links:
+    - title: Visão geral das cargas de trabalho de proteção do Hyper-V
+      url: "/br-use-hyperv-protect-overview.html"
+    - title: Descubra as cargas de trabalho do Hyper-V
+      url: "/br-start-discover-hyperv.html"
+    - title: Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V
+      url: "/br-use-hyperv-protection-groups.html"
+    - title: Fazer backup de cargas de trabalho do Hyper-V
+      url: "/br-use-hyperv-backup.html"
+    - title: Restaurar cargas de trabalho do Hyper-V
+      url: "/br-use-hyperv-restore.html"
+  - title: Proteja cargas de trabalho do Oracle (visualização privada)
+    links:
+    - title: Visão geral das cargas de trabalho do Protect Oracle
+      url: "/br-use-oracle-protect-overview.html"
+    - title: Descubra as cargas de trabalho da Oracle
+      url: "/br-start-discover-oracle.html"
+    - title: Crie e gerencie grupos de proteção para cargas de trabalho Oracle
+      url: "/br-use-oracle-protection-groups.html"
+    - title: Fazer backup de cargas de trabalho Oracle
+      url: "/br-use-oracle-backup.html"
+    - title: Restaurar cargas de trabalho Oracle
+      url: "/br-use-oracle-restore.html"
+  - title: Proteja as cargas de trabalho do Kubernetes (visualização)
+    links:
+    - title: Visão geral das cargas de trabalho do Protect Kubernetes
+      url: br-use-kubernetes-protect-overview.html
+    - title: Descubra as cargas de trabalho do Kubernetes
+      url: br-start-discover-kubernetes.html
+    - title: Adicionar e proteger aplicativos Kubernetes
+      url: br-use-protect-kubernetes-applications.html
+    - title: Gerenciar clusters do Kubernetes
+      url: br-use-manage-kubernetes-clusters.html
+    - title: Gerenciar aplicativos Kubernetes
+      url: br-use-manage-kubernetes-applications.html
+    - title: Restaurar aplicativos Kubernetes
+      url: br-use-restore-kubernetes-applications.html
+  - title: Blogs e comunidade
+    links:
+    - title: Console NetApp
+      url: https://www.netapp.com/console
+    - title: Serviços de dados NetApp
+      url: https://www.netapp.com/data-services/
+    - title: Comunidade NetApp
+      url: https://community.netapp.com/

@@ -1,0 +1,42 @@
+= Descubra seus sistemas ONTAP no NetApp Console
+:allow-uri-read: 
+
+
+Você precisará preparar seu sistema ONTAP local de origem e quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP .
+
+Preparar seus clusters ONTAP envolve as seguintes etapas:
+
+* Descubra seus sistemas ONTAP no NetApp Console
+* Verifique os requisitos do sistema ONTAP
+* Verifique os requisitos de rede ONTAP para fazer backup de dados no armazenamento de objetos
+* Verifique os requisitos de rede ONTAP para replicar volumes
+
+
+
+
+=== Descubra seus sistemas ONTAP no NetApp Console
+
+Tanto o sistema ONTAP local de origem quanto quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP devem estar disponíveis na página *Sistemas* do NetApp Console.
+
+Você precisará saber o endereço IP de gerenciamento do cluster e a senha da conta de usuário administrador para adicionar o cluster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda como descobrir um cluster"^] .
+
+
+
+=== Verifique os requisitos do sistema ONTAP
+
+Certifique-se de que os seguintes requisitos do ONTAP sejam atendidos:
+
+* Mínimo de ONTAP 9.8; ONTAP 9.8P13 e posterior é recomendado.
+* Uma licença do SnapMirror (incluída como parte do Pacote Premium ou Pacote de Proteção de Dados).
++
+*Observação:* O "Hybrid Cloud Bundle" não é necessário ao usar o NetApp Backup and Recovery.
+
++
+Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gerencie suas licenças de cluster"^] .
+
+* A hora e o fuso horário estão definidos corretamente.  Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure o tempo do seu cluster"^] .
+* Se você for replicar dados, verifique se os sistemas de origem e destino estão executando versões compatíveis do ONTAP antes de replicar os dados.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versões ONTAP compatíveis para relacionamentos SnapMirror"^] .
+
+

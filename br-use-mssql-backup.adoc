@@ -1,0 +1,158 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-backup.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.  Você pode implementar uma estratégia 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. 
+---
+= Faça backup de cargas de trabalho do Microsoft SQL Server com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure e StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
+
+* Para fazer backup de cargas de trabalho em um cronograma, crie políticas que controlem as operações de backup e restauração. Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
+* Configure o diretório de log para hosts descobertos antes de iniciar um backup.
+* Faça backup das cargas de trabalho agora (crie um backup sob demanda agora).
+
+
+
+
+== Exibir status de proteção da carga de trabalho
+
+Antes de iniciar um backup, visualize o status de proteção das suas cargas de trabalho.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clone de backup e recuperação ou função de visualizador de backup e recuperação. Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Revise os detalhes nas guias Hosts, Grupos de proteção, Grupos de disponibilidade, Instâncias e Bancos de dados.
+
+
+
+
+== Configurar o diretório de log para hosts descobertos
+
+Antes de fazer backup de suas cargas de trabalho, defina o caminho para os logs de atividades dos hosts descobertos.  Isso ajuda você a rastrear o status das operações.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione um host.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Configurar diretório de log*.
+. Forneça o caminho do host ou navegue por uma lista de hosts ou nós no host para localizar onde você deseja que o log do host seja armazenado.
+. Selecione aqueles nos quais você deseja armazenar os logs.
++
+
+NOTE: Os campos exibidos diferem dependendo do modelo de implantação selecionado, por exemplo, instância de cluster de failover ou autônomo.
+
+. Selecione *Salvar*.
+
+
+
+
+== Crie um grupo de proteção
+
+Você pode criar um grupo de proteção para gerenciar as operações de backup e restauração de um conjunto de cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho que você deseja proteger juntas.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione *Criar grupo de proteção*.
+. Forneça um nome para o grupo de proteção.
+. Selecione as instâncias ou bancos de dados que você deseja incluir no grupo de proteção.
+. Selecione *Avançar*.
+. Selecione a *Política de backup* que você deseja aplicar ao grupo de proteção.
++
+Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política. Ver link:br-use-policies-create.html["Criar políticas"] para maiores informações.
+
+. Selecione *Avançar*.
+. Revise a configuração.
+. Selecione *Criar* para criar o grupo de proteção.
+
+
+
+
+== Faça backup de cargas de trabalho agora com um backup sob demanda
+
+Crie um backup sob demanda imediatamente.  Talvez você queira executar um backup sob demanda se estiver prestes a fazer alterações no seu sistema e quiser garantir que tenha um backup antes de começar.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupo de Proteção*, *Instâncias* ou *Bancos de Dados*.
+. Selecione a instância ou banco de dados que você deseja fazer backup.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Faça backup agora*.
+. Selecione a política que você deseja aplicar ao backup.
+. Selecione o nível de agendamento.
+. Selecione *Fazer backup agora*.
+
+
+
+
+== Suspender o agendamento de backup
+
+Suspender o agendamento impede que o backup seja executado temporariamente no horário agendado.  Talvez você queira fazer isso se estiver realizando manutenção no sistema ou se estiver tendo problemas com o backup.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupo de Proteção*, *Instâncias* ou *Bancos de Dados*.
+. Selecione o grupo de proteção, instância ou banco de dados que você deseja suspender.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Suspender*.
+
+
+
+
+== Excluir um grupo de proteção
+
+Você pode criar um grupo de proteção para gerenciar as operações de backup e restauração de um conjunto de cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho que você deseja proteger juntas.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Excluir grupo de proteção*.
+
+
+
+
+== Remover proteção de uma carga de trabalho
+
+Você pode remover a proteção de uma carga de trabalho se não quiser mais fazer backup dela ou se quiser parar de gerenciá-la no NetApp Backup and Recovery.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupo de Proteção*, *Instâncias* ou *Bancos de Dados*.
+. Selecione o grupo de proteção, instância ou banco de dados.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Remover proteção*.
+. Na caixa de diálogo Remover proteção, selecione se deseja manter os backups e metadados ou excluí-los.
+. Selecione *Remover* para confirmar a ação.
+

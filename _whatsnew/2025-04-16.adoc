@@ -1,0 +1,73 @@
+= Melhorias na interface do usuário
+:allow-uri-read: 
+
+
+
+
+=== Melhorias na interface do usuário
+
+Esta versão melhora sua experiência simplificando a interface:
+
+* A remoção da coluna Agregado das tabelas Volumes, juntamente com as colunas Política de Snapshot, Política de Backup e Política de Replicação da tabela Volume no Painel V2, resulta em um layout mais simplificado.
+* Excluir ambientes de trabalho não ativados da lista suspensa torna a interface menos confusa, a navegação mais eficiente e o carregamento mais rápido.
+* Embora a classificação na coluna Tags esteja desabilitada, você ainda pode visualizar as tags, garantindo que informações importantes permaneçam facilmente acessíveis.
+* A remoção de rótulos nos ícones de proteção contribui para uma aparência mais limpa e diminui o tempo de carregamento.
+* Durante o processo de ativação do ambiente de trabalho, uma caixa de diálogo exibe um ícone de carregamento para fornecer feedback até que o processo de descoberta seja concluído, aumentando a transparência e a confiança nas operações do sistema.
+
+
+
+
+=== Painel de Volume Aprimorado (Visualização)
+
+O Volume Dashboard agora carrega em menos de 10 segundos, proporcionando uma interface muito mais rápida e eficiente.  Esta versão de pré-visualização está disponível para clientes selecionados, oferecendo a eles uma prévia dessas melhorias.
+
+
+
+=== Suporte para armazenamento de objetos Wasabi de terceiros (visualização)
+
+O NetApp Backup and Recovery agora estende seu suporte a armazenamentos de objetos de terceiros, com foco principal no Wasabi.  Este novo recurso de visualização permite que você aproveite qualquer armazenamento de objetos compatível com S3 para suas necessidades de backup e recuperação.
+
+
+
+==== Começando com Wasabi
+
+Para começar a usar o armazenamento de terceiros como um armazenamento de objetos, você deve habilitar um sinalizador no agente do Console.  Em seguida, você pode inserir os detalhes de conexão do seu armazenamento de objetos de terceiros e integrá-lo aos seus fluxos de trabalho de backup e recuperação.
+
+.Passos
+. Conecte-se via SSH ao seu conector.
+. Acesse o contêiner do servidor cbs do NetApp Backup and Recovery:
++
+[listing]
+----
+docker exec -it cloudmanager_cbs sh
+----
+. Abra o `default.json` arquivo dentro do `config` pasta via VIM ou qualquer outro editor:
++
+[listing]
+----
+vi default.json
+----
+. Modificar `allow-s3-compatible` : falso para `allow-s3-compatible` : verdadeiro.
+. Salve as alterações.
+. Saia do contêiner.
+. Reinicie o contêiner do servidor cbs do NetApp Backup and Recovery.
+
+
+.Resultado
+Depois que o contêiner estiver LIGADO novamente, abra a interface do usuário do NetApp Backup and Recovery.  Ao iniciar um backup ou editar uma estratégia de backup, você verá o novo provedor "Compatível com S3" listado junto com outros provedores de backup da AWS, Microsoft Azure, Google Cloud, StorageGRID e ONTAP S3.
+
+
+
+==== Limitações do modo de visualização
+
+Embora esse recurso esteja em versão prévia, considere as seguintes limitações:
+
+* Traga seu próprio balde (BYOB) não é suportado.
+* Não há suporte para habilitar o DataLock em uma política.
+* Não há suporte para habilitar o modo de arquivamento em uma política.
+* Somente ambientes ONTAP locais são suportados.
+* O MetroCluster não é suportado.
+* Opções para habilitar criptografia em nível de bucket não são suportadas.
+
+
+Durante esta prévia, incentivamos você a explorar esse novo recurso e fornecer feedback sobre a integração com armazenamentos de objetos de terceiros antes que a funcionalidade completa seja implementada.

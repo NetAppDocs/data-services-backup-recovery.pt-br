@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kvm-vms.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. 
+---
+= Restaurar aplicativos Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. Para restaurar um aplicativo, ele precisa ter pelo menos um ponto de restauração disponível. Um ponto de restauração consiste no snapshot local ou no backup no repositório de objetos (ou ambos). Você pode restaurar um aplicativo usando o arquivo local, secundário ou do repositório de objetos.
+
+.Função necessária do NetApp Console
+Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Na lista de aplicativos, escolha um aplicativo que você deseja restaurar e selecione o menu Ações associado.
+. Selecione *Exibir e restaurar*.
++
+A lista de pontos de restauração é exibida.
+
+. Abra o menu Ações do ponto de restauração que você deseja usar e selecione *Restaurar*.
+
+
+[discrete]
+===== Configurações gerais
+
+. Escolha a origem da restauração (local ou armazenamento de objetos).
+. Escolha o cluster de destino na lista *Cluster*.
+. Escolha o namespace de destino da restauração.
++
+Você pode restaurar para o namespace original ou restaurar para um novo namespace.
+
+. Selecione *Avançar*.
+
+
+[discrete]
+===== Seleção de recursos
+
+. Escolha se deseja restaurar todos os recursos associados ao aplicativo ou usar um filtro para selecionar recursos específicos para restaurar:
+
+
+[role="tabbed-block"]
+====
+.Restaurar todos os recursos
+--
+. Selecione *Restaurar todos os recursos*.
+. Selecione *Avançar*.
+
+
+--
+.Restaurar recursos específicos
+--
+. Selecione *Recursos seletivos*.
+. Escolha o comportamento do filtro de recursos.  Se você escolher *Incluir*, os recursos selecionados serão restaurados.  Se você escolher *Excluir*, os recursos selecionados não serão restaurados.
+. Selecione *Adicionar regras* para adicionar regras que definem filtros para selecionar recursos.  Você precisa de pelo menos uma regra para filtrar recursos.
++
+Cada regra pode filtrar critérios como namespace do recurso, rótulos, grupo, versão e tipo.
+
+. Selecione *Salvar* para salvar cada regra.
+. Depois de adicionar todas as regras necessárias, selecione *Pesquisar* para ver os recursos disponíveis no arquivo de backup que correspondem aos seus critérios de filtro.
++
+
+NOTE: Os recursos mostrados são os recursos que existem atualmente no cluster.
+
+. Quando estiver satisfeito com os resultados, selecione *Avançar*.
+
+
+--
+====
+[discrete]
+===== Configurações de destino
+
+. Escolha restaurar para a classe de armazenamento padrão ou para uma classe de armazenamento diferente.
+. Opcionalmente, se você optar por restaurar para uma classe de armazenamento diferente, selecione uma classe de armazenamento de destino para corresponder a cada classe de armazenamento de origem.
+. Selecione *Restaurar*.
+

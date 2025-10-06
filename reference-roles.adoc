@@ -1,0 +1,496 @@
+---
+sidebar: sidebar 
+permalink: reference-roles.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, roles, permissions, access control, role-based access control, rbac 
+summary: O NetApp Backup and Recovery emprega funções para controlar o acesso que cada usuário tem a recursos e ações específicos 
+---
+= Funções de gerenciamento de identidade e acesso (IAM) do NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery emprega o Identity and Access Management (IAM) para controlar o acesso que cada usuário tem a recursos e ações específicos.
+
+O serviço usa as seguintes funções específicas do NetApp Backup and Recovery.
+
+* *Superadministrador de backup e recuperação*: execute qualquer ação no NetApp Backup and Recovery.
+* *Administrador de backup e recuperação*: execute backups em snapshots locais, replique para armazenamento secundário e faça backup em ações de armazenamento de objetos no NetApp Backup and Recovery.
+* *Administrador de restauração de backup e recuperação*: restaure cargas de trabalho usando o NetApp Backup and Recovery.
+* *Administrador de clones de backup e recuperação*: clone aplicativos e dados usando o NetApp Backup and Recovery.
+* *Visualizador de backup e recuperação*: visualize informações no NetApp Backup and Recovery, mas não execute nenhuma ação.
+
+
+Para obter detalhes sobre todas as funções de acesso do NetApp Console, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["a documentação de configuração e administração do Console"^] .
+
+
+
+== Funções usadas para ações comuns
+
+A tabela a seguir indica as ações que cada função do NetApp Backup and Recovery pode executar para todas as cargas de trabalho.
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| Recurso e ação | Superadministrador de backup e recuperação | Administrador de backup e recuperação | Administração de restauração de backup e recuperação | Administrador clone de backup e recuperação | Visualizador de backup e recuperação 
+
+
+| Adicionar, editar ou excluir hosts | Sim | Não  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Instalar plugins | Sim | Não  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Adicionar credenciais (host, instância, vCenter) | Sim | Não  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Ver painel e todas as guias | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Iniciar teste gratuito | Sim | Não  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Iniciar descoberta de cargas de trabalho | Não | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+
+
+| Ver informações da licença | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Ativar licença | Sim | Não  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Ver hosts | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+6+| *Horários*: 
+
+
+| Ativar agendamentos | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+
+
+| Suspender horários | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+
+
+6+| *Políticas e proteção*: 
+
+
+| Ver planos de proteção | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar, modificar ou excluir proteção | Sim | Sim  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Restaurar cargas de trabalho | Sim | Não  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Criar clone, dividir clone ou excluir clone | Sim | Não  a| 
+Não
+ a| 
+Sim
+ a| 
+Não
+
+
+
+| Criar, modificar ou excluir política | Sim | Sim  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+6+| *Relatórios*: 
+
+
+| Ver relatórios | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar relatórios | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Não
+
+
+
+| Excluir relatórios | Sim | Não  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+6+| *Importar do SnapCenter e gerenciar host*: 
+
+
+| Exibir dados importados do SnapCenter | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Importar dados do SnapCenter | Sim | Sim  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Gerenciar (migrar) host | Sim | Sim  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+
+
+6+| *Configurar definições*: 
+
+
+| Configurar diretório de log | Sim | Sim  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+
+
+
+| Associar ou remover credenciais de instância | Sim | Sim  a| 
+Sim
+ a| 
+Não
+ a| 
+Não
+
+
+
+6+| *Baldes*: 
+
+
+| Ver baldes | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar, editar ou excluir bucket | Sim | Sim  a| 
+Não
+ a| 
+Não
+ a| 
+Não
+
+|===
+
+
+== Funções usadas para ações específicas da carga de trabalho
+
+A tabela a seguir indica as ações que cada função de backup e recuperação do NetApp pode executar para cargas de trabalho específicas.
+
+
+
+=== Cargas de trabalho do Kubernetes
+
+Esta tabela indica as ações que cada função de backup e recuperação do NetApp pode executar para ações específicas de cargas de trabalho do Kubernetes.
+
+[cols="20,20,15,15a,15a"]
+|===
+| Recurso e ação | Superadministrador de backup e recuperação | Administrador de backup e recuperação | Administração de restauração de backup e recuperação | Visualizador de backup e recuperação 
+
+
+| Exibir clusters, namespaces, classes de armazenamento e recursos de API | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Adicionar novos clusters do Kubernetes | Sim | Sim  a| 
+Não
+ a| 
+Não
+
+
+
+| Atualizar configurações de cluster | Sim | Não  a| 
+Não
+ a| 
+Não
+
+
+
+| Remover clusters do gerenciamento | Sim | Não  a| 
+Não
+ a| 
+Não
+
+
+
+| Ver aplicações | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar e definir novos aplicativos | Sim | Sim  a| 
+Não
+ a| 
+Não
+
+
+
+| Atualizar configurações do aplicativo | Sim | Sim  a| 
+Não
+ a| 
+Não
+
+
+
+| Remover aplicativos do gerenciamento | Sim | Sim  a| 
+Não
+ a| 
+Não
+
+
+
+| Exibir recursos protegidos e status de backup | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Crie backups e proteja aplicativos com políticas | Sim | Sim  a| 
+Não
+ a| 
+Não
+
+
+
+| Desproteja aplicativos e exclua backups | Sim | Sim  a| 
+Não
+ a| 
+Não
+
+
+
+| Exibir pontos de recuperação e resultados do visualizador de recursos | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Restaurar aplicativos de pontos de recuperação | Sim | Não  a| 
+Sim
+ a| 
+Não
+
+
+
+| Ver políticas de backup do Kubernetes | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar políticas de backup do Kubernetes | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Atualizar políticas de backup | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Excluir políticas de backup | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Exibir ganchos de execução e fontes de ganchos | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Crie ganchos de execução e fontes de ganchos | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Atualizar ganchos de execução e fontes de ganchos | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Excluir ganchos de execução e fontes de ganchos | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Exibir modelos de ganchos de execução | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Criar modelos de gancho de execução | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Atualizar modelos de gancho de execução | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Excluir modelos de gancho de execução | Sim | Sim  a| 
+Sim
+ a| 
+Não
+
+
+
+| Visualizar resumo da carga de trabalho e painéis analíticos | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+
+
+| Exibir buckets e destinos de armazenamento do StorageGRID | Sim | Sim  a| 
+Sim
+ a| 
+Sim
+
+|===

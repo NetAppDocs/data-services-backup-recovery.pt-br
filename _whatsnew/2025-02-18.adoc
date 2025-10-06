@@ -1,0 +1,51 @@
+= Indexação de alto desempenho
+:allow-uri-read: 
+
+
+
+
+=== Indexação de alto desempenho
+
+O NetApp Backup and Recovery apresenta um recurso de indexação atualizado que torna a indexação de dados no sistema de origem mais eficiente.  O novo recurso de indexação inclui atualizações na interface do usuário, desempenho aprimorado do método Pesquisar e Restaurar para restauração de dados, atualizações nos recursos de pesquisa global e melhor escalabilidade.
+
+Aqui está uma análise das melhorias:
+
+* *Consolidação de pastas*: A versão atualizada agrupa pastas usando nomes que incluem identificadores específicos, tornando o processo de indexação mais suave.
+* *Compactação de arquivos Parquet*: A versão atualizada reduz o número de arquivos usados para indexar cada volume, simplificando o processo e eliminando a necessidade de um banco de dados extra.
+* *Escalar com mais sessões*: A nova versão adiciona mais sessões para lidar com tarefas de indexação, acelerando o processo.
+* *Suporte para múltiplos contêineres de índice*: A nova versão usa múltiplos contêineres para gerenciar e distribuir melhor as tarefas de indexação.
+* *Fluxo de trabalho de indexação dividido*: A nova versão divide o processo de indexação em duas partes, aumentando a eficiência.
+* *Concorrência aprimorada*: A nova versão torna possível excluir ou mover diretórios ao mesmo tempo, acelerando o processo de indexação.
+
+
+.Quem se beneficia com esse recurso?
+O novo recurso de indexação está disponível para todos os novos clientes.
+
+.Como você habilita a indexação?
+Antes de poder usar o método Pesquisar e Restaurar para restaurar dados, você precisa habilitar a "Indexação" em cada sistema de origem do qual planeja restaurar volumes ou arquivos.  Isso permite que o Catálogo Indexado rastreie cada volume e cada arquivo de backup, tornando suas pesquisas rápidas e eficientes.
+
+Habilite a indexação no ambiente de trabalho de origem selecionando a opção "Habilitar indexação" quando estiver executando uma Pesquisa e Restauração.
+
+Para mais informações, consulte a documentação https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["como restaurar dados ONTAP usando Pesquisar e Restaurar"] .
+
+.Escala suportada
+O novo recurso de indexação oferece suporte ao seguinte:
+
+* Eficiência de pesquisa global em menos de 3 minutos
+* Até 5 bilhões de arquivos
+* Até 5000 volumes por cluster
+* Até 100 mil instantâneos por volume
+* O tempo máximo para indexação de linha de base é inferior a 7 dias.  O tempo real variará dependendo do seu ambiente.
+
+
+
+
+=== Melhorias no desempenho da pesquisa global
+
+Esta versão também inclui melhorias no desempenho da pesquisa global.  Agora você verá indicadores de progresso e resultados de pesquisa mais detalhados, incluindo a contagem de arquivos e o tempo gasto na pesquisa.  Contêineres dedicados para pesquisa e indexação garantem que pesquisas globais sejam concluídas em menos de cinco minutos.
+
+Observe estas considerações relacionadas à pesquisa global:
+
+* O novo índice não é executado em snapshots rotulados como horários.
+* O novo recurso de indexação funciona apenas em snapshots em FlexVols e não em snapshots em FlexGroups.
+

@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: br-start-setup.html 
+keywords: backup, back up, restore, recovery, aws, azure 
+summary: Antes de usar o NetApp Backup and Recovery, execute algumas etapas para configurar destinos de backup. 
+---
+= Configure destinos de backup antes de usar o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Antes de usar o NetApp Backup and Recovery, execute algumas etapas para configurar destinos de backup.
+
+Antes de começar, reviselink:concept-start-prereq.html["pré-requisitos"] para garantir que seu ambiente esteja pronto.
+
+
+
+== Preparar o destino do backup
+
+Prepare um ou mais dos seguintes destinos de backup:
+
+* NetApp StorageGRID.
++
+Consulte https://docs.netapp.com/us-en/storage-management-storagegrid/task-discover-storagegrid.html["Descubra o StorageGRID"^] .
+
++
+Consulte https://docs.netapp.com/us-en/storagegrid/index.html["Documentação do StorageGRID"^] para obter detalhes sobre StorageGRID.
+
+* Serviços Web da Amazon. Consulte https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Documentação do Amazon S3"^] .
++
+Faça o seguinte para preparar a AWS como um destino de backup:
+
++
+** Crie uma conta na AWS.
+** Configure as permissões do S3 na AWS, listadas na próxima seção.
+** Para obter detalhes sobre como gerenciar seu armazenamento AWS no Console, consulte https://docs.netapp.com/us-en/console-setup-admin/task-viewing-amazon-s3.html["Gerencie seus buckets do Amazon S3"^] .
+
+
+
+
+* Microsoft Azure.
++
+** Consulte https://docs.netapp.com/us-en/storage-management-azure-netapp-files/index.html["Documentação do Azure NetApp Files"^] .
+** Crie uma conta no Azure.
+** Configurar https://docs.netapp.com/us-en/console-setup-admin/reference-permissions.html["Permissões do Azure"^] no Azure.
+** Para obter detalhes sobre como gerenciar seu armazenamento do Azure no Console, consulte https://docs.netapp.com/us-en/storage-management-blob-storage/task-view-azure-blob-storage.html["Gerencie suas contas de armazenamento do Azure"^] .
+
+
+
+
+Depois de configurar as opções no próprio destino de backup, você o configurará posteriormente como um destino de backup no NetApp Backup and Recovery.  Para obter detalhes sobre como configurar o destino do backup no NetApp Backup and Recovery, consultelink:br-start-discover-backup-targets.html["Descubra alvos de backup"] .
+
+
+
+== Configurar permissões do S3
+
+Você precisará configurar dois conjuntos de permissões do AWS S3:
+
+* Permissões para o agente do Console criar e gerenciar o bucket do S3.
+* Permissões para o cluster ONTAP local para que ele possa ler e gravar dados no bucket S3.
+
+
+.Passos
+. Certifique-se de que o agente do Console tenha as permissões necessárias. Para mais detalhes, veja https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permissões de política do NetApp Console"] .
++
+
+NOTE: Ao criar backups nas regiões da AWS China, você precisa alterar o nome do recurso da AWS "arn" em todas as seções _Resource_ nas políticas do IAM de "aws" para "aws-cn"; por exemplo `arn:aws-cn:s3:::netapp-backup-*` .
+
+. Ao ativar o serviço, o assistente de backup solicitará que você insira uma chave de acesso e uma chave secreta.  Essas credenciais são passadas ao cluster ONTAP para que o ONTAP possa fazer backup e restaurar dados no bucket S3.  Para isso, você precisará criar um usuário do IAM com as seguintes permissões.
++
+Consulte o https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["Documentação da AWS: Criando uma função para delegar permissões a um usuário do IAM"^] .
+
++
+[%collapsible]
+====
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+     "Statement": [
+        {
+           "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "s3:PutEncryptionConfiguration"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup-*",
+            "Effect": "Allow",
+            "Sid": "backupPolicy"
+        },
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+====
+

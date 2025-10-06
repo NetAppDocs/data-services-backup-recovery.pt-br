@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-prereqs.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Pré-requisitos para cargas de trabalho de máquinas virtuais no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Antes de começar a proteger suas cargas de trabalho de máquinas virtuais com o NetApp Backup and Recovery, certifique-se de atender aos seguintes pré-requisitos:
+
+* SnapCenter Plug-in for VMware vSphere 4.6P1 ou posterior
++
+** Você deve usar o SnapCenter Plug-in for VMware vSphere 4.7P1 ou posterior para fazer backup de datastores do armazenamento secundário local.
+
+
+* ONTAP 9.8 ou posterior
+* Console NetApp
+* Os armazenamentos de dados NFS e VMFS são suportados. Os vVols não são suportados.
+* Para suporte ao VMFS, o SnapCenter Plug-in for VMware vSphere deve estar em execução na versão 4.9 ou posterior.  Certifique-se de fazer um backup do armazenamento de dados VMFS se o SnapCenter Plug-in for VMware vSphere foi atualizado de uma versão anterior para a versão 4.9.
+* Pelo menos um backup deve ter sido feito no SnapCenter Plug-in for VMware vSphere 4.6P1.
+* Pelo menos uma política diária, semanal ou mensal no SnapCenter Plug-in for VMware vSphere sem rótulo ou com o mesmo rótulo da política de Máquinas Virtuais no Console.
+* Para uma política predefinida, a camada de agendamento deve ser a mesma para o armazenamento de dados no SnapCenter Plug-in for VMware vSphere e na nuvem.
+* Certifique-se de que não haja volumes FlexGroup no armazenamento de dados, pois o backup e a restauração de volumes FlexGroup não são suportados.
+* Desabilite "*_recent*" nos grupos de recursos necessários.  Se você tiver "*_recent*" habilitado para o grupo de recursos, os backups desses grupos de recursos não poderão ser usados para proteção de dados na nuvem e, consequentemente, não poderão ser usados para a operação de restauração.
+* Certifique-se de que o armazenamento de dados de destino onde a máquina virtual será restaurada tenha espaço suficiente para acomodar uma cópia de todos os arquivos da máquina virtual, como VMDK, VMX, VMSD e assim por diante.
+* Certifique-se de que o armazenamento de dados de destino não tenha arquivos de máquina virtual obsoletos no formato restore_xxx_xxxxxx_filename de falhas de operação de restauração anteriores.  Você deve excluir os arquivos obsoletos antes de iniciar uma operação de restauração.
+* Para implantar um conector com proxy configurado, certifique-se de que todas as chamadas de saída do conector sejam roteadas pelo servidor proxy.
+* Se um volume que faz backup de um armazenamento de dados já estiver protegido na guia Volumes (NetApp Backup and Recovery -> Volumes), o mesmo armazenamento de dados não poderá ser protegido novamente na guia Máquinas virtuais (NetApp Backup and Recovery -> Máquinas virtuais).
+
+
+A imagem a seguir mostra cada componente e as conexões que você precisa preparar entre eles:
+
+image:cloud_backup_vm.png["diagrama de arquitetura"]

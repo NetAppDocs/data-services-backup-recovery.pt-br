@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-protect-overview.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Visão geral sobre proteção de cargas de trabalho de máquinas virtuais no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Proteja as cargas de trabalho das suas máquinas virtuais com o NetApp Backup and Recovery.  O NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com economia de espaço, consistentes em caso de falhas e consistentes com VMs, repositórios de dados e VMDKs.
+
+Você pode fazer backup de datastores no Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e restaurar máquinas virtuais de volta para o host SnapCenter Plug-in for VMware vSphere local.
+
+[]
+====
+*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
+====
+Para obter instruções sobre como proteger cargas de trabalho de máquinas virtuais, consulte os seguintes tópicos:
+
+* link:prev-vmware-policy-create.html["Crie uma política para cargas de trabalho do VMware"]
+* link:prev-vmware-backup-aws.html["Fazer backup de datastores VMware no Amazon Web Services"]
+* link:prev-vmware-backup-azure.html["Fazer backup de datastores VMware no Microsoft Azure"]
+* link:prev-vmware-backup-gcp.html["Faça backup dos datastores do VMware no Google Cloud Platform"]
+* link:prev-vmware-backup-storagegrid.html["Fazer backup de datastores VMware no StorageGRID"]
+* link:prev-vmware-restore.html["Restaurar cargas de trabalho do VMware"]
+* link:prev-vmware-manage.html["Gerenciar proteção para cargas de trabalho VMware"]
+

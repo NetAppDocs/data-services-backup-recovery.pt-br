@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: O NetApp Backup and Recovery permite que você desproteja e exclua seus aplicativos Kubernetes e recursos associados. 
+---
+= Gerenciar aplicativos Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery permite que você desproteja e exclua seus aplicativos Kubernetes e recursos associados.
+
+.Função necessária do NetApp Console
+Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+
+== Desproteger um aplicativo Kubernetes
+
+Você pode desproteger um aplicativo se não quiser mais protegê-lo. Quando você desprotege um aplicativo, o NetApp Backup and Recovery para de protegê-lo, mas mantém todos os backups e instantâneos associados.
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Na lista de aplicativos, escolha um aplicativo que você deseja desproteger e selecione o menu Ações associado.
+. Selecione *Desproteger*.
+. Leia o aviso e, quando estiver pronto, selecione *Desproteger*.
+
+
+
+
+== Excluir um aplicativo Kubernetes
+
+Você pode excluir um aplicativo se não precisar mais dele. Quando você exclui um aplicativo, o NetApp Backup and Recovery para de protegê-lo e exclui todos os backups e snapshots associados.
+
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Na lista de aplicativos, escolha um aplicativo que você deseja excluir e selecione o menu Ações associado.
+. Selecione *Excluir*.
+. Habilite *Excluir snapshots e backups* para remover todos os snapshots e backups do aplicativo.
++
+
+CAUTION: Você não poderá mais restaurar o aplicativo usando esses snapshots e backups.
+
+. Confirme a ação e selecione *Excluir*.
+

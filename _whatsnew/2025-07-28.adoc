@@ -1,0 +1,20 @@
+= Suporte à carga de trabalho do Kubernetes como uma prévia
+:allow-uri-read: 
+
+
+
+
+=== Suporte à carga de trabalho do Kubernetes como uma prévia
+
+Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Kubernetes:
+
+* Descubra o Red Hat OpenShift e os clusters Kubernetes de código aberto, apoiados pelo NetApp ONTAP, sem compartilhar arquivos kubeconfig.
+* Descubra, gerencie e proteja aplicativos em vários clusters do Kubernetes usando um plano de controle unificado.
+* Descarregue operações de movimentação de dados para backup e recuperação de aplicativos Kubernetes para o NetApp ONTAP.
+* Orquestre backups de aplicativos locais e baseados em armazenamento de objetos.
+* Faça backup e restaure aplicativos inteiros e recursos individuais em qualquer cluster do Kubernetes.
+* Trabalhe com contêineres e máquinas virtuais em execução no Kubernetes.
+* Crie backups consistentes com o aplicativo usando ganchos e modelos de execução.
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Visão geral das cargas de trabalho do Protect Kubernetes"] .

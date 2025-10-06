@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-backup.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Faça backup de cargas de trabalho do VMware com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Faça backup de VMs e datastores VMware de sistemas ONTAP locais para Amazon Web Services, Azure NetApp Files ou StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
+
+* Para fazer backup de cargas de trabalho em um cronograma, crie políticas que controlem as operações de backup e restauração. Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
+* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Ver link:br-use-vmware-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho VMware com o NetApp Backup and Recovery"] para maiores informações.
+* Faça backup das cargas de trabalho agora (crie um backup sob demanda agora).
+
+
+
+
+== Faça backup de cargas de trabalho agora com um backup sob demanda
+
+Crie um backup sob demanda imediatamente.  Talvez você queira executar um backup sob demanda se estiver prestes a fazer alterações no seu sistema e quiser garantir que tenha um backup antes de começar.
+
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu Backup e Recuperação, selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*, *Datastores* ou *Máquinas virtuais*.
+. Selecione o grupo de proteção, os armazenamentos de dados ou as máquinas virtuais dos quais você deseja fazer backup.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Faça backup agora*.
++
+
+NOTE: A política aplicada ao backup é a mesma política atribuída ao grupo de proteção, ao armazenamento de dados ou à máquina virtual.
+
+. Selecione o nível de agendamento.
+. Selecione *Fazer backup agora*.
+

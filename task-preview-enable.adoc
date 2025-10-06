@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task-preview-enable.html 
+keywords: cloud backup, NetApp Backup and Recovery, backup, restore, preview, enable, object storage, third-party, MinIO, S3-compatible 
+summary: Você pode monitorar o status de Snapshots locais, replicações e backups em trabalhos de armazenamento de objetos que você iniciou ou que foram agendados, além de restaurar trabalhos que você iniciou ou agendou.  Você pode ver os trabalhos que foram concluídos, estão em andamento ou falharam para poder diagnosticar e corrigir problemas.  Usando a Central de Notificações, você pode habilitar o envio de notificações por e-mail para que você possa ser informado sobre atividades importantes do sistema, mesmo quando não estiver conectado ao sistema.  Usando a Linha do tempo, você pode ver detalhes de todas as ações iniciadas pela interface do usuário ou API. 
+---
+= Habilitar recursos de visualização no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery oferece recursos de visualização que permitem testar novos recursos antes que eles sejam totalmente lançados.  Esses recursos foram projetados para aprimorar sua experiência de backup e recuperação, mas podem não ser totalmente suportados ou estáveis.
+
+
+IMPORTANT: Esses recursos estão em modo de visualização e não devem ser usados em ambientes de produção.  Elas são destinadas apenas para fins de teste e feedback.
+
+
+
+== Habilitar recursos de visualização
+
+Para habilitar recursos de visualização no NetApp Backup and Recovery, você precisa definir um sinalizador no agente do Console.  Este sinalizador permite que você acesse e teste os recursos de visualização disponíveis no serviço.
+
+.Passos
+. Efetue login no agente do Console.
+. Mude para o Superusuário.  Execute o comando:
++
+`sudo su`
+
+. Liste os volumes do Docker e identifique o volume CBS.  Execute o comando:
++
+[listing]
+----
+podman volume ls | grep cbs
+----
++
+Saída esperada:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. Inspecione o volume para obter o ponto de montagem.  Execute o comando:
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
+. Execute o comando:
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Saída esperada:
+
++
+[listing]
+----
+Mountpoint:
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Navegue até o diretório Docker Volumes.  Mude o diretório para o ponto de montagem obtido na etapa anterior:
++
+[listing]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+
+----
+. Localize e edite o `production-customer.json` arquivo.
+. Certifique-se de que você está no diretório correto e `production-customer.json` o arquivo está presente.
+. Abra o `production-customer.json` arquive no seu editor de texto preferido e adicione o seguinte snippet JSON, garantindo que a estrutura JSON seja mantida corretamente:
++
+[listing]
+----
+{
+   "feature-flags":
+    {
+        "volumes-dashboard-v2": true
+     }
+}
+----
+. Salve as alterações no arquivo.
+. Reinicie o serviço CBS do NetApp Backup and Recovery Cloud Manager.  Execute o comando:
++
+[listing]
+----
+podman restart cloudmanager_cbs
+----
+

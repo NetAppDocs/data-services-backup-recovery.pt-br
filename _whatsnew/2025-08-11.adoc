@@ -1,0 +1,57 @@
+= Carga de trabalho do Microsoft SQL Server com suporte em Disponibilidade Geral (GA)
+:allow-uri-read: 
+
+
+
+
+=== Carga de trabalho do Microsoft SQL Server com suporte em Disponibilidade Geral (GA)
+
+O suporte à carga de trabalho do Microsoft SQL Server agora está disponível de modo geral (GA) no NetApp Backup and Recovery. Organizações que usam um ambiente MSSQL no ONTAP, Cloud Volumes ONTAP e Amazon FSx for NetApp ONTAP agora podem aproveitar este novo serviço de backup e recuperação para proteger seus dados.
+
+Esta versão inclui os seguintes aprimoramentos no suporte à carga de trabalho do Microsoft SQL Server em relação à versão de visualização anterior:
+
+* * Sincronização ativa do SnapMirror *: Esta versão agora oferece suporte à sincronização ativa do SnapMirror (também conhecida como SnapMirror Business Continuity [SM-BC]), que permite que os serviços empresariais continuem operando mesmo durante uma falha completa do site, permitindo que os aplicativos executem failover transparente usando uma cópia secundária. O NetApp Backup and Recovery agora oferece suporte à proteção de bancos de dados do Microsoft SQL Server em uma configuração de sincronização ativa do SnapMirror e Metrocluster. As informações aparecem na seção *Status de armazenamento e relacionamento* da página Detalhes de proteção. As informações de relacionamento são exibidas na seção atualizada *Configurações secundárias* da página Política.
++
+Consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Use políticas para proteger suas cargas de trabalho"] .
+
++
+image:../media/screen-br-sql-protection-details.png["Página de detalhes de proteção para carga de trabalho do Microsoft SQL Server"]
+
+* *Suporte a vários buckets*: agora você pode proteger os volumes dentro de um ambiente de trabalho com até 6 buckets por ambiente de trabalho em diferentes provedores de nuvem.
+* *Atualizações de licenciamento e avaliação gratuita* para cargas de trabalho do SQL Server: agora você pode usar o modelo de licenciamento existente do NetApp Backup and Recovery para proteger cargas de trabalho do SQL Server. Não há requisito de licenciamento separado para cargas de trabalho do SQL Server.
++
+Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html["Configurar licenciamento para NetApp Backup and Recovery"] .
+
+* *Nome de instantâneo personalizado*: agora você pode usar seu próprio nome de instantâneo em uma política que controla os backups para cargas de trabalho do Microsoft SQL Server. Insira essas informações na seção *Configurações avançadas* da página Política.
++
+image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["Captura de tela das configurações de formato SnapMirror e snapshot para políticas de backup e recuperação do NetApp"]
+
++
+Consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Use políticas para proteger suas cargas de trabalho"] .
+
+* *Prefixo e sufixo do volume secundário*: você pode inserir um prefixo e sufixo personalizados na seção *Configurações avançadas* da página Política.
+* *Identidade e acesso*: Agora você pode controlar o acesso dos usuários aos recursos.
++
+Consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-login.html["Efetue login no NetApp Backup and Recovery"] e https://docs.netapp.com/us-en/data-services-backup-recovery/reference-roles.html["Acesso aos recursos do NetApp Backup and Recovery"] .
+
+* *Restaurar do armazenamento de objetos para um host alternativo*: Agora você pode restaurar do armazenamento de objetos para um host alternativo, mesmo que o armazenamento primário esteja inativo.
+* *Dados de backup de log*: A página de detalhes de proteção do banco de dados agora mostra backups de log. Você pode ver a coluna Tipo de backup que mostra se o backup é completo ou de log.
+* *Painel aprimorado*: O painel agora mostra economias de armazenamento e clone.
++
+image:../media/screen-br-dashboard3.png["Painel de backup e recuperação da NetApp"]
+
+
+
+
+
+=== Melhorias na carga de trabalho do volume ONTAP
+
+* *Restauração de várias pastas para volumes ONTAP *: Até agora, você podia restaurar uma pasta ou vários arquivos de uma vez usando o recurso Navegar e restaurar. O NetApp Backup and Recovery agora oferece a capacidade de selecionar várias pastas ao mesmo tempo usando o recurso Procurar e restaurar.
+* *Visualizar e gerenciar backups de volumes excluídos*: O NetApp Backup and Recovery Dashboard agora oferece uma opção para mostrar e gerenciar volumes excluídos do ONTAP. Com isso, você pode visualizar e excluir backups de volumes que não existem mais no ONTAP.
+* *Forçar exclusão de backups*: Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups forem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (em níveis de volume e ambiente de trabalho).
+
+
+
+CAUTION: Use esta opção com cuidado e somente em casos de extrema necessidade de limpeza. O NetApp Backup and Recovery não terá mais acesso a esses backups, mesmo que eles não sejam excluídos do armazenamento de objetos. Você precisará ir ao seu provedor de nuvem e excluir manualmente os backups.
+
+Consulte https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Proteja cargas de trabalho ONTAP"] .

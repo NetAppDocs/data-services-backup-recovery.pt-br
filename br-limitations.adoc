@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: br-limitations.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: O NetApp Backup and Recovery precisa primeiro descobrir dados para que você possa usar o serviço.  Durante a descoberta, o NetApp Backup and Recovery analisa todos os volumes e arquivos nos sistemas da sua organização. 
+---
+= Limitações conhecidas do NetApp Backup and Recovery para cargas de trabalho do Microsoft SQL Server
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Limitações conhecidas identificam plataformas, dispositivos ou funções que não são suportados por esta versão do produto ou que não interoperam corretamente com ele. Revise essas limitações cuidadosamente.
+
+
+
+== Suporte ao ciclo de vida do clone
+
+* A clonagem do armazenamento de objetos não é suportada.
+* Operações de clonagem em massa não são suportadas para clones sob demanda.
+* A escolha de grupos I não é suportada.
+* A escolha de opções de QOS (taxa de transferência máxima) não é suportada.
+
+
+
+
+== Somente modo de implantação padrão
+
+Esta versão do NetApp Backup and Recovery funciona apenas no modo de implantação padrão, não nos modos restrito ou privado.
+
+
+
+== Restrição de nome de cluster do Windows
+
+O nome do cluster do Windows não pode conter um caractere de sublinhado (_).
+
+
+
+== Problemas de migração do SnapCenter
+
+A migração de recursos do SnapCenter para o NetApp Backup and Recovery tem as seguintes limitações.
+
+Para obter detalhes sobre como as políticas do SnapCenter migram para as políticas de backup e recuperação do NetApp , consultelink:reference-policy-differences-snapcenter.html["Políticas no SnapCenter comparadas com aquelas no NetApp Backup and Recovery"] .
+
+
+
+=== Limitações do grupo de recursos
+
+Se todos os recursos em um grupo de recursos estiverem protegidos e um desses recursos também estiver protegido fora do grupo de recursos, a migração do SnapCenter será bloqueada.
+
+*Solução alternativa*: proteja o recurso em um grupo de recursos ou sozinho, mas não em ambos.
+
+
+
+=== Recursos com várias políticas usando a mesma camada de agendamento não são suportados
+
+Não é possível atribuir várias políticas que usam o mesmo nível de agendamento (por exemplo, por hora, diariamente, semanalmente, etc.) a um recurso.  O NetApp Backup and Recovery não importará esses recursos do SnapCenter.
+
+*Solução alternativa*: Anexe apenas uma política usando a mesma camada de agendamento a um recurso.
+
+
+
+=== As políticas horárias devem começar no início da hora
+
+Se você tiver uma política do SnapCenter que se repete a cada hora, mas não usa intervalos no início da hora, o NetApp Backup and Recovery não importará o recurso.  Por exemplo, políticas com agendamentos de 1:30, 2:30, 3:30, etc. não são suportadas, enquanto políticas com agendamentos de 1:00, 2:00, 3:00, etc. são suportadas.
+
+*Solução alternativa*: use uma política que se repita em intervalos de 1 hora, começando no início da hora.
+
+
+
+=== Políticas diárias e mensais vinculadas a um recurso não são suportadas
+
+Se uma política do SnapCenter for repetida em intervalos de um dia e de um mês, o NetApp Backup and Recovery não importará a política.
+
+Por exemplo, você não pode anexar uma política diária (com menos ou igual a 7 dias ou mais de 7 dias) a um recurso e também anexar uma política mensal ao mesmo recurso.
+
+*Solução alternativa*: use uma política que utilize um intervalo diário ou mensal, mas não ambos.
+
+
+
+=== Políticas de backup sob demanda não migradas
+
+O NetApp Backup and Recovery não importa políticas de backup sob demanda do SnapCenter.
+
+
+
+=== Políticas de backup somente de log não migradas
+
+O NetApp Backup and Recovery não importa políticas de backup somente de log do SnapCenter.  Se uma política do SnapCenter incluir backups somente de log, o NetApp Backup and Recovery não importará o recurso.
+
+*Solução alternativa*: use uma política no SnapCenter que use mais do que apenas backups somente de log.
+
+
+
+=== Mapeamento de host
+
+O SnapCenter não tem clusters de armazenamento de mapas ou SVMs para os recursos dos hosts, mas o NetApp Backup and Recovery tem.  O cluster ONTAP local ou SVM não será mapeado para um host nas versões de visualização do NetApp Backup and Recovery.  Além disso, o NetApp Console não oferece suporte a SVMs.
+
+*Solução alternativa*: antes de importar recursos do SnapCenter, crie um sistema no NetApp Backup and Recovery para todos os sistemas de armazenamento ONTAP locais registrados no SnapCenter local.  Em seguida, importe os recursos desse cluster do SnapCenter para o NetApp Backup and Recovery.
+
+
+
+=== Horários não em intervalos de 15 minutos
+
+Se você tiver uma programação de política do SnapCenter que começa em um determinado horário e se repete em intervalos diferentes de 15 minutos, o NetApp Backup and Recovery não importará a programação.
+
+*Solução alternativa*: use o SnapCenter para ajustar a política para que ela seja repetida em intervalos de 15 minutos.
+
+
+
+== Suporte limitado para software de gerenciamento de virtualização
+
+Ao proteger cargas de trabalho do KVM, o NetApp Backup and Recovery não oferece suporte à descoberta de cargas de trabalho do KVM quando um software de gerenciamento de virtualização, como Apache CloudStack ou Red Hat OpenShift Virtualization, está em uso.

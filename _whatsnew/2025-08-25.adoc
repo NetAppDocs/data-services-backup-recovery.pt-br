@@ -1,0 +1,26 @@
+= Suporte para proteção de cargas de trabalho VMware na visualização
+:allow-uri-read: 
+
+
+
+
+=== Suporte para proteção de cargas de trabalho VMware na visualização
+
+Esta versão adiciona suporte de pré-visualização para proteger cargas de trabalho do VMware. Faça backup de VMs e datastores VMware de sistemas ONTAP locais para Amazon Web Services e StorageGRID.
+
+
+NOTE: A documentação sobre a proteção de cargas de trabalho do VMware é fornecida como uma prévia da tecnologia. Com esta oferta de visualização, a NetApp reserva-se o direito de modificar os detalhes, o conteúdo e o cronograma da oferta antes da disponibilidade geral.
+
+link:br-use-vmware-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do VMware com o NetApp Backup and Recovery"] .
+
+
+
+=== A indexação de alto desempenho para AWS, Azure e GCP está geralmente disponível
+
+Em fevereiro de 2025, anunciamos a prévia da indexação de alto desempenho (Indexed Catalog v2) para AWS, Azure e GCP. Este recurso agora está disponível para o público em geral (GA). Em junho de 2025, fornecemos isso a todos os _novos_ clientes por padrão. Com esta versão, o suporte está disponível para _todos_ os clientes. A indexação de alto desempenho melhora o desempenho das operações de backup e restauração para cargas de trabalho protegidas no armazenamento de objetos.
+
+Ativado por padrão:
+
+* Se você for um novo cliente, a indexação de alto desempenho será habilitada por padrão.
+* Se você já for cliente, poderá habilitar a reindexação acessando a seção Restaurar da interface do usuário.
+

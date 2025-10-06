@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: br-start-discover-kubernetes.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
+summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho para que você possa usar o serviço. 
+---
+= Descubra cargas de trabalho do Kubernetes no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho do Kubernetes para que você possa usar o serviço.
+
+*Função necessária do NetApp Console* Superadministrador de backup e recuperação. Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+
+== Descubra as cargas de trabalho do Kubernetes
+
+No inventário de backup e recuperação, você pode descobrir cargas de trabalho do Kubernetes em execução no seu ambiente. A descoberta de uma carga de trabalho adiciona um cluster Kubernetes ao NetApp Backup and Recovery, permitindo que você adicione aplicativos ao cluster e proteja os recursos hospedados pelo cluster.
+
+.Passos
+. Faça um dos seguintes:
++
+** Se você estiver descobrindo cargas de trabalho do Kubernetes pela primeira vez, no NetApp Backup and Recovery, selecione *Descobrir e gerenciar* no tipo de carga de trabalho do Kubernetes.
+** Se você já descobriu cargas de trabalho do Kubernetes, no NetApp Backup and Recovery, selecione *Inventário* > *Cargas de trabalho* e, em seguida, selecione *Descobrir recursos*.
+
+
+. Selecione o tipo de carga de trabalho *Kubernetes*.
+. Insira um nome de cluster e escolha um conector para usar com o cluster.
+. Siga as instruções da linha de comando que aparecem:
++
+** Crie um namespace de proteção Trident
+** Crie um segredo do Kubernetes
+** Adicionar um repositório Helm
+** Instalar o Trident Protect e o conector Trident Protect
++
+Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.
+
+
+
+. Após concluir as etapas, selecione *Descobrir*.
++
+O cluster é adicionado ao inventário.
+
+. Selecione *Exibir* na carga de trabalho do Kubernetes associada para ver a lista de aplicativos, clusters e namespaces para essa carga de trabalho.
+
+
+
+
+== Continue para o Painel de Backup e Recuperação da NetApp
+
+Para exibir o Painel de Backup e Recuperação do NetApp , siga estas etapas.
+
+. No menu superior, selecione *Painel*.
+. Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
++
+link:br-use-dashboard.html["Saiba o que o Painel mostra para você"] .
+
+

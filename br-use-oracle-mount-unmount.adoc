@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: br-use-oracle-mount-unmount.html 
+keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho Oracle com o NetApp Backup and Recovery. 
+---
+= Monte e desmonte pontos de recuperação do banco de dados Oracle com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Talvez você queira montar um ponto de recuperação do Oracle Database se precisar acessar o banco de dados em um estado controlado para executar operações de recuperação.
+
+
+
+== Montar um ponto de restauração do banco de dados Oracle
+
+Se você configurar a política de proteção para um banco de dados para reter logs de arquivamento, poderá montar os pontos de recuperação do banco de dados para visualizar o histórico de todas as alterações feitas no banco de dados.
+
+.Passos
+. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. Selecione o bloco Oracle.
+. No menu Backup e Recuperação, selecione *Inventário*.
+. Para a carga de trabalho do Oracle Database na lista, selecione *Exibir*.
+. Selecione o menu *Bancos de dados*.
+. Escolha um banco de dados da lista e selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes da proteção*.
++
+Uma lista de pontos de recuperação para esse banco de dados é exibida.
+
+. Escolha um ponto de recuperação da lista e selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Monte*.
+. Na caixa de diálogo que aparece, faça o seguinte:
++
+.. Escolha o host que deve montar o ponto de recuperação na lista.
+.. Selecione qual local o Backup and Recovery deve usar para montar o ponto de recuperação.  Para a versão de pré-visualização, a montagem a partir do armazenamento de objetos não é suportada.
++
+O caminho de montagem que o Backup and Recovery deve usar é exibido.
+
+
+
+. Selecione *Montar*.
++
+O ponto de recuperação é montado no host Oracle.
+
+
+
+
+
+== Desmontar um ponto de restauração do banco de dados Oracle
+
+Desmonte o ponto de recuperação quando não precisar mais visualizar as alterações feitas no banco de dados.
+
+.Passos
+. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. Selecione o bloco Oracle.
+. No menu Backup e Recuperação, selecione *Inventário*.
+. Para a carga de trabalho do Oracle na lista, selecione *Exibir*.
+. Selecione o menu *Bancos de dados*.
+. Escolha um banco de dados da lista e selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes da proteção*.
++
+Uma lista de pontos de recuperação para esse banco de dados é exibida.
+
+. Escolha um ponto de recuperação da lista e selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Desmontar*.
+. Confirme a ação selecionando *Desmontar*.
+

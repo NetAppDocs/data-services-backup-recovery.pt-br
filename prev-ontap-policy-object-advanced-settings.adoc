@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-policy-object-advanced-settings.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+---
+= Gerenciar opções de armazenamento de backup para objeto nas Configurações avançadas do NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode alterar as configurações de armazenamento de backup para objeto no nível do cluster definidas ao ativar o NetApp Backup and Recovery para cada sistema ONTAP usando a página Configurações avançadas.  Você também pode modificar algumas configurações que são aplicadas como configurações de backup "padrão".  Isso inclui alterar a taxa de transferência de backups para armazenamento de objetos, se cópias históricas do Snapshot são exportadas como arquivos de backup e habilitar ou desabilitar verificações de ransomware para um sistema.
+
+
+NOTE: Essas configurações estão disponíveis somente para armazenamento de backup em objeto.  Nenhuma dessas configurações afeta suas configurações de Snapshot ou replicação.
+
+[]
+====
+*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
+====
+Você pode alterar as seguintes opções na página Configurações avançadas:
+
+* Alterando a largura de banda de rede alocada para carregar backups no armazenamento de objetos usando a opção Max Transfer Rate ifdef::aws[]
+
+
+endif::aws[]
+
+* Alterar se cópias históricas do Snapshot são exportadas como arquivos de backup e incluídas nos arquivos de backup de linha de base inicial para volumes futuros
+* Alterar se os snapshots "anuais" são removidos do sistema de origem
+* Habilitar ou desabilitar varreduras de ransomware para um sistema, incluindo varreduras agendadas
+
+
+
+
+== Exibir configurações de backup em nível de cluster
+
+Você pode visualizar as configurações de backup em nível de cluster para cada sistema.
+
+.Passos
+. No menu Console, selecione *Proteção > Backup e recuperação*.
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
++
+A página _Configurações avançadas_ exibe as configurações atuais do sistema.
+
+. Expanda a opção e faça a alteração.
+
+
+Todas as operações de backup após a alteração usarão os novos valores.
+
+Observe que algumas opções não estão disponíveis com base na versão do ONTAP no cluster de origem e no destino do provedor de nuvem onde os backups residem.
+
+
+
+== Alterar a largura de banda de rede disponível para fazer upload de backups para armazenamento de objetos
+
+Quando você ativa o NetApp Backup and Recovery para um sistema, por padrão, o ONTAP pode usar uma quantidade ilimitada de largura de banda para transferir os dados de backup de volumes no sistema para o armazenamento de objetos.  Se você perceber que o tráfego de backup está afetando as cargas de trabalho normais dos usuários, você pode limitar a quantidade de largura de banda de rede usada durante a transferência usando a opção Taxa máxima de transferência na página Configurações avançadas.
+
+.Passos
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página Configurações avançadas, expanda a seção *Taxa máxima de transferência*.
+. Escolha um valor entre 1 e 1.000 Mbps como taxa máxima de transferência.
+. Selecione o botão de opção *Limitado* e insira a largura de banda máxima que pode ser usada ou selecione *Ilimitado* para indicar que não há limite.
+. Selecione *Aplicar*.
+
+
+Esta configuração não afeta a largura de banda alocada para quaisquer outros relacionamentos de replicação que possam ser configurados para volumes no sistema.
+
+ifdef::aws[]
+
+endif::aws[]
+
+
+
+== Alterar se cópias históricas de instantâneos são exportadas como arquivos de backup
+
+Se houver cópias de instantâneos locais para volumes que correspondam ao rótulo de agendamento de backup que você está usando neste sistema (por exemplo, diário, semanal, etc.), você poderá exportar esses instantâneos históricos para o armazenamento de objetos como arquivos de backup.  Isso permite que você inicialize seus backups na nuvem movendo cópias de instantâneos mais antigas para a cópia de backup de base.
+
+Observe que esta opção só se aplica a novos arquivos de backup para novos volumes de leitura/gravação e não é compatível com volumes de proteção de dados (DP).
+
+.Passos
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página Configurações avançadas, expanda a seção *Exportar cópias de instantâneos existentes*.
+. Selecione se deseja que cópias existentes do Snapshot sejam exportadas.
+. Selecione *Aplicar*.
+
+
+
+
+== Alterar se os snapshots "anuais" são removidos do sistema de origem
+
+Quando você seleciona o rótulo de backup "anual" para uma política de backup para qualquer um dos seus volumes, a cópia do Snapshot criada é muito grande.  Por padrão, esses instantâneos anuais são excluídos automaticamente do sistema de origem após serem transferidos para o armazenamento de objetos.  Você pode alterar esse comportamento padrão na seção Exclusão anual de instantâneos.
+
+.Passos
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página Configurações avançadas, expanda a seção *Exclusão anual de instantâneos*.
++
+image:screenshot_backup_edit_yearly_snap_delete.png["Uma captura de tela da entrada Instantâneos anuais na página Configurações avançadas."]
+
+. Selecione *Desativado* para manter os instantâneos anuais no sistema de origem.
+. Selecione *Aplicar*.
+
+
+
+
+== Habilitar ou desabilitar verificações de ransomware
+
+As verificações de proteção contra ransomware são ativadas por padrão.  A configuração padrão para a frequência de verificação é de 7 dias.  A verificação ocorre apenas na cópia mais recente do instantâneo.  Você pode habilitar ou desabilitar verificações de ransomware na cópia mais recente do snapshot usando a opção na página Configurações avançadas.  Se você habilitar, as verificações serão realizadas a cada 7 dias por padrão.
+
+Para obter detalhes sobre as opções de proteção DataLock e Ransomware, consultelink:prev-ontap-policy-object-options.html["Opções de proteção contra DataLock e Ransomware"] .
+
+Você pode alterar essa programação para dias ou semanas ou desativá-la, economizando custos.
+
+
+TIP: A ativação de verificações de ransomware incorrerá em custos extras, dependendo do provedor de nuvem.
+
+As verificações agendadas de ransomware são executadas apenas na cópia mais recente do snapshot.
+
+Se as verificações agendadas de ransomware estiverem desativadas, você ainda poderá executar verificações sob demanda e a verificação durante uma operação de restauração ainda ocorrerá.
+
+Consultelink:prev-ontap-policy-manage.html["Gerenciar políticas"] para obter detalhes sobre o gerenciamento de políticas que implementam a detecção de ransomware.
+
+.Passos
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página Configurações avançadas, expanda a seção *Verificação de ransomware*.
+. Habilitar ou desabilitar *Verificação de ransomware*.
+. Selecione *Verificação agendada de ransomware*.
+. Opcionalmente, altere a verificação padrão semanal para dias ou semanas.
+. Defina a frequência em dias ou semanas em que a verificação deve ser executada.
+. Selecione *Aplicar*.
+

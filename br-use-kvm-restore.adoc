@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: br-use-kvm-restore.html 
+keywords: restore, vm, kvm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteja suas cargas de trabalho KVM com o NetApp Backup and Recovery. 
+---
+= Restaurar máquinas virtuais KVM com o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure máquinas virtuais KVM de cópias de snapshot, de um backup de grupo de proteção replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
+
+.Restaurar a partir desses locais
+Você pode restaurar máquinas virtuais de diferentes locais de inicialização:
+
+* Restaurar de um local primário (instantâneo local)
+* Restaurar de um recurso replicado no armazenamento secundário
+* Restaurar de um backup de armazenamento de objetos
+
+
+.Restaurar esses pontos
+Você pode restaurar dados para o local original; restaurar para um local alternativo não está disponível nesta versão de visualização.
+
+* Restaurar para o local original
+
+
+.Considerações sobre restauração de armazenamento de objetos
+Se você selecionar um arquivo de backup no armazenamento de objetos e a proteção contra ransomware estiver ativa para esse backup (se você tiver habilitado o DataLock e a proteção contra ransomware na política de backup), você será solicitado a executar uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você execute a verificação.
+
+
+TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.
+
+
+
+== Como funciona a restauração de máquinas virtuais
+
+Ao restaurar máquinas virtuais, ocorre o seguinte:
+
+* Quando você restaura uma carga de trabalho de um arquivo de backup local, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
+* Ao restaurar a partir de uma VM replicada, você pode restaurá-la para o sistema original ou para um sistema ONTAP local.
+* Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o sistema original ou para um sistema ONTAP local.
+
+
+Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode restaurar uma VM, mesmo que não se lembre do nome exato, do local em que ela reside ou da data em que esteve em boas condições pela última vez. Você pode pesquisar o instantâneo usando filtros.
+
+
+
+== Restaurar VMs a partir da opção Restaurar (Pesquisar e Restaurar)
+
+Restaure máquinas virtuais KVM usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.
+
+*Função de console necessária* Administrador da organização, Administrador de pasta ou projeto, Superadministrador de backup e recuperação, Função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. No menu NetApp Backup and Recovery, selecione *Restaurar*.
+. Na lista suspensa à direita do campo de pesquisa de nome, selecione *KVM*.
+. Insira o nome da VM que você deseja restaurar ou filtre pelo host da VM ou pool de armazenamento onde o recurso que você deseja restaurar está localizado.
++
+Aparece uma lista de instantâneos que correspondem aos seus critérios de pesquisa.
+
+. Selecione o botão *Restaurar* para o instantâneo que você deseja restaurar.
++
+Uma lista de possíveis pontos de restauração é exibida.
+
+. Selecione o ponto de restauração que você deseja usar.
+. Selecione um local de origem para o instantâneo.
+
+
+. Selecione *Concluído* ou *Avançar* para continuar para a página Restaurar configurações de destino.
++
+Em seguida, você pode escolher as configurações de destino e as opções de pré e pós-restauração.
+
+
+
+[discrete]
+===== Seleção de destino
+
+. Escolha as configurações de destino e as opções de pré e pós-restauração.
+
+
+[role="tabbed-block"]
+====
+.Restaurar para o local original
+--
+. *Ativar restauração rápida*: selecione esta opção para executar uma operação de restauração rápida. Os volumes e dados restaurados estarão disponíveis imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
+. *Opções de pré-restauração*: insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
+. *Opções pós-restauração*:
++
+** *Reiniciar VM*: selecione esta opção para reiniciar a VM após a conclusão da operação de restauração e após a aplicação do script pós-restauração.
+** *Postscript*: Insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+
+
+. Seção *Notificação*:
++
+** *Ativar notificações por e-mail*: selecione esta opção para receber notificações por e-mail sobre a operação de restauração e indique que tipo de notificação você deseja receber.
+
+
+. Selecione *Restaurar*.
+
+
+--
+.Restaurar para local alternativo
+--
+Não disponível para visualização do KVM.
+
+. Selecione *Restaurar*.
+
+
+--
+====
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

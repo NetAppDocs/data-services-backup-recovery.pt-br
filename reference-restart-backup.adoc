@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference-restart-backup.html 
+keywords: backup restart, restart backup 
+summary: Pode haver situações em que você precisará reiniciar o NetApp Backup and Recovery. 
+---
+= Reinicie o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Pode haver situações em que você precisará reiniciar o NetApp Backup and Recovery.
+
+A funcionalidade de backup e recuperação do NetApp está integrada ao agente do Console.
+
+.Passos
+. Conecte-se ao sistema Linux no qual o agente do Console está sendo executado.
++
+[cols="25,50"]
+|===
+| Localização do agente do console | Procedimento 
+
+
+| Implantação em nuvem | Siga as instruções para https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["conectando-se à máquina virtual Linux do agente do console"^] dependendo do provedor de nuvem que você estiver usando. 
+
+
+| Instalação manual | Efetue login no sistema Linux. 
+|===
+. Digite o comando para reiniciar o serviço.
++
+[cols="40,30,30"]
+|===
+| Localização do agente do console | Comando Docker | Comando Podman 
+
+
+| Implantação em nuvem | `docker restart cloudmanager_cbs` | `podman restart cloudmanager_cbs` 
+
+
+| Instalação manual com acesso à internet | `docker restart cloudmanager_cbs` | `podman restart cloudmanager_cbs` 
+
+
+| Instalação manual sem acesso à internet | `docker restart ds_cloudmanager_cbs_1` | `podman restart ds_cloudmanager_cbs_1` 
+|===
+

@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: br-start-login.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Use o NetApp Console para efetuar login no serviço NetApp Backup and Recovery. 
+---
+= Efetue login no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Use o NetApp Console para efetuar login no NetApp Backup and Recovery.
+
+O NetApp Backup and Recovery usa o gerenciamento de identidade e acesso para controlar o acesso que cada usuário tem a ações específicas.
+
+Para obter detalhes sobre as ações que cada função pode executar, consultelink:reference-roles.html["Funções de usuário do NetApp Backup and Recovery"] .
+
+Para efetuar login no NetApp Console, você pode usar suas credenciais do site de suporte da NetApp ou pode se inscrever para um login no NetApp Console usando seu e-mail e uma senha. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Saiba mais sobre como fazer login"^] .
+
+*Função necessária do NetApp Console* Administrador da organização, Administrador de pasta ou projeto, Superadministrador de backup e recuperação, Função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+Para adicionar um agente do Console, você precisa ter a função de administrador da organização ou de superadministrador do Backup and Recovery.
+
+.Passos
+. Abra um navegador da web e vá para o https://console.netapp.com/["Console NetApp"^] .
++
+A página de login do NetApp Console é exibida.
+
+. Efetue login no Console.
+. Na navegação à esquerda do Console, selecione *Proteção* > *Backup e Recuperação*.
++
+** Se esta for a primeira vez que você faz login neste serviço e ainda não adicionou um sistema à página *Sistemas*, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida e mostrará uma opção para adicionar um sistema.  Para obter detalhes sobre como adicionar um sistema à página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introdução ao modo padrão do NetApp Console"^] .
+** Se esta for a primeira vez que você faz login neste serviço e já tiver adicionado um sistema à página *Sistemas*, mas não tiver descoberto nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida e mostrará uma opção para *Descobrir recursos*.
+
+
+. Se você ainda não fez isso, selecione a opção *Descobrir e gerenciar*.  <<<<<<< CABEÇA
++
+** Para cargas de trabalho do Microsoft SQL Server, consultelink:br-start-discover.html["Descubra as cargas de trabalho do Microsoft SQL Server"] .
+** Para cargas de trabalho VMware, consultelink:br-use-vmware-discovery.html["Descubra as cargas de trabalho da VMware"] .
+** Para cargas de trabalho KVM, consultelink:br-start-discover-kvm.html["Descubra cargas de trabalho KVM"] .
+** Para cargas de trabalho do Hyper-V, consultelink:br-start-discover-hyperv.html["Descubra as cargas de trabalho do Hyper-V"] .
+** Para cargas de trabalho do Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra as cargas de trabalho do Kubernetes"] .
+
+
+
+
+[]
+====
++ * Para cargas de trabalho do Microsoft SQL Server, consultelink:br-start-discover.html["Descubra as cargas de trabalho do Microsoft SQL Server"] .  * Para cargas de trabalho VMware, consultelink:br-use-vmware-discovery.html["Descubra as cargas de trabalho da VMware"] .  * Para cargas de trabalho KVM, consultelink:br-start-discover-kvm.html["Descubra cargas de trabalho KVM"] .  * Para cargas de trabalho Oracle, consultelink:br-start-discover-oracle.html["Descubra as cargas de trabalho da Oracle"] .  * Para cargas de trabalho do Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra as cargas de trabalho do Kubernetes"] .
+
+>>>>>>> 6b2aaa82d1d2ec0ac72303b380f289e4a01ba4c6
+
+====
