@@ -28,7 +28,7 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 Você pode restaurar dados para o local original; restaurar para um local alternativo não está disponível nesta versão de visualização privada.
 
 .Considerações sobre restauração de armazenamento de objetos
-Se você selecionar um arquivo de backup no armazenamento de objetos e a proteção contra ransomware estiver ativa para esse backup (se você tiver habilitado o DataLock e a proteção contra ransomware na política de backup), você será solicitado a executar uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você execute a verificação.
+Se você selecionar um arquivo de backup no armazenamento de objetos e a proteção contra ransomware estiver ativa para esse backup (se você habilitou o DataLock e o Ransomware Resilience na política de backup), você será solicitado a executar uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados. Recomendamos que você execute a verificação.
 
 
 TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.

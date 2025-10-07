@@ -375,7 +375,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 +
 *** Digite o nome da política.
 *** Selecione até cinco programações, normalmente com frequências diferentes.
-*** Para políticas de backup para objeto, defina as configurações de DataLock e Proteção contra Ransomware.  Para obter detalhes sobre DataLock e proteção contra ransomware, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
+*** Para políticas de backup para objeto, defina as configurações de DataLock e Resiliência de Ransomware.  Para obter detalhes sobre DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
 *** Selecione *Criar*.
 
 

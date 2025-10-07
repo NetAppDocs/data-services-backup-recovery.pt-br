@@ -116,7 +116,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Uma captura de tela da entr
 
 As verificações de proteção contra ransomware são ativadas por padrão.  A configuração padrão para a frequência de verificação é de 7 dias.  A verificação ocorre apenas na cópia mais recente do instantâneo.  Você pode habilitar ou desabilitar verificações de ransomware na cópia mais recente do snapshot usando a opção na página Configurações avançadas.  Se você habilitar, as verificações serão realizadas a cada 7 dias por padrão.
 
-Para obter detalhes sobre as opções de proteção DataLock e Ransomware, consultelink:prev-ontap-policy-object-options.html["Opções de proteção contra DataLock e Ransomware"] .
+Para obter detalhes sobre as opções de DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opções de resiliência do DataLock e do Ransomware"] .
 
 Você pode alterar essa programação para dias ou semanas ou desativá-la, economizando custos.
 

@@ -69,7 +69,7 @@ NOTE: A criação inicial de um volume replicado ou arquivo de backup inclui uma
 
 A tabela a seguir mostra uma comparação generalizada dos três métodos de backup.  Embora o espaço de armazenamento de objetos normalmente seja mais barato do que o armazenamento em disco local, se você acha que pode restaurar dados da nuvem com frequência, as taxas de saída dos provedores de nuvem podem reduzir algumas de suas economias.  Você precisará identificar com que frequência precisará restaurar dados dos arquivos de backup na nuvem.
 
-Além desses critérios, o armazenamento em nuvem oferece opções de segurança adicionais se você usar o recurso DataLock e Proteção contra Ransomware, além de economia de custos adicional ao selecionar classes de armazenamento de arquivo para arquivos de backup mais antigos. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção do DataLock e do Ransomware e as configurações de armazenamento de arquivamento"] .
+Além desses critérios, o armazenamento em nuvem oferece opções de segurança adicionais se você usar o recurso DataLock e Ransomware Resilience, além de economia de custos adicional ao selecionar classes de armazenamento de arquivamento para arquivos de backup mais antigos. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção do DataLock e do Ransomware e as configurações de armazenamento de arquivamento"] .
 
 [cols="18,18,22,18,22"]
 |===

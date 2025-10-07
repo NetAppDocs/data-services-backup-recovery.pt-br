@@ -218,7 +218,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Se você planeja restaurar dados de volume de um arquivo de backup que foi movido para um armazenamento de objetos de arquivamento, haverá uma taxa adicional de recuperação por GiB e uma taxa por solicitação do provedor de nuvem.
-* Se você planeja verificar se há ransomware em um arquivo de backup durante o processo de restauração de dados de volume (se você tiver habilitado o DataLock e a proteção contra ransomware para seus backups na nuvem), você também incorrerá em custos extras de saída do seu provedor de nuvem.
+* Se você planeja verificar se há ransomware em um arquivo de backup durante o processo de restauração de dados de volume (se você tiver habilitado o DataLock e o Ransomware Resilience para seus backups na nuvem), você também incorrerá em custos extras de saída do seu provedor de nuvem.
 
 
 *Taxas de serviço*
@@ -362,7 +362,7 @@ TIP: O período de retenção para backups de volumes de proteção de dados é 
 
 === Configurações de proteção de arquivo de backup
 
-Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você poderá proteger seus backups no armazenamento de objetos contra exclusão e ataques de ransomware.  Cada política de backup fornece uma seção para _DataLock e proteção contra ransomware_ que pode ser aplicada aos seus arquivos de backup por um período de tempo específico - o _período de retenção_.
+Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você poderá proteger seus backups no armazenamento de objetos contra exclusão e ataques de ransomware. Cada política de backup fornece uma seção para _DataLock e Resiliência contra Ransomware_ que pode ser aplicada aos seus arquivos de backup por um período de tempo específico - o _período de retenção_.
 
 * _DataLock_ protege seus arquivos de backup contra modificações ou exclusão.
 * A _Proteção contra ransomware_ verifica seus arquivos de backup para procurar evidências de um ataque de ransomware quando um arquivo de backup é criado e quando os dados de um arquivo de backup estão sendo restaurados.

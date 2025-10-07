@@ -230,7 +230,7 @@ A coluna *Local* mostra se o arquivo de backup (Snapshot) é *Local* (uma cópia
 
 . Selecione *Avançar*.
 +
-Observe que se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Proteção contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados.  Recomendamos que você verifique se há ransomware no arquivo de backup.  (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+Observe que se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de ransomware adicional no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique se há ransomware no arquivo de backup. (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
 
 . Na página _Selecionar destino_, selecione o *sistema* onde você deseja restaurar o volume.
 . Ao restaurar um arquivo de backup do armazenamento de objetos, se você selecionar um sistema ONTAP local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
@@ -376,7 +376,7 @@ Se estiver restaurando pastas ou arquivos de um arquivo de backup que reside em 
 link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"] . link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"] . Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
 
 +
-E se a Resiliência contra Ransomware estiver ativa para o arquivo de backup (se você habilitou o DataLock e a Proteção contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados.  Recomendamos que você verifique se há ransomware no arquivo de backup.  (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+E se a Resiliência contra Ransomware estiver ativa para o arquivo de backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique se há ransomware no arquivo de backup. (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
 
 . Na página _Selecionar itens_, selecione a pasta ou arquivo(s) que deseja restaurar e selecione *Continuar*.  Para ajudar você a encontrar o item:
 +

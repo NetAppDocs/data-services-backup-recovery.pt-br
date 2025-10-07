@@ -187,12 +187,12 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 O StorageGRID deve atender aos seguintes requisitos. Veja o https://docs.netapp.com/us-en/storagegrid-117/["Documentação do StorageGRID"^] para mais informações.
 
-Para obter detalhes sobre os requisitos de proteção do DataLock e do Ransomware para StorageGRID, consultelink:prev-ontap-policy-object-options.html["Opções de política de backup para objeto"] .
+Para obter detalhes sobre os requisitos de resiliência do DataLock e do Ransomware para StorageGRID, consultelink:prev-ontap-policy-object-options.html["Opções de política de backup para objeto"] .
 
 Versões do StorageGRID suportadas:: O StorageGRID 10.3 e versões posteriores são suportados.
 +
 --
-Para usar o DataLock & Ransomware Protection para seus backups, seus sistemas StorageGRID devem estar executando a versão 11.6.0.3 ou superior.
+Para usar o DataLock & Ransomware Resilience para seus backups, seus sistemas StorageGRID devem estar executando a versão 11.6.0.3 ou superior.
 
 Para colocar backups mais antigos em camadas no armazenamento de arquivo em nuvem, seus sistemas StorageGRID devem estar executando a versão 11.3 ou superior.  Além disso, seus sistemas StorageGRID devem ser descobertos na página *Sistemas* do Console.
 
@@ -432,9 +432,9 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 +
 *** Digite o nome da política.
 *** Selecione até cinco programações, normalmente com frequências diferentes.
-*** Para políticas de backup para objeto, defina as configurações de DataLock e Proteção contra Ransomware.  Para obter detalhes sobre DataLock e proteção contra ransomware, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
+*** Para políticas de backup para objeto, defina as configurações de DataLock e Resiliência de Ransomware.  Para obter detalhes sobre DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
 +
-Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você pode optar por proteger seus backups contra exclusão e ataques de ransomware configurando o _DataLock e a proteção contra ransomware_.  O _DataLock_ protege seus arquivos de backup contra modificações ou exclusão, e a _Proteção contra Ransomware_ verifica seus arquivos de backup para procurar evidências de um ataque de ransomware em seus arquivos de backup.
+Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você pode optar por proteger seus backups contra exclusão e ataques de ransomware configurando o _DataLock e o Ransomware Resilience_.  O _DataLock_ protege seus arquivos de backup contra modificações ou exclusão, e o _Ransomware Resilience_ verifica seus arquivos de backup para procurar evidências de um ataque de ransomware em seus arquivos de backup.
 
 *** Selecione *Criar*.
 
