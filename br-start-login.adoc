@@ -22,7 +22,7 @@ Para obter detalhes sobre as ações que cada função pode executar, consulteli
 
 Para efetuar login no NetApp Console, você pode usar suas credenciais do site de suporte da NetApp ou pode se inscrever para um login no NetApp Console usando seu e-mail e uma senha. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Saiba mais sobre como fazer login"^] .
 
-*Função necessária do NetApp Console* Administrador da organização, Administrador de pasta ou projeto, Superadministrador de backup e recuperação, Função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 Para adicionar um agente do Console, você precisa ter a função de administrador da organização ou de superadministrador do Backup and Recovery.
 

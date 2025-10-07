@@ -14,7 +14,7 @@ summary: Conclua algumas etapas para configurar o NetApp Backup and Recovery.
 
 
 [role="lead"]
-Depois de configurar o NetApp Console, configure as configurações de backup e recuperação, que incluem adicionar credenciais para recursos do host, importar recursos do SnapCenter , configurar diretórios de log e configurar as definições do VMware vCenter.  Você deve fazer isso antes de começar a fazer backup e recuperar seus dados.
+Depois de configurar o NetApp Console, defina as configurações de backup e recuperação.  Adicione credenciais para recursos de host, importe recursos do SnapCenter , configure diretórios de log e defina configurações do VMware vCenter.  Conclua estas etapas antes de fazer backup ou recuperar dados.
 
 * <<Adicionar credenciais para recursos do host>>para os hosts Windows e SQL Server que você importou do SnapCenter e adicione credenciais.  (Somente cargas de trabalho do Microsoft SQL Server)
 * <<Manter as configurações do VMware vCenter>> .
@@ -28,9 +28,9 @@ Depois de configurar o NetApp Console, configure as configurações de backup e 
 
 == Adicionar credenciais para recursos do host
 
-Adicione credenciais para os recursos do host que você deseja importar do SnapCenter.  As credenciais do host são usadas para descobrir novas cargas de trabalho e aplicar políticas de backup.
+Adicione credenciais para recursos de host para importar do SnapCenter.  O NetApp Backup and Recovery usa essas credenciais para descobrir cargas de trabalho e aplicar políticas de backup.
 
-Se você ainda não tiver credenciais, poderá criá-las.  Essas credenciais devem ter as permissões necessárias para acessar e gerenciar as cargas de trabalho do host.
+Se você não tiver credenciais, crie-as com permissões para acessar e gerenciar cargas de trabalho do host.
 
 Você precisa configurar os seguintes tipos de credenciais:
 
@@ -89,7 +89,7 @@ Mais tarde, você pode editar a senha dos recursos do host importados do SnapCen
 
 == Manter as configurações do VMware vCenter
 
-Forneça as credenciais do VMware vCenter para descobrir as cargas de trabalho do VMware vCenter Server das quais você deseja fazer backup.  Se você não tiver credenciais existentes, poderá criá-las com as permissões necessárias para acessar e gerenciar as cargas de trabalho do VMware vCenter Server.
+Forneça credenciais do VMware vCenter para descobrir cargas de trabalho para backup.  Se você não tiver credenciais, crie-as com permissões para acessar e gerenciar as cargas de trabalho do VMware vCenter Server.
 
 .Passos
 . No menu NetApp Backup and Recovery, selecione *Configurações*.
@@ -110,7 +110,7 @@ Forneça as credenciais do VMware vCenter para descobrir as cargas de trabalho d
 
 == Importar e gerenciar recursos do host SnapCenter
 
-Se você usou o SnapCenter anteriormente para fazer backup de seus recursos, poderá importar e gerenciar esses recursos no NetApp Backup and Recovery.  Com esta opção, você pode importar informações do SnapCenter Server para registrar vários servidores Snapcenter e descobrir as cargas de trabalho do banco de dados.
+Se você usou o SnapCenter anteriormente para fazer backup de seus recursos, poderá importar e gerenciar esses recursos no NetApp Backup and Recovery. Esta opção permite importar informações do servidor SnapCenter para registrar vários servidores Snapcenter e descobrir cargas de trabalho do banco de dados.
 
 Este é um processo de duas partes:
 

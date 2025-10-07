@@ -49,7 +49,7 @@ Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode 
 
 Dependendo de suas necessidades, restaure um banco de dados Oracle para um ponto específico no tempo, para um número de alteração do sistema (SCN) específico ou para o último estado bom.  Você também pode simplesmente restaurar o banco de dados a partir de instantâneos e pular o processo de recuperação automatizado.  Talvez você queira pular o processo de recuperação automatizado se quiser executar a recuperação manualmente.  Você pode pesquisar o banco de dados usando seu nome ou com filtros específicos.
 
-*Função de console necessária* Administrador da organização, Administrador de pasta ou projeto, Superadministrador de backup e recuperação, Função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
 . No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.

@@ -14,7 +14,7 @@ summary: Limitações conhecidas identificam funções que não são suportadas 
 
 
 [role="lead"]
-Limitações conhecidas identificam funções que não são suportadas por esta versão do NetApp Backup and Recovery ou que não interoperam corretamente com ele. Revise essas limitações cuidadosamente.
+Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem com esta versão estão listados aqui.  Leia estas limitações com atenção.
 
 * O NetApp Backup and Recovery pode fazer backup do Cloud Volumes ONTAP em um armazenamento de objetos nas regiões da AWS China (incluindo Pequim e Ningxia); no entanto, talvez seja necessário modificar manualmente as políticas de identidade e acesso primeiro.
 +

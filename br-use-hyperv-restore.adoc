@@ -51,7 +51,7 @@ Na página Restaurar (também conhecida como Pesquisar e Restaurar)*, você pode
 
 Restaure cargas de trabalho do Hyper-V usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.
 
-*Função de console necessária* Administrador da organização, Administrador de pasta ou projeto, Superadministrador de backup e recuperação, Função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
 . No menu NetApp Backup and Recovery, selecione *Restaurar*.

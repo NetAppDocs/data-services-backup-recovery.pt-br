@@ -62,7 +62,7 @@ Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e g
 * Fazer backup de pools de armazenamento
 * Proteção de pool de armazenamento e VM em massa usando grupos de proteção
 * Backups de VM consistentes e consistentes com falhas
-* Pesquisar e restaurar backups de VM
+* Pesquisar e restaurar backups de VM de armazenamento primário, secundário e de objetos
 * Processo guiado para fazer backup e restaurar VMs baseadas em KVM e dados de VM
 
 

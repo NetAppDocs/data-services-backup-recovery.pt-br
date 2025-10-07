@@ -28,7 +28,7 @@ NOTE: Para fazer backup de grupos de proteção em um cronograma, crie política
 
 Você pode executar um backup sob demanda imediatamente.  Isso é útil se você estiver prestes a fazer alterações no seu sistema e quiser garantir que tenha um backup antes de começar.
 
-*Função de console necessária* Administrador da organização, administrador de pasta ou projeto, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
 . No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.

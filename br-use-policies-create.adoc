@@ -281,7 +281,7 @@ Se estiver editando uma política que faz backup no armazenamento de objetos, vo
 Se você importou recursos do SnapCenter, poderá encontrar algumas diferenças entre as políticas usadas no SnapCenter e aquelas usadas no NetApp Backup and Recovery. Ver link:reference-policy-differences-snapcenter.html["Diferenças de política entre SnapCenter e NetApp Backup and Recovery"] .
 
 .Função necessária do NetApp Console
-Administrador da organização ou administrador da pasta ou do projeto. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
 . No NetApp Console, acesse *Proteção* > *Backup e Recuperação*.
