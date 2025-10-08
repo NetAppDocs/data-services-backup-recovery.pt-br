@@ -298,18 +298,7 @@
   <block id="51d8503c0e8b0708c3068080f066d721" category="inline-link">Visão geral das cargas de trabalho do Protect Oracle</block>
   <block id="834f349029c5bc6715f25a9eac82f171" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, consulte<block ref="aa11c9ead0c1847dba5fa900ff49219a" category="inline-link-rx"></block> .</block>
   <block id="8d799f5cd163dd189424382fcbc55641" category="summary">Os recursos de backup e recuperação do NetApp disponíveis por meio da interface de usuário da Web também estão disponíveis por meio de APIs RESTful.</block>
-  <block id="f859538a4a4a87332d480810ee64b9a1" category="doc">APIs de backup e recuperação da NetApp</block>
-  <block id="7d2c40efa89e98940f91b5682d04be14" category="paragraph">Os recursos de backup e recuperação do NetApp disponíveis por meio da interface de usuário da Web também estão disponíveis por meio da API RESTful.</block>
   <block id="30c6d0ffedd81886ff84e80ce7c1ac4e" category="paragraph">Há dez categorias de endpoints definidas no NetApp Backup and Recovery:</block>
-  <block id="2cb92dc9664b8bd89b66c1b586d1b5d2" category="list-text">backup - gerencia operações de backup de recursos na nuvem e no local e recupera detalhes dos dados de backup</block>
-  <block id="0a924c1567df8b244e9ce16ecf18158d" category="list-text">catálogo - gerencia a pesquisa de catálogo indexado para arquivos com base em uma consulta (Pesquisa e Restauração)</block>
-  <block id="655e1239590299202548ceb6d7ca2432" category="list-text">nuvem - recupera informações sobre vários recursos do provedor de nuvem do NetApp Console</block>
-  <block id="15d8154b8efe550bd8a73e1b350b5aaf" category="list-text">trabalho - gerencia entradas de detalhes do trabalho no banco de dados do NetApp Console</block>
-  <block id="19e63daa1125ffdc600887959e940920" category="list-text">licença - recupera a validade da licença dos sistemas do NetApp Console</block>
-  <block id="f3e008a63710b1317b4340caf4a574bd" category="list-text">verificação de ransomware - inicia uma verificação de ransomware em um arquivo de backup específico</block>
-  <block id="0c1029565d47087d49e25dbc4e2a20e9" category="list-text">restaurar - permite que você execute operações de restauração em nível de volume, arquivo e pasta</block>
-  <block id="50091c079ab0009fa21807b8bbc81cfd" category="list-text">sfr - recupera arquivos de um arquivo de backup para operações de restauração em nível de arquivo único (Navegar e Restaurar)</block>
-  <block id="fd32f35db4beea68175faf51895e4286" category="list-text">storagegrid - recupera detalhes sobre um servidor StorageGRID e permite que você descubra um servidor StorageGRID</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">Começando</block>
   <block id="608e10599cf84b00b7c11946c125c2da" category="paragraph">Para começar a usar as APIs de backup e recuperação do NetApp , você precisará obter um token de usuário, sua ID de conta do NetApp Console e a ID do agente do Console.</block>
   <block id="a0d08a35ff701967dbc1c996dc96b450" category="paragraph">Ao fazer chamadas de API, você adicionará o token do usuário no cabeçalho Authorization e o ID do agente do Console no cabeçalho x-agent-id.  Você deve usar o ID da conta do NetApp Console nas APIs.</block>
@@ -319,21 +308,12 @@
   <block id="354fecdc1c1045cf24231c0bec3c74cd" category="list-text">Obtenha o ID da sua conta do NetApp Console.</block>
   <block id="8249fee34290d25027be632b8f27da68" category="paragraph">Esta API retornará uma resposta como a seguinte. Você pode recuperar o ID da conta analisando a saída de *[0].[ accountPublicId]*.</block>
   <block id="e215302d4580db65b061d44872615b4e" category="list-text">Obtenha o x-agent-id que contém o ID do agente do Console.</block>
-  <block id="b3080cdc3d4f3f5baa6015e73aeff8f4" category="paragraph">Esta API retornará uma resposta como a seguinte. Você pode recuperar o ID do agente analisando a saída de *occm.[0].[agent].[agentId]*.</block>
   <block id="b62dbbecd6533f9627427d34160e7d75" category="section-title">Exemplo usando as APIs</block>
   <block id="40a591a39a0f45259cd67a379759b447" category="paragraph">O exemplo a seguir mostra uma chamada de API para ativar o NetApp Backup and Recovery em um sistema com uma nova política que tem rótulos diários, horários e semanais definidos, arquivamento após dias definido como 180 dias, na região East-US-2 na nuvem do Azure.  Observe que isso só habilita o backup no sistema, mas nenhum volume é copiado.</block>
   <block id="7d9faab09c1d85e60360dfca30ab77cc" category="paragraph-title">Solicitação de API</block>
   <block id="0c5b410b41ada114d1facc4386981b80" category="paragraph">Você verá que usamos o ID da conta do NetApp Console<block ref="50deb7e0fbc66ff8a640c6692b57f062" prefix=" " category="inline-code"></block> , ID do agente do console<block ref="4c8927d7befc11ec79983636b1168c7e" prefix=" " category="inline-code"></block> , e token de usuário<block ref="4def1da2868e8cb4ae96d8dc41f88f59" prefix=" " category="inline-code"></block> neste comando.</block>
-  <block id="8243464aa42a67375338d8b893252d77" category="listing-title">Resposta é um ID de tarefa que você pode monitorar.</block>
-  <block id="7b029d80356dba73932cd4b67641ab73" category="listing-title">Monitore a resposta.</block>
-  <block id="b6c768315d9228aa5e18b2250a18a10e" category="listing-title">Resposta.</block>
-  <block id="c39d07aa3697a8b5b1eb9963f6cd194c" category="listing-title">Monitore até que o "status" seja "CONCLUÍDO".</block>
   <block id="19ec08da81a826d919d64ab860845c04" category="section-title">Referência de API</block>
-  <block id="ddd5816c7e118ae58983f4b636d6c855" category="inline-link">Automação do NetApp Console</block>
-  <block id="87f361d3d21b5f2e8e850aca249155d2" category="paragraph">A documentação para cada API de backup e recuperação da NetApp está disponível em<block ref="584c1b3f77bb3daa0e75be7a7bc62d7e" category="inline-link-rx"></block> .</block>
   <block id="3273eb60c717ba9173100472fd580bfa" category="doc">Automatize com APIs REST de backup e recuperação da NetApp</block>
-  <block id="9874c76760f3e8dc1a2afbcd394c32d9" category="list-text">licença - recupera a validade da licença dos sistemas do NetApp Console</block>
-  <block id="509babc000dca56a9c4a45f4b4007b93" category="list-text">sistema - gerencia as políticas de backup e configura o armazenamento de objetos de destino associado a um sistema</block>
   <block id="2a9e7958a1e32df2e07dc1da1bbefd2b" category="inline-link">Automação do NetApp Console para backup e recuperação do NetApp</block>
   <block id="8c71a3216c08ee0050e8e6e5f46dcfa2" category="paragraph">A documentação para cada API de backup e recuperação da NetApp está disponível em<block ref="717a45849afc1d09887fe5a3e436a2d3" category="inline-link-rx"></block> .</block>
   <block id="92ab15f0eb1b97b8c4bdb14a10948af8" category="inline-link">Crie um token de acesso ao serviço</block>
@@ -576,11 +556,8 @@
   <block id="81c036d58c409a418478a162446be10e" category="doc">Descubra alvos de backup externos no NetApp Backup and Recovery</block>
   <block id="8a88f4a8837d5ddd19e5e4ca6524d01d" category="paragraph">Conclua algumas etapas para descobrir ou adicionar manualmente destinos de backup externos no NetApp Backup and Recovery.</block>
   <block id="21118fe50cd3fe4b0bb195ec4213b755" category="section-title">Descubra um alvo de backup</block>
-  <block id="ef73604c0d3f2bde5f9802f0b1ad2591" category="paragraph">Antes de usar o NetApp Backup and Recovery, você deve configurar seus destinos de backup do Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage ou StorageGRID.</block>
   <block id="d415ea07061a25018462d36c81425d4f" category="paragraph">Você pode descobrir esses alvos automaticamente ou adicioná-los manualmente.</block>
-  <block id="159f9a2775a11fd7b9c7f550f860c33a" category="paragraph">Forneça as credenciais necessárias para acessar o sistema de conta de armazenamento.  Essas credenciais são usadas para descobrir as cargas de trabalho que você deseja fazer backup.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Antes de começar</block>
-  <block id="b77fefd31dcd7551887d77dc3522edc7" category="paragraph">Para adicionar um destino de backup externo, pelo menos uma carga de trabalho precisa ser descoberta.</block>
   <block id="470ce3913d71cf58779c55ed1199ab47" category="list-text">Selecione a aba *Destinos de backup externo*.</block>
   <block id="5d93632dd21f2b862652e38274ab25f3" category="list-text">Selecione *Descobrir destino de backup*.</block>
   <block id="abd59a7e6214ae0bc1f2eb0e1d451616" category="list-text">Selecione um dos tipos de destino de backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* ou * ONTAP S3*.</block>
@@ -649,7 +626,6 @@
   <block id="65aa0e52587b5f59eb26af06ddeef28a" category="list-text">Selecione *Concluído*.</block>
   <block id="a8d8543f27c131c1d9b3ca0cf9f1f4ea" category="summary">O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho para que você possa protegê-las.</block>
   <block id="ebe1fa7e8a9f4c3139f8657f10a169ee" category="doc">Descubra as cargas de trabalho do Hyper-V no NetApp Backup and Recovery</block>
-  <block id="626447ebef1204c5ba12dc2ea0cc3c68" category="paragraph">O NetApp Backup and Recovery precisa primeiro descobrir as máquinas virtuais Hyper-V para que você possa protegê-las.</block>
   <block id="02389fe69365606d1e090c58a1a6ccb3" category="paragraph">*Função de console necessária* Superadministrador de backup e recuperação. Aprenda sobre<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="ccb99cc37b628cd3d05ccf85f8c0c579" category="section-title">Adicionar um host Hyper-V e descobrir recursos</block>
   <block id="1acd66cfe4895aeb93ee71e51002389a" category="paragraph">Adicione informações do host Hyper-V e deixe o NetApp Backup and Recovery descobrir máquinas virtuais.  Em cada agente do Console, selecione os sistemas onde você deseja descobrir os recursos.</block>
@@ -665,16 +641,13 @@
   <block id="c7312d0cf4cda8f78a6f1769e7958906" category="list-text">Digite o nome de usuário e a senha da conta.</block>
   <block id="5cf90f1e7bb7c40d89ed2ddaf928978f" category="list-text">*Registro de host*: Adicione um novo host Hyper-V.  Insira o FQDN ou endereço IP do host, credenciais, agente do console e número da porta.</block>
   <block id="98ab4e23cce41ca38b39c7baf6ef4567" category="admonition">Este processo pode levar alguns minutos.</block>
-  <block id="c365dfcaa8c5075c4cbb6a0645fdf8f3" category="paragraph">Depois que o NetApp Backup and Recovery descobre recursos, a carga de trabalho do Hyper-V é exibida na lista de cargas de trabalho na página Inventário.</block>
   <block id="8c75bc4aab98ebfa4607c6737296d0fa" category="section-title">Continue para o Painel de Backup e Recuperação da NetApp</block>
   <block id="4a94cfaf243c22ac5a3b2acf1849db11" category="list-text">Para exibir o Painel de Backup e Recuperação do NetApp , no menu do Console do NetApp , selecione *Painel*.</block>
   <block id="8c0d3ed018f04fbf259db34d9167eae7" category="list-text">Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.</block>
   <block id="dd9e4491810d247bd97912faae187a39" category="summary">O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho para que você possa usar o serviço.</block>
   <block id="dfbbf83657db8e9ef8d6ee3a468873c2" category="doc">Descubra cargas de trabalho do Kubernetes no NetApp Backup and Recovery</block>
-  <block id="3aab331e64d794496a4d43061b1ca669" category="paragraph">O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho do Kubernetes para que você possa usar o serviço.</block>
   <block id="c3a291a73ba59b4d94eb6db3eaa2ff85" category="paragraph">*Função necessária do NetApp Console* Superadministrador de backup e recuperação. Aprenda sobre<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="f0338e38e7978ec30d1f5eb9b845e843" category="section-title">Descubra as cargas de trabalho do Kubernetes</block>
-  <block id="c6ddfcf9238c717bb06e5e2019ae67f4" category="paragraph">No inventário de backup e recuperação, você pode descobrir cargas de trabalho do Kubernetes em execução no seu ambiente. A descoberta de uma carga de trabalho adiciona um cluster Kubernetes ao NetApp Backup and Recovery, permitindo que você adicione aplicativos ao cluster e proteja os recursos hospedados pelo cluster.</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Faça um dos seguintes:</block>
   <block id="c18324e4a97bb333a32ac23c81d62389" category="list-text">Se você estiver descobrindo cargas de trabalho do Kubernetes pela primeira vez, no NetApp Backup and Recovery, selecione *Descobrir e gerenciar* no tipo de carga de trabalho do Kubernetes.</block>
   <block id="6226950d1b144f972ce9b5d3caea9b42" category="list-text">Se você já descobriu cargas de trabalho do Kubernetes, no NetApp Backup and Recovery, selecione *Inventário* &gt; *Cargas de trabalho* e, em seguida, selecione *Descobrir recursos*.</block>
@@ -689,17 +662,14 @@
   <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">Após concluir as etapas, selecione *Descobrir*.</block>
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">O cluster é adicionado ao inventário.</block>
   <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">Selecione *Exibir* na carga de trabalho do Kubernetes associada para ver a lista de aplicativos, clusters e namespaces para essa carga de trabalho.</block>
-  <block id="58376b7ab89c912f5fddbf184aacd654" category="paragraph">Para exibir o Painel de Backup e Recuperação do NetApp , siga estas etapas.</block>
   <block id="0023e6c28000b2b0e540612bd4511db3" category="list-text">No menu superior, selecione *Painel*.</block>
   <block id="09799d4864834161536cca195023364b" category="inline-link-macro">Saiba o que o Painel mostra para você</block>
   <block id="d5292ed1370bb405095587cd10827f95" category="paragraph"><block ref="2a35d34f81dbac907e6068b45b5d538a" category="inline-link-macro-rx"></block> .</block>
   <block id="53b57e71ade6f566bc9a40b2d755856b" category="doc">Descubra cargas de trabalho KVM no NetApp Backup and Recovery</block>
-  <block id="7991679a1bc137b151fc5c7248e56e31" category="paragraph">O NetApp Backup and Recovery precisa primeiro descobrir hosts KVM e máquinas virtuais para que você possa protegê-los.</block>
   <block id="3f65dc3e5d8703153e9361635518dbf8" category="section-title">Adicionar um host KVM e descobrir recursos</block>
   <block id="9c76ba797da429be427b4f5c78dbaf5b" category="paragraph">Adicione informações do host KVM e deixe o NetApp Backup and Recovery descobrir cargas de trabalho.  Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.</block>
   <block id="eb843ea9168f30f329148ea12f95519f" category="list-text">No menu do NetApp Console, selecione *Proteção &gt; Backup e recuperação*.</block>
   <block id="acaaf9de0e4071fe117da04dbbe9565d" category="list-text">No bloco KVM, selecione *Descobrir e gerenciar*.</block>
-  <block id="ea67ddea410da085d326db1c0305e35a" category="paragraph">Se esta for a primeira vez que você faz login neste serviço, você já tem um sistema no Console, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.</block>
   <block id="12d8eeba7e97739f6035cbec50bd2369" category="list-text">*Tipo de carga de trabalho*: Selecione *KVM*.</block>
   <block id="893154d2bbfb66474661f9a0545a1144" category="list-text">Se você ainda não armazenou credenciais para este host KVM, selecione *Adicionar credenciais*.</block>
   <block id="4eefc3e53a1cd35eca7d32b6b2c550f5" category="list-text">Escolha se deseja usar credenciais root ou credenciais não root.</block>
@@ -780,7 +750,6 @@
   <block id="924cc6eaf82618251de609e2689ed733" category="paragraph">Você pode usar os seguintes tipos de licença:</block>
   <block id="63f202b7fcd80e9277a9e585cd35c7ae" category="list-text">Inscreva-se para um teste gratuito de 30 dias.</block>
   <block id="a4a4b80b06aca5ddf495d088f79e9824" category="paragraph">*Como você habilita o NetApp Backup and Recovery?*  O NetApp Backup and Recovery não requer nenhuma ativação.  A opção de backup e recuperação é ativada automaticamente na navegação à esquerda do Console.</block>
-  <block id="edf7865eb32a740314b7dd026b17373c" category="paragraph">Para começar, você precisa se inscrever ou entrar em contato com seu representante de vendas da NetApp para experimentar este serviço.  Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.</block>
   <block id="21309928cc72944c6c8c863389d043d7" category="paragraph">Para começar a usar o NetApp Backup and Recovery, selecione "Começar a descobrir cargas de trabalho" na página inicial.</block>
   <block id="3f3402ceee4504bb73638f6111dffad2" category="paragraph">* O NetApp Backup and Recovery está disponível nos modos padrão, restrito e privado?*  No momento, o NetApp Backup and Recovery está disponível apenas no modo padrão.  Fique ligado para mais informações.</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">Modos de implantação do NetApp Console</block>
@@ -793,7 +762,6 @@
   <block id="3462920d936c74204339015d2f24872a" category="paragraph">*Qual navegador devo usar?* Qualquer navegador moderno funcionará.</block>
   <block id="cf49c80b52a1cb095928d387f3ae47ed" category="section-title">Interação com outros serviços</block>
   <block id="26b7f9e5fc21bc244eda67dabcd65cfb" category="paragraph">* O NetApp Backup and Recovery está ciente das configurações de proteção feitas no NetApp ONTAP?*  Sim, o NetApp Backup and Recovery descobre agendamentos de snapshots definidos no ONTAP.</block>
-  <block id="0b47abad470833e8cfec5a3afd50ef45" category="paragraph">*Se você definir uma política usando o NetApp Backup and Recovery, precisará fazer alterações futuras somente neste serviço?*  Recomendamos que você faça alterações de política no NetApp Backup and Recovery.</block>
   <block id="35084d885dea7b061e6894c1cf3036d9" category="section-title">Cargas de trabalho</block>
   <block id="d402524aad46e7fd520fcc6819d646ba" category="paragraph">*O que compõe uma carga de trabalho?*  Uma carga de trabalho é um aplicativo para a versão Preview 2025.  Uma carga de trabalho inclui todos os volumes usados por uma única instância do aplicativo.  Por exemplo, uma instância de banco de dados do Microsoft SQL Server implantada em mssql3.host.com pode ter vol1 e vol2 para seus dados e logs, respectivamente.  Esses volumes juntos constituem a carga de trabalho para aquela instância específica da instância do banco de dados.</block>
   <block id="dd53fd2a784c4561d8b6866079ecff5e" category="paragraph">*Quais cargas de trabalho o NetApp Backup and Recovery suporta?*</block>
@@ -882,20 +850,15 @@
   <block id="ecc3952d3e2cfa4951474032864c7c9a" category="paragraph"><block ref="b3309669576eb9e10c25cb147fe4e7a8" category="inline-link-rx"></block> .</block>
   <block id="31c503d495627df1adea02e470ba00e6" category="summary">Use o NetApp Console para efetuar login no serviço NetApp Backup and Recovery.</block>
   <block id="ad5226cd2abc40b953a6c493bbcd740a" category="paragraph">Use o NetApp Console para efetuar login no NetApp Backup and Recovery.</block>
-  <block id="155e7c7fd8238cac7048f804a1d734dd" category="paragraph">O NetApp Backup and Recovery usa o gerenciamento de identidade e acesso para controlar o acesso que cada usuário tem a ações específicas.</block>
   <block id="d983078a900eaeffa2e334ec3ae3f814" category="inline-link-macro">Funções de usuário do NetApp Backup and Recovery</block>
   <block id="84431c593b60f03c075ddbf38e5d0185" category="paragraph">Para obter detalhes sobre as ações que cada função pode executar, consulte<block ref="d0d0dcb15768cc7e1b5fa2cdae059c59" category="inline-link-macro-rx"></block> .</block>
   <block id="8e917942a77709dfd28c155f42a97553" category="inline-link">Saiba mais sobre como fazer login</block>
   <block id="ae5c737a541e095839e199ea2ab82f0f" category="paragraph">Para efetuar login no NetApp Console, você pode usar suas credenciais do site de suporte da NetApp ou pode se inscrever para um login no NetApp Console usando seu e-mail e uma senha.<block ref="3546779ff62edcb806e94b283f4a603a" category="inline-link-rx"></block> .</block>
-  <block id="b2a74e6e00558766d860afbadbfe8a35" category="paragraph">Para adicionar um agente do Console, você precisa ter a função de administrador da organização ou de superadministrador do Backup and Recovery.</block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="inline-link">Console NetApp</block>
   <block id="6a65fb509b9c682f9df5eb122484e2f7" category="list-text">Abra um navegador da web e vá para o<block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block> .</block>
   <block id="0daac1b9cd4c3a240bf2f6b44ba178a1" category="paragraph">A página de login do NetApp Console é exibida.</block>
   <block id="4a43cddfeeabba4570c14c252dec0bd1" category="list-text">Efetue login no Console.</block>
   <block id="4d2b18ba50dc1294ccb141fdc1041417" category="inline-link">Introdução ao modo padrão do NetApp Console</block>
-  <block id="654d4db04ce9f55a7a717519e1cbc2e0" category="list-text">Se esta for a primeira vez que você faz login neste serviço e ainda não adicionou um sistema à página *Sistemas*, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida e mostrará uma opção para adicionar um sistema.  Para obter detalhes sobre como adicionar um sistema à página *Sistemas*, consulte<block ref="296443cffec903f0b2ef92c8eb1c49ba" category="inline-link-rx"></block> .</block>
-  <block id="170792d237723c6ebdd9bd982118267f" category="list-text">Se esta for a primeira vez que você faz login neste serviço e já tiver adicionado um sistema à página *Sistemas*, mas não tiver descoberto nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida e mostrará uma opção para *Descobrir recursos*.</block>
-  <block id="df9941b48066aee6a81d29a2aea0e458" category="list-text">Se você ainda não fez isso, selecione a opção *Descobrir e gerenciar*.  &lt;&lt;&lt;&lt;&lt;&lt;&lt; CABEÇA</block>
   <block id="9caabb5d3f96fc2ff6ec322a90fc5dd7" category="inline-link-macro">Descubra as cargas de trabalho do Microsoft SQL Server</block>
   <block id="78ee359d959f46c3e9be3e03df6414b7" category="list-text">Para cargas de trabalho do Microsoft SQL Server, consulte<block ref="2ccdda391ff5985cd5dd52b5e1ae8139" category="inline-link-macro-rx"></block> .</block>
   <block id="f9e71ed1d4200b67c1a3bd22600d9cbe" category="inline-link-macro">Descubra as cargas de trabalho da VMware</block>
@@ -906,8 +869,6 @@
   <block id="3b97616ae538f454d8812a77c84392d1" category="list-text">Para cargas de trabalho do Hyper-V, consulte<block ref="e853aa4eb98908dd4b95a8cc80d9972f" category="inline-link-macro-rx"></block> .</block>
   <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">Para cargas de trabalho do Kubernetes, consulte<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> .</block>
   <block id="73e8c7525f434c946114ba1e9477bb6e" category="inline-link-macro">Descubra as cargas de trabalho da Oracle</block>
-  <block id="78ab74a892a2d449cb94914a962cb64d" category="paragraph">+ * Para cargas de trabalho do Microsoft SQL Server, consulte<block ref="2ccdda391ff5985cd5dd52b5e1ae8139" category="inline-link-macro-rx"></block> .  * Para cargas de trabalho VMware, consulte<block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block> .  * Para cargas de trabalho KVM, consulte<block ref="6343f6c391fb966ad325d76211a59524" category="inline-link-macro-rx"></block> .  * Para cargas de trabalho Oracle, consulte<block ref="0ef9d15a5323698b079164a26f451715" category="inline-link-macro-rx"></block> .  * Para cargas de trabalho do Kubernetes, consulte<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> .</block>
-  <block id="eaea787c5c517e9888309a9e235a3799" category="paragraph">&gt;&gt;&gt;&gt;&gt;&gt;&gt; 6b2aaa82d1d2ec0ac72303b380f289e4a01ba4c6</block>
   <block id="a88e44059c42ea669c8e082925b4f685" category="summary">Ao participar do NetApp Backup and Recovery Preview, você desempenha um papel crucial no refinamento e aprimoramento do NetApp Backup and Recovery.  Para a versão de visualização do NetApp Backup and Recovery, ajudaremos com a configuração.  Aqui está o processo.</block>
   <block id="d962dd4a2dd136e11ea9e6b1fc4f0231" category="doc">Configurar a versão de visualização do NetApp Backup and Recovery</block>
   <block id="44c9fe33d945a811c980c2222cb4a7f4" category="paragraph">Ao participar de uma das versões de pré-visualização do NetApp Backup and Recovery, você desempenha um papel crucial no refinamento e aprimoramento do NetApp Backup and Recovery.  Para a versão de pré-visualização do NetApp Backup and Recovery, ajudaremos com a configuração.  Aqui está o processo.</block>
@@ -988,12 +949,10 @@
   <block id="d23f00deab77a3c07a0aec8d285bb928" category="paragraph">Quando o teste gratuito terminar, você será transferido automaticamente para a assinatura PAYGO sem interrupção.  Se você decidir não continuar usando o NetApp Backup and Recovery, basta encerrar o teste gratuito.</block>
   <block id="742afb2e96739678f763dadcdb2f7a1f" category="paragraph">Você pode iniciar o teste gratuito no NetApp Backup and Recovery depois de fazer login no Console.</block>
   <block id="6576c82ece30ba8badaba07725a88bff" category="list-text">Na navegação à esquerda do Console, selecione *Proteção* &gt; *Backup e recuperação*.</block>
-  <block id="c80f5945fb9f935f4fb2f0eeef55f7bb" category="list-text">Se esta for a primeira vez que você faz login neste serviço, você já tem um sistema no NetApp Console, mas ainda não iniciou o teste gratuito, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Iniciar teste gratuito*.</block>
   <block id="fd5d4fdb3a7823114db7b2aec630b26b" category="inline-image-macro">Captura de tela da página de destino do NetApp Backup and Recovery sem avaliação gratuita</block>
   <block id="9c25a3d40f8fd83d6fcf47748f98c818" category="paragraph"><block ref="9c25a3d40f8fd83d6fcf47748f98c818" category="inline-image-macro-rx" type="image"></block></block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="section-title">O que vem a seguir?</block>
   <block id="39ce54293426a39177e483eb92bf1911" category="paragraph">Depois de iniciar o teste gratuito, você pode descobrir cargas de trabalho e criar políticas para fazer backup delas.</block>
-  <block id="1fb444083edaf801c1b352e4db62409a" category="paragraph">Se esta for a primeira vez que você faz login neste serviço, você já tem um sistema no NetApp Console e iniciou o teste gratuito, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.</block>
   <block id="bd03ede87c82adb65c788a5ae08c50b6" category="inline-link-macro">Descubra cargas de trabalho</block>
   <block id="0971d67fb02bb147fd1791733a18b3c9" category="paragraph">Para obter detalhes sobre como descobrir cargas de trabalho, consulte<block ref="991a0b33787378c36abd8e87e3fe062d" category="inline-link-macro-rx"></block> .</block>
   <block id="e0ab1bd403439a64346ca02a27b258a4" category="inline-image-macro">Captura de tela da página de destino do NetApp Backup and Recovery</block>
@@ -2474,7 +2433,6 @@
   <block id="16d9ecdb498025063dae8f97b5c73400" category="paragraph">O próximo passo é configurar o Console e o NetApp Backup and Recovery.</block>
   <block id="10d5c90fc807b2c9968a61c35be570c9" category="paragraph">Análise<block ref="0f2cc189841820bbf400fd90cf6cb8ee" category="inline-link-rx"></block> .</block>
   <block id="f3aee30a3a487c746572616e3f53dc9d" category="section-title">Criar um agente de console</block>
-  <block id="6c0c529833252f5c8d6e731bf693a4e5" category="paragraph">Você deve entrar em contato com sua equipe de produtos da NetApp para experimentar este serviço.  Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.</block>
   <block id="039a0f51fabaf695c33b745ebbd147bf" category="inline-link">como criar um agente de console</block>
   <block id="80cb602f4ec24fce408434bc7c65f694" category="paragraph">Para criar um agente do Console no NetApp Console antes de usar o serviço, consulte a documentação do Console que descreve<block ref="a747c66fa3a9e5a767b0d1460e988f0c" category="inline-link-rx"></block> .</block>
   <block id="92f0c45157f4a06638de9514d90f06ae" category="paragraph-title">Onde instalar o agente do Console</block>
@@ -3281,7 +3239,6 @@
   <block id="2b9ff2b52d8ab869fa0fe6ca5039e723" category="list-text">*Distribuição*: Os dados de backup fluem do sistema primário para o secundário _e_ do primário para o armazenamento de objetos.</block>
   <block id="bb259e1451f14e6ee7317954d4ae3d1f" category="inline-link">ONTAP CLI para&lt;block ref="9548712dac96ee54830150eacbdaba5e" prefix=" " category='inline-code'/&gt;</block>
   <block id="1a9240d843443385061b2272dcfbfff0" category="admonition">Se você quiser criar uma política personalizada antes de ativar o Snapshot, você pode usar o System Manager ou o ONTAP CLI<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block> comando. Consulte<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block> .</block>
-  <block id="2eb08bf5cc59d86398c3e69d4bd43a95" category="admonition">Para criar uma política personalizada usando este serviço, consulte<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block> .</block>
   <block id="18fca8639648ce6584848958e6930ab7" category="list-text">*Replicação*: Se você selecionou *Replicação*, defina as seguintes opções:</block>
   <block id="a561f9f7d6518cf18c51a3dd5f3463f7" category="list-text">*Destino de replicação*: Selecione o sistema de destino e o SVM.  Opcionalmente, selecione o agregado de destino (ou agregados para volumes FlexGroup ) e um prefixo ou sufixo que será adicionado ao nome do volume replicado.</block>
   <block id="f7a5b18ef1b37d992674325263d195c7" category="list-text">*Provedor*: Selecione * ONTAP S3*.</block>
@@ -3725,7 +3682,6 @@
   <block id="8a63c8142c234622452551e194e08f2c" category="paragraph">+ ** Para AWS, você pode fazer backups em camadas no armazenamento AWS _S3 Glacier_ ou _S3 Glacier Deep Archive_. <block ref="da672f43205b0c90027c7dfb66aec892" category="inline-link-macro-rx"></block> .</block>
   <block id="d9687428f28d3ac3ad41d545b8ad9fb3" category="paragraph">+ ** Para o Azure, você pode colocar backups mais antigos em camadas no armazenamento _Azure Archive_. <block ref="378f4ee26769b0f22cf8e5c4c18a63bc" category="inline-link-macro-rx"></block> .</block>
   <block id="bb4d18abee2ac1ac9616f24e56d8201d" category="doc">Planeje sua jornada de proteção com o NetApp Backup and Recovery</block>
-  <block id="9f85c42c0a1b18ffbe33bf023691bcc5" category="paragraph">O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados.  Há muitas opções que você pode selecionar ao habilitar este serviço em seus volumes, então você deve revisar suas escolhas para estar preparado.</block>
   <block id="abb8243f73c63e089a9cc6cdf95785b2" category="paragraph">Analisaremos as seguintes opções:</block>
   <block id="79bf4ea3e9cb2d13a5d787f30856e1de" category="list-text">Quais recursos de proteção você usará: cópias de snapshot, volumes replicados e/ou backup na nuvem</block>
   <block id="85c221c528aa48303ce42bd715536fcc" category="list-text">Qual arquitetura de backup você usará: um backup em cascata ou em fan-out dos seus volumes</block>
@@ -4865,7 +4821,6 @@
   <block id="4dba655852206fd33ef2ae210d0f09ea" category="sidebar">Fazer backup de cargas de trabalho do Microsoft SQL Server</block>
   <block id="a86a44463f171d5cbfffdac926d2c5f7" category="sidebar">Restaurar cargas de trabalho do Microsoft SQL Server</block>
   <block id="c82b8b73ed613da47a71b640f8e94c5d" category="sidebar">Clonar cargas de trabalho do Microsoft SQL Server</block>
-  <block id="c5943196cc46254d3c935f36a7ddc1ad" category="sidebar">Proteja as cargas de trabalho do VMware (visualização privada)</block>
   <block id="79d4e4bc94bda2b257f4190786069be1" category="sidebar">Visão geral das cargas de trabalho do Protect VMware</block>
   <block id="6a3bb59ab6ca7e1af58c7f804a58a47c" category="sidebar">Proteja cargas de trabalho do KVM (visualização privada)</block>
   <block id="d800ef02fd04e0bcce643b8bacdfd33e" category="sidebar">Proteja cargas de trabalho do Hyper-V (visualização privada)</block>
@@ -4995,4 +4950,54 @@
   <block id="03159d4daf48846363441f62acc89b17" category="paragraph">Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você poderá proteger seus backups no armazenamento de objetos contra exclusão e ataques de ransomware. Cada política de backup fornece uma seção para _DataLock e Resiliência contra Ransomware_ que pode ser aplicada aos seus arquivos de backup por um período de tempo específico - o _período de retenção_.</block>
   <block id="2dbe24936b99777ea029c253c6887625" category="paragraph">Observe que se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de ransomware adicional no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique se há ransomware no arquivo de backup. (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)</block>
   <block id="f6c5eba49b66c3e5c7068b19b8b149fe" category="paragraph">E se a Resiliência contra Ransomware estiver ativa para o arquivo de backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique se há ransomware no arquivo de backup. (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)</block>
+  <block id="c50c9f52d92103a492abf38f4b5325e0" category="paragraph">Os recursos de backup e recuperação do NetApp disponíveis por meio da interface de usuário da Web também estão disponíveis por meio da API REST de backup e recuperação.</block>
+  <block id="14ce0c39d97afe357465b20b5fd40d4b" category="list-text"><block ref="402051f4be0cc3aad33bcf3ac3d6532b" prefix="" category="inline-code"></block>- gerencia operações de backup de recursos na nuvem e no local e recupera detalhes dos dados de backup</block>
+  <block id="cd4e6f8a0313efa6feb3ffc6f23487f6" category="list-text"><block ref="46f22f2a56ddd091f4b2b2c35c5ca989" prefix="" category="inline-code"></block>- gerencia a pesquisa de catálogo indexado para arquivos com base em uma consulta (Pesquisa e Restauração)</block>
+  <block id="a3e4eec115aeb60cdb200d4ced9b9b88" category="list-text"><block ref="a1234b3161b4fbfdfb96dd576b65bbea" prefix="" category="inline-code"></block>- recupera informações sobre vários recursos do provedor de nuvem do NetApp Console</block>
+  <block id="24aa4b625b1cba4a681f8de48d1995da" category="list-text"><block ref="9dddd5ce1b1375bc497feeb871842d4b" prefix="" category="inline-code"></block>- gerencia entradas de detalhes do trabalho no banco de dados do NetApp Console</block>
+  <block id="397b284ab9337816b31f808ab5354865" category="list-text"><block ref="718779752b851ac0dc6281a8c8d77e7e" prefix="" category="inline-code"></block>- recupera a validade da licença dos sistemas do NetApp Console</block>
+  <block id="24b37b4316e3c81a1222c466fe559b69" category="list-text"><block ref="432d20b50919e33e5c678ee09662d466" prefix="" category="inline-code"></block>- inicia uma varredura de ransomware em um arquivo de backup específico</block>
+  <block id="0cbcbdf7d4369d79cedfeea4b2bceb69" category="list-text"><block ref="bb2ac0b8da1f64a3498af147ba43fc10" prefix="" category="inline-code"></block>- permite que você execute operações de restauração em nível de volume, arquivo e pasta</block>
+  <block id="dc5027ef13a4286d8fe88c14e03c3451" category="list-text"><block ref="3ae71d9805bbfe325bb5787310e6a9a2" prefix="" category="inline-code"></block>- recupera arquivos de um arquivo de backup para operações de restauração em nível de arquivo único (Navegar e Restaurar)</block>
+  <block id="9c254df4ae4d73908a52dfdafc719035" category="list-text"><block ref="246505b505138f658276e7c599a90f2c" prefix="" category="inline-code"></block>- recupera detalhes sobre um servidor StorageGRID e permite que você descubra um servidor StorageGRID</block>
+  <block id="1688ffb8c846906f90047f4aee770015" category="list-text"><block ref="54b53072540eeeb8f8e9343e71f28176" prefix="" category="inline-code"></block>- gerencia as políticas de backup e configura o armazenamento de objetos de destino associado a um sistema</block>
+  <block id="d961bae30b64ae93036017c48d11972d" category="paragraph">Você pode recuperar o ID do agente da resposta analisando a saída de *occm.[0].[agent].[agentId]*.</block>
+  <block id="5e1fc3fe72f1363fb7b72f1e9ae3f939" category="listing-title">A resposta é um ID de tarefa que você pode monitorar:</block>
+  <block id="ad225eba741395ae87d38763ed1d0d2b" category="listing-title">Monitore a resposta:</block>
+  <block id="54472d1da4b0c6eadf8684e846b25dcc" category="listing-title">Resposta:</block>
+  <block id="c06b6e0bab0dde46cedb39671760495b" category="listing-title">Monitore até que o "status" seja "CONCLUÍDO":</block>
+  <block id="a30c7324f4089fb51d237b923db4b02d" category="section-title">Contas legadas do NetApp Console sem suporte</block>
+  <block id="45cdae40d584305ee875a883ef9ba19e" category="paragraph">Contas legadas do NetApp Console não oferecem suporte aos recursos necessários para proteger cargas de trabalho do Hyper-V.  Verifique se você está usando uma conta legada na interface da Web do Console.  Se você tiver uma conta de console legada, crie uma nova conta antes de proteger as cargas de trabalho do Hyper-V.</block>
+  <block id="67d95bafb080d0463671b51cb30ed772" category="list-text">No menu do NetApp Console, selecione *Administração &gt; Identidade e acesso*.</block>
+  <block id="252a32da9415511e6633fdf05c3cbfc5" category="list-text">Em *Organização*, verifique se um *ID da conta* é exibido ao lado do ID da organização.</block>
+  <block id="d0052af1d0af270827e3db57cce81803" category="paragraph">Se um *ID de conta* for exibido, você está usando uma conta legada.</block>
+  <block id="f4e4e58b8e27317b0286b2d7a6325bb0" category="list-text">Se você estiver usando uma conta legada, faça o seguinte:</block>
+  <block id="e0c1910c886d7600a19660b88b3e28fb" category="inline-link">Página de login do console</block>
+  <block id="9708523b754b4574d7d943207eacd560" category="list-text">Saia do Console e navegue até o<block ref="5a8401fec198a207b346fd48bd2a9be6" category="inline-link-rx"></block> .</block>
+  <block id="9f4166fee581a8bb153eacc3c742daca" category="list-text">Selecione *Inscrever-se* para criar uma nova conta.</block>
+  <block id="09c71875e3bb444ec63263da7bac4c16" category="paragraph">Contas legadas do NetApp Console não oferecem suporte aos recursos necessários para proteger cargas de trabalho do KVM.  Verifique se você está usando uma conta legada na interface da Web do Console.  Se você tiver uma conta de console legada, crie uma nova conta antes de proteger as cargas de trabalho do KVM.</block>
+  <block id="73142ec26340e83ba6a1b39034b016db" category="paragraph">Configure seus destinos de backup (Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage ou StorageGRID) antes de usar o NetApp Backup and Recovery.</block>
+  <block id="d9b1378a4d73683cda9aba471e2f7de2" category="paragraph">Forneça credenciais para acessar a conta de armazenamento.  O NetApp Backup and Recovery usa essas credenciais para descobrir as cargas de trabalho das quais você deseja fazer backup.</block>
+  <block id="d4cb0fb4281a915d52ee13b56b9d21b7" category="paragraph">Você precisa descobrir pelo menos uma carga de trabalho antes de poder adicionar um destino de backup externo.</block>
+  <block id="6d655e5ab4c22c9a5dd1c7b3cc53bcd4" category="summary">O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper-V antes que você possa protegê-las.</block>
+  <block id="d4908a7dd622060706f5e0df98a716da" category="paragraph">Depois que o NetApp Backup and Recovery descobre recursos, a página Inventário exibe a carga de trabalho do Hyper-V na lista de cargas de trabalho.</block>
+  <block id="d1b560b331735fdf9cef92794cc2cff2" category="paragraph">O NetApp Backup and Recovery precisa descobrir cargas de trabalho do Kubernetes antes de protegê-las.</block>
+  <block id="a74bdf5d9abca25c000c1902f13999c8" category="paragraph">No inventário de Backup e Recuperação, descubra cargas de trabalho do Kubernetes em seu ambiente.  Adicionar uma carga de trabalho adiciona um cluster Kubernetes ao NetApp Backup and Recovery.  Você pode então adicionar aplicativos e proteger os recursos do cluster.</block>
+  <block id="b0719c20a836424f725e51c9b181748d" category="paragraph">Siga estas etapas para visualizar o Painel de Backup e Recuperação do NetApp .</block>
+  <block id="da99ef1e3a4655762878849b958b6339" category="paragraph">O NetApp Backup and Recovery precisa descobrir hosts KVM e máquinas virtuais antes de protegê-los.</block>
+  <block id="1ab8ba690be124cf719dc3ecd310a339" category="paragraph">Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.</block>
+  <block id="2d46761bc551e15a780126270187f754" category="paragraph">Para começar, você precisa se inscrever ou entrar em contato com seu representante de vendas da NetApp para experimentar o Backup e Recuperação. Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.</block>
+  <block id="9d74da34ef1c70391495f1797aa69926" category="paragraph">*Se você definir uma política usando o NetApp Backup and Recovery, precisará fazer alterações futuras somente no Backup and Recovery?* Recomendamos que você faça alterações de política no NetApp Backup and Recovery.</block>
+  <block id="eb78f2796d1ae8b275cf17f673dbac2a" category="paragraph">O NetApp Backup and Recovery usa gerenciamento de identidade e acesso para controlar o que cada usuário pode fazer.</block>
+  <block id="03169a1f1f9d0a03d15fd58f20cbb63e" category="paragraph">Para adicionar um agente do Console, você precisa ter a função de superadministrador do Backup and Recovery.</block>
+  <block id="2bee1e2711d556b1f1494117c663c95e" category="list-text">Se esta for a primeira vez que você faz login no Backup and Recovery e você ainda não adicionou um sistema à página *Sistemas*, o Backup and Recovery exibirá a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" e fornecerá uma opção para adicionar um sistema. Para obter detalhes sobre como adicionar um sistema à página *Sistemas*, consulte<block ref="296443cffec903f0b2ef92c8eb1c49ba" category="inline-link-rx"></block> .</block>
+  <block id="22a84448d7c89870b25df89f9ffb2aea" category="list-text">Se esta for a primeira vez que você faz login no Backup and Recovery e você já adicionou um sistema à página *Sistemas*, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida e mostrará uma opção para *Descobrir recursos*.</block>
+  <block id="bbad9a213d5f66b0be7b3560016ee386" category="list-text">Se você ainda não fez isso, selecione a opção *Descobrir e gerenciar*.</block>
+  <block id="76b4ef756320e6f6ca5d1c225439f7f5" category="list-text">Para cargas de trabalho Oracle, consulte<block ref="0ef9d15a5323698b079164a26f451715" category="inline-link-macro-rx"></block> .</block>
+  <block id="9f34250a4d87916db9ed33c5d2d34c38" category="list-text">Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no NetApp Console, mas ainda não iniciou o teste gratuito. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Iniciar teste gratuito*.</block>
+  <block id="bf3a1d15798f522d544f2ef360c8e903" category="paragraph">Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no NetApp Console e iniciou o teste gratuito, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.</block>
+  <block id="62cc32537e8fdfb6d3282291f4042bb4" category="paragraph">Você deve entrar em contato com sua equipe de produtos da NetApp para testar o Backup e a recuperação. Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.</block>
+  <block id="ee885caa95dc922f4f4ba9860f7342f6" category="admonition">Para criar uma política personalizada usando Backup e Recuperação, consulte<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block> .</block>
+  <block id="854bc156a37cbbf040c040fbef53bdec" category="paragraph">O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados. Há muitas opções que você pode selecionar ao habilitar o Backup e a Recuperação em seus volumes, então você deve revisar suas escolhas para estar preparado.</block>
+  <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">Proteja as cargas de trabalho do VMware (visualização)</block>
 </blocks>

@@ -28,7 +28,7 @@ Adicione informações do host Oracle e deixe o NetApp Backup and Recovery desco
 . No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
 . No bloco Oracle, selecione *Descobrir e gerenciar*.
 +
-Se esta for a primeira vez que você faz login neste serviço, você já tem um sistema no Console, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
+Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
 
 . Selecione *Descobrir recursos*.
 . Insira as seguintes informações:

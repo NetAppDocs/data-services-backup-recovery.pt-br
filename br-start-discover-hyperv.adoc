@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
-summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho para que você possa protegê-las. 
+summary: O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper-V antes que você possa protegê-las. 
 ---
 = Descubra as cargas de trabalho do Hyper-V no NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de tr
 
 
 [role="lead"]
-O NetApp Backup and Recovery precisa primeiro descobrir as máquinas virtuais Hyper-V para que você possa protegê-las.
+O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper-V antes que você possa protegê-las.
 
 *Função de console necessária* Superadministrador de backup e recuperação. Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -55,12 +55,13 @@ TIP: Este processo pode levar alguns minutos.
 
 
 .Resultado
-Depois que o NetApp Backup and Recovery descobre recursos, a carga de trabalho do Hyper-V é exibida na lista de cargas de trabalho na página Inventário.
+Depois que o NetApp Backup and Recovery descobre recursos, a página Inventário exibe a carga de trabalho do Hyper-V na lista de cargas de trabalho.
 
 
 
 == Continue para o Painel de Backup e Recuperação da NetApp
 
+.Passos
 . Para exibir o Painel de Backup e Recuperação do NetApp , no menu do Console do NetApp , selecione *Painel*.
 . Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
 

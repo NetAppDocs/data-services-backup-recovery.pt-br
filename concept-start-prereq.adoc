@@ -253,7 +253,7 @@ Análise https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-check
 
 === Criar um agente de console
 
-Você deve entrar em contato com sua equipe de produtos da NetApp para experimentar este serviço.  Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.
+Você deve entrar em contato com sua equipe de produtos da NetApp para testar o Backup e a recuperação. Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.
 
 Para criar um agente do Console no NetApp Console antes de usar o serviço, consulte a documentação do Console que descreve https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["como criar um agente de console"^] .
 

@@ -46,3 +46,23 @@ As seguintes configurações não são suportadas:
 * Formato de disco RAW
 * Tipos de pool de armazenamento diferentes de NetFS (somente NetFS é suportado)
 
+
+
+
+== Contas legadas do NetApp Console sem suporte
+
+Contas legadas do NetApp Console não oferecem suporte aos recursos necessários para proteger cargas de trabalho do KVM.  Verifique se você está usando uma conta legada na interface da Web do Console.  Se você tiver uma conta de console legada, crie uma nova conta antes de proteger as cargas de trabalho do KVM.
+
+.Passos
+. No menu do NetApp Console, selecione *Administração > Identidade e acesso*.
+. Em *Organização*, verifique se um *ID da conta* é exibido ao lado do ID da organização.
++
+Se um *ID de conta* for exibido, você está usando uma conta legada.
+
+. Se você estiver usando uma conta legada, faça o seguinte:
++
+.. Saia do Console e navegue até o https://console.netapp.com/["Página de login do console"^] .
+.. Selecione *Inscrever-se* para criar uma nova conta.
+
+
+

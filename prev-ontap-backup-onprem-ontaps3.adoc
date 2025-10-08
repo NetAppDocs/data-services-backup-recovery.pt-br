@@ -322,7 +322,7 @@ TIP: Se você quiser criar uma política personalizada antes de ativar o Snapsho
 
 +
 
-TIP: Para criar uma política personalizada usando este serviço, consultelink:br-use-policies-create.html["Criar uma política"] .
+TIP: Para criar uma política personalizada usando Backup e Recuperação, consultelink:br-use-policies-create.html["Criar uma política"] .
 
 +
 Para criar uma política, selecione *Criar nova política* e faça o seguinte:
@@ -367,7 +367,7 @@ TIP: Você pode criar uma política com o System Manager ou o ONTAP CLI.  Para c
 
 +
 
-TIP: Para criar uma política personalizada usando este serviço, consultelink:br-use-policies-create.html["Criar uma política"] .
+TIP: Para criar uma política personalizada usando Backup e Recuperação, consultelink:br-use-policies-create.html["Criar uma política"] .
 
 +
 Para criar uma política, selecione *Criar nova política* e faça o seguinte:
