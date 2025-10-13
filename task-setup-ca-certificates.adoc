@@ -1,0 +1,456 @@
+---
+sidebar: sidebar 
+permalink: task-setup-ca-certificates.html 
+keywords: cloud backup, backup and recovery, backup, restore, certificates, protection, security, storagegrid, backup, back up 
+summary: Crie um certificado de segurança para permitir a comunicação entre o NetApp Backup and Recovery e o StorageGRID ou ONTAP. 
+---
+= Configurar certificados de segurança para StorageGRID e ONTAP no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Crie um certificado de segurança para permitir a comunicação entre o NetApp Backup and Recovery e o StorageGRID ou ONTAP.
+
+
+
+== Crie um certificado de segurança para StorageGRID
+
+Se a comunicação entre os contêineres do NetApp Backup and Recovery e o StorageGRID verificar o certificado do StorageGRID , conclua as etapas a seguir.
+
+O certificado gerado deve ter CN e Nome Alternativo do Assunto como o nome fornecido no NetApp Backup and Recovery quando você ativou o backup.
+
+.Passos
+. Siga as etapas na documentação do StorageGRID para criar o certificado do StorageGRID .
++
+https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-load-balancer-endpoints.html#attach-certificate["Informações do StorageGRID sobre a configuração de certificados"]
+
+. Atualize o StorageGRID com o certificado, caso ainda não tenha feito isso.
+. Efetue login no agente do Console como usuário root.  Correr:
++
+[source, console]
+----
+sudo su
+----
+. Obtenha o volume do Docker do NetApp Backup and Recovery (Cloud Backup Service).  Correr:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+Exemplo de saída:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume"
+----
++
+
+NOTE: O nome do volume difere entre os modos de implantação Padrão, Privado e Restrito.  Este exemplo usa o modo Padrão. Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
+. Localize o ponto de montagem do volume do NetApp Backup and Recovery .  Correr:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Exemplo de saída:
+
++
+[listing]
+----
+"Mountpoint": "/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data"
+----
++
+
+NOTE: O ponto de montagem difere entre os modos de implantação Padrão, Privado e Restrito.  Este exemplo mostra uma implantação de nuvem padrão. Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
+. Mude para o diretório MountPoint.  Correr:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Se o certificado do StorageGRID for assinado pela CA raiz e uma CA intermediária, anexe o `pem` arquivos de ambos em um arquivo chamado `sgws.crt` no local atual.  Não adicione o certificado de folha a este arquivo.
+
+
+
+
+=== Etapas para o contêiner cloudmanager_cbs
+
+Você precisará habilitar a verificação do certificado do StorageGRID Server no NetApp Backup and Recovery (Cloud Backup Service).
+
+. Altere os diretórios para o volume do Docker obtido nas etapas anteriores.
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Altere os diretórios para o diretório config.
++
+[source, console]
+----
+cd cbs_config
+----
+. Crie e salve um arquivo de configuração conforme mostrado abaixo com um dos seguintes nomes com base no seu ambiente de implantação:
++
+** `production-customer.json`Usado para implantações de modo Padrão e modo Restrito.
+** `darksite-customer.json`Usado para implantações em modo privado.
++
+Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
++
+*Arquivo de configuração*
+
++
+[source, json]
+----
+{
+  "protocols": {
+    "sgws": {
+      "certificates": {
+        "reject-unauthorized": true,
+        "ca-bundle": "/config/sgws.crt"
+      }
+    }
+  }
+}
+----
+
+
+. Saia do contêiner.  Correr:
++
+[source, console]
+----
+exit
+----
+. Reiniciar `cloudmanager_cbs` .  Correr:
++
+[source, console]
+----
+docker restart cloudmanager_cbs
+----
+
+
+
+
+=== Etapas para o contêiner cloudmanager_cbs_catalog
+
+Em seguida, você precisará habilitar a verificação do certificado do StorageGRID Server para o Cataloging Service.
+
+. Alterar diretórios para o volume do Docker:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Configurar o catálogo. Correr:
++
+[source, console]
+----
+cd cbs_catalog_config
+----
+. Crie um arquivo de configuração conforme mostrado abaixo com um dos seguintes nomes com base no seu ambiente de implantação:
++
+** `production-customer.json`Usado para implantações de modo Padrão e modo Restrito.
+** `darksite-customer.json`Usado para implantações em modo privado.
++
+Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
++
+*Arquivo de configuração do catálogo*
+
++
+[source, json]
+----
+{
+  "protocols": {
+    "sgws": {
+      "certificates": {
+        "reject-unauthorized": true,
+        "ca-bundle": "/config/sgws.crt"
+      }
+    }
+  }
+}
+----
+
+
+. Reinicie o catálogo.  Correr:
++
+[source, console]
+----
+docker restart cloudmanager_cbs_catalog
+----
+
+
+
+
+=== Atualizar o certificado do agente do Console com o certificado StorageGRID com base no sistema operacional do agente
+
+
+
+==== Ubuntu
+
+. Copie o certificado SGWS para `/usr/local/share/ca-certificates` . Aqui está um exemplo:
++
+[source, console]
+----
+cp /config/sgws.crt /usr/local/share/ca-certificates/
+----
++
+onde `sgws.crt` é o certificado da CA raiz.
+
+. Atualize os certificados do host com o certificado StorageGRID . Correr
++
+[source, console]
+----
+sudo update-ca-certificates
+----
+
+
+
+
+==== Red Hat Enterprise Linux
+
+. Copie o certificado SGWS para `/etc/pki/ca-trust/source/anchors/` .
++
+[source, console]
+----
+cp /config/sgws.crt /etc/pki/ca-trust/source/anchors/
+----
++
+onde `sgws.crt` é o certificado da CA raiz.
+
+. Atualize os certificados do host com o certificado StorageGRID .
++
+[source, console]
+----
+update-ca-trust extract
+----
+. Atualizar o `ca-bundle.crt`
++
+[source, console]
+----
+cd /etc/pki/tls/certs/
+openssl x509 -in ca-bundle.crt -text -noout
+----
+. Para verificar se os certificados estão presentes, execute o seguinte comando:
++
+[source, console]
+----
+openssl crl2pkcs7 -nocrl -certfile /etc/pki/tls/certs/ca-bundle.crt | openssl pkcs7 -print_certs | grep subject | head
+----
+
+
+
+
+== Crie um certificado de segurança para o ONTAP
+
+Se a comunicação entre os contêineres do NetApp Backup and Recovery e o ONTAP validar o certificado ONTAP , conclua as etapas a seguir.
+
+O NetApp Backup and Recovery usa o IP de gerenciamento de cluster para se conectar ao ONTAP.  Insira o endereço IP do cluster em Assunto Nomes alternativos do certificado.  Especifique esta etapa ao gerar o CSR usando a interface do usuário do System Manager.
+
+Use a documentação do System Manager para criar um novo certificado CA para o ONTAP.
+
+* https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["Gerenciar certificados com o Gerenciador de Sistemas"]
+* https://kb.netapp.com/on-prem/ontap/DM/System_Manager/SM-KBs/How_to_manage_ONTAP_SSL_certificates_via_System_Manager["Como gerenciar certificados SSL ONTAP com o System Manager"]
+
+
+.Passos
+. Efetue login no agente do Console como root.  Correr:
++
+[source, console]
+----
+sudo su
+----
+. Obtenha o volume do Docker do NetApp Backup and Recovery .  Correr:
++
+[source, console]
+----
+docker volume ls | grep cbs
+----
++
+Exemplo de saída:
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
++
+
+NOTE: O nome do volume difere entre os modos de implantação Padrão, Privado e Restrito.  Este exemplo mostra uma implantação de nuvem padrão. Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
+. Obtenha a montagem para o volume.  Correr:
++
+[source, console]
+----
+docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+Exemplo de saída:
+
++
+[listing]
+----
+"Mountpoint": "/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
++
+
+NOTE: O ponto de montagem difere entre os modos de implantação Padrão, Privado e Restrito.  Este exemplo mostra uma implantação de nuvem padrão. Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
+. Mude para o diretório do ponto de montagem.  Correr:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Conclua uma das seguintes etapas:
++
+** Se o certificado ONTAP for assinado pela CA raiz e uma CA intermediária, anexe o `pem` arquivos de ambos em um arquivo chamado `ontap.crt` no local atual.
+** Se o certificado ONTAP for assinado por uma única CA, renomeie o `pem` arquivar como `ontap.crt` e copie-o no local atual.  Não adicione o certificado de folha a este arquivo.
+
+
+
+
+
+
+=== Etapas para o contêiner cloudmanager_cbs
+
+Em seguida, ative a verificação do certificado do servidor ONTAP no NetApp Backup and Recovery (Cloud Backup Service).
+
+. Altere os diretórios para o volume do Docker obtido nas etapas anteriores.
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Mude para o diretório de configuração.  Correr:
++
+[source, console]
+----
+cd cbs_config
+----
+. Crie um arquivo de configuração conforme mostrado abaixo com um dos seguintes nomes com base no seu ambiente de implantação:
++
+** `production-customer.json`Usado para implantações de modo Padrão e modo Restrito.
+** `darksite-customer.json`Usado para implantações em modo privado.
++
+Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
++
+*Arquivo de configuração*
+
++
+[source, json]
+----
+{
+  "ontap": {
+    "certificates": {
+      "reject-unauthorized": true,
+      "ca-bundle": "/config/ontap.crt"
+    }
+  }
+}
+----
+
+
+. Saia do contêiner.  Correr:
++
+[source, console]
+----
+exit
+----
+. Reinicie o NetApp Backup and Recovery.  Correr:
++
+[source, console]
+----
+docker restart cloudmanager_cbs
+----
+
+
+
+
+=== Etapas para o contêiner cloudmanager_cbs_catalog
+
+Habilite a verificação do certificado do servidor ONTAP para o Serviço de Catalogação.
+
+. Altere os diretórios para o volume do Docker.  Correr:
++
+[source, console]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. Correr:
++
+[source, console]
+----
+cd cbs_catalog_config
+----
+. Crie um arquivo de configuração conforme mostrado abaixo com um dos seguintes nomes com base no seu ambiente de implantação:
++
+** `production-customer.json`Usado para implantações de modo Padrão e modo Restrito.
+** `darksite-customer.json`Usado para implantações em modo privado.
++
+Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Modos de implantação do NetApp Console"] .
+
++
+*Arquivo de configuração*
+
++
+[source, json]
+----
+{
+  "ontap": {
+    "certificates": {
+      "reject-unauthorized": true,
+      "ca-bundle": "/config/ontap.crt"
+    }
+  }
+}
+----
+
+
+. Reinicie o NetApp Backup and Recovery.  Correr:
++
+[source, console]
+----
+docker restart cloudmanager_cbs_catalog
+----
+
+
+
+
+== Crie um certificado para ONTAP e StorageGRID
+
+Se você precisar habilitar o certificado para ONTAP e StorageGRID, o arquivo de configuração ficará assim:
+
+*Arquivo de configuração para ONTAP e StorageGRID*
+
+[source, json]
+----
+{
+  "protocols": {
+    "sgws": {
+      "certificates": {
+        "reject-unauthorized": true,
+        "ca-bundle": "/config/sgws.crt"
+      }
+    }
+  },
+  "ontap": {
+    "certificates": {
+      "reject-unauthorized": true,
+      "ca-bundle": "/config/ontap.crt"
+    }
+  }
+}
+----
