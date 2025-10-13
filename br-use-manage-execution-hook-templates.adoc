@@ -4,7 +4,7 @@ permalink: br-use-manage-execution-hook-templates.html
 keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
 summary: O NetApp Backup and Recovery permite que você gerencie ganchos de execução para agir antes ou depois das operações de proteção de aplicativos. 
 ---
-= Gerenciar modelos de ganchos de execução de backup e recuperação do NetApp para cargas de trabalho do Kubernetes
+= Gerenciar modelos de ganchos de execução de NetApp Backup and Recovery para cargas de trabalho do Kubernetes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

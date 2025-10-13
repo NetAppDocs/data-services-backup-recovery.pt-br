@@ -25,7 +25,7 @@ Ao manter a continuidade do backup em todos os ambientes, o SnapMirror to Cloud 
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 .Antes de começar
@@ -73,13 +73,13 @@ Isso significa que apenas os novos dados adicionados depois que S2 são enviados
 
 Esse processo evita o reenvio de dados que já foram copiados, economiza largura de banda e garante que sua cadeia de backup continue sem problemas após a migração.
 
-image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup e recuperação SnapMirror para ressincronização em nuvem"]
+image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery SnapMirror para ressincronização em nuvem"]
 
 
 
 == Notas de procedimento
 
-* Migrações e atualizações tecnológicas não são realizadas usando o NetApp Backup and Recovery.  Elas devem ser realizadas por uma equipe de serviços profissionais ou por um administrador de armazenamento qualificado.
+* Migrações e atualizações de tecnologia não são realizadas usando o NetApp Backup and Recovery.  Elas devem ser realizadas por uma equipe de serviços profissionais ou por um administrador de armazenamento qualificado.
 * Uma equipe de migração da NetApp é responsável por criar o relacionamento SnapMirror entre os clusters ONTAP de origem e destino para facilitar a migração de volume.
 * Garanta que a migração durante uma atualização tecnológica seja baseada na migração baseada no SnapMirror.
 
@@ -103,7 +103,7 @@ image:diagram-snapmirror-cloud-resync-migration-steps.png["Etapas para migrar vo
 
 Antes de iniciar a migração, uma equipe da NetApp Tech Refresh garante que os seguintes pré-requisitos sejam atendidos para evitar perda de dados e garantir um processo de migração tranquilo.
 
-. Certifique-se de que todos os volumes que serão migrados estejam protegidos usando o NetApp Backup and Recovery.
+. Garanta que todos os volumes que serão migrados estejam protegidos usando o NetApp Backup and Recovery.
 . Registre UUIDs de instância de volume.  Anote os UUIDs de instância de todos os volumes antes de iniciar a migração.  Esses identificadores são cruciais para operações de mapeamento e ressincronização posteriores.
 . Faça um instantâneo final de cada volume para preservar o estado mais recente, antes de excluir qualquer relacionamento do SnapMirror .
 . Documentar políticas do SnapMirror .  Registre a política do SnapMirror atualmente anexada ao relacionamento de cada volume.  Isso será necessário mais tarde durante o processo de ressincronização do SnapMirror para a Nuvem.
@@ -133,8 +133,8 @@ NOTE: O UUID da instância do volume deve ser usado, não o ID do volume. O UUID
 Após a migração, uma equipe do NetApp Tech Refresh executa uma operação de ressincronização do SnapMirror para a nuvem para retomar os backups na nuvem dos volumes recém-migrados.
 
 . Adicione o novo cluster ONTAP como um sistema na página *Sistemas* do Console.
-. Consulte a página Volumes de backup e recuperação do NetApp para garantir que os detalhes do sistema de origem antigo estejam disponíveis.
-. Na página Volumes de backup e recuperação da NetApp , selecione *Configurações de backup*.
+. Consulte a página Volumes de NetApp Backup and Recovery para garantir que os detalhes do sistema de origem antigo estejam disponíveis.
+. Na página Volumes de NetApp Backup and Recovery , selecione *Configurações de backup*.
 +
 ** Na página Configurações de backup, selecione *Exibir tudo*.
 ** No menu Ações... à direita da _nova_ fonte, selecione *Ressincronizar backup*.
@@ -146,14 +146,14 @@ Após a migração, uma equipe do NetApp Tech Refresh executa uma operação de 
 .. *Armazenamento de objetos de destino existente*: selecione o armazenamento de objetos de destino que contém os backups do sistema de origem antigo.
 
 
-. Selecione *Baixar modelo CSV* para baixar a planilha Excel Detalhes da ressincronização.  Use esta planilha para inserir os detalhes dos volumes a serem migrados.  No arquivo CSV, insira os seguintes detalhes:
+. Selecione *Baixar modelo CSV* para baixar a planilha Excel de detalhes de ressincronização.  Use esta planilha para inserir os detalhes dos volumes a serem migrados.  No arquivo CSV, insira os seguintes detalhes:
 +
 ** O UUID da instância do volume antigo do cluster de origem
 ** O novo UUID da instância de volume do cluster de destino
 ** A política do SnapMirror a ser aplicada ao novo relacionamento.
 
 
-. Selecione *Upload* em *Upload Volume Mapping Details* para carregar a planilha CSV concluída na interface de usuário do NetApp Backup and Recovery.
+. Selecione *Upload* em *Upload Volume Mapping Details* para carregar a planilha CSV concluída na interface de usuário do NetApp Backup and Recovery .
 +
 
 NOTE: O UUID da instância do volume deve ser usado, não o ID do volume. O UUID da instância do volume é um identificador exclusivo que permanece consistente em todas as migrações, enquanto o ID do volume pode mudar após a migração.

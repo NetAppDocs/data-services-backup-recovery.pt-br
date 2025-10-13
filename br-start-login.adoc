@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-login.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Use o NetApp Console para efetuar login no serviço NetApp Backup and Recovery. 
+summary: Use o NetApp Console para efetuar login no serviço NetApp Backup and Recovery . 
 ---
 = Efetue login no NetApp Backup and Recovery
 :hardbreaks:
@@ -22,19 +22,19 @@ Para obter detalhes sobre as ações que cada função pode executar, consulteli
 
 Para efetuar login no NetApp Console, você pode usar suas credenciais do site de suporte da NetApp ou pode se inscrever para um login no NetApp Console usando seu e-mail e uma senha. https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["Saiba mais sobre como fazer login"^] .
 
-*Função necessária do NetApp Console* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 Para adicionar um agente do Console, você precisa ter a função de superadministrador do Backup and Recovery.
 
 .Passos
-. Abra um navegador da web e vá para o https://console.netapp.com/["Console NetApp"^] .
+. Abra um navegador da web e vá para o https://console.netapp.com/["NetApp Console"^] .
 +
 A página de login do NetApp Console é exibida.
 
 . Efetue login no Console.
 . Na navegação à esquerda do Console, selecione *Proteção* > *Backup e Recuperação*.
 +
-** Se esta for a primeira vez que você faz login no Backup and Recovery e você ainda não adicionou um sistema à página *Sistemas*, o Backup and Recovery exibirá a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" e fornecerá uma opção para adicionar um sistema. Para obter detalhes sobre como adicionar um sistema à página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introdução ao modo padrão do NetApp Console"^] .
+** Se esta for a primeira vez que você faz login no Backup and Recovery e você ainda não adicionou um sistema à página *Sistemas*, o Backup and Recovery exibirá a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" e fornecerá uma opção para adicionar um sistema.  Para obter detalhes sobre como adicionar um sistema à página *Sistemas*, consulte https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Introdução ao modo padrão do NetApp Console"^] .
 ** Se esta for a primeira vez que você faz login no Backup and Recovery e você já adicionou um sistema à página *Sistemas*, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida e mostrará uma opção para *Descobrir recursos*.
 
 

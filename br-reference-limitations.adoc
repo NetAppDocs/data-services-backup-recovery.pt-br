@@ -21,7 +21,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 Para obter detalhes sobre como criar um agente de console na AWS, consulte https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html["Instalando um agente de console na AWS"^] .
 
 +
-Para mais detalhes, consulte a postagem do blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog de recursos de backup e recuperação da NetApp , maio de 2023"^] .
+Para mais detalhes, consulte a postagem do blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog de recursos de NetApp Backup and Recovery , maio de 2023"^] .
 
 * O NetApp Backup and Recovery não oferece suporte às regiões do Microsoft Azure China.
 +
@@ -38,9 +38,9 @@ Para obter detalhes sobre como criar um agente de console no Azure, consulte htt
 +
 Não há limitação para volumes FlexVol - você pode selecionar todos os volumes FlexVol no seu sistema e atribuir as mesmas políticas de backup.
 
-* A seguinte funcionalidade é suportada em https://docs.netapp.com/us-en/data-services-replication/index.html["Replicação NetApp"] , mas não ao usar o recurso de replicação do NetApp Backup and Recovery:
+* A seguinte funcionalidade é suportada em https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , mas não ao usar o recurso de replicação do NetApp Backup and Recovery:
 +
-** Não há suporte para uma configuração em cascata onde a replicação ocorre do volume A para o volume B e do volume B para o volume C. O suporte inclui a replicação do volume A para o volume B.
+** Não há suporte para uma configuração em cascata em que a replicação ocorre do volume A para o volume B e do volume B para o volume C. O suporte inclui a replicação do volume A para o volume B.
 ** Não há suporte para replicação de dados de e para o FSx para sistemas ONTAP .
 ** Não há suporte para criar uma replicação única de um volume.
 
@@ -94,7 +94,7 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 * O backup de volume ad-hoc usando o botão *Fazer backup agora* não é suportado em volumes de proteção de dados.
 * Configurações SM-BC não são suportadas.
 * O ONTAP não oferece suporte ao fan-out de relacionamentos do SnapMirror de um único volume para vários armazenamentos de objetos; portanto, essa configuração não é suportada pelo NetApp Backup and Recovery.
-* O modo WORM/Compliance em um armazenamento de objetos é suportado no Amazon S3, Azure e StorageGRID no momento.  Isso é conhecido como recurso DataLock e deve ser gerenciado usando as configurações do NetApp Backup and Recovery, não usando a interface do provedor de nuvem.
+* O modo WORM/Compliance em um armazenamento de objetos é suportado no Amazon S3, Azure e StorageGRID no momento.  Isso é conhecido como recurso DataLock e deve ser gerenciado usando as configurações do NetApp Backup and Recovery , não usando a interface do provedor de nuvem.
 
 
 
@@ -114,7 +114,7 @@ Ao usar uma versão do ONTAP anterior à 9.11.1, a restauração de pastas não 
 
 * A restauração de diretório/pasta é suportada para dados que residem no armazenamento de arquivo somente quando o cluster está executando o ONTAP 9.13.1 e superior.
 * A restauração de diretório/pasta é suportada para dados protegidos usando DataLock somente quando o cluster está executando o ONTAP 9.13.1 e superior.
-* Atualmente, a restauração de diretórios/pastas não é suportada por replicações e/ou snapshots locais.
+* A restauração de diretório/pasta não é suportada atualmente por replicações e/ou snapshots locais.
 * A restauração de volumes FlexGroup para volumes FlexVol ou de volumes FlexVol para volumes FlexGroup não é suportada.
 * O arquivo que está sendo restaurado deve estar usando o mesmo idioma do volume de destino.  Você receberá uma mensagem de erro se os idiomas não forem os mesmos.
 * A prioridade de restauração _Alta_ não é suportada ao restaurar dados do armazenamento de arquivamento do Azure para sistemas StorageGRID .

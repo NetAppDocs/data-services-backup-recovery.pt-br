@@ -18,7 +18,7 @@ O NetApp Backup and Recovery oferece suporte a uma classe de armazenamento de ar
 
 []
 ====
-*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
 
 ====
 
@@ -31,7 +31,7 @@ Se o seu cluster local estiver usando o ONTAP 9.12.1 ou superior, você poderá 
 
 Observe que, ao configurar o NetApp Backup and Recovery com esse tipo de regra de ciclo de vida, você não deve configurar nenhuma regra de ciclo de vida ao configurar o bucket na sua conta do Google.
 
-https://cloud.google.com/storage/docs/storage-classes["Saiba mais sobre as classes de armazenamento do Google"^] .
+https://cloud.google.com/storage/docs/storage-classes["Saiba mais sobre as classes de armazenamento do Google"^].
 
 
 

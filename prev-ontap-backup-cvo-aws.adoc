@@ -18,7 +18,7 @@ Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backu
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 
@@ -43,13 +43,13 @@ Informações necessárias para usar chaves gerenciadas pelo cliente para cripto
 
 == Verificar requisitos de licença
 
-Para o licenciamento PAYGO do NetApp Backup and Recovery, uma assinatura do Console está disponível no AWS Marketplace que permite implantações do Cloud Volumes ONTAP e do NetApp Backup and Recovery.  Você precisa https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["assinar esta assinatura do NetApp Console"^] antes de habilitar o NetApp Backup and Recovery.  O faturamento do NetApp Backup and Recovery é feito por meio desta assinatura.
+Para o licenciamento PAYGO do NetApp Backup and Recovery , uma assinatura do Console está disponível no AWS Marketplace que permite implantações do Cloud Volumes ONTAP e do NetApp Backup and Recovery.  Você precisa https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["assinar esta assinatura do NetApp Console"^] antes de habilitar o NetApp Backup and Recovery.  O faturamento do NetApp Backup and Recovery é feito por meio desta assinatura.
 
-Para um contrato anual que permite fazer backup de dados do Cloud Volumes ONTAP e de dados do ONTAP local, você precisa assinar o https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Página do AWS Marketplace"^] e então https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["associe a assinatura às suas credenciais da AWS"^] .
+Para um contrato anual que permite fazer backup de dados Cloud Volumes ONTAP e de dados ONTAP locais, você precisa assinar o https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Página do AWS Marketplace"^] e então https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["associe a assinatura às suas credenciais da AWS"^] .
 
 Para um contrato anual que permite agrupar o Cloud Volumes ONTAP e o NetApp Backup and Recovery, você deve configurar o contrato anual ao criar um sistema Cloud Volumes ONTAP .  Esta opção não permite que você faça backup de dados locais.
 
-Para o licenciamento BYOL do NetApp Backup and Recovery, você precisa do número de série da NetApp que lhe permite usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"] .  Você deve usar uma licença BYOL quando o agente do Console e o sistema Cloud Volumes ONTAP forem implantados em um site escuro.
+Para o licenciamento BYOL do NetApp Backup and Recovery , você precisa do número de série da NetApp que lhe permite usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].  Você deve usar uma licença BYOL quando o agente do Console e o sistema Cloud Volumes ONTAP forem implantados em um site escuro.
 
 E você precisa ter uma conta AWS para o espaço de armazenamento onde seus backups estarão localizados.
 
@@ -168,7 +168,7 @@ Configuração necessária para criar backups em uma conta AWS diferente:: Por p
 Crie seus próprios baldes:: Por padrão, o serviço cria buckets para você.  Se quiser usar seus próprios buckets, você pode criá-los antes de iniciar o assistente de ativação de backup e, em seguida, selecionar esses buckets no assistente.
 +
 --
-link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios buckets"^] .
+link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios buckets"^].
 
 --
 
@@ -183,7 +183,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 
 ==== Requisitos de rede ONTAP local
 
-* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem.  Normalmente, essa é uma conexão VPN.
+* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
 Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
@@ -194,7 +194,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 ==== Requisitos de rede do Cloud Volumes ONTAP
 
-* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105.  Essas regras estão incluídas no grupo de segurança predefinido.
+* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105. Essas regras estão incluídas no grupo de segurança predefinido.
 
 
 * Para replicar dados entre dois sistemas Cloud Volumes ONTAP em sub-redes diferentes, as sub-redes devem ser roteadas juntas (essa é a configuração padrão).
@@ -202,7 +202,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 
 
-== Habilitar backup e recuperação do NetApp em Cloud Volumes ONTAP
+== Habilitar NetApp Backup and Recovery em Cloud Volumes ONTAP
 
 Habilitar o NetApp Backup and Recovery é fácil.  As etapas variam um pouco dependendo se você tem um sistema Cloud Volumes ONTAP existente ou um novo.
 
@@ -269,7 +269,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 . Continue com as seguintes opções:
 +
 ** Se você já tem um agente do Console, está tudo pronto.  Basta selecionar *Avançar*.
-** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida. Consulte <<Prepare seu agente de console>> .
+** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida.  Consulte<<Prepare seu agente de console>> .
 
 
 

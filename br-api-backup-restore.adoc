@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-api-backup-restore.html 
 keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
-summary: Os recursos de backup e recuperação do NetApp disponíveis por meio da interface de usuário da Web também estão disponíveis por meio de APIs RESTful. 
+summary: Os recursos de NetApp Backup and Recovery disponíveis por meio da interface de usuário da Web também estão disponíveis por meio de APIs RESTful. 
 ---
-= Automatize com APIs REST de backup e recuperação da NetApp
+= Automatize com APIs REST de NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Os recursos de backup e recuperação do NetApp disponíveis por meio d
 
 
 [role="lead"]
-Os recursos de backup e recuperação do NetApp disponíveis por meio da interface de usuário da Web também estão disponíveis por meio da API REST de backup e recuperação.
+Os recursos de NetApp Backup and Recovery disponíveis por meio da interface de usuário da Web também estão disponíveis por meio da API REST de backup e recuperação.
 
 Há dez categorias de endpoints definidas no NetApp Backup and Recovery:
 
@@ -34,13 +34,13 @@ Há dez categorias de endpoints definidas no NetApp Backup and Recovery:
 
 == Referência de API
 
-A documentação para cada API de backup e recuperação da NetApp está disponível em https://docs.netapp.com/us-en/console-automation/cbs/overview.html["Automação do NetApp Console para backup e recuperação do NetApp"^] .
+A documentação para cada API de NetApp Backup and Recovery está disponível em https://docs.netapp.com/us-en/console-automation/cbs/overview.html["Automação do NetApp Console para NetApp Backup and Recovery"^] .
 
 
 
 == Começando
 
-Para começar a usar as APIs de backup e recuperação do NetApp , você precisará obter um token de usuário, sua ID de conta do NetApp Console e a ID do agente do Console.
+Para começar a usar as APIs de NetApp Backup and Recovery , você precisará obter um token de usuário, sua ID de conta do NetApp Console e a ID do agente do Console.
 
 Ao fazer chamadas de API, você adicionará o token do usuário no cabeçalho Authorization e o ID do agente do Console no cabeçalho x-agent-id.  Você deve usar o ID da conta do NetApp Console nas APIs.
 
@@ -48,7 +48,7 @@ Ao fazer chamadas de API, você adicionará o token do usuário no cabeçalho Au
 NOTE: Se estiver usando uma conta de serviço, você deverá usar o token de acesso de serviço em vez de um token de usuário. O valor para "client_id" ("Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC") é um valor fixo e não pode ser alterado. Neste caso, siga as instruções aqui: https://docs.netapp.com/us-en/console-automation/platform/create_service_token.html["Crie um token de acesso ao serviço"^] .
 
 .Passos
-. Obtenha um token de usuário no site do NetApp NetApp Console.
+. Obtenha um token de usuário no site do NetApp NetApp Console .
 +
 Certifique-se de gerar o token de atualização no seguinte link: https://services.cloud.netapp.com/refresh-token/.  O token de atualização é uma sequência alfanumérica que você usará para gerar um token de usuário.
 
@@ -65,9 +65,9 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
 ----
 +
 
-NOTE: O token do usuário do site do NetApp Console tem uma data de validade.  A resposta da API inclui um campo "expires_in" que indica quando o token expira.  Para atualizar o token, você precisará chamar esta API novamente.
+NOTE: O token do usuário do site do NetApp Console tem uma data de validade. A resposta da API inclui um campo "expires_in" que indica quando o token expira.  Para atualizar o token, você precisará chamar esta API novamente.
 
-. Obtenha o ID da sua conta do NetApp Console.
+. Obtenha o ID da sua conta do NetApp Console .
 +
 [source, console]
 ----

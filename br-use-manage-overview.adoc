@@ -18,8 +18,8 @@ Gerenciar recursos no NetApp Backup and Recovery é essencial para garantir que 
 
 Você pode realizar as seguintes tarefas relacionadas ao gerenciamento de seus recursos:
 
-* link:br-use-manage-inventory.html["Gerenciar inventário"] .
-* link:br-use-manage-snapshots.html["Gerenciar instantâneos"] .
-* link:br-use-manage-kubernetes-clusters.html["Gerenciar clusters do Kubernetes"] .
-* link:br-use-manage-kubernetes-applications.html["Gerenciar aplicativos Kubernetes"] .
+* link:br-use-manage-inventory.html["Gerenciar inventário"].
+* link:br-use-manage-snapshots.html["Gerenciar instantâneos"].
+* link:br-use-manage-kubernetes-clusters.html["Gerenciar clusters do Kubernetes"].
+* link:br-use-manage-kubernetes-applications.html["Gerenciar aplicativos Kubernetes"].
 

@@ -18,12 +18,12 @@ Talvez você queira montar um ponto de recuperação do Oracle Database se preci
 
 
 
-== Montar um ponto de restauração do banco de dados Oracle
+== Montar um ponto de restauração do Oracle Database
 
 Se você configurar a política de proteção para um banco de dados para reter logs de arquivamento, poderá montar os pontos de recuperação do banco de dados para visualizar o histórico de todas as alterações feitas no banco de dados.
 
 .Passos
-. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . Selecione o bloco Oracle.
 . No menu Backup e Recuperação, selecione *Inventário*.
 . Para a carga de trabalho do Oracle Database na lista, selecione *Exibir*.
@@ -55,7 +55,7 @@ O ponto de recuperação é montado no host Oracle.
 Desmonte o ponto de recuperação quando não precisar mais visualizar as alterações feitas no banco de dados.
 
 .Passos
-. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . Selecione o bloco Oracle.
 . No menu Backup e Recuperação, selecione *Inventário*.
 . Para a carga de trabalho do Oracle na lista, selecione *Exibir*.

@@ -1,10 +1,10 @@
-= O BlueXP backup and recovery agora são NetApp Backup e Recovery
+= O BlueXP backup and recovery agora são NetApp Backup and Recovery
 :allow-uri-read: 
 
 
 
 
-=== O BlueXP backup and recovery agora são NetApp Backup e Recovery
+=== O BlueXP backup and recovery agora são NetApp Backup and Recovery
 
 O BlueXP backup and recovery foi renomeado para NetApp Backup and Recovery.
 
@@ -14,7 +14,7 @@ O BlueXP backup and recovery foi renomeado para NetApp Backup and Recovery.
 
 O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, altamente segura e compatível.
 
-Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de versão do NetApp Console."]
+Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us-en/console-relnotes/index.html["Notas de versão do NetApp Console ."]
 
 
 
@@ -69,7 +69,7 @@ A versão prévia das cargas de trabalho do Kubernetes apresenta os seguintes re
 * Suporte a vários buckets: agora você pode proteger os volumes dentro de um sistema com vários buckets por sistema em diferentes provedores de nuvem
 
 
-Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Visão geral das cargas de trabalho do Protect Kubernetes"] .
+Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Visão geral das cargas de trabalho do Protect Kubernetes"] .
 
 
 
@@ -105,4 +105,4 @@ Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e g
 * Suporte ao painel Oracle
 
 
-Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Visão geral das cargas de trabalho do Protect Oracle"] .
+Para obter detalhes sobre como proteger as cargas de trabalho do Oracle Database, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Visão geral das cargas de trabalho do Protect Oracle"] .

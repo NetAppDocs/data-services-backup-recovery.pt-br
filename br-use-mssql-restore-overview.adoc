@@ -24,7 +24,7 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 * Restaurar de um backup de armazenamento de objetos
 
 
-.Restaurar esses pontos
+.Restaurar para estes pontos
 Você pode restaurar dados para o snapshot mais recente ou para estes pontos:
 
 * Restaurar a partir de instantâneos

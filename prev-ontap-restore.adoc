@@ -18,7 +18,7 @@ Os backups dos dados do seu volume ONTAP estão disponíveis nos locais onde voc
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 * Você pode restaurar um *volume* (como um novo volume) para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
@@ -116,19 +116,19 @@ Antes de começar a restaurar um volume, pasta ou arquivo, você deve saber o no
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"] .
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
 
 endif::gcp[]
 
@@ -230,7 +230,7 @@ A coluna *Local* mostra se o arquivo de backup (Snapshot) é *Local* (uma cópia
 
 . Selecione *Avançar*.
 +
-Observe que se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de ransomware adicional no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique se há ransomware no arquivo de backup. (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+Observe que se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de ransomware adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você verifique se há ransomware no arquivo de backup.  (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
 
 . Na página _Selecionar destino_, selecione o *sistema* onde você deseja restaurar o volume.
 . Ao restaurar um arquivo de backup do armazenamento de objetos, se você selecionar um sistema ONTAP local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
@@ -276,26 +276,26 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"] . Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"]. Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
 
 endif::gcp[]
 
 . Selecione *Avançar* para escolher se deseja fazer uma restauração normal ou um processo de restauração rápida:
 +
 ** *Restauração normal*: use a restauração normal em volumes que exigem alto desempenho.  Os volumes não estarão disponíveis até que o processo de restauração seja concluído.
-** *Restauração rápida*: Os volumes e dados restaurados estarão disponíveis imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
+** *Restauração rápida*: volumes e dados restaurados estarão disponíveis imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
 
 
 . Selecione *Restaurar* e você retornará ao Painel de Restauração para poder revisar o progresso da operação de restauração.
@@ -350,7 +350,7 @@ O processo é assim:
 . O NetApp Backup and Recovery exibe as pastas e os arquivos existentes no arquivo de backup selecionado.
 . Selecione a pasta ou arquivo(s) que você deseja restaurar desse backup.
 . Selecione o local de destino onde você deseja que a pasta ou o(s) arquivo(s) sejam restaurados (o sistema, o volume e a pasta) e clique em *Restaurar*.
-. O(s) arquivo(s) são restaurados.
+. Os arquivos são restaurados.
 
 
 image:diagram_browse_restore_file.png["Um diagrama que mostra o fluxo para executar uma operação de restauração de arquivo usando Navegar e Restaurar."]
@@ -373,10 +373,10 @@ Siga estas etapas para restaurar pastas ou arquivos para um volume a partir de u
 Se estiver restaurando pastas ou arquivos de um arquivo de backup que reside em uma camada de armazenamento de arquivamento, você pode selecionar a Prioridade de restauração.
 
 +
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"] . link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"] . link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"] . Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"]. Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
 
 +
-E se a Resiliência contra Ransomware estiver ativa para o arquivo de backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique se há ransomware no arquivo de backup. (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+E se a Resiliência contra Ransomware estiver ativa para o arquivo de backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados.  Recomendamos que você verifique se há ransomware no arquivo de backup.  (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
 
 . Na página _Selecionar itens_, selecione a pasta ou arquivo(s) que deseja restaurar e selecione *Continuar*.  Para ajudar você a encontrar o item:
 +
@@ -456,19 +456,19 @@ Se o arquivo de backup do volume que você deseja restaurar estiver no armazenam
 
 ifdef::aws[]
 
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"] .
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
 
 endif::gcp[]
 
@@ -560,7 +560,7 @@ ifdef::aws[]
 
 * Requisitos da AWS:
 +
-** Permissões específicas do Amazon Athena, AWS Glue e AWS S3 devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-aws.html["Certifique-se de que todas as permissões estejam configuradas corretamente"] .
+** Permissões específicas do Amazon Athena, AWS Glue e AWS S3 devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-aws.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
 +
 Observe que, se você já estava usando o NetApp Backup and Recovery com um agente do Console configurado anteriormente, será necessário adicionar as permissões Athena e Glue à função de usuário do Console agora.  Eles são necessários para Pesquisar e Restaurar.
 
@@ -575,7 +575,7 @@ ifdef::azure[]
 * Requisitos do Azure:
 +
 ** Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado "Microsoft.Synapse") com sua Assinatura. https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Veja como registrar este provedor de recursos para sua assinatura"^] .  Você deve ser o *Proprietário* ou *Colaborador* da Assinatura para registrar o provedor de recursos.
-** Permissões específicas do Azure Synapse Workspace e da conta de armazenamento do Data Lake devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-azure.html["Certifique-se de que todas as permissões estejam configuradas corretamente"] .
+** Permissões específicas do Azure Synapse Workspace e da conta de armazenamento do Data Lake devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-azure.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
 +
 Observe que, se você já estava usando o NetApp Backup and Recovery com um agente do Console configurado anteriormente, será necessário adicionar as permissões da conta do Azure Synapse Workspace e do Data Lake Storage à função de usuário do Console agora.  Eles são necessários para Pesquisar e Restaurar.
 
@@ -590,7 +590,7 @@ ifdef::gcp[]
 
 * Requisitos do Google Cloud:
 +
-** Permissões específicas do Google BigQuery devem ser adicionadas à função de usuário que fornece permissões ao NetApp Console. link:prev-ontap-backup-onprem-gcp.html["Certifique-se de que todas as permissões estejam configuradas corretamente"] .
+** Permissões específicas do Google BigQuery devem ser adicionadas à função de usuário que fornece permissões ao NetApp Console . link:prev-ontap-backup-onprem-gcp.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
 +
 Se você já estava usando o NetApp Backup and Recovery com um agente do Console configurado anteriormente, será necessário adicionar as permissões do BigQuery à função de usuário do Console agora.  Eles são necessários para Pesquisar e Restaurar.
 
@@ -686,7 +686,7 @@ Se a indexação já estiver habilitada para seu sistema, vá para a próxima se
 . Faça um dos seguintes:
 +
 ** Se nenhum sistema tiver sido indexado, no Painel de Restauração, em _Pesquisar e Restaurar_, selecione *Ativar Indexação para Sistemas*.
-** Se pelo menos um sistema já tiver sido indexado, no Painel de Restauração, em _Pesquisar e Restaurar_, selecione *Configurações de Indexação*.
+** Se pelo menos um sistema já tiver sido indexado, no Painel de Restauração, em _Pesquisa e Restauração_, selecione *Configurações de Indexação*.
 
 
 . Selecione *Ativar indexação* para o sistema.
@@ -733,7 +733,7 @@ Se você selecionar um sistema ONTAP local e ainda não tiver configurado a cone
 ifdef::aws[]
 
 +
-*** Ao restaurar do Amazon S3, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, insira a chave de acesso e a chave secreta do usuário que você criou para dar ao cluster ONTAP acesso ao bucket S3 e, opcionalmente, escolha um endpoint VPC privado para transferência segura de dados. link:prev-ontap-backup-onprem-aws.html["Veja detalhes sobre esses requisitos"] .
+*** Ao restaurar do Amazon S3, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, insira a chave de acesso e a chave secreta do usuário que você criou para dar ao cluster ONTAP acesso ao bucket S3 e, opcionalmente, escolha um endpoint VPC privado para transferência segura de dados. link:prev-ontap-backup-onprem-aws.html["Veja detalhes sobre esses requisitos"].
 
 
 
@@ -744,21 +744,21 @@ endif::aws[]
 
 ifdef::azure[]
 
-* Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede. link:prev-ontap-backup-onprem-azure.html["Veja detalhes sobre esses requisitos"] .
+* Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede. link:prev-ontap-backup-onprem-azure.html["Veja detalhes sobre esses requisitos"].
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Ao restaurar do Google Cloud Storage, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, além da Chave de acesso e da Chave secreta para acessar o armazenamento de objetos. link:prev-ontap-backup-onprem-gcp.html["Veja detalhes sobre esses requisitos"] .
+* Ao restaurar do Google Cloud Storage, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, além da Chave de acesso e da Chave secreta para acessar o armazenamento de objetos. link:prev-ontap-backup-onprem-gcp.html["Veja detalhes sobre esses requisitos"].
 
 
 endif::gcp[]
 
-* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside. link:prev-ontap-backup-onprem-storagegrid.html["Veja detalhes sobre esses requisitos"] .
-* Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá. link:prev-ontap-backup-onprem-ontaps3.html["Veja detalhes sobre esses requisitos"] .
+* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside. link:prev-ontap-backup-onprem-storagegrid.html["Veja detalhes sobre esses requisitos"].
+* Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá. link:prev-ontap-backup-onprem-ontaps3.html["Veja detalhes sobre esses requisitos"].
 
 
 .Resultados
-O volume, a pasta ou o(s) arquivo(s) são restaurados e você retorna ao Painel de Restauração para poder revisar o progresso da operação de restauração.  Você também pode selecionar a aba *Monitoramento de Tarefas* para ver o progresso da restauração. Ver link:br-use-monitor-tasks.html["Página do monitor de tarefas"] .
+O volume, a pasta ou o(s) arquivo(s) são restaurados e você retorna ao Painel de Restauração para poder revisar o progresso da operação de restauração.  Você também pode selecionar a aba *Monitoramento de Tarefas* para ver o progresso da restauração.  Verlink:br-use-monitor-tasks.html["Página do monitor de tarefas"] .

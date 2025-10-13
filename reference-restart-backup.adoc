@@ -16,7 +16,7 @@ summary: Pode haver situações em que você precisará reiniciar o NetApp Backu
 [role="lead"]
 Pode haver situações em que você precisará reiniciar o NetApp Backup and Recovery.
 
-A funcionalidade de backup e recuperação do NetApp está integrada ao agente do Console.
+A funcionalidade de NetApp Backup and Recovery está integrada ao agente do Console.
 
 .Passos
 . Conecte-se ao sistema Linux no qual o agente do Console está sendo executado.

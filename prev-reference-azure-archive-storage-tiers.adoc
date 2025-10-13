@@ -18,12 +18,12 @@ O NetApp Backup and Recovery oferece suporte a uma camada de acesso de arquivame
 
 []
 ====
-*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
 
 ====
 
 
-== Camadas de acesso do Azure Blob com suporte para backup e recuperação do NetApp
+== Camadas de acesso do Azure Blob com suporte para NetApp Backup and Recovery
 
 Quando os arquivos de backup são criados inicialmente, eles são armazenados na camada de acesso _Cool_.  Esta camada é otimizada para armazenar dados que são acessados com pouca frequência, mas que podem ser acessados imediatamente quando necessário.
 
@@ -31,7 +31,7 @@ Se seus clusters de origem estiverem executando o ONTAP 9.10.1 ou superior, voc�
 
 Observe que, ao configurar o NetApp Backup and Recovery com esse tipo de regra de ciclo de vida, você não deve configurar nenhuma regra de ciclo de vida ao configurar o contêiner na sua conta do Azure.
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Saiba mais sobre as camadas de acesso do Azure Blob"^] .
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Saiba mais sobre as camadas de acesso do Azure Blob"^].
 
 
 

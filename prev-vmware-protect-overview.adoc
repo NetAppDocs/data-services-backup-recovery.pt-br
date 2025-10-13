@@ -20,7 +20,7 @@ Você pode fazer backup de datastores no Amazon Web Services S3, Microsoft Azure
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 Para obter instruções sobre como proteger cargas de trabalho de máquinas virtuais, consulte os seguintes tópicos:

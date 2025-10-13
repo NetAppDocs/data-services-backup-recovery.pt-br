@@ -39,7 +39,7 @@ Você pode realizar as seguintes tarefas relacionadas ao gerenciamento do seu in
 ** Faça backup agora iniciando um backup sob demanda
 
 
-* Configure o diretório de log (em Inventário > Hosts).  Se você quiser fazer backup de logs para seus hosts de banco de dados no snapshot, primeiro configure os logs no NetApp Backup and Recovery. Para mais detalhes, consultelink:br-start-setup.html["Configurar as configurações de backup e recuperação do NetApp"] .
+* Configure o diretório de log (em Inventário > Hosts).  Se você quiser fazer backup de logs para seus hosts de banco de dados no snapshot, primeiro configure os logs no NetApp Backup and Recovery.  Para mais detalhes, consultelink:br-start-setup.html["Configurar as configurações de NetApp Backup and Recovery"] .
 
 
 
@@ -48,9 +48,9 @@ Você pode realizar as seguintes tarefas relacionadas ao gerenciamento do seu in
 
 Você pode gerenciar as informações do host para garantir que os hosts certos estejam protegidos.  Você pode visualizar, editar e excluir informações do host.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação, administrador de restauração de backup e recuperação ou função de administrador de clone de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação, administrador de restauração de backup e recuperação ou função de administrador de clone de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
-* Configurar diretório de log. Para mais detalhes, consultelink:br-start-setup.html["Configurar as configurações de backup e recuperação do NetApp"] .
+* Configurar diretório de log.  Para mais detalhes, consultelink:br-start-setup.html["Configurar as configurações de NetApp Backup and Recovery"] .
 * Suspender horários
 * Editar um host
 * Excluir um host
@@ -67,7 +67,7 @@ TIP: Você pode gerenciar apenas os hosts que mostram o status "Não gerenciado"
 
 Depois de gerenciar os hosts no NetApp Backup and Recovery, o SnapCenter não gerencia mais os recursos nesses hosts.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento ou superadministrador de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento ou superadministrador de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
 . No menu, selecione *Inventário*.
@@ -93,7 +93,7 @@ Depois de gerenciar os hosts no NetApp Backup and Recovery, o SnapCenter não ge
 Você pode suspender agendamentos para interromper as operações de backup e restauração de um host.  Talvez você queira fazer isso se precisar realizar atividades de manutenção no host.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione o host no qual você deseja suspender os agendamentos.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Suspender agendamentos*.
 . Na caixa de diálogo de confirmação, selecione *Suspender*.
@@ -106,7 +106,7 @@ Você pode suspender agendamentos para interromper as operações de backup e re
 Você pode alterar as informações do servidor vCenter, as credenciais de registro do host e as opções de configurações avançadas.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione o host que você deseja editar.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Editar host*.
 . Edite as informações do host.
@@ -120,7 +120,7 @@ Você pode alterar as informações do servidor vCenter, as credenciais de regis
 Você pode excluir as informações do host para interromper as cobranças de serviço.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione o host que você deseja excluir.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Excluir host*.
 . Revise as informações de confirmação e selecione *Excluir*.
@@ -139,7 +139,7 @@ Você pode gerenciar informações de instâncias para garantir que os recursos 
 * Faça backup agora
 
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
@@ -148,7 +148,7 @@ Você pode gerenciar informações de instâncias para garantir que os recursos 
 Você pode atribuir uma política a uma instância de banco de dados usando políticas que controlam os agendamentos e a retenção da proteção de recursos.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Instâncias*.
 . Selecione a instância.
@@ -178,10 +178,10 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 Você pode associar credenciais a um recurso para que a proteção possa ocorrer.
 
-Para obter detalhes, consulte link:br-start-configure.html["Configurar as configurações de backup e recuperação do NetApp , incluindo credenciais"] .
+Para mais detalhes, vejalink:br-start-configure.html["Configurar as configurações de NetApp Backup and Recovery , incluindo credenciais"] .
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Instâncias*.
 . Selecione a instância.
@@ -196,7 +196,7 @@ Para obter detalhes, consulte link:br-start-configure.html["Configurar as config
 Você pode alterar a política, criar uma nova política, definir um cronograma e definir configurações de retenção.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Instâncias*.
 . Selecione a instância.
@@ -213,7 +213,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 Você pode fazer backup dos seus dados agora para garantir que eles sejam protegidos imediatamente.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Instâncias*.
 . Selecione a instância.
@@ -243,10 +243,10 @@ Você pode gerenciar informações do banco de dados das seguintes maneiras:
 
 Você pode alterar a política, criar uma nova política, definir um cronograma e definir configurações de retenção.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Bancos de dados*.
 . Selecione o banco de dados.
@@ -262,7 +262,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 Você pode restaurar um banco de dados para garantir que seus dados estejam protegidos.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 . Selecione a aba *Bancos de dados*.
 . Selecione o banco de dados.
@@ -278,10 +278,10 @@ Para obter informações sobre como restaurar cargas de trabalho, consultelink:b
 
 Você pode alterar a política, criar uma nova política, definir um cronograma e definir configurações de retenção.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Bancos de dados*.
 . Selecione o banco de dados.
@@ -297,10 +297,10 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 Você pode fazer backup de suas instâncias e bancos de dados do Microsoft SQL Server agora para garantir que seus dados sejam protegidos imediatamente.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho que você deseja visualizar e selecione *Exibir*.
 . Selecione a aba *Instâncias* ou *Bancos de dados*.
 . Selecione a instância ou banco de dados.

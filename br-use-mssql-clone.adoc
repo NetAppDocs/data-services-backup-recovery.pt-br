@@ -30,7 +30,7 @@ Você pode atingir as seguintes metas de proteção:
 * Excluir um clone
 
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
@@ -41,7 +41,7 @@ Você pode criar um clone das suas cargas de trabalho do Microsoft SQL Server.  
 Você pode criar um clone a partir de um snapshot existente ou de um snapshot instantâneo.  Um snapshot instantâneo é uma cópia pontual dos dados de origem criada a partir de um backup.  Você pode usar o clone para restaurar suas cargas de trabalho em caso de perda ou corrupção de dados.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Clonar*.
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
 . Selecione *Criar novo clone*.
 . Selecione o tipo de clone:
 +
@@ -112,7 +112,7 @@ Você pode atualizar um clone de suas cargas de trabalho do Microsoft SQL Server
 Você tem a opção de alterar o nome do banco de dados, usar o snapshot instantâneo mais recente ou atualizar a partir de um snapshot de produção existente.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Clonar*.
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
 . Selecione o clone que você deseja atualizar.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Atualizar clone*.
 . Preencha a seção *Configurações avançadas*:
@@ -140,7 +140,7 @@ Você tem a opção de alterar o nome do banco de dados, usar o snapshot instant
 Talvez você queira pular uma atualização de clone se não quiser atualizar o clone com os dados mais recentes da carga de trabalho de origem.  Pular uma atualização de clone permite que você mantenha o clone como está sem atualizá-lo.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Clonar*.
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
 . Selecione o clone cuja atualização você deseja pular.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ignorar atualização*.
 . Na caixa de diálogo de confirmação de Ignorar atualização, faça o seguinte:
@@ -162,7 +162,7 @@ Você pode escolher dividir um clone em clones independentes ou de longo prazo. 
 O trabalho de clonagem não pode ser removido e pode ser reutilizado para outros clones.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Clonar*.
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
 . Selecione um clone.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Clone dividido*.
 . Revise os detalhes do clone dividido e selecione *Dividir*.
@@ -178,7 +178,7 @@ Você pode excluir um clone de suas cargas de trabalho do Microsoft SQL Server. 
 Se o clone estiver protegido por uma política, o clone será excluído, incluindo o trabalho.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Clonar*.
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
 . Selecione um clone.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Excluir clone*.
 . Na caixa de diálogo de confirmação de exclusão do clone, revise os detalhes da exclusão.

@@ -22,7 +22,7 @@ Você pode iniciar o teste gratuito no NetApp Backup and Recovery depois de faze
 
 .Passos
 . Na navegação à esquerda do Console, selecione *Proteção* > *Backup e recuperação*.
-. Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no NetApp Console, mas ainda não iniciou o teste gratuito. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Iniciar teste gratuito*.
+. Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no NetApp Console, mas não iniciou o teste gratuito. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Iniciar teste gratuito*.
 +
 image:screen-br-landing-unified-start-trial.png["Captura de tela da página de destino do NetApp Backup and Recovery sem avaliação gratuita"]
 

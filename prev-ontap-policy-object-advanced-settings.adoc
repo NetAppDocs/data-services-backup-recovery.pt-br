@@ -21,7 +21,7 @@ NOTE: Essas configurações estão disponíveis somente para armazenamento de ba
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 Você pode alterar as seguintes opções na página Configurações avançadas:
@@ -31,7 +31,7 @@ Você pode alterar as seguintes opções na página Configurações avançadas:
 
 endif::aws[]
 
-* Alterar se cópias históricas do Snapshot são exportadas como arquivos de backup e incluídas nos arquivos de backup de linha de base inicial para volumes futuros
+* Alterar se cópias históricas do Snapshot são exportadas como arquivos de backup e incluídas nos arquivos de backup de linha de base iniciais para volumes futuros
 * Alterar se os snapshots "anuais" são removidos do sistema de origem
 * Habilitar ou desabilitar varreduras de ransomware para um sistema, incluindo varreduras agendadas
 
@@ -66,7 +66,7 @@ Quando você ativa o NetApp Backup and Recovery para um sistema, por padrão, o 
 . Na aba *Volumes*, selecione *Configurações de backup*.
 . Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
 . Na página Configurações avançadas, expanda a seção *Taxa máxima de transferência*.
-. Escolha um valor entre 1 e 1.000 Mbps como taxa máxima de transferência.
+. Escolha um valor entre 1 e 1.000 Mbps como taxa de transferência máxima.
 . Selecione o botão de opção *Limitado* e insira a largura de banda máxima que pode ser usada ou selecione *Ilimitado* para indicar que não há limite.
 . Selecione *Aplicar*.
 

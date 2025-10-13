@@ -21,7 +21,7 @@ NOTE: Essas configurações de política são relevantes somente para armazename
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 
@@ -59,15 +59,15 @@ Os backups anuais são excluídos automaticamente do sistema de origem após ser
 
 O NetApp Backup and Recovery oferece suporte para proteção DataLock e Ransomware para seus backups de volume.  Esses recursos permitem que você bloqueie seus arquivos de backup e os verifique para detectar possíveis ransomwares nos arquivos de backup.  Esta é uma configuração opcional que você pode definir em suas políticas de backup quando quiser proteção extra para seus backups de volume para um cluster.
 
-Ambos os recursos protegem seus arquivos de backup para que você sempre tenha um arquivo de backup válido para recuperar dados em caso de uma tentativa de ataque de ransomware aos seus backups. Também é útil atender a certos requisitos regulatórios em que os backups precisam ser bloqueados e retidos por um determinado período de tempo. Quando a opção DataLock e Ransomware Resilience estiver habilitada, o bucket de nuvem provisionado como parte da ativação do NetApp Backup and Recovery terá o bloqueio de objetos e o controle de versão de objetos habilitados.
+Ambos os recursos protegem seus arquivos de backup para que você sempre tenha um arquivo de backup válido para recuperar dados em caso de uma tentativa de ataque de ransomware aos seus backups.  Também é útil atender a certos requisitos regulatórios em que os backups precisam ser bloqueados e retidos por um determinado período de tempo.  Quando a opção DataLock e Ransomware Resilience estiver habilitada, o bucket de nuvem provisionado como parte da ativação do NetApp Backup and Recovery terá o bloqueio de objetos e o controle de versão de objetos habilitados.
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Veja o blog de proteção DataLock e Ransomware para mais detalhes"^] .
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Veja o blog de proteção DataLock e Ransomware para mais detalhes"^].
 
 Este recurso não fornece proteção para seus volumes de origem; apenas para os backups desses volumes de origem.  Use alguns dos https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["proteções anti-ransomware fornecidas pela ONTAP"^] para proteger seus volumes de origem.
 
 [CAUTION]
 ====
-* Se você planeja usar a proteção DataLock e Ransomware, poderá habilitá-la ao criar sua primeira política de backup e ativar o NetApp Backup and Recovery para esse cluster.  Mais tarde, você pode habilitar ou desabilitar a verificação de ransomware usando as Configurações avançadas do NetApp Backup and Recovery.
+* Se você planeja usar a proteção DataLock e Ransomware, poderá habilitá-la ao criar sua primeira política de backup e ativar o NetApp Backup and Recovery para esse cluster.  Mais tarde, você pode habilitar ou desabilitar a verificação de ransomware usando as Configurações avançadas do NetApp Backup and Recovery .
 * Quando o Console verifica um arquivo de backup em busca de ransomware ao restaurar dados de volume, você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.
 
 
@@ -134,7 +134,7 @@ Você pode habilitar a proteção DataLock e Ransomware ao criar uma política. 
 
 
 
-Consulte link:prev-ontap-policy-object-advanced-settings.html["Como atualizar as opções de proteção contra ransomware na página Configurações avançadas"] .
+Consultelink:prev-ontap-policy-object-advanced-settings.html["Como atualizar as opções de proteção contra ransomware na página Configurações avançadas"] .
 
 
 
@@ -228,7 +228,7 @@ ifdef::aws[]
 
 ====
 +
-https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Veja o formato JSON completo da política onde você pode copiar e colar as permissões necessárias"^] .
+https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Veja o formato JSON completo da política onde você pode copiar e colar as permissões necessárias"^].
 
 
 
@@ -353,7 +353,7 @@ Os dados em camadas de arquivamento não podem ser acessados imediatamente quand
 ====
 * Mesmo se você selecionar "0" para enviar todos os blocos de dados para o armazenamento em nuvem de arquivamento, os blocos de metadados serão sempre gravados no armazenamento em nuvem padrão.
 * O armazenamento de arquivo não pode ser usado se você tiver habilitado o DataLock.
-* Não é possível alterar a política de arquivamento após selecionar *0* dias (arquivar imediatamente).
+* Você não pode alterar a política de arquivamento após selecionar *0* dias (arquivar imediatamente).
 
 
 ====
@@ -363,7 +363,7 @@ ifdef::aws[]
 
 * Na AWS, os backups começam na classe de armazenamento _Padrão_ e fazem a transição para a classe de armazenamento _Acesso Infrequente Padrão_ após 30 dias.
 +
-Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá colocar backups mais antigos em camadas no armazenamento _S3 Glacier_ ou _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo da AWS"] .
+Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá colocar backups mais antigos em camadas no armazenamento _S3 Glacier_ ou _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo da AWS"].
 
 +
 ** Se você não selecionar nenhuma camada de arquivamento em sua primeira política de backup ao ativar o NetApp Backup and Recovery, o _S3 Glacier_ será sua única opção de arquivamento para políticas futuras.
@@ -379,7 +379,7 @@ ifdef::azure[]
 
 * No Azure, os backups são associados à camada de acesso _Cool_.
 +
-Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá colocar backups mais antigos em camadas no armazenamento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivamento do Azure"] .
+Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá colocar backups mais antigos em camadas no armazenamento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivamento do Azure"].
 
 
 
@@ -389,7 +389,7 @@ ifdef::gcp[]
 
 * No GCP, os backups são associados à classe de armazenamento _Standard_.
 +
-Se o seu cluster local estiver usando o ONTAP 9.12.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _Archive_ na interface do usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo do Google"] .
+Se o seu cluster local estiver usando o ONTAP 9.12.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _Archive_ na interface do usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo do Google"].
 
 
 
@@ -403,12 +403,12 @@ Se o seu cluster local estiver usando o ONTAP 9.12.1 ou superior, e o seu sistem
 
 ifdef::aws[]
 
-+ ** Para AWS, você pode fazer backups em camadas no armazenamento AWS _S3 Glacier_ ou _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo da AWS"^] .
++ ** Para AWS, você pode fazer backups em camadas no armazenamento AWS _S3 Glacier_ ou _S3 Glacier Deep Archive_. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo da AWS"^].
 
 endif::aws[]
 
 ifdef::azure[]
 
-+ ** Para o Azure, você pode colocar backups mais antigos em camadas no armazenamento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivamento do Azure"^] .
++ ** Para o Azure, você pode colocar backups mais antigos em camadas no armazenamento _Azure Archive_. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivamento do Azure"^].
 
 endif::azure[]

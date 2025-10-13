@@ -24,7 +24,7 @@ Para mais detalhes, consulte https://docs.netapp.com/us-en/data-services-backup-
 
 * *Nome de instantâneo personalizado*: agora você pode usar seu próprio nome de instantâneo em uma política que controla os backups para cargas de trabalho do Microsoft SQL Server. Insira essas informações na seção *Configurações avançadas* da página Política.
 +
-image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["Captura de tela das configurações de formato SnapMirror e snapshot para políticas de backup e recuperação do NetApp"]
+image:../media/screen-br-sql-policy-create-advanced-snapmirror.png["Captura de tela das configurações de formato SnapMirror e snapshot para políticas de NetApp Backup and Recovery"]
 
 +
 Consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Use políticas para proteger suas cargas de trabalho"] .
@@ -38,7 +38,7 @@ Consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-lo
 * *Dados de backup de log*: A página de detalhes de proteção do banco de dados agora mostra backups de log. Você pode ver a coluna Tipo de backup que mostra se o backup é completo ou de log.
 * *Painel aprimorado*: O painel agora mostra economias de armazenamento e clone.
 +
-image:../media/screen-br-dashboard3.png["Painel de backup e recuperação da NetApp"]
+image:../media/screen-br-dashboard3.png["Painel de NetApp Backup and Recovery"]
 
 
 

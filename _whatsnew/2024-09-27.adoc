@@ -6,11 +6,11 @@
 
 === Suporte ao Podman no RHEL 8 ou 9 com Navegar e Restaurar
 
-O NetApp Backup and Recovery agora oferece suporte a restaurações de arquivos e pastas no Red Hat Enterprise Linux (RHEL) versões 8 e 9 usando o mecanismo Podman.  Isso se aplica ao método Navegar e Restaurar do NetApp Backup and Recovery.
+O NetApp Backup and Recovery agora oferece suporte a restaurações de arquivos e pastas no Red Hat Enterprise Linux (RHEL) versões 8 e 9 usando o mecanismo Podman.  Isso se aplica ao método Navegar e Restaurar do NetApp Backup and Recovery .
 
 A versão 3.9.40 do agente do console oferece suporte a determinadas versões do Red Hat Enterprise Linux 8 e 9 para qualquer instalação manual do software do agente do console em um host RHEL 8 ou 9, independentemente do local, além dos sistemas operacionais mencionados no https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisitos do host"^] .  Essas versões mais recentes do RHEL exigem o mecanismo Podman em vez do mecanismo Docker.  Anteriormente, o NetApp Backup and Recovery tinha duas limitações ao usar o mecanismo Podman.  Essas limitações foram removidas.
 
-https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Saiba mais sobre como restaurar dados ONTAP de arquivos de backup"] .
+https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Saiba mais sobre como restaurar dados ONTAP de arquivos de backup"].
 
 
 
@@ -18,4 +18,4 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.h
 
 Esta versão inclui um índice de catálogo aprimorado que conclui a indexação de base muito mais rápido.  A indexação mais rápida permite que você use o recurso Pesquisar e Restaurar mais rapidamente.
 
-https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Saiba mais sobre como restaurar dados ONTAP de arquivos de backup"] .
+https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Saiba mais sobre como restaurar dados ONTAP de arquivos de backup"].

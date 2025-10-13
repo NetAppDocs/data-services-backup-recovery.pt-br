@@ -18,7 +18,7 @@ Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backu
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 
@@ -45,9 +45,9 @@ NOTE: A função de administrador de armazenamento não é mais necessária para
 
 == Verificar requisitos de licença
 
-Para o licenciamento PAYGO do NetApp Backup and Recovery, uma assinatura do Console está disponível no Google Marketplace que permite implantações do Cloud Volumes ONTAP e do NetApp Backup and Recovery.  Você precisa https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["assinar esta assinatura do Console"^] antes de habilitar o NetApp Backup and Recovery.  O faturamento do NetApp Backup and Recovery é feito por meio desta assinatura. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Você pode se inscrever na página Detalhes e credenciais do assistente do sistema"^] .
+Para o licenciamento PAYGO do NetApp Backup and Recovery , uma assinatura do Console está disponível no Google Marketplace que permite implantações do Cloud Volumes ONTAP e do NetApp Backup and Recovery.  Você precisa https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["assinar esta assinatura do Console"^] antes de habilitar o NetApp Backup and Recovery.  O faturamento do NetApp Backup and Recovery é feito por meio desta assinatura. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Você pode se inscrever na página Detalhes e credenciais do assistente do sistema"^] .
 
-Para o licenciamento BYOL do NetApp Backup and Recovery, você precisa do número de série da NetApp que lhe permite usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"] .
+Para o licenciamento BYOL do NetApp Backup and Recovery , você precisa do número de série da NetApp que lhe permite usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].
 
 E você precisa ter uma assinatura do Google para o espaço de armazenamento onde seus backups serão localizados.
 
@@ -58,14 +58,14 @@ E você precisa ter uma assinatura do Google para o espaço de armazenamento ond
 O agente do Console deve ser instalado em uma região do Google com acesso à Internet.
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
-* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Implantar um agente de console no Google Cloud"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Implantar um agente do Console no Google Cloud"^]
 
 
 
 
 === Verifique ou adicione permissões ao agente do Console
 
-Para usar a funcionalidade "Pesquisar e restaurar" do NetApp Backup and Recovery, você precisa ter permissões específicas na função do agente do Console para que ele possa acessar o serviço Google Cloud BigQuery.  Veja as permissões abaixo e siga as etapas se precisar modificar a política.
+Para usar a funcionalidade "Pesquisar e Restaurar" do NetApp Backup and Recovery , você precisa ter permissões específicas na função do agente do Console para que ele possa acessar o serviço Google Cloud BigQuery.  Veja as permissões abaixo e siga as etapas se precisar modificar a política.
 
 .Passos
 . No https://console.cloud.google.com["Console do Google Cloud"^] , vá para a página *Funções*.
@@ -129,7 +129,7 @@ cloudkms.keyRings.setIamPolicy
 
 Por padrão, o serviço cria buckets para você.  Se quiser usar seus próprios buckets, você pode criá-los antes de iniciar o assistente de ativação de backup e, em seguida, selecionar esses buckets no assistente.
 
-link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios buckets"] .
+link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios buckets"].
 
 
 
@@ -141,7 +141,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 
 ==== Requisitos de rede ONTAP local
 
-* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem.  Normalmente, essa é uma conexão VPN.
+* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
 Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
@@ -152,7 +152,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 ==== Requisitos de rede do Cloud Volumes ONTAP
 
-* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105.  Essas regras estão incluídas no grupo de segurança predefinido.
+* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105. Essas regras estão incluídas no grupo de segurança predefinido.
 
 
 * Para replicar dados entre dois sistemas Cloud Volumes ONTAP em sub-redes diferentes, as sub-redes devem ser roteadas juntas (essa é a configuração padrão).
@@ -160,7 +160,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 
 
-== Habilitar backup e recuperação do NetApp em Cloud Volumes ONTAP
+== Habilitar NetApp Backup and Recovery em Cloud Volumes ONTAP
 
 As etapas para habilitar o NetApp Backup and Recovery variam um pouco dependendo se você tem um sistema Cloud Volumes ONTAP existente ou um novo.
 
@@ -267,7 +267,7 @@ Você precisará inserir as chaves no NetApp Backup and Recovery mais tarde, ao 
 
 Por padrão, o serviço cria buckets para você.  Ou, se quiser usar seus próprios buckets, você pode criá-los antes de iniciar o assistente de ativação de backup e, em seguida, selecionar esses buckets no assistente.
 
-link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios buckets"] .
+link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios buckets"].
 
 
 
@@ -338,7 +338,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 . Continue com as seguintes opções:
 +
 ** Se você já tem um agente do Console, está tudo pronto.  Basta selecionar *Avançar*.
-** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida. Consulte <<Prepare seu agente de console>> .
+** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida.  Consulte<<Prepare seu agente de console>> .
 
 
 
@@ -496,7 +496,7 @@ Um volume replicado é criado no cluster de destino que será sincronizado com o
 
 Um bucket do Google Cloud Storage é criado na conta de serviço indicada pela chave de acesso e chave secreta do Google que você inseriu, e os arquivos de backup são armazenados lá.
 
-Os backups são associados à classe de armazenamento _Padrão_ por padrão.  Você pode usar as classes de armazenamento de menor custo _Nearline_, _Coldline_ ou _Archive_.  No entanto, você configura a classe de armazenamento por meio do Google, não por meio da interface do usuário do NetApp Backup and Recovery.  Veja o tópico do Google https://cloud.google.com/storage/docs/changing-default-storage-class["Alterando a classe de armazenamento padrão de um bucket"^] para mais detalhes.
+Os backups são associados à classe de armazenamento _Padrão_ por padrão.  Você pode usar as classes de armazenamento de menor custo _Nearline_, _Coldline_ ou _Archive_.  No entanto, você configura a classe de armazenamento por meio do Google, não por meio da interface do usuário do NetApp Backup and Recovery .  Veja o tópico do Google https://cloud.google.com/storage/docs/changing-default-storage-class["Alterando a classe de armazenamento padrão de um bucket"^] para mais detalhes.
 
 O Painel de Backup de Volume é exibido para que você possa monitorar o estado dos backups.
 
@@ -517,7 +517,7 @@ Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no
 
 == O que vem a seguir?
 
-* Você pode link:prev-ontap-backup-manage.html["gerencie seus arquivos de backup e políticas de backup"] . Isso inclui iniciar e parar backups, excluir backups, adicionar e alterar o agendamento de backups e muito mais.
-* Você pode link:prev-ontap-policy-object-advanced-settings.html["gerenciar configurações de backup em nível de cluster"] . Isso inclui alterar as chaves de armazenamento que o ONTAP usa para acessar o armazenamento em nuvem, alterar a largura de banda de rede disponível para carregar backups no armazenamento de objetos, alterar a configuração de backup automático para volumes futuros e muito mais.
+* Você podelink:prev-ontap-backup-manage.html["gerencie seus arquivos de backup e políticas de backup"] .  Isso inclui iniciar e parar backups, excluir backups, adicionar e alterar o agendamento de backups e muito mais.
+* Você podelink:prev-ontap-policy-object-advanced-settings.html["gerenciar configurações de backup em nível de cluster"] .  Isso inclui alterar as chaves de armazenamento que o ONTAP usa para acessar o armazenamento em nuvem, alterar a largura de banda de rede disponível para carregar backups no armazenamento de objetos, alterar a configuração de backup automático para volumes futuros e muito mais.
 * Você também podelink:prev-ontap-restore.html["restaurar volumes, pastas ou arquivos individuais de um arquivo de backup"] para um sistema Cloud Volumes ONTAP na AWS ou para um sistema ONTAP local.
 

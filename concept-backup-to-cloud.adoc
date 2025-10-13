@@ -32,7 +32,7 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Crie snapshots locais, replique para armazenamento secundário e faça backup de volumes ONTAP de sistemas ONTAP locais ou Cloud Volumes ONTAP para armazenamento de objetos em sua conta de nuvem pública ou privada.
 ** Crie backups incrementais permanentes em nível de bloco que são armazenados em outro cluster ONTAP e no armazenamento de objetos na nuvem.
 ** Use o NetApp Backup and Recovery junto com o SnapCenter.
-** Consulte link:prev-ontap-protect-overview.html["Proteger volumes ONTAP"] .
+** Consultelink:prev-ontap-protect-overview.html["Proteger volumes ONTAP"] .
 
 
 * *Cargas de trabalho do Microsoft SQL Server*:
@@ -41,7 +41,7 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Restaurar bancos de dados do Microsoft SQL Server.
 ** Clonar bancos de dados do Microsoft SQL Server.
 ** Use o NetApp Backup and Recovery sem o SnapCenter.
-** Consulte link:br-use-mssql-protect-overview.html["Proteja as cargas de trabalho do Microsoft SQL Server"] .
+** Consultelink:br-use-mssql-protect-overview.html["Proteja as cargas de trabalho do Microsoft SQL Server"] .
 
 
 * *Cargas de trabalho VMware (visualização com nova interface de usuário sem o SnapCenter Plug-in for VMware vSphere)*:
@@ -50,15 +50,15 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Faça backup de cargas de trabalho do VMware no Amazon Web Services S3 ou StorageGRID (para visualização).
 ** Restaure dados do VMware da nuvem para o vCenter local.
 ** Use o NetApp Backup and Recovery sem o SnapCenter Plug-in for VMware vSphere.
-** Consulte link:br-use-vmware-protect-overview.html["Proteja as cargas de trabalho do VMware"] .
+** Consultelink:br-use-vmware-protect-overview.html["Proteja as cargas de trabalho do VMware"] .
 
 
 * *Cargas de trabalho VMware (com SnapCenter Plug-in for VMware vSphere)*:
 +
 ** Faça backup de VMs e armazenamentos de dados no Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e restaure as VMs de volta para o host SnapCenter Plug-in for VMware vSphere local.
-** Restaure dados de VM da nuvem para o vCenter local com o NetApp Backup and Recovery. Você pode restaurar a VM exatamente no mesmo local de onde o backup foi feito ou em um local alternativo.
+** Restaure dados de VM da nuvem de volta para o vCenter local com o NetApp Backup and Recovery. Você pode restaurar a VM exatamente no mesmo local de onde o backup foi feito ou em um local alternativo.
 ** Use o NetApp Backup and Recovery junto com o SnapCenter Plug-in for VMware vSphere.
-** Consulte link:prev-vmware-protect-overview.html["Proteja as cargas de trabalho do VMware"] .
+** Consultelink:prev-vmware-protect-overview.html["Proteja as cargas de trabalho do VMware"] .
 
 
 * *Cargas de trabalho KVM (visualização)*:
@@ -66,14 +66,14 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Fazer backup e restaurar máquinas virtuais
 ** Fazer backup de pools de armazenamento KVM
 ** Use grupos de proteção para gerenciar tarefas de backup
-** Consulte link:br-use-kvm-protect-overview.html["Proteja cargas de trabalho KVM"] .
+** Consultelink:br-use-kvm-protect-overview.html["Proteja cargas de trabalho KVM"] .
 
 
 * *Cargas de trabalho do Hyper-V (visualização)*:
 +
 ** Fazer backup e restaurar máquinas virtuais
 ** Use grupos de proteção para gerenciar tarefas de backup
-** Consulte link:br-use-hyperv-protect-overview.html["Proteja as cargas de trabalho do Hyper-V"] .
+** Consultelink:br-use-hyperv-protect-overview.html["Proteja as cargas de trabalho do Hyper-V"] .
 
 
 * *Cargas de trabalho Oracle (visualização)*:
@@ -84,7 +84,7 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Protegendo um banco de dados com uma arquitetura de backup 3-2-1
 ** Configurar retenção de backup
 ** Montar e desmontar backups do ARCHIVELOG
-** Consulte link:br-use-oracle-protect-overview.html["Proteja as cargas de trabalho do Oracle"] .
+** Consultelink:br-use-oracle-protect-overview.html["Proteja as cargas de trabalho do Oracle"] .
 
 
 * *Cargas de trabalho do Kubernetes (visualização)*:
@@ -93,7 +93,7 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Use políticas de proteção para estruturar seus backups incrementais.
 ** Restaure aplicativos e recursos para os mesmos clusters e namespaces ou para clusters diferentes.
 ** Use o NetApp Backup and Recovery sem o SnapCenter.
-** Consulte link:br-use-kubernetes-protect-overview.html["Proteja as cargas de trabalho do Kubernetes"] .
+** Consultelink:br-use-kubernetes-protect-overview.html["Proteja as cargas de trabalho do Kubernetes"] .
 
 
 
@@ -199,9 +199,9 @@ Uma licença de backup é necessária apenas para backup e restauração do arma
 
 O BYOL é baseado em prazo (1, 2 ou 3 anos) e em capacidade em incrementos de 1 TiB.  Você paga à NetApp para usar o serviço por um período de tempo, digamos 1 ano, e por uma capacidade máxima, digamos 10 TiB.
 
-Você receberá um número de série que deverá ser inserido no NetApp Console para habilitar o serviço.  Quando qualquer um dos limites for atingido, você precisará renovar a licença.  A licença Backup BYOL se aplica a todos os sistemas de origem associados à sua organização ou conta do NetApp Console.
+Você receberá um número de série que deverá ser inserido no NetApp Console para habilitar o serviço.  Quando qualquer um dos limites for atingido, você precisará renovar a licença.  A licença Backup BYOL se aplica a todos os sistemas de origem associados à sua organização ou conta do NetApp Console .
 
-link:br-start-licensing.html["Aprenda a configurar licenças"] .
+link:br-start-licensing.html["Aprenda a configurar licenças"].
 
 *Assinatura pré-paga*
 
@@ -229,7 +229,7 @@ Ao usar o Azure, dois contratos anuais estão disponíveis por 1, 2 ou 3 anos:
 
 ifdef::gcp[]
 
-Ao usar o GCP, você pode solicitar uma oferta privada da NetApp e, em seguida, selecionar o plano ao assinar no Google Cloud Marketplace durante a ativação do NetApp Backup and Recovery. endif::gcp[]
+Ao usar o GCP, você pode solicitar uma oferta privada da NetApp e, em seguida, selecionar o plano ao assinar no Google Cloud Marketplace durante a ativação do NetApp Backup and Recovery . endif::gcp[]
 
 
 
@@ -247,7 +247,7 @@ O NetApp Backup and Recovery protege as seguintes cargas de trabalho:
 
 
 .Sistemas suportados
-* ONTAP SAN local (protocolo iSCSI) e NAS (usando protocolos NFS e CIFS) com ONTAP versão 9.8 e superior
+* SAN ONTAP local (protocolo iSCSI) e NAS (usando protocolos NFS e CIFS) com ONTAP versão 9.8 e superior
 * Cloud Volumes ONTAP 9.8 ou superior para AWS (usando SAN e NAS)
 
 
@@ -305,7 +305,7 @@ endif::gcp[]
 
 As cópias de backup são associadas à organização do NetApp Console na qual o agente do Console reside. https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Saiba mais sobre identidade e acesso do NetApp Console"^] .
 
-Se você tiver vários agentes do Console na mesma organização do NetApp Console, cada agente do Console exibirá a mesma lista de backups.
+Se você tiver vários agentes do Console na mesma organização do NetApp Console , cada agente do Console exibirá a mesma lista de backups.
 
 
 

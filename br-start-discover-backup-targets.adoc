@@ -30,7 +30,7 @@ Forneça credenciais para acessar a conta de armazenamento.  O NetApp Backup and
 Você precisa descobrir pelo menos uma carga de trabalho antes de poder adicionar um destino de backup externo.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a aba *Destinos de backup externo*.
 . Selecione *Descobrir destino de backup*.
 . Selecione um dos tipos de destino de backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* ou * ONTAP S3*.
@@ -83,7 +83,7 @@ Você precisa descobrir pelo menos uma carga de trabalho antes de poder adiciona
 Em vez de o NetApp Backup and Recovery descobrir buckets automaticamente, você pode adicionar manualmente um bucket a um destino de backup externo.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione *Destinos de backup externos*.
 . Selecione o alvo e à direita, selecione *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Adicionar bucket*.
 . Insira as informações do bucket.  As informações variam dependendo do tipo de destino de backup selecionado.
@@ -149,7 +149,7 @@ Em vez de o NetApp Backup and Recovery descobrir buckets automaticamente, você 
 Insira as credenciais necessárias para acessar o destino de backup.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione *Destinos de backup externos*.
 . Selecione o alvo e à direita, selecione *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Alterar credenciais*.
 . Insira as novas credenciais para o destino de backup.  As informações variam dependendo do tipo de destino de backup selecionado.

@@ -36,7 +36,7 @@ As seguintes ações não são suportadas na versão de visualização privada d
 Contas legadas do NetApp Console não oferecem suporte aos recursos necessários para proteger cargas de trabalho do Hyper-V.  Verifique se você está usando uma conta legada na interface da Web do Console.  Se você tiver uma conta de console legada, crie uma nova conta antes de proteger as cargas de trabalho do Hyper-V.
 
 .Passos
-. No menu do NetApp Console, selecione *Administração > Identidade e acesso*.
+. No menu do NetApp Console , selecione *Administração > Identidade e acesso*.
 . Em *Organização*, verifique se um *ID da conta* é exibido ao lado do ID da organização.
 +
 Se um *ID de conta* for exibido, você está usando uma conta legada.

@@ -21,7 +21,7 @@ CAUTION: Não gerencie ou altere arquivos de backup diretamente em seus sistemas
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 
@@ -47,7 +47,7 @@ Cada ícone fica azul quando o tipo de backup está ativado e fica cinza quando 
 
 == Ativar backup em volumes adicionais em um sistema
 
-Se você ativou o backup apenas em alguns volumes de um sistema quando habilitou o NetApp Backup and Recovery pela primeira vez, poderá ativar backups em volumes adicionais posteriormente.
+Se você ativou o backup somente em alguns volumes de um sistema quando habilitou o NetApp Backup and Recovery pela primeira vez, poderá ativar backups em volumes adicionais posteriormente.
 
 .Passos
 . Na aba *Volumes*, identifique o volume no qual você deseja ativar os backups, selecione o menu Açõesimage:icon-action.png["Ícone de ações"] no final da linha e selecione *Ativar backup*.
@@ -69,7 +69,7 @@ Você pode alterar as políticas de backup atribuídas aos seus volumes existent
 . Na aba *Volumes*, identifique o volume no qual você deseja fazer alterações de política, selecione o menu Açõesimage:icon-action.png["Ícone de ações"] no final da linha e selecione *Editar estratégia de backup*.
 . Na página _Editar estratégia de backup_, faça alterações nas políticas de backup existentes para cópias de instantâneos locais, volumes replicados e arquivos de backup e selecione *Avançar*.
 +
-Se você habilitou _DataLock e Ransomware Resilience_ para backups em nuvem na política de backup inicial ao ativar o NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock.  E se você não habilitou o _DataLock e a Resiliência contra Ransomware_ ao ativar o NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm o DataLock configurado.
+Se você habilitou _DataLock e Ransomware Resilience_ para backups em nuvem na política de backup inicial ao ativar o NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock.  E se você não habilitou o _DataLock e o Ransomware Resilience_ ao ativar o NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm o DataLock configurado.
 
 . Revise as configurações de backup para este volume e selecione *Ativar backup*.
 
@@ -112,7 +112,7 @@ Quando mais de cinco volumes são habilitados para backup, o NetApp Backup and R
 |===
 . Na página de backup exibida, faça alterações nas políticas de backup existentes para cópias de instantâneos locais, volumes replicados ou arquivos de backup e selecione *Salvar*.
 +
-Se você habilitou _DataLock e Ransomware Resilience_ para backups em nuvem na política de backup inicial ao ativar o NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock.  E se você não habilitou o _DataLock e a Resiliência contra Ransomware_ ao ativar o NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm o DataLock configurado.
+Se você habilitou _DataLock e Ransomware Resilience_ para backups em nuvem na política de backup inicial ao ativar o NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock.  E se você não habilitou o _DataLock e o Ransomware Resilience_ ao ativar o NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm o DataLock configurado.
 
 
 
@@ -126,7 +126,7 @@ Você pode criar uma cópia instantânea ad-hoc ou backup para um objeto de um v
 
 O nome do backup inclui o registro de data e hora para que você possa identificar seu backup sob demanda de outros backups agendados.
 
-Se você habilitou _DataLock e Ransomware Resilience_ ao ativar o NetApp Backup and Recovery para este cluster, o backup sob demanda também será configurado com DataLock e o período de retenção será de 30 dias. As verificações de ransomware não são suportadas para backups ad-hoc. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção DataLock e Ransomware"^] .
+Se você habilitou _DataLock e Ransomware Resilience_ ao ativar o NetApp Backup and Recovery para este cluster, o backup sob demanda também será configurado com DataLock e o período de retenção será de 30 dias.  As verificações de ransomware não são suportadas para backups ad-hoc. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção DataLock e Ransomware"^].
 
 Quando você cria um backup ad-hoc, um instantâneo é criado no volume de origem.  Como esse snapshot não faz parte de uma programação normal de snapshot, ele não será desativado.  Talvez você queira excluir manualmente este instantâneo do volume de origem quando o backup estiver concluído.  Isso permitirá que os blocos relacionados a este instantâneo sejam liberados.  O nome do Snapshot começará com `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Veja como excluir um Snapshot usando o ONTAP CLI"^] .
 
@@ -206,10 +206,10 @@ A tabela a seguir descreve as ações disponíveis:
 | Abortar replicação | Desativa backups deste volume para o sistema de destino e também desabilita a capacidade de restaurar um volume.  Nenhum backup existente será excluído.  Isso não exclui o relacionamento de proteção de dados entre os volumes de origem e destino. 
 
 
-| Ressincronização reversa | Inverte as funções dos volumes de origem e destino.  O conteúdo do volume de origem original é substituído pelo conteúdo do volume de destino.  Isso é útil quando você deseja reativar um volume de origem que ficou offline.  Quaisquer dados gravados no volume de origem original entre a última replicação de dados e o momento em que o volume de origem foi desabilitado não são preservados. 
+| Ressincronização reversa | Inverte as funções dos volumes de origem e destino. O conteúdo do volume de origem original é substituído pelo conteúdo do volume de destino. Isso é útil quando você deseja reativar um volume de origem que ficou offline. Quaisquer dados gravados no volume de origem original entre a última replicação de dados e o momento em que o volume de origem foi desabilitado não são preservados. 
 
 
-| Excluir relacionamento | Exclui o relacionamento de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes.  Esta ação não ativa o volume de destino para acesso a dados, o que significa que não o torna leitura e gravação.  Esta ação também exclui o relacionamento de pares do cluster e o relacionamento de pares da VM de armazenamento (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas. 
+| Excluir relacionamento | Exclui o relacionamento de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso a dados, o que significa que não o torna leitura e gravação.  Esta ação também exclui o relacionamento de pares do cluster e o relacionamento de pares da VM de armazenamento (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas. 
 |===
 
 
@@ -232,7 +232,7 @@ Você pode alterar os atributos de uma política de backup que está sendo aplic
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
 . Na página _Configurações de backup_, selecioneimage:icon-actions-horizontal.gif["Ícone de ações"] para o sistema no qual você deseja alterar as configurações de política e selecione *Gerenciar políticas*.
-. Na página _Gerenciar políticas_, selecione *Editar* para a política de backup que você deseja alterar nesse sistema.
+. Na página _Gerenciar políticas_, selecione *Editar* para a política de backup que você deseja alterar naquele sistema.
 . Na página _Editar política_, selecione a seta para baixo para expandir a seção _Rótulos e retenção_ para alterar o agendamento e/ou a retenção de backup e selecione *Salvar*.
 +
 Se o seu cluster estiver executando o ONTAP 9.10.1 ou superior, você também terá a opção de habilitar ou desabilitar o armazenamento em camadas de backups para arquivamento após um determinado número de dias.
@@ -242,19 +242,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"] . (Requer ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"]. (Requer ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -288,19 +288,19 @@ ifdef::aws[]
 
 
 
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"] .
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"].
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"] .
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"].
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"] . (Requer ONTAP 9.12.1.)
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"]. (Requer ONTAP 9.12.1.)
 
 endif::gcp[]
 
@@ -392,7 +392,7 @@ Você não precisa necessariamente excluir o volume de origem.  Você pode exclu
 
 Este recurso estará disponível somente se o seu sistema estiver executando o ONTAP 9.12.1 ou superior.
 
-Não é possível excluir o volume de origem da interface do usuário do NetApp Backup and Recovery.  No entanto, você pode abrir a página Detalhes do Volume na página *Sistemas* do Console e https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["apague o volume de lá"] .
+Não é possível excluir o volume de origem da interface do usuário do NetApp Backup and Recovery .  No entanto, você pode abrir a página Detalhes do Volume na página *Sistemas* do Console e https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["apague o volume de lá"] .
 
 
 NOTE: Não é possível excluir arquivos de backup de volume individuais depois que o relacionamento tiver sido excluído.  No entanto, você pode excluir todos os backups do volume.

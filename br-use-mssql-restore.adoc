@@ -14,7 +14,7 @@ summary: Restaure cargas de trabalho de banco de dados de uma cópia de instant�
 
 
 [role="lead"]
-Restaure cargas de trabalho do Microsoft SQL Server de cópias de snapshot, de um backup de carga de trabalho replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.  Você pode restaurar uma carga de trabalho para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
+Restaure cargas de trabalho do Microsoft SQL Server de cópias de instantâneos, de um backup de carga de trabalho replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.  Você pode restaurar uma carga de trabalho para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
 
 .Restaurar a partir desses locais
 Você pode restaurar cargas de trabalho de diferentes locais de partida:
@@ -24,7 +24,7 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 * Restaurar de um backup de armazenamento de objetos
 
 
-.Restaurar esses pontos
+.Restaurar para estes pontos
 Você pode restaurar dados para o snapshot mais recente ou para estes pontos:
 
 * Restaurar a partir de instantâneos
@@ -62,7 +62,7 @@ Você pode restaurar cargas de trabalho usando um dos seguintes métodos.  Norma
 * *Da página Inventário*: Use isto quando precisar restaurar um recurso específico da última semana ou mês — e você souber o nome e a localização do recurso, além da data em que ele esteve em boas condições pela última vez.  Navegue por uma lista de recursos para encontrar aquele que deseja restaurar.
 
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
@@ -71,7 +71,7 @@ Você pode restaurar cargas de trabalho usando um dos seguintes métodos.  Norma
 Restaure cargas de trabalho do banco de dados usando a opção Restaurar.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Restaurar*.
+. No menu NetApp Backup and Recovery , selecione *Restaurar*.
 . Selecione o banco de dados que você deseja restaurar.  Utilize os filtros para pesquisar.
 . Selecione a opção de restauração:
 +
@@ -202,7 +202,7 @@ O NetApp Backup and Recovery mostra os snapshots disponíveis para a operação 
 Restaure cargas de trabalho do banco de dados na página Inventário.  Usando a opção Inventário, você pode restaurar apenas bancos de dados, não instâncias.
 
 .Passos
-. No menu NetApp Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Escolha o host onde o recurso que você deseja restaurar está localizado.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Ver detalhes*.
 . Na página do Microsoft SQL Server, selecione a guia *Bancos de dados*.

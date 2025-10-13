@@ -39,7 +39,7 @@ Você pode atingir as seguintes metas de proteção:
 * link:br-use-manage-snapshots.html["Gerenciar instantâneos"]
 
 
-Para fazer backup de cargas de trabalho, normalmente você cria políticas que controlam as operações de backup e restauração. Ver link:br-use-policies-create.html["Criar políticas"] para maiores informações.
+Para fazer backup de cargas de trabalho, normalmente você cria políticas que controlam as operações de backup e restauração.  Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
 
 .Destinos de backup suportados
 O NetApp Backup and Recovery permite que você faça backup de instâncias e bancos de dados do Microsoft SQL Server dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada.  Cópias de instantâneos residem no sistema de origem.

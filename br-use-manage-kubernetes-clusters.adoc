@@ -20,7 +20,7 @@ O NetApp Backup and Recovery permite que você descubra e gerencie seus clusters
 Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
-NOTE: Para descobrir clusters do Kubernetes, consulte link:br-start-discover.html["Descubra as cargas de trabalho do Kubernetes"] .
+NOTE: Para descobrir clusters do Kubernetes, consultelink:br-start-discover.html["Descubra as cargas de trabalho do Kubernetes"] .
 
 
 
@@ -40,7 +40,7 @@ Você pode editar um cluster se precisar alterar seu nome.
 
 == Remover um cluster do Kubernetes
 
-Se você não precisar mais proteger os recursos hospedados por um cluster Kubernetes, poderá removê-lo do NetApp Backup and Recovery.  A remoção de um cluster não exclui o cluster nem seus recursos; apenas remove o cluster do inventário do NetApp Console.  Antes de remover um cluster, você precisa desabilitar a proteção e excluir os aplicativos associados do NetApp Backup and Recovery.
+Se você não precisar mais proteger os recursos hospedados por um cluster Kubernetes, poderá removê-lo do NetApp Backup and Recovery.  A remoção de um cluster não exclui o cluster nem seus recursos; apenas remove o cluster do inventário do NetApp Console .  Antes de remover um cluster, você precisa desabilitar a proteção e excluir os aplicativos associados do NetApp Backup and Recovery.
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.

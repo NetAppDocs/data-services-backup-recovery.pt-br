@@ -29,7 +29,7 @@ Consulte https://docs.netapp.com/us-en/storage-management-storagegrid/task-disco
 +
 Consulte https://docs.netapp.com/us-en/storagegrid/index.html["Documentação do StorageGRID"^] para obter detalhes sobre StorageGRID.
 
-* Serviços Web da Amazon. Consulte https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Documentação do Amazon S3"^] .
+* Serviços Web da Amazon.  Consulte https://docs.netapp.com/us-en/storage-management-s3-storage/index.html["Documentação do Amazon S3"^] .
 +
 Faça o seguinte para preparar a AWS como um destino de backup:
 
@@ -51,11 +51,11 @@ Faça o seguinte para preparar a AWS como um destino de backup:
 
 
 
-Depois de configurar as opções no próprio destino de backup, você o configurará posteriormente como um destino de backup no NetApp Backup and Recovery.  Para obter detalhes sobre como configurar o destino do backup no NetApp Backup and Recovery, consultelink:br-start-discover-backup-targets.html["Descubra alvos de backup"] .
+Depois de configurar as opções no próprio destino de backup, você o configurará posteriormente como um destino de backup no NetApp Backup and Recovery.  Para obter detalhes sobre como configurar o destino de backup no NetApp Backup and Recovery, consultelink:br-start-discover-backup-targets.html["Descubra alvos de backup"] .
 
 
 
-== Configurar permissões do S3
+== Configurar permissões S3
 
 Você precisará configurar dois conjuntos de permissões do AWS S3:
 
@@ -64,7 +64,7 @@ Você precisará configurar dois conjuntos de permissões do AWS S3:
 
 
 .Passos
-. Certifique-se de que o agente do Console tenha as permissões necessárias. Para mais detalhes, veja https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permissões de política do NetApp Console"] .
+. Certifique-se de que o agente do Console tenha as permissões necessárias.  Para mais detalhes, veja https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Permissões de política do NetApp Console"] .
 +
 
 NOTE: Ao criar backups nas regiões da AWS China, você precisa alterar o nome do recurso da AWS "arn" em todas as seções _Resource_ nas políticas do IAM de "aws" para "aws-cn"; por exemplo `arn:aws-cn:s3:::netapp-backup-*` .

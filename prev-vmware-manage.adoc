@@ -14,11 +14,11 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 
 
 [role="lead"]
-Você pode visualizar políticas, armazenamentos de dados e máquinas virtuais antes de fazer backup e restaurar dados com o NetApp Backup and Recovery.  Dependendo da alteração no banco de dados, nas políticas ou nos grupos de recursos, você pode visualizar as atualizações na interface do usuário do NetApp Console.
+Você pode visualizar políticas, armazenamentos de dados e máquinas virtuais antes de fazer backup e restaurar dados com o NetApp Backup and Recovery.  Dependendo da alteração no banco de dados, nas políticas ou nos grupos de recursos, você pode visualizar as atualizações na interface do usuário do NetApp Console .
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 
@@ -105,7 +105,7 @@ Todos os armazenamentos de dados e máquinas virtuais associados ao SnapCenter P
 
 == Monitorar empregos
 
-Os trabalhos são criados para todas as operações de backup e recuperação do NetApp .  Você pode monitorar todos os trabalhos e todas as subtarefas que são executadas como parte de cada tarefa.
+Os trabalhos são criados para todas as operações de NetApp Backup and Recovery .  Você pode monitorar todos os trabalhos e todas as subtarefas que são executadas como parte de cada tarefa.
 
 . Selecione *Backup e recuperação* > *Monitoramento de tarefas*.
 +

@@ -16,4 +16,4 @@ summary: O NetApp Backup and Recovery emprega funções de IAM para controlar o 
 [role="lead"]
 O NetApp Backup and Recovery emprega o Identity and Access Management (IAM) para controlar o acesso que cada usuário tem a recursos e ações específicos.
 
-Para saber mais sobre as funções do IAM específicas do NetApp Backup and Recovery, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de backup e recuperação do NetApp no ​​NetApp Console"^] .
+Para saber mais sobre as funções do IAM específicas do NetApp Backup and Recovery, consulte https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de NetApp Backup and Recovery no ​​NetApp Console"^] .

@@ -16,19 +16,19 @@ summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de tr
 [role="lead"]
 O NetApp Backup and Recovery precisa primeiro descobrir seus bancos de dados Oracle para que você possa protegê-los.
 
-*Função de console necessária* Superadministrador de backup e recuperação. Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
 == Adicionar um host Oracle e descobrir recursos
 
-Adicione informações do host Oracle e deixe o NetApp Backup and Recovery descobrir cargas de trabalho.  Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
+Adicione informações do host Oracle e deixe o NetApp Backup and Recovery descobrir cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
 
 .Passos
-. No menu do NetApp Console, selecione *Proteção > Backup e recuperação*.
+. No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . No bloco Oracle, selecione *Descobrir e gerenciar*.
 +
-Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
+Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
 
 . Selecione *Descobrir recursos*.
 . Insira as seguintes informações:
@@ -57,8 +57,8 @@ A carga de trabalho do Oracle é exibida na lista de cargas de trabalho na pági
 
 
 
-== Continue para o Painel de Backup e Recuperação da NetApp
+== Continue para o Painel de NetApp Backup and Recovery
 
-. Para exibir o Painel de Backup e Recuperação do NetApp , no menu superior, selecione *Painel*.
+. Para exibir o Painel de NetApp Backup and Recovery , no menu superior, selecione *Painel*.
 . Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
 

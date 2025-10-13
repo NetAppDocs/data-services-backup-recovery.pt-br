@@ -16,7 +16,7 @@ summary: O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper
 [role="lead"]
 O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper-V antes que você possa protegê-las.
 
-*Função de console necessária* Superadministrador de backup e recuperação. Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
@@ -28,7 +28,7 @@ Adicione informações do host Hyper-V e deixe o NetApp Backup and Recovery desc
 NOTE: Quando você adiciona hosts Hyper-V e descobre recursos, o NetApp Backup and Recovery instala o plug-in NetApp Hyper-V e o plug-in NetApp SnapCenter Windows FileSystem no host Hyper-V para ajudar a gerenciar e proteger máquinas virtuais.
 
 .Passos
-. No menu do NetApp Console, selecione *Proteção* > *Backup e recuperação*.
+. No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
 +
 Se esta for a primeira vez que você faz login no NetApp Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso. A página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
 
@@ -59,9 +59,9 @@ Depois que o NetApp Backup and Recovery descobre recursos, a página Inventário
 
 
 
-== Continue para o Painel de Backup e Recuperação da NetApp
+== Continue para o Painel de NetApp Backup and Recovery
 
 .Passos
-. Para exibir o Painel de Backup e Recuperação do NetApp , no menu do Console do NetApp , selecione *Painel*.
+. Para exibir o Painel de NetApp Backup and Recovery , no menu do NetApp Console , selecione *Painel*.
 . Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
 

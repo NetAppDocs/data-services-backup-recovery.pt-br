@@ -18,11 +18,11 @@ Você deve registrar o SnapCenter Plug-in for VMware vSphere no NetApp Backup an
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 .Passos
-. Na interface do usuário do NetApp Console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
+. Na interface do usuário do NetApp Console , selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
 . No menu suspenso *Configurações*, selecione * SnapCenter Plug-in for VMware vSphere*.
 . Selecione *Registrar SnapCenter Plug-in for VMware vSphere*.
 . Especifique os seguintes detalhes:

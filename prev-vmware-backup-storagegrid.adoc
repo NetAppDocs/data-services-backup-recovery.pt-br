@@ -18,14 +18,14 @@ Você pode fazer backup de um ou mais armazenamentos de dados no StorageGRID int
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 .Antes de começar
 Certifique-se de ter cumprido todos oslink:prev-vmware-prereqs.html["requisitos de proteção de máquina virtual"] antes de fazer backup dos armazenamentos de dados na nuvem.
 
 .Passos
-. Na interface do usuário do NetApp Console, selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
+. Na interface do usuário do NetApp Console , selecione *Proteção* > *Backup e recuperação* > *Máquinas virtuais*.
 . Selecioneimage:icon-action.png["Ação"] correspondente ao armazenamento de dados que você deseja fazer backup e clique em *Ativar backup*.
 . Na página Atribuir política, selecione a política e selecione *Avançar*.
 . Adicione o sistema.

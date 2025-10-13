@@ -17,11 +17,11 @@ summary: Conclua algumas etapas no NetApp Backup and Recovery para começar a fa
 Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus sistemas ONTAP primários locais para um sistema de armazenamento secundário e para o armazenamento de objetos nos seus sistemas NetApp StorageGRID .
 
 
-NOTE: Os "sistemas ONTAP locais" incluem sistemas FAS, AFF e ONTAP Select .
+NOTE: Os "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select .
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 
@@ -34,7 +34,7 @@ Opcionalmente, você pode se conectar a um sistema ONTAP secundário no mesmo lo
 
 image:diagram_cloud_backup_onprem_storagegrid.png["Um diagrama mostrando como o NetApp Backup and Recovery se comunica com os volumes nos sistemas de origem e no armazenamento de destino onde os arquivos de backup estão localizados."]
 
-Quando o agente do Console e o sistema ONTAP local são instalados em um local local sem acesso à Internet (um "dark site"), o sistema StorageGRID deve estar localizado no mesmo data center local.  O arquivamento de arquivos de backup mais antigos na nuvem pública não é suportado em configurações de site escuro.
+Quando o agente do Console e o sistema ONTAP local são instalados em um local sem acesso à Internet (um "dark site"), o sistema StorageGRID deve estar localizado no mesmo data center local.  O arquivamento de arquivos de backup mais antigos na nuvem pública não é suportado em configurações de site escuro.
 
 
 
@@ -69,9 +69,9 @@ Certifique-se de que a rede onde o agente do Console está instalado habilite as
 
 ==== Considerações sobre o modo privado (site escuro)
 
-* A funcionalidade de backup e recuperação do NetApp está integrada ao agente do Console.  Quando instalado no modo privado, você precisará atualizar o software do agente do Console periodicamente para ter acesso a novos recursos.  Verifique olink:whats-new.html["Novidades do NetApp Backup and Recovery"] para ver os novos recursos em cada versão do NetApp Backup and Recovery.  Quando você quiser usar os novos recursos, siga as etapas para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualizar o software do agente do Console"^] .
+* A funcionalidade de NetApp Backup and Recovery está integrada ao agente do Console.  Quando instalado no modo privado, você precisará atualizar o software do agente do Console periodicamente para ter acesso a novos recursos.  Verifique olink:whats-new.html["Novidades do NetApp Backup and Recovery"] para ver os novos recursos em cada versão do NetApp Backup and Recovery .  Quando você quiser usar os novos recursos, siga as etapas para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualizar o software do agente do Console"^] .
 +
-A nova versão do NetApp Backup and Recovery, que inclui a capacidade de agendar e criar cópias de snapshot e volumes replicados, além de criar backups para armazenamento de objetos, exige que você esteja usando a versão 3.9.31 ou superior do agente do Console.  Portanto, é recomendável que você obtenha esta versão mais recente para gerenciar todos os seus backups.
+A nova versão do NetApp Backup and Recovery , que inclui a capacidade de agendar e criar cópias de snapshot e volumes replicados, além de criar backups para armazenamento de objetos, exige que você esteja usando a versão 3.9.31 ou superior do agente do Console.  Portanto, é recomendável que você obtenha esta versão mais recente para gerenciar todos os seus backups.
 
 * Quando você usa o NetApp Backup and Recovery em um ambiente SaaS, os dados de configuração do NetApp Backup and Recovery são armazenados em backup na nuvem.  Quando você usa o NetApp Backup and Recovery em um site sem acesso à Internet, os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID onde seus backups estão sendo armazenados.
 
@@ -82,7 +82,7 @@ A nova versão do NetApp Backup and Recovery, que inclui a capacidade de agendar
 
 Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp.  Esta licença é para a conta e pode ser usada em vários sistemas.
 
-Você precisará do número de série da NetApp que lhe permitirá usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"] .
+Você precisará do número de série da NetApp que lhe permitirá usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].
 
 
 TIP: O licenciamento PAYGO não é suportado ao fazer backup de arquivos no StorageGRID.
@@ -105,9 +105,9 @@ Preparar seus clusters ONTAP envolve as seguintes etapas:
 
 === Descubra seus sistemas ONTAP no NetApp Console
 
-Tanto o sistema ONTAP local de origem quanto quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP devem estar disponíveis na página *Sistemas* do NetApp Console.
+Tanto o sistema ONTAP local de origem quanto quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP devem estar disponíveis na página *Sistemas* do NetApp Console .
 
-Você precisará saber o endereço IP de gerenciamento do cluster e a senha da conta de usuário administrador para adicionar o cluster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda como descobrir um cluster"^] .
+Você precisará saber o endereço IP de gerenciamento do cluster e a senha da conta de usuário administrador para adicionar o cluster. https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Aprenda como descobrir um cluster"^].
 
 
 
@@ -126,7 +126,7 @@ Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-co
 * A hora e o fuso horário estão definidos corretamente.  Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure o tempo do seu cluster"^] .
 * Se você for replicar dados, verifique se os sistemas de origem e destino estão executando versões compatíveis do ONTAP antes de replicar os dados.
 +
-https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versões ONTAP compatíveis para relacionamentos SnapMirror"^] .
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versões ONTAP compatíveis para relacionamentos SnapMirror"^].
 
 
 
@@ -167,7 +167,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 
 ==== Requisitos de rede ONTAP local
 
-* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem.  Normalmente, essa é uma conexão VPN.
+* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
 Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
@@ -178,7 +178,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 ==== Requisitos de rede do Cloud Volumes ONTAP
 
-* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105.  Essas regras estão incluídas no grupo de segurança predefinido.
+* O grupo de segurança da instância deve incluir as regras de entrada e saída necessárias: especificamente, regras para ICMP e portas 11104 e 11105. Essas regras estão incluídas no grupo de segurança predefinido.
 
 
 
@@ -225,7 +225,7 @@ Controle de versão de objetos:: Você não deve habilitar o controle de versão
 
 === Prepare-se para arquivar arquivos de backup mais antigos no armazenamento em nuvem pública
 
-Colocar arquivos de backup mais antigos em níveis de armazenamento de arquivamento economiza dinheiro ao usar uma classe de armazenamento mais barata para backups que você pode não precisar.  O StorageGRID é uma solução local (nuvem privada) que não fornece armazenamento de arquivo, mas você pode mover arquivos de backup mais antigos para armazenamento de arquivo em nuvem pública.  Quando usado dessa forma, os dados que são colocados em camadas no armazenamento em nuvem ou restaurados do armazenamento em nuvem vão entre o StorageGRID e o armazenamento em nuvem - o Console não está envolvido nessa transferência de dados.
+Colocar arquivos de backup mais antigos em níveis de armazenamento de arquivamento economiza dinheiro ao usar uma classe de armazenamento mais barata para backups que você talvez não precise.  O StorageGRID é uma solução local (nuvem privada) que não fornece armazenamento de arquivo, mas você pode mover arquivos de backup mais antigos para armazenamento de arquivo em nuvem pública.  Quando usado dessa forma, os dados que são colocados em camadas no armazenamento em nuvem ou restaurados do armazenamento em nuvem vão entre o StorageGRID e o armazenamento em nuvem - o Console não está envolvido nessa transferência de dados.
 
 O suporte atual permite arquivar backups no armazenamento AWS _S3 Glacier_/_S3 Glacier Deep Archive_ ou _Azure Archive_.
 
@@ -243,7 +243,7 @@ O suporte atual permite arquivar backups no armazenamento AWS _S3 Glacier_/_S3 G
 *Requisitos do Amazon S3*
 
 * Você precisará criar uma conta Amazon S3 para o espaço de armazenamento onde seus backups arquivados estarão localizados.
-* Você pode optar por fazer backups em camadas no armazenamento AWS S3 Glacier ou S3 Glacier Deep Archive. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre as camadas de arquivamento da AWS"] .
+* Você pode optar por fazer backups em camadas no armazenamento AWS S3 Glacier ou S3 Glacier Deep Archive. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre as camadas de arquivamento da AWS"].
 * O StorageGRID deve ter acesso de controle total ao bucket(`s3:*` ); no entanto, se isso não for possível, a política de bucket deve conceder as seguintes permissões S3 ao StorageGRID:
 +
 ** `s3:AbortMultipartUpload`
@@ -309,7 +309,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 . Continue com as seguintes opções:
 +
 ** Se você já tem um agente do Console, está tudo pronto.  Basta selecionar *Avançar*.
-** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida. Consulte <<Prepare seu agente de console>> .
+** Se você ainda não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida.  Consulte<<Prepare seu agente de console>> .
 
 
 
@@ -442,7 +442,7 @@ Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você pode optar por
 
 
 +
-Se o seu cluster estiver usando o ONTAP 9.12.1 ou superior e o seu sistema StorageGRID estiver usando a versão 11.4 ou superior, você poderá optar por colocar backups mais antigos em camadas de arquivamento em nuvem pública após um determinado número de dias.  O suporte atual é para níveis de armazenamento AWS S3 Glacier/S3 Glacier Deep Archive ou Azure Archive. <<Prepare-se para arquivar arquivos de backup mais antigos no armazenamento em nuvem pública,Veja como configurar seus sistemas para essa funcionalidade>> .
+Se o seu cluster estiver usando o ONTAP 9.12.1 ou superior e o seu sistema StorageGRID estiver usando a versão 11.4 ou superior, você poderá optar por colocar backups mais antigos em camadas de arquivamento em nuvem pública após um determinado número de dias.  O suporte atual é para níveis de armazenamento AWS S3 Glacier/S3 Glacier Deep Archive ou Azure Archive. <<Prepare-se para arquivar arquivos de backup mais antigos no armazenamento em nuvem pública,Veja como configurar seus sistemas para essa funcionalidade>>.
 
 +
 ** *Backup em camadas para nuvem pública*: Selecione o provedor de nuvem para o qual você deseja fazer backups em camadas e insira os detalhes do provedor.

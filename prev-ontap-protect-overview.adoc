@@ -18,7 +18,7 @@ O NetApp Backup and Recovery fornece recursos de backup e restauração para pro
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 Após a ativação, o backup e a recuperação criam backups incrementais permanentes em nível de bloco que são armazenados em outro cluster ONTAP e no armazenamento de objetos na nuvem.  Além do volume de origem, você terá:
@@ -52,7 +52,7 @@ Quando necessário, você pode restaurar um _volume_ inteiro, uma _pasta_ ou um 
 * Criptografia ONTAP nativa em voo configurada via chave pré-compartilhada (PSK) entre os dois sistemas.
 * Os dados copiados são imutáveis até que você os torne graváveis e prontos para uso.
 * A replicação é autocurativa em caso de falha de transferência.
-* Quando comparado a https://docs.netapp.com/us-en/data-services-replication/index.html["Replicação NetApp"^] , a replicação no NetApp Backup and Recovery inclui os seguintes recursos:
+* Quando comparado a https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"^] , a replicação no NetApp Backup and Recovery inclui os seguintes recursos:
 +
 ** Replique vários volumes FlexVol de uma vez para um sistema secundário.
 ** Restaure um volume replicado para o sistema de origem ou para um sistema diferente usando a interface do usuário.
@@ -246,9 +246,9 @@ Uma licença de backup é necessária apenas para backup e restauração do arma
 
 O BYOL é baseado em prazo (1, 2 ou 3 anos) e em capacidade em incrementos de 1 TiB.  Você paga à NetApp para usar o serviço por um período de tempo, digamos 1 ano, e por uma capacidade máxima, digamos 10 TiB.
 
-Você receberá um número de série que deverá ser inserido no NetApp Console para habilitar o serviço.  Quando qualquer um dos limites for atingido, você precisará renovar a licença.  A licença Backup BYOL se aplica a todos os sistemas de origem associados à sua organização ou conta do NetApp Console.
+Você receberá um número de série que deverá ser inserido no NetApp Console para habilitar o serviço.  Quando qualquer um dos limites for atingido, você precisará renovar a licença.  A licença Backup BYOL se aplica a todos os sistemas de origem associados à sua organização ou conta do NetApp Console .
 
-link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"] .
+link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].
 
 
 
@@ -256,7 +256,7 @@ link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"] .
 
 O NetApp Backup and Recovery oferece licenciamento baseado no consumo em um modelo de pagamento conforme o uso.  Após assinar pelo marketplace do seu provedor de nuvem, você paga por GiB pelos dados armazenados em backup — não há pagamento inicial. Você é cobrado pelo seu provedor de nuvem por meio de sua fatura mensal.
 
-link:br-start-licensing.html["Aprenda a configurar uma assinatura pré-paga"] .
+link:br-start-licensing.html["Aprenda a configurar uma assinatura pré-paga"].
 
 Observe que um teste gratuito de 30 dias está disponível quando você se inscreve inicialmente com uma assinatura PAYGO.
 
@@ -286,11 +286,11 @@ endif::azure[]
 
 ifdef::gcp[]
 
-Ao usar o GCP, você pode solicitar uma oferta privada da NetApp e, em seguida, selecionar o plano ao assinar no Google Cloud Marketplace durante a ativação do NetApp Backup and Recovery.
+Ao usar o GCP, você pode solicitar uma oferta privada da NetApp e, em seguida, selecionar o plano ao assinar no Google Cloud Marketplace durante a ativação do NetApp Backup and Recovery .
 
 endif::gcp[]
 
-link:br-start-licensing.html["Aprenda a configurar contratos anuais"] .
+link:br-start-licensing.html["Aprenda a configurar contratos anuais"].
 
 
 
@@ -362,7 +362,7 @@ TIP: O período de retenção para backups de volumes de proteção de dados é 
 
 === Configurações de proteção de arquivo de backup
 
-Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você poderá proteger seus backups no armazenamento de objetos contra exclusão e ataques de ransomware. Cada política de backup fornece uma seção para _DataLock e Resiliência contra Ransomware_ que pode ser aplicada aos seus arquivos de backup por um período de tempo específico - o _período de retenção_.
+Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você poderá proteger seus backups no armazenamento de objetos contra exclusão e ataques de ransomware.  Cada política de backup fornece uma seção para _DataLock e Resiliência contra Ransomware_ que pode ser aplicada aos seus arquivos de backup por um período de tempo específico - o _período de retenção_.
 
 * _DataLock_ protege seus arquivos de backup contra modificações ou exclusão.
 * A _Proteção contra ransomware_ verifica seus arquivos de backup para procurar evidências de um ataque de ransomware quando um arquivo de backup é criado e quando os dados de um arquivo de backup estão sendo restaurados.
@@ -376,8 +376,8 @@ Atualmente, o suporte está disponível quando o destino do backup é Amazon S3,
 
 Para mais detalhes, consulte estas informações:
 
-* link:prev-ontap-policy-object-options.html["Como funciona a proteção contra DataLock e Ransomware"] .
-* link:prev-ontap-policy-object-advanced-settings.html["Como atualizar as opções de proteção contra ransomware na página Configurações avançadas"] .
+* link:prev-ontap-policy-object-options.html["Como funciona a proteção contra DataLock e Ransomware"].
+* link:prev-ontap-policy-object-advanced-settings.html["Como atualizar as opções de proteção contra ransomware na página Configurações avançadas"].
 
 
 
@@ -393,7 +393,7 @@ ifdef::aws[]
 
 * Na AWS, os backups começam na classe de armazenamento _Padrão_ e fazem a transição para a classe de armazenamento _Acesso Infrequente Padrão_ após 30 dias.
 +
-Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _S3 Glacier_ ou _S3 Glacier Deep Archive_ na interface de usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo da AWS"] .
+Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _S3 Glacier_ ou _S3 Glacier Deep Archive_ na interface de usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo da AWS"].
 
 
 
@@ -403,7 +403,7 @@ ifdef::azure[]
 
 * No Azure, os backups são associados à camada de acesso _Cool_.
 +
-Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _Azure Archive_ na interface do usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivamento do Azure"] .
+Se o seu cluster estiver usando o ONTAP 9.10.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _Azure Archive_ na interface do usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivamento do Azure"].
 
 
 
@@ -413,7 +413,7 @@ ifdef::gcp[]
 
 * No GCP, os backups são associados à classe de armazenamento _Standard_.
 +
-Se o seu cluster estiver usando o ONTAP 9.12.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _Archive_ na interface do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo do Google"] .
+Se o seu cluster estiver usando o ONTAP 9.12.1 ou superior, você poderá optar por colocar backups mais antigos em camadas no armazenamento _Archive_ na interface do usuário do NetApp Backup and Recovery após um determinado número de dias para otimizar ainda mais os custos. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre o armazenamento de arquivo do Google"].
 
 
 
@@ -421,7 +421,7 @@ endif::gcp[]
 
 * No StorageGRID, os backups são associados à classe de armazenamento _Standard_.
 +
-Se o seu cluster local estiver usando o ONTAP 9.12.1 ou superior, e o seu sistema StorageGRID estiver usando o 11.4 ou superior, você poderá arquivar arquivos de backup mais antigos no armazenamento de arquivamento em nuvem pública após um determinado número de dias.  O suporte atual é para níveis de armazenamento AWS S3 Glacier/S3 Glacier Deep Archive ou Azure Archive. link:prev-ontap-backup-onprem-storagegrid.html["Saiba mais sobre como arquivar arquivos de backup do StorageGRID"] .
+Se o seu cluster local estiver usando o ONTAP 9.12.1 ou superior, e o seu sistema StorageGRID estiver usando o 11.4 ou superior, você poderá arquivar arquivos de backup mais antigos no armazenamento de arquivamento em nuvem pública após um determinado número de dias.  O suporte atual é para níveis de armazenamento AWS S3 Glacier/S3 Glacier Deep Archive ou Azure Archive. link:prev-ontap-backup-onprem-storagegrid.html["Saiba mais sobre como arquivar arquivos de backup do StorageGRID"].
 
 
 
@@ -442,5 +442,5 @@ Esta operação pode causar um aumento único no custo de leitura dos dados do s
 ** Se a política de camadas for atribuída ao volume quando ele for criado inicialmente, você não verá esse problema.
 
 
-* Considere o impacto dos backups antes de atribuir o `all` política de estratificação para volumes.  Como os dados são hierarquizados imediatamente, o NetApp Backup and Recovery lerá os dados da camada de nuvem em vez da camada local.  Como as operações de backup simultâneas compartilham o link de rede com o armazenamento de objetos na nuvem, pode ocorrer degradação do desempenho se os recursos da rede ficarem saturados.  Nesse caso, talvez você queira configurar proativamente várias interfaces de rede (LIFs) para diminuir esse tipo de saturação de rede.
+* Considere o impacto dos backups antes de atribuir o `all` política de hierarquização para volumes.  Como os dados são hierarquizados imediatamente, o NetApp Backup and Recovery lerá os dados da camada de nuvem em vez da camada local.  Como as operações de backup simultâneas compartilham o link de rede com o armazenamento de objetos na nuvem, pode ocorrer degradação do desempenho se os recursos da rede ficarem saturados.  Nesse caso, talvez você queira configurar proativamente várias interfaces de rede (LIFs) para diminuir esse tipo de saturação de rede.
 

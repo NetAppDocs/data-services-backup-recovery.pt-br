@@ -18,7 +18,7 @@ O NetApp Backup and Recovery oferece suporte a duas classes de armazenamento de 
 
 []
 ====
-*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery, consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
 
 ====
 
@@ -38,7 +38,7 @@ Os dados nessas camadas não podem ser acessados imediatamente quando necessári
 
 Observe que, ao configurar o NetApp Backup and Recovery com esse tipo de regra de ciclo de vida, você não deve configurar nenhuma regra de ciclo de vida ao configurar o bucket na sua conta da AWS.
 
-https://aws.amazon.com/s3/storage-classes/["Saiba mais sobre as classes de armazenamento S3"^] .
+https://aws.amazon.com/s3/storage-classes/["Saiba mais sobre as classes de armazenamento S3"^].
 
 
 

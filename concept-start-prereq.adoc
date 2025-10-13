@@ -14,7 +14,7 @@ summary: Comece a usar o NetApp Backup and Recovery verificando a prontidão do 
 
 
 [role="lead"]
-Comece a usar o NetApp Backup and Recovery verificando a prontidão do seu ambiente operacional, do agente do NetApp Console e da conta do NetApp Console.  Para usar o NetApp Backup and Recovery, você precisará destes pré-requisitos.
+Comece a usar o NetApp Backup and Recovery verificando a prontidão do seu ambiente operacional, do agente do NetApp Console e da conta do NetApp Console .  Para usar o NetApp Backup and Recovery, você precisará destes pré-requisitos.
 
 
 
@@ -56,7 +56,7 @@ A versão 2012 e posteriores são suportadas pelo VMware Virtual Machine File Sy
 O SnapCenter Server versão 5.0 ou superior é necessário se você for importar seus dados existentes do SnapCenter para o NetApp Backup and Recovery.
 
 
-NOTE: Se você já tem o SnapCenter, primeiro verifique se atendeu aos pré-requisitos antes de importar do SnapCenter. Ver link:concept-start-prereq-snapcenter-import.html["Pré-requisitos para importar recursos do SnapCenter"] .
+NOTE: Se você já tem o SnapCenter, primeiro verifique se atendeu aos pré-requisitos antes de importar do SnapCenter.  Verlink:concept-start-prereq-snapcenter-import.html["Pré-requisitos para importar recursos do SnapCenter"] .
 
 
 
@@ -163,7 +163,7 @@ Garanta que seu ambiente atenda aos requisitos específicos para descobrir e pro
 
 Você precisa de requisitos específicos para descobrir recursos do Kubernetes e proteger seus aplicativos Kubernetes.
 
-Para requisitos do NetApp Console, consulte<<No console NetApp>> .
+Para requisitos do NetApp Console , consulte<<No NetApp Console>> .
 
 * Um sistema ONTAP primário (ONTAP 9.16.1 ou posterior)
 * Um cluster do Kubernetes - As distribuições e versões do Kubernetes suportadas incluem:
@@ -224,11 +224,11 @@ NOTE: Certifique-se de alocar espaço em disco suficiente no host Hyper-V para a
 
 
 
-== No console NetApp
+== No NetApp Console
 
 Certifique-se de que o NetApp Console atenda aos seguintes requisitos.
 
-* Um usuário do Console deve ter a função e os privilégios necessários para executar operações em cargas de trabalho do Microsoft SQL Server e do Kubernetes.  Para descobrir os recursos, você precisa ter a função de Superadministrador do NetApp Backup and Recovery.  Verlink:reference-roles.html["Acesso baseado em função do NetApp Backup and Recovery aos recursos"] para obter detalhes sobre as funções e permissões necessárias para executar operações no NetApp Backup and Recovery.
+* Um usuário do Console deve ter a função e os privilégios necessários para executar operações em cargas de trabalho do Microsoft SQL Server e do Kubernetes.  Para descobrir os recursos, você precisa ter a função de Superadministrador do NetApp Backup and Recovery .  Verlink:reference-roles.html["Acesso baseado em função do NetApp Backup and Recovery aos recursos"] para obter detalhes sobre as funções e permissões necessárias para executar operações no NetApp Backup and Recovery.
 * Uma organização do Console com pelo menos um agente do Console ativo que se conecta a clusters ONTAP locais ou ao Cloud Volumes ONTAP.
 * Pelo menos um sistema de console com um cluster NetApp ONTAP local ou Cloud Volumes ONTAP .
 * Um agente de console
@@ -245,7 +245,7 @@ Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.ht
 
 === Configurar o NetApp Console
 
-O próximo passo é configurar o Console e o NetApp Backup and Recovery.
+A próxima etapa é configurar o Console e o NetApp Backup and Recovery.
 
 Análise https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["requisitos padrão do NetApp Console"^] .
 
@@ -253,7 +253,7 @@ Análise https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-check
 
 === Criar um agente de console
 
-Você deve entrar em contato com sua equipe de produtos da NetApp para testar o Backup e a recuperação. Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.
+Você deve entrar em contato com sua equipe de produtos da NetApp para testar o Backup e a recuperação.  Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.
 
 Para criar um agente do Console no NetApp Console antes de usar o serviço, consulte a documentação do Console que descreve https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["como criar um agente de console"^] .
 

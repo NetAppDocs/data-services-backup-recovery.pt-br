@@ -14,11 +14,11 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 
 
 [role="lead"]
-O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados. Há muitas opções que você pode selecionar ao habilitar o Backup e a Recuperação em seus volumes, então você deve revisar suas escolhas para estar preparado.
+O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados.  Há muitas opções que você pode selecionar ao habilitar o Backup e a Recuperação em seus volumes, então você deve revisar suas escolhas para estar preparado.
 
 []
 ====
-*NOTA* Para alternar entre cargas de trabalho de backup e recuperação do NetApp , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 ====
 Analisaremos as seguintes opções:
@@ -69,7 +69,7 @@ NOTE: A criação inicial de um volume replicado ou arquivo de backup inclui uma
 
 A tabela a seguir mostra uma comparação generalizada dos três métodos de backup.  Embora o espaço de armazenamento de objetos normalmente seja mais barato do que o armazenamento em disco local, se você acha que pode restaurar dados da nuvem com frequência, as taxas de saída dos provedores de nuvem podem reduzir algumas de suas economias.  Você precisará identificar com que frequência precisará restaurar dados dos arquivos de backup na nuvem.
 
-Além desses critérios, o armazenamento em nuvem oferece opções de segurança adicionais se você usar o recurso DataLock e Ransomware Resilience, além de economia de custos adicional ao selecionar classes de armazenamento de arquivamento para arquivos de backup mais antigos. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção do DataLock e do Ransomware e as configurações de armazenamento de arquivamento"] .
+Além desses critérios, o armazenamento em nuvem oferece opções de segurança adicionais se você usar o recurso DataLock e Ransomware Resilience, além de economia de custos adicional ao selecionar classes de armazenamento de arquivamento para arquivos de backup mais antigos. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção do DataLock e do Ransomware e as configurações de armazenamento de arquivamento"].
 
 [cols="18,18,22,18,22"]
 |===
@@ -125,7 +125,7 @@ Você pode usar as políticas padrão fornecidas pela NetApp para criar seus bac
 
 Se você criar políticas personalizadas para replicação ou backup, os rótulos das políticas (por exemplo, "diário" ou "semanal") deverão corresponder aos rótulos existentes nas suas políticas de instantâneo, ou os volumes replicados e os arquivos de backup não serão criados.
 
-Você pode criar snapshot, replicação e backup para políticas de armazenamento de objetos na interface de usuário do NetApp Backup and Recovery.  Veja a seção paralink:prev-ontap-backup-manage.html["adicionando uma nova política de backup"] para mais detalhes.
+Você pode criar snapshot, replicação e backup para políticas de armazenamento de objetos na interface de usuário do NetApp Backup and Recovery .  Veja a seção paralink:prev-ontap-backup-manage.html["adicionando uma nova política de backup"] para mais detalhes.
 
 Além de usar o NetApp Backup and Recovery para criar políticas personalizadas, você pode usar o System Manager ou a Interface de Linha de Comando (CLI) do ONTAP :
 
@@ -233,13 +233,13 @@ Se você já estiver usando o Console para gerenciar seu armazenamento, um agent
 
 O NetApp Console oferece vários modos de implantação que permitem que você use o Console de uma maneira que atenda aos seus requisitos comerciais e de segurança.  O _modo padrão_ aproveita a camada SaaS do Console para fornecer funcionalidade completa, enquanto o _modo restrito_ e o _modo privado_ estão disponíveis para organizações com restrições de conectividade.
 
-https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Saiba mais sobre os modos de implantação do NetApp Console"^] .
+https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Saiba mais sobre os modos de implantação do NetApp Console"^].
 
 
 
 === Suporte para sites com conectividade total à Internet
 
-Quando o NetApp Backup and Recovery é usado em um site com conectividade total à Internet (também conhecido como _modo padrão_ ou _modo SaaS_), você pode criar volumes replicados em qualquer sistema ONTAP local ou Cloud Volumes ONTAP gerenciado pelo Console e pode criar arquivos de backup no armazenamento de objetos em qualquer um dos provedores de nuvem suportados. link:concept-backup-to-cloud.html["Veja a lista completa de destinos de backup suportados"] .
+Quando o NetApp Backup and Recovery é usado em um site com conectividade total à Internet (também conhecido como _modo padrão_ ou _modo SaaS_), você pode criar volumes replicados em qualquer sistema ONTAP local ou Cloud Volumes ONTAP gerenciado pelo Console e pode criar arquivos de backup no armazenamento de objetos em qualquer um dos provedores de nuvem suportados. link:concept-backup-to-cloud.html["Veja a lista completa de destinos de backup suportados"].
 
 Para obter uma lista de locais válidos do agente do Console, consulte um dos seguintes procedimentos de backup para o provedor de nuvem onde você planeja criar arquivos de backup.  Existem algumas restrições em que o agente do Console deve ser instalado manualmente em uma máquina Linux ou implantado em um provedor de nuvem específico.
 
@@ -261,14 +261,14 @@ O NetApp Backup and Recovery pode ser usado em um local com conectividade de int
 
 ifdef::aws[]
 
-* Você pode fazer backup de dados de sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP instalados em regiões comerciais da AWS para o Amazon S3. link:prev-ontap-backup-cvo-aws.html["Faça backup dos dados do Cloud Volumes ONTAP no Amazon S3"] .
+* Você pode fazer backup de dados de sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP instalados em regiões comerciais da AWS para o Amazon S3. link:prev-ontap-backup-cvo-aws.html["Faça backup dos dados do Cloud Volumes ONTAP no Amazon S3"].
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Você pode fazer backup de dados de sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP instalados em regiões comerciais do Azure para o Azure Blob. link:prev-ontap-backup-cvo-azure.html["Faça backup dos dados do Cloud Volumes ONTAP no Azure Blob"] .
+* Você pode fazer backup de dados de sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP instalados em regiões comerciais do Azure para o Azure Blob. link:prev-ontap-backup-cvo-azure.html["Faça backup dos dados do Cloud Volumes ONTAP no Azure Blob"].
 
 
 endif::azure[]
@@ -282,7 +282,7 @@ O NetApp Backup and Recovery pode ser usado em um site sem conectividade com a I
 
 NOTE: O modo privado BlueXP (interface BlueXP legada) normalmente é usado com ambientes locais que não têm conexão com a Internet e com regiões de nuvem seguras, o que inclui AWS Secret Cloud, AWS Top Secret Cloud e Azure IL6. A NetApp continua a oferecer suporte a esses ambientes com a interface legada BlueXP . Para documentação do modo privado na interface BlueXP legada, consulte o https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentação em PDF para o modo privado do BlueXP"] .
 
-* Você pode fazer backup de dados de sistemas ONTAP locais para sistemas NetApp StorageGRID locais. link:prev-ontap-backup-onprem-storagegrid.html["Faça backup de dados ONTAP locais no StorageGRID"] .
+* Você pode fazer backup de dados de sistemas ONTAP locais para sistemas NetApp StorageGRID locais. link:prev-ontap-backup-onprem-storagegrid.html["Faça backup de dados ONTAP locais no StorageGRID"].
 * Você pode fazer backup de dados de sistemas ONTAP locais para sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP configurados para armazenamento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Faça backup de dados ONTAP locais no ONTAP S3"] . ifdef::aws[]
 
 

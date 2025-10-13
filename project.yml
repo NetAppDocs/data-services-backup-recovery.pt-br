@@ -23,7 +23,7 @@ settings:
   langs: pt-br,us-en,de-de,es-es,fr-fr,it-it,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: Documentação de backup e recuperação da NetApp
+  - title: Documentação de NetApp Backup and Recovery
     url: "/index.html"
   - title: Notas de lançamento
     entries:
@@ -45,7 +45,7 @@ sidebar:
     entries:
     - title: Saiba mais sobre o NetApp Backup and Recovery
       url: "/concept-backup-to-cloud.html"
-    - title: Pré-requisitos para backup e recuperação da NetApp
+    - title: Pré-requisitos para NetApp Backup and Recovery
       url: "/concept-start-prereq.html"
     - title: Configurar licenciamento para NetApp Backup and Recovery
       url: "/br-start-licensing.html"
@@ -61,7 +61,7 @@ sidebar:
       url: "/br-start-switch-ui.html"
     - title: Configurar as configurações gerais do NetApp Backup and Recovery
       url: "/br-start-configure.html"
-  - title: Use o NetApp Backup e Recovery
+  - title: Use o NetApp Backup and Recovery
     entries:
     - title: Visualizar a saúde da proteção no Painel
       url: "/br-use-dashboard.html"
@@ -156,7 +156,7 @@ sidebar:
         url: "/prev-vmware-backup-gcp.html"
       - title: Fazer backup de datastores no StorageGRID
         url: "/prev-vmware-backup-storagegrid.html"
-      - title: Gerenciar a proteção de dados de armazenamento de dados e máquinas
+      - title: Gerenciar a proteção de dados de armazenamentos de dados e máquinas
           virtuais
         url: "/prev-vmware-manage.html"
       - title: Restaurar dados e armazenamentos de dados de máquinas virtuais
@@ -228,7 +228,7 @@ sidebar:
       url: "/reference-policy-differences-snapcenter.html"
     - title: Funções e privilégios do NetApp Backup and Recovery
       url: "/reference-roles.html"
-    - title: Restaurar dados de backup e recuperação do NetApp em um site escuro
+    - title: Restaurar dados de NetApp Backup and Recovery em um site escuro
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Camadas de armazenamento de arquivo da AWS com suporte
       url: "/prev-reference-aws-archive-storage-tiers.html"

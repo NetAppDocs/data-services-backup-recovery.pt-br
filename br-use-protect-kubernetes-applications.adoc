@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery permite que você gerencie informações d
 
 
 [role="lead"]
-O NetApp Backup and Recovery permite que você descubra facilmente seus clusters Kubernetes, sem gerar e carregar arquivos kubeconfig.  Você pode conectar clusters do Kubernetes e instalar o software necessário usando comandos simples copiados da interface do usuário do NetApp Console.
+O NetApp Backup and Recovery permite que você descubra facilmente seus clusters Kubernetes, sem gerar e carregar arquivos kubeconfig.  Você pode conectar clusters do Kubernetes e instalar o software necessário usando comandos simples copiados da interface do usuário do NetApp Console .
 
 .Função necessária do NetApp Console
 Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
@@ -26,7 +26,7 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 O primeiro passo para proteger aplicativos Kubernetes é criar um aplicativo no NetApp Backup and Recovery.  Ao criar um aplicativo, você torna o Console ciente do aplicativo em execução no cluster do Kubernetes.
 
 .Antes de começar
-Antes de poder adicionar e proteger um aplicativo Kubernetes, você precisa link:br-start-discover.html["descubra as cargas de trabalho do Kubernetes"] .
+Antes de poder adicionar e proteger um aplicativo Kubernetes, você precisalink:br-start-discover.html["descubra as cargas de trabalho do Kubernetes"] .
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.
@@ -71,7 +71,7 @@ Habilite uma política de proteção em um aplicativo Kubernetes que você já a
 . Na lista de aplicativos, escolha um aplicativo que você deseja proteger e selecione o menu Ações associado.
 . Selecione *Proteger*.
 . Na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova política. Consultelink:br-use-policies-create.html#create-a-policy["Criar uma política"] para obter mais informações sobre a criação de políticas de proteção.
-. Na área *Prescrições e pós-scripts*, habilite e configure quaisquer ganchos de execução de prescrições ou pós-scripts que você deseja executar antes ou depois das operações de backup.  Você pode configurar o tipo de gancho de execução, o modelo que ele usa, argumentos e seletores de rótulos.
+. Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Você pode configurar o tipo de gancho de execução, o modelo que ele usa, argumentos e seletores de rótulos.
 . Selecione *Concluído*.
 
 
