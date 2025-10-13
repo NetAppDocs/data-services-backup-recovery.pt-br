@@ -273,8 +273,6 @@
   <block id="01edc88c05b373b3f7ebaedf025e6c66" category="list-text">Processo guiado para fazer backup e restaurar VMs baseadas em KVM e dados de VM</block>
   <block id="4cfb069ae88ce34afb281a4bbf65ac6e" category="inline-link">Visão geral das cargas de trabalho de proteção do KVM</block>
   <block id="79fcd951f792f60f767e44b5011c7851" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte<block ref="e92217b78da768e08fd669e597378b8f" category="inline-link-rx"></block> .</block>
-  <block id="7f72a27277a7289e66ee8f5e8c51ffe5" category="section-title">Melhorias na pré-visualização do Kubernetes</block>
-  <block id="0de024d994558b5d82bfea2474dcdb5a" category="paragraph">A versão de pré-visualização das cargas de trabalho do Kubernetes apresenta os seguintes aprimoramentos:</block>
   <block id="7f6a04aadde1854e173d7668132da89b" category="list-text">Suporte à arquitetura de backup Fan Out 3-2-1</block>
   <block id="b3b9066f003af6e4047de0ee6690e863" category="list-text">Suporte para ONTAP S3 como destino de backup</block>
   <block id="e35ded7c45cf2f4d4c707e6aeb803b42" category="list-text">Novo painel do Kubernetes para gerenciamento mais fácil</block>
@@ -324,7 +322,6 @@
   <block id="020a36deb114af1bb518c70d5975e940" category="list-text">Criar grupos de recursos</block>
   <block id="5ae6a8a06c30125d00a57910609856cf" category="list-text">Discos de abrangência (em vários compartilhamentos CIFS)</block>
   <block id="5cb642b37b3102019402cbd3b93a5693" category="list-text">Proteja VMs em SAN</block>
-  <block id="9450dff5efb3139ece9422b6c372527d" category="list-text">Restaurar do armazenamento de objetos</block>
   <block id="0fffe3f2fb1497b9e344ba8dceac922b" category="list-text">Proteja hosts Hyper-V agrupados usando o System Center Virtual Machine Manager (SCVMM)</block>
   <block id="4a03732927298c2d8d1492b3d08bb831" category="summary">Esta versão do NetApp Backup and Recovery tem as seguintes limitações conhecidas.</block>
   <block id="5050c99de0a6e1bcf02e7ce66edabd97" category="doc">Limitações conhecidas do NetApp Backup and Recovery para cargas de trabalho KVM</block>
@@ -335,7 +332,6 @@
   <block id="e2b26238e3aec34978fbb465dfd6baff" category="list-text">Restaurar VMs para um local alternativo</block>
   <block id="fe8e9fc813c1e8a639c0cadb6115589f" category="list-text">Proteja VMs armazenadas em SAN</block>
   <block id="ca73b42f56baa81e1c83e31ee5c53d42" category="list-text">Proteger aplicativos</block>
-  <block id="58bfd5253f13fe06cafc37225664e506" category="list-text">Backup ou restauração de armazenamentos de objetos</block>
   <block id="41bfa1316b52f6772c1921990bc34f69" category="list-text">Editar grupos de proteção</block>
   <block id="d5598f128bb28f962fcd8574013f2a43" category="list-text">Crie grupos de proteção usando VMs de vários hosts KVM</block>
   <block id="2fbb28a0f1560254b88f56b3632cf88b" category="list-text">Crie backups definidos pelo usuário (somente backups iniciados no NetApp Console são suportados)</block>
@@ -5000,4 +4996,15 @@
   <block id="ee885caa95dc922f4f4ba9860f7342f6" category="admonition">Para criar uma política personalizada usando Backup e Recuperação, consulte<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block> .</block>
   <block id="854bc156a37cbbf040c040fbef53bdec" category="paragraph">O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados. Há muitas opções que você pode selecionar ao habilitar o Backup e a Recuperação em seus volumes, então você deve revisar suas escolhas para estar preparado.</block>
   <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">Proteja as cargas de trabalho do VMware (visualização)</block>
+  <block id="c95af44ddc098359d1a302a271aa883b" category="section-title">Melhorias na visualização do Kubernetes</block>
+  <block id="a9db09b7be48f8631739b57e73f48cd3" category="paragraph">A versão prévia das cargas de trabalho do Kubernetes apresenta os seguintes recursos aprimorados:</block>
+  <block id="80aadfb002c0fe2115f71c7aeb012ab4" category="section-title">Melhorias na visualização do VMware</block>
+  <block id="307d24114a1eea93601b6d95cac55bcb" category="paragraph">A versão de pré-visualização das cargas de trabalho do VMware apresenta os seguintes recursos aprimorados:</block>
+  <block id="52c7fc54a0416d5bc7625cf3e154f5ee" category="list-text">Suporte para restauração de armazenamento de objetos</block>
+  <block id="729609f8890f70080c4290c1a64f6901" category="list-text">O NetApp Console Dashboard agora exibe informações sobre o status da carga de trabalho do VMware</block>
+  <block id="e0aea66343c11d9c167af3537c61eac6" category="list-text">Suporte ao modo de demonstração: explore os recursos das cargas de trabalho do VMware sem adicionar um ambiente VMware vCenter Server</block>
+  <block id="48286fbde233324a7f7880389e103924" category="list-text">Suporte para alertas e notificações por e-mail para eventos de trabalho</block>
+  <block id="7c0ae68b454f9ff601ed1bdd5dcc3c30" category="list-text">Suporte para backup e restauração em armazenamento baseado em NVMe</block>
+  <block id="dfa4b5c6b997823449e673db12ef526d" category="list-text">Editar políticas de proteção</block>
+  <block id="c54d53d5c9b9527bb4d1e1020b2a04ec" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho do VMware, consulte<block ref="81bdea79654f29d88dbffb87457fe1f5" category="inline-link-rx"></block> .</block>
 </blocks>

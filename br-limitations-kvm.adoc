@@ -28,7 +28,6 @@ As seguintes ações não são suportadas na versão de visualização privada:
 * Restaurar VMs para um local alternativo
 * Proteja VMs armazenadas em SAN
 * Proteger aplicativos
-* Backup ou restauração de armazenamentos de objetos
 * Editar grupos de proteção
 * Crie grupos de proteção usando VMs de vários hosts KVM
 * Crie backups definidos pelo usuário (somente backups iniciados no NetApp Console são suportados)
