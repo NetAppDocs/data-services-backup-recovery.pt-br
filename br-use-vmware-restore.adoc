@@ -31,10 +31,10 @@ Você pode restaurar dados para estes pontos:
 
 
 .Considerações sobre restauração de armazenamento de objetos
-Se você selecionar um arquivo de backup no armazenamento de objetos e a proteção contra ransomware estiver ativa para esse backup (se você habilitou o DataLock e o Ransomware Resilience na política de backup), você será solicitado a executar uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você execute a verificação.
+Se a Resiliência contra Ransomware estiver habilitada para um arquivo de backup no armazenamento de objetos, você será solicitado a executar uma verificação extra antes da restauração.  Recomendamos realizar a verificação.
 
 
-TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.
+TIP: Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arquivo de backup.
 
 
 
@@ -50,7 +50,7 @@ image:diagram_browse_restore_volume-unified.png["Um diagrama que mostra o fluxo 
 * Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o sistema original ou para um sistema ONTAP local.
 
 
-Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode restaurar um recurso, mesmo que não se lembre do nome exato, do local em que ele reside ou da data em que esteve em boas condições pela última vez. Você pode pesquisar o instantâneo usando filtros.
+Na página Restaurar (Pesquisar e Restaurar), você pode restaurar um recurso pesquisando o snapshot com filtros, mesmo que não se lembre do nome exato, local ou última data conhecida.
 
 
 
@@ -76,7 +76,7 @@ Uma lista de opções de local de restauração é exibida.
 ** Local: restaura o instantâneo para o local original.
 ** Armazenamento secundário: restaura o instantâneo em um local de armazenamento secundário.
 +
-Se você escolher o armazenamento secundário, insira as informações de origem e destino, bem como os locais de origem e secundário dos logs.
+Se você escolher armazenamento secundário, insira os locais de origem e destino para dados e logs.
 
 ** Armazenamento de objetos: restaura o instantâneo em um local de armazenamento de objetos.
 +
@@ -86,7 +86,7 @@ Se você escolher o armazenamento de objetos, verifique se deseja verificar o in
 
 . Selecione *Concluído* ou *Avançar* para continuar para a página Restaurar configurações de destino.
 +
-Em seguida, você pode escolher as configurações de destino e as opções de pré e pós-restauração.
+Em seguida, escolha as configurações de destino e as opções de pré e pós-restauração.
 
 
 
@@ -102,7 +102,7 @@ Em seguida, você pode escolher as configurações de destino e as opções de p
 --
 Na página Detalhes do destino da restauração, insira as seguintes informações:
 
-. *Ativar restauração rápida*: selecione esta opção para executar uma operação de restauração rápida. Os volumes e dados restaurados estarão disponíveis imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
+. *Ativar restauração rápida*: selecione esta opção para executar uma operação de restauração rápida. Você pode usar os volumes e dados restaurados imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
 . *Opções de pré-restauração*: insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
 . *Opções pós-restauração*:
 +
@@ -112,7 +112,7 @@ Na página Detalhes do destino da restauração, insira as seguintes informaçõ
 
 . Seção *Notificação*:
 +
-** *Ativar notificações por e-mail*: selecione esta opção para receber notificações por e-mail sobre a operação de restauração e indique que tipo de notificação você deseja receber.
+** *Ativar notificações por e-mail*: selecione para receber notificações por e-mail sobre a operação de restauração e escolha os tipos de notificação desejados.
 
 
 . Selecione *Restaurar*.
@@ -122,9 +122,6 @@ Na página Detalhes do destino da restauração, insira as seguintes informaçõ
 .Restaurar para local alternativo
 --
 Não disponível para visualização do VMware.
-
-. Selecione *Restaurar*.
-
 
 --
 ====

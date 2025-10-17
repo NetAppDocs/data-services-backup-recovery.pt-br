@@ -14,23 +14,21 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 
 
 [role="lead"]
-Você pode restaurar dados de máquinas virtuais da nuvem para o vCenter local com o NetApp Backup and Recovery.  Você pode restaurar a máquina virtual exatamente no mesmo local de onde o backup foi feito ou em um local alternativo.  Se o backup da máquina virtual foi feito usando a política de arquivamento, você pode definir a prioridade de restauração de arquivamento.
+Você pode restaurar dados de máquinas virtuais da nuvem para o vCenter Server local com o NetApp Backup and Recovery. Você pode restaurar a máquina virtual exatamente no mesmo local de onde o backup foi feito ou em um local alternativo. Se o backup da máquina virtual foi feito usando a política de arquivamento, você pode definir a prioridade de restauração de arquivamento.
 
 
 NOTE: Não é possível restaurar máquinas virtuais que abrangem vários repositórios de dados.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 .Antes de começar
 * Certifique-se de ter cumprido todos oslink:prev-vmware-prereqs.html["requisitos de proteção de máquina virtual"] antes de fazer backup dos armazenamentos de dados na nuvem.
 * Se você estiver restaurando para um local alternativo:
 +
 ** Certifique-se de que os vCenters de origem e destino estejam no modo vinculado.
 ** Certifique-se de que os detalhes do cluster de origem e destino sejam adicionados na página *Sistemas* do NetApp Console e no modo vinculado dos vCenters no SnapCenter Plug-in for VMware vSphere .
-** Certifique-se de que o sistema seja adicionado correspondente ao local alternativo na página *Sistemas* do Console.
+** Certifique-se de que o sistema seja adicionado para o outro local na página *Sistemas* do Console.
 
 
 
@@ -40,7 +38,7 @@ NOTE: Não é possível restaurar máquinas virtuais que abrangem vários reposi
 
 
 
-NOTE: Se a máquina virtual de origem for movida para outro local (vMotion) e se o usuário acionar uma restauração dessa máquina virtual no Console, a máquina virtual será restaurada para o local de origem de onde o backup foi feito.
+NOTE: Se você mover uma máquina virtual usando o VMware vSphere vMotion e restaurá-la do Console, o Backup e Recuperação a restaurará para o local de backup original.
 
 . Você pode restaurar a máquina virtual para o local original ou para um local alternativo a partir do armazenamento de dados ou de máquinas virtuais:
 
@@ -58,7 +56,7 @@ para o local original do armazenamento de dados
 . Certifique-se de que *Original* esteja selecionado e selecione *Continuar*.
 . Se a máquina virtual estiver protegida usando uma política em que as configurações de arquivamento são definidas, selecione *Prioridade de restauração de arquivamento* e selecione *Avançar*.
 +
-As prioridades de restauração de arquivamento suportadas para Amazon Web Services são alta, padrão e baixa, e as prioridades de restauração de arquivamento suportadas para Microsoft Azure são alta e padrão.
+As prioridades de restauração de arquivamento suportadas são alta, padrão e baixa para Amazon Web Services, e alta e padrão para Microsoft Azure.
 
 . Revise os detalhes e selecione *Restaurar*.
 
@@ -76,7 +74,7 @@ para um local alternativo do armazenamento de dados
 . Forneça um nome para a VM após a restauração e selecione *Continuar*.
 . Se a máquina virtual estiver protegida usando uma política em que as configurações de arquivamento são definidas, selecione *Prioridade de restauração de arquivamento* e selecione *Avançar*.
 +
-As prioridades de restauração de arquivamento suportadas para Amazon Web Services são alta, padrão e baixa, e as prioridades de restauração de arquivamento suportadas para Microsoft Azure são alta e padrão.
+As prioridades de restauração de arquivamento suportadas são alta, padrão e baixa para Amazon Web Services, e alta e padrão para Microsoft Azure.
 
 . Revise os detalhes e selecione *Restaurar*.
 
@@ -91,7 +89,7 @@ para o local original das máquinas virtuais
 . Certifique-se de que *Original* esteja selecionado e selecione *Continuar*.
 . Se a máquina virtual estiver protegida usando uma política em que as configurações de arquivamento são definidas, selecione *Prioridade de restauração de arquivamento* e selecione *Avançar*.
 +
-As prioridades de restauração de arquivamento suportadas para Amazon Web Services são alta, padrão e baixa, e as prioridades de restauração de arquivamento suportadas para Microsoft Azure são alta e padrão.
+As prioridades de restauração de arquivamento suportadas são alta, padrão e baixa para Amazon Web Services, e alta e padrão para Microsoft Azure.
 
 . Revise os detalhes e selecione *Restaurar*.
 
@@ -108,11 +106,11 @@ para um local alternativo de máquinas virtuais
 . Forneça um nome para a VM após a restauração e selecione *Continuar*.
 . Se a máquina virtual estiver protegida usando uma política em que as configurações de arquivamento são definidas, selecione *Prioridade de restauração de arquivamento* e selecione *Avançar*.
 +
-As prioridades de restauração de arquivamento suportadas para Amazon Web Services são alta, padrão e baixa, e as prioridades de restauração de arquivamento suportadas para Microsoft Azure são alta e padrão.
+As prioridades de restauração de arquivamento suportadas são alta, padrão e baixa para Amazon Web Services, e alta e padrão para Microsoft Azure.
 
 . Revise os detalhes e selecione *Restaurar*.
 
 
 |===
 
-NOTE: Se a operação de restauração não for concluída, não tente o processo de restauração novamente até que o Job Monitor mostre que a operação de restauração falhou.  Se você tentar o processo de restauração novamente antes que o Job Monitor mostre que a operação de restauração falhou, a operação de restauração falhará novamente.  Quando o status do Job Monitor for "Falha", você poderá tentar o processo de restauração novamente.
+NOTE: Se a operação de restauração não for concluída, aguarde até que o Job Monitor mostre "Falha" antes de tentar a operação de restauração novamente.

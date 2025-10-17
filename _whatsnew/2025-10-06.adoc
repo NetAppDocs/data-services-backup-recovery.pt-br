@@ -65,7 +65,7 @@ A versão prévia das cargas de trabalho do Kubernetes apresenta os seguintes re
 ** Visualizador de backup e recuperação
 
 
-* Suporte para distribuição do SUSE Rancher Kubernetes
+* Suporte para a distribuição SUSE Rancher Kubernetes
 * Suporte a vários buckets: agora você pode proteger os volumes dentro de um sistema com vários buckets por sistema em diferentes provedores de nuvem
 
 

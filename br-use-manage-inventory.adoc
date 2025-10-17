@@ -63,7 +63,7 @@ Você pode gerenciar as informações do host para garantir que os hosts certos 
 Você pode gerenciar os hosts descobertos no seu sistema.  Você pode gerenciá-los separadamente ou em grupo.
 
 
-TIP: Você pode gerenciar apenas os hosts que mostram o status "Não gerenciado" na coluna Hosts.  Se o status for "Gerenciado", significa que o host já está sendo gerenciado pelo NetApp Backup and Recovery.
+TIP: Você pode gerenciar hosts com status "Não gerenciado" na coluna Hosts.  O NetApp Backup and Recovery já gerencia hosts com status "Gerenciado".
 
 Depois de gerenciar os hosts no NetApp Backup and Recovery, o SnapCenter não gerencia mais os recursos nesses hosts.
 
@@ -90,7 +90,7 @@ Depois de gerenciar os hosts no NetApp Backup and Recovery, o SnapCenter não ge
 
 === Suspender horários
 
-Você pode suspender agendamentos para interromper as operações de backup e restauração de um host.  Talvez você queira fazer isso se precisar realizar atividades de manutenção no host.
+Suspenda agendamentos para interromper operações de backup e restauração durante a manutenção do host.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -130,7 +130,7 @@ Você pode excluir as informações do host para interromper as cobranças de se
 
 == Gerenciar informações de instâncias
 
-Você pode gerenciar informações de instâncias para garantir que os recursos tenham as credenciais apropriadas para proteção e pode fazer backup de recursos das seguintes maneiras:
+Você pode gerenciar informações de instâncias para atribuir as credenciais apropriadas para proteção de recursos e fazer backup de recursos das seguintes maneiras:
 
 * Proteger instâncias
 * Credenciais de associado
@@ -210,7 +210,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 === Faça backup agora
 
-Você pode fazer backup dos seus dados agora para garantir que eles sejam protegidos imediatamente.
+Faça backup dos seus dados agora para protegê-los imediatamente.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -260,7 +260,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 === Restaurar bancos de dados
 
-Você pode restaurar um banco de dados para garantir que seus dados estejam protegidos.
+Restaure um banco de dados para proteger seus dados.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -295,7 +295,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 === Faça backup agora
 
-Você pode fazer backup de suas instâncias e bancos de dados do Microsoft SQL Server agora para garantir que seus dados sejam protegidos imediatamente.
+Você pode fazer backup de suas instâncias e bancos de dados do Microsoft SQL Server agora para proteger seus dados imediatamente.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 

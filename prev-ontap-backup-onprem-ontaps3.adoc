@@ -94,7 +94,7 @@ TIP: O licenciamento PAYGO não é suportado ao fazer backup de arquivos no ONTA
 
 == Prepare seus clusters ONTAP
 
-Você precisará preparar seu sistema ONTAP local de origem e quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP .
+Prepare seu sistema ONTAP local de origem e quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP .
 
 Preparar seus clusters ONTAP envolve as seguintes etapas:
 
@@ -116,7 +116,7 @@ Você precisará saber o endereço IP de gerenciamento do cluster e a senha da c
 
 === Verifique os requisitos do sistema ONTAP
 
-Certifique-se de que os seguintes requisitos do ONTAP sejam atendidos:
+Certifique-se de que seu sistema ONTAP atenda aos seguintes requisitos:
 
 * Mínimo de ONTAP 9.8; ONTAP 9.8P13 e posterior é recomendado.
 * Uma licença do SnapMirror (incluída como parte do Pacote Premium ou Pacote de Proteção de Dados).
@@ -127,7 +127,7 @@ Certifique-se de que os seguintes requisitos do ONTAP sejam atendidos:
 Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gerencie suas licenças de cluster"^] .
 
 * A hora e o fuso horário estão definidos corretamente.  Aprenda como https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configure o tempo do seu cluster"^] .
-* Se você for replicar dados, verifique se os sistemas de origem e destino estão executando versões compatíveis do ONTAP antes de replicar os dados.
+* Se você replicar dados, verifique se os sistemas de origem e destino executam versões compatíveis do ONTAP .
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Ver versões ONTAP compatíveis para relacionamentos SnapMirror"^].
 
@@ -176,7 +176,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 
 ==== Requisitos de rede ONTAP local
 
-* Se o cluster estiver em suas instalações, você deverá ter uma conexão da sua rede corporativa com sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
+* Se o cluster estiver no local, você deverá ter uma conexão da sua rede corporativa com a sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
 Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
