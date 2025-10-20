@@ -330,7 +330,7 @@ Observe que esta ação não afeta cópias de Snapshot ou volumes replicados - e
 . Selecione *Configurações avançadas*.
 . *Forçar exclusão de backups*: indique se você deseja ou não forçar a exclusão de todos os backups.
 +
-Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups forem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (em níveis de volume e ambiente de trabalho).
+Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups forem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (nos níveis de volume e sistema).
 
 +
 
@@ -355,7 +355,7 @@ A lista de todos os arquivos de backup é exibida.
 . Selecione *Configurações avançadas*.
 . *Forçar exclusão de backups*: indique se você deseja ou não forçar a exclusão de todos os backups.
 +
-Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups estiverem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (em níveis de volume e ambiente de trabalho).
+Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups estiverem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (nos níveis de volume e sistema).
 
 +
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-mssql-backup.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.  Você pode implementar uma estratégia 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. 
+summary: Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure e StorageGRID para garantir que seus dados estejam protegidos. 
 ---
 = Faça backup de cargas de trabalho do Microsoft SQL Server com o NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Faça backup de dados de aplicativos do Microsoft SQL Server de sistema
 
 
 [role="lead"]
-Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure e StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
+Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure ou StorageGRID.  O sistema cria backups automaticamente e os armazena em um repositório de objetos na sua conta na nuvem para proteção de dados.
 
-* Para fazer backup de cargas de trabalho em um cronograma, crie políticas que controlem as operações de backup e restauração.  Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
+* Para fazer backup de cargas de trabalho em um cronograma, crie políticas que gerenciem operações de backup e restauração. Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
 * Configure o diretório de log para hosts descobertos antes de iniciar um backup.
 * Faça backup das cargas de trabalho agora (crie um backup sob demanda agora).
 
@@ -40,7 +40,7 @@ Antes de iniciar um backup, visualize o status de proteção das suas cargas de 
 
 == Configurar o diretório de log para hosts descobertos
 
-Antes de fazer backup de suas cargas de trabalho, defina o caminho para os logs de atividades dos hosts descobertos.  Isso ajuda você a rastrear o status das operações.
+Defina o caminho do log de atividades para hosts descobertos para rastrear o status da operação antes de fazer backup das cargas de trabalho.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -50,7 +50,7 @@ Antes de fazer backup de suas cargas de trabalho, defina o caminho para os logs 
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
 . Selecione um host.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Configurar diretório de log*.
-. Forneça o caminho do host ou navegue por uma lista de hosts ou nós no host para localizar onde você deseja que o log do host seja armazenado.
+. Digite o caminho do host ou navegue por uma lista de hosts ou nós para encontrar onde deseja armazenar o log do host.
 . Selecione aqueles nos quais você deseja armazenar os logs.
 +
 
@@ -63,7 +63,7 @@ NOTE: Os campos exibidos diferem dependendo do modelo de implantação seleciona
 
 == Crie um grupo de proteção
 
-Você pode criar um grupo de proteção para gerenciar as operações de backup e restauração de um conjunto de cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho que você deseja proteger juntas.
+Crie um grupo de proteção para gerenciar operações de backup e restauração para várias cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -89,7 +89,7 @@ Se você quiser criar uma política, selecione *Criar nova política* e siga as 
 
 == Faça backup de cargas de trabalho agora com um backup sob demanda
 
-Crie um backup sob demanda imediatamente.  Talvez você queira executar um backup sob demanda se estiver prestes a fazer alterações no seu sistema e quiser garantir que tenha um backup antes de começar.
+Execute um backup sob demanda antes de fazer alterações no seu sistema para garantir que seus dados estejam protegidos.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -109,7 +109,7 @@ Crie um backup sob demanda imediatamente.  Talvez você queira executar um backu
 
 == Suspender o agendamento de backup
 
-Suspender o agendamento impede que o backup seja executado temporariamente no horário agendado.  Talvez você queira fazer isso se estiver realizando manutenção no sistema ou se estiver tendo problemas com o backup.
+Suspenda o agendamento para interromper temporariamente os backups durante a manutenção ou solução de problemas.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -126,7 +126,7 @@ Suspender o agendamento impede que o backup seja executado temporariamente no ho
 
 == Excluir um grupo de proteção
 
-Você pode criar um grupo de proteção para gerenciar as operações de backup e restauração de um conjunto de cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho que você deseja proteger juntas.
+A exclusão de um grupo de proteção o remove, juntamente com todos os agendamentos de backup associados. Talvez você queira excluir um grupo de proteção se ele não for mais necessário.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 

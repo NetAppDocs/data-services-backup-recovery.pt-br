@@ -34,9 +34,9 @@ O NetApp Backup and Recovery utiliza a tecnologia de replicação de dados SnapM
 
 Os benefícios da abordagem 3-2-1 incluem:
 
-* Várias cópias de dados fornecem proteção multicamadas contra ameaças de segurança cibernética internas e externas.
-* Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.
-* A cópia no local facilita restaurações rápidas, com as cópias externas prontas para o caso de a cópia no local ser comprometida.
+* Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
+* Usar diferentes tipos de mídia ajuda na recuperação caso um tipo falhe.
+* Você pode restaurar rapidamente a partir da cópia local e usar as cópias externas se a cópia local estiver comprometida.
 
 
 Quando necessário, você pode restaurar um _volume_ inteiro, uma _pasta_ ou um ou mais _arquivos_ de qualquer uma das cópias de backup para o mesmo sistema ou para um sistema diferente.

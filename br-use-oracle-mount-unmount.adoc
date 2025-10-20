@@ -20,7 +20,7 @@ Talvez você queira montar um ponto de recuperação do Oracle Database se preci
 
 == Montar um ponto de restauração do Oracle Database
 
-Se você configurar a política de proteção para um banco de dados para reter logs de arquivamento, poderá montar os pontos de recuperação do banco de dados para visualizar o histórico de todas as alterações feitas no banco de dados.
+Se você configurar a política de proteção para um banco de dados para reter logs de arquivamento, poderá montar pontos de recuperação para visualizar o histórico de alterações do banco de dados.
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.

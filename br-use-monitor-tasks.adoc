@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Com o NetApp Backup and Recovery, monitore o status de snapshots locais, replicações e trabalhos de backup em armazenamento de objetos que você iniciou, além de trabalhos de restauração que você iniciou. 
+summary: Com o NetApp Backup and Recovery, monitore snapshots locais, replicações e trabalhos de backup que você iniciar. 
 ---
 = Monitorar tarefas no NetApp Backup and Recovery
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: Com o NetApp Backup and Recovery, monitore o status de snapshots locais
 
 
 [role="lead"]
-Com o NetApp Backup and Recovery, monitore o status de snapshots locais, replicações e trabalhos de backup em armazenamento de objetos que você iniciou, além de trabalhos de restauração que você iniciou.  Você pode ver os trabalhos que foram concluídos, estão em andamento ou falharam para poder diagnosticar e corrigir problemas.  Usando o NetApp Console Notification Center, você pode habilitar o envio de notificações por e-mail para que você possa ser informado sobre atividades importantes do sistema, mesmo quando não estiver conectado ao sistema.  Usando a Linha do tempo do console, você pode ver detalhes de todas as ações iniciadas por meio da interface do usuário ou da API.
+Com o NetApp Backup and Recovery, monitore snapshots locais, replicações e trabalhos de backup que você iniciar.  Acompanhe os trabalhos de restauração que você inicia.  Veja os trabalhos concluídos, em andamento ou que falharam para ajudar a diagnosticar problemas.  Ative as notificações por e-mail no Centro de Notificações do NetApp Console para se manter informado sobre a atividade do sistema quando não estiver conectado. Use a Linha do Tempo do Console para ver detalhes de todas as ações iniciadas na IU ou na API.
 
-O NetApp Backup and Recovery retém as informações do trabalho por 15 dias, após os quais elas são apagadas e não ficam mais visíveis no Job Monitor.
+O NetApp Backup and Recovery mantém as informações do trabalho por 15 dias e, em seguida, exclui as informações do trabalho e as remove do Job Monitor.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clone de backup e recuperação ou função de visualizador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -38,7 +38,7 @@ O status pode ser:
 Snapshots, replicações, backups para armazenamento de objetos e operações de restauração que você iniciou na interface do usuário e na API do NetApp Backup and Recovery estão disponíveis na guia Monitoramento de tarefas.
 
 
-NOTE: Se você atualizou seus sistemas ONTAP para 9.13.x e não vê operações de backup agendadas em andamento no Job Monitor, será necessário reiniciar o NetApp Backup and Recovery. link:reference-restart-backup.html["Aprenda a reiniciar o NetApp Backup and Recovery"].
+NOTE: Se você atualizou seus sistemas ONTAP para 9.13.x e não vê operações de backup agendadas em andamento no Job Monitor, reinicie o NetApp Backup and Recovery. link:reference-restart-backup.html["Aprenda a reiniciar o NetApp Backup and Recovery"].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Monitoramento*.
@@ -61,7 +61,7 @@ Por padrão, a página Monitoramento de tarefas mostra tarefas de proteção e r
 Use este painel para inserir uma pesquisa de texto livre para qualquer recurso; por exemplo, "volume 1" ou "aplicativo 3".  Você também pode filtrar a lista de trabalhos de acordo com os itens nos menus suspensos.
 
 +
-A maioria dos filtros é autoexplicativa.  O filtro "Carga de trabalho" permite que você visualize trabalhos nas seguintes categorias:
+A maioria dos filtros é autoexplicativa. O filtro "Carga de trabalho" permite que você visualize trabalhos nas seguintes categorias:
 
 +
 ** Volumes ONTAP (Cloud Volumes ONTAP e volumes ONTAP locais)
@@ -102,7 +102,7 @@ Os trabalhos de restauração mostram detalhes como provedor de destino de backu
 
 === Baixe os resultados do monitoramento de tarefas como um relatório
 
-Você pode baixar o conteúdo da página principal do Job Monitoring como um relatório depois de refiná-lo.  O NetApp Backup and Recovery gera e baixa um arquivo .CSV que você pode revisar e enviar para outros grupos, conforme necessário. O arquivo .CSV inclui até 10.000 linhas de dados.
+Você pode baixar o conteúdo da página principal do Job Monitoring como um relatório depois de filtrar ou classificar os resultados. O NetApp Backup and Recovery gera e baixa um arquivo .CSV que você pode revisar e enviar para outros grupos, conforme necessário. O arquivo .CSV inclui até 10.000 linhas de dados.
 
 Nas informações de Detalhes do monitoramento de trabalho, você pode baixar um arquivo JSON contendo detalhes de um único trabalho.
 
@@ -116,7 +116,7 @@ Nas informações de Detalhes do monitoramento de trabalho, você pode baixar um
 
 == Revisar tarefas de retenção (ciclo de vida de backup)
 
-O monitoramento dos fluxos de retenção (ou _ciclo de vida do backup_) ajuda você com a integridade da auditoria, a responsabilização e a segurança do backup.  Para ajudar você a rastrear o ciclo de vida do backup, talvez você queira identificar a expiração de todas as cópias de backup.
+Monitore os fluxos de retenção (_ciclo de vida do backup_) para verificar backups, mantê-los seguros e dar suporte a auditorias.  Identifique quando as cópias de backup expiram para rastrear o ciclo de vida.
 
 Uma tarefa de ciclo de vida de backup rastreia todas as cópias de Snapshot que são excluídas ou estão na fila para serem excluídas.  A partir do ONTAP 9.13, você pode ver todos os tipos de trabalho chamados "Retenção" na página Monitoramento de Trabalho.
 
@@ -134,7 +134,7 @@ O tipo de trabalho "Retenção" captura todos os trabalhos de exclusão de insta
 
 O Centro de Notificações do NetApp Console rastreia o progresso dos trabalhos de backup e restauração que você iniciou para que você possa verificar se a operação foi bem-sucedida ou não.
 
-Além de visualizar os alertas na Central de Notificações, você pode configurar o Console para enviar determinados tipos de notificações por e-mail como alertas para que você possa ser informado sobre atividades importantes do sistema, mesmo quando não estiver conectado ao sistema. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Saiba mais sobre o Centro de Notificações e como enviar e-mails de alerta para tarefas de backup e restauração"^] .
+Você pode visualizar alertas na Central de Notificações e configurar o Console para enviar alertas por e-mail sobre atividades importantes do sistema, mesmo quando você não estiver conectado. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Saiba mais sobre o Centro de Notificações e como enviar e-mails de alerta para tarefas de backup e restauração"^] .
 
 O Centro de Notificações exibe vários eventos de Snapshot, replicação, backup na nuvem e restauração, mas apenas certos eventos acionam alertas por e-mail:
 
@@ -175,7 +175,7 @@ O Centro de Notificações exibe vários eventos de Snapshot, replicação, back
 
 NOTE: A partir do ONTAP 9.13.0, todos os alertas aparecem para o Cloud Volumes ONTAP e sistemas ONTAP locais.  Para sistemas com Cloud Volumes ONTAP 9.13.0 e ONTAP local, somente o alerta relacionado a "Trabalho de restauração concluído, mas com avisos" é exibido.
 
-Por padrão, os administradores de contas e organizações do NetApp Console recebem e-mails para todos os alertas "Críticos" e "Recomendações".  Todos os outros usuários e destinatários são configurados, por padrão, para não receber nenhum e-mail de notificação.  Os e-mails podem ser enviados a qualquer usuário do Console que faça parte da sua conta do NetApp Cloud ou a qualquer outro destinatário que precise estar ciente das atividades de backup e restauração.
+Por padrão, os administradores de contas e organizações do NetApp Console recebem e-mails para todos os alertas "Críticos" e "Recomendações". Por padrão, o sistema não configura outros usuários e destinatários para receber e-mails de notificação.  Configure alertas por e-mail para qualquer usuário do Console na sua conta do NetApp Cloud ou para outros destinatários que precisam saber sobre atividades de backup e restauração.
 
 Para receber alertas por e-mail do NetApp Backup and Recovery , você precisará selecionar os tipos de gravidade de notificação "Crítico", "Aviso" e "Erro" na página de configurações de Notificações.
 

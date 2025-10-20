@@ -14,15 +14,15 @@ summary: Você pode proteger máquinas virtuais Oracle de sistemas ONTAP locais 
 
 
 [role="lead"]
-Proteja seus bancos de dados e logs Oracle com o NetApp Backup and Recovery.  O NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com economia de espaço, consistentes em caso de falhas e consistentes em banco de dados.  Você pode fazer backup de cargas de trabalho do Oracle no Amazon Web Services S3, NetApp StorageGRID, Microsoft Azure Blob Storage ou ONTAP S3 e restaurá-las em um host Oracle local.
+Proteja bancos de dados e logs do Oracle usando o NetApp Backup and Recovery.  Obtenha backups e restaurações rápidos, com economia de espaço, consistentes em caso de falhas e consistentes em banco de dados.  Faça backup de cargas de trabalho do Oracle no AWS S3, NetApp StorageGRID, Azure Blob Storage ou ONTAP S3.  Restaure backups para um host Oracle local.
 
 image:../media/diagram-backup-recovery-general.png["Diagrama de arquitetura de backup e recuperação em geral"]
 
 Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
-* Várias cópias de dados fornecem proteção multicamadas contra ameaças de segurança cibernética internas e externas.
-* Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.
-* A cópia no local facilita restaurações rápidas, com cópias externas disponíveis caso a cópia no local seja comprometida.
+* Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
+* Usar diferentes tipos de mídia ajuda na recuperação caso um tipo falhe.
+* Você pode restaurar rapidamente a partir da cópia local e usar as cópias externas se a cópia local estiver comprometida.
 
 
 

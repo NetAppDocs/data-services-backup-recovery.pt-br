@@ -38,7 +38,7 @@ Você pode desproteger um aplicativo se não quiser mais protegê-lo. Quando voc
 
 == Excluir um aplicativo Kubernetes
 
-Você pode excluir um aplicativo se não precisar mais dele. Quando você exclui um aplicativo, o NetApp Backup and Recovery para de protegê-lo e exclui todos os backups e snapshots associados.
+Exclua um aplicativo que você não precisa mais.  O NetApp Backup and Recovery interrompe a proteção e remove todos os backups e snapshots de aplicativos excluídos.
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.

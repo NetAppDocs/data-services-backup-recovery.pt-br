@@ -22,9 +22,9 @@ image:../media/diagram-backup-recovery-general.png["Diagrama de arquitetura de b
 
 Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
-* Várias cópias de dados fornecem proteção multicamadas contra ameaças de segurança cibernética internas e externas.
-* Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.
-* A cópia no local facilita restaurações rápidas, com cópias externas disponíveis caso a cópia no local seja comprometida.
+* Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
+* Usar diferentes tipos de mídia ajuda na recuperação caso um tipo falhe.
+* Você pode restaurar rapidamente a partir da cópia local e usar as cópias externas se a cópia local estiver comprometida.
 
 
 

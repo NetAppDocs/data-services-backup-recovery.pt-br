@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-snapshots.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Você pode fazer backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantindo que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.  Você pode implementar uma estratégia 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. 
+summary: Você pode gerenciar snapshots do Microsoft SQL Server excluindo-os do NetApp Backup and Recovery. 
 ---
 = Gerencie snapshots do Microsoft SQL Server com o NetApp Backup and Recovery
 :hardbreaks:
@@ -33,7 +33,7 @@ Você pode excluir somente snapshots locais.
 . Selecione o instantâneo local que você deseja excluir.
 +
 
-TIP: O ícone de instantâneo local na coluna *Localização* dessa linha deve aparecer em azul.
+TIP: Verifique se o ícone de instantâneo local na coluna *Localização* dessa linha aparece em azul.
 
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Excluir instantâneo local*.
 . Na caixa de diálogo de confirmação, selecione *Remover*.
