@@ -271,9 +271,6 @@ Além disso, configure as seguintes opções:
 
 Você pode editar a arquitetura de backup, a frequência de backup, a política de retenção e outras configurações de uma política.
 
-
-NOTE: Este recurso não está disponível para cargas de trabalho do VMware Preview.
-
 Você pode adicionar outro nível de proteção ao editar uma política, mas não pode remover um nível de proteção.  Por exemplo, se a política estiver protegendo apenas instantâneos locais, você poderá adicionar replicação ao armazenamento secundário ou backups ao armazenamento de objetos.  Se você tiver snapshots e replicação locais, poderá adicionar armazenamento de objetos.  No entanto, se você tiver snapshots locais, replicação e armazenamento de objetos, não poderá remover um desses níveis.
 
 Se estiver editando uma política que faz backup no armazenamento de objetos, você pode habilitar o arquivamento.
