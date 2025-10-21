@@ -124,7 +124,7 @@ Você tem a opção de alterar o nome do banco de dados, usar o snapshot instant
 *** *Atualizar clone a cada*: Selecione com que frequência o clone deve ser atualizado.  Você pode optar por atualizar o clone a cada hora, dia, semana, mês ou trimestre.  Esta opção é útil se você quiser manter o clone atualizado com a carga de trabalho de origem.
 
 
-** *Configurações do iGroup*: Selecione o igroup para o clone.  O igroup é um agrupamento lógico de iniciadores que são usados ​​para acessar o clone.  Você pode selecionar um igroup existente ou criar um novo.  Selecione o igroup do sistema de armazenamento ONTAP primário ou secundário.
+** *Configurações do iGroup*: Selecione o iGroup para o clone. O iGroup é um agrupamento lógico de iniciadores usados ​​para acessar o clone. Você pode selecionar um iGroup existente ou criar um novo. Selecione o iGroup do sistema de armazenamento ONTAP primário ou secundário.
 ** *Prescritos e pós-escritos*: Opcionalmente, adicione scripts para serem executados antes e depois da criação do clone.  Esses scripts podem executar tarefas extras, como configurar o clone ou enviar notificações.
 ** *Notificação*: Opcionalmente, especifique endereços de e-mail para receber notificações sobre o status da criação do clone junto com o relatório do trabalho.  Você também pode especificar um URL de webhook para receber notificações sobre o status de criação do clone.  Você pode especificar se deseja notificações de sucesso e falha ou apenas uma ou outra.
 ** *Tags*: Insira um ou mais rótulos que ajudarão você a pesquisar posteriormente o grupo de recursos.  Por exemplo, se você adicionar "RH" como uma tag a vários grupos de recursos, poderá encontrar posteriormente todos os grupos de recursos associados à tag RH.

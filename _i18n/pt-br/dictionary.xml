@@ -287,7 +287,6 @@
   <block id="307d24114a1eea93601b6d95cac55bcb" category="paragraph">A versão de pré-visualização das cargas de trabalho do VMware apresenta os seguintes recursos aprimorados:</block>
   <block id="52c7fc54a0416d5bc7625cf3e154f5ee" category="list-text">Suporte para restauração de armazenamento de objetos</block>
   <block id="729609f8890f70080c4290c1a64f6901" category="list-text">O NetApp Console Dashboard agora exibe informações sobre o status da carga de trabalho do VMware</block>
-  <block id="e0aea66343c11d9c167af3537c61eac6" category="list-text">Suporte ao modo de demonstração: explore os recursos das cargas de trabalho do VMware sem adicionar um ambiente VMware vCenter Server</block>
   <block id="0b781a1bfcfc82e8ce2c41a12166f555" category="list-text">Suporte ao controle de acesso baseado em função (RBAC)</block>
   <block id="48286fbde233324a7f7880389e103924" category="list-text">Suporte para alertas e notificações por e-mail para eventos de trabalho</block>
   <block id="7c0ae68b454f9ff601ed1bdd5dcc3c30" category="list-text">Suporte para backup e restauração em armazenamento baseado em NVMe</block>
@@ -550,7 +549,6 @@
   <block id="7a7bd0e5e2c8bb51a37a242f6499ad01" category="list-text">*Porta*: Digite o número da porta para o VMware vCenter Server.</block>
   <block id="d448876927f65c1f1ffa9fbacd95a1c7" category="list-text">*Protocolo*: Selecione *HTTP* ou *HTTPS*.</block>
   <block id="c7a0590a9821b8dee0782b0f2f78a6eb" category="section-title">Importar e gerenciar recursos do host SnapCenter</block>
-  <block id="1e69c53525c65378aa99055dd2ebfdd1" category="paragraph">Se você usou anteriormente o SnapCenter para fazer backup de seus recursos, poderá importar e gerenciar esses recursos no NetApp Backup and Recovery.  Esta opção permite importar informações do servidor SnapCenter para registrar vários servidores Snapcenter e descobrir cargas de trabalho do banco de dados.</block>
   <block id="8ee500e67ed174fc635bb51aa15a8144" category="paragraph">Este é um processo de duas partes:</block>
   <block id="5b47a2e71047fd0fb279720aee2ba791" category="list-text">Importar recursos do aplicativo e do host do SnapCenter Server</block>
   <block id="be17fa66fcbe51ceaa12130a926f665f" category="list-text">Gerenciar recursos selecionados do host SnapCenter</block>
@@ -1444,7 +1442,6 @@
   <block id="ae06e0a9d46406c88e0c6671869c7658" category="list-text">Selecione o ícone Ações<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Atualizar clone*.</block>
   <block id="8f52d4571bbd43086873d13933d1ae7c" category="list-text">Preencha a seção *Configurações avançadas*:</block>
   <block id="751b2629b2c0cd2ab8329869ea1440ab" category="list-text">*Escopo de recuperação*: escolha se deseja recuperar todos os backups de log ou os backups de log até um momento específico.  Esta opção é útil se você quiser recuperar o clone para um ponto específico no tempo.</block>
-  <block id="ee4fb905e08184e09eb066a70768d247" category="list-text">*Configurações do iGroup*: Selecione o igroup para o clone.  O igroup é um agrupamento lógico de iniciadores que são usados ​​para acessar o clone.  Você pode selecionar um igroup existente ou criar um novo.  Selecione o igroup do sistema de armazenamento ONTAP primário ou secundário.</block>
   <block id="30d826de8ef0821df1383cf392c54866" category="list-text">*Tags*: Insira um ou mais rótulos que ajudarão você a pesquisar posteriormente o grupo de recursos.  Por exemplo, se você adicionar "RH" como uma tag a vários grupos de recursos, poderá encontrar posteriormente todos os grupos de recursos associados à tag RH.</block>
   <block id="7ae396d8697569c4da682196e15a598f" category="list-text">Na caixa de diálogo de confirmação de atualização, para continuar, selecione *Atualizar*.</block>
   <block id="2e7a2fe6aba8a77893665dc04b468dbf" category="section-title">Pular uma atualização de clone</block>
@@ -1560,7 +1557,6 @@
   <block id="afd0f0cb3df3da985d47ad6cb48ff1b9" category="paragraph">O NetApp Backup and Recovery mostra os snapshots disponíveis para a operação de restauração.</block>
   <block id="626e5bb027c4aa701b03e1a2ad940196" category="list-text">Na página Restaurar para o estado mais recente, selecione o local do instantâneo do armazenamento local, secundário ou de objeto.</block>
   <block id="d9d6e07be6295b563fa2df09e2c46f12" category="list-text">*Criar backup do log de transações antes da restauração*: Cria um backup do log de transações antes da operação de restauração.</block>
-  <block id="e6259c0f26d81b281034782b38f78aba" category="list-text">*Encerrar a restauração se o backup do log de transações antes da restauração falhar*: Interrompe a operação de restauração se o backup do log de transações falhar.</block>
   <block id="bd0d10db4b0dd9e27ab86ed5c1179368" category="section-title">Restaurar dados de carga de trabalho da opção Inventário</block>
   <block id="9fa956de7108d564b78bfc1c4b99ffb2" category="paragraph">Restaure cargas de trabalho do banco de dados na página Inventário.  Usando a opção Inventário, você pode restaurar apenas bancos de dados, não instâncias.</block>
   <block id="a5b572eff428c980edb20994fe7c49f1" category="list-text">Escolha o host onde o recurso que você deseja restaurar está localizado.</block>
@@ -1832,7 +1828,6 @@
   <block id="baeaf9ec5b3f1514a0e74632387b1436" category="list-text">*Selecionar host*: Se você selecionou por carga de trabalho, selecione o host para o qual deseja gerar o relatório.</block>
   <block id="d6b2fc5f6100a1d9ca1a63a42e2b74ee" category="list-text">*Selecionar conteúdo*: Escolha se deseja que o relatório inclua um resumo de todos os backups ou detalhes de cada backup.  (Se você escolheu "Por conta")</block>
   <block id="53e06767337b5ec67b8efa63e42148aa" category="list-text">Insira o intervalo do relatório: escolha se deseja que o relatório inclua dados do último dia, dos últimos 7 dias, dos últimos 30 dias, do último trimestre ou do último ano.</block>
-  <block id="17efeb67a4236aa362e1097098517211" category="list-text">Insira os detalhes de entrega do relatório: Se desejar que o relatório seja entregue por e-mail, marque *Enviar relatório por e-mail*.  Insira os endereços de e-mail para onde você deseja que o relatório seja enviado.</block>
   <block id="fb197ee87a0f850dc3b7bb98fe408518" category="inline-link-macro">Configurar definições</block>
   <block id="33d5eea2cdcc60026d006f7ddcce9495" category="paragraph">Configure notificações por e-mail na página Configurações.  Para obter detalhes sobre como configurar notificações por e-mail, consulte<block ref="d31e50b2f0a34cda84cb4d51887db3bf" category="inline-link-macro-rx"></block> .</block>
   <block id="e1fb45ea82cb12d1d1dbdee887e2850a" category="summary">O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção.</block>
@@ -4777,5 +4772,8 @@
   <block id="e1a8b67cb61fcb0e0a3b88e66f93f4cd" category="paragraph">Suspenda um grupo de proteção para pausar seus backups agendados.</block>
   <block id="2efbc86f2f62c8819af426f268c543d5" category="paragraph">Ao excluir um grupo de proteção, você o remove, juntamente com todos os agendamentos de backup do grupo.  Exclua um grupo de proteção se não precisar mais dele.</block>
   <block id="d0be562abb07ac98b80cbaa51990f79d" category="paragraph">Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups forem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (nos níveis de volume e sistema).</block>
-  <block id="fb744a1324313d70fed478c851dab696" category="paragraph">Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups estiverem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (nos níveis de volume e sistema).</block>
+  <block id="79fdb904d05c701adaa1a8d4744b06b9" category="paragraph">Se você usou anteriormente o SnapCenter para fazer backup de seus recursos, poderá importar e gerenciar esses recursos no NetApp Backup and Recovery. Esta opção permite importar informações do servidor SnapCenter para registrar vários servidores SnapCenter e descobrir cargas de trabalho do banco de dados.</block>
+  <block id="96de4b90f5864c84829fbe7735879827" category="list-text">*Configurações do iGroup*: Selecione o iGroup para o clone. O iGroup é um agrupamento lógico de iniciadores usados ​​para acessar o clone. Você pode selecionar um iGroup existente ou criar um novo. Selecione o iGroup do sistema de armazenamento ONTAP primário ou secundário.</block>
+  <block id="5261c1383d98ed2b1e8b4a1fd943a918" category="list-text">*Encerrar a restauração se o backup do log de transações antes da restauração falhar*: Interrompe a operação de restauração se o backup do log de transações falhar.</block>
+  <block id="8f40cc47127edbc609e36af0ad86f259" category="list-text">Insira os detalhes de entrega do relatório: Se desejar que o relatório seja entregue por e-mail, marque *Enviar relatório por e-mail*. Digite o endereço de e-mail para onde você deseja que o relatório seja enviado.</block>
 </blocks>

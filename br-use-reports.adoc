@@ -31,7 +31,7 @@ No NetApp Backup and Recovery, crie relatórios para cargas de trabalho do Micro
 
 
 . Insira o intervalo do relatório: escolha se deseja que o relatório inclua dados do último dia, dos últimos 7 dias, dos últimos 30 dias, do último trimestre ou do último ano.
-. Insira os detalhes de entrega do relatório: Se desejar que o relatório seja entregue por e-mail, marque *Enviar relatório por e-mail*.  Insira os endereços de e-mail para onde você deseja que o relatório seja enviado.
+. Insira os detalhes de entrega do relatório: Se desejar que o relatório seja entregue por e-mail, marque *Enviar relatório por e-mail*. Digite o endereço de e-mail para onde você deseja que o relatório seja enviado.
 +
 Configure notificações por e-mail na página Configurações.  Para obter detalhes sobre como configurar notificações por e-mail, consultelink:br-use-settings-advanced.html["Configurar definições"] .
 

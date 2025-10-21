@@ -99,7 +99,6 @@ A versão de pré-visualização das cargas de trabalho do VMware apresenta os s
 
 * Suporte para restauração de armazenamento de objetos
 * O NetApp Console Dashboard agora exibe informações sobre o status da carga de trabalho do VMware
-* Suporte ao modo de demonstração: explore os recursos das cargas de trabalho do VMware sem adicionar um ambiente VMware vCenter Server
 * Suporte ao controle de acesso baseado em função (RBAC)
 * Suporte para alertas e notificações por e-mail para eventos de trabalho
 * Suporte para backup e restauração em armazenamento baseado em NVMe
