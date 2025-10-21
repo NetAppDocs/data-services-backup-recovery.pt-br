@@ -19,7 +19,12 @@ Monitorar a integridade de suas cargas de trabalho garante que você esteja cien
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clone de backup e recuperação ou função de visualizador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. No menu NetApp Backup and Recovery , selecione *Painel*.
+. No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
+. Selecione um bloco de carga de trabalho (por exemplo, Microsoft SQL Server).
+. No menu Backup e Recuperação, selecione *Painel*.
++
+Você pode revisar os seguintes tipos de informações:
+
 +
 ** Número de hosts ou VMs descobertos
 ** Número de clusters do Kubernetes descobertos

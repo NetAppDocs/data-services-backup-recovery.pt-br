@@ -62,6 +62,8 @@ Depois que o NetApp Backup and Recovery descobre recursos, a página Inventário
 == Continue para o Painel de NetApp Backup and Recovery
 
 .Passos
-. Para exibir o Painel de NetApp Backup and Recovery , no menu do NetApp Console , selecione *Painel*.
+. No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
+. Selecione um bloco de carga de trabalho (por exemplo, Microsoft SQL Server).
+. No menu Backup e Recuperação, selecione *Painel*.
 . Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
 
