@@ -135,6 +135,27 @@ Você precisa de requisitos específicos para descobrir e proteger máquinas vir
 * libvirt versão 10.5.0 ou posterior
 
 
+[NOTE]
+====
+Para habilitar a proteção de VMs KVM administradas por usuários não root, siga os passos abaixo:
+
+. Monte o volume como tipo NFS3 para evitar o uso do `nobody` usuário e grupo.
+. Use o seguinte comando para adicionar um usuário não root ao grupo. `qemu` grupo preservando seus grupos existentes:
++
+[source, console]
+----
+usermod -aG qemu <non-root-user>
+----
+. Use o seguinte comando para conceder a propriedade do caminho de montagem ao `qemu` Usuário e grupo, e alterar permissões para o caminho de montagem:
++
+[source, console]
+----
+chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
+----
+. Exclua o diretório NetApp_SnapCenter_Backups existente, caso esteja presente.
+
+
+====
 
 
 == Requisitos para proteger cargas de trabalho Oracle
