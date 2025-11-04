@@ -18,7 +18,8 @@ O NetApp Backup and Recovery oferece suporte a duas classes de armazenamento de 
 
 []
 ====
-*NOTA* Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
+
+NOTE: Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
 
 ====
 

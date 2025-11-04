@@ -18,11 +18,9 @@ Proteja as cargas de trabalho das suas máquinas virtuais com o NetApp Backup an
 
 Você pode fazer backup de datastores no Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e restaurar máquinas virtuais de volta para o host SnapCenter Plug-in for VMware vSphere local.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 Para obter instruções sobre como proteger cargas de trabalho de máquinas virtuais, consulte os seguintes tópicos:
 
 * link:prev-vmware-policy-create.html["Crie uma política para cargas de trabalho do VMware"]

@@ -19,11 +19,9 @@ Com o NetApp Backup and Recovery, gerencie backups para seus sistemas Cloud Volu
 
 CAUTION: Não gerencie ou altere arquivos de backup diretamente em seus sistemas de armazenamento ou no ambiente do seu provedor de nuvem.  Isso pode corromper os arquivos e resultar em uma configuração não suportada.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 
 
 == Visualize o status de backup dos volumes em seus sistemas

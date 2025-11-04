@@ -16,11 +16,9 @@ summary: Com o NetApp Backup and Recovery, restaure um volume ONTAP inteiro a pa
 [role="lead"]
 Os backups dos dados do seu volume ONTAP estão disponíveis nos locais onde você os criou: cópias de instantâneo, volumes replicados e backups armazenados no armazenamento de objetos.  Você pode restaurar dados de um ponto específico no tempo a partir de qualquer um desses locais de backup.  Com o NetApp Backup and Recovery, restaure um volume ONTAP inteiro a partir de um arquivo de backup ou, se precisar restaurar apenas alguns arquivos, restaure uma pasta ou arquivos individuais.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 * Você pode restaurar um *volume* (como um novo volume) para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
 * Você pode restaurar uma *pasta* para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta de nuvem ou para um volume em um sistema ONTAP local.
 * Você pode restaurar *arquivos* para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta de nuvem ou para um volume em um sistema ONTAP local.

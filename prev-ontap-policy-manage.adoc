@@ -16,11 +16,9 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 [role="lead"]
 Com o NetApp Backup and Recovery, use as políticas de backup padrão fornecidas pela NetApp para criar seus backups ou crie políticas personalizadas.  As políticas controlam a frequência do backup, o horário em que o backup é feito e o número de arquivos de backup que são retidos.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas que já existam no sistema (Cloud Volumes ONTAP ou sistema ONTAP local).  Se quiser usar uma política diferente das políticas existentes, você pode criá-la antes ou enquanto usa o assistente de ativação.
 
 Para saber mais sobre as políticas de backup padrão fornecidas, consultelink:prev-ontap-protect-journey.html["Planeje sua jornada de proteção"] .

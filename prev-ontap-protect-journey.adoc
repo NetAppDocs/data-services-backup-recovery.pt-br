@@ -16,11 +16,9 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 [role="lead"]
 O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados.  Há muitas opções que você pode selecionar ao habilitar o Backup e a Recuperação em seus volumes, então você deve revisar suas escolhas para estar preparado.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 Analisaremos as seguintes opções:
 
 * Quais recursos de proteção você usará: cópias de snapshot, volumes replicados e/ou backup na nuvem

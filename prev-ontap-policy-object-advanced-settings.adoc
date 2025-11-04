@@ -19,11 +19,9 @@ Você pode alterar as configurações de armazenamento de backup para objeto no 
 
 NOTE: Essas configurações estão disponíveis somente para armazenamento de backup em objeto.  Nenhuma dessas configurações afeta suas configurações de Snapshot ou replicação.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 Você pode alterar as seguintes opções na página Configurações avançadas:
 
 * Alterando a largura de banda de rede alocada para carregar backups no armazenamento de objetos usando a opção Max Transfer Rate ifdef::aws[]

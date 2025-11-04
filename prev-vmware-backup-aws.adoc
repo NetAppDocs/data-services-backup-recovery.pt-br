@@ -18,11 +18,9 @@ Você pode fazer backup e arquivar um ou mais armazenamentos de dados com o NetA
 
 Se o armazenamento de dados estiver associado a uma política de arquivamento, você terá a opção de selecionar a camada de arquivamento.  Os níveis de arquivamento suportados são Glacier e Glacier Deep.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 .Antes de começar
 Certifique-se de ter cumprido todos oslink:prev-vmware-prereqs.html["requisitos de proteção de máquina virtual"] antes de fazer backup dos armazenamentos de dados na nuvem.
 

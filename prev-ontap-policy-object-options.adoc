@@ -19,11 +19,9 @@ O NetApp Backup and Recovery permite que você crie políticas de backup com uma
 
 NOTE: Essas configurações de política são relevantes somente para armazenamento de backup em objeto.  Nenhuma dessas configurações afeta suas políticas de snapshot ou replicação.
 
-[]
-====
-*NOTA* Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-====
+NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+
 
 
 == Opções de agendamento de backup
