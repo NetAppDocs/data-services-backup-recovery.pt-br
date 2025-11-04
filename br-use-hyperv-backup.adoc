@@ -17,7 +17,7 @@ summary: Proteja suas cargas de trabalho do Hyper-V com backup e recuperação d
 Faça backup de VMs Hyper-V de sistemas ONTAP locais para Amazon Web Services, Azure NetApp Files ou StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
 
 * Para fazer backup de cargas de trabalho em um cronograma, crie políticas que controlem as operações de backup e restauração.  Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
-* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Verlink:br-use-hyper-v-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V com o NetApp Backup and Recovery"] para mais informações.
+* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Verlink:br-use-hyperv-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V com o NetApp Backup and Recovery"] para mais informações.
 * Faça backup das cargas de trabalho agora (crie um backup sob demanda agora).
 
 

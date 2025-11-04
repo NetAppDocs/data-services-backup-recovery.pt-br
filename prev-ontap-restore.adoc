@@ -110,9 +110,10 @@ Veja os requisitos e as etapas de restauração para o tipo de operação de res
 
 == Restaurar dados ONTAP usando Navegar e Restaurar
 
-Antes de começar a restaurar um volume, pasta ou arquivo, você deve saber o nome do volume do qual deseja restaurar, o nome do sistema e do SVM onde o volume reside e a data aproximada do arquivo de backup do qual deseja restaurar.  Você pode restaurar dados do ONTAP de uma cópia do Snapshot, de um volume replicado ou de backups armazenados no armazenamento de objetos.
+Antes de restaurar, anote o nome do volume de origem, o sistema de origem, o SVM e a data do arquivo de backup. Você pode restaurar dados do ONTAP de uma cópia do Snapshot, de um volume replicado ou de backups armazenados no armazenamento de objetos.
 
-*Observação:* Se o arquivo de backup contendo os dados que você deseja restaurar estiver no armazenamento em nuvem de arquivamento (a partir do ONTAP 9.10.1), a operação de restauração levará mais tempo e incorrerá em um custo.  Além disso, o cluster de destino também deve estar executando o ONTAP 9.10.1 ou superior para restauração de volume, 9.11.1 para restauração de arquivo, 9.12.1 para Google Archive e StorageGRID e 9.13.1 para restauração de pasta.
+
+NOTE: Se o arquivo de backup que você deseja restaurar estiver armazenado em nuvem (a partir do ONTAP 9.10.1), a operação de restauração levará mais tempo e terá um custo.  O cluster de destino também deve estar executando o ONTAP 9.10.1 ou superior para restauração de volume, 9.11.1 para restauração de arquivo, 9.12.1 para Google Archive e StorageGRID e 9.13.1 para restauração de pasta.
 
 ifdef::aws[]
 
@@ -159,18 +160,6 @@ Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sis
 
 | Para o sistema ONTAP local | ONTAP S3 | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
 |===
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
 Para Navegar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:
 
 ifdef::aws[]
@@ -315,7 +304,7 @@ Se precisar restaurar apenas alguns arquivos de um backup de volume ONTAP , voc�
 
 NOTE: No momento, você pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos.  Atualmente, não há suporte para restauração de arquivos e pastas a partir de uma cópia de instantâneo local ou de um arquivo de backup que reside em um sistema secundário (um volume replicado).
 
-Se você selecionar vários arquivos, todos eles serão restaurados no mesmo volume de destino escolhido.  Portanto, se você quiser restaurar arquivos em volumes diferentes, precisará executar o processo de restauração várias vezes.
+Se você selecionar vários arquivos, eles serão restaurados para o mesmo volume de destino.  Para restaurar arquivos em volumes diferentes, execute o processo várias vezes.
 
 Ao usar o ONTAP 9.13.0 ou superior, você pode restaurar uma pasta junto com todos os arquivos e subpastas dentro dela.  Ao usar uma versão do ONTAP anterior à 9.13.0, somente os arquivos dessa pasta são restaurados - nenhuma subpasta ou arquivo em subpastas é restaurado.
 
@@ -345,7 +334,7 @@ Você pode testá-lo usando um sinalizador especial descrito no https://communit
 
 O processo é assim:
 
-. Quando quiser restaurar uma pasta, ou um ou mais arquivos, de um backup de volume, clique na aba *Restaurar* e clique em *Restaurar Arquivos ou Pasta* em _Navegar e Restaurar_.
+. Para restaurar uma pasta ou arquivos de um backup de volume, selecione o menu *Restaurar* e, em seguida, selecione *Restaurar Arquivos ou Pasta* em _Procurar e Restaurar_.
 . Selecione o sistema de origem, o volume e o arquivo de backup nos quais a pasta ou o(s) arquivo(s) residem.
 . O NetApp Backup and Recovery exibe as pastas e os arquivos existentes no arquivo de backup selecionado.
 . Selecione a pasta ou arquivo(s) que você deseja restaurar desse backup.
@@ -355,7 +344,7 @@ O processo é assim:
 
 image:diagram_browse_restore_file.png["Um diagrama que mostra o fluxo para executar uma operação de restauração de arquivo usando Navegar e Restaurar."]
 
-Como você pode ver, você precisa saber o nome do sistema, o nome do volume, a data do arquivo de backup e o nome da pasta/arquivo para executar uma restauração de pasta ou arquivo.
+Para restaurar um volume, você precisa do nome do sistema de origem, da máquina virtual de armazenamento, do nome do volume e da data do arquivo de backup.
 
 
 
@@ -433,7 +422,7 @@ Você tem algumas opções de local para restaurar pastas e arquivos.
 
 * Se você tiver selecionado o mesmo sistema de destino e volume onde a pasta/arquivo de origem estava localizado, você pode selecionar *Manter caminho da pasta de origem* para restaurar a pasta, ou arquivo(s), para a mesma pasta onde eles estavam na estrutura de origem.  Todas as mesmas pastas e subpastas já devem existir; pastas não são criadas.  Ao restaurar arquivos para seu local original, você pode optar por substituir o(s) arquivo(s) de origem ou criar novo(s) arquivo(s).
 +
-.. Selecione *Restaurar* e você retornará ao Painel de Restauração para poder revisar o progresso da operação de restauração.  Você também pode clicar na aba *Monitoramento de Tarefas* para ver o progresso da restauração.
+.. Selecione *Restaurar* para retornar ao Painel de Restauração e revisar o progresso da operação de restauração.
 
 
 
@@ -701,7 +690,7 @@ Dependendo do tamanho dos volumes no sistema e do número de arquivos de backup 
 
 === Restaurar volumes, pastas e arquivos usando Pesquisar e Restaurar
 
-Depois de você ter<<enable-the-indexed-catalog-for-each-working-environment,indexação habilitada para seu sistema>> , você pode restaurar volumes, pastas e arquivos usando Pesquisar e Restaurar.  Isso permite que você use uma ampla gama de filtros para encontrar o arquivo ou volume exato que deseja restaurar de todos os arquivos de backup.
+Depois de você ter<<enable-the-indexed-catalog-for-each-system,indexação habilitada para seu sistema>> , você pode restaurar volumes, pastas e arquivos usando Pesquisar e Restaurar. Isso permite que você use uma ampla gama de filtros para encontrar o arquivo ou volume exato que deseja restaurar de todos os arquivos de backup.
 
 .Passos
 . No menu Console, selecione *Proteção > Backup e recuperação*.

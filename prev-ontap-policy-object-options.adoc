@@ -61,8 +61,6 @@ O NetApp Backup and Recovery oferece suporte para proteção DataLock e Ransomwa
 
 Ambos os recursos protegem seus arquivos de backup para que você sempre tenha um arquivo de backup válido para recuperar dados em caso de uma tentativa de ataque de ransomware aos seus backups.  Também é útil atender a certos requisitos regulatórios em que os backups precisam ser bloqueados e retidos por um determinado período de tempo.  Quando a opção DataLock e Ransomware Resilience estiver habilitada, o bucket de nuvem provisionado como parte da ativação do NetApp Backup and Recovery terá o bloqueio de objetos e o controle de versão de objetos habilitados.
 
-https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Veja o blog de proteção DataLock e Ransomware para mais detalhes"^].
-
 Este recurso não fornece proteção para seus volumes de origem; apenas para os backups desses volumes de origem.  Use alguns dos https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["proteções anti-ransomware fornecidas pela ONTAP"^] para proteger seus volumes de origem.
 
 [CAUTION]
@@ -339,7 +337,7 @@ NOTE: O Microsoft Azure usa um modo de bloqueio e desbloqueio.
 
 Para obter mais dicas para mitigar os custos do DataLock, consultehttps://community.netapp.com/t5/Tech-ONTAP-Blogs/Understanding-NetApp-Backup-and-Recovery-DataLock-and-Ransomware-Feature-TCO/ba-p/453475[]
 
-Além disso, você pode obter estimativas de custo associadas ao DataLock visitando o https://bluexp.netapp.com/cloud-backup-service-tco-calculator["Calculadora de custo total de propriedade (TCO) do NetApp Backup and Recovery"] .
+Além disso, você pode obter estimativas de custo associadas ao DataLock visitando o https://www.netapp.com/data-services/backup-and-recovery-tco-calculator/["Calculadora de custo total de propriedade (TCO) do NetApp Backup and Recovery"] .
 
 
 
