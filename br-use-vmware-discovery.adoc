@@ -22,7 +22,7 @@ O serviço NetApp Backup and Recovery precisa primeiro descobrir datastores e VM
 
 == Descubra cargas de trabalho do VMware e, opcionalmente, importe recursos do SnapCenter
 
-Durante a descoberta, o NetApp Backup and Recovery analisa as cargas de trabalho do VMware na sua organização e avalia e importa políticas de proteção existentes, cópias de instantâneos e opções de backup e restauração.
+Durante a fase de descoberta, o NetApp Backup and Recovery analisa as cargas de trabalho do VMware em sua organização e avalia e importa as políticas de proteção, snapshots e opções de backup e restauração existentes.
 
 Você pode importar datastores e VMs VMware NFS e VMFS do SnapCenter Plug-in for VMware vSphere para o inventário do NetApp Backup and Recovery .
 
@@ -36,7 +36,7 @@ Durante o processo de importação, o NetApp Backup and Recovery executa as segu
 * Prepara os metadados do vCenter e os marca como não gerenciados no NetApp Console.
 * Configura o acesso ao banco de dados.
 * Descobre o VMware vCenter, datastores e VMs.
-* Importa políticas de proteção existentes, cópias de instantâneos e opções de backup e restauração do SnapCenter Plug-in for VMware vSphere.
+* Importa políticas de proteção, snapshots e opções de backup e restauração existentes do SnapCenter Plug-in for VMware vSphere.
 * Exibe os recursos descobertos na página Inventário de NetApp Backup and Recovery .
 
 
@@ -156,3 +156,14 @@ Depois de selecionar o gerenciamento dos recursos, os recursos, as VMs e as pol�
 
 .Resultado
 A página Inventário mostra os recursos do vCenter recém-gerenciados.
+
+
+
+==== Continue para o Painel de NetApp Backup and Recovery
+
+. Para exibir o Painel de Controle, no menu Backup e Recuperação, selecione *Painel de Controle*.
+. Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
++
+link:br-use-dashboard.html["Saiba o que o Painel mostra para você"].
+
+

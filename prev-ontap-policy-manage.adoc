@@ -61,7 +61,7 @@ A página Gerenciamento de políticas é exibida.  As políticas de instantâneo
 
 == Criar políticas
 
-Você pode criar políticas que controlam suas cópias de instantâneos, replicações e backups para armazenamento de objetos:
+Você pode criar políticas que regem seus snapshots, replicações e backups para armazenamento de objetos:
 
 * <<Crie uma política de snapshot antes de iniciar o snapshot>>
 * <<Crie uma política de replicação antes de iniciar a replicação>>
@@ -72,7 +72,7 @@ Você pode criar políticas que controlam suas cópias de instantâneos, replica
 
 === Crie uma política de snapshot antes de iniciar o snapshot
 
-Parte da sua estratégia 3-2-1 envolve a criação de uma cópia instantânea do volume no sistema de armazenamento *primário*.
+Parte da sua estratégia 3-2-1 envolve a criação de um snapshot do volume no sistema de armazenamento *primário*.
 
 Parte do processo de criação de políticas envolve a identificação de rótulos de snapshot e SnapMirror que denotam o cronograma e a retenção.  Você pode usar rótulos predefinidos ou criar os seus próprios.
 

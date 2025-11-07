@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho Oracle com o NetApp Backup and Recovery
 
 
 [role="lead"]
-Restaure bancos de dados Oracle de cópias de snapshot, de um backup replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
+Restaure bancos de dados Oracle a partir de snapshots, de um backup replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
 
 .Restaurar a partir desses locais
 Você pode restaurar bancos de dados de diferentes locais de partida:

@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 
 
 [role="lead"]
-Você pode alterar as configurações de armazenamento de backup para objeto no nível do cluster definidas ao ativar o NetApp Backup and Recovery para cada sistema ONTAP usando a página Configurações avançadas.  Você também pode modificar algumas configurações que são aplicadas como configurações de backup "padrão".  Isso inclui alterar a taxa de transferência de backups para armazenamento de objetos, se cópias históricas do Snapshot são exportadas como arquivos de backup e habilitar ou desabilitar verificações de ransomware para um sistema.
+Você pode alterar as configurações de armazenamento de backup para objeto no nível do cluster definidas ao ativar o NetApp Backup and Recovery para cada sistema ONTAP usando a página Configurações avançadas. Você também pode modificar algumas configurações que são aplicadas como configurações de backup "padrão". Isso inclui alterar a taxa de transferência de backups para armazenamento de objetos, se os snapshots históricos serão exportados como arquivos de backup e ativar ou desativar as verificações de ransomware em um sistema.
 
 
 NOTE: Essas configurações estão disponíveis somente para armazenamento de backup em objeto.  Nenhuma dessas configurações afeta suas configurações de Snapshot ou replicação.
@@ -29,7 +29,7 @@ Você pode alterar as seguintes opções na página Configurações avançadas:
 
 endif::aws[]
 
-* Alterar se cópias históricas do Snapshot são exportadas como arquivos de backup e incluídas nos arquivos de backup de linha de base iniciais para volumes futuros
+* Alterar se os snapshots históricos serão exportados como arquivos de backup e incluídos nos arquivos de backup iniciais para volumes futuros.
 * Alterar se os snapshots "anuais" são removidos do sistema de origem
 * Habilitar ou desabilitar varreduras de ransomware para um sistema, incluindo varreduras agendadas
 
@@ -77,17 +77,17 @@ endif::aws[]
 
 
 
-== Alterar se cópias históricas de instantâneos são exportadas como arquivos de backup
+== Alterar se os snapshots históricos serão exportados como arquivos de backup
 
-Se houver cópias de instantâneos locais para volumes que correspondam ao rótulo de agendamento de backup que você está usando neste sistema (por exemplo, diário, semanal, etc.), você poderá exportar esses instantâneos históricos para o armazenamento de objetos como arquivos de backup.  Isso permite que você inicialize seus backups na nuvem movendo cópias de instantâneos mais antigas para a cópia de backup de base.
+Se houver snapshots locais para volumes que correspondam ao rótulo de agendamento de backup que você está usando neste sistema (por exemplo, diário, semanal etc.), você pode exportar esses snapshots históricos para o armazenamento de objetos como arquivos de backup.  Isso permite que você inicialize seus backups na nuvem movendo snapshots mais antigos para a cópia de backup de referência.
 
 Observe que esta opção só se aplica a novos arquivos de backup para novos volumes de leitura/gravação e não é compatível com volumes de proteção de dados (DP).
 
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
 . Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
-. Na página Configurações avançadas, expanda a seção *Exportar cópias de instantâneos existentes*.
-. Selecione se deseja que cópias existentes do Snapshot sejam exportadas.
+. Na página Configurações avançadas, expanda a seção *Exportar instantâneos existentes*.
+. Selecione se deseja exportar os instantâneos existentes.
 . Selecione *Aplicar*.
 
 
@@ -95,7 +95,7 @@ Observe que esta opção só se aplica a novos arquivos de backup para novos vol
 
 == Alterar se os snapshots "anuais" são removidos do sistema de origem
 
-Quando você seleciona o rótulo de backup "anual" para uma política de backup para qualquer um dos seus volumes, a cópia do Snapshot criada é muito grande.  Por padrão, esses instantâneos anuais são excluídos automaticamente do sistema de origem após serem transferidos para o armazenamento de objetos.  Você pode alterar esse comportamento padrão na seção Exclusão anual de instantâneos.
+Ao selecionar o rótulo de backup "anual" para uma política de backup de qualquer um dos seus volumes, o snapshot criado será muito grande. Por padrão, esses instantâneos anuais são excluídos automaticamente do sistema de origem após serem transferidos para o armazenamento de objetos. Você pode alterar esse comportamento padrão na seção Exclusão anual de instantâneos.
 
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
@@ -112,7 +112,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Uma captura de tela da entr
 
 == Habilitar ou desabilitar verificações de ransomware
 
-As verificações de proteção contra ransomware são ativadas por padrão.  A configuração padrão para a frequência de verificação é de 7 dias.  A verificação ocorre apenas na cópia mais recente do instantâneo.  Você pode habilitar ou desabilitar verificações de ransomware na cópia mais recente do snapshot usando a opção na página Configurações avançadas.  Se você habilitar, as verificações serão realizadas a cada 7 dias por padrão.
+As verificações de proteção contra ransomware são ativadas por padrão. A configuração padrão para a frequência de verificação é de 7 dias. A verificação ocorre apenas no instantâneo mais recente. Você pode ativar ou desativar as verificações de ransomware no snapshot mais recente usando a opção na página de Configurações Avançadas. Se você habilitar, as verificações serão realizadas a cada 7 dias por padrão.
 
 Para obter detalhes sobre as opções de DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opções de resiliência do DataLock e do Ransomware"] .
 
@@ -121,7 +121,7 @@ Você pode alterar essa programação para dias ou semanas ou desativá-la, econ
 
 TIP: A ativação de verificações de ransomware incorrerá em custos extras, dependendo do provedor de nuvem.
 
-As verificações agendadas de ransomware são executadas apenas na cópia mais recente do snapshot.
+As verificações agendadas de ransomware são executadas apenas no snapshot mais recente.
 
 Se as verificações agendadas de ransomware estiverem desativadas, você ainda poderá executar verificações sob demanda e a verificação durante uma operação de restauração ainda ocorrerá.
 

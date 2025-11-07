@@ -81,7 +81,7 @@ Quando você usa o NetApp Backup and Recovery em um ambiente SaaS padrão, os da
 
 == Verificar requisitos de licença
 
-Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp.  A licença é para backup e restauração no armazenamento de objetos - nenhuma licença é necessária para criar cópias de Snapshot ou volumes replicados.  Esta licença é para a conta e pode ser usada em vários sistemas.
+Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp. A licença é para backup e restauração em armazenamento de objetos; nenhuma licença é necessária para criar snapshots ou volumes replicados. Esta licença é para a conta e pode ser usada em vários sistemas.
 
 Você precisará do número de série da NetApp que lhe permitirá usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].
 
@@ -213,7 +213,8 @@ Essas chaves de acesso devem ser associadas a um usuário que tenha as seguintes
 "s3:GetObject",
 "s3:PutObject",
 "s3:DeleteObject",
-"s3:CreateBucket"
+"s3:CreateBucket",
+"s3:GetBucketLocation"
 ----
 --
 
@@ -299,7 +300,7 @@ Definir a estratégia de backup envolve configurar as seguintes opções:
 .Passos
 . Na página Definir estratégia de backup, escolha uma ou todas as opções a seguir.  Todos os três são selecionados por padrão:
 +
-** *Local Snapshots*: Cria cópias de Snapshots locais.
+** *Instantâneos locais*: Cria instantâneos locais.
 ** *Replicação*: Cria volumes replicados em outro sistema de armazenamento ONTAP .
 ** *Backup*: Faz backup de volumes em um bucket em um sistema ONTAP configurado para S3.
 
@@ -380,7 +381,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 +
-** *Exportar cópias de snapshot existentes para armazenamento de objetos como arquivos de backup*: Se houver cópias de snapshot locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar (por exemplo, diário, semanal, etc.), este prompt adicional será exibido.  Marque esta caixa para que todos os Snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
+** *Exportar snapshots existentes para armazenamento de objetos como arquivos de backup*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os Snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
 
 
 . Selecione *Avançar*.
@@ -399,7 +400,7 @@ Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessári
 
 
 .Resultado
-O NetApp Backup and Recovery começa a fazer os backups iniciais dos seus volumes.  A transferência de linha de base do volume replicado e do arquivo de backup inclui uma cópia completa dos dados de origem.  Transferências subsequentes contêm cópias diferenciais dos dados de armazenamento primário contidos em cópias de instantâneo.
+O NetApp Backup and Recovery começa a fazer os backups iniciais dos seus volumes. A transferência de linha de base do volume replicado e do arquivo de backup inclui uma cópia completa dos dados de origem. As transferências subsequentes contêm cópias diferenciais dos dados de armazenamento primário contidos nos snapshots.
 
 Um volume replicado é criado no cluster de destino que será sincronizado com o volume de armazenamento primário.
 

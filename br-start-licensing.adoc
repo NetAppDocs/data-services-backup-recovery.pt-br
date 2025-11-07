@@ -75,19 +75,9 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-lic
 
 Use estes links para assinar o NetApp Backup and Recovery no marketplace do seu provedor de nuvem:
 
-ifdef::aws[]
-
-* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços"^] .endif::aws[]
-
-
-ifdef::azure[]
-
-* Azul: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços"^] .endif::azure[]
-
-
-ifdef::gcp[]
-
-* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços"^] .endif::gcp[]
+* AWS: https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços"^] .
+* Azure: https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços"^] .
+* Google Cloud: https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços"^] .
 
 
 
@@ -97,8 +87,6 @@ ifdef::gcp[]
 Pague pelo NetApp Backup and Recovery anualmente adquirindo um contrato anual.  Eles estão disponíveis em prazos de 1, 2 ou 3 anos.
 
 Se você tiver um contrato anual de um marketplace, todo o consumo do NetApp Backup and Recovery será cobrado desse contrato.  Você não pode misturar e combinar um contrato de mercado anual com um BYOL.
-
-ifdef::aws[]
 
 Ao usar a AWS, há dois contratos anuais disponíveis na https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["Página do AWS Marketplace"^] para sistemas Cloud Volumes ONTAP e ONTAP locais:
 

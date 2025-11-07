@@ -14,7 +14,7 @@ summary: Com o NetApp Backup and Recovery, restaure um volume ONTAP inteiro a pa
 
 
 [role="lead"]
-Os backups dos dados do seu volume ONTAP estão disponíveis nos locais onde você os criou: cópias de instantâneo, volumes replicados e backups armazenados no armazenamento de objetos.  Você pode restaurar dados de um ponto específico no tempo a partir de qualquer um desses locais de backup.  Com o NetApp Backup and Recovery, restaure um volume ONTAP inteiro a partir de um arquivo de backup ou, se precisar restaurar apenas alguns arquivos, restaure uma pasta ou arquivos individuais.
+Os backups dos dados do seu volume ONTAP estão disponíveis nos locais onde você os criou: snapshots, volumes replicados e backups armazenados no armazenamento de objetos. Você pode restaurar dados de um ponto específico no tempo a partir de qualquer um desses locais de backup. Com o NetApp Backup and Recovery, restaure um volume ONTAP inteiro a partir de um arquivo de backup ou, se precisar restaurar apenas alguns arquivos, restaure uma pasta ou arquivos individuais.
 
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
@@ -30,7 +30,7 @@ Para resumir, estes são os fluxos válidos que você pode usar para restaurar d
 
 * Arquivo de backup -> volume restaurado
 * Volume replicado -> volume restaurado
-* Cópia instantânea -> volume restaurado
+* Instantâneo -> volume restaurado
 
 
 
@@ -87,7 +87,7 @@ Esta tabela fornece uma lista de operações de restauração válidas com base 
 |  | *Restaurar volume* | *Restaurar arquivos* | *Restaurar pasta* | *Restaurar volume* | *Restaurar arquivos* | *Restaurar pasta* 
 
 
-| Cópia instantânea | Sim | Não | Não | Sim | Sim | Sim 
+| Instantâneo | Sim | Não | Não | Sim | Sim | Sim 
 
 
 | Volume replicado | Sim | Não | Não | Sim | Sim | Sim 
@@ -108,7 +108,7 @@ Veja os requisitos e as etapas de restauração para o tipo de operação de res
 
 == Restaurar dados ONTAP usando Navegar e Restaurar
 
-Antes de restaurar, anote o nome do volume de origem, o sistema de origem, o SVM e a data do arquivo de backup. Você pode restaurar dados do ONTAP de uma cópia do Snapshot, de um volume replicado ou de backups armazenados no armazenamento de objetos.
+Antes de restaurar, anote o nome do volume de origem, o sistema de origem, o SVM e a data do arquivo de backup. Você pode restaurar dados do ONTAP a partir de um snapshot, um volume replicado ou de backups armazenados em armazenamento de objetos.
 
 
 NOTE: Se o arquivo de backup que você deseja restaurar estiver armazenado em nuvem (a partir do ONTAP 9.10.1), a operação de restauração levará mais tempo e terá um custo.  O cluster de destino também deve estar executando o ONTAP 9.10.1 ou superior para restauração de volume, 9.11.1 para restauração de arquivo, 9.12.1 para Google Archive e StorageGRID e 9.13.1 para restauração de pasta.
@@ -138,7 +138,7 @@ NOTE: A alta prioridade não é suportada ao restaurar dados do armazenamento de
 
 === Navegar e restaurar sistemas suportados e provedores de armazenamento de objetos
 
-Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas.  Cópias de instantâneos residem no sistema de origem e podem ser restauradas somente no mesmo sistema.
+Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
 
 *Observação:* você pode restaurar um volume de qualquer tipo de arquivo de backup, mas pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos neste momento.
 
@@ -213,7 +213,7 @@ Como você pode ver, você precisará saber o nome do sistema de origem, a VM de
 . Na seção _Navegar e restaurar_, selecione *Restaurar volume*.
 . Na página _Selecionar origem_, navegue até o arquivo de backup do volume que você deseja restaurar.  Selecione o *sistema*, o *Volume* e o arquivo de *Backup* que tem o registro de data/hora do qual você deseja restaurar.
 +
-A coluna *Local* mostra se o arquivo de backup (Snapshot) é *Local* (uma cópia do Snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Armazenamento de Objetos* (um arquivo de backup no armazenamento de objetos).  Escolha o arquivo que você deseja restaurar.
+A coluna *Localização* mostra se o arquivo de backup (Snapshot) é *Local* (um snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Armazenamento de Objetos* (um arquivo de backup no armazenamento de objetos). Escolha o arquivo que você deseja restaurar.
 
 . Selecione *Avançar*.
 +
@@ -300,7 +300,7 @@ Observe que restaurar um volume de um arquivo de backup que reside no armazename
 Se precisar restaurar apenas alguns arquivos de um backup de volume ONTAP , você pode optar por restaurar uma pasta ou arquivos individuais em vez de restaurar o volume inteiro.  Você pode restaurar pastas e arquivos para um volume existente no sistema original ou para um sistema diferente que esteja usando a mesma conta de nuvem.  Você também pode restaurar pastas e arquivos para um volume em um sistema ONTAP local.
 
 
-NOTE: No momento, você pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos.  Atualmente, não há suporte para restauração de arquivos e pastas a partir de uma cópia de instantâneo local ou de um arquivo de backup que reside em um sistema secundário (um volume replicado).
+NOTE: No momento, você pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos. Atualmente, não há suporte para a restauração de arquivos e pastas a partir de um snapshot local ou de um arquivo de backup que reside em um sistema secundário (um volume replicado).
 
 Se você selecionar vários arquivos, eles serão restaurados para o mesmo volume de destino.  Para restaurar arquivos em volumes diferentes, execute o processo várias vezes.
 
@@ -431,7 +431,7 @@ Você tem algumas opções de local para restaurar pastas e arquivos.
 
 Você pode restaurar um volume, pasta ou arquivos de um arquivo de backup do ONTAP usando Pesquisar e Restaurar.  A Pesquisa e Restauração permite que você pesquise um volume, pasta ou arquivo específico em todos os backups e, em seguida, execute uma restauração.  Você não precisa saber o nome exato do sistema, o nome do volume ou o nome do arquivo: a pesquisa examina todos os arquivos de backup do volume.
 
-A operação de pesquisa examina todas as cópias de instantâneos locais que existem para seus volumes ONTAP , todos os volumes replicados em sistemas de armazenamento secundário e todos os arquivos de backup que existem no armazenamento de objetos.  Como restaurar dados de uma cópia local do Snapshot ou de um volume replicado pode ser mais rápido e menos custoso do que restaurar de um arquivo de backup no armazenamento de objetos, talvez você queira restaurar dados desses outros locais.
+A operação de pesquisa examina todos os snapshots locais existentes para seus volumes ONTAP , todos os volumes replicados em sistemas de armazenamento secundário e todos os arquivos de backup existentes no armazenamento de objetos.  Como restaurar dados a partir de um snapshot local ou de um volume replicado pode ser mais rápido e menos custoso do que restaurar a partir de um arquivo de backup em um armazenamento de objetos, talvez você queira restaurar os dados a partir desses outros locais.
 
 Quando você restaura um _volume completo_ de um arquivo de backup, o NetApp Backup and Recovery cria um _novo_ volume usando os dados do backup.  Você pode restaurar os dados como um volume no sistema original, em um sistema diferente localizado na mesma conta de nuvem que o sistema de origem ou em um sistema ONTAP local.
 
@@ -474,7 +474,7 @@ Antes de começar, você deve ter uma ideia do nome ou local do volume ou arquiv
 
 === Sistemas suportados de pesquisa e restauração e provedores de armazenamento de objetos
 
-Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas.  Cópias de instantâneos residem no sistema de origem e podem ser restauradas somente no mesmo sistema.
+Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
 
 *Observação:* você pode restaurar volumes e arquivos de qualquer tipo de arquivo de backup, mas, no momento, você só pode restaurar uma pasta de arquivos de backup no armazenamento de objetos.
 
@@ -538,7 +538,7 @@ Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF 
 ** A versão do ONTAP deve ser 9.8 ou superior.
 ** A VM de armazenamento (SVM) na qual o volume reside deve ter um LIF de dados configurado.
 ** O NFS deve estar habilitado no volume (tanto os volumes NFS quanto os SMB/CIFS são suportados).
-** O servidor SnapDiff RPC deve ser ativado no SVM.  O Console faz isso automaticamente quando você habilita a indexação no sistema.  (SnapDiff é a tecnologia que identifica rapidamente as diferenças de arquivo e diretório entre cópias do Snapshot.)
+** O servidor SnapDiff RPC deve ser ativado no SVM. O Console faz isso automaticamente quando você habilita a indexação no sistema. (SnapDiff é a tecnologia que identifica rapidamente as diferenças entre arquivos e diretórios em diferentes snapshots.)
 
 
 
@@ -699,14 +699,14 @@ Depois de você ter<<enable-the-indexed-catalog-for-each-system,indexação habi
 +
 .. Na _Barra de pesquisa_, insira um nome de volume completo ou parcial, nome de pasta ou nome de arquivo.
 .. Selecione o tipo de recurso: *Volumes*, *Arquivos*, *Pastas* ou *Todos*.
-.. Na área _Filtrar por_, selecione os critérios de filtro.  Por exemplo, você pode selecionar o sistema onde os dados residem e o tipo de arquivo, por exemplo, um arquivo .JPEG.  Ou você pode selecionar o tipo de Local de backup se quiser pesquisar resultados somente em cópias de instantâneo disponíveis ou arquivos de backup no armazenamento de objetos.
+.. Na área _Filtrar por_, selecione os critérios de filtro. Por exemplo, você pode selecionar o sistema onde os dados residem e o tipo de arquivo, por exemplo, um arquivo .JPEG. Ou você pode selecionar o tipo de Local de Backup se quiser pesquisar resultados somente em snapshots ou arquivos de backup disponíveis no armazenamento de objetos.
 
 
 . Selecione *Pesquisar* e a área Resultados da pesquisa exibirá todos os recursos que têm um arquivo, pasta ou volume que corresponde à sua pesquisa.
 . Localize o recurso que contém os dados que você deseja restaurar e selecione *Exibir todos os backups* para exibir todos os arquivos de backup que contêm o volume, pasta ou arquivo correspondente.
 . Localize o arquivo de backup que você deseja usar para restaurar os dados e selecione *Restaurar*.
 +
-Observe que os resultados identificam cópias de instantâneos de volumes locais e volumes replicados remotos que contêm o arquivo em sua pesquisa.  Você pode escolher restaurar a partir do arquivo de backup na nuvem, da cópia do Snapshot ou do volume replicado.
+Observe que os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo em sua pesquisa.  Você pode optar por restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.
 
 . Selecione o local de destino onde você deseja que o volume, a pasta ou o(s) arquivo(s) sejam restaurados e selecione *Restaurar*.
 +

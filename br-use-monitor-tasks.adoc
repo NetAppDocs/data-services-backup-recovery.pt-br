@@ -118,7 +118,7 @@ Nas informações de Detalhes do monitoramento de trabalho, você pode baixar um
 
 Monitore os fluxos de retenção (_ciclo de vida do backup_) para verificar backups, mantê-los seguros e dar suporte a auditorias.  Identifique quando as cópias de backup expiram para rastrear o ciclo de vida.
 
-Uma tarefa de ciclo de vida de backup rastreia todas as cópias de Snapshot que são excluídas ou estão na fila para serem excluídas.  A partir do ONTAP 9.13, você pode ver todos os tipos de trabalho chamados "Retenção" na página Monitoramento de Trabalho.
+Uma tarefa de ciclo de vida de backup rastreia todos os snapshots que foram excluídos ou que estão na fila para serem excluídos. A partir do ONTAP 9.13, você pode ver todos os tipos de trabalho chamados "Retenção" na página Monitoramento de Trabalho.
 
 O tipo de trabalho "Retenção" captura todos os trabalhos de exclusão de instantâneo iniciados em um volume protegido pelo NetApp Backup and Recovery.
 

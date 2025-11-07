@@ -123,7 +123,7 @@ Há dois tipos de custos associados ao uso do recurso de backup para objeto do N
 * Taxas de serviço
 
 
-Não há custo para criar cópias de instantâneos ou volumes replicados, além do espaço em disco necessário para armazenar as cópias de instantâneos e os volumes replicados.
+A criação de snapshots ou volumes replicados é gratuita, exceto pelo espaço em disco necessário para armazená-los.
 
 *Custos de recursos*
 
@@ -193,7 +193,7 @@ O NetApp Backup and Recovery está disponível com os seguintes modelos de consu
 * *Anual*: Um contrato anual do marketplace do seu provedor de nuvem.
 
 
-Uma licença de backup é necessária apenas para backup e restauração do armazenamento de objetos.  A criação de cópias de snapshot e volumes replicados não requer licença.
+Uma licença de backup é necessária apenas para backup e restauração do armazenamento de objetos. A criação de snapshots e volumes replicados não requer licença.
 
 *Traga sua própria licença*
 

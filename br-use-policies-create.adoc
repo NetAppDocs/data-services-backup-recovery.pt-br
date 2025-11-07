@@ -49,7 +49,7 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 
 == Criar uma política
 
-Você pode criar políticas que controlam seus snapshots locais, replicações para armazenamento secundário e backups para armazenamento de objetos.  Parte da sua estratégia 3-2-1 envolve a criação de uma cópia instantânea das instâncias, bancos de dados, aplicativos ou VMs no sistema de armazenamento *primário*.
+Você pode criar políticas que controlam seus snapshots locais, replicações para armazenamento secundário e backups para armazenamento de objetos. Parte da sua estratégia 3-2-1 envolve a criação de um snapshot das instâncias, bancos de dados, aplicativos ou máquinas virtuais no sistema de armazenamento *primário*.
 
 *Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 

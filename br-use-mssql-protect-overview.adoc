@@ -23,7 +23,7 @@ Os benefícios da abordagem 3-2-1 incluem:
 * Você pode restaurar rapidamente a partir da cópia local e usar as cópias externas se a cópia local estiver comprometida.
 
 
-O NetApp Backup and Recovery usa o NetApp SnapMirror para sincronizar backups criando cópias instantâneas e transferindo-as para os locais de backup.
+O NetApp Backup and Recovery utiliza o NetApp SnapMirror para sincronizar backups, criando snapshots e transferindo-os para os locais de backup.
 
 Você pode fazer o seguinte para proteger seus dados:
 
@@ -42,7 +42,7 @@ Você pode fazer o seguinte para proteger seus dados:
 Para fazer backup de cargas de trabalho, crie políticas que gerenciam operações de backup e restauração. Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
 
 .Destinos de backup suportados
-O NetApp Backup and Recovery permite que você faça backup de instâncias e bancos de dados do Microsoft SQL Server dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada.  Cópias de instantâneos residem no sistema de origem.
+O NetApp Backup and Recovery permite fazer backup de instâncias e bancos de dados do Microsoft SQL Server dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada. Os snapshots residem no sistema de origem.
 
 [cols="33,33,33"]
 |===
@@ -58,10 +58,10 @@ O NetApp Backup and Recovery permite que você faça backup de instâncias e ban
 | Sistema ONTAP local | Sistema Cloud Volumes ONTAP ONTAP | Amazon S3 Azure Blob NetApp StorageGRID ONTAP S3 
 
 
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | NA ifdef::gcp[] fim se::gcp[] ifdef::gcp[] fim se::gcp[] 
+| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / D 
 |===
 .Destinos de restauração suportados
-Você pode restaurar instâncias e bancos de dados do Microsoft SQL Server de um backup que reside no armazenamento primário ou em um sistema secundário (um volume replicado) ou no armazenamento de objetos (um arquivo de backup) para os seguintes sistemas.  Cópias de instantâneos residem no sistema de origem e podem ser restauradas somente no mesmo sistema.
+Você pode restaurar instâncias e bancos de dados do Microsoft SQL Server de um backup que reside no armazenamento primário ou em um sistema secundário (um volume replicado) ou no armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
 
 [cols="33,33,33"]
 |===
@@ -74,7 +74,7 @@ Você pode restaurar instâncias e bancos de dados do Microsoft SQL Server de um
 | Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Volumes de nuvem no sistema ONTAP local da AWS ONTAP S3 
 
 
-| Blob do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure ONTAP S3 ifdef::gcp[] endif::gcp[] 
+| Blob do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no Azure Sistema ONTAP local ONTAP S3 
 
 
 | StorageGRID | Sistema Cloud Volumes ONTAP ONTAP | Sistema ONTAP local ONTAP S3 

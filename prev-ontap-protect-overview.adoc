@@ -21,14 +21,14 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 Após a ativação, o backup e a recuperação criam backups incrementais permanentes em nível de bloco que são armazenados em outro cluster ONTAP e no armazenamento de objetos na nuvem.  Além do volume de origem, você terá:
 
-* Cópia instantânea do volume no sistema de origem
+* Captura de tela do volume no sistema de origem
 * Volume replicado em um sistema de armazenamento diferente
 * Backup do volume no armazenamento de objetos
 
 
-image:diagram-321-overview-unified.png["Um diagrama mostrando como os arquivos de backup existem no sistema de origem como cópias de instantâneo, como volumes replicados no sistema de armazenamento secundário e como arquivos de backup no armazenamento de objetos."]
+image:diagram-321-overview-unified.png["Um diagrama mostrando como os arquivos de backup existem no sistema de origem como snapshots, como volumes replicados no sistema de armazenamento secundário e como arquivos de backup no armazenamento de objetos."]
 
-O NetApp Backup and Recovery utiliza a tecnologia de replicação de dados SnapMirror da NetApp para garantir que todos os backups estejam totalmente sincronizados, criando cópias de instantâneos e transferindo-as para os locais de backup.
+O NetApp Backup and Recovery utiliza a tecnologia de replicação de dados SnapMirror da NetApp para garantir que todos os backups estejam totalmente sincronizados, criando snapshots e transferindo-os para os locais de backup.
 
 Os benefícios da abordagem 3-2-1 incluem:
 
@@ -77,7 +77,7 @@ Verlink:br-reference-limitations.html["Limitações de replicação para volumes
 
 *Restaurar recursos:*
 
-* Restaure dados de um ponto específico no tempo a partir de cópias locais do Snapshot, volumes replicados ou volumes de backup no armazenamento de objetos.
+* Restaure dados de um ponto específico no tempo a partir de snapshots locais, volumes replicados ou volumes de backup em armazenamento de objetos.
 * Restaurar um volume, uma pasta ou arquivos individuais para o sistema de origem ou para um sistema diferente.
 * Restaure dados para um sistema usando uma assinatura/conta diferente ou que esteja em uma região diferente.
 * Execute uma _restauração rápida_ de um volume do armazenamento em nuvem para um sistema Cloud Volumes ONTAP ou para um sistema local; perfeito para situações de recuperação de desastres em que você precisa fornecer acesso a um volume o mais rápido possível.
@@ -103,7 +103,7 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Saiba mais usando o Mapa
 
 === Destinos de backup suportados
 
-O NetApp Backup and Recovery permite que você faça backup de volumes ONTAP dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada.  Cópias de instantâneos residem no sistema de origem.
+O NetApp Backup and Recovery permite fazer backup de volumes ONTAP dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada. Os snapshots residem no sistema de origem.
 
 [cols="33,33,33"]
 |===
@@ -125,7 +125,7 @@ O NetApp Backup and Recovery permite que você faça backup de volumes ONTAP dos
 
 === Destinos de restauração suportados
 
-Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas.  Cópias de instantâneos residem no sistema de origem e podem ser restauradas somente no mesmo sistema.
+Você pode restaurar dados do ONTAP a partir de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados para esse mesmo sistema.
 
 [cols="33,33,33"]
 |===
@@ -175,7 +175,7 @@ Veja as seções sobrelink:br-reference-limitations.html["Limitações de backup
 
 Há dois tipos de custos associados ao uso do NetApp Backup and Recovery com sistemas ONTAP : taxas de recursos e taxas de serviço.  Ambas as cobranças são para a parte de backup do objeto do serviço.
 
-Não há custo para criar cópias de Snapshot ou volumes replicados, além do espaço em disco necessário para armazenar as cópias de Snapshot e os volumes replicados.
+A criação de snapshots ou volumes replicados é gratuita, exceto pelo espaço em disco necessário para armazená-los.
 
 *Custos de recursos*
 
@@ -236,7 +236,7 @@ O NetApp Backup and Recovery está disponível com os seguintes modelos de consu
 * *Anual*: Um contrato anual do marketplace do seu provedor de nuvem.
 
 
-Uma licença de backup é necessária apenas para backup e restauração do armazenamento de objetos.  A criação de cópias de snapshot e volumes replicados não requer licença.
+Uma licença de backup é necessária apenas para backup e restauração do armazenamento de objetos. A criação de snapshots e volumes replicados não requer licença.
 
 
 
@@ -311,7 +311,7 @@ Este diagrama mostra volumes sendo replicados para um sistema Cloud Volumes ONTA
 
 Os backups residem em locais diferentes com base no tipo de backup:
 
-* _Cópias de instantâneo_ residem no volume de origem no sistema de origem.
+* Os _snapshots_ residem no volume de origem no sistema de origem.
 * Os _volumes replicados_ residem no sistema de armazenamento secundário - um sistema Cloud Volumes ONTAP ou ONTAP local.
 * _Cópias de backup_ são armazenadas em um armazenamento de objetos que o Console cria na sua conta na nuvem.  Há um armazenamento de objetos por cluster/sistema, e o Console nomeia o armazenamento de objetos da seguinte forma: "netapp-backup-clusteruuid".  Certifique-se de não excluir este armazenamento de objetos.
 
@@ -344,12 +344,12 @@ Se você quiser alterar o armazenamento de objetos de destino para um cluster no
 
 === Configurações de retenção e agendamento de backup personalizáveis
 
-Quando você habilita o NetApp Backup and Recovery para um sistema, todos os volumes selecionados inicialmente são copiados usando as políticas selecionadas.  Você pode selecionar políticas separadas para cópias de instantâneos, volumes replicados e arquivos de backup.  Se desejar atribuir políticas de backup diferentes a determinados volumes que têm objetivos de ponto de recuperação (RPO) diferentes, você poderá criar políticas adicionais para esse cluster e atribuí-las aos outros volumes depois que o NetApp Backup and Recovery for ativado.
+Quando você habilita o NetApp Backup and Recovery para um sistema, todos os volumes selecionados inicialmente são copiados usando as políticas selecionadas. Você pode selecionar políticas separadas para snapshots, volumes replicados e arquivos de backup. Se desejar atribuir políticas de backup diferentes a determinados volumes que têm objetivos de ponto de recuperação (RPO) diferentes, você poderá criar políticas adicionais para esse cluster e atribuí-las aos outros volumes depois que o NetApp Backup and Recovery for ativado.
 
 Você pode escolher uma combinação de backups por hora, diariamente, semanalmente, mensalmente e anualmente de todos os volumes.  Para fazer backup no objeto, você também pode selecionar uma das políticas definidas pelo sistema que fornecem backups e retenção por 3 meses, 1 ano e 7 anos.  As políticas de proteção de backup que você criou no cluster usando o ONTAP System Manager ou o ONTAP CLI também aparecerão como seleções.  Isso inclui políticas criadas usando rótulos personalizados do SnapMirror .
 
 
-NOTE: A política de Snapshot aplicada ao volume deve ter um dos rótulos que você está usando na sua política de replicação e na política de backup para objeto.  Se não forem encontrados rótulos correspondentes, nenhum arquivo de backup será criado.  Por exemplo, se você quiser criar volumes replicados e arquivos de backup "semanais", deverá usar uma política de Snapshot que crie cópias de Snapshot "semanais".
+NOTE: A política de Snapshot aplicada ao volume deve ter um dos rótulos que você está usando na sua política de replicação e na política de backup para objeto. Se não forem encontrados rótulos correspondentes, nenhum arquivo de backup será criado. Por exemplo, se você quiser criar volumes replicados e arquivos de backup "semanais", deverá usar uma política de Snapshot que crie snapshots "semanais".
 
 Quando você atinge o número máximo de backups para uma categoria ou intervalo, os backups mais antigos são removidos para que você sempre tenha os backups mais atuais (e para que os backups obsoletos não continuem ocupando espaço).
 
@@ -366,7 +366,7 @@ Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você poderá proteg
 * A _Proteção contra ransomware_ verifica seus arquivos de backup para procurar evidências de um ataque de ransomware quando um arquivo de backup é criado e quando os dados de um arquivo de backup estão sendo restaurados.
 
 
-As verificações agendadas de proteção contra ransomware são ativadas por padrão.  A configuração padrão para a frequência de verificação é de 7 dias.  A verificação ocorre apenas na cópia mais recente do Snapshot.  As verificações agendadas podem ser desativadas para reduzir seus custos.  Você pode habilitar ou desabilitar verificações agendadas de ransomware na cópia mais recente do Snapshot usando a opção na página Configurações avançadas.  Se você habilitar, as verificações serão realizadas semanalmente por padrão.  Você pode alterar essa programação para dias ou semanas ou desativá-la, economizando custos.
+As verificações agendadas de proteção contra ransomware são ativadas por padrão. A configuração padrão para a frequência de verificação é de 7 dias. A verificação ocorre apenas no instantâneo mais recente. As verificações agendadas podem ser desativadas para reduzir seus custos. Você pode ativar ou desativar as verificações agendadas de ransomware no snapshot mais recente usando a opção na página de Configurações Avançadas. Se você habilitar, as verificações serão realizadas semanalmente por padrão. Você pode alterar essa programação para dias ou semanas ou desativá-la, economizando custos.
 
 O período de retenção de backup é o mesmo que o período de retenção de agendamento de backup, mais um buffer máximo de 31 dias.  Por exemplo, backups _semanais_ com _5_ cópias retidas bloquearão cada arquivo de backup por 5 semanas.  Backups _mensais_ com _6_ cópias retidas bloquearão cada arquivo de backup por 6 meses.
 

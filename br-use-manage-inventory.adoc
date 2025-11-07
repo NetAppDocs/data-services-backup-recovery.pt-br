@@ -39,7 +39,7 @@ Você pode realizar as seguintes tarefas relacionadas ao gerenciamento do seu in
 ** Faça backup agora iniciando um backup sob demanda
 
 
-* Configure o diretório de log (em Inventário > Hosts).  Se você quiser fazer backup de logs para seus hosts de banco de dados no snapshot, primeiro configure os logs no NetApp Backup and Recovery.  Para mais detalhes, consultelink:br-start-setup.html["Configurar as configurações de NetApp Backup and Recovery"] .
+* Configure o diretório de logs (em *Inventário* > *Hosts*). Se você quiser fazer backup de logs para seus hosts de banco de dados no snapshot, primeiro configure os logs no NetApp Backup and Recovery. Para mais detalhes, consultelink:br-start-setup.html["Configurar as configurações de NetApp Backup and Recovery"] .
 
 
 

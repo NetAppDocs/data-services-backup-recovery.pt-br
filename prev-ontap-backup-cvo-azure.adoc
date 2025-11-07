@@ -414,7 +414,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 *** Selecione *Criar*.
 
 
-** *Exportar cópias de snapshot existentes para armazenamento de objetos como cópias de backup*: Se houver cópias de snapshot locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar para este sistema (por exemplo, diário, semanal, etc.), este prompt adicional será exibido.  Marque esta caixa para que todos os Snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
+** *Exportar snapshots existentes para armazenamento de objetos como cópias de backup*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar para este sistema (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os Snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
 
 
 . Selecione *Avançar*.
@@ -433,7 +433,7 @@ Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessári
 
 
 .Resultado
-O NetApp Backup and Recovery começa a fazer os backups iniciais dos seus volumes.  A transferência de linha de base do volume replicado e do arquivo de backup inclui uma cópia completa dos dados do sistema de armazenamento primário.  Transferências subsequentes contêm cópias diferenciais dos dados de armazenamento primário contidos em cópias de Snapshot.
+O NetApp Backup and Recovery começa a fazer os backups iniciais dos seus volumes. A transferência de linha de base do volume replicado e do arquivo de backup inclui uma cópia completa dos dados do sistema de armazenamento primário. As transferências subsequentes contêm cópias diferenciais dos dados de armazenamento primário contidos nos snapshots.
 
 Um volume replicado é criado no cluster de destino que será sincronizado com o volume primário.
 
