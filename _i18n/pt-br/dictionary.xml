@@ -4777,4 +4777,17 @@
   <block id="0b7639e600f1d3ff92ed788a9be2c0dd" category="list-text">O servidor SnapDiff RPC deve ser ativado no SVM. O Console faz isso automaticamente quando você habilita a indexação no sistema. (SnapDiff é a tecnologia que identifica rapidamente as diferenças entre arquivos e diretórios em diferentes snapshots.)</block>
   <block id="dff115c532ece3121746427a98f68318" category="list-text">Na área _Filtrar por_, selecione os critérios de filtro. Por exemplo, você pode selecionar o sistema onde os dados residem e o tipo de arquivo, por exemplo, um arquivo .JPEG. Ou você pode selecionar o tipo de Local de Backup se quiser pesquisar resultados somente em snapshots ou arquivos de backup disponíveis no armazenamento de objetos.</block>
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">Observe que os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo em sua pesquisa.  Você pode optar por restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.</block>
+  <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">Primeiro, você precisará montar um volume separado para armazenar os arquivos de catálogo. Isso evita a perda de dados caso o tamanho dos arquivos que contêm os instantâneos se torne muito grande. Isso não é necessário em todos os clusters; você pode montar qualquer volume de qualquer um dos clusters em seu ambiente. Caso contrário, a indexação poderá não funcionar corretamente.</block>
+  <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">Para o volume montado, utilize as seguintes orientações de dimensionamento:</block>
+  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">Utilize um volume NetApp NVS</block>
+  <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">Armazenamento AFF recomendado com taxa de transferência de disco de 300 MB/s. A redução da capacidade de processamento afetará as buscas e outras operações.</block>
+  <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">Habilite os snapshots do NetApp para proteger os metadados do catálogo, além dos arquivos zip de backup do catálogo.</block>
+  <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">50 GB por 1 bilhão de arquivos</block>
+  <block id="d8f2f459c62a4c272bc182a3bf83e97d" category="list-text">20 GB para os dados do catálogo, com espaço adicional para a criação de arquivos zip e arquivos temporários.</block>
+  <block id="e40baf893187a4f380031521e09aab99" category="list-title">Etapa para montar o volume para reindexar o catálogo</block>
+  <block id="f0b22c7460655890a4c18c0545153bae" category="list-text">Monte o volume em<block ref="f454c0203410fcd923445c6d0fd3fe90" prefix=" " category="inline-code"></block> digitando o seguinte comando, onde:</block>
+  <block id="a644d6f5b4a74fc5834ee2f4deceeb0a" category="list-text"><block ref="9e631ecdc775968f0a566931df27c2eb" prefix="" category="inline-code"></block> é o volume no cluster onde os arquivos de catálogo serão armazenados.</block>
+  <block id="de272d4987aa96a00ccf6441ad353c0e" category="list-text"><block ref="f454c0203410fcd923445c6d0fd3fe90" prefix="" category="inline-code"></block> é o caminho onde está sendo montado</block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">Exemplo:</block>
+  <block id="67e93e04234f9801960d3d563faf4619" category="list-title">Passos para ativar o índice</block>
 </blocks>

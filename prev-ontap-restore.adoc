@@ -670,6 +670,42 @@ Se você habilitou o Catálogo Indexado antes do lançamento da v2, o seguinte o
 Se a indexação já estiver habilitada para seu sistema, vá para a próxima seção para restaurar seus dados.
 
 .Etapas para habilitar a indexação de um sistema:
+Se a indexação já estiver habilitada para seu sistema, vá para a próxima seção para restaurar seus dados.
+
+Primeiro, você precisará montar um volume separado para armazenar os arquivos de catálogo. Isso evita a perda de dados caso o tamanho dos arquivos que contêm os instantâneos se torne muito grande. Isso não é necessário em todos os clusters; você pode montar qualquer volume de qualquer um dos clusters em seu ambiente. Caso contrário, a indexação poderá não funcionar corretamente.
+
+Para o volume montado, utilize as seguintes orientações de dimensionamento:
+
+* Utilize um volume NetApp NVS
+* Armazenamento AFF recomendado com taxa de transferência de disco de 300 MB/s. A redução da capacidade de processamento afetará as buscas e outras operações.
+* Habilite os snapshots do NetApp para proteger os metadados do catálogo, além dos arquivos zip de backup do catálogo.
+* 50 GB por 1 bilhão de arquivos
+* 20 GB para os dados do catálogo, com espaço adicional para a criação de arquivos zip e arquivos temporários.
+
+
+.Etapa para montar o volume para reindexar o catálogo
+. Monte o volume em `/opt/application/netapp/cbs` digitando o seguinte comando, onde:
++
+** `volume name` é o volume no cluster onde os arquivos de catálogo serão armazenados.
+** `/opt/application/netapp/cbs` é o caminho onde está sendo montado
++
+[source, console]
+----
+mount <cluster IP address>:/<volume name> /opt/application/netapp/cbs
+----
++
+Exemplo:
+
++
+[source, console]
+----
+mount 10.192.24.17:/CATALOG_SCALE_234 /opt/application/netapp/cbs
+----
+
+
+
+
+.Passos para ativar o índice
 . Faça um dos seguintes:
 +
 ** Se nenhum sistema tiver sido indexado, no Painel de Restauração, em _Pesquisar e Restaurar_, selecione *Ativar Indexação para Sistemas*.
