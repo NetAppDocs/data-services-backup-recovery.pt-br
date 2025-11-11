@@ -18,8 +18,6 @@ Proteja suas VMs Hyper-V com o NetApp Backup and Recovery.  O NetApp Backup and 
 
 Você pode fazer backup de cargas de trabalho do Hyper-V no Amazon Web Services S3 ou StorageGRID e restaurar cargas de trabalho do Hyper-V em um host Hyper-V local.
 
-image:../media/diagram-backup-recovery-general.png["Diagrama de arquitetura de backup e recuperação em geral"]
-
 Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
 * Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
