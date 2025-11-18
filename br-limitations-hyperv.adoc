@@ -22,7 +22,8 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 As seguintes ações não são suportadas na versão de visualização privada das cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
 
-* Criar grupos de recursos
+* Crie grupos de recursos usando máquinas virtuais de vários hosts Hyper-V.
+* Restaurar VMs para um local alternativo
 * Discos de abrangência (em vários compartilhamentos CIFS)
 * Proteja VMs em SAN
 * Editar grupos de proteção
