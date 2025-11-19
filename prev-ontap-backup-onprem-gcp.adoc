@@ -92,7 +92,7 @@ Para usar a funcionalidade "Pesquisar e restaurar" do NetApp Backup and Recovery
 . Selecione *Editar função* para atualizar as permissões da função.
 . Selecione *Adicionar permissões* para adicionar as seguintes novas permissões à função.
 +
-[source, console]
+[source, text]
 ----
 bigquery.jobs.get
 bigquery.jobs.list
@@ -243,7 +243,7 @@ Você precisa fornecer chaves de acesso de armazenamento para uma conta de servi
 . No https://console.cloud.google.com["Console do Google Cloud"^] , vá para a página *Funções*.
 . https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["Criar uma nova função"^]com as seguintes permissões:
 +
-[source, console]
+[source, text]
 ----
 storage.buckets.create
 storage.buckets.delete
@@ -297,7 +297,7 @@ Se você planeja usar suas próprias chaves gerenciadas pelo cliente:
 * Você precisará ter o Key Ring e o Key Name para poder adicionar essas informações no assistente de ativação. https://cloud.google.com/kms/docs/cmek["Saiba mais sobre chaves de criptografia gerenciadas pelo cliente"^] .
 * Você precisará verificar se essas permissões necessárias estão incluídas na função do agente do Console:
 +
-[source, console]
+[source, text]
 ----
 cloudkms.cryptoKeys.get
 cloudkms.cryptoKeys.getIamPolicy

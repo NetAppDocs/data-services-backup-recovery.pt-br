@@ -1,0 +1,324 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-restore-browse.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Com o NetApp Backup and Recovery, restaure dados do ONTAP usando a opção Navegar e Restaurar. 
+---
+= Restaurar dados ONTAP usando Navegar e Restaurar
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Com o NetApp Backup and Recovery, restaure dados do ONTAP usando a opção Navegar e Restaurar. Antes de restaurar, anote o nome do volume de origem, o sistema de origem, o SVM e a data do arquivo de backup. Você pode restaurar dados do ONTAP a partir de um snapshot, um volume replicado ou de backups armazenados em armazenamento de objetos.
+
+As funcionalidades de restauração dependem da sua versão do ONTAP :
+
+* *Pastas:* Usando o ONTAP 9.13.0 ou superior, você pode restaurar pastas com todos os arquivos e subpastas; em versões anteriores, você só pode restaurar os arquivos dentro da pasta.
+* *Armazenamento de Arquivos:* A restauração a partir do armazenamento de arquivos (disponível no ONTAP 9.10.1 ou superior) é mais lenta e pode acarretar custos adicionais.
+* *Requisitos do cluster de destino:*
++
+** Restauração de volume: ONTAP 9.10.1 ou superior
+** Restauração de arquivos: ONTAP 9.11.1 ou superior
+** Google Archive e StorageGRID: ONTAP 9.12.1 ou superior
+** Restauração de pastas: ONTAP 9.13.1 ou superior
+
+
+
+
+ifdef::aws[]
+
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
+
+endif::gcp[]
+
+
+NOTE: A alta prioridade não é suportada ao restaurar dados do armazenamento de arquivamento do Azure para sistemas StorageGRID .
+
+
+
+== Navegar e restaurar sistemas suportados e provedores de armazenamento de objetos
+
+Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
+
+*Observação:* você pode restaurar um volume de qualquer tipo de arquivo de backup, mas pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos neste momento.
+
+[cols="25,25,25,25"]
+|===
+| *Do Object Store (Backup)* | *Da Primária (Instantâneo)* | *Do Sistema Secundário (Replicação)* | Para o sistema de destino ifdef::aws[] 
+
+
+| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS endif::aws[] ifdef::azure[] | Blob do Azure 
+
+
+| Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure endif::azure[] ifdef::gcp[] | Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
+
+
+| Cloud Volumes ONTAP no sistema ONTAP local do Google endif::gcp[] | NetApp StorageGRID | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
+
+
+| Para o sistema ONTAP local | ONTAP S3 | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
+|===
+Para Navegar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:
+
+ifdef::aws[]
+
+* Para o Amazon S3, o agente do Console pode ser implantado na AWS ou em suas instalações
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Para o Azure Blob, o agente do Console pode ser implantado no Azure ou em suas instalações
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Para o Google Cloud Storage, o agente do Console deve ser implantado na sua VPC do Google Cloud Platform
+
+
+endif::gcp[]
+
+* Para StorageGRID, o agente do Console deve ser implantado em suas instalações; com ou sem acesso à Internet
+* Para o ONTAP S3, o agente do Console pode ser implantado em suas instalações (com ou sem acesso à Internet) ou em um ambiente de provedor de nuvem
+
+
+Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF e ONTAP Select .
+
+
+NOTE: Se a versão do ONTAP no seu sistema for inferior a 9.13.1, você não poderá restaurar pastas ou arquivos se o arquivo de backup tiver sido configurado com DataLock & Ransomware.  Nesse caso, você pode restaurar o volume inteiro a partir do arquivo de backup e depois acessar os arquivos necessários.
+
+
+
+== Restaurar volumes usando Navegar e Restaurar
+
+Quando você restaura um volume de um arquivo de backup, o NetApp Backup and Recovery cria um _novo_ volume usando os dados do backup.  Ao usar um backup do armazenamento de objetos, você pode restaurar os dados para um volume no sistema original, para um sistema diferente localizado na mesma conta de nuvem que o sistema de origem ou para um sistema ONTAP local.
+
+Ao restaurar um backup em nuvem para um sistema Cloud Volumes ONTAP usando o ONTAP 9.13.0 ou superior ou para um sistema ONTAP local executando o ONTAP 9.14.1, você terá a opção de executar uma operação de _restauração rápida_. A restauração rápida é ideal para situações de recuperação de desastres em que você precisa fornecer acesso a um volume o mais rápido possível. Uma restauração rápida restaura os metadados do arquivo de backup para um volume em vez de restaurar o arquivo de backup inteiro.  A restauração rápida não é recomendada para aplicativos sensíveis ao desempenho ou à latência e não é compatível com backups em armazenamento arquivado.
+
+
+NOTE: A restauração rápida é suportada para volumes FlexGroup somente se o sistema de origem do qual o backup em nuvem foi criado estiver executando o ONTAP 9.12.1 ou superior.  E ele é compatível com volumes SnapLock somente se o sistema de origem estiver executando o ONTAP 9.11.0 ou superior.
+
+Ao restaurar de um volume replicado, você pode restaurar o volume para o sistema original ou para um sistema Cloud Volumes ONTAP ou ONTAP local.
+
+image:diagram_browse_restore_volume.png["Um diagrama que mostra o fluxo para executar uma operação de restauração de volume usando Navegar e Restaurar."]
+
+Para restaurar um volume, você precisa do nome do sistema de origem, da máquina virtual de armazenamento, do nome do volume e da data do arquivo de backup.
+
+.Passos
+. No menu Console, selecione *Proteção > Backup e recuperação*.
+. Selecione a aba *Restaurar* e o Painel de Restauração será exibido.
+. Na seção _Navegar e restaurar_, selecione *Restaurar volume*.
+. Na página _Selecionar origem_, navegue até o arquivo de backup do volume que você deseja restaurar.  Selecione o *sistema*, o *Volume* e o arquivo de *Backup* que tem o registro de data/hora do qual você deseja restaurar.
++
+A coluna *Localização* mostra se o arquivo de backup (Snapshot) é *Local* (um snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Armazenamento de Objetos* (um arquivo de backup no armazenamento de objetos). Escolha o arquivo que você deseja restaurar.
+
+. Selecione *Avançar*.
++
+Observe que se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de ransomware adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você verifique se há ransomware no arquivo de backup.  (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+
+. Na página _Selecionar destino_, selecione o *sistema* onde você deseja restaurar o volume.
+. Ao restaurar um arquivo de backup do armazenamento de objetos, se você selecionar um sistema ONTAP local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
++
+ifdef::aws[]
+
++
+** Ao restaurar do Amazon S3, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, insira a chave de acesso e a chave secreta do usuário que você criou para dar ao cluster ONTAP acesso ao bucket S3 e, opcionalmente, escolha um endpoint VPC privado para transferência segura de dados.
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, selecione a Assinatura do Azure para acessar o armazenamento de objetos e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Ao restaurar do Google Cloud Storage, selecione o Google Cloud Project e a Access Key e a Secret Key para acessar o armazenamento de objetos, a região onde os backups são armazenados e o IPspace no cluster ONTAP onde o volume de destino residirá.
+
+
+endif::gcp[]
+
+* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, selecione a Chave de acesso e a Chave secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino residirá.
+* Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá.
++
+.. Digite o nome que você deseja usar para o volume restaurado e selecione a VM de armazenamento e o agregado onde o volume residirá.  Ao restaurar um volume FlexGroup , você precisará selecionar vários agregados.  Por padrão, *<source_volume_name>_restore* é usado como nome do volume.
++
+Ao restaurar um backup do armazenamento de objetos para um sistema Cloud Volumes ONTAP usando o ONTAP 9.13.0 ou superior ou para um sistema ONTAP local executando o ONTAP 9.14.1, você terá a opção de executar uma operação de _restauração rápida_.
+
++
+E se você estiver restaurando o volume de um arquivo de backup que reside em uma camada de armazenamento de arquivamento (disponível a partir do ONTAP 9.10.1), você pode selecionar a Prioridade de restauração.
+
++
+ifdef::aws[]
+
+
+
+
+
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
+
+endif::aws[]
+
+ifdef::azure[]
+
+link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
+
+endif::azure[]
+
+ifdef::gcp[]
+
+link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"]. Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
+
+endif::gcp[]
+
+. Selecione *Avançar* para escolher se deseja fazer uma restauração normal ou um processo de restauração rápida:
++
+** *Restauração normal*: use a restauração normal em volumes que exigem alto desempenho.  Os volumes não estarão disponíveis até que o processo de restauração seja concluído.
+** *Restauração rápida*: volumes e dados restaurados estarão disponíveis imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
+
+
+. Selecione *Restaurar* e você retornará ao Painel de Restauração para poder revisar o progresso da operação de restauração.
+
+
+.Resultado
+O NetApp Backup and Recovery cria um novo volume com base no backup selecionado.
+
+Observe que restaurar um volume de um arquivo de backup que reside no armazenamento de arquivamento pode levar muitos minutos ou horas, dependendo da camada de arquivamento e da prioridade de restauração.  Você pode selecionar a aba *Monitoramento de Tarefas* para ver o progresso da restauração.
+
+
+
+== Restaurar pastas e arquivos usando Navegar e Restaurar
+
+Se precisar restaurar apenas alguns arquivos de um backup de volume ONTAP , você pode optar por restaurar uma pasta ou arquivos individuais em vez de restaurar o volume inteiro.  Você pode restaurar pastas e arquivos para um volume existente no sistema original ou para um sistema diferente que esteja usando a mesma conta de nuvem.  Você também pode restaurar pastas e arquivos para um volume em um sistema ONTAP local.
+
+
+NOTE: No momento, você pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos. Atualmente, não há suporte para a restauração de arquivos e pastas a partir de um snapshot local ou de um arquivo de backup que reside em um sistema secundário (um volume replicado).
+
+Se você selecionar vários arquivos, eles serão restaurados para o mesmo volume de destino.  Para restaurar arquivos em volumes diferentes, execute o processo várias vezes.
+
+Ao usar o ONTAP 9.13.0 ou superior, você pode restaurar uma pasta junto com todos os arquivos e subpastas dentro dela.  Ao usar uma versão do ONTAP anterior à 9.13.0, somente os arquivos dessa pasta são restaurados - nenhuma subpasta ou arquivo em subpastas é restaurado.
+
+[NOTE]
+====
+* Se o arquivo de backup tiver sido configurado com proteção DataLock e Ransomware, a restauração em nível de pasta será suportada somente se a versão do ONTAP for 9.13.1 ou superior.  Se estiver usando uma versão anterior do ONTAP, você poderá restaurar o volume inteiro a partir do arquivo de backup e então acessar a pasta e os arquivos necessários.
+* Se o arquivo de backup residir no armazenamento de arquivamento, a restauração em nível de pasta será suportada somente se a versão do ONTAP for 9.13.1 ou superior.  Se estiver usando uma versão anterior do ONTAP, você pode restaurar a pasta a partir de um arquivo de backup mais recente que não foi arquivado ou pode restaurar o volume inteiro a partir do backup arquivado e então acessar a pasta e os arquivos necessários.
+* Com o ONTAP 9.15.1, você pode restaurar pastas do FlexGroup usando a opção "Navegar e restaurar".  Este recurso está em modo de visualização de tecnologia.
++
+Você pode testá-lo usando um sinalizador especial descrito no https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog de lançamento do NetApp Backup and Recovery de julho de 2024"^] .
+
+
+
+====
+
+
+=== Restaurar pastas e arquivos
+
+Siga estas etapas para restaurar pastas ou arquivos para um volume a partir de um backup de volume ONTAP .  Você deve saber o nome do volume e a data do arquivo de backup que deseja usar para restaurar a pasta ou o(s) arquivo(s).  Esta funcionalidade usa a Navegação ao Vivo para que você possa visualizar a lista de diretórios e arquivos dentro de cada arquivo de backup.
+
+image:diagram_browse_restore_file.png["Um diagrama que mostra o fluxo para executar uma operação de restauração de arquivo usando Navegar e Restaurar."]
+
+.Antes de começar
+* A versão do ONTAP deve ser 9.6 ou superior para executar operações de restauração de _arquivos_.
+* A versão do ONTAP deve ser 9.11.1 ou superior para executar operações de restauração de _pasta_.  A versão 9.13.1 do ONTAP é necessária se os dados estiverem em armazenamento de arquivo ou se o arquivo de backup estiver usando proteção DataLock e Ransomware.
+* A versão do ONTAP deve ser 9.15.1 p2 ou superior para restaurar diretórios FlexGroup usando a opção Procurar e restaurar.
+
+
+.Passos
+. No menu Console, selecione *Proteção > Backup e recuperação*.
+. Selecione a aba *Restaurar* e o Painel de Restauração será exibido.
+. Na seção _Navegar e restaurar_, selecione *Restaurar arquivos ou pastas*.
+. Na página _Selecionar origem_, navegue até o arquivo de backup do volume que contém a pasta ou os arquivos que você deseja restaurar.  Selecione o *sistema*, o *Volume* e o *Backup* que tem o registro de data/hora dos arquivos dos quais você deseja restaurar.
+. Selecione *Avançar* e a lista de pastas e arquivos do backup de volume será exibida.
++
+Se estiver restaurando pastas ou arquivos de um arquivo de backup que reside em uma camada de armazenamento de arquivamento, você pode selecionar a Prioridade de restauração.
+
++
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"]. Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
+
++
+E se a Resiliência contra Ransomware estiver ativa para o arquivo de backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados.  Recomendamos que você verifique se há ransomware no arquivo de backup.  (Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+
+. Na página _Selecionar itens_, selecione a pasta ou arquivo(s) que deseja restaurar e selecione *Continuar*.  Para ajudar você a encontrar o item:
++
+** Você pode selecionar o nome da pasta ou do arquivo se o vir.
+** Você pode selecionar o ícone de pesquisa e digitar o nome da pasta ou arquivo para navegar diretamente até o item.
+** Você pode navegar pelos níveis inferiores nas pastas usando a seta para baixo no final da linha para encontrar arquivos específicos.
++
+Conforme você seleciona os arquivos, eles são adicionados ao lado esquerdo da página para que você possa ver os arquivos que já escolheu.  Você pode remover um arquivo desta lista, se necessário, selecionando o *x* ao lado do nome do arquivo.
+
+
+
+. Na página _Selecionar destino_, selecione o *sistema* onde você deseja restaurar os itens.
++
+Se você selecionar um cluster local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
+
++
+ifdef::aws[]
+
++
+** Ao restaurar do Amazon S3, insira o IPspace no cluster ONTAP onde o volume de destino reside e a Chave de acesso e a Chave secreta da AWS necessárias para acessar o armazenamento de objetos.  Você também pode selecionar uma Configuração de Link Privado para a conexão com o cluster.
+
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Ao restaurar do Azure Blob, insira o IPspace no cluster ONTAP onde o volume de destino reside.  Você também pode selecionar uma Configuração de Endpoint Privado para a conexão com o cluster.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Ao restaurar do Google Cloud Storage, insira o IPspace no cluster ONTAP onde os volumes de destino residem, além da chave de acesso e da chave secreta necessárias para acessar o armazenamento de objetos.
+
+
+endif::gcp[]
+
+* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside.
++
+.. Em seguida, selecione o *Volume* e a *Pasta* onde você deseja restaurar a pasta ou o(s) arquivo(s).
++
+Você tem algumas opções de local para restaurar pastas e arquivos.
+
+
+
+* Quando você tiver escolhido *Selecionar pasta de destino*, conforme mostrado acima:
++
+** Você pode selecionar qualquer pasta.
+** Você pode passar o mouse sobre uma pasta e clicar no final da linha para detalhar as subpastas e, em seguida, selecionar uma pasta.
+
+
+* Se você tiver selecionado o mesmo sistema de destino e volume onde a pasta/arquivo de origem estava localizado, você pode selecionar *Manter caminho da pasta de origem* para restaurar a pasta, ou arquivo(s), para a mesma pasta onde eles estavam na estrutura de origem.  Todas as mesmas pastas e subpastas já devem existir; pastas não são criadas.  Ao restaurar arquivos para seu local original, você pode optar por substituir o(s) arquivo(s) de origem ou criar novo(s) arquivo(s).
++
+.. Selecione *Restaurar* para retornar ao Painel de Restauração e revisar o progresso da operação de restauração.
+
+
+

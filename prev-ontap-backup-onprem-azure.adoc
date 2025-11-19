@@ -111,7 +111,7 @@ Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado 
 +
 [%collapsible]
 ====
-[source, console]
+[source, text]
 ----
 "Microsoft.Storage/storageAccounts/listkeys/action",
 "Microsoft.Storage/storageAccounts/read",

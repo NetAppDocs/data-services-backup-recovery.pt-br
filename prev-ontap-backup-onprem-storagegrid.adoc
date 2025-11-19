@@ -206,7 +206,7 @@ Ao configurar o backup no StorageGRID, o assistente de backup solicita uma chave
 
 Essas chaves de acesso devem ser associadas a um usuário que tenha as seguintes permissões:
 
-[source, console]
+[source, text]
 ----
 "s3:ListAllMyBuckets",
 "s3:ListBucket",
