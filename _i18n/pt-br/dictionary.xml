@@ -3734,10 +3734,6 @@
   <block id="c601431e32ca59eda5545781d799fc84" category="cell">Pesquise um volume, pasta ou arquivo em *todos os arquivos de backup* por nome parcial ou completo do volume, nome parcial ou completo da pasta/arquivo, intervalo de tamanho e filtros de pesquisa adicionais.</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">Não realiza a recuperação de arquivos se o arquivo foi excluído ou renomeado e o usuário não sabe o nome original do arquivo</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">Manipula diretórios recém-criados/excluídos/renomeados e arquivos recém-criados/excluídos/renomeados</block>
-  <block id="c6df30fd69d443c5f65257f03e22d182" category="cell">Não são necessários recursos adicionais do provedor de nuvem</block>
-  <block id="ba3b7ed6a9e20a17536af523c17d7d72" category="cell">Ao restaurar da nuvem, recursos adicionais de bucket e provedor de nuvem pública são necessários por conta.</block>
-  <block id="f487cfb88239842615093e7eb26153a0" category="cell">Não são necessários custos adicionais com provedores de nuvem</block>
-  <block id="e4da0c30ee3e36e87eec129bd901c319" category="cell">Ao restaurar da nuvem, custos adicionais são necessários ao verificar seus backups e volumes em busca de resultados de pesquisa.</block>
   <block id="bc7f13477d0119c48bad565ccf971e6a" category="cell">A restauração rápida é suportada.</block>
   <block id="acf00c252198c9be0294aaf561c5d662" category="cell">A restauração rápida não é suportada.</block>
   <block id="36bce3524e4446bfe42ccad6f813430a" category="paragraph">Esta tabela fornece uma lista de operações de restauração válidas com base no local onde seus arquivos de backup residem.</block>
@@ -4715,7 +4711,6 @@
   <block id="4fbc8584021c60a153dbf213f698df58" category="paragraph">Observe que os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo em sua pesquisa.  Você pode optar por restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.</block>
   <block id="8cb59bcb28ab4d28eff3f32b41c1619f" category="paragraph">Primeiro, você precisará montar um volume separado para armazenar os arquivos de catálogo. Isso evita a perda de dados caso o tamanho dos arquivos que contêm os instantâneos se torne muito grande. Isso não é necessário em todos os clusters; você pode montar qualquer volume de qualquer um dos clusters em seu ambiente. Caso contrário, a indexação poderá não funcionar corretamente.</block>
   <block id="49b1bd86131611255094bea2f77118b7" category="paragraph">Para o volume montado, utilize as seguintes orientações de dimensionamento:</block>
-  <block id="0207db4ce855854d816d06443ff062ea" category="list-text">Utilize um volume NetApp NVS</block>
   <block id="aa45cf8d923bfb8185fed2178e78d921" category="list-text">Armazenamento AFF recomendado com taxa de transferência de disco de 300 MB/s. A redução da capacidade de processamento afetará as buscas e outras operações.</block>
   <block id="076bea46cdc896921ec2687cf3f345bb" category="list-text">Habilite os snapshots do NetApp para proteger os metadados do catálogo, além dos arquivos zip de backup do catálogo.</block>
   <block id="1c3669c2099ac1b271c6bc4f19601ca5" category="list-text">50 GB por 1 bilhão de arquivos</block>
@@ -4779,4 +4774,7 @@
   <block id="b72cbffce68718636e4f9c2f1c2a8173" category="list-text"><block ref="f0a1a1822bca6dd563c941cbc831d447" category="inline-link-macro-rx"></block></block>
   <block id="cee41b55e417d2c681bd345802b719fd" category="sidebar">Visão geral da restauração</block>
   <block id="a49488740a7ad2d76917598dae6b3fbb" category="sidebar">Restaurar a partir de backups do ONTAP usando a opção Procurar e Restaurar.</block>
+  <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a função de Busca e Restauração:</block>
+  <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada são os seguintes:</block>
+  <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilize um volume NetApp NFS</block>
 </blocks>

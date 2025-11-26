@@ -69,12 +69,6 @@ Esta tabela fornece uma comparação de recursos dos dois métodos.
 | Não realiza a recuperação de arquivos se o arquivo foi excluído ou renomeado e o usuário não sabe o nome original do arquivo | Manipula diretórios recém-criados/excluídos/renomeados e arquivos recém-criados/excluídos/renomeados 
 
 
-| Não são necessários recursos adicionais do provedor de nuvem | Ao restaurar da nuvem, recursos adicionais de bucket e provedor de nuvem pública são necessários por conta. 
-
-
-| Não são necessários custos adicionais com provedores de nuvem | Ao restaurar da nuvem, custos adicionais são necessários ao verificar seus backups e volumes em busca de resultados de pesquisa. 
-
-
 | A restauração rápida é suportada. | A restauração rápida não é suportada. 
 |===
 Esta tabela fornece uma lista de operações de restauração válidas com base no local onde seus arquivos de backup residem.

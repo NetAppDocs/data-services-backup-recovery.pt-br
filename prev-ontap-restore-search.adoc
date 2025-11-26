@@ -126,6 +126,8 @@ Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF 
 
 == Pesquisar e restaurar pré-requisitos
 
+Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a função de Busca e Restauração:
+
 * Requisitos do cluster:
 +
 ** A versão do ONTAP deve ser 9.8 ou superior.
@@ -141,6 +143,10 @@ Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF 
 
 === Pré-requisitos para a função de Busca e Restauração Legada (usando o Catálogo Indexado v1)
 
+Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada são os seguintes:
+
+[%collapsible]
+====
 ifdef::aws[]
 
 * Requisitos da AWS:
@@ -203,6 +209,7 @@ Mesmo que você esteja usando um agente do Console local, os requisitos do prove
 
 
 
+====
 
 
 == Processo de busca e restauração
@@ -251,7 +258,7 @@ Primeiro, você precisará montar um volume separado para armazenar os arquivos 
 
 Para o volume montado, utilize as seguintes orientações de dimensionamento:
 
-* Utilize um volume NetApp NVS
+* Utilize um volume NetApp NFS
 * Armazenamento AFF recomendado com taxa de transferência de disco de 300 MB/s. A redução da capacidade de processamento afetará as buscas e outras operações.
 * Habilite os snapshots do NetApp para proteger os metadados do catálogo, além dos arquivos zip de backup do catálogo.
 * 50 GB por 1 bilhão de arquivos
