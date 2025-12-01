@@ -46,6 +46,7 @@ Não há limitação para volumes FlexVol - você pode selecionar todos os volum
 
 
 * Ao criar replicações de sistemas ONTAP locais, se a versão do ONTAP no sistema Cloud Volumes ONTAP de destino for 9.8, 9.9 ou 9.11, somente políticas de mirror-vault serão permitidas.
+* O NetApp Backup & Recovery não oferece suporte à conversão de um FlexVol volume com um relacionamento de backup em nuvem ativo para um volume FlexGroup , mantendo a funcionalidade de backup em nuvem.
 
 
 

@@ -4777,4 +4777,5 @@
   <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a função de Busca e Restauração:</block>
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada são os seguintes:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilize um volume NetApp NFS</block>
+  <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">O NetApp Backup &amp; Recovery não oferece suporte à conversão de um FlexVol volume com um relacionamento de backup em nuvem ativo para um volume FlexGroup , mantendo a funcionalidade de backup em nuvem.</block>
 </blocks>
