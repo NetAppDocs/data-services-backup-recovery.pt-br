@@ -25,7 +25,7 @@ Você pode restaurar máquinas virtuais de diferentes locais de inicialização:
 
 
 .Restaurar para estes pontos
-Você pode restaurar dados para o local original; restaurar para um local alternativo não está disponível nesta versão de visualização.
+Você pode restaurar dados para estes pontos:
 
 * Restaurar para o local original
 
@@ -108,10 +108,7 @@ Em seguida, você pode escolher as configurações de destino e as opções de p
 --
 .Restaurar para local alternativo
 --
-Não disponível para visualização do KVM.
-
-. Selecione *Restaurar*.
-
+Não disponível para a pré-visualização de cargas de trabalho KVM.
 
 --
 ====

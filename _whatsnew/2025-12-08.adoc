@@ -1,0 +1,15 @@
+= Melhorias de pré-visualização de cargas de trabalho da VMware
+:allow-uri-read: 
+
+
+
+
+=== Melhorias de pré-visualização de cargas de trabalho da VMware
+
+A versão de pré-visualização das cargas de trabalho do VMware apresenta os seguintes recursos aprimorados:
+
+* Agora você pode restaurar backups e snapshots para um local alternativo. Isso é útil se você quiser gerenciar versões de uma máquina virtual em diferentes implementações do VMware vCenter, hosts VMware ESXi ou datastores VMware.
+* Agora você pode restaurar discos virtuais VMware específicos (imagens VMDK) a partir de um local primário ou secundário, permitindo um controle mais preciso sobre a restauração dos dados da máquina virtual.
+
+
+link:br-use-vmware-restore.html["Saiba mais sobre como restaurar cargas de trabalho do VMware com o NetApp Backup and Recovery."].

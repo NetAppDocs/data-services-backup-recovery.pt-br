@@ -1037,7 +1037,6 @@
   <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">Seção *Notificação*:</block>
   <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*Ativar notificações por e-mail*: selecione esta opção para receber notificações por e-mail sobre a operação de restauração e indique que tipo de notificação você deseja receber.</block>
   <block id="f77361b272ce81d8275727f7b1a756a8" category="list-text">Selecione *Restaurar*.</block>
-  <block id="aef04a364ab7bd7fcab1346a4084cdaa" category="paragraph">Não disponível para visualização privada do Hyper-V.</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">Você pode proteger aplicativos e dados de aplicativos do Kubernetes de sistemas ONTAP locais para Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantindo que seus dados estejam protegidos.</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">Visão geral do gerenciamento de cargas de trabalho do Kubernetes</block>
   <block id="14cca4b1ac5c46a49fffa25e733381e7" category="paragraph">Gerenciar cargas de trabalho do Kubernetes no NetApp Backup and Recovery permite que você descubra, gerencie e proteja seus clusters e aplicativos do Kubernetes em um só lugar. Você pode gerenciar recursos e aplicações hospedados em seus clusters do Kubernetes. Você também pode criar e associar políticas de proteção às suas cargas de trabalho do Kubernetes, tudo usando uma única interface.</block>
@@ -1090,7 +1089,6 @@
   <block id="42b3c9b2282ae6b4644cee5b5995979d" category="summary">Proteja suas cargas de trabalho KVM com o NetApp Backup and Recovery.</block>
   <block id="02055854e5f8d7c0a2161503c5645d5a" category="doc">Restaurar máquinas virtuais KVM com o NetApp Backup and Recovery</block>
   <block id="4ebed5b1ff5b9230bfba78b5f3751082" category="paragraph">Você pode restaurar máquinas virtuais de diferentes locais de inicialização:</block>
-  <block id="2003d1dd0ff605a8b0183ae69c3823f3" category="paragraph">Você pode restaurar dados para o local original; restaurar para um local alternativo não está disponível nesta versão de visualização.</block>
   <block id="c149f6b4ccbdba8011de4b1e3579b42f" category="list-text">Restaurar para o local original</block>
   <block id="25a77bf38583c396d6997e367e9268c8" category="section-title">Como funciona a restauração de máquinas virtuais</block>
   <block id="01d60535f98ec4122ee816d29473c760" category="paragraph">Ao restaurar máquinas virtuais, ocorre o seguinte:</block>
@@ -1101,7 +1099,6 @@
   <block id="108ce4e259c8e5532d28e1f7b55053e0" category="paragraph">Restaure máquinas virtuais KVM usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.</block>
   <block id="28826b6f1571b9d0354ca0ae481f50c6" category="list-text">Na lista suspensa à direita do campo de pesquisa de nome, selecione *KVM*.</block>
   <block id="066fa262c239f022506c95a1e09ebb65" category="list-text">Insira o nome da VM que você deseja restaurar ou filtre pelo host da VM ou pool de armazenamento onde o recurso que você deseja restaurar está localizado.</block>
-  <block id="7f95c9104d9c5d062c442ee5aade255c" category="paragraph">Não disponível para visualização do KVM.</block>
   <block id="67833cdc3e0f9b5bea226d3734262615" category="summary">O NetApp Backup and Recovery permite que você gerencie ganchos de execução para agir antes ou depois das operações de proteção de aplicativos.</block>
   <block id="3d932cbb71cd117a65669b165e078b5b" category="doc">Gerenciar modelos de ganchos de execução de NetApp Backup and Recovery para cargas de trabalho do Kubernetes</block>
   <block id="ac84b7596169ab3fb6c24e8a5c85c234" category="inline-link">Protegendo dados com VMs KubeVirt</block>
@@ -1916,16 +1913,7 @@
   <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">Você pode restaurar dados para estes pontos:</block>
   <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">Restaure cargas de trabalho do VMware usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.</block>
   <block id="1ca9578c25474d5cfeaa6c44bdbaa9b2" category="paragraph">*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, função de administrador de restauração de backup e recuperação.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
-  <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">Na lista suspensa à direita do campo de pesquisa de nome, selecione *Máquinas virtuais*.</block>
   <block id="2aceb93307f82c2d88347faa7eaa4e71" category="list-text">Insira o nome do recurso que você deseja restaurar ou filtre pelo vCenter, datacenter ou armazenamento de dados onde o recurso que você deseja restaurar está localizado.</block>
-  <block id="3fca73cfa6e5a82be82156106e4db553" category="paragraph">Uma lista de opções de local de restauração é exibida.</block>
-  <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">Selecione o local de restauração onde você deseja restaurar o instantâneo:</block>
-  <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">Local: restaura o instantâneo para o local original.</block>
-  <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">Armazenamento secundário: restaura o instantâneo em um local de armazenamento secundário.</block>
-  <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">Armazenamento de objetos: restaura o instantâneo em um local de armazenamento de objetos.</block>
-  <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">Se você escolher o armazenamento de objetos, verifique se deseja verificar o instantâneo novamente antes de restaurá-lo.</block>
-  <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">Na página Detalhes do destino da restauração, insira as seguintes informações:</block>
-  <block id="c8f730ad9d8597b4dfcdd623d5a511aa" category="paragraph">Não disponível para visualização do VMware.</block>
   <block id="a5315c2927cf2b05876fdd6713fbd713" category="summary">O NetApp Backup and Recovery é um serviço de dados que fornece proteção de dados eficiente, segura e econômica para todas as suas cargas de trabalho ONTAP , incluindo volumes, bancos de dados, máquinas virtuais e cargas de trabalho do Kubernetes.</block>
   <block id="0541ead918a4013aad82336e0654ba53" category="paragraph">O suporte para backup e recuperação já está integrado em todos os sistemas ONTAP , portanto não há necessidade de hardware adicional, licenças de software ou gateways de mídia.  Isso torna as operações de backup simples e econômicas.  O console NetApp simplifica a implementação de qualquer estratégia de backup, incluindo todo o espectro de variantes de backup 3-2-1, sem a necessidade de vários gerentes de recursos ou pessoal especializado.</block>
   <block id="8fa16cd18cf0722e85fe3e62f649f0c8" category="admonition">A documentação sobre a proteção de cargas de trabalho VMware, KVM, Hyper-V e Kubernetes é fornecida como uma prévia da tecnologia. Com esta oferta de visualização, a NetApp reserva-se o direito de modificar os detalhes, o conteúdo e o cronograma da oferta antes da disponibilidade geral.</block>
@@ -4487,9 +4475,6 @@
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arquivo de backup.</block>
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Na página Restaurar (Pesquisar e Restaurar), você pode restaurar um recurso pesquisando o snapshot com filtros, mesmo que não se lembre do nome exato, local ou última data conhecida.</block>
   <block id="167f8fde1782c144b38a4f581246608e" category="paragraph">Se você escolher armazenamento secundário, insira os locais de origem e destino para dados e logs.</block>
-  <block id="9908b0e588dc1ce9587bfb1206e3118e" category="paragraph">Em seguida, escolha as configurações de destino e as opções de pré e pós-restauração.</block>
-  <block id="299981ed6b0aaf1c2eed2a8e35151313" category="list-text">*Ativar restauração rápida*: selecione esta opção para executar uma operação de restauração rápida. Você pode usar os volumes e dados restaurados imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.</block>
-  <block id="ca9d8ef3573c04098ddeb120eb1f19e5" category="list-text">*Ativar notificações por e-mail*: selecione para receber notificações por e-mail sobre a operação de restauração e escolha os tipos de notificação desejados.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisitos de software para o host do Hyper-V Windows Server:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Se a operação de restauração não for concluída, aguarde até que o Job Monitor mostre "Falha" antes de tentar a operação de restauração novamente.</block>
   <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Você pode restaurar dados de máquinas virtuais da nuvem para o vCenter Server local com o NetApp Backup and Recovery. Você pode restaurar a máquina virtual exatamente no mesmo local de onde o backup foi feito ou em um local alternativo. Se o backup da máquina virtual foi feito usando a política de arquivamento, você pode definir a prioridade de restauração de arquivamento.</block>
@@ -4778,4 +4763,40 @@
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada são os seguintes:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilize um volume NetApp NFS</block>
   <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">O NetApp Backup &amp; Recovery não oferece suporte à conversão de um FlexVol volume com um relacionamento de backup em nuvem ativo para um volume FlexGroup , mantendo a funcionalidade de backup em nuvem.</block>
+  <block id="063090df0880212c0ba8eec878096a21" category="doc">Melhorias de pré-visualização de cargas de trabalho da VMware</block>
+  <block id="24936fb650df7af8295e75a3667becef" category="list-text">Agora você pode restaurar backups e snapshots para um local alternativo. Isso é útil se você quiser gerenciar versões de uma máquina virtual em diferentes implementações do VMware vCenter, hosts VMware ESXi ou datastores VMware.</block>
+  <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">Agora você pode restaurar discos virtuais VMware específicos (imagens VMDK) a partir de um local primário ou secundário, permitindo um controle mais preciso sobre a restauração dos dados da máquina virtual.</block>
+  <block id="814957340a966bc73ff87feca2905da9" category="inline-link-macro">Saiba mais sobre como restaurar cargas de trabalho do VMware com o NetApp Backup and Recovery.</block>
+  <block id="8b8a6f71e41f04ff546fb14f0800f38f" category="paragraph"><block ref="9f09945a70747c90951b9e96b5ea16be" category="inline-link-macro-rx"></block>.</block>
+  <block id="7689264f717abcf16a917111f707d7e0" category="paragraph">Não disponível para a pré-visualização de cargas de trabalho do Hyper-V.</block>
+  <block id="77f252cb66af8ee7dab8b27bcf3851ca" category="paragraph">Não disponível para a pré-visualização de cargas de trabalho KVM.</block>
+  <block id="516f1f530028d7905b72cd1b035c8a73" category="list-text">*Restaurar para o local original*: A VM é restaurada para o local original, na mesma implantação do vCenter, host ESXi e armazenamento de dados. A máquina virtual e todos os seus dados foram sobrescritos.</block>
+  <block id="d2f574e5e69d11881580660614b89ba3" category="list-text">*Restaurar para um local alternativo*: Você pode escolher um vCenter, host ESXi ou datastore diferente como destino de restauração para a VM. Isso é útil para gerenciar diferentes cópias da mesma máquina virtual em locais e estados diferentes.</block>
+  <block id="fa378eb8651e1bbe815e91c2a4ec5b2b" category="list-text">Na lista suspensa à direita do campo de pesquisa de nome, selecione *VMware*.</block>
+  <block id="b2135f4d6adba994b22c157197d8699b" category="paragraph">Aparecerá uma lista de máquinas virtuais que correspondem aos seus critérios de pesquisa.</block>
+  <block id="7e4be521d13fb903d20636d087795bdb" category="list-text">Encontre na lista a máquina virtual da qual deseja restaurar e selecione o botão *Restaurar máquina virtual* correspondente.</block>
+  <block id="02e027e60aca2a9aa354a74b09718442" category="paragraph">Aparece uma lista de snapshots (pontos de restauração) criados nessa máquina virtual.</block>
+  <block id="a15361d377b43197c1044f0729f9742e" category="list-text">Marque a caixa de seleção correspondente ao snapshot que deseja restaurar.</block>
+  <block id="4716cc8d1f61fba6b3c321e87aece13d" category="paragraph">Aparecem as opções de localização da captura de tela.</block>
+  <block id="f16b36eea83bd45d35d7613cab7f6cf8" category="list-text">Selecione o destino de restauração para o instantâneo:</block>
+  <block id="086fbde8fbe590f104f5100808b42c0b" category="list-text">*Local*: Restaura o instantâneo a partir do local local.</block>
+  <block id="3a786499ea5d54fb6bb418032aca3117" category="list-text">*Secundário*: Restaura o snapshot a partir de um local de armazenamento remoto.</block>
+  <block id="bc9234ce73c565f247a8ae290b842ff6" category="list-text">Escolha as configurações de destino e as opções de pré e pós-restauração.</block>
+  <block id="8ed9e5a565b596ef7f9cb364cf2536d7" category="paragraph">Ao restaurar para o local original, você não pode alterar o vCenter de destino, o host ESXi, o armazenamento de dados ou o nome da máquina virtual. A máquina virtual original é sobrescrita durante a operação de restauração.</block>
+  <block id="10b0d3ffb47c4e67fc652e3b0f0220d7" category="list-text">Selecione o painel *Localização original*.</block>
+  <block id="1b8d4d654146b4eec3cc22bd8b461dbb" category="list-text">Escolha uma das seguintes opções:</block>
+  <block id="9969fdcd80f8f04232cfe10158190f8c" category="list-text">Seção *Opções de pré-restauração*:</block>
+  <block id="3e4b444bf949d263dd0a42369aeba637" category="list-text">*Prescript*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado antes do início da operação de restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.</block>
+  <block id="181dff5c613144551ed16703a090b3b5" category="list-text">Seção *Opções pós-restauração*:</block>
+  <block id="81dcec9119b8491a178fac7f1cf17c92" category="list-text">*Reiniciar máquina virtual*: Habilite esta opção para reiniciar a máquina virtual após a conclusão da operação de restauração e após a aplicação do script pós-restauração.</block>
+  <block id="7de4def82cb6f4cb7277085992e1be0a" category="list-text">*P.S.*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado após a conclusão da restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.</block>
+  <block id="72e03b5a87389f676881b79f8d4170ca" category="paragraph">Ao restaurar para um local alternativo, você pode alterar o vCenter de destino, o host ESXi, o armazenamento de dados e o nome da VM para criar uma nova cópia da VM em um local diferente ou com um nome diferente.</block>
+  <block id="d9a04cc80eb84134a783629255c7bc36" category="list-text">Selecione o painel *Localização alternativa*.</block>
+  <block id="f78868ada341077e1afdf76ea00e0454" category="list-text">Seção *Configurações de destino*:</block>
+  <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*FQDN ou endereço IP do vCenter*: Selecione o servidor vCenter onde deseja restaurar o snapshot.</block>
+  <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*Host ESXi*: Selecione o host onde deseja restaurar o snapshot.</block>
+  <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*Rede*: Selecione a rede na qual deseja restaurar o snapshot.</block>
+  <block id="08c806f7ec865a3481f751e978944e5d" category="list-text">*Repositório de dados*: Insira o nome do repositório de dados onde você deseja restaurar o snapshot.</block>
+  <block id="70fd3915e87d44c5f19fc35858b165f8" category="list-text">*Nome da máquina virtual*: Insira o nome da máquina virtual onde você deseja restaurar o snapshot. Se o nome corresponder a uma VM já existente no armazenamento de dados, o Backup e Recuperação tornará o nome único, acrescentando um carimbo de data/hora atual.</block>
+  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">08 de dezembro de 2025</block>
 </blocks>

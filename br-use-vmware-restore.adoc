@@ -27,7 +27,8 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 .Restaurar para estes pontos
 Você pode restaurar dados para estes pontos:
 
-* Restaurar para o local original
+* *Restaurar para o local original*: A VM é restaurada para o local original, na mesma implantação do vCenter, host ESXi e armazenamento de dados. A máquina virtual e todos os seus dados foram sobrescritos.
+* *Restaurar para um local alternativo*: Você pode escolher um vCenter, host ESXi ou datastore diferente como destino de restauração para a VM. Isso é útil para gerenciar diferentes cópias da mesma máquina virtual em locais e estados diferentes.
 
 
 .Considerações sobre restauração de armazenamento de objetos
@@ -62,57 +63,56 @@ Restaure cargas de trabalho do VMware usando a opção Restaurar. Você pode pro
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Restaurar*.
-. Na lista suspensa à direita do campo de pesquisa de nome, selecione *Máquinas virtuais*.
+. Na lista suspensa à direita do campo de pesquisa de nome, selecione *VMware*.
 . Insira o nome do recurso que você deseja restaurar ou filtre pelo vCenter, datacenter ou armazenamento de dados onde o recurso que você deseja restaurar está localizado.
 +
-Aparece uma lista de instantâneos que correspondem aos seus critérios de pesquisa.
+Aparecerá uma lista de máquinas virtuais que correspondem aos seus critérios de pesquisa.
 
-. Selecione o instantâneo que você deseja restaurar.
+. Encontre na lista a máquina virtual da qual deseja restaurar e selecione o botão *Restaurar máquina virtual* correspondente.
 +
-Uma lista de opções de local de restauração é exibida.
+Aparece uma lista de snapshots (pontos de restauração) criados nessa máquina virtual.
 
-. Selecione o local de restauração onde você deseja restaurar o instantâneo:
+. Marque a caixa de seleção correspondente ao snapshot que deseja restaurar.
+. Selecione *Avançar*.
 +
-** Local: restaura o instantâneo para o local original.
-** Armazenamento secundário: restaura o instantâneo em um local de armazenamento secundário.
+Aparecem as opções de localização da captura de tela.
+
+. Selecione o destino de restauração para o instantâneo:
++
+** *Local*: Restaura o instantâneo a partir do local local.
+** *Secundário*: Restaura o snapshot a partir de um local de armazenamento remoto.
 +
 Se você escolher armazenamento secundário, insira os locais de origem e destino para dados e logs.
 
-** Armazenamento de objetos: restaura o instantâneo em um local de armazenamento de objetos.
-+
-Se você escolher o armazenamento de objetos, verifique se deseja verificar o instantâneo novamente antes de restaurá-lo.
 
 
-
-. Selecione *Concluído* ou *Avançar* para continuar para a página Restaurar configurações de destino.
-+
-Em seguida, escolha as configurações de destino e as opções de pré e pós-restauração.
-
+. Selecione *Avançar* para continuar para a página Restaurar configurações de destino.
+. Escolha as configurações de destino e as opções de pré e pós-restauração.
 
 
 [discrete]
 ===== Seleção de destino
 
-. Escolha as configurações de destino e as opções de pré e pós-restauração.
-
-
 [role="tabbed-block"]
 ====
 .Restaurar para o local original
 --
-Na página Detalhes do destino da restauração, insira as seguintes informações:
+Ao restaurar para o local original, você não pode alterar o vCenter de destino, o host ESXi, o armazenamento de dados ou o nome da máquina virtual. A máquina virtual original é sobrescrita durante a operação de restauração.
 
-. *Ativar restauração rápida*: selecione esta opção para executar uma operação de restauração rápida. Você pode usar os volumes e dados restaurados imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
-. *Opções de pré-restauração*: insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
-. *Opções pós-restauração*:
+. Selecione o painel *Localização original*.
+. Escolha uma das seguintes opções:
 +
-** *Reiniciar VM*: selecione esta opção para reiniciar a VM após a conclusão da operação de restauração e após a aplicação do script pós-restauração.
-** *Postscript*: Insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
-
-
-. Seção *Notificação*:
+** Seção *Opções de pré-restauração*:
 +
-** *Ativar notificações por e-mail*: selecione para receber notificações por e-mail sobre a operação de restauração e escolha os tipos de notificação desejados.
+*** *Prescript*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado antes do início da operação de restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+** Seção *Opções pós-restauração*:
++
+*** *Reiniciar máquina virtual*: Habilite esta opção para reiniciar a máquina virtual após a conclusão da operação de restauração e após a aplicação do script pós-restauração.
+*** *P.S.*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado após a conclusão da restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
 
 
 . Selecione *Restaurar*.
@@ -121,7 +121,35 @@ Na página Detalhes do destino da restauração, insira as seguintes informaçõ
 --
 .Restaurar para local alternativo
 --
-Não disponível para visualização do VMware.
+Ao restaurar para um local alternativo, você pode alterar o vCenter de destino, o host ESXi, o armazenamento de dados e o nome da VM para criar uma nova cópia da VM em um local diferente ou com um nome diferente.
+
+. Selecione o painel *Localização alternativa*.
+. Insira as seguintes informações:
++
+** Seção *Configurações de destino*:
++
+*** *FQDN ou endereço IP do vCenter*: Selecione o servidor vCenter onde deseja restaurar o snapshot.
+*** *Host ESXi*: Selecione o host onde deseja restaurar o snapshot.
+*** *Rede*: Selecione a rede na qual deseja restaurar o snapshot.
+*** *Repositório de dados*: Insira o nome do repositório de dados onde você deseja restaurar o snapshot.
+*** *Nome da máquina virtual*: Insira o nome da máquina virtual onde você deseja restaurar o snapshot. Se o nome corresponder a uma VM já existente no armazenamento de dados, o Backup e Recuperação tornará o nome único, acrescentando um carimbo de data/hora atual.
+
+
+** Seção *Opções de pré-restauração*:
++
+*** *Prescript*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado antes do início da operação de restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+** Seção *Opções pós-restauração*:
++
+*** *Reiniciar máquina virtual*: Habilite esta opção para reiniciar a máquina virtual após a conclusão da operação de restauração e após a aplicação do script pós-restauração.
+*** *P.S.*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado após a conclusão da restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+
+
+. Selecione *Restaurar*.
+
 
 --
 ====
