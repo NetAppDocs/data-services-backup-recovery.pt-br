@@ -1286,7 +1286,6 @@
   <block id="f12cc055f626f9974e07168ee36fc2b6" category="list-text">No menu NetApp Backup and Recovery , selecione *Monitoramento*.</block>
   <block id="e81a8bad1be4be12a837fcfb49f51617" category="list-text">Para mostrar colunas adicionais (Sistema, SVM, Nome do usuário, Carga de trabalho, Nome da política, Rótulo do instantâneo), selecione o sinal de mais.</block>
   <block id="87aa191eff82d3ce3518c07577f209bd" category="section-title">Pesquise e filtre a lista de empregos</block>
-  <block id="9d0747ab797d5b67d7daca67845988b1" category="paragraph">Você pode filtrar as operações na página Monitoramento de tarefas usando vários filtros, como política, rótulo de instantâneo, tipo de operação (proteção, restauração, retenção ou outro) e tipo de proteção (instantâneo local, replicação ou backup na nuvem).</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">Por padrão, a página Monitoramento de tarefas mostra tarefas de proteção e recuperação das últimas 24 horas.  Você pode alterar o período usando o filtro Período de tempo.</block>
   <block id="a466bc110c2ee16333fcf19f4e7b5dc2" category="list-text">Para classificar os resultados de forma diferente, selecione cada título de coluna para classificar por Status, Hora de início, Nome do recurso e muito mais.</block>
   <block id="abfa7a0ebf0068a9c8b2a22cab7ee2b3" category="list-text">Se você estiver procurando por empregos específicos, selecione a área *Pesquisa e filtragem avançadas* para abrir o painel de pesquisa.</block>
@@ -1311,16 +1310,13 @@
   <block id="2b0ecb40cc305f7af9fe7f986b5bb2dd" category="list-text">Para baixar um arquivo CSV para todos os trabalhos, selecione o botão Download e localize o arquivo no seu diretório de download.</block>
   <block id="1dc45daaf063a4c51a123d4f491b6b42" category="list-text">Para baixar um arquivo JSON para um único trabalho, selecione o menu Ações<block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> para o trabalho, selecione *Baixar arquivo JSON* e localize o arquivo no seu diretório de download.</block>
   <block id="f1a15f873b659fefcf2800c9489b580b" category="section-title">Revisar tarefas de retenção (ciclo de vida de backup)</block>
-  <block id="5168f75ce01db43e41309dbb9ba106a7" category="paragraph">O tipo de trabalho "Retenção" captura todos os trabalhos de exclusão de instantâneo iniciados em um volume protegido pelo NetApp Backup and Recovery.</block>
   <block id="9304f305aa89a02039b5cb4ac930f498" category="list-text">Selecione a área *Pesquisa e filtragem avançadas* para abrir o painel Pesquisa.</block>
   <block id="67e8772c27eee052c978af0d5760e36a" category="list-text">Selecione "Retenção" como o tipo de trabalho.</block>
   <block id="1c3cccbea914c20304f63319b99fb585" category="section-title">Revise os alertas de backup e restauração no Centro de Notificações do NetApp Console</block>
   <block id="bacd9783e91bb01896a4e564be2f9207" category="paragraph">O Centro de Notificações do NetApp Console rastreia o progresso dos trabalhos de backup e restauração que você iniciou para que você possa verificar se a operação foi bem-sucedida ou não.</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">Saiba mais sobre o Centro de Notificações e como enviar e-mails de alerta para tarefas de backup e restauração</block>
-  <block id="3b27991b1aa229f52835df236ba4b917" category="paragraph">O Centro de Notificações exibe vários eventos de Snapshot, replicação, backup na nuvem e restauração, mas apenas certos eventos acionam alertas por e-mail:</block>
   <block id="9e35f94818feb2156d0744e4be9fb2ea" category="cell">Tipo de operação</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">Evento</block>
-  <block id="630469b1210edbcdbdfbbd418f05c1ca" category="cell">Nível de alerta</block>
   <block id="cfa4593b1fb6aea2e32d9928f2c4349b" category="cell">E-mail enviado</block>
   <block id="a9a62e70841c4d06dd16306a85700d36" category="cell">Ativação</block>
   <block id="c74709859d025e289686ff60f170d924" category="cell">Falha na ativação do backup e recuperação do sistema</block>
@@ -1992,11 +1988,8 @@
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">Se você planeja restaurar dados de volume de um arquivo de backup que foi movido para um armazenamento de objetos de arquivamento, haverá uma taxa adicional de recuperação por GiB e uma taxa por solicitação do provedor de nuvem.</block>
   <block id="e44d61516574d94ce56af3468723e18a" category="list-text">Se você planeja verificar se há ransomware em um arquivo de backup durante o processo de restauração de dados de volume (se você habilitou o DataLock e o Ransomware Resilience para seus backups na nuvem), você também incorrerá em custos extras de saída do seu provedor de nuvem.</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">*Taxas de serviço*</block>
-  <block id="40ff88020bcb9f0e42545b8535db30db" category="paragraph">As taxas de serviço são pagas à NetApp e cobrem tanto o custo de _criação_ de backups no armazenamento de objetos quanto de _restauração_ de volumes ou arquivos desses backups.  Você paga somente pelos dados que protege no armazenamento de objetos, calculado pela capacidade lógica de origem utilizada (_antes_ das eficiências do ONTAP ) dos volumes ONTAP que são copiados para o armazenamento de objetos.  Essa capacidade também é conhecida como Terabytes Front-End (FETB).</block>
   <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">Para o Microsoft SQL Server, serão aplicadas taxas quando você inicia a replicação de instantâneos para um destino ONTAP secundário ou armazenamento de objetos.</block>
-  <block id="da19f2e50cbb3312d0bcc973d8486544" category="paragraph">Existem três maneiras de pagar pelo serviço de Backup:</block>
   <block id="032820ef020ebdcb4972d36db7394681" category="list-text">A primeira opção é assinar com seu provedor de nuvem, o que permite que você pague por mês.</block>
-  <block id="a426b39cc5038676b39d2265b22cebec" category="list-text">A segunda opção é obter um contrato anual.</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">Licenciamento</block>
   <block id="8426d45850b9ec06adef93652db54080" category="list-text">A terceira opção é comprar licenças diretamente da NetApp.  Leia o<block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> seção para detalhes.</block>
   <block id="30c887a11915f5c1adb97321b93a9e39" category="paragraph">O NetApp Backup and Recovery está disponível com os seguintes modelos de consumo:</block>
@@ -4608,7 +4601,6 @@
   <block id="35521e84b87db7ff299e3d292854a426" category="paragraph">Restaure cargas de trabalho do Hyper-V a partir de snapshots, de um backup da carga de trabalho replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.</block>
   <block id="c71707f07223923dbaab7d7f94cf956b" category="paragraph">Restaure máquinas virtuais KVM a partir de snapshots, de um backup de grupo de proteção replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.</block>
   <block id="c4a9fad82bfaa655d1dc063df314c9ed" category="list-text">Configure o diretório de logs (em *Inventário* &gt; *Hosts*). Se você quiser fazer backup de logs para seus hosts de banco de dados no snapshot, primeiro configure os logs no NetApp Backup and Recovery. Para mais detalhes, consulte<block ref="24412093cd6bfc9d3bb3355f8f2561e8" category="inline-link-macro-rx"></block> .</block>
-  <block id="d4269b8b09864c01c1c86fd8fbf36f7e" category="paragraph">Uma tarefa de ciclo de vida de backup rastreia todos os snapshots que foram excluídos ou que estão na fila para serem excluídos. A partir do ONTAP 9.13, você pode ver todos os tipos de trabalho chamados "Retenção" na página Monitoramento de Trabalho.</block>
   <block id="e55271e37b053fabbe06b3671cfb3c48" category="paragraph">O NetApp Backup and Recovery utiliza o NetApp SnapMirror para sincronizar backups, criando snapshots e transferindo-os para os locais de backup.</block>
   <block id="ac953870175731881060585a6b9ee690" category="paragraph">O NetApp Backup and Recovery permite fazer backup de instâncias e bancos de dados do Microsoft SQL Server dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada. Os snapshots residem no sistema de origem.</block>
   <block id="d07d19d5986209f0a00db1f8289e73d2" category="paragraph">Você pode restaurar instâncias e bancos de dados do Microsoft SQL Server de um backup que reside no armazenamento primário ou em um sistema secundário (um volume replicado) ou no armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.</block>
@@ -4825,4 +4817,36 @@
   <block id="7580e90069a8f15fc27aabfe1ca9e800" category="list-text">No menu que aparecer, selecione *Restaurar máquina virtual*.</block>
   <block id="17f7a448c0fdbce6c9a45d289bcf9e83" category="list-text">*Repositório de dados*: Na lista suspensa, selecione o nome do repositório de dados onde deseja restaurar o snapshot.</block>
   <block id="92ef4bdfd24483ff1f89cbc83ac91ce5" category="list-text">Você pode restaurar a VM exatamente no mesmo local de onde o backup foi feito ou em um local alternativo.</block>
+  <block id="c8114f7295c45b5e4daffaaf7225f524" category="paragraph">Na página de Monitoramento de Tarefas, você pode filtrar as operações usando diversos filtros, como política, rótulo do snapshot, tipo de operação (proteção, restauração, retenção ou outro) e tipo de proteção (snapshot local, replicação ou backup na nuvem).</block>
+  <block id="8e357ee9c7f7033fb2069bec01bfa7b5" category="paragraph">Uma tarefa de ciclo de vida de backup rastreia todos os snapshots que foram excluídos ou que estão na fila para serem excluídos. A partir do ONTAP 9.13, você pode visualizar todos os tipos de trabalho denominados "Retenção" na página de Monitoramento de Trabalhos.</block>
+  <block id="192bfa3d569dc6662018c9e874cd07e8" category="paragraph">O tipo de tarefa "Retenção" captura todas as tarefas de exclusão de snapshots iniciadas em um volume protegido pelo NetApp Backup and Recovery.</block>
+  <block id="81f2ef03318777ac36a4a73237288610" category="paragraph">A Central de Notificações exibe inúmeros eventos de snapshot, replicação, backup na nuvem e restauração, mas apenas alguns eventos acionam alertas por e-mail:</block>
+  <block id="5dd32721e3e223e6a87039f75b4c315d" category="cell">Alerta gerado</block>
+  <block id="a907ac316a0e62996e50939eddb00cf1" category="cell">Volume agora associado à política de instantâneo</block>
+  <block id="de05700e8dd719721f13f9c6b00f1b7a" category="cell">Backup de volume ou estado modificado</block>
+  <block id="832781ccddafcada7da950ee920e4677" category="cell">Ativação do recurso de backup e recuperação concluída com sucesso para o sistema.</block>
+  <block id="f4ceecec904030bc411eb94dfb80f45a" category="cell">Falha no backup de volume ad-hoc</block>
+  <block id="80fd95bd893f8df76c2fa9dd4bad6849" category="cell">Backup de volume ad-hoc concluído com sucesso.</block>
+  <block id="5ed835b77018cbf32fbdfb39bcc25527" category="cell">Falha no backup de vários volumes</block>
+  <block id="0298583ff5a55aeec25dc314bbd47357" category="cell">Operações Cron</block>
+  <block id="f771739629c02b8a1545a40985444450" category="cell">Verificando se há rótulos de instantâneo ausentes</block>
+  <block id="39e7a35fbe3bf187f05710b99a1abab5" category="cell">Falha ao enviar o token de segurança para o ONTAP para este sistema.</block>
+  <block id="1da6059b2e40a5d5dcd0f29c0344d522" category="cell">Eventos Pub/Sub</block>
+  <block id="75c3b3bb89bde01f9166a94cbfa98588" category="cell">Falha na conexão</block>
+  <block id="4d40cebef25fff7de69b66a1fd2b91ac" category="cell">Falha ao excluir um instantâneo agendado.</block>
+  <block id="01a38301f446b2e021e1fa29a4fb17a3" category="cell">Falha no backup agendado do volume</block>
+  <block id="331af99e5b6a5cf68b545ebe121bccfb" category="cell">Restauração do volume concluída com sucesso.</block>
+  <block id="6be567f0c08a3a4af17cffb149fa98ce" category="cell">A restauração do volume falhou</block>
+  <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="cell">Ransomware</block>
+  <block id="cac26c3a96c9684d7c23fab2394f7ee9" category="cell">Possível ataque de ransomware identificado em cópia de segurança.</block>
+  <block id="4f7bae4887ae7adfba52529b1ef897f1" category="cell">Possível ataque de ransomware identificado na cópia de segurança deste sistema.</block>
+  <block id="781ab27075c39bdc6b2c5a6f2d1c7999" category="cell">Modificação da relação de replicação da falha de volume</block>
+  <block id="dcbc181d9286ddc85c2def0e5a88a627" category="cell">Operações-alvo</block>
+  <block id="490b6cef8b42244be7db684255156f74" category="cell">Falha ao restaurar para um destino local ou na nuvem</block>
+  <block id="985aacac93e75bfb41dca796dd136773" category="cell">falha de restauração sob demanda</block>
+  <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">Operações do sistema</block>
+  <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">Falha na criação de snapshot de volume ad-hoc</block>
+  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">As taxas de serviço são pagas à NetApp e cobrem tanto o custo de criação de backups para armazenamento de objetos ou um destino ONTAP quanto o custo de restauração de volumes ou arquivos a partir desses backups.  Você paga apenas pelos dados que protege no armazenamento de objetos ou no ONTAP (isso inclui configurações do SnapMirror ).  As cobranças são calculadas com base na capacidade lógica de origem utilizada (antes das otimizações do ONTAP ) dos volumes ONTAP que são copiados para armazenamento de objetos ou para um destino ONTAP . Essa capacidade também é conhecida como Terabytes Front-End (FETB).</block>
+  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">Existem três formas de pagar pelo serviço de Backup e Recuperação:</block>
+  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">A segunda opção é adquirir um contrato anual.</block>
 </blocks>

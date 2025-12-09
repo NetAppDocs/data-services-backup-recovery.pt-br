@@ -49,7 +49,7 @@ NOTE: Se você atualizou seus sistemas ONTAP para 9.13.x e não vê operações 
 
 === Pesquise e filtre a lista de empregos
 
-Você pode filtrar as operações na página Monitoramento de tarefas usando vários filtros, como política, rótulo de instantâneo, tipo de operação (proteção, restauração, retenção ou outro) e tipo de proteção (instantâneo local, replicação ou backup na nuvem).
+Na página de Monitoramento de Tarefas, você pode filtrar as operações usando diversos filtros, como política, rótulo do snapshot, tipo de operação (proteção, restauração, retenção ou outro) e tipo de proteção (snapshot local, replicação ou backup na nuvem).
 
 Por padrão, a página Monitoramento de tarefas mostra tarefas de proteção e recuperação das últimas 24 horas.  Você pode alterar o período usando o filtro Período de tempo.
 
@@ -118,9 +118,9 @@ Nas informações de Detalhes do monitoramento de trabalho, você pode baixar um
 
 Monitore os fluxos de retenção (_ciclo de vida do backup_) para verificar backups, mantê-los seguros e dar suporte a auditorias.  Identifique quando as cópias de backup expiram para rastrear o ciclo de vida.
 
-Uma tarefa de ciclo de vida de backup rastreia todos os snapshots que foram excluídos ou que estão na fila para serem excluídos. A partir do ONTAP 9.13, você pode ver todos os tipos de trabalho chamados "Retenção" na página Monitoramento de Trabalho.
+Uma tarefa de ciclo de vida de backup rastreia todos os snapshots que foram excluídos ou que estão na fila para serem excluídos. A partir do ONTAP 9.13, você pode visualizar todos os tipos de trabalho denominados "Retenção" na página de Monitoramento de Trabalhos.
 
-O tipo de trabalho "Retenção" captura todos os trabalhos de exclusão de instantâneo iniciados em um volume protegido pelo NetApp Backup and Recovery.
+O tipo de tarefa "Retenção" captura todas as tarefas de exclusão de snapshots iniciadas em um volume protegido pelo NetApp Backup and Recovery.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Monitoramento*.
@@ -136,41 +136,98 @@ O Centro de Notificações do NetApp Console rastreia o progresso dos trabalhos 
 
 Você pode visualizar alertas na Central de Notificações e configurar o Console para enviar alertas por e-mail sobre atividades importantes do sistema, mesmo quando você não estiver conectado. https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Saiba mais sobre o Centro de Notificações e como enviar e-mails de alerta para tarefas de backup e restauração"^] .
 
-O Centro de Notificações exibe vários eventos de Snapshot, replicação, backup na nuvem e restauração, mas apenas certos eventos acionam alertas por e-mail:
+A Central de Notificações exibe inúmeros eventos de snapshot, replicação, backup na nuvem e restauração, mas apenas alguns eventos acionam alertas por e-mail:
 
 [cols="1,2,1,1"]
 |===
-| Tipo de operação | Evento | Nível de alerta | E-mail enviado 
+| Tipo de operação | Evento | Alerta gerado | E-mail enviado 
 
 
-| Ativação | Falha na ativação do backup e recuperação do sistema | Erro | Sim 
+| Ativação | Falha na ativação do backup e recuperação do sistema | Sim | Sim 
 
 
-| Ativação | Falha na edição de backup e recuperação do sistema | Erro | Sim 
+| Ativação | Falha na edição de backup e recuperação do sistema | Sim | Sim 
 
 
-| Instantâneo local | Falha na tarefa de criação de snapshot ad hoc do NetApp Backup and Recovery | Erro | Sim 
+| Ativação | Volume agora associado à política de instantâneo | Sim | Sim 
 
 
-| Replicação | Falha na tarefa de replicação ad hoc do NetApp Backup and Recovery | Erro | Sim 
+| Ativação | Backup de volume ou estado modificado | Sim | Sim 
 
 
-| Replicação | Falha na tarefa de pausa de replicação do NetApp Backup and Recovery | Erro | Não 
+| Ativação | Ativação do recurso de backup e recuperação concluída com sucesso para o sistema. | Sim | Sim 
 
 
-| Replicação | Falha na tarefa de interrupção da replicação do NetApp Backup and Recovery | Erro | Não 
+| Ativação | Falha no backup de volume ad-hoc | Sim | Sim 
 
 
-| Replicação | Falha na tarefa de ressincronização de replicação do NetApp Backup and Recovery | Erro | Não 
+| Ativação | Backup de volume ad-hoc concluído com sucesso. | Sim | Não 
 
 
-| Replicação | Falha na tarefa de interrupção da replicação do NetApp Backup and Recovery | Erro | Não 
+| Ativação | Falha no backup de vários volumes | Sim | Sim 
 
 
-| Replicação | Falha na tarefa de ressincronização reversa da replicação do NetApp Backup and Recovery | Erro | Sim 
+| Operações Cron | Verificando se há rótulos de instantâneo ausentes | Sim | Sim 
 
 
-| Replicação | Falha na exclusão da tarefa de replicação do NetApp Backup and Recovery | Erro | Sim 
+| Operações Cron | Falha ao enviar o token de segurança para o ONTAP para este sistema. | Sim | Sim 
+
+
+| Eventos Pub/Sub | Falha na conexão | Sim | Não 
+
+
+| Eventos Pub/Sub | Falha ao excluir um instantâneo agendado. | Sim | Não 
+
+
+| Eventos Pub/Sub | Falha no backup agendado do volume | Sim | Não 
+
+
+| Eventos Pub/Sub | Restauração do volume concluída com sucesso. | Sim | Não 
+
+
+| Eventos Pub/Sub | A restauração do volume falhou | Sim | Não 
+
+
+| Ransomware | Possível ataque de ransomware identificado em cópia de segurança. | Sim | Sim 
+
+
+| Ransomware | Possível ataque de ransomware identificado na cópia de segurança deste sistema. | Sim | Sim 
+
+
+| Instantâneo local | Falha na tarefa de criação de snapshot ad hoc do NetApp Backup and Recovery | Sim | Sim 
+
+
+| Replicação | Modificação da relação de replicação da falha de volume | Sim | Sim 
+
+
+| Replicação | Falha na tarefa de replicação ad hoc do NetApp Backup and Recovery | Sim | Sim 
+
+
+| Replicação | Falha na tarefa de pausa de replicação do NetApp Backup and Recovery | Sim | Não 
+
+
+| Replicação | Falha na tarefa de interrupção da replicação do NetApp Backup and Recovery | Sim | Não 
+
+
+| Replicação | Falha na tarefa de ressincronização de replicação do NetApp Backup and Recovery | Sim | Não 
+
+
+| Replicação | Falha na tarefa de interrupção da replicação do NetApp Backup and Recovery | Sim | Não 
+
+
+| Replicação | Falha na tarefa de ressincronização reversa da replicação do NetApp Backup and Recovery | Sim | Sim 
+
+
+| Replicação | Falha na exclusão da tarefa de replicação do NetApp Backup and Recovery | Sim | Sim 
+
+
+| Operações-alvo | Falha ao restaurar para um destino local ou na nuvem | Sim | Sim 
+
+
+| Operações-alvo | falha de restauração sob demanda | Sim | Sim 
+
+
+| Operações do sistema | Falha na criação de snapshot de volume ad-hoc | Sim | Sim 
 |===
 
 NOTE: A partir do ONTAP 9.13.0, todos os alertas aparecem para o Cloud Volumes ONTAP e sistemas ONTAP locais.  Para sistemas com Cloud Volumes ONTAP 9.13.0 e ONTAP local, somente o alerta relacionado a "Trabalho de restauração concluído, mas com avisos" é exibido.
