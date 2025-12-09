@@ -4846,7 +4846,4 @@
   <block id="985aacac93e75bfb41dca796dd136773" category="cell">falha de restauração sob demanda</block>
   <block id="df660ed534483b04ecb1bf0371cdbe53" category="cell">Operações do sistema</block>
   <block id="eb31ef8eb2f5dc2e91e3fc628c278047" category="cell">Falha na criação de snapshot de volume ad-hoc</block>
-  <block id="cf45f15c2dbe19bdbf9de3e329061b93" category="paragraph">As taxas de serviço são pagas à NetApp e cobrem tanto o custo de criação de backups para armazenamento de objetos ou um destino ONTAP quanto o custo de restauração de volumes ou arquivos a partir desses backups.  Você paga apenas pelos dados que protege no armazenamento de objetos ou no ONTAP (isso inclui configurações do SnapMirror ).  As cobranças são calculadas com base na capacidade lógica de origem utilizada (antes das otimizações do ONTAP ) dos volumes ONTAP que são copiados para armazenamento de objetos ou para um destino ONTAP . Essa capacidade também é conhecida como Terabytes Front-End (FETB).</block>
-  <block id="1da151060a18e6460ac3d7eb0f913a37" category="paragraph">Existem três formas de pagar pelo serviço de Backup e Recuperação:</block>
-  <block id="6fa5c823869ff5f58a4f5dcaaa68d86d" category="list-text">A segunda opção é adquirir um contrato anual.</block>
 </blocks>
