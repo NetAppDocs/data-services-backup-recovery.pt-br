@@ -43,8 +43,8 @@ TIP: Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arqui
 
 Ao restaurar cargas de trabalho, ocorre o seguinte:
 
-* Quando você restaura uma carga de trabalho de um arquivo de backup local, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
-* Ao restaurar uma carga de trabalho replicada, você pode restaurar a carga de trabalho para o sistema original ou para um sistema ONTAP local.
+* Ao restaurar uma carga de trabalho a partir de um snapshot local ou backup remoto, o NetApp Backup and Recovery sobrescreve a VM original se a restauração for feita para o local original e cria um _novo_ recurso se a restauração for feita para um local alternativo.
+* Ao restaurar uma carga de trabalho replicada, você pode restaurá-la para o sistema ONTAP local original ou para um sistema ONTAP local diferente.
 +
 image:diagram_browse_restore_volume-unified.png["Um diagrama que mostra o fluxo para restaurar um recurso"]
 
@@ -68,11 +68,15 @@ Restaure cargas de trabalho do VMware usando a opção Restaurar. Você pode pro
 +
 Aparecerá uma lista de máquinas virtuais que correspondem aos seus critérios de pesquisa.
 
-. Encontre na lista a máquina virtual da qual deseja restaurar e selecione o botão *Restaurar máquina virtual* correspondente.
+. Localize na lista a máquina virtual (VM) da qual deseja restaurar e selecione o botão de menu de opções correspondente.
+. No menu que aparecer, selecione *Restaurar máquina virtual*.
 +
-Aparece uma lista de snapshots (pontos de restauração) criados nessa máquina virtual.
+Aparece uma lista de snapshots (pontos de restauração) criados nessa máquina virtual. Por padrão, as capturas de tela mais recentes são exibidas para o período de tempo selecionado no menu suspenso *Período de tempo*.
 
-. Marque a caixa de seleção correspondente ao snapshot que deseja restaurar.
++
+Para cada instantâneo, os ícones iluminados na coluna *Localização* indicam os locais de armazenamento onde o instantâneo está disponível (armazenamento primário, secundário ou de objetos).
+
+. Ative o botão de opção correspondente ao instantâneo que deseja restaurar.
 . Selecione *Avançar*.
 +
 Aparecem as opções de localização da captura de tela.
@@ -81,12 +85,13 @@ Aparecem as opções de localização da captura de tela.
 +
 ** *Local*: Restaura o instantâneo a partir do local local.
 ** *Secundário*: Restaura o snapshot a partir de um local de armazenamento remoto.
+** *Armazenamento de objetos*: Restaura o instantâneo a partir do armazenamento de objetos.
 +
-Se você escolher armazenamento secundário, insira os locais de origem e destino para dados e logs.
+Se optar pelo armazenamento secundário, selecione o local de destino na lista suspensa.
 
 
 
-. Selecione *Avançar* para continuar para a página Restaurar configurações de destino.
+. Selecione *Avançar*.
 . Escolha as configurações de destino e as opções de pré e pós-restauração.
 
 
@@ -131,7 +136,7 @@ Ao restaurar para um local alternativo, você pode alterar o vCenter de destino,
 *** *FQDN ou endereço IP do vCenter*: Selecione o servidor vCenter onde deseja restaurar o snapshot.
 *** *Host ESXi*: Selecione o host onde deseja restaurar o snapshot.
 *** *Rede*: Selecione a rede na qual deseja restaurar o snapshot.
-*** *Repositório de dados*: Insira o nome do repositório de dados onde você deseja restaurar o snapshot.
+*** *Repositório de dados*: Na lista suspensa, selecione o nome do repositório de dados onde deseja restaurar o snapshot.
 *** *Nome da máquina virtual*: Insira o nome da máquina virtual onde você deseja restaurar o snapshot. Se o nome corresponder a uma VM já existente no armazenamento de dados, o Backup e Recuperação tornará o nome único, acrescentando um carimbo de data/hora atual.
 
 

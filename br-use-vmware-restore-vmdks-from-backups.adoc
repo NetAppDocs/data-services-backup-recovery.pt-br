@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-vmdks-from-backups.html 
+keywords:  
+summary: Você pode restaurar VMDKs existentes ou VMDKs excluídos ou desanexados de um backup primário ou secundário de VMs tradicionais ou VMs vVol. 
+---
+= Restaurar discos virtuais específicos a partir de backups.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode restaurar discos virtuais existentes (VMDKs), ou discos virtuais excluídos ou desanexados, a partir de backups primários ou secundários de VMs tradicionais. Isso permite restaurar apenas dados ou aplicativos específicos da máquina virtual, evitando a necessidade de restaurar toda a máquina virtual e todos os seus discos virtuais associados em situações onde apenas dados específicos são afetados. Após a restauração do disco virtual, ele é anexado à sua máquina virtual original e fica pronto para uso.
+
+Você pode restaurar um ou mais discos de máquina virtual (VMDKs) em uma máquina virtual para o mesmo armazenamento de dados ou para armazenamentos de dados diferentes.
+
+
+TIP: Para melhorar o desempenho das operações de restauração em ambientes NFS, ative a API vStorage do aplicativo VMware para integração de matriz (VAAI).
+
+.Antes de começar
+* É necessário que exista um backup.
+* A VM não deve estar em trânsito.
++
+A VM que você deseja restaurar não deve estar no estado vMotion ou Storage vMotion.
+
+
+
+.Sobre esta tarefa
+* Se o VMDK for excluído ou desanexado da VM, a operação de restauração anexará o VMDK à VM.
+* Uma operação de restauração pode falhar se a camada de armazenamento do FabricPool onde a VM está localizada não estiver disponível.
+* As operações de anexação e restauração conectam VMDKs usando o controlador SCSi padrão. No entanto, quando VMDKs anexados a uma VM com um disco NVMe são copiados, as operações de anexação e restauração usam o controlador NVMe, se disponível.
+
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Restaurar*.
+. Na lista suspensa à direita do campo de pesquisa de nome, selecione *VMware*.
+. Insira o nome do recurso que você deseja restaurar ou filtre pelo vCenter, datacenter ou armazenamento de dados onde o recurso que você deseja restaurar está localizado.
++
+Aparecerá uma lista de máquinas virtuais que correspondem aos seus critérios de pesquisa.
+
+. Localize na lista a máquina virtual (VM) da qual deseja restaurar e selecione o botão de menu de opções correspondente.
+. No menu que aparecer, selecione *Restaurar discos virtuais*.
++
+Aparece uma lista de snapshots (pontos de restauração) criados nessa máquina virtual. Por padrão, as capturas de tela mais recentes são exibidas para o período de tempo selecionado no menu suspenso *Período de tempo*.
+
++
+Para cada instantâneo, os ícones iluminados na coluna *Localização* indicam os locais de armazenamento onde o instantâneo está disponível (armazenamento primário, secundário ou de objetos).
+
+. Ative o botão de opção correspondente ao instantâneo que deseja restaurar.
+. Selecione *Avançar*.
++
+Aparecem as opções de localização da captura de tela.
+
+. Selecione o destino de restauração para o instantâneo:
++
+** *Local*: Restaura o instantâneo a partir do local local.
+** *Secundário*: Restaura o snapshot a partir de um local de armazenamento remoto.
+** *Armazenamento de objetos*: Restaura o instantâneo a partir do armazenamento de objetos.
++
+Se optar pelo armazenamento secundário, selecione o local de destino na lista suspensa.
+
+
+
+. Selecione *Avançar*.
+. Selecione as configurações de destino e as opções de pré e pós-restauração:
+
+
+[discrete]
+===== Seleção de destino
+
+[role="tabbed-block"]
+====
+.Restaurar para o local original
+--
+Ao restaurar para o local original, você não pode alterar o vCenter de destino, o host ESXi, o armazenamento de dados ou o nome do disco virtual. O disco virtual original foi sobrescrito.
+
+. Selecione o painel *Localização original*.
+. Na seção *Configurações de destino*, marque a caixa de seleção para todos os discos virtuais que você deseja restaurar.
+. Escolha uma das seguintes opções:
++
+** Seção *Opções de pré-restauração*:
++
+*** *Prescript*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado antes do início da operação de restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+** Seção *Opções pós-restauração*:
++
+*** *P.S.*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado após a conclusão da restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+
+
+. Selecione *Restaurar*.
+
+
+--
+.Restaurar para local alternativo
+--
+Ao restaurar para um local alternativo, você pode alterar o armazenamento de dados de destino. O disco virtual é anexado à VM original após a operação de restauração, independentemente do armazenamento de dados escolhido.
+
+. Selecione o painel *Localização alternativa*.
+. Na seção *Configurações de destino*, marque a caixa de seleção para todos os discos virtuais que você deseja restaurar.
+. Para todos os discos virtuais que você selecionou:
++
+.. Selecione *Selecionar armazenamento de dados* para escolher um destino de restauração de armazenamento de dados diferente para o disco virtual.
+.. Selecione *Selecionar* para confirmar sua escolha e fechar a janela de seleção.
+
+
+. Escolha uma das seguintes opções:
++
+** Seção *Opções de pré-restauração*:
++
+*** *Prescript*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado antes do início da operação de restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+** Seção *Opções pós-restauração*:
++
+*** *P.S.*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado após a conclusão da restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
+
+
+
+
+. Selecione *Restaurar*.
+
+
+--
+====

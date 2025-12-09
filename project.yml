@@ -147,6 +147,8 @@ sidebar:
         url: "/br-use-vmware-backup.html"
       - title: Restaurar cargas de trabalho do VMware
         url: "/br-use-vmware-restore.html"
+      - title: Restaurar discos virtuais específicos a partir de backups.
+        url: "/br-use-vmware-restore-vmdks-from-backups.html"
     - title: Proteja as cargas de trabalho do VMware (com o plug-in SnapCenter para
         VMware)
       entries:

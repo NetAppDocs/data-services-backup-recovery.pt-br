@@ -20,8 +20,6 @@ As seguintes ações não são suportadas na versão de pré-visualização das 
 
 * Monte
 * Desmontar
-* Restaurar para local alternativo
-* Restaurar VMDK
 * Anexar VMDK
 * Desanexar VMDK
 * Suporte vVol
