@@ -12,7 +12,7 @@ summary: No NetApp Backup and Recovery, crie relatórios para visualizar o statu
 
 
 [role="lead"]
-No NetApp Backup and Recovery, crie relatórios para cargas de trabalho do Microsoft SQL Server para visualizar o status dos seus backups, incluindo o número de backups, o número de backups bem-sucedidos e o número de backups com falha.  Você também pode visualizar os detalhes de cada backup, incluindo o tipo de backup, o sistema de armazenamento usado para o backup e a hora do backup.
+No NetApp Backup and Recovery, crie relatórios para cargas de trabalho do Microsoft SQL Server para visualizar o status e os detalhes do backup, incluindo a contagem de backups bem-sucedidos e com falha, tipos de backup, sistemas de armazenamento e registros de data e hora.
 
 
 
