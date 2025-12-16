@@ -169,10 +169,9 @@ ifdef::gcp[]
 
 *Taxas de serviço*
 
-As taxas de serviço são pagas à NetApp e cobrem tanto o custo de criação de backups para armazenamento de objetos ou um destino ONTAP quanto o custo de restauração de volumes ou arquivos a partir desses backups. Você paga apenas pelos dados que protege no armazenamento de objetos ou no ONTAP (isso inclui configurações do SnapMirror ). As cobranças são calculadas com base na capacidade lógica de origem utilizada (antes das otimizações do ONTAP ) dos volumes ONTAP que são copiados para armazenamento de objetos ou para um destino ONTAP . Essa capacidade também é conhecida como Terabytes Front-End (FETB).
+Para cargas de trabalho de volume ONTAP , você só paga pelos volumes protegidos em armazenamento de objetos. As cobranças são baseadas na capacidade lógica utilizada dos volumes ONTAP de origem antes da aplicação de otimizações de eficiência, também conhecida como Front-End Terabytes (FETB).
 
-
-NOTE: Para o Microsoft SQL Server, serão aplicadas taxas quando você inicia a replicação de instantâneos para um destino ONTAP secundário ou armazenamento de objetos.
+Para todas as outras cargas de trabalho, você será cobrado pelos recursos protegidos em pelo menos um destino de armazenamento secundário ou de objetos. As cobranças são calculadas com base no tamanho lógico da carga de trabalho de origem. Para bancos de dados, isso significa o tamanho do banco de dados; para máquinas virtuais, o tamanho da máquina virtual.
 
 Existem três formas de pagar pelo serviço de Backup e Recuperação:
 
