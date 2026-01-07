@@ -34,23 +34,7 @@ As funcionalidades de restauração dependem da sua versão do ONTAP :
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
 
 [NOTE]
 ====
@@ -76,16 +60,16 @@ Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sis
 2+| Localização do arquivo de backup | Sistema de destino 
 
 
-| *Armazenamento de Objetos (Backup)* | *Sistema Secundário (Replicação)* | ifdef::aws[] 
+| *Armazenamento de Objetos (Backup)* | *Sistema Secundário (Replicação)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS endif::aws[] ifdef::azure[] 
+| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS 
 
 
-| Blob do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure endif::azure[] ifdef::gcp[] 
+| Blob do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure 
 
 
-| Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP | Cloud Volumes ONTAP no sistema ONTAP local do Google endif::gcp[] 
+| Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
 
 
 | NetApp StorageGRID | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
@@ -95,27 +79,9 @@ Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sis
 |===
 Para Pesquisar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:
 
-ifdef::aws[]
-
 * Para o Amazon S3, o agente do Console pode ser implantado na AWS ou em suas instalações
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Para o Azure Blob, o agente do Console pode ser implantado no Azure ou em suas instalações
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Para o Google Cloud Storage, o agente do Console deve ser implantado na sua VPC do Google Cloud Platform
-
-
-endif::gcp[]
-
 * Para StorageGRID, o agente do Console deve ser implantado em suas instalações; com ou sem acesso à Internet
 * Para o ONTAP S3, o agente do Console pode ser implantado em suas instalações (com ou sem acesso à Internet) ou em um ambiente de provedor de nuvem
 
@@ -147,8 +113,6 @@ Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada
 
 [%collapsible]
 ====
-ifdef::aws[]
-
 * Requisitos da AWS:
 +
 ** Permissões específicas do Amazon Athena, AWS Glue e AWS S3 devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-aws.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
@@ -158,10 +122,6 @@ Observe que, se você já estava usando o NetApp Backup and Recovery com um agen
 
 
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 * Requisitos do Azure:
 +
@@ -175,10 +135,6 @@ Observe que, se você já estava usando o NetApp Backup and Recovery com um agen
 
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 * Requisitos do Google Cloud:
 +
 ** Permissões específicas do Google BigQuery devem ser adicionadas à função de usuário que fornece permissões ao NetApp Console . link:prev-ontap-backup-onprem-gcp.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
@@ -186,10 +142,6 @@ ifdef::gcp[]
 Se você já estava usando o NetApp Backup and Recovery com um agente do Console configurado anteriormente, será necessário adicionar as permissões do BigQuery à função de usuário do Console agora.  Eles são necessários para Pesquisar e Restaurar.
 
 
-
-
-
-endif::gcp[]
 
 * Requisitos do StorageGRID e do ONTAP S3:
 +
@@ -336,34 +288,15 @@ Observe que os resultados identificam snapshots de volumes locais e volumes repl
 Se você selecionar um sistema ONTAP local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
 
 +
-ifdef::aws[]
-
-+
 *** Ao restaurar do Amazon S3, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, insira a chave de acesso e a chave secreta do usuário que você criou para dar ao cluster ONTAP acesso ao bucket S3 e, opcionalmente, escolha um endpoint VPC privado para transferência segura de dados. link:prev-ontap-backup-onprem-aws.html["Veja detalhes sobre esses requisitos"].
+*** Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede. link:prev-ontap-backup-onprem-azure.html["Veja detalhes sobre esses requisitos"].
+*** Ao restaurar do Google Cloud Storage, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, além da Chave de acesso e da Chave secreta para acessar o armazenamento de objetos. link:prev-ontap-backup-onprem-gcp.html["Veja detalhes sobre esses requisitos"].
+*** Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside. link:prev-ontap-backup-onprem-storagegrid.html["Veja detalhes sobre esses requisitos"].
+*** Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá. link:prev-ontap-backup-onprem-ontaps3.html["Veja detalhes sobre esses requisitos"].
 
 
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede. link:prev-ontap-backup-onprem-azure.html["Veja detalhes sobre esses requisitos"].
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Ao restaurar do Google Cloud Storage, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, além da Chave de acesso e da Chave secreta para acessar o armazenamento de objetos. link:prev-ontap-backup-onprem-gcp.html["Veja detalhes sobre esses requisitos"].
-
-
-endif::gcp[]
-
-* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside. link:prev-ontap-backup-onprem-storagegrid.html["Veja detalhes sobre esses requisitos"].
-* Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá. link:prev-ontap-backup-onprem-ontaps3.html["Veja detalhes sobre esses requisitos"].
 
 
 .Resultados

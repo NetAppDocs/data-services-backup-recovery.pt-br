@@ -136,35 +136,13 @@ Como o NetApp Backup and Recovery preserva a eficiência de armazenamento do vol
 
 * Para restaurar dados usando o Search & Restore, certos recursos são provisionados pelo seu provedor de nuvem, e há um custo por TiB associado à quantidade de dados verificados pelas suas solicitações de pesquisa.  (Esses recursos não são necessários para Navegar e Restaurar.)
 +
-ifdef::aws[]
-
-+
 ** Na AWS, https://aws.amazon.com/athena/faqs/["Amazona Atena"^] e https://aws.amazon.com/glue/faqs/["Cola AWS"^] os recursos são implantados em um novo bucket S3.
-+
-endif::aws[]
-
-
-
-+
-ifdef::azure[]
-
-+
 ** No Azure, um https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Espaço de trabalho do Azure Synapse"^] e https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Armazenamento do Azure Data Lake"^] são provisionados em sua conta de armazenamento para armazenar e analisar seus dados.
-+
-endif::azure[]
+** No Google, um novo bucket é implantado e o https://cloud.google.com/bigquery["Serviços do Google Cloud BigQuery"^] são provisionados em nível de conta/projeto.
 
 
-
-
-
-ifdef::gcp[]
-
-* No Google, um novo bucket é implantado e o https://cloud.google.com/bigquery["Serviços do Google Cloud BigQuery"^] são provisionados em nível de conta/projeto. endif::gcp[]
-+
-** Se você planeja restaurar dados de volume de um arquivo de backup que foi movido para um armazenamento de objetos de arquivamento, haverá uma taxa adicional de recuperação por GiB e uma taxa por solicitação do provedor de nuvem.
-** Se você planeja verificar se há ransomware em um arquivo de backup durante o processo de restauração de dados de volume (se você habilitou o DataLock e o Ransomware Resilience para seus backups na nuvem), você também incorrerá em custos extras de saída do seu provedor de nuvem.
-
-
+* Se você planeja restaurar dados de volume de um arquivo de backup que foi movido para um armazenamento de objetos de arquivamento, haverá uma taxa adicional de recuperação por GiB e uma taxa por solicitação do provedor de nuvem.
+* Se você planeja verificar se há ransomware em um arquivo de backup durante o processo de restauração de dados de volume (se você habilitou o DataLock e o Ransomware Resilience para seus backups na nuvem), você também incorrerá em custos extras de saída do seu provedor de nuvem.
 
 
 *Taxas de serviço*

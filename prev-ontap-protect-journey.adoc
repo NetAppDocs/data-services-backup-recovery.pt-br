@@ -257,19 +257,9 @@ Para obter uma lista de locais válidos do agente do Console, consulte um dos se
 
 O NetApp Backup and Recovery pode ser usado em um local com conectividade de internet limitada (também conhecido como _modo restrito_) para fazer backup de dados de volume.  Nesse caso, você precisará implantar o agente do Console na região da nuvem de destino.
 
-ifdef::aws[]
-
 * Você pode fazer backup de dados de sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP instalados em regiões comerciais da AWS para o Amazon S3. link:prev-ontap-backup-cvo-aws.html["Faça backup dos dados do Cloud Volumes ONTAP no Amazon S3"].
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Você pode fazer backup de dados de sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP instalados em regiões comerciais do Azure para o Azure Blob. link:prev-ontap-backup-cvo-azure.html["Faça backup dos dados do Cloud Volumes ONTAP no Azure Blob"].
 
-
-endif::azure[]
 
 
 
@@ -281,11 +271,5 @@ O NetApp Backup and Recovery pode ser usado em um site sem conectividade com a I
 NOTE: O modo privado BlueXP (interface BlueXP legada) normalmente é usado com ambientes locais que não têm conexão com a Internet e com regiões de nuvem seguras, o que inclui AWS Secret Cloud, AWS Top Secret Cloud e Azure IL6. A NetApp continua a oferecer suporte a esses ambientes com a interface legada BlueXP . Para documentação do modo privado na interface BlueXP legada, consulte o https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentação em PDF para o modo privado do BlueXP"] .
 
 * Você pode fazer backup de dados de sistemas ONTAP locais para sistemas NetApp StorageGRID locais. link:prev-ontap-backup-onprem-storagegrid.html["Faça backup de dados ONTAP locais no StorageGRID"].
-* Você pode fazer backup de dados de sistemas ONTAP locais para sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP configurados para armazenamento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Faça backup de dados ONTAP locais no ONTAP S3"] . ifdef::aws[]
+* Você pode fazer backup de dados de sistemas ONTAP locais para sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP configurados para armazenamento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Faça backup de dados ONTAP locais no ONTAP S3"].
 
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]

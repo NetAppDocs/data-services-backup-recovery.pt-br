@@ -219,27 +219,3 @@ As mesmas três opções aparecem quando você restaura na página Restaurar:
 
 . Continue com os mesmos passos para a opção de restauração na página Restaurar
 
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]

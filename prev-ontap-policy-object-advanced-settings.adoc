@@ -24,11 +24,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 Você pode alterar as seguintes opções na página Configurações avançadas:
 
-* Alterando a largura de banda de rede alocada para carregar backups no armazenamento de objetos usando a opção Max Transfer Rate ifdef::aws[]
-
-
-endif::aws[]
-
+* Alterar a largura de banda de rede alocada para o upload de backups para o armazenamento de objetos usando a opção Taxa Máxima de Transferência.
 * Alterar se os snapshots históricos serão exportados como arquivos de backup e incluídos nos arquivos de backup iniciais para volumes futuros.
 * Alterar se os snapshots "anuais" são removidos do sistema de origem
 * Habilitar ou desabilitar varreduras de ransomware para um sistema, incluindo varreduras agendadas
@@ -70,10 +66,6 @@ Quando você ativa o NetApp Backup and Recovery para um sistema, por padrão, o 
 
 
 Esta configuração não afeta a largura de banda alocada para quaisquer outros relacionamentos de replicação que possam ser configurados para volumes no sistema.
-
-ifdef::aws[]
-
-endif::aws[]
 
 
 

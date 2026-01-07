@@ -30,23 +30,7 @@ As funcionalidades de restauração dependem da sua versão do ONTAP :
 
 
 
-ifdef::aws[]
-
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"].
 
 
 NOTE: A alta prioridade não é suportada ao restaurar dados do armazenamento de arquivamento do Azure para sistemas StorageGRID .
@@ -61,43 +45,25 @@ Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sis
 
 [cols="25,25,25,25"]
 |===
-| *Do Object Store (Backup)* | *Da Primária (Instantâneo)* | *Do Sistema Secundário (Replicação)* | Para o sistema de destino ifdef::aws[] 
+| *Do Object Store (Backup)* | *Da Primária (Instantâneo)* | *Do Sistema Secundário (Replicação)* | Para o sistema de destino 
 
 
-| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS endif::aws[] ifdef::azure[] | Blob do Azure 
+| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Blob do Azure 
 
 
-| Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure endif::azure[] ifdef::gcp[] | Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
+| Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
 
 
-| Cloud Volumes ONTAP no sistema ONTAP local do Google endif::gcp[] | NetApp StorageGRID | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
+| Cloud Volumes ONTAP no sistema Google On-premises ONTAP | NetApp StorageGRID | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
 
 
 | Para o sistema ONTAP local | ONTAP S3 | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
 |===
 Para Navegar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:
 
-ifdef::aws[]
-
 * Para o Amazon S3, o agente do Console pode ser implantado na AWS ou em suas instalações
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Para o Azure Blob, o agente do Console pode ser implantado no Azure ou em suas instalações
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Para o Google Cloud Storage, o agente do Console deve ser implantado na sua VPC do Google Cloud Platform
-
-
-endif::gcp[]
-
 * Para StorageGRID, o agente do Console deve ser implantado em suas instalações; com ou sem acesso à Internet
 * Para o ONTAP S3, o agente do Console pode ser implantado em suas instalações (com ou sem acesso à Internet) ou em um ambiente de provedor de nuvem
 
@@ -139,34 +105,14 @@ Observe que se você selecionar um arquivo de backup no armazenamento de objetos
 . Na página _Selecionar destino_, selecione o *sistema* onde você deseja restaurar o volume.
 . Ao restaurar um arquivo de backup do armazenamento de objetos, se você selecionar um sistema ONTAP local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
 +
-ifdef::aws[]
-
-+
 ** Ao restaurar do Amazon S3, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, insira a chave de acesso e a chave secreta do usuário que você criou para dar ao cluster ONTAP acesso ao bucket S3 e, opcionalmente, escolha um endpoint VPC privado para transferência segura de dados.
+** Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, selecione a Assinatura do Azure para acessar o armazenamento de objetos e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede.
+** Ao restaurar do Google Cloud Storage, selecione o Google Cloud Project e a Access Key e a Secret Key para acessar o armazenamento de objetos, a região onde os backups são armazenados e o IPspace no cluster ONTAP onde o volume de destino residirá.
+** Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, selecione a Chave de acesso e a Chave secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino residirá.
+** Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá.
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Ao restaurar do Azure Blob, selecione o IPspace no cluster ONTAP onde o volume de destino residirá, selecione a Assinatura do Azure para acessar o armazenamento de objetos e, opcionalmente, escolha um ponto de extremidade privado para transferência segura de dados selecionando a VNet e a Sub-rede.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Ao restaurar do Google Cloud Storage, selecione o Google Cloud Project e a Access Key e a Secret Key para acessar o armazenamento de objetos, a região onde os backups são armazenados e o IPspace no cluster ONTAP onde o volume de destino residirá.
-
-
-endif::gcp[]
-
-* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, selecione a Chave de acesso e a Chave secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino residirá.
-* Ao restaurar do ONTAP S3, insira o FQDN do servidor ONTAP S3 e a porta que o ONTAP deve usar para comunicação HTTPS com o ONTAP S3, selecione a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o espaço IP no cluster ONTAP onde o volume de destino residirá.
-+
-.. Digite o nome que você deseja usar para o volume restaurado e selecione a VM de armazenamento e o agregado onde o volume residirá.  Ao restaurar um volume FlexGroup , você precisará selecionar vários agregados.  Por padrão, *<source_volume_name>_restore* é usado como nome do volume.
+. Digite o nome que você deseja usar para o volume restaurado e selecione a VM de armazenamento e o agregado onde o volume residirá.  Ao restaurar um volume FlexGroup , você precisará selecionar vários agregados.  Por padrão, *<source_volume_name>_restore* é usado como nome do volume.
 +
 Ao restaurar um backup do armazenamento de objetos para um sistema Cloud Volumes ONTAP usando o ONTAP 9.13.0 ou superior ou para um sistema ONTAP local executando o ONTAP 9.14.1, você terá a opção de executar uma operação de _restauração rápida_.
 
@@ -174,27 +120,7 @@ Ao restaurar um backup do armazenamento de objetos para um sistema Cloud Volumes
 E se você estiver restaurando o volume de um arquivo de backup que reside em uma camada de armazenamento de arquivamento (disponível a partir do ONTAP 9.10.1), você pode selecionar a Prioridade de restauração.
 
 +
-ifdef::aws[]
-
-
-
-
-
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"]. Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
-
-endif::gcp[]
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivo da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre a restauração do armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como restaurar do armazenamento de arquivo do Google"]. Os arquivos de backup no nível de armazenamento do Google Archive são restaurados quase imediatamente e não exigem Prioridade de Restauração.
 
 . Selecione *Avançar* para escolher se deseja fazer uma restauração normal ou um processo de restauração rápida:
 +
@@ -278,47 +204,25 @@ Conforme você seleciona os arquivos, eles são adicionados ao lado esquerdo da 
 Se você selecionar um cluster local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
 
 +
-ifdef::aws[]
-
-+
 ** Ao restaurar do Amazon S3, insira o IPspace no cluster ONTAP onde o volume de destino reside e a Chave de acesso e a Chave secreta da AWS necessárias para acessar o armazenamento de objetos.  Você também pode selecionar uma Configuração de Link Privado para a conexão com o cluster.
+** Ao restaurar do Azure Blob, insira o IPspace no cluster ONTAP onde o volume de destino reside.  Você também pode selecionar uma Configuração de Endpoint Privado para a conexão com o cluster.
+** Ao restaurar do Google Cloud Storage, insira o IPspace no cluster ONTAP onde os volumes de destino residem, além da chave de acesso e da chave secreta necessárias para acessar o armazenamento de objetos.
+** Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside.
 
 
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* Ao restaurar do Azure Blob, insira o IPspace no cluster ONTAP onde o volume de destino reside.  Você também pode selecionar uma Configuração de Endpoint Privado para a conexão com o cluster.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* Ao restaurar do Google Cloud Storage, insira o IPspace no cluster ONTAP onde os volumes de destino residem, além da chave de acesso e da chave secreta necessárias para acessar o armazenamento de objetos.
-
-
-endif::gcp[]
-
-* Ao restaurar do StorageGRID, insira o FQDN do servidor StorageGRID e a porta que o ONTAP deve usar para comunicação HTTPS com o StorageGRID, insira a Chave de Acesso e a Chave Secreta necessárias para acessar o armazenamento de objetos e o IPspace no cluster ONTAP onde o volume de destino reside.
-+
-.. Em seguida, selecione o *Volume* e a *Pasta* onde você deseja restaurar a pasta ou o(s) arquivo(s).
+. Em seguida, selecione o *Volume* e a *Pasta* onde você deseja restaurar a pasta ou o(s) arquivo(s).
 +
 Você tem algumas opções de local para restaurar pastas e arquivos.
 
-
-
-* Quando você tiver escolhido *Selecionar pasta de destino*, conforme mostrado acima:
 +
-** Você pode selecionar qualquer pasta.
-** Você pode passar o mouse sobre uma pasta e clicar no final da linha para detalhar as subpastas e, em seguida, selecionar uma pasta.
-
-
-* Se você tiver selecionado o mesmo sistema de destino e volume onde a pasta/arquivo de origem estava localizado, você pode selecionar *Manter caminho da pasta de origem* para restaurar a pasta, ou arquivo(s), para a mesma pasta onde eles estavam na estrutura de origem.  Todas as mesmas pastas e subpastas já devem existir; pastas não são criadas.  Ao restaurar arquivos para seu local original, você pode optar por substituir o(s) arquivo(s) de origem ou criar novo(s) arquivo(s).
+** Quando você tiver escolhido *Selecionar pasta de destino*, conforme mostrado acima:
 +
-.. Selecione *Restaurar* para retornar ao Painel de Restauração e revisar o progresso da operação de restauração.
+*** Você pode selecionar qualquer pasta.
+*** Você pode passar o mouse sobre uma pasta e clicar no final da linha para detalhar as subpastas e, em seguida, selecionar uma pasta.
 
 
+** Se você tiver selecionado o mesmo sistema de destino e volume onde a pasta/arquivo de origem estava localizado, você pode selecionar *Manter caminho da pasta de origem* para restaurar a pasta, ou arquivo(s), para a mesma pasta onde eles estavam na estrutura de origem.  Todas as mesmas pastas e subpastas já devem existir; pastas não são criadas.  Ao restaurar arquivos para seu local original, você pode optar por substituir o(s) arquivo(s) de origem ou criar novo(s) arquivo(s).
+
+
+. Selecione *Restaurar* para retornar ao Painel de Restauração e revisar o progresso da operação de restauração.
 

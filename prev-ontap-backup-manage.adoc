@@ -236,27 +236,12 @@ Você pode alterar os atributos de uma política de backup que está sendo aplic
 Se o seu cluster estiver executando o ONTAP 9.10.1 ou superior, você também terá a opção de habilitar ou desabilitar o armazenamento em camadas de backups para arquivamento após um determinado número de dias.
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"]. (Requer ONTAP 9.12.1.)
+
++
+Observe que quaisquer arquivos de backup que tenham sido armazenados em camadas no arquivo permanente permanecerão nessa camada se você interromper o armazenamento em camadas dos backups no arquivo permanente - eles não serão movidos automaticamente de volta para a camada padrão. Somente os novos backups de volume residirão na camada padrão.
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"]. (Requer ONTAP 9.12.1.)
-
-endif::gcp[]
-
-+ Observe que todos os arquivos de backup que foram hierarquizados para armazenamento de arquivamento serão deixados nessa camada se você parar de hierarquizar backups para arquivamento - eles não serão movidos automaticamente de volta para a camada padrão.  Somente novos backups de volume residirão na camada padrão.
 
 
 
@@ -282,25 +267,9 @@ Se você quiser aplicar uma nova política de backup a determinados volumes em u
 Se o seu cluster estiver executando o ONTAP 9.10.1 ou superior, você também terá a opção de habilitar ou desabilitar o armazenamento em camadas de backups para arquivamento após um determinado número de dias.
 
 +
-ifdef::aws[]
+link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"]. link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"]. link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"]. (Requer ONTAP 9.12.1.)
 
 
-
-link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do armazenamento de arquivamento da AWS"].
-
-endif::aws[]
-
-ifdef::azure[]
-
-link:prev-reference-azure-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivamento do Azure"].
-
-endif::azure[]
-
-ifdef::gcp[]
-
-link:prev-reference-gcp-archive-storage-tiers.html["Saiba mais sobre como usar o armazenamento de arquivo do Google"]. (Requer ONTAP 9.12.1.)
-
-endif::gcp[]
 
 
 
