@@ -73,17 +73,12 @@ Uma lista de possíveis pontos de restauração é exibida.
 . Selecione um local de origem para o instantâneo.
 
 
-. Selecione *Concluído* ou *Avançar* para continuar para a página Restaurar configurações de destino.
-+
-Em seguida, você pode escolher as configurações de destino e as opções de pré e pós-restauração.
-
+. Selecione *Próximo* para continuar.
+. Escolha o destino e as configurações de restauração:
 
 
 [discrete]
 ===== Seleção de destino
-
-. Escolha as configurações de destino e as opções de pré e pós-restauração.
-
 
 [role="tabbed-block"]
 ====
