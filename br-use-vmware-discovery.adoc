@@ -59,7 +59,7 @@ Se você ainda não tiver o SnapCenter Plug-in para VMware instalado, adicione i
 .Passos
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
 +
-Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
+Se você estiver acessando o Backup and Recovery pela primeira vez e tiver um sistema no Console, mas nenhum recurso descoberto, a página _Bem-vindo ao novo NetApp Backup and Recovery_ será exibida com uma opção para *Descobrir recursos*.
 
 . Selecione *Descobrir recursos*.
 . Insira as seguintes informações:

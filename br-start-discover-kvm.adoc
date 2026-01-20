@@ -14,36 +14,49 @@ summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de tr
 
 
 [role="lead"]
-O NetApp Backup and Recovery precisa descobrir hosts KVM e máquinas virtuais antes de protegê-los.
+O NetApp Backup and Recovery precisa descobrir os hosts KVM e as máquinas virtuais antes de protegê-los. Seus hosts KVM e VMs devem ser gerenciados por uma plataforma de gerenciamento como o Apache CloudStack antes que você possa adicioná-los ao Backup e Recuperação.
 
 *Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
-== Adicionar um host KVM e descobrir recursos
+== Adicione uma plataforma de gerenciamento, um host KVM e descubra recursos.
 
-Adicione informações do host KVM e deixe o NetApp Backup and Recovery descobrir cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
+Adicione informações sobre a plataforma de gerenciamento e o host KVM e permita que o NetApp Backup and Recovery descubra as cargas de trabalho.
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
-. No bloco KVM, selecione *Descobrir e gerenciar*.
+. Em *Cargas de trabalho*, selecione o bloco *KVM*.
 +
-Se esta for a primeira vez que você faz login no Backup and Recovery, você já tem um sistema no Console, mas não descobriu nenhum recurso, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" aparece e mostra uma opção para *Descobrir recursos*.
+Se você estiver acessando o Backup and Recovery pela primeira vez e tiver um sistema no Console, mas nenhum recurso descoberto, a página _Bem-vindo ao novo NetApp Backup and Recovery_ será exibida com uma opção para *Descobrir recursos*.
 
 . Selecione *Descobrir recursos*.
 . Insira as seguintes informações:
 +
 .. *Tipo de carga de trabalho*: Selecione *KVM*.
-.. Se você ainda não armazenou credenciais para este host KVM, selecione *Adicionar credenciais*.
+.. Se você ainda não integrou sua plataforma de gerenciamento com o Backup e Recuperação, selecione *Adicionar plataforma de gerenciamento*.
 +
-... Selecione o agente do Console a ser usado com este host.
-... Digite um nome para esta credencial.
-... Escolha se deseja usar credenciais root ou credenciais não root.
-... Digite o nome de usuário e a senha da conta.
-... Selecione *Concluído*.
+... Insira as seguintes informações:
++
+**** *Endereço IP ou FQDN da plataforma de gerenciamento*: Insira o endereço IP ou o nome de domínio totalmente qualificado da plataforma de gerenciamento.
+**** *Chave de API*: Insira a chave de API a ser usada para autenticar as solicitações de API.
+**** *Chave secreta*: Insira a chave secreta a ser usada para autenticar as solicitações da API.
+**** *Porta*: Insira a porta a ser usada para comunicação entre o Backup e Recuperação e a plataforma de gerenciamento.
+**** *Agentes*: Selecione um agente de console para facilitar a comunicação entre o Backup e Recuperação e a plataforma de gerenciamento.
 
 
-.. *Registro de host*: Adicione um novo host KVM.  Insira o FQDN ou endereço IP do host, credenciais, agente do console e número da porta.
+... Ao terminar, selecione *Adicionar*.
+
+
+.. *Configurações do KVM*: Adicione um novo host KVM inserindo as seguintes informações:
++
+*** *Nome de domínio totalmente qualificado (FQDN) ou endereço IP do KVM*: Insira o FQDN ou o endereço IP do host.
+*** *Credenciais*: Insira o nome de usuário e a senha do host KVM.
+*** *Agente de console*: Selecione o agente de console a ser usado para comunicação entre o Backup e Recuperação e o host KVM.
+*** *Número da porta*: Insira a porta a ser usada para comunicação entre o Backup e Recuperação e o host KVM.
+*** *Plataforma de gerenciamento*: Se o host KVM for gerenciado e você tiver adicionado a plataforma de gerenciamento ao Backup e Recuperação, selecione a plataforma de gerenciamento na lista.
+
+
 
 
 . Selecione *Descobrir*.

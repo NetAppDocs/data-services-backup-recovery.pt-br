@@ -258,7 +258,7 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 +
 Se o destino da AWS para seus backups existir como um sistema na página *Sistemas* do Console, você poderá arrastar o cluster ONTAP para o armazenamento de objetos da AWS.
 
-** Selecione *Volumes* na barra Backup e Recuperação.  Na aba Volumes, selecione *Ações*image:icon-action.png["Ícone de ações"] opção de ícone e selecione *Ativar backup* para um único volume (que ainda não tenha replicação ou backup para armazenamento de objetos habilitado).
+** Selecione *Volumes* na barra de Backup e Recuperação. Na guia Volumes, selecione *Ações*. image:icon-action.png["Ícone de ações"] Na opção do ícone, selecione *Ativar proteção 3-2-1* para um único volume (que ainda não tenha replicação ou backup para armazenamento de objetos ativado).
 
 
 +
@@ -322,7 +322,7 @@ NOTE: Se os volumes escolhidos tiverem políticas de snapshot e replicação dif
 +
 ** *Instantâneos locais*: se você estiver executando replicação ou backup no armazenamento de objetos, instantâneos locais deverão ser criados.
 ** *Replicação*: Cria volumes replicados em outro sistema de armazenamento ONTAP .
-** *Backup*: Faz backup de volumes no armazenamento de objetos.
+** *Backup*: Faz backup de volumes para armazenamento de objetos. Ao selecionar buckets existentes ou configurar novos buckets, você pode fazer backup de volumes em até seis buckets por cluster.
 
 
 . *Arquitetura*: Se você escolher replicação e backup, escolha um dos seguintes fluxos de informações:
@@ -343,14 +343,14 @@ TIP: Para criar uma política personalizada antes de ativar o instantâneo, cons
 Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 +
-** Digite o nome da política.
-** Selecione até cinco programações, normalmente com frequências diferentes.
-** Selecione *Criar*.
+.. Digite o nome da política.
+.. Selecione até cinco programações, normalmente com frequências diferentes.
+.. Selecione *Criar*.
 
 
 . *Replicação*: Defina as seguintes opções:
 +
-** *Destino de replicação*: Selecione o sistema de destino e o SVM.  Opcionalmente, selecione o(s) agregado(s) de destino e o prefixo ou sufixo que serão adicionados ao nome do volume replicado.
+** *Destino da replicação*: Selecione o sistema de destino e a máquina virtual de armazenamento. Opcionalmente, selecione o agregado ou agregados de destino e o prefixo ou sufixo que serão adicionados ao nome do volume replicado.
 ** *Política de replicação*: Escolha uma política de replicação existente ou crie uma.
 +
 
@@ -360,14 +360,14 @@ TIP: Para criar uma política personalizada, consultelink:br-use-policies-create
 Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 +
-*** Digite o nome da política.
-*** Selecione até cinco programações, normalmente com frequências diferentes.
-*** Selecione *Criar*.
+... Digite o nome da política.
+... Selecione até cinco programações, normalmente com frequências diferentes.
+... Selecione *Criar*.
 
 
 
 
-. *Fazer backup no objeto*: Se você selecionou *Backup*, defina as seguintes opções:
+. *Backup*: Defina as seguintes opções:
 +
 ** *Provedor*: Selecione *Amazon Web Services*.
 ** *Configurações do provedor*: insira os detalhes do provedor e a região onde os backups serão armazenados.
@@ -383,17 +383,15 @@ Selecione a região onde os backups serão armazenados.  Esta pode ser uma regi�
 +
 Crie um novo bucket ou selecione um existente.
 
-** *Chave de criptografia*: Se você criou um novo bucket, insira as informações da chave de criptografia fornecidas pelo provedor.  Escolha se você usará as chaves de criptografia padrão da AWS ou escolherá suas próprias chaves gerenciadas pelo cliente na sua conta da AWS para gerenciar a criptografia dos seus dados. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Veja como usar suas próprias chaves de criptografia"^] ).
+** *Criptografia*: Se você criou um novo bucket, insira as informações da chave de criptografia fornecidas pelo provedor. Escolha se deseja usar as chaves de criptografia padrão da AWS ou selecionar suas próprias chaves gerenciadas pelo cliente em sua conta da AWS para gerenciar a criptografia de seus dados. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Veja como usar suas próprias chaves de criptografia"^]).
 +
 Se você optar por usar suas próprias chaves gerenciadas pelo cliente, insira o cofre de chaves e as informações da chave.
-
-
 
 +
 
 NOTE: Se você escolher um bucket existente, as informações de criptografia já estarão disponíveis, então você não precisa inseri-las agora.
 
-+
+** *Rede*: Configure as opções de rede para este provedor.
 ** *Política de backup*: Selecione uma política de armazenamento de backup para objeto existente ou crie uma.
 +
 
@@ -403,13 +401,13 @@ TIP: Para criar uma política personalizada antes de ativar o backup, consulteli
 Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 +
-*** Digite o nome da política.
-*** Selecione até cinco programações, normalmente com frequências diferentes.
-*** Para políticas de backup para objeto, defina as configurações de DataLock e Resiliência de Ransomware.  Para obter detalhes sobre DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
-*** Selecione *Criar*.
+... Digite o nome da política.
+... Selecione até cinco programações, normalmente com frequências diferentes.
+... Para políticas de backup para objeto, defina as configurações de DataLock e Resiliência de Ransomware.  Para obter detalhes sobre DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"] .
+... Selecione *Criar*.
 
 
-** *Exportar snapshots existentes para armazenamento de objetos como cópias de backup*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar para este sistema (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os Snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
+** *Exportar snapshot existente*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar para este sistema (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup, garantindo a proteção mais completa para seus volumes.
 
 
 . Selecione *Avançar*.
@@ -423,7 +421,7 @@ Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessári
 
 .Passos
 . Na página Revisão, revise suas seleções.
-. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de instantâneo com os rótulos da política de replicação e backup*.  Isso cria instantâneos com um rótulo que corresponde aos rótulos nas políticas de replicação e backup.
+. Opcionalmente, marque a caixa para *Corrigir automaticamente rótulos incompatíveis em snapshots locais, replicação e backup*. Isso cria instantâneos com um rótulo que corresponde aos rótulos nas políticas de instantâneo, replicação e backup.
 . Selecione *Ativar Backup*.
 
 

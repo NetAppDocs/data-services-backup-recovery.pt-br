@@ -130,10 +130,18 @@ Para obter uma lista de privilégios do vCenter necessários, consulte https://d
 Você precisa de requisitos específicos para descobrir e proteger máquinas virtuais KVM.
 
 * Uma distribuição Linux moderna executando a versão do kernel 5.14.0-503.22.1.el9_5.x86_64 (longo prazo) ou posterior
-* Certifique-se de que o tráfego de entrada para a porta 22 seja permitido do agente do Console para o host KVM
+* Seus hosts KVM e máquinas virtuais devem ser gerenciados por uma plataforma de gerenciamento. O NetApp Backup and Recovery é compatível com as seguintes plataformas de gerenciamento:
++
+** Apache CloudStack 4.22.0.0
+
+
+* Certifique-se de que o tráfego de rede de entrada para a porta 22 seja permitido do agente do console para o host KVM.
 * QEMU Guest Agent versão 9.0.0 ou posterior
 * libvirt versão 10.5.0 ou posterior
 
+
+
+NOTE: Para garantir que a restauração da carga de trabalho KVM seja concluída com sucesso, certifique-se de que a configuração *Habilitar snapshot consistente com a VM* esteja ativa na política de proteção usada para backups do KVM.
 
 [NOTE]
 ====

@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-restore-guest-files-and-folders-overview.html 
+keywords:  
+summary: 'Você pode restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows.' 
+---
+= Requisitos e limitações na restauração de arquivos e pastas de convidados
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows.
+
+
+
+== Fluxo de trabalho de restauração de convidado
+
+As operações de restauração do sistema operacional convidado incluem as seguintes etapas:
+
+. Anexar
++
+Anexe um disco virtual a uma VM convidada ou proxy e inicie uma sessão de restauração de arquivos do convidado.
+
+. Espere
++
+Aguarde a conclusão da operação de anexação antes de poder navegar e restaurar. Quando a operação de anexação for concluída, uma sessão de restauração de arquivos do sistema convidado será criada automaticamente.
+
+. Selecionar arquivos ou pastas
++
+Navegue pelos arquivos VMDK e selecione um ou mais arquivos ou pastas para restaurar.
+
+. Restaurar
++
+Restaurar os arquivos ou pastas selecionados para um local especificado.
+
+
+
+
+
+== Pré-requisitos para restaurar arquivos e pastas de convidados
+
+Analise todos os requisitos antes de restaurar arquivos ou pastas de um VMDK em um sistema operacional convidado Windows.
+
+* As ferramentas VMware devem estar instaladas e em execução.
++
+O NetApp Backup and Recovery utiliza informações das ferramentas VMware para estabelecer uma conexão com o sistema operacional convidado VMware.
+
+* O sistema operacional convidado do Windows deve estar executando o Windows Server 2008 R2 ou posterior.
++
+Para obter as informações mais recentes sobre as versões suportadas, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .
+
+* As credenciais para a máquina virtual de destino usam a conta de administrador local ou de domínio integrada com o nome de usuário "Administrator". Antes de iniciar a operação de restauração, configure as credenciais da máquina virtual onde deseja conectar o disco virtual. São necessárias credenciais tanto para as operações de anexação quanto para as de restauração. Usuários de grupos de trabalho podem usar a conta de administrador local integrada.
++
+
+IMPORTANT: Se você precisar usar uma conta que não seja a conta de administrador interna, mas que tenha privilégios administrativos na VM, será necessário desabilitar o UAC na VM convidada.
+
+* Você deve saber o snapshot de backup e o VMDK para restaurar.
++
+O NetApp Backup and Recovery não oferece suporte à busca de arquivos ou pastas para restauração. Antes de começar, você precisa saber onde os arquivos ou pastas estão localizados no snapshot e o respectivo arquivo VMDK.
+
+* O disco virtual a ser conectado deve estar presente em um backup do NetApp Backup and Recovery .
++
+O disco virtual que contém o arquivo ou pasta que você deseja restaurar deve estar em um backup de máquina virtual que foi realizado usando o NetApp Backup and Recovery.
+
+
+
+* Para arquivos com nomes que não sejam do alfabeto inglês, você deve restaurá-los em um diretório, não como um único arquivo.
++
+Você pode restaurar arquivos com nomes não alfabéticos, como Kanji japonês, restaurando o diretório em que os arquivos estão localizados.
+
+
+
+
+
+== Limitações de restauração de arquivos de convidado
+
+Antes de restaurar um arquivo ou pasta de um sistema operacional convidado, você deve estar ciente das limitações do recurso.
+
+* Não é possível restaurar tipos de discos dinâmicos dentro de um sistema operacional convidado.
+* Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido. Você não pode restaurar arquivos ou pastas para uma pasta criptografada.
+* A página Navegação de arquivos de convidado exibe os arquivos e pastas ocultos, que você não pode filtrar.
+* Não é possível restaurar a partir de um sistema operacional convidado Linux.
++
+Não é possível restaurar arquivos e pastas de uma VM que esteja executando um sistema operacional convidado Linux. No entanto, você pode anexar um VMDK e restaurar manualmente os arquivos e pastas. Para obter as informações mais recentes sobre o sistema operacional convidado compatível, consulte o https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .
+
+* Não é possível restaurar de um sistema de arquivos NTFS para um sistema de arquivos FAT.
++
+Quando você tenta restaurar do formato NTFS para o formato FAT, o descritor de segurança NTFS não é copiado porque o sistema de arquivos FAT não oferece suporte aos atributos de segurança do Windows.
+
+* Não é possível restaurar arquivos de convidado de um VMDK clonado ou de um VMDK não inicializado.
+* Não é possível restaurar a estrutura de diretórios de um arquivo.
++
+Ao restaurar um arquivo de um diretório aninhado, o sistema restaura apenas o arquivo, e não sua estrutura de diretórios. Para restaurar toda a árvore de diretórios, copie o diretório de nível superior.
+
+* Não é possível restaurar arquivos de convidado de uma VM vVol para um host alternativo.
+* Não é possível restaurar arquivos de convidados criptografados.
+

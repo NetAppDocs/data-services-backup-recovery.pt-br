@@ -34,7 +34,7 @@ Execute um backup sob demanda antes de fazer alterações no sistema para garant
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
-. No bloco Oracle, selecione *Descobrir e gerenciar*.
+. Em *Cargas de trabalho*, selecione o bloco *Oracle*.
 . Selecione *Inventário*.
 . Selecione uma carga de trabalho para visualizar os detalhes da proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
@@ -59,7 +59,7 @@ Você pode executar um backup sob demanda de um único banco de dados.
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
-. No bloco Oracle, selecione *Descobrir e gerenciar*.
+. Em *Cargas de trabalho*, selecione o bloco *Oracle*.
 . Selecione *Inventário*.
 . Selecione uma carga de trabalho para visualizar os detalhes da proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.

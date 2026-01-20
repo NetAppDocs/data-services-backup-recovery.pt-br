@@ -36,7 +36,7 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione uma carga de trabalho para visualizar os detalhes da proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
-. Selecione a aba *Grupos de proteção*.
+. Selecione o menu *Grupos de proteção*.
 . Selecione *Criar grupo de proteção*.
 . Forneça um nome para o grupo de proteção.
 . Selecione as VMs que você deseja incluir no grupo de proteção.
@@ -45,6 +45,25 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 . Selecione *Avançar*.
 . Revise a configuração.
 . Selecione *Criar* para criar o grupo de proteção.
+
+
+
+
+== Editar um grupo de proteção
+
+Edite um grupo de proteção para alterar seu nome ou configurações. Você pode querer editar um grupo de proteção se os recursos do grupo tiverem sido alterados.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione o grupo de proteção que deseja editar.
+. Selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Editar*.
+. Altere quaisquer configurações do grupo de proteção, como o nome ou quais máquinas virtuais estão no grupo.
+. Selecione *Avançar*.
+. Altere a política de proteção, se necessário. Ao terminar, selecione *Próximo*.
+. Revise a configuração e selecione *Enviar*.
 
 
 

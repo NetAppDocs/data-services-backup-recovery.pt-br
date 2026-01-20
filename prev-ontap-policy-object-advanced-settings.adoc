@@ -24,6 +24,8 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 Você pode alterar as seguintes opções na página Configurações avançadas:
 
+* Alterar as chaves de armazenamento que concedem ao seu sistema ONTAP permissão para acessar o armazenamento de objetos.
+* Alterar o espaço IP do ONTAP que está conectado ao armazenamento de objetos.
 * Alterar a largura de banda de rede alocada para o upload de backups para o armazenamento de objetos usando a opção Taxa Máxima de Transferência.
 * Alterar se os snapshots históricos serão exportados como arquivos de backup e incluídos nos arquivos de backup iniciais para volumes futuros.
 * Alterar se os snapshots "anuais" são removidos do sistema de origem
@@ -34,21 +36,18 @@ Você pode alterar as seguintes opções na página Configurações avançadas:
 
 == Exibir configurações de backup em nível de cluster
 
-Você pode visualizar as configurações de backup em nível de cluster para cada sistema.
+Você pode visualizar as configurações do sistema em nível de cluster e as configurações do provedor para cada sistema.
 
 .Passos
 . No menu Console, selecione *Proteção > Backup e recuperação*.
 . Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página _Configurações de backup_, selecione o image:icon-actions-horizontal.gif["Mais ícone"] Para visualizar as configurações do sistema, selecione *Configurar configurações avançadas > Configurações do sistema* e *Configurar configurações avançadas > Configurações do provedor* para visualizar as configurações do provedor.
 +
-A página _Configurações avançadas_ exibe as configurações atuais do sistema.
-
-. Expanda a opção e faça a alteração.
+A página resultante exibe as configurações atuais desse sistema. Ao visualizar as configurações do provedor, as configurações exibidas são relevantes para o bucket selecionado na parte superior da página.
 
 
-Todas as operações de backup após a alteração usarão os novos valores.
 
-Observe que algumas opções não estão disponíveis com base na versão do ONTAP no cluster de origem e no destino do provedor de nuvem onde os backups residem.
+Observe que algumas opções podem não estar disponíveis dependendo da versão do ONTAP no cluster de origem e do provedor de nuvem de destino onde os backups estão armazenados.
 
 
 
@@ -58,7 +57,7 @@ Quando você ativa o NetApp Backup and Recovery para um sistema, por padrão, o 
 
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página _Configurações de backup_, clique em image:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurar configurações avançadas > Configurações do sistema*.
 . Na página Configurações avançadas, expanda a seção *Taxa máxima de transferência*.
 . Escolha um valor entre 1 e 1.000 Mbps como taxa de transferência máxima.
 . Selecione o botão de opção *Limitado* e insira a largura de banda máxima que pode ser usada ou selecione *Ilimitado* para indicar que não há limite.
@@ -77,8 +76,8 @@ Observe que esta opção só se aplica a novos arquivos de backup para novos vol
 
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
-. Na página Configurações avançadas, expanda a seção *Exportar instantâneos existentes*.
+. Na página _Configurações de backup_, clique em image:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurar configurações avançadas > Configurações do sistema*.
+. Na página Configurações Avançadas, expanda a seção *Exportar cópias de instantâneo existentes*.
 . Selecione se deseja exportar os instantâneos existentes.
 . Selecione *Aplicar*.
 
@@ -91,11 +90,8 @@ Ao selecionar o rótulo de backup "anual" para uma política de backup de qualqu
 
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
+. Na página _Configurações de backup_, clique em image:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurar configurações avançadas > Configurações do sistema*.
 . Na página Configurações avançadas, expanda a seção *Exclusão anual de instantâneos*.
-+
-image:screenshot_backup_edit_yearly_snap_delete.png["Uma captura de tela da entrada Instantâneos anuais na página Configurações avançadas."]
-
 . Selecione *Desativado* para manter os instantâneos anuais no sistema de origem.
 . Selecione *Aplicar*.
 
@@ -104,7 +100,7 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Uma captura de tela da entr
 
 == Habilitar ou desabilitar verificações de ransomware
 
-As verificações de proteção contra ransomware são ativadas por padrão. A configuração padrão para a frequência de verificação é de 7 dias. A verificação ocorre apenas no instantâneo mais recente. Você pode ativar ou desativar as verificações de ransomware no snapshot mais recente usando a opção na página de Configurações Avançadas. Se você habilitar, as verificações serão realizadas a cada 7 dias por padrão.
+As verificações de proteção contra ransomware são ativadas por padrão. A configuração padrão para a frequência de verificação é de 7 dias. A verificação ocorre apenas no instantâneo mais recente.
 
 Para obter detalhes sobre as opções de DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opções de resiliência do DataLock e do Ransomware"] .
 
@@ -113,16 +109,38 @@ Você pode alterar essa programação para dias ou semanas ou desativá-la, econ
 
 TIP: A ativação de verificações de ransomware incorrerá em custos extras, dependendo do provedor de nuvem.
 
-As verificações agendadas de ransomware são executadas apenas no snapshot mais recente.
-
 Se as verificações agendadas de ransomware estiverem desativadas, você ainda poderá executar verificações sob demanda e a verificação durante uma operação de restauração ainda ocorrerá.
 
 Consultelink:prev-ontap-policy-manage.html["Gerenciar políticas"] para obter detalhes sobre o gerenciamento de políticas que implementam a detecção de ransomware.
 
+
+
+=== Ativar ou desativar verificações de ransomware para um sistema
+
+Você pode ativar ou desativar as verificações de ransomware para um cluster.
+
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurações avançadas*.
-. Na página Configurações avançadas, expanda a seção *Verificação de ransomware*.
+. Na página _Configurações de backup_, clique em image:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurar configurações avançadas > Configurações do sistema*.
+. Na página que aparecer, expanda a seção *Verificação de ransomware*.
+. Habilitar ou desabilitar *Verificação de ransomware*.
+. Selecione *Verificação agendada de ransomware*.
+. Opcionalmente, altere a verificação padrão semanal para dias ou semanas.
+. Defina a frequência em dias ou semanas em que a verificação deve ser executada.
+. Selecione *Aplicar*.
+
+
+
+
+=== Ativar ou desativar verificações de ransomware para um provedor
+
+Você pode ativar ou desativar as verificações de ransomware no nível do provedor usando a página de configurações do provedor. As configurações desta página são relevantes para o bucket que você selecionar na parte superior da página.
+
+.Passos
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, clique em image:icon-actions-horizontal.gif["Mais ícone"] Para acessar o sistema, selecione *Configurar configurações avançadas > Configurações do provedor*.
+. Na parte superior da página resultante, selecione o bucket para o qual você precisa alterar as configurações.
+. Expanda a seção *Verificação de ransomware*.
 . Habilitar ou desabilitar *Verificação de ransomware*.
 . Selecione *Verificação agendada de ransomware*.
 . Opcionalmente, altere a verificação padrão semanal para dias ou semanas.

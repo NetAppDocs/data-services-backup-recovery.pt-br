@@ -27,7 +27,7 @@ No inventário de Backup e Recuperação, descubra cargas de trabalho do Kuberne
 .Passos
 . Faça um dos seguintes:
 +
-** Se você estiver descobrindo cargas de trabalho do Kubernetes pela primeira vez, no NetApp Backup and Recovery, selecione *Descobrir e gerenciar* no tipo de carga de trabalho do Kubernetes.
+** Se você estiver descobrindo cargas de trabalho do Kubernetes pela primeira vez, no NetApp Backup and Recovery, em *Cargas de trabalho*, selecione o bloco *Kubernetes*.
 ** Se você já descobriu cargas de trabalho do Kubernetes, no NetApp Backup and Recovery, selecione *Inventário* > *Cargas de trabalho* e, em seguida, selecione *Descobrir recursos*.
 
 

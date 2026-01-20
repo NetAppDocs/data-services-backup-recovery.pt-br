@@ -26,6 +26,8 @@ As seguintes ações não são suportadas na versão de visualização privada d
 * Restaurar VMs para um local alternativo
 * Discos de abrangência (em vários compartilhamentos CIFS)
 * Proteja VMs em SAN
-* Editar grupos de proteção
-* Proteja hosts Hyper-V agrupados usando o System Center Virtual Machine Manager (SCVMM)
+* Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
 
+
+
+NOTE: Na versão de 19 de janeiro de 2026, não será possível atualizar os plugins da NetApp para Hyper-V ou Windows usando a opção *Atualizar* no menu Ações. Em vez disso, remova cada host Hyper-V e adicione-o novamente para atualizar os plugins.

@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html 
+keywords:  
+summary: Ao tentar restaurar um arquivo convidado, você pode encontrar cenários em que a sessão de restauração do arquivo convidado fica em branco, a operação de anexação do disco de restauração do arquivo convidado falha ou os backups não são desanexados após a sessão de restauração do arquivo convidado ser descontinuada. 
+---
+= Solução de problemas de restauração de arquivos de convidado
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ao tentar restaurar um arquivo convidado, você pode encontrar qualquer um dos seguintes cenários.
+
+
+
+== A sessão de restauração do arquivo convidado está em branco
+
+Esse problema ocorre se você criar uma sessão de restauração de arquivos em um sistema operacional convidado e o sistema operacional convidado for reiniciado durante a sessão. Os arquivos VMDK no sistema operacional convidado podem permanecer offline, portanto, a lista de sessões de restauração de arquivos do convidado fica em branco.
+
+Para corrigir o problema, coloque manualmente os VMDKs online novamente no sistema operacional convidado. Quando os VMDKs estiverem online, a sessão de restauração do arquivo convidado exibirá o conteúdo correto.
+
+
+
+== Falha na operação de restauração de arquivo convidado e anexação de disco
+
+Esse problema ocorre quando você inicia uma operação de restauração de arquivo convidado, mas a operação de anexação de disco falha mesmo que as ferramentas do VMware estejam em execução e as credenciais do sistema operacional convidado estejam corretas. Se isso ocorrer, o seguinte erro será retornado:
+
+`Error while validating guest credentials, failed to access guest system using specified credentials: Verify VMWare tools is running properly on system and account used is Administrator account, Error is SystemError vix error codes = (3016, 0).`
+
+Para corrigir o problema, reinicie o serviço VMware Tools Windows no sistema operacional convidado e tente novamente a operação de restauração do arquivo convidado.
+
+
+
+== Os backups não são desanexados após a sessão de restauração do arquivo convidado ser descontinuada
+
+Esse problema ocorre quando você executa uma operação de restauração de arquivo convidado a partir de um backup consistente com VM. Enquanto a sessão de restauração do arquivo convidado estiver ativa, outro backup consistente com a VM será executado para a mesma VM. Quando a sessão de restauração de arquivos do convidado é desconectada, manual ou automaticamente após 24 horas, os backups da sessão não são desanexados.
+
+Para corrigir o problema, desvincule manualmente os VMDKs que foram anexados da sessão de restauração de arquivo guest ativa.
