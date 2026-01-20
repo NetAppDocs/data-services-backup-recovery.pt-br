@@ -24,7 +24,7 @@ As operações de restauração do sistema operacional convidado incluem as segu
 
 . Anexar
 +
-Anexe um disco virtual a uma VM convidada ou proxy e inicie uma sessão de restauração de arquivos do convidado.
+Anexe um disco virtual a uma máquina virtual convidada e inicie uma sessão de restauração de arquivos da máquina virtual convidada.
 
 . Espere
 +
@@ -50,7 +50,7 @@ Analise todos os requisitos antes de restaurar arquivos ou pastas de um VMDK em 
 +
 O NetApp Backup and Recovery utiliza informações das ferramentas VMware para estabelecer uma conexão com o sistema operacional convidado VMware.
 
-* O sistema operacional convidado do Windows deve estar executando o Windows Server 2008 R2 ou posterior.
+* O sistema operacional convidado Windows deve estar executando o Windows Server 2008 R2 ou posterior.
 +
 Para obter as informações mais recentes sobre as versões suportadas, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .
 
@@ -82,8 +82,9 @@ Você pode restaurar arquivos com nomes não alfabéticos, como Kanji japonês, 
 Antes de restaurar um arquivo ou pasta de um sistema operacional convidado, você deve estar ciente das limitações do recurso.
 
 * Não é possível restaurar tipos de discos dinâmicos dentro de um sistema operacional convidado.
-* Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido. Você não pode restaurar arquivos ou pastas para uma pasta criptografada.
-* A página Navegação de arquivos de convidado exibe os arquivos e pastas ocultos, que você não pode filtrar.
+* Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido.
+* Você não pode restaurar arquivos ou pastas para uma pasta criptografada.
+* Arquivos e pastas ocultos são exibidos na página de navegação de arquivos e não podem ser filtrados.
 * Não é possível restaurar a partir de um sistema operacional convidado Linux.
 +
 Não é possível restaurar arquivos e pastas de uma VM que esteja executando um sistema operacional convidado Linux. No entanto, você pode anexar um VMDK e restaurar manualmente os arquivos e pastas. Para obter as informações mais recentes sobre o sistema operacional convidado compatível, consulte o https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .

@@ -4873,7 +4873,6 @@
   <block id="0bf794e2b090829c5f342b426fa04d5c" category="summary">Você pode restaurar um ou mais arquivos ou pastas de um VMDK em um sistema operacional convidado Windows.</block>
   <block id="9cda0c7b074ab9336e54e5c799f32f1d" category="doc">Restaurar arquivos e pastas de convidados de VMDKs</block>
   <block id="a26360f952d07b84e1088cc6c613eafe" category="admonition">Você precisa criar credenciais para a máquina virtual convidada no NetApp Backup and Recovery antes de poder restaurar arquivos e pastas dela. O NetApp Backup and Recovery usa essas credenciais para autenticar com a máquina virtual convidada ao conectar o disco virtual.</block>
-  <block id="50f6ae852890a51c1bdcbc5fa3074be0" category="paragraph">Por padrão, o NetApp Backup and Recovery disponibiliza o disco virtual conectado por 24 horas e, em seguida, o desconecta automaticamente. No assistente, você pode optar por excluir automaticamente a sessão de restauração de arquivos do convidado após a operação de restauração ou excluí-la manualmente.</block>
   <block id="84768fbdedcb14c4c8dd78daf9604451" category="paragraph">O desempenho da restauração de arquivos ou pastas convidados depende de dois fatores: o tamanho dos arquivos ou pastas que estão sendo restaurados; e o número de arquivos ou pastas que estão sendo restaurados. Restaurar um grande número de arquivos pequenos pode levar mais tempo do que o previsto em comparação à restauração de um pequeno número de arquivos grandes, se o conjunto de dados a ser restaurado for do mesmo tamanho.</block>
   <block id="851e8e79b33ecfa430d9ed62957e5cad" category="admonition">Somente uma operação de anexação ou restauração pode ser executada ao mesmo tempo em uma VM. Não é possível executar operações paralelas de anexação ou restauração na mesma VM.</block>
   <block id="7392d9ba3083cd42958684b4749d4c72" category="admonition">Com o recurso de restauração para convidados, você pode visualizar e restaurar arquivos de sistema e arquivos ocultos, além de visualizar arquivos criptografados. Não sobrescreva um arquivo de sistema existente nem restaure arquivos criptografados para uma pasta criptografada. Durante a operação de restauração, os atributos ocultos, de sistema e criptografados dos arquivos do sistema operacional convidado não são mantidos no arquivo restaurado. A visualização ou navegação em partições reservadas pode causar um erro.</block>
@@ -4901,7 +4900,6 @@
   <block id="6682a5a344207b03b09bfb0798a193b6" category="section-title">Fluxo de trabalho de restauração de convidado</block>
   <block id="dfb5e1e797a80916627d17588b36ab12" category="paragraph">As operações de restauração do sistema operacional convidado incluem as seguintes etapas:</block>
   <block id="7193518e6f5f0076ef05680742323f9c" category="list-text">Anexar</block>
-  <block id="f02fee54a71e292fba6eea93ae620b05" category="paragraph">Anexe um disco virtual a uma VM convidada ou proxy e inicie uma sessão de restauração de arquivos do convidado.</block>
   <block id="0f68101772bd5397ef8eb1b632798652" category="list-text">Espere</block>
   <block id="75acbae837699c01fe86ee8a2c9fec00" category="paragraph">Aguarde a conclusão da operação de anexação antes de poder navegar e restaurar. Quando a operação de anexação for concluída, uma sessão de restauração de arquivos do sistema convidado será criada automaticamente.</block>
   <block id="137bf66cd89f2d7f861099ca8519563c" category="list-text">Selecionar arquivos ou pastas</block>
@@ -4912,7 +4910,6 @@
   <block id="6a7a37bd722f9a7ebe568ae7d8778d8f" category="paragraph">Analise todos os requisitos antes de restaurar arquivos ou pastas de um VMDK em um sistema operacional convidado Windows.</block>
   <block id="36139d788258b0f7f760e90a7e475cfb" category="list-text">As ferramentas VMware devem estar instaladas e em execução.</block>
   <block id="9809213078fe536846ce61d52cfab742" category="paragraph">O NetApp Backup and Recovery utiliza informações das ferramentas VMware para estabelecer uma conexão com o sistema operacional convidado VMware.</block>
-  <block id="1572f8be6f1646b62b5c0d4d4c380fe8" category="list-text">O sistema operacional convidado do Windows deve estar executando o Windows Server 2008 R2 ou posterior.</block>
   <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="inline-link">Ferramenta de Matriz de Interoperabilidade NetApp (IMT)</block>
   <block id="95477275bd206a7fb98bf4a8ec799a0b" category="paragraph">Para obter as informações mais recentes sobre as versões suportadas, consulte<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block> .</block>
   <block id="73e99419f23009b467a68b78510f24c7" category="list-text">As credenciais para a máquina virtual de destino usam a conta de administrador local ou de domínio integrada com o nome de usuário "Administrator". Antes de iniciar a operação de restauração, configure as credenciais da máquina virtual onde deseja conectar o disco virtual. São necessárias credenciais tanto para as operações de anexação quanto para as de restauração. Usuários de grupos de trabalho podem usar a conta de administrador local integrada.</block>
@@ -4926,8 +4923,6 @@
   <block id="9229096468701d10aab6b30f546310c1" category="section-title">Limitações de restauração de arquivos de convidado</block>
   <block id="ce6cdc51d08da1519febc60a0e9593aa" category="paragraph">Antes de restaurar um arquivo ou pasta de um sistema operacional convidado, você deve estar ciente das limitações do recurso.</block>
   <block id="0938c50db6a8d08637c074ab0c183305" category="list-text">Não é possível restaurar tipos de discos dinâmicos dentro de um sistema operacional convidado.</block>
-  <block id="306e51cbbbbd449259f2c9a524080247" category="list-text">Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido. Você não pode restaurar arquivos ou pastas para uma pasta criptografada.</block>
-  <block id="631e06eeff5fdebb1ee6aaaa3f7502fd" category="list-text">A página Navegação de arquivos de convidado exibe os arquivos e pastas ocultos, que você não pode filtrar.</block>
   <block id="21e6b4873654be153e3c8d0024f83773" category="list-text">Não é possível restaurar a partir de um sistema operacional convidado Linux.</block>
   <block id="eccd74f81ec87affcad9c90ed7e1c714" category="paragraph">Não é possível restaurar arquivos e pastas de uma VM que esteja executando um sistema operacional convidado Linux. No entanto, você pode anexar um VMDK e restaurar manualmente os arquivos e pastas. Para obter as informações mais recentes sobre o sistema operacional convidado compatível, consulte o<block ref="dd731ea0dfaa7ba4b5325a39b353b5a2" category="inline-link-rx"></block> .</block>
   <block id="a24b5bfa95a0c9efe3023cae447296e6" category="list-text">Não é possível restaurar de um sistema de arquivos NTFS para um sistema de arquivos FAT.</block>
@@ -4975,4 +4970,9 @@
   <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">Restaurar discos virtuais específicos</block>
   <block id="6d74a680eadd149117f584cf67b83c34" category="sidebar">Restaurar arquivos e pastas do sistema de convidados</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">Fluxo de trabalho, pré-requisitos e limitações</block>
+  <block id="d85468613eebe17a50e2bf01c2bd42f5" category="paragraph">Anexe um disco virtual a uma máquina virtual convidada e inicie uma sessão de restauração de arquivos da máquina virtual convidada.</block>
+  <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">O sistema operacional convidado Windows deve estar executando o Windows Server 2008 R2 ou posterior.</block>
+  <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido.</block>
+  <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">Você não pode restaurar arquivos ou pastas para uma pasta criptografada.</block>
+  <block id="86a44ece7a205cf4a21804522a9cd44a" category="list-text">Arquivos e pastas ocultos são exibidos na página de navegação de arquivos e não podem ser filtrados.</block>
 </blocks>

@@ -17,12 +17,9 @@ summary: Você pode restaurar um ou mais arquivos ou pastas de um VMDK em um sis
 Você pode restaurar um ou mais arquivos ou pastas de um VMDK em um sistema operacional convidado Windows.
 
 .Antes de começar
-
-NOTE: Você precisa criar credenciais para a máquina virtual convidada no NetApp Backup and Recovery antes de poder restaurar arquivos e pastas dela. O NetApp Backup and Recovery usa essas credenciais para autenticar com a máquina virtual convidada ao conectar o disco virtual.
+Você precisa criar credenciais para a máquina virtual convidada no NetApp Backup and Recovery antes de poder restaurar arquivos e pastas dela. O NetApp Backup and Recovery usa essas credenciais para autenticar com a máquina virtual convidada ao conectar o disco virtual.
 
 .Sobre esta tarefa
-Por padrão, o NetApp Backup and Recovery disponibiliza o disco virtual conectado por 24 horas e, em seguida, o desconecta automaticamente. No assistente, você pode optar por excluir automaticamente a sessão de restauração de arquivos do convidado após a operação de restauração ou excluí-la manualmente.
-
 O desempenho da restauração de arquivos ou pastas convidados depende de dois fatores: o tamanho dos arquivos ou pastas que estão sendo restaurados; e o número de arquivos ou pastas que estão sendo restaurados. Restaurar um grande número de arquivos pequenos pode levar mais tempo do que o previsto em comparação à restauração de um pequeno número de arquivos grandes, se o conjunto de dados a ser restaurado for do mesmo tamanho.
 
 
