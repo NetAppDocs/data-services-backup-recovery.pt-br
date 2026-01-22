@@ -38,11 +38,9 @@ link:prev-ontap-backup-manage.html["Saiba mais sobre como fazer backup de dados 
 
 Esta versão das cargas de trabalho da VMware introduz as seguintes funcionalidades aprimoradas:
 
-* O suporte para cargas de trabalho VMware agora está disponível para o público em geral (GA) no NetApp Backup and Recovery.
+* O suporte para cargas de trabalho VMware agora está disponível para o público em geral (GA) em NetApp Backup and Recovery.
 * Agora você pode restaurar arquivos e pastas do sistema operacional convidado.
 
-
-https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Saiba mais sobre como restaurar VMs do VMware com o NetApp Backup and Recovery."].
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restore-guest-files-and-folders-overview.html["Saiba mais sobre como restaurar arquivos e pastas de convidados."].
 
@@ -52,8 +50,8 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 Esta versão das cargas de trabalho do Hyper-V introduz as seguintes funcionalidades aprimoradas:
 
-* Agora você pode restaurar backups e snapshots de máquinas virtuais Hyper-V para um local alternativo. Isso é útil se você quiser gerenciar versões de uma máquina virtual em diferentes hosts Hyper-V.
-* As máquinas virtuais Hyper-V provisionadas pelo System Center Virtual Machine Manager (SCVMM) e hospedadas em um compartilhamento CIFS agora são compatíveis com o NetApp Backup and Recovery.
+* Agora você pode restaurar backups e snapshots de VMs do Hyper-V para um local alternativo. Use esse recurso para gerenciar versões de VMs em diferentes hosts Hyper-V.
+* NetApp Backup e Recuperação agora oferece suporte a máquinas virtuais Hyper-V provisionadas pelo System Center Virtual Machine Manager (SCVMM) e hospedadas em um compartilhamento CIFS.
 * Agora você pode editar os grupos de proteção.
 
 
@@ -66,7 +64,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 === Pré-visualização de melhorias para cargas de trabalho KVM
 
-A versão prévia das cargas de trabalho KVM agora oferece suporte à integração com a plataforma de gerenciamento Apache CloudStack, permitindo que você proteja hosts KVM e máquinas virtuais gerenciadas pelo Apache CloudStack.
+A pré-visualização de cargas de trabalho KVM agora protege hosts KVM e máquinas virtuais que são gerenciadas pelo Apache CloudStack.
 
 Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Visão geral das cargas de trabalho de proteção do KVM"] .
 
