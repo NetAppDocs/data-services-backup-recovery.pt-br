@@ -83,7 +83,7 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 +
 ** Ao usar o ONTAP 9.12.1 GA ou superior, o backup é suportado quando conectado ao sistema primário.  Toda a configuração de backup é transferida para o sistema secundário para que os backups na nuvem continuem automaticamente após a troca.  Você não precisa configurar o backup no sistema secundário (na verdade, você está impedido de fazer isso).
 ** Ao usar o ONTAP 9.12.0 e versões anteriores, o backup é suportado apenas no sistema secundário do ONTAP .
-** Backups de volumes FlexGroup não são suportados no momento.
+** A partir do ONTAP 9.18.1, os backups de volumes FlexGroup são suportados em configurações MetroCluster.
 
 
 * O backup de volume ad-hoc usando o botão *Fazer backup agora* não é suportado em volumes de proteção de dados.
