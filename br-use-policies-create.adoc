@@ -36,7 +36,7 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 . No menu NetApp Backup and Recovery , selecione *Políticas*.
 . Revise os detalhes desta política.
 +
-** *Carga de trabalho*: Exemplos incluem Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V ou Kubernetes.
+** *Carga de trabalho*: exemplos incluem Microsoft SQL Server, Volumes, VMware, KVM, Hyper-V, Oracle Database ou Kubernetes.
 ** *Tipo de backup*: Exemplos incluem backup completo e backup de log.
 ** *Arquitetura*: Exemplos incluem snapshot local, fan-out, cascateamento, disco para disco e disco para armazenamento de objetos.
 ** *Recursos protegidos*: mostra quantos recursos do total de recursos naquela carga de trabalho estão protegidos.
@@ -78,7 +78,7 @@ TIP: Para uma lista de caracteres a serem evitados, veja a dica de foco.
 
 ** Seção *Arquitetura de backup*: Selecione a seta para baixo e escolha o fluxo de dados para o backup, como fan-out 3-2-1, cascata 3-2-1 ou disco para disco.
 +
-*** *3-2-1 fanout*: Armazenamento primário (disco) para armazenamento secundário (disco) para nuvem (armazenamento de objetos). Cria várias cópias de dados em diferentes sistemas de armazenamento, como configurações de ONTAP para ONTAP e de ONTAP para armazenamento de objetos. Este pode ser um armazenamento de objetos de hiperescala em nuvem ou um armazenamento de objetos privado — StorageGRID. Essas configurações ajudam a alcançar proteção ideal de dados e recuperação de desastres.
+*** *Fanout 3-2-1*: Armazenamento primário (disco) para storage secundário (disco) para nuvem (armazenamento de objetos). Cria múltiplas cópias de dados em diferentes sistemas de armazenamento, como ONTAP para ONTAP e ONTAP para configurações de armazenamento de objetos. Isso pode ser um armazenamento de objetos de hyperscaler de nuvem ou um armazenamento de objetos privado. Essas configurações ajudam a alcançar proteção de dados e recuperação de desastres otimizadas.
 +
 
 NOTE: Esta opção não está disponível para o Amazon FSx for NetApp ONTAP.

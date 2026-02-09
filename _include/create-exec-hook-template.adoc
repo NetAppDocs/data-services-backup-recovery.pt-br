@@ -1,0 +1,26 @@
+= Crie um modelo de gancho de execução
+:allow-uri-read: 
+
+
+
+
+== Crie um modelo de gancho de execução
+
+Você pode criar um modelo de gancho de execução personalizado que pode ser usado para executar ações antes ou depois de uma operação de proteção de dados em um aplicativo.
+
+
+NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de trabalho do Kubernetes.
+
+.Passos
+. No Console, vá para *Proteção* > *Backup e recuperação*.
+. Selecione a aba *Configurações*.
+. Expanda a seção *Modelo de gancho de execução*.
+. Selecione *Criar modelo de gancho de execução*.
+. Digite um nome para o gancho de execução.
+. Opcionalmente, escolha um tipo de gancho. Por exemplo, um gancho pós-restauração é executado após a conclusão da operação de restauração.
+. Na caixa de texto *Script*, insira o script de shell executável que você deseja executar como parte do modelo de gancho de execução.  Opcionalmente, você pode selecionar *Carregar script* para carregar um arquivo de script.
+. Selecione *Criar*.
++
+Depois de criar o modelo, ele aparece na lista de modelos na seção *Modelo de gancho de execução*.
+
+

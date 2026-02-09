@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. 
 ---
-= Restaurar aplicativos Kubernetes
+= Restaurar aplicações Kubernetes usando a interface web
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,30 +16,32 @@ summary: O NetApp Backup and Recovery permite restaurar aplicativos que você pr
 [role="lead"]
 O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. Para restaurar um aplicativo, ele precisa ter pelo menos um ponto de restauração disponível. Um ponto de restauração consiste no snapshot local ou no backup no repositório de objetos (ou ambos). Você pode restaurar um aplicativo usando o arquivo local, secundário ou do repositório de objetos.
 
+.Antes de começar
+Se você estiver restaurando um aplicativo que foi copiado usando Trident Protect, certifique-se de que Trident Protect esteja instalado tanto no cluster de origem quanto no cluster de destino.
+
 .Função necessária do NetApp Console
 Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Passos
-. No NetApp Backup and Recovery, selecione *Inventário*.
-. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
-. Selecione a aba *Aplicativos*.
-. Na lista de aplicativos, escolha um aplicativo que você deseja restaurar e selecione o menu Ações associado.
-. Selecione *Exibir e restaurar*.
+. No menu NetApp Backup e Recuperação, selecione *Restaurar*.
+. Escolha um aplicativo Kubernetes da lista e selecione *Visualizar e restaurar* para esse aplicativo.
 +
 A lista de pontos de restauração é exibida.
 
-. Abra o menu Ações do ponto de restauração que você deseja usar e selecione *Restaurar*.
+. Selecione o botão *Restaurar* para o ponto de recuperação que deseja usar.
 
 
 [discrete]
 ===== Configurações gerais
 
-. Escolha a origem da restauração (local ou armazenamento de objetos).
+. Escolha o local de origem do qual restaurar.
 . Escolha o cluster de destino na lista *Cluster*.
-. Escolha o namespace de destino da restauração.
 +
-Você pode restaurar para o namespace original ou restaurar para um novo namespace.
 
+NOTE: Restaurar um snapshot local criado pelo Trident Protect para um cluster diferente não é suportado no momento.
+
+. Escolha restaurar nos namespaces originais ou em novos namespaces.
+. Se você optar por restaurar para novos namespaces, insira o namespace ou namespaces de destino a serem usados.
 . Selecione *Avançar*.
 
 
@@ -80,7 +82,13 @@ NOTE: Os recursos mostrados são os recursos que existem atualmente no cluster.
 [discrete]
 ===== Configurações de destino
 
-. Escolha restaurar para a classe de armazenamento padrão ou para uma classe de armazenamento diferente.
-. Opcionalmente, se você optar por restaurar para uma classe de armazenamento diferente, selecione uma classe de armazenamento de destino para corresponder a cada classe de armazenamento de origem.
+. Expanda a seção *Configurações de destino* e escolha restaurar para a classe de armazenamento padrão, para uma classe de armazenamento diferente ou, se estiver restaurando para um cluster diferente, mapear as classes de armazenamento para o cluster de destino.
+. Se você optar por restaurar para uma classe de armazenamento diferente, selecione uma classe de armazenamento de destino que corresponda a cada classe de armazenamento de origem.
+. Opcionalmente, se estiver restaurando um backup ou snapshot criado com Trident Protect, visualize os detalhes do AppVault usado como o bucket de armazenamento para a operação de restauração. Se houver uma alteração no seu ambiente ou no status do AppVault, selecione *Sincronizar App Vault* para atualizar os detalhes.
++
+
+NOTE: Se você precisar criar um AppVault em um cluster Kubernetes para facilitar a restauração de um backup ou snapshot criado usando Trident Protect, consulte  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Use objetos do Trident Protect AppVault para gerenciar buckets"].
+
+. Opcionalmente, expanda a seção *Scripts de restauração* e habilite a opção *Pós-script* para escolher um modelo de gancho de execução que será executado após a conclusão da operação de restauração. Se necessário, insira quaisquer argumentos que o script precise e adicione seletores de rótulo para filtrar recursos com base nos rótulos dos recursos.
 . Selecione *Restaurar*.
 

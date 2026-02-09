@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-limitations-oracle.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, KVM, SAP HANA database, virtual machine, vm 
-summary: O NetApp Backup and Recovery precisa primeiro descobrir dados para que você possa usar o serviço.  Durante a descoberta, o NetApp Backup and Recovery analisa todos os volumes e arquivos nos sistemas da sua organização. 
+keywords: NetApp Backup and Recovery, Oracle database 
+summary: Analise estas limitações de NetApp Backup e recuperação antes de usar Backup e Recuperação em seu ambiente. 
 ---
-= Limitações conhecidas com o NetApp Backup and Recovery para cargas de trabalho Oracle
+= Limitações conhecidas com NetApp Backup e Recovery para cargas de trabalho do Oracle Database
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,12 +16,9 @@ summary: O NetApp Backup and Recovery precisa primeiro descobrir dados para que 
 [role="lead"]
 Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem com esta versão estão listados aqui.  Leia estas limitações com atenção.
 
-As seguintes ações não são suportadas na versão de visualização privada das cargas de trabalho do Oracle Database no NetApp Backup and Recovery:
+A seguinte ação não é suportada na versão de pré-visualização privada das cargas de trabalho do Oracle Database em NetApp Backup and Recovery:
 
 * Backup offline
-* Clone
-* Configuração ASM
-* Protegendo bancos de dados armazenados em SAN
 
 
-O Oracle Database é suportado apenas como uma implantação autônoma usando NFS na versão de visualização privada das cargas de trabalho do Oracle.
+Oracle Database é suportado apenas como uma implementação independente usando NFS, SAN ou ASM SAN na versão de pré-visualização privada das cargas de trabalho do Oracle Database.

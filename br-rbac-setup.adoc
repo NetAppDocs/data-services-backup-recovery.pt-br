@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: br-rbac-setup.html 
+keywords: backup, back up, restore, recovery, aws, azure 
+summary: Para aumentar a segurança, configure o acesso para funções específicas no NetApp Backup e Recovery. 
+---
+= Configurar controle de acesso baseado em funções no NetApp Backup e Restauração
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para aumentar a segurança e controlar o acesso aos recursos, configure o controle de acesso baseado em funções para NetApp Backup e Recovery. O NetApp Console oferece suporte ao controle de acesso baseado em funções (RBAC) para algumas cargas de trabalho de backup e restauração. Você pode atribuir funções administrativas ou de visualizador específicas para essas cargas de trabalho. Outras cargas de trabalho que ainda não oferecem suporte ao controle de acesso baseado em funções permanecem acessíveis a todos os usuários com funções de backup e restauração até que a associação em nível de projeto seja suportada.
+
+Siga estes passos para controlar o acesso aos recursos da sua organização. Faça as alterações na página *Administração > Identidade e acesso* no menu NetApp Console.
+
+
+NOTE: Esses passos pressupõem que você tenha a função Organization Admin atribuída no Console.
+
+.Passos
+. Crie a estrutura do projeto de identidade e acesso.
++
+Como administrador da organização, configure a pasta Identidade e acesso e a estrutura de projetos onde as cargas de trabalho residirão.
+
+. Atribuir funções de usuário.
++
+.. Opção principal:
++
+Adicione usuários a cada projeto designado para cargas de trabalho e atribua a eles a função apropriada. Por exemplo:
+
++
+*** *Administrador da organização* e *Backup and Recovery super admin*: Um usuário com essas funções pode visualizar todos os recursos em todas as organizações, e descobrir Backup and Recovery workloads e atribuí-los a projetos (por exemplo, US East ou US West).
+*** *Administrador de pasta ou projeto* e *Backup and Recovery super admin*: Um usuário com essas funções pode ver apenas os recursos na pasta ou projeto para o qual possui permissões, mas pode descobrir Backup and Recovery workloads e atribuí-las a esse projeto.
+
+
+.. Opção alternativa:
++
+Em vez de conceder a um usuário acesso administrativo completo ao Backup and Recovery, você pode atribuir a si mesmo a função de superadministrador de Backup and Recovery e descobrir as workloads diretamente.
+
+
+
+. Descubra cargas de trabalho em Backup and Recovery.
++
+Os administradores da organização ou administradores de pasta ou projeto descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado.
+
+. Adicionar usuários aos projetos.
++
+Os administradores da organização ou os administradores de pastas/projetos adicionam usuários do Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base em suas necessidades de acesso. Os usuários com a função de Backup and Recovery adequada obterão acesso automaticamente a novas cargas de trabalho nesses projetos.
+
+
+
+
+
+== Informações relacionadas
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Saiba mais sobre o gerenciamento de identidade e acesso do NetApp Console"^].
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de NetApp Backup and Recovery no ​​NetApp Console"^].
+

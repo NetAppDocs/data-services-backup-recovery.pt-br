@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-use-oracle-backup.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, protection group 
-summary: Proteja suas cargas de trabalho Oracle com backup e recuperação da NetApp . 
+summary: Proteja suas cargas de trabalho do Oracle Database com NetApp backup e recuperação. 
 ---
-= Faça backup de cargas de trabalho Oracle usando o NetApp Backup and Recovery
+= Faça backup das cargas de trabalho do Oracle Database usando NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -19,7 +19,7 @@ Use o NetApp Backup and Recovery para fazer backup de grupos de proteção ou ba
 
 NOTE: Para fazer backup de grupos de proteção ou bancos de dados individuais em um agendamento, crie políticas que gerenciem operações de backup e restauração. Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
 
-* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Verlink:br-use-kvm-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho Oracle com o NetApp Backup and Recovery"] para mais informações.
+* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Consulte link:br-use-kvm-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do Oracle Database com NetApp Backup e Recovery"] para mais informações.
 * Faça backup de um grupo de proteção agora (crie um backup sob demanda agora).
 * Faça backup de um banco de dados agora.
 

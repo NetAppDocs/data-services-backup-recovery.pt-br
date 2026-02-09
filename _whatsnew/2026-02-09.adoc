@@ -1,0 +1,50 @@
+= Aprimoramentos de cargas de trabalho do Kubernetes
+:allow-uri-read: 
+
+
+
+
+=== Aprimoramentos de cargas de trabalho do Kubernetes
+
+Esta versão das cargas de trabalho do Kubernetes introduz as seguintes funcionalidades aprimoradas:
+
+* *Suporte ao fluxo de trabalho CR*: Agora você pode executar tarefas comuns de proteção usando CRs, bem como a interface web de Backup and Recovery.
+* *Migração de cluster*: Agora você pode adicionar clusters Kubernetes existentes protegidos com Trident Protect ao NetApp Backup and Recovery.
+* *Suporte à estrutura de alertas*: Agora você pode receber alertas por e-mail e na interface do usuário para determinados eventos de cargas de trabalho do Kubernetes.
+* *Integração da guia Restore*: Agora você pode acessar as ações de restauração de cargas de trabalho do Kubernetes a partir do menu Restore.
+* *Suporte para a arquitetura de backup fanout 3-2-1*: Agora você pode usar uma arquitetura fanout 3-2-1 em sua política de proteção ao proteger cargas de trabalho do Kubernetes.
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Visão geral das cargas de trabalho do Protect Kubernetes"] .
+
+
+
+=== Aprimoramentos nas cargas de trabalho do Oracle Database
+
+Esta versão das cargas de trabalho do Oracle Database introduz as seguintes funcionalidades aprimoradas:
+
+* *Suporte para usuários sem privilégios de root*: Usuários sem privilégios de root agora podem realizar operações de backup, restauração e clonagem, melhorando a segurança e a conformidade.
+* *Suporte a clonagem*: Agora, os recursos de clonagem são suportados em ambientes NAS, SAN e ASM primários e secundários usando ASM library v2, permitindo fluxos de trabalho de proteção coordenados.
+* *Suporte para divisão de clones*: Agora você pode dividir snapshots graváveis (clones) de seus volumes pai, liberando storage e permitindo operações independentes.
+* *Backup e restauração para armazenamento de objetos*: agora há suporte nativo para recursos de backup e restauração em destinos de armazenamento compatíveis com S3 baseados em objetos.
+* *Gerenciamento do ciclo de vida de clones (CLM)*: operações de atualização de clones são suportadas no storage primário.
+* *Clonar para host alternativo*: Agora você pode clonar bancos de dados para um host diferente (para testes ou análises) tanto do storage primário quanto do storage secundário.
+* *Suporte a grupo de consistência ONTAP*: agora há suporte para grupos de consistência ONTAP, garantindo snapshots consistentes de aplicativos em vários volumes.
+* NetApp Backup and Recovery agora oferece suporte às seguintes arquiteturas de política de proteção para cargas de trabalho do Oracle Database:
++
+** Fanout 3-2-1
+** Disco para disco
+** Disco para storage de objetos
+** Cascata
+** Instantâneo local
+
+
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Visão geral da proteção de cargas de trabalho do Oracle Database"].
+
+
+
+=== Outras melhorias
+
+As cargas de trabalho Hyper-V, KVM e VMware agora estão geralmente disponíveis (GA) em NetApp Backup and Recovery.

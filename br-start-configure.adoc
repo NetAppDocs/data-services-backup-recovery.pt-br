@@ -21,6 +21,7 @@ Depois de configurar o NetApp Console, defina as configurações de backup e rec
 * <<Importar e gerenciar recursos do host SnapCenter>>. (Somente cargas de trabalho do Microsoft SQL Server)
 * <<Adicione uma plataforma de gerenciamento KVM>>. (Apenas cargas de trabalho KVM)
 * <<Configurar diretórios de log em instantâneos para hosts Windows>>.
+* <<Crie um modelo de gancho de execução>> para executar scripts antes e depois dos trabalhos de backup. (Apenas cargas de trabalho do Kubernetes)
 
 
 *Função necessária do NetApp Console * Superadministrador de backup e recuperação, administrador de backup de backup e recuperação, administrador de restauração de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
@@ -268,4 +269,27 @@ Antes de criar políticas para hosts Windows, você deve configurar diretórios 
 . Na página de detalhes do inventário, selecione um host e selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Configurar diretório de log*.
 . Navegue ou insira o caminho para o diretório de log.
 . Selecione *Salvar*.
+
+
+
+
+== Crie um modelo de gancho de execução
+
+Você pode criar um modelo de gancho de execução personalizado que pode ser usado para executar ações antes ou depois de uma operação de proteção de dados em um aplicativo.
+
+
+NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de trabalho do Kubernetes.
+
+.Passos
+. No Console, vá para *Proteção* > *Backup e recuperação*.
+. Selecione a aba *Configurações*.
+. Expanda a seção *Modelo de gancho de execução*.
+. Selecione *Criar modelo de gancho de execução*.
+. Digite um nome para o gancho de execução.
+. Opcionalmente, escolha um tipo de gancho. Por exemplo, um gancho pós-restauração é executado após a conclusão da operação de restauração.
+. Na caixa de texto *Script*, insira o script de shell executável que você deseja executar como parte do modelo de gancho de execução.  Opcionalmente, você pode selecionar *Carregar script* para carregar um arquivo de script.
+. Selecione *Criar*.
++
+Depois de criar o modelo, ele aparece na lista de modelos na seção *Modelo de gancho de execução*.
+
 

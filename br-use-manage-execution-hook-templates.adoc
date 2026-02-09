@@ -18,7 +18,7 @@ Um gancho de execução é uma ação personalizada que é executada com uma ope
 
 [NOTE]
 ====
-O NetApp Backup and Recovery congela e descongela sistemas de arquivos para aplicativos como o KubeVirt durante a proteção de dados.  Você pode desabilitar esse comportamento globalmente ou para aplicativos específicos usando a documentação do Trident Protect:
+NetApp Backup and Recovery congela e descongela sistemas de arquivos para aplicações como KubeVirt durante a proteção de dados. Você pode desativar esse comportamento globalmente ou para aplicações específicas usando a documentação do Trident Protect:
 
 * Para desabilitar esse comportamento para todos os aplicativos, consulte https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Protegendo dados com VMs KubeVirt"] .
 * Para desabilitar esse comportamento para um aplicativo específico, consulte https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["Definir uma aplicação"] .
@@ -105,6 +105,9 @@ Visite o https://github.com/NetApp/Verda["Projeto NetApp Verda GitHub"] para bai
 == Crie um modelo de gancho de execução
 
 Você pode criar um modelo de gancho de execução personalizado que pode ser usado para executar ações antes ou depois de uma operação de proteção de dados em um aplicativo.
+
+
+NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de trabalho do Kubernetes.
 
 .Passos
 . No Console, vá para *Proteção* > *Backup e recuperação*.

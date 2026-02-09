@@ -43,7 +43,7 @@ A página de login do NetApp Console é exibida.
 ** Para cargas de trabalho do Microsoft SQL Server, consultelink:br-start-discover.html["Descubra as cargas de trabalho do Microsoft SQL Server"] .
 ** Para cargas de trabalho VMware, consultelink:br-use-vmware-discovery.html["Descubra as cargas de trabalho da VMware"] .
 ** Para cargas de trabalho KVM, consultelink:br-start-discover-kvm.html["Descubra cargas de trabalho KVM"] .
-** Para cargas de trabalho Oracle, consultelink:br-start-discover-oracle.html["Descubra as cargas de trabalho da Oracle"] .
+** Para cargas de trabalho do Oracle Database, consulte link:br-start-discover-oracle.html["Descubra cargas de trabalho do Oracle Database"].
 ** Para cargas de trabalho do Hyper-V, consultelink:br-start-discover-hyperv.html["Descubra as cargas de trabalho do Hyper-V"] .
 ** Para cargas de trabalho do Kubernetes, consultelink:br-start-discover-kubernetes.html["Descubra as cargas de trabalho do Kubernetes"] .
 

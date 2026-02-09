@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: br-use-back-up-now-kubernetes-applications-cr.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: 'NetApp Backup and Recovery permite que você faça backup manual de aplicativos Kubernetes usando recursos personalizados (CRs).' 
+---
+= Faça backup de aplicativos Kubernetes agora usando recursos personalizados em Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Backup and Recovery permite que você faça backup manual de aplicativos Kubernetes usando recursos personalizados (CRs).
+
+
+
+== Faça backup de um aplicativo Kubernetes agora usando recursos personalizados
+
+Crie manualmente um backup de um aplicativo Kubernetes para estabelecer uma linha de base para futuros backups e snapshots ou para garantir que os dados mais recentes estejam protegidos.
+
+
+NOTE: Os recursos com escopo de cluster são incluídos em um backup, Snapshot ou clone se forem explicitamente referenciados na definição do aplicativo ou se tiverem referências a qualquer um dos namespaces do aplicativo.
+
+.Antes de começar
+Certifique-se de que o tempo de expiração do token de sessão da AWS seja suficiente para quaisquer operações de backup do s3 de longa duração. Se o token expirar durante a operação de backup, a operação pode falhar.
+
+* Consulte o  https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html["Documentação da API AWS"^] para mais informações sobre como verificar a expiração do token de sessão atual.
+* Consulte  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html["Documentação do AWS IAM"^] para obter mais informações sobre credenciais com recursos da AWS.
+
+
+
+
+=== Crie um snapshot local usando um recurso personalizado
+
+Para criar um Snapshot da sua aplicação Kubernetes e armazená-lo localmente, utilize o recurso personalizado Snapshot com atributos específicos.
+
+.Passos
+. Crie o arquivo de recurso personalizado (CR) e nomeie-o `local-snapshot-cr.yaml`.
+. No arquivo que você criou, configure os seguintes atributos:
++
+** *metadata.name*: (_Obrigatório_) O nome deste recurso personalizado; escolha um nome único e adequado ao seu ambiente.
+** *spec.applicationRef*: o nome do aplicativo no Kubernetes para o qual será criado o Snapshot.
+** *spec.appVaultRef*: (_Obrigatório_) O nome do AppVault onde o conteúdo do Snapshot (metadados) deve ser armazenado.
+** *spec.reclaimPolicy*: (_Opcional_) Define o que acontece com o AppArchive de um snapshot quando o CR do snapshot é excluído. Isso significa que mesmo quando definido como  `Retain`, o snapshot será excluído. Opções válidas:
++
+*** `Retain` (padrão)
+*** `Delete`
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Snapshot
+metadata:
+  namespace: my-app-namespace
+  name: local-snapshot-cr
+spec:
+  applicationRef: my-application
+  appVaultRef: appvault-name
+  reclaimPolicy: Retain
+----
+
+
+
+
+. Após preencher o  `local-snapshot-cr.yaml` file com os valores corretos, aplique a CR:
++
+[source, console]
+----
+kubectl apply -f local-snapshot-cr.yaml
+----
+
+
+
+
+=== Faça backup de um aplicativo em um armazenamento de objetos usando um recurso personalizado
+
+Crie um CR de backup com atributos específicos para fazer backup do seu aplicativo em um object store.
+
+.Passos
+. Crie o arquivo de recurso personalizado (CR) e nomeie-o `object-store-backup-cr.yaml`.
+. No arquivo que você criou, configure os seguintes atributos:
++
+** *metadata.name*: (_Obrigatório_) O nome deste recurso personalizado; escolha um nome único e adequado ao seu ambiente.
+** *spec.applicationRef*: (_Obrigatório_) O nome do aplicativo Kubernetes a ser feito backup.
+** *spec.appVaultRef*: (_Obrigatório, mutuamente exclusivo com spec.appVaultTargetsRef_) Se você usar o mesmo bucket para armazenar o snapshot e o backup, este é o nome do AppVault onde o conteúdo do backup deve ser armazenado.
+** *spec.appVaultTargetsRef*: (_Obrigatório, mutuamente exclusivo com spec.appVaultRef_) Se você usar buckets diferentes para armazenar o snapshot e o backup, este é o nome do AppVault onde o conteúdo do backup deve ser armazenado.
+** *spec.dataMover*: (_Opcional_) Uma string indicando qual ferramenta de backup usar para a operação de backup. O valor diferencia maiúsculas de minúsculas e deve ser `CBS`.
+** *spec.reclaimPolicy*: (_Opcional_) Define o que acontece com o conteúdo do backup (metadados/dados do volume) quando o CR de backup é excluído. Valores possíveis:
++
+*** `Delete`
+*** `Retain` (padrão)
+
+
+** *spec.cleanupSnapshot*: (_Obrigatório_) Garante que o snapshot temporário criado pelo CR de backup não seja excluído após a conclusão da operação de backup. Valor recomendado: `false`.
++
+Exemplo de YAML ao usar o mesmo bucket para armazenar o snapshot e o backup:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: my-app-namespace
+  name: my-cr-name
+spec:
+  applicationRef: my-application
+  appVaultRef: appvault-name
+  dataMover: CBS
+  reclaimPolicy: Retain
+  cleanupSnapshot: false
+----
++
+Exemplo de YAML ao usar buckets diferentes para armazenar o snapshot e o backup:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: my-app-namespace
+  name: object-store-backup-cr
+spec:
+  applicationRef: my-application
+  appVaultTargetsRef: appvault-targets-name
+  dataMover: CBS
+  reclaimPolicy: Retain
+  cleanupSnapshot: false
+----
+
+
+. Após preencher o arquivo  `object-store-backup-cr.yaml` com os valores corretos, aplique a CR:
++
+[source, console]
+----
+kubectl apply -f object-store-backup-cr.yaml
+----
+
+
+
+
+=== Crie um backup 3-2-1 fanout usando um recurso personalizado
+
+O backup usando uma arquitetura de distribuição 3-2-1 copia um backup para storage secundário, bem como para um armazenamento de objetos. Para criar um backup 3-2-1 de distribuição, crie um Backup CR com atributos específicos.
+
+.Passos
+. Crie o arquivo de recurso personalizado (CR) e nomeie-o `3-2-1-fanout-backup-cr.yaml`.
+. No arquivo que você criou, configure os seguintes atributos:
++
+** *metadata.name*: (_Obrigatório_) O nome deste recurso personalizado; escolha um nome único e adequado ao seu ambiente.
+** *spec.applicationRef*: (_Obrigatório_) O nome do aplicativo Kubernetes a ser feito backup.
+** *spec.appVaultTargetsRef*: (_Obrigatório_) O nome do AppVault onde o conteúdo do backup deve ser armazenado.
+** *spec.dataMover*: (_Opcional_) Uma string indicando qual ferramenta de backup usar para a operação de backup. O valor diferencia maiúsculas de minúsculas e deve ser `CBS`.
+** *spec.reclaimPolicy*: (_Opcional_) Define o que acontece com o conteúdo do backup (metadados/dados do volume) quando o CR de backup é excluído. Valores possíveis:
++
+*** `Delete`
+*** `Retain` (padrão)
+
+
+** *spec.cleanupSnapshot*: (_Obrigatório_) Garante que o snapshot temporário criado pelo CR de backup não seja excluído após a conclusão da operação de backup. Valor recomendado: `false`.
+** *spec.replicateSnapshot*: (_Obrigatório_) Instrui o NetApp Backup and Recovery a replicar o Snapshot para storage secundário. Valor obrigatório: `true`.
+** *spec.replicateSnapshotReclaimPolicy*: (_Opcional_) Define o que acontece com o snapshot replicado quando ele é excluído. Valores possíveis:
++
+*** `Delete`
+*** `Retain` (padrão)
++
+Exemplo YAML:
+
++
+[source, yaml]
+----
+apiVersion: protect.trident.netapp.io/v1
+kind: Backup
+metadata:
+  namespace: my-app-namespace
+  name: 3-2-1-fanout-backup-cr
+spec:
+  applicationRef: my-application
+  appVaultTargetsRef: appvault-targets-name
+  dataMover: CBS
+  reclaimPolicy: Retain
+  cleanupSnapshot: false
+  replicateSnapshot: true
+  replicateSnapshotReclaimPolicy: Retain
+----
+
+
+
+
+. Após preencher o  `3-2-1-fanout-backup-cr.yaml` file com os valores corretos, aplique a CR:
++
+[source, console]
+----
+kubectl apply -f 3-2-1-fanout-backup-cr.yaml
+----
+
+
+
+
+== Anotações de backup suportadas
+
+A tabela a seguir descreve as anotações que você pode usar ao criar um backup CR.
+
+[cols="2,1,3,1"]
+|===
+| Anotação | Tipo | Descrição | Valor padrão 
+
+
+| protect.trident.netapp.io/backup-completo | string | Especifica se um backup deve ser não incremental. Defina como  `true` para criar um backup não incremental. A melhor prática é realizar um backup completo periodicamente e, em seguida, realizar backups incrementais entre os backups completos para minimizar o risco associado às restaurações. | "false" 
+
+
+| protect.trident.netapp.io/snapshot-completion-timeout | string | O tempo máximo permitido para a conclusão geral da operação de Snapshot. | "60m" 
+
+
+| protect.trident.netapp.io/volume-snapshots-ready-to-use-timeout | string | Tempo máximo permitido para que os snapshots de volume atinjam o estado pronto para uso. | "30m" 
+
+
+| protect.trident.netapp.io/volume-snapshots-created-timeout | string | O tempo máximo permitido para que snapshots de volume sejam criados. | "5m" 
+
+
+| protect.trident.netapp.io/pvc-bind-timeout-sec | string | Tempo máximo (em segundos) de espera para que quaisquer PersistentVolumeClaims (PVCs) recém-criadas atinjam a  `Bound` fase antes que a operação falhe. | "1200" (20 minutos) 
+|===
