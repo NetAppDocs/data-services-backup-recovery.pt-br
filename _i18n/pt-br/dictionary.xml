@@ -3963,17 +3963,6 @@
   <block id="2f8f18e2be23909e758abe786154b05f" category="list-text"><block ref="2f8f18e2be23909e758abe786154b05f" category="inline-link-macro-rx"></block></block>
   <block id="1f325f707555c5e4623d4ca3ed92bc14" category="inline-link-macro">Gerenciar proteção para cargas de trabalho VMware</block>
   <block id="6b5e78f60de50d17c6c9e6c26f183c04" category="list-text"><block ref="6b5e78f60de50d17c6c9e6c26f183c04" category="inline-link-macro-rx"></block></block>
-  <block id="450da046762e94e9e23eb94084dbc43c" category="doc">Registre o SnapCenter Plug-in for VMware vSphere para usar com o NetApp Backup and Recovery</block>
-  <block id="dbb710aaa3d97d2921c1e1444e6686e3" category="paragraph">Você deve registrar o SnapCenter Plug-in for VMware vSphere no NetApp Backup and Recovery para que os datastores e máquinas virtuais sejam exibidos.  Somente um usuário com acesso administrativo pode registrar o SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="30ba7e7d6da357cee0df5cb67f525c81" category="list-text">Selecione *Registrar SnapCenter Plug-in for VMware vSphere*.</block>
-  <block id="12f2045076b291561318e5d9855f26de" category="list-text">Especifique os seguintes detalhes:</block>
-  <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">No campo SnapCenter Plug-in for VMware vSphere , especifique o FQDN ou endereço IP do host SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">No campo Porta, especifique o número da porta na qual o host do SnapCenter Plug-in for VMware vSphere está sendo executado.</block>
-  <block id="618dcf671038308466415a25c2670cec" category="paragraph">Você deve garantir que a comunicação esteja aberta entre o host local do SnapCenter Plug-in for VMware vSphere , que está sendo executado na porta padrão 8144, e a instância do agente do Console, que pode estar sendo executada em qualquer provedor de nuvem (Amazon Web Services, Microsoft Azure, Google Cloud Platform) ou no local.</block>
-  <block id="eeba430c3c4e0795629fe640359a8730" category="list-text">No campo Nome de usuário e Senha, especifique as credenciais do usuário do vCenter com a função de administrador.</block>
-  <block id="b5249314aff5fae6b6de54ce7f13f16b" category="list-text">Selecione *Registrar*.</block>
-  <block id="a2635d75789f249837881cc5136979e1" category="paragraph">*Depois que você terminar*</block>
-  <block id="b6ee3dd78c315fa7dfd1bfa66181a1c2" category="paragraph">Selecione *Backup e recuperação* &gt; *Máquinas virtuais* para visualizar todos os armazenamentos de dados e máquinas virtuais que estão protegidos usando o SnapCenter Plug-in for VMware vSphere .</block>
   <block id="4f42130e8cfb9f713223107cb029a735" category="doc">Restaure dados de máquinas virtuais com o NetApp Backup and Recovery</block>
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">Não é possível restaurar máquinas virtuais que abrangem vários repositórios de dados.</block>
   <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">Se você estiver restaurando para um local alternativo:</block>
@@ -4216,9 +4205,6 @@
   <block id="4dba655852206fd33ef2ae210d0f09ea" category="sidebar">Fazer backup de cargas de trabalho do Microsoft SQL Server</block>
   <block id="a86a44463f171d5cbfffdac926d2c5f7" category="sidebar">Restaurar cargas de trabalho do Microsoft SQL Server</block>
   <block id="c82b8b73ed613da47a71b640f8e94c5d" category="sidebar">Clonar cargas de trabalho do Microsoft SQL Server</block>
-  <block id="460a4c33ada7a6581872d15b96a4344b" category="sidebar">Proteja as cargas de trabalho do VMware (visualização)</block>
-  <block id="6a3bb59ab6ca7e1af58c7f804a58a47c" category="sidebar">Proteja cargas de trabalho do KVM (visualização privada)</block>
-  <block id="d800ef02fd04e0bcce643b8bacdfd33e" category="sidebar">Proteja cargas de trabalho do Hyper-V (visualização privada)</block>
   <block id="8f12fe2d1611902de146ad61b89b8295" category="sidebar">Proteja as cargas de trabalho do Kubernetes (visualização)</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">Blogs e comunidade</block>
   <block id="cc58d3a9b2264c4fd8cb1d3f61b90bdc" category="sidebar">NetApp Data Services</block>
@@ -4253,11 +4239,9 @@
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Gerenciar inventário do Microsoft SQL Server</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Gerenciar instantâneos do Microsoft SQL Server</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Criar relatórios do Microsoft SQL Server</block>
-  <block id="f4aa5ca6921e92380246ea7a562973a9" category="sidebar">Proteja as cargas de trabalho do VMware (visualização sem o plug-in SnapCenter para VMware)</block>
   <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">Proteja as cargas de trabalho do VMware (com o plug-in SnapCenter para VMware)</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Visão geral da proteção de cargas de trabalho de máquinas virtuais</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Pré-requisitos para proteger cargas de trabalho de máquinas virtuais</block>
-  <block id="437ae89009b207d1aafce3d11e58f524" category="sidebar">Registrar o SnapCenter Plug-in for VMware vSphere</block>
   <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">Crie uma política para fazer backup de dados da máquina virtual</block>
   <block id="1d5ad62b9217b4a3f085f517534f40bb" category="sidebar">Fazer backup de datastores no Amazon Web Services</block>
   <block id="32d2b45dd98e36ad888d7156b4532053" category="sidebar">Fazer backup de datastores no Microsoft Azure</block>
@@ -4266,7 +4250,6 @@
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="sidebar">Gerenciar a proteção de dados de armazenamentos de dados e máquinas virtuais</block>
   <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Restaurar dados e armazenamentos de dados de máquinas virtuais</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">Proteja cargas de trabalho do KVM (visualização)</block>
-  <block id="1db561ecd535caff5b4a1e7b87668d89" category="sidebar">Proteja as cargas de trabalho do Hyper-V (visualização)</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Montar e desmontar pontos de recuperação</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Proteja as cargas de trabalho do Kubernetes (visualização)</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Gerenciar modelos de ganchos de execução para cargas de trabalho do Kubernetes</block>
@@ -5005,8 +4988,6 @@
   <block id="55cf8812c6c22803ddfa5fd41279187d" category="list-text">Disco para disco</block>
   <block id="0f6d38819f95da81f8bc80258fee7071" category="list-text">Disco para storage de objetos</block>
   <block id="e3b858c29172bddae0dbb7e461b2f7df" category="list-text">Cascata</block>
-  <block id="cc5d8c9d6668803b438b03567e08b611" category="section-title">Outras melhorias</block>
-  <block id="6ec61dc6a9b7787975d159ba164424f9" category="paragraph">As cargas de trabalho Hyper-V, KVM e VMware agora estão geralmente disponíveis (GA) em NetApp Backup and Recovery.</block>
   <block id="6e56df4eb422b0b15187c84ba551237e" category="summary">Analise estas limitações de NetApp Backup e recuperação antes de usar Backup e Recuperação em seu ambiente.</block>
   <block id="36f1a2626b3ec6834b4eb361bac96c37" category="doc">Limitações conhecidas com NetApp Backup and Recovery para cargas de trabalho do Kubernetes</block>
   <block id="36c070b302c08836d912ffb6841bb46e" category="section-title">Alterando a política de proteção de um aplicativo</block>
@@ -5241,8 +5222,14 @@
   <block id="8c703f00b817f5c9121d74efc33cdde9" category="list-text">NetApp Trident Protect Connector 25.07 ou posterior (instalado durante a descoberta de cargas de trabalho do Kubernetes)</block>
   <block id="5254dbe16e57a413455e2c5f7d5e70a1" category="list-text">Certifique-se de que a porta TCP 443 esteja desbloqueada na direção de saída entre o cluster Kubernetes, o Trident Protect Connector e o proxy Trident Protect.</block>
   <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">09 de fevereiro de 2026</block>
-  <block id="f3effb5ce493101e0cf4cbc9e93014e1" category="sidebar">Proteja cargas de trabalho do Oracle Database (prévia privada)</block>
   <block id="e45770f83b5d2c438c00dea64c505ce7" category="sidebar">Limitações conhecidas para cargas de trabalho do Oracle Database</block>
   <block id="c33d3729ba9e6e1c1dd6ccc4b6c7f949" category="sidebar">Proteger cargas de trabalho do Oracle Database (Prévia)</block>
   <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">Restaurar aplicativos Kubernetes usando recursos personalizados</block>
+  <block id="6108d5ad430f0631e5c6e10714ba980c" category="doc">Cargas de trabalho do Microsoft Hyper-V suportadas em General Availability (GA)</block>
+  <block id="c5db154b8366e71dcf87e4624b1a0112" category="paragraph">O suporte para cargas de trabalho do Microsoft Hyper-V agora está geralmente disponível (GA) em NetApp Backup and Recovery.</block>
+  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="section-title">Cargas de trabalho KVM suportadas na General Availability (GA)</block>
+  <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">O suporte para cargas de trabalho KVM agora está geralmente disponível (GA) em NetApp Backup and Recovery.</block>
+  <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">Proteger cargas de trabalho KVM (preview)</block>
+  <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Proteger cargas de trabalho do Oracle Database (prévia)</block>
+  <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">Proteja cargas de trabalho VMware (sem SnapCenter Plug-in para VMware)</block>
 </blocks>

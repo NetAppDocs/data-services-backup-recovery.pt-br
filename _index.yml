@@ -49,7 +49,7 @@ indexpage:
       url: br-use-mssql-restore.html
     - title: Clonar cargas de trabalho do Microsoft SQL Server
       url: br-use-mssql-clone.html
-  - title: Proteja as cargas de trabalho do VMware (visualização)
+  - title: Proteja as cargas de trabalho do VMware
     links:
     - title: Visão geral das cargas de trabalho do Protect VMware
       url: br-use-vmware-protect-overview.html
@@ -61,7 +61,7 @@ indexpage:
       url: br-use-vmware-backup.html
     - title: Restaurar cargas de trabalho do VMware
       url: br-use-vmware-restore.html
-  - title: Proteja cargas de trabalho do KVM (visualização privada)
+  - title: Proteger cargas de trabalho KVM (preview)
     links:
     - title: Visão geral das cargas de trabalho de proteção do KVM
       url: "/br-use-kvm-protect-overview.html"
@@ -73,7 +73,7 @@ indexpage:
       url: "/br-use-kvm-backup.html"
     - title: Restaurar cargas de trabalho do KVM
       url: "/br-use-kvm-restore.html"
-  - title: Proteja cargas de trabalho do Hyper-V (visualização privada)
+  - title: Proteja as cargas de trabalho do Hyper-V
     links:
     - title: Visão geral das cargas de trabalho de proteção do Hyper-V
       url: "/br-use-hyperv-protect-overview.html"
@@ -85,7 +85,7 @@ indexpage:
       url: "/br-use-hyperv-backup.html"
     - title: Restaurar cargas de trabalho do Hyper-V
       url: "/br-use-hyperv-restore.html"
-  - title: Proteja cargas de trabalho do Oracle Database (prévia privada)
+  - title: Proteger cargas de trabalho do Oracle Database (prévia)
     links:
     - title: Visão geral da proteção de cargas de trabalho do Oracle Database
       url: "/br-use-oracle-protect-overview.html"

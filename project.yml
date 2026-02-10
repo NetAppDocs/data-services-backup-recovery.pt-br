@@ -123,8 +123,7 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Criar relatórios do Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Proteja as cargas de trabalho do VMware (visualização sem o plug-in SnapCenter
-        para VMware)
+    - title: Proteja cargas de trabalho VMware (sem SnapCenter Plug-in para VMware)
       entries:
       - title: Visão geral das cargas de trabalho do Protect VMware
         url: "/br-use-vmware-protect-overview.html"
@@ -155,8 +154,6 @@ sidebar:
         url: "/prev-vmware-protect-overview.html"
       - title: Pré-requisitos para proteger cargas de trabalho de máquinas virtuais
         url: "/prev-vmware-prereqs.html"
-      - title: Registrar o SnapCenter Plug-in for VMware vSphere
-        url: "/prev-vmware-register-snapcenter.html"
       - title: Crie uma política para fazer backup de dados da máquina virtual
         url: "/prev-vmware-policy-create.html"
       - title: Fazer backup de datastores no Amazon Web Services
@@ -184,7 +181,7 @@ sidebar:
         url: "/br-use-kvm-backup.html"
       - title: Restaurar cargas de trabalho do KVM
         url: "/br-use-kvm-restore.html"
-    - title: Proteja as cargas de trabalho do Hyper-V (visualização)
+    - title: Proteja as cargas de trabalho do Hyper-V
       entries:
       - title: Visão geral das cargas de trabalho de proteção do Hyper-V
         url: "/br-use-hyperv-protect-overview.html"
