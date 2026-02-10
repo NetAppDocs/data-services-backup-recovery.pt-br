@@ -147,28 +147,6 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Solução de problemas de restauração de arquivos de convidado
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: Proteja as cargas de trabalho do VMware (com o plug-in SnapCenter para
-        VMware)
-      entries:
-      - title: Visão geral da proteção de cargas de trabalho de máquinas virtuais
-        url: "/prev-vmware-protect-overview.html"
-      - title: Pré-requisitos para proteger cargas de trabalho de máquinas virtuais
-        url: "/prev-vmware-prereqs.html"
-      - title: Crie uma política para fazer backup de dados da máquina virtual
-        url: "/prev-vmware-policy-create.html"
-      - title: Fazer backup de datastores no Amazon Web Services
-        url: "/prev-vmware-backup-aws.html"
-      - title: Fazer backup de datastores no Microsoft Azure
-        url: "/prev-vmware-backup-azure.html"
-      - title: Fazer backup de armazenamentos de dados no Google Cloud Platform
-        url: "/prev-vmware-backup-gcp.html"
-      - title: Fazer backup de datastores no StorageGRID
-        url: "/prev-vmware-backup-storagegrid.html"
-      - title: Gerenciar a proteção de dados de armazenamentos de dados e máquinas
-          virtuais
-        url: "/prev-vmware-manage.html"
-      - title: Restaurar dados e armazenamentos de dados de máquinas virtuais
-        url: "/prev-vmware-restore.html"
     - title: Proteja cargas de trabalho do KVM (visualização)
       entries:
       - title: Visão geral das cargas de trabalho de proteção do KVM
