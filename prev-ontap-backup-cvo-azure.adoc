@@ -378,10 +378,6 @@ Crie seu próprio grupo de recursos que gerencia o contêiner Blob ou selecione 
 
 TIP: Se você quiser proteger seus arquivos de backup contra modificações ou exclusão, certifique-se de que a conta de armazenamento foi criada com armazenamento imutável habilitado usando um período de retenção de 30 dias.
 
-+
-
-TIP: Se você quiser colocar arquivos de backup mais antigos no Armazenamento de Arquivos do Azure para otimizar ainda mais os custos, certifique-se de que a conta de armazenamento tenha a regra de ciclo de vida apropriada.
-
 ** *Chave de criptografia*: se você criou uma nova conta de armazenamento do Azure, insira as informações da chave de criptografia fornecidas pelo provedor.  Escolha se você usará as chaves de criptografia padrão do Azure ou escolherá suas próprias chaves gerenciadas pelo cliente na sua conta do Azure para gerenciar a criptografia dos seus dados.
 +
 Se você optar por usar suas próprias chaves gerenciadas pelo cliente, insira o cofre de chaves e as informações da chave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Aprenda a usar suas próprias chaves"^] .

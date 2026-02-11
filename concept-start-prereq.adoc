@@ -88,7 +88,7 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 *Suporte de software*
 
-* Os armazenamentos de dados NFS e VMFS são suportados. Os vVols não são suportados.
+* São suportados armazenamentos de dados NFS e VMFS.
 * Versões NFS suportadas: NFS 3 e NFS 4.1
 * Versões do VMware ESXi Server suportadas: 7.0U1 e superior
 * Versões do VMware vCenter vSphere suportadas: 7.0U1 e superior
@@ -106,11 +106,6 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 | Porta do servidor VMware ESXi  a| 
 443 (HTTPS), bidirecional. O recurso Restauração de arquivo convidado usa esta porta.
-
-
-
-| Porta do VMware vSphere vCenter Server  a| 
-Se estiver protegendo VMs vVol, você deverá usar a porta 443.
 
 
 

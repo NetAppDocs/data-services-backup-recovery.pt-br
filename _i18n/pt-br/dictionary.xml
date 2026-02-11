@@ -2031,7 +2031,6 @@
   <block id="573531ec152a1cc1709422d00088088e" category="section-title">Requisitos para proteger cargas de trabalho do VMware</block>
   <block id="4ccfae37bea4d344c283e2a68013c9c1" category="paragraph">Você precisa de requisitos específicos para descobrir e proteger suas cargas de trabalho do VMware.</block>
   <block id="1269e07e6a9265be5844ea32a0494a7f" category="paragraph">*Suporte de software*</block>
-  <block id="91cbc61972a7259c684c934d00fd85b5" category="list-text">Os armazenamentos de dados NFS e VMFS são suportados. Os vVols não são suportados.</block>
   <block id="2d5a6b46412544fb6ac242fbc736934e" category="list-text">Versões NFS suportadas: NFS 3 e NFS 4.1</block>
   <block id="40f1a54f3602033103d74e381708e352" category="list-text">Versões do VMware ESXi Server suportadas: 7.0U1 e superior</block>
   <block id="c7d133a7d1fcc4fc9f8bf51535dc3ef0" category="list-text">Versões do VMware vCenter vSphere suportadas: 7.0U1 e superior</block>
@@ -2042,8 +2041,6 @@
   <block id="99ddf0e823c1be51589f68696f62cf56" category="cell">Porta pré-configurada</block>
   <block id="2cb2843b629d315325aac076907ec4b9" category="cell">Porta do servidor VMware ESXi</block>
   <block id="62e8cb73d81843582e583ccefca95a44" category="paragraph">443 (HTTPS), bidirecional. O recurso Restauração de arquivo convidado usa esta porta.</block>
-  <block id="7c1239972879fe0b69b4bb6d5c9a743e" category="cell">Porta do VMware vSphere vCenter Server</block>
-  <block id="4899207d672fe13ff2c710bcb5cec3e0" category="paragraph">Se estiver protegendo VMs vVol, você deverá usar a porta 443.</block>
   <block id="131b9f1c14d26ba7a0cce7389e7679a9" category="cell">Cluster de armazenamento ou porta de VM de armazenamento</block>
   <block id="fe2ba23f2f581d1ab01848e05711292a" category="paragraph">443 (HTTPS), bidirecional. 80 (HTTP), bidirecional. Esta porta é usada para comunicação entre o dispositivo virtual e a VM de armazenamento ou o cluster que contém a VM de armazenamento.</block>
   <block id="6def2be93b1fef441b3ca8a2641cc837" category="paragraph">*Requisitos de controle de acesso baseado em função (RBAC) para proteger cargas de trabalho do VMware*</block>
@@ -5054,4 +5051,5 @@
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Proteger cargas de trabalho do Oracle Database (prévia)</block>
   <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">Proteja cargas de trabalho VMware (sem SnapCenter Plug-in para VMware)</block>
   <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Armazenamento conectado compatível: ONTAP 9.13 ou posterior</block>
+  <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">São suportados armazenamentos de dados NFS e VMFS.</block>
 </blocks>
