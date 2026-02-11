@@ -3822,172 +3822,7 @@
   <block id="f2b162f98b611318ceee106c4b60ae51" category="list-text">Para obter preços detalhados do Google Cloud Storage por região, visite o<block ref="51a97b69fb4ea5748d26915fe19e0057" category="inline-link-rx"></block> .</block>
   <block id="fd161debce2c53100b7c61aa8b2d7c6b" category="list-text">Quanto tempo levará para restaurar meus objetos arquivados no Google Archive?</block>
   <block id="efce98c74b9fc5fb1711b2f3d4da8f34" category="list-text">*Tempo de recuperação*: O tempo para recuperar o arquivo de backup do Archive e colocá-lo no armazenamento padrão.  Às vezes, isso é chamado de período de "reidratação".  Ao contrário das soluções de armazenamento "mais frias" fornecidas por outros provedores de nuvem, seus dados ficam acessíveis em milissegundos.</block>
-  <block id="ea41fefc75b4937d079e3db8ee84bd6b" category="doc">Faça backup de datastores no Amazon Web Services no NetApp Backup and Recovery</block>
-  <block id="88d382e3b7aa9d602ce38d8495a201ac" category="paragraph">Você pode fazer backup e arquivar um ou mais armazenamentos de dados com o NetApp Backup and Recovery para Amazon Web Services para melhorar a eficiência do armazenamento e a transição para a nuvem.</block>
-  <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">Se o armazenamento de dados estiver associado a uma política de arquivamento, você terá a opção de selecionar a camada de arquivamento.  Os níveis de arquivamento suportados são Glacier e Glacier Deep.</block>
-  <block id="c5697e1933bfd2df9d2052983e1d9241" category="inline-link-macro">requisitos de proteção de máquina virtual</block>
-  <block id="a7772e34879d0350763b229c08abb4ce" category="paragraph">Certifique-se de ter cumprido todos os<block ref="b3cdcdb9363cf72cee94211d1cf49d2a" category="inline-link-macro-rx"></block> antes de fazer backup dos armazenamentos de dados na nuvem.</block>
-  <block id="ec20419fe9b99a13a7e6a63187f9ad59" category="list-text">Na interface do usuário do console, selecione *Proteção* &gt; *Backup e recuperação* &gt; *Máquinas virtuais*.</block>
-  <block id="418c5509e2171d55b0aee5c2ea4442b5" category="inline-image-macro">Ação</block>
-  <block id="4d2ca83fc058acd8fd1a2b0e9633319d" category="list-text">Selecione<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao armazenamento de dados que você deseja fazer backup e clique em *Ativar backup*.</block>
-  <block id="323d618819396c39de9471cdfb373ee7" category="list-text">Na página Atribuir política, selecione a política e selecione *Avançar*.</block>
-  <block id="65c66680701f71dd9f3d5af61f0f6b41" category="list-text">Adicione o sistema.</block>
-  <block id="5acc11cd60ff7e94ad464f395b9bc687" category="paragraph">Configure o LIF de gerenciamento de cluster que você deseja que o Console descubra.  Depois de adicionar o sistema para um dos datastores, ele pode ser reutilizado para todos os outros datastores que residem no mesmo cluster ONTAP .</block>
-  <block id="c4f42debc709f58c735092418fa00fa1" category="list-text">Selecione *Adicionar sistema* correspondente ao SVM.</block>
-  <block id="30871e9b3db5bb3040245da62e031a45" category="list-text">No assistente Adicionar sistema:</block>
-  <block id="b19fb0dfd78b28bc5415a7f3f4ad6a49" category="list-text">Especifique o endereço IP do LIF de gerenciamento do cluster.</block>
-  <block id="73f07eefb51e62cc902b672233bd4977" category="list-text">Especifique as credenciais do usuário do cluster ONTAP .</block>
-  <block id="85f2ee063f5ea4d52167b81f6a73c16a" category="list-text">Selecione *Adicionar sistema*.</block>
-  <block id="52405c4e62742959f93902e51bb72d0b" category="list-text">Selecione *Amazon Web Services* para configurá-lo como o provedor de nuvem.</block>
-  <block id="4117af0b4d26b5ba222b63a2b7e1eb27" category="list-text">Especifique a conta da AWS.</block>
-  <block id="0b6515b0d85be4c32021431c5119a675" category="list-text">No campo Chave de acesso da AWS, especifique a chave para criptografia de dados.</block>
-  <block id="095a532bc2c4eed2ec2c64b6008b497f" category="list-text">No campo Chave secreta da AWS, especifique a senha para criptografia de dados.</block>
-  <block id="b5d98853353bde168501864a9aa65bfd" category="list-text">Selecione a região onde você deseja criar os backups.</block>
-  <block id="386a17271d92cc7a25bf8eec122b0494" category="list-text">Especifique os endereços IP do LIF de gerenciamento de cluster que foram adicionados como sistemas.</block>
-  <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">Selecione a camada de arquivamento.</block>
-  <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">É recomendável definir a camada de arquivamento porque essa é uma atividade única e não pode ser configurá-la posteriormente.</block>
-  <block id="aa6666c7d701e3d022bd0894584ba6bc" category="list-text">Revise os detalhes e selecione *Ativar backup*.</block>
-  <block id="0d41ec9efd8e5ceb127f404e3e8dc747" category="doc">Faça backup de datastores no Microsoft Azure com o NetApp Backup and Recovery</block>
-  <block id="edad35da0f3ccd8716a3ecbec6ba4250" category="paragraph">Você pode fazer backup de um ou mais armazenamentos de dados no Microsoft Azure integrando o SnapCenter Plug-in for VMware vSphere com o NetApp Backup and Recovery.  Isso ajudará os administradores de VM a fazer backup e arquivar dados de forma fácil e rápida para eficiência de armazenamento e acelerar a transição para a nuvem.</block>
-  <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">Se o armazenamento de dados estiver associado a uma política de arquivamento, você terá a opção de selecionar a camada de arquivamento.  A camada de arquivamento com suporte é o Azure Archive Blob Storage.</block>
-  <block id="a5d365a9b7414bdc6e9205c9e8eb585d" category="list-text">Na interface do usuário do NetApp Console , selecione *Proteção* &gt; *Backup e recuperação* &gt; *Máquinas virtuais*.</block>
-  <block id="b621b490b47d0134904539933037722c" category="list-text">Selecione<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao armazenamento de dados que você deseja fazer backup e selecione *Ativar backup*.</block>
-  <block id="8a8bca40b3d548c634cd73d37e5a630c" category="list-text">Selecione *Microsoft Azure* para configurá-lo como o provedor de nuvem.</block>
-  <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">Especifique o ID da assinatura do Azure.</block>
-  <block id="db7f740fbee2466830a1f559dba6b17b" category="list-text">Crie um novo grupo de recursos ou use um grupo de recursos existente.</block>
-  <block id="9e8ed7b08261a94b9277289757488767" category="paragraph">É recomendável definir a camada de arquivamento porque esta é uma atividade única e você não poderá configurá-la posteriormente.</block>
-  <block id="ea30425cb29f7e447fdeace74c26461f" category="doc">Faça backup de armazenamentos de dados no Google Cloud Platform com o NetApp Backup and Recovery</block>
-  <block id="476c041ec40c52b29e7eff32f4cb7b32" category="paragraph">Você pode fazer backup de um ou mais armazenamentos de dados no Google Cloud Platform integrando o SnapCenter Plug-in for VMware vSphere com o NetApp Backup and Recovery.  Isso ajudará os administradores de VM a fazer backup e arquivar dados de forma fácil e rápida para eficiência de armazenamento e acelerar a transição para a nuvem.</block>
-  <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">Selecione *Google Cloud Platform* para configurá-lo como o provedor de nuvem.</block>
-  <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="list-text">Selecione o Projeto do Google Cloud onde você deseja que o bucket do Google Cloud Storage seja criado para backups.</block>
-  <block id="fa0f3e6189a17df2b37f1f89872dbee4" category="list-text">No campo Chave de acesso do Google Cloud, especifique a chave.</block>
-  <block id="3ee34b7fd8f9ec35694f9ada246e9a7b" category="list-text">No campo Chave secreta do Google Cloud, especifique a senha.</block>
-  <block id="3ec390de7db5c59f007c717fb9aa2dac" category="list-text">Especifique o espaço IP.</block>
-  <block id="71fb704fe6aa28d59f46358c61d5b35a" category="doc">Faça backup de datastores no StorageGRID com o NetApp Backup and Recovery</block>
-  <block id="5cf880745ad0e6e8d8208ad538957b63" category="paragraph">Você pode fazer backup de um ou mais armazenamentos de dados no StorageGRID integrando o SnapCenter Plug-in for VMware vSphere com o NetApp Backup and Recovery.  Isso ajudará os administradores de VM a fazer backup e arquivar dados de forma fácil e rápida para eficiência de armazenamento e acelerar a transição para a nuvem.</block>
-  <block id="6c5cc1315b69c8256bbc33cf47a5a7ab" category="list-text">Selecione * StorageGRID*.</block>
-  <block id="cf4e6e70123f43cdec5ffd93f792c083" category="list-text">Especifique o IP do servidor de armazenamento.</block>
-  <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">Selecione a chave de acesso e a chave secreta.</block>
-  <block id="b26e7e8656acba73c7e69f8c75f299d1" category="doc">Gerencie a proteção de datastores e VMs no NetApp Backup and Recovery</block>
-  <block id="749f97c0bfe03215ddfcc33e348d0c86" category="paragraph">Você pode visualizar políticas, armazenamentos de dados e máquinas virtuais antes de fazer backup e restaurar dados com o NetApp Backup and Recovery.  Dependendo da alteração no banco de dados, nas políticas ou nos grupos de recursos, você pode visualizar as atualizações na interface do usuário do NetApp Console .</block>
-  <block id="5bea9354a7049a7e639553b703f18e84" category="paragraph">Você pode visualizar todas as políticas padrão predefinidas.  Para cada uma dessas políticas, quando você visualiza os detalhes, todas as políticas e máquinas virtuais associadas são listadas.</block>
-  <block id="b69b2eb51081aa4642c6e881faa0bcb8" category="list-text">No menu suspenso *Configurações*, selecione *Políticas*.</block>
-  <block id="8448a57387950bac4af453a04975933d" category="list-text">Selecione *Exibir detalhes* correspondente à apólice cujos detalhes você deseja visualizar.</block>
-  <block id="1c281da53a696408c46b6da9d44b27e7" category="paragraph">As políticas e máquinas virtuais associadas são listadas.</block>
-  <block id="8ed12ef54cb1d9b3b955b96ba5173201" category="section-title">Exibir armazenamentos de dados e máquinas virtuais</block>
-  <block id="e3dbc361d0cd589544c61663904eef2c" category="paragraph">Os datastores e máquinas virtuais protegidos usando o SnapCenter Plug-in for VMware vSphere são exibidos.</block>
-  <block id="4e98200f297bd7d5853a285fdfe1191f" category="list-text">Na interface do usuário do console, selecione *Proteção* &gt; *Backup e recuperação* &gt; *Máquinas virtuais* &gt; *Configurações* &gt; * SnapCenter Plug-in for VMware vSphere*.</block>
-  <block id="18a02c3f300d1165ca70adad83d6a91a" category="list-text">Selecione o SnapCenter Plug-in for VMware vSphere cujos datastores e máquinas virtuais você deseja ver.</block>
-  <block id="b1314bfff132a050766ce5d32ac976de" category="section-title">Desproteger armazenamentos de dados</block>
-  <block id="24e973d26bb253c7b5fb8a764db6860a" category="paragraph">Você pode desproteger um armazenamento de dados que já estava protegido anteriormente.  Você pode desproteger um armazenamento de dados quando quiser excluir os backups na nuvem ou não quiser mais fazer backup na nuvem.  O armazenamento de dados pode ser protegido novamente após a desproteção ser bem-sucedida.</block>
-  <block id="a4d4871f49f1183bee5e02ea1b2064f9" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao armazenamento de dados que você deseja desproteger e selecione *Desproteger*.</block>
-  <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">Editar o SnapCenter Plug-in for VMware vSphere</block>
-  <block id="7d890413f9b664e2bcf99c30c870de89" category="paragraph">Você pode editar os detalhes do SnapCenter Plug-in for VMware vSphere no Console.</block>
-  <block id="73f6eff78e2d5b4c91558c1e0c0e8a24" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> e selecione *Editar*.</block>
-  <block id="05c829c7b617d014c0186656453575ea" category="list-text">Modifique os detalhes conforme necessário.</block>
-  <block id="738c224049615eeb47fe5a57a6ea8f7c" category="section-title">Atualizar recursos e backups</block>
-  <block id="0e9cec251ac8debda34d029f4302d4eb" category="paragraph">Se quiser visualizar os últimos armazenamentos de dados e backups que foram adicionados ao aplicativo, atualize os recursos e backups.  Isso iniciará a descoberta dos recursos e backups e os detalhes mais recentes serão exibidos.</block>
-  <block id="04fa58f349615d27149f6dda8efe38e2" category="list-text">Selecione *Backup e Recuperação* &gt; *Máquinas Virtuais*.</block>
-  <block id="266f9ff12956ac5692bc7be08bda846f" category="list-text">No menu suspenso *Configurações*, selecione * SnapCenter Plug-in for VMware vSphere*.</block>
-  <block id="3909de0b2400078920ffd3d72a06f81b" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao SnapCenter Plug-in for VMware vSphere e selecione *Atualizar recursos e backups*.</block>
-  <block id="aa8a6c50e00adebd857afeb3c163080e" category="section-title">Atualizar política ou grupo de recursos</block>
-  <block id="a663847f6a4dfe84a9e34d968b306aef" category="paragraph">Se houver uma alteração na política ou no grupo de recursos, você deverá atualizar o relacionamento de proteção.</block>
-  <block id="dfc67c4e882a2d4fffb8d16037fa7dd2" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao armazenamento de dados e selecione *Atualizar proteção*.</block>
-  <block id="ecb0c28cd21006ad8c86d4be09edf297" category="section-title">Cancelar registro do SnapCenter Plug-in for VMware vSphere</block>
-  <block id="3d61f1dcef482f1c526370542b798e50" category="paragraph">Todos os armazenamentos de dados e máquinas virtuais associados ao SnapCenter Plug-in for VMware vSphere ficarão desprotegidos.</block>
-  <block id="b184ae3f5a4589cacbec55aa0fa973fc" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao SnapCenter Plug-in for VMware vSphere e selecione *Cancelar registro*.</block>
-  <block id="d65dcf19e9eda758238d835f23a69642" category="section-title">Monitorar empregos</block>
-  <block id="4044636ea8a32c730e3b044adcda1f8c" category="paragraph">Os trabalhos são criados para todas as operações de NetApp Backup and Recovery .  Você pode monitorar todos os trabalhos e todas as subtarefas que são executadas como parte de cada tarefa.</block>
-  <block id="942b89acbe370667e9d70389e84f8544" category="list-text">Selecione *Backup e recuperação* &gt; *Monitoramento de tarefas*.</block>
-  <block id="5f2c87cb3d6dde849915754be64e1690" category="paragraph">Quando você inicia uma operação, uma janela aparece informando que o trabalho foi iniciado.  Você pode selecionar o link para monitorar o trabalho.</block>
-  <block id="84d686b7ff9ad225b36fb397dd4cbce7" category="list-text">Selecione a tarefa principal para visualizar as subtarefas e o status de cada uma delas.</block>
-  <block id="38f579d721675ddff9e2ac5938361837" category="doc">Crie uma política para fazer backup de datastores no NetApp Backup and Recovery</block>
-  <block id="b584330b721e66ff5dabb697badb5ff7" category="paragraph">Você pode criar uma política ou usar uma das seguintes políticas predefinidas disponíveis no NetApp Backup and Recovery.</block>
-  <block id="43852dc1e0c3229284688eb4c01dfef0" category="list-text">Você deve criar políticas se não quiser editar as políticas predefinidas.</block>
-  <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">Para mover backups do armazenamento de objetos para o armazenamento de arquivo, você deve executar o ONTAP 9.10.1 ou posterior e o Amazon Web Services ou o Microsoft Azure deve ser o provedor de nuvem.</block>
-  <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">Você deve configurar o nível de acesso ao arquivo para cada provedor de nuvem.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">Sobre esta tarefa</block>
-  <block id="25a9fea1bd39d0e24939bbbf1f842b7a" category="paragraph">As seguintes políticas predefinidas estão disponíveis no NetApp Console:</block>
-  <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">Nome da Política</block>
-  <block id="b021df6aac4654c454f46c77646e745f" category="cell">Rótulo</block>
-  <block id="dfa56cb0ff8ac0e7087134a3d7e1f39d" category="cell">Valor de retenção</block>
-  <block id="7250cb0d0c1524aec805084d9f0ffc21" category="paragraph">LTR diário de 1 ano (retenção de longo prazo)</block>
-  <block id="c512b685438f41daa7386329a3b8f8d3" category="paragraph">Diário</block>
-  <block id="5ef698cd9fe650923ea331c15af3b160" category="paragraph">366</block>
-  <block id="5ea7bb0579b5fe6d2acf33c0ab584548" category="paragraph">5 anos de LTR diário</block>
-  <block id="069654d5ce089c13f642d19f09a3d1c0" category="paragraph">1830</block>
-  <block id="2cd29ea4d4dd80df56178fc41c9bc385" category="paragraph">LTR semanal de 7 anos</block>
-  <block id="6c25e6a6da95b3d583c6ec4c3f82ed4d" category="paragraph">Semanalmente</block>
-  <block id="d709f38ef758b5066ef31b18039b8ce5" category="paragraph">370</block>
-  <block id="f76a9390149b62241c42efed985a431a" category="paragraph">LTR mensal de 10 anos</block>
-  <block id="9030e39f00132d583da4122532e509e9" category="paragraph">Mensal</block>
-  <block id="da4fb5c6e93e74d3df8527599fa62642" category="paragraph">120</block>
-  <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">Na página Máquinas virtuais, na lista suspensa Configurações, selecione *Políticas*.</block>
-  <block id="db92c743d97601150bbdfa11bf3cf66b" category="list-text">Selecione *Criar política*.</block>
-  <block id="9f6b1aa82322cc4f853fe0fe7c532ff0" category="list-text">Na seção Retenção, selecione um dos tipos de retenção e especifique o número de backups a serem retidos.</block>
-  <block id="db2205364549e4c4841dc9b5d66f62a3" category="list-text">Selecione Primário ou Secundário como fonte de armazenamento de backup.</block>
-  <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">(Opcional) Se você quiser mover backups do armazenamento de objetos para o armazenamento de arquivamento após um determinado número de dias para otimização de custos, marque a caixa de seleção *Backups em camadas para arquivamento* e insira o número de dias após os quais o backup deve ser arquivado.</block>
-  <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">Você não pode editar ou excluir uma política que esteja associada a um armazenamento de dados.</block>
-  <block id="ac58e4fdaef529d7061db727c7d95b98" category="doc">Pré-requisitos para cargas de trabalho de máquinas virtuais no NetApp Backup and Recovery</block>
-  <block id="443b7d29fe382a91202282145dbedf43" category="paragraph">Antes de começar a proteger suas cargas de trabalho de máquinas virtuais com o NetApp Backup and Recovery, certifique-se de atender aos seguintes pré-requisitos:</block>
-  <block id="d511399444cf864b695600d159b7c93b" category="list-text">SnapCenter Plug-in for VMware vSphere 4.6P1 ou posterior</block>
-  <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">Você deve usar o SnapCenter Plug-in for VMware vSphere 4.7P1 ou posterior para fazer backup de datastores do armazenamento secundário local.</block>
-  <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">ONTAP 9.8 ou posterior</block>
-  <block id="06126ace9559015b34270e5c984cb3c9" category="list-text">Para suporte ao VMFS, o SnapCenter Plug-in for VMware vSphere deve estar em execução na versão 4.9 ou posterior.  Certifique-se de fazer um backup do armazenamento de dados VMFS se o SnapCenter Plug-in for VMware vSphere foi atualizado de uma versão anterior para a versão 4.9.</block>
-  <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">Pelo menos um backup deve ter sido feito no SnapCenter Plug-in for VMware vSphere 4.6P1.</block>
-  <block id="61607910a1db523098b12865f02faff4" category="list-text">Pelo menos uma política diária, semanal ou mensal no SnapCenter Plug-in for VMware vSphere sem rótulo ou com o mesmo rótulo da política de Máquinas Virtuais no Console.</block>
-  <block id="9c2d7e78a68e18061466c4c12001d828" category="list-text">Para uma política predefinida, a camada de agendamento deve ser a mesma para o armazenamento de dados no SnapCenter Plug-in for VMware vSphere e na nuvem.</block>
-  <block id="ad747f24f06324c9bc58eeaa274f014a" category="list-text">Certifique-se de que não haja volumes FlexGroup no armazenamento de dados, pois o backup e a restauração de volumes FlexGroup não são suportados.</block>
-  <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">Desabilite "*_recent*" nos grupos de recursos necessários.  Se você tiver "*_recent*" habilitado para o grupo de recursos, os backups desses grupos de recursos não poderão ser usados para proteção de dados na nuvem e, consequentemente, não poderão ser usados para a operação de restauração.</block>
-  <block id="391eb750d98c55b72607ff6ec6311db2" category="list-text">Certifique-se de que o armazenamento de dados de destino onde a máquina virtual será restaurada tenha espaço suficiente para acomodar uma cópia de todos os arquivos da máquina virtual, como VMDK, VMX, VMSD e assim por diante.</block>
-  <block id="6ee2c41b7a9bfae5bb618327d9499834" category="list-text">Certifique-se de que o armazenamento de dados de destino não tenha arquivos de máquina virtual obsoletos no formato restore_xxx_xxxxxx_filename de falhas de operação de restauração anteriores.  Você deve excluir os arquivos obsoletos antes de iniciar uma operação de restauração.</block>
-  <block id="7148963c1fe9bd20799d84596b688191" category="list-text">Para implantar um conector com proxy configurado, certifique-se de que todas as chamadas de saída do conector sejam roteadas pelo servidor proxy.</block>
-  <block id="e0d0f7f19ee8c764850a895376299f6e" category="list-text">Se um volume que faz backup de um armazenamento de dados já estiver protegido na guia Volumes (NetApp Backup and Recovery -&gt; Volumes), o mesmo armazenamento de dados não poderá ser protegido novamente na guia Máquinas virtuais (NetApp Backup and Recovery -&gt; Máquinas virtuais).</block>
-  <block id="455299fd2e4b438ff8661df0bfd1cace" category="paragraph">A imagem a seguir mostra cada componente e as conexões que você precisa preparar entre eles:</block>
-  <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">diagrama de arquitetura</block>
-  <block id="955c6f1851b4039bd20ae31d5f14d338" category="paragraph"><block ref="955c6f1851b4039bd20ae31d5f14d338" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="1ad1b9b9f7ac4090b8d287b119a246b7" category="doc">Visão geral sobre proteção de cargas de trabalho de máquinas virtuais no NetApp Backup and Recovery</block>
-  <block id="f2e6828ccbddc013dabb3aca8551e78b" category="paragraph">Proteja as cargas de trabalho das suas máquinas virtuais com o NetApp Backup and Recovery.  O NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com economia de espaço, consistentes em caso de falhas e consistentes com VMs, repositórios de dados e VMDKs.</block>
-  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">Você pode fazer backup de datastores no Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e restaurar máquinas virtuais de volta para o host SnapCenter Plug-in for VMware vSphere local.</block>
-  <block id="21b169a7cabe8831cd38ce5fb6f77475" category="paragraph">Para obter instruções sobre como proteger cargas de trabalho de máquinas virtuais, consulte os seguintes tópicos:</block>
-  <block id="49ef03573c7748afa14739a88a72a8fe" category="inline-link-macro">Crie uma política para cargas de trabalho do VMware</block>
-  <block id="f906bca37e956e72a0c25eb84a587aba" category="list-text"><block ref="f906bca37e956e72a0c25eb84a587aba" category="inline-link-macro-rx"></block></block>
-  <block id="533a49682158340fa752f41b001c3ed7" category="inline-link-macro">Fazer backup de datastores VMware no Amazon Web Services</block>
-  <block id="28ed746142d082cc313c957c3916de57" category="list-text"><block ref="28ed746142d082cc313c957c3916de57" category="inline-link-macro-rx"></block></block>
-  <block id="b4d632569ac2a60a95624d732b062c21" category="inline-link-macro">Fazer backup de datastores VMware no Microsoft Azure</block>
-  <block id="8452a00d810c3f304181a9750756e3c3" category="list-text"><block ref="8452a00d810c3f304181a9750756e3c3" category="inline-link-macro-rx"></block></block>
-  <block id="f54c20442d5c079704492d9e9cc632b0" category="inline-link-macro">Faça backup dos datastores do VMware no Google Cloud Platform</block>
-  <block id="08261c8a90295d24c0179c89fab872df" category="list-text"><block ref="08261c8a90295d24c0179c89fab872df" category="inline-link-macro-rx"></block></block>
-  <block id="d4e0304413c6571799459b3f2395df3b" category="inline-link-macro">Fazer backup de datastores VMware no StorageGRID</block>
-  <block id="a8fdfae9cbcef9f449ea9eb2143c4f64" category="list-text"><block ref="a8fdfae9cbcef9f449ea9eb2143c4f64" category="inline-link-macro-rx"></block></block>
-  <block id="2f8f18e2be23909e758abe786154b05f" category="list-text"><block ref="2f8f18e2be23909e758abe786154b05f" category="inline-link-macro-rx"></block></block>
-  <block id="1f325f707555c5e4623d4ca3ed92bc14" category="inline-link-macro">Gerenciar proteção para cargas de trabalho VMware</block>
-  <block id="6b5e78f60de50d17c6c9e6c26f183c04" category="list-text"><block ref="6b5e78f60de50d17c6c9e6c26f183c04" category="inline-link-macro-rx"></block></block>
-  <block id="4f42130e8cfb9f713223107cb029a735" category="doc">Restaure dados de máquinas virtuais com o NetApp Backup and Recovery</block>
-  <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">Não é possível restaurar máquinas virtuais que abrangem vários repositórios de dados.</block>
-  <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">Se você estiver restaurando para um local alternativo:</block>
-  <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">Certifique-se de que os vCenters de origem e destino estejam no modo vinculado.</block>
-  <block id="ccea797bbf5eba8cc950fa05c806cd76" category="list-text">Certifique-se de que os detalhes do cluster de origem e destino sejam adicionados na página *Sistemas* do NetApp Console e no modo vinculado dos vCenters no SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="52bda1d8d40e82cef23f0197a5e0c990" category="list-text">Na interface do usuário do console, selecione *Proteção* &gt; *Backup e recuperação* &gt; *Máquinas virtuais* &gt; * SnapCenter Plug-in for VMware vSphere* e selecione o host do SnapCenter Plug-in for VMware vSphere .</block>
-  <block id="d180a4da8965c4cd5488cd05903774f0" category="list-text">Você pode restaurar a máquina virtual para o local original ou para um local alternativo a partir do armazenamento de dados ou de máquinas virtuais:</block>
-  <block id="db5366d69994d30376d1a970dcebb9ce" category="cell">Se você quiser restaurar a máquina virtual...</block>
-  <block id="5e2ad6fd9deb412d871137094ee43ef0" category="cell">Faça isso...</block>
-  <block id="ccc5c5f6926c7affe9ddb8b5fd8e78d0" category="paragraph">para o local original do armazenamento de dados</block>
-  <block id="7103002346129eef1e9f38419a6c849d" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao armazenamento de dados que você deseja restaurar e clique em *Exibir detalhes*.</block>
-  <block id="a7b5011dd36cfe0539eff959f97ab523" category="list-text">Selecione *Restaurar* correspondente ao backup que você deseja restaurar.</block>
-  <block id="ce924f0dcf910e34ec23b7b7ca88af8d" category="list-text">Selecione a máquina virtual que você deseja restaurar do backup e selecione *Avançar*.</block>
-  <block id="8cc375f4ce3601a663a600c7d8e620e5" category="list-text">Certifique-se de que *Original* esteja selecionado e selecione *Continuar*.</block>
-  <block id="793f88b02160a70ac96d346b799dd570" category="list-text">Se a máquina virtual estiver protegida usando uma política em que as configurações de arquivamento são definidas, selecione *Prioridade de restauração de arquivamento* e selecione *Avançar*.</block>
-  <block id="5f6a823289f7bbe90f46815d77f2f0f9" category="list-text">Revise os detalhes e selecione *Restaurar*.</block>
-  <block id="c0df5d97adcf3825af806d990e658e67" category="paragraph">para um local alternativo do armazenamento de dados</block>
-  <block id="1be093b2878514e1a668a6557e0fa48f" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente ao armazenamento de dados que você deseja restaurar e selecione *Exibir detalhes*.</block>
-  <block id="2f663ab73d99f410b05e9f748fdb9f69" category="list-text">Selecione *Alternativo*.</block>
-  <block id="1825907f18d398bff7d7bf89210651db" category="list-text">Selecione o vCenter Server, o host ESXi, o armazenamento de dados e a rede alternativos.</block>
-  <block id="94187c3780ece70dc5689a3db077e744" category="list-text">Forneça um nome para a VM após a restauração e selecione *Continuar*.</block>
-  <block id="0236f808af929087f6a9616d379b96a4" category="paragraph">para o local original das máquinas virtuais</block>
-  <block id="6cd8cc5fdd9e1409bcb46d17177068ee" category="list-text">Selecione o ícone Ações<block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> correspondente à máquina virtual que você deseja restaurar e selecione *Restaurar*.</block>
-  <block id="071df86763e0e93af80e50596aa0710c" category="list-text">Selecione o backup por meio do qual você deseja restaurar a máquina virtual.</block>
-  <block id="ccb90cb50d99e7cb9712a836810d4fae" category="paragraph">para um local alternativo de máquinas virtuais</block>
   <block id="b92e6028af16604f3b6fd4eade9dfec6" category="summary">Ao usar o NetApp Backup and Recovery em um site sem acesso à Internet, conhecido como "modo privado", os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID ou ONTAP S3 onde seus backups estão sendo armazenados.  Se você tiver um problema com o sistema host do agente do Console no futuro, poderá implantar um novo agente do Console e restaurar os dados críticos do NetApp Backup and Recovery .</block>
   <block id="a215e32a572a4f73138eb57df3fb494d" category="doc">Restaurar dados de configuração do NetApp Backup and Recovery em um site escuro</block>
   <block id="e49ea1690cc473e646cdffd861381cbc" category="paragraph">Ao usar o NetApp Backup and Recovery em um site sem acesso à Internet, conhecido como _modo privado_, os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID ou ONTAP S3 onde seus backups estão sendo armazenados.  Se você tiver um problema com o sistema host do agente do Console, poderá implantar um novo agente do Console e restaurar os dados críticos do NetApp Backup and Recovery .</block>
@@ -4239,16 +4074,6 @@
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">Gerenciar inventário do Microsoft SQL Server</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">Gerenciar instantâneos do Microsoft SQL Server</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">Criar relatórios do Microsoft SQL Server</block>
-  <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">Proteja as cargas de trabalho do VMware (com o plug-in SnapCenter para VMware)</block>
-  <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Visão geral da proteção de cargas de trabalho de máquinas virtuais</block>
-  <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Pré-requisitos para proteger cargas de trabalho de máquinas virtuais</block>
-  <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">Crie uma política para fazer backup de dados da máquina virtual</block>
-  <block id="1d5ad62b9217b4a3f085f517534f40bb" category="sidebar">Fazer backup de datastores no Amazon Web Services</block>
-  <block id="32d2b45dd98e36ad888d7156b4532053" category="sidebar">Fazer backup de datastores no Microsoft Azure</block>
-  <block id="eb1ab874b09a7eab583845e8576be828" category="sidebar">Fazer backup de armazenamentos de dados no Google Cloud Platform</block>
-  <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="sidebar">Fazer backup de datastores no StorageGRID</block>
-  <block id="9a3f2e7eb30992bb084418711e5093f2" category="sidebar">Gerenciar a proteção de dados de armazenamentos de dados e máquinas virtuais</block>
-  <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Restaurar dados e armazenamentos de dados de máquinas virtuais</block>
   <block id="a6c93de7c03701dfba222e9072ffe5e7" category="sidebar">Proteja cargas de trabalho do KVM (visualização)</block>
   <block id="34caa737a5a671b66cc6fe7531c1f8b9" category="sidebar">Montar e desmontar pontos de recuperação</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Proteja as cargas de trabalho do Kubernetes (visualização)</block>
@@ -4288,11 +4113,7 @@
   <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Na página Restaurar (Pesquisar e Restaurar), você pode restaurar um recurso pesquisando o snapshot com filtros, mesmo que não se lembre do nome exato, local ou última data conhecida.</block>
   <block id="63751d750873479f94855f0a16fc63d8" category="list-text">Requisitos de software para o host do Hyper-V Windows Server:</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Se a operação de restauração não for concluída, aguarde até que o Job Monitor mostre "Falha" antes de tentar a operação de restauração novamente.</block>
-  <block id="df3ee99c8171743d8bd35d65cf62b2ed" category="paragraph">Você pode restaurar dados de máquinas virtuais da nuvem para o vCenter Server local com o NetApp Backup and Recovery. Você pode restaurar a máquina virtual exatamente no mesmo local de onde o backup foi feito ou em um local alternativo. Se o backup da máquina virtual foi feito usando a política de arquivamento, você pode definir a prioridade de restauração de arquivamento.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consulte<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
-  <block id="2f3b7eef1cf7df43dea1233ed03f5f42" category="list-text">Certifique-se de que o sistema seja adicionado para o outro local na página *Sistemas* do Console.</block>
-  <block id="870482577443f708a74b9dbe9b8fe928" category="admonition">Se você mover uma máquina virtual usando o VMware vSphere vMotion e restaurá-la do Console, o Backup e Recuperação a restaurará para o local de backup original.</block>
-  <block id="6e6630b7443f8dd6eade1b55e3c59141" category="paragraph">As prioridades de restauração de arquivamento suportadas são alta, padrão e baixa para Amazon Web Services, e alta e padrão para Microsoft Azure.</block>
   <block id="2f52181b09a7c053aed22699e227b9db" category="paragraph">Quando você usa o NetApp Backup and Recovery em um ambiente SaaS com o agente do Console implantado no seu provedor de nuvem ou no seu próprio host conectado à Internet, o sistema faz backup e protege todos os dados de configuração importantes na nuvem.  Se você tiver um problema com o agente do Console, crie um novo agente do Console e adicione seus sistemas.  Os detalhes do backup são restaurados automaticamente.</block>
   <block id="361cc78877d7de2ea952f510e7626ad4" category="paragraph">É feito backup desses dados uma vez por dia à meia-noite, e no máximo 7 cópias de cada arquivo são retidas. Se o agente do Console estiver gerenciando vários sistemas ONTAP locais, os arquivos de NetApp Backup and Recovery serão armazenados no bucket do sistema que foi ativado primeiro.</block>
   <block id="2be5ff28599e1447ad26486d058560b3" category="paragraph">Se o seu agente do Console local parar de funcionar, você precisará instalar um novo agente do Console e restaurar os dados do NetApp Backup and Recovery para o novo agente do Console.</block>
@@ -5232,4 +5053,5 @@
   <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">Proteger cargas de trabalho KVM (preview)</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Proteger cargas de trabalho do Oracle Database (prévia)</block>
   <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">Proteja cargas de trabalho VMware (sem SnapCenter Plug-in para VMware)</block>
+  <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Armazenamento conectado compatível: ONTAP 9.13 ou posterior</block>
 </blocks>
