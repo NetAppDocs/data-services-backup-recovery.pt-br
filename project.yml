@@ -123,7 +123,7 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Criar relatórios do Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Proteja cargas de trabalho VMware (sem SnapCenter Plug-in para VMware)
+    - title: Proteja as cargas de trabalho do VMware
       entries:
       - title: Visão geral das cargas de trabalho do Protect VMware
         url: "/br-use-vmware-protect-overview.html"

@@ -30,9 +30,9 @@ O suporte para cargas de trabalho do Microsoft Hyper-V agora está geralmente di
 
 
 
-=== Cargas de trabalho KVM suportadas na General Availability (GA)
+=== Cargas de trabalho VMware suportadas na General Availability (GA)
 
-O suporte para cargas de trabalho KVM agora está geralmente disponível (GA) em NetApp Backup and Recovery.
+O suporte para cargas de trabalho VMware agora está disponível para o público em geral (GA) em NetApp Backup and Recovery.
 
 
 

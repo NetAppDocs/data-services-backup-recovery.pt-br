@@ -5045,11 +5045,9 @@
   <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">Restaurar aplicativos Kubernetes usando recursos personalizados</block>
   <block id="6108d5ad430f0631e5c6e10714ba980c" category="doc">Cargas de trabalho do Microsoft Hyper-V suportadas em General Availability (GA)</block>
   <block id="c5db154b8366e71dcf87e4624b1a0112" category="paragraph">O suporte para cargas de trabalho do Microsoft Hyper-V agora está geralmente disponível (GA) em NetApp Backup and Recovery.</block>
-  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="section-title">Cargas de trabalho KVM suportadas na General Availability (GA)</block>
-  <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">O suporte para cargas de trabalho KVM agora está geralmente disponível (GA) em NetApp Backup and Recovery.</block>
   <block id="a4af15d338a93411ae3eacbe3e9d1c5e" category="sidebar">Proteger cargas de trabalho KVM (preview)</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Proteger cargas de trabalho do Oracle Database (prévia)</block>
-  <block id="72f656ffc88a48ec4092d869ae05c4e6" category="sidebar">Proteja cargas de trabalho VMware (sem SnapCenter Plug-in para VMware)</block>
   <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Armazenamento conectado compatível: ONTAP 9.13 ou posterior</block>
   <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">São suportados armazenamentos de dados NFS e VMFS.</block>
+  <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">Cargas de trabalho VMware suportadas na General Availability (GA)</block>
 </blocks>
