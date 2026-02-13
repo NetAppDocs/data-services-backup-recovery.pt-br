@@ -137,3 +137,9 @@ Opcionalmente, se você tiver uma licença baseada em nó não atribuída para o
 Use o NetApp Console para gerenciar licenças BYOL.  Você pode adicionar novas licenças, atualizar licenças existentes e visualizar o status da licença no Console.
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["Saiba mais sobre como adicionar licenças"^].
+
+
+
+== Excedendo a capacidade da licença
+
+Exceder a capacidade da sua licença aciona as tarifas PAYGO; sem uma assinatura PAYGO, você não pode criar novos backups, embora os backups existentes possam ser restaurados sem garantia de serviço. Certifique-se de renovar sua licença antes que ela expire; uma licença expirada impede novos backups e interrompe o serviço.

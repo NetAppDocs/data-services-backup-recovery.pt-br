@@ -5050,4 +5050,6 @@
   <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Armazenamento conectado compatível: ONTAP 9.13 ou posterior</block>
   <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">São suportados armazenamentos de dados NFS e VMFS.</block>
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">Cargas de trabalho VMware suportadas na General Availability (GA)</block>
+  <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">Excedendo a capacidade da licença</block>
+  <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">Exceder a capacidade da sua licença aciona as tarifas PAYGO; sem uma assinatura PAYGO, você não pode criar novos backups, embora os backups existentes possam ser restaurados sem garantia de serviço. Certifique-se de renovar sua licença antes que ela expire; uma licença expirada impede novos backups e interrompe o serviço.</block>
 </blocks>
