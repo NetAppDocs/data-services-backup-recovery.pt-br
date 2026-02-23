@@ -216,6 +216,8 @@ sidebar:
       - title: Gerenciar modelos de ganchos de execução para cargas de trabalho do
           Kubernetes
         url: "/br-use-manage-execution-hook-templates.html"
+      - title: Criar e gerenciar relatórios de proteção
+        url: "/br-use-kubernetes-reports.html"
     - title: Monitorar trabalhos
       url: "/br-use-monitor-tasks.html"
     - title: Reinicie o NetApp Backup and Recovery

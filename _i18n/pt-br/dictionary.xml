@@ -354,7 +354,6 @@
   <block id="e2b26238e3aec34978fbb465dfd6baff" category="list-text">Restaurar VMs para um local alternativo</block>
   <block id="fe8e9fc813c1e8a639c0cadb6115589f" category="list-text">Proteja VMs armazenadas em SAN</block>
   <block id="ca73b42f56baa81e1c83e31ee5c53d42" category="list-text">Proteger aplicativos</block>
-  <block id="d5598f128bb28f962fcd8574013f2a43" category="list-text">Crie grupos de proteção usando VMs de vários hosts KVM</block>
   <block id="2fbb28a0f1560254b88f56b3632cf88b" category="list-text">Crie backups definidos pelo usuário (somente backups iniciados no NetApp Console são suportados)</block>
   <block id="b26873df0260bdc332a7511f6823cf63" category="section-title">Configurações não suportadas</block>
   <block id="f19c49e2c5af4fdef9d76da8243928b8" category="paragraph">As seguintes configurações não são suportadas:</block>
@@ -1698,8 +1697,6 @@
   <block id="793c79d603a2a6eb42272304c6135f12" category="list-text">Certifique-se de que o nome correto do aplicativo esteja selecionado.</block>
   <block id="408156cb89b56d3b746dba5ade40b0e4" category="paragraph">O Console cria um backup do aplicativo e exibe o progresso na área *Monitoramento* de Backup e Recuperação. O backup é criado com base na política de proteção associada ao aplicativo.</block>
   <block id="2f2fda22f167ad6c7dcc0ac3f92cd945" category="summary">No NetApp Backup and Recovery, crie relatórios para visualizar o status dos seus backups, incluindo o número de backups, o número de backups bem-sucedidos e o número de backups com falha.  Você também pode visualizar os detalhes de cada backup, incluindo o tipo de backup, o sistema de armazenamento usado para o backup e a hora do backup.</block>
-  <block id="8e6f4a9d7c64e35859548854a52b145a" category="doc">Crie relatórios para cargas de trabalho do Microsoft SQL Server no NetApp Backup and Recovery</block>
-  <block id="df63e1970b7cb20512cb62b542bcd3f8" category="section-title">Criar um relatório</block>
   <block id="391ccda3039974f5c4561d91d157e4be" category="paragraph">*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clone de backup e recuperação.  Aprenda sobre<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> .<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block> .</block>
   <block id="a75db1c6ad7a6018f4076429dcb47fd8" category="list-text">No menu NetApp Backup and Recovery , selecione a opção *Relatórios*.</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">Selecione *Criar relatório*.</block>
@@ -4525,10 +4522,7 @@
   <block id="432d122bca6b826d0ff8b770008cb6da" category="list-text">Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).</block>
   <block id="cbf60595828cc0c9aea61a13478c0526" category="admonition">Na versão de 19 de janeiro de 2026, não será possível atualizar os plugins da NetApp para Hyper-V ou Windows usando a opção *Atualizar* no menu Ações. Em vez disso, remova cada host Hyper-V e adicione-o novamente para atualizar os plugins.</block>
   <block id="fa1b7fd0ad5ec372cdf9f907c6fbf709" category="section-title">Notas de resolução de problemas</block>
-  <block id="9bd2877d70202ee3498597fbe9e5cc2f" category="paragraph">Ao usar a pré-visualização privada de cargas de trabalho KVM com o NetApp Backup and Recovery, observe o seguinte:</block>
   <block id="ac034a836e482984e927ce7aef3a7bcc" category="list-text">Para garantir que a restauração da carga de trabalho KVM seja concluída com sucesso, certifique-se de que a configuração *Habilitar snapshot consistente com a VM* esteja ativa na política de proteção usada para backups do KVM.</block>
-  <block id="a9f8d95d40be1c757e5dddec176f49aa" category="list-text">Não é possível fazer backup de um pool de armazenamento com hosts KVM gerenciados pelo Apache CloudStack, a menos que você adicione todos os hosts gerenciados ao NetApp Backup and Recovery. Como solução alternativa, adicione todos os hosts KVM gerenciados pelo CloudStack ao NetApp Backup and Recovery.</block>
-  <block id="a08807a7feb533e9af18670f44dd0184" category="list-text">Não é possível fazer backup de uma máquina virtual (VM) parada que pertença a um grupo de proteção. Como solução alternativa, remova a máquina virtual interrompida do grupo de proteção antes de iniciar o backup.</block>
   <block id="caf127224717f7d5605f4155b3a36376" category="list-text"><block ref="473bc5f1f9d293596a6cf3f7d880fe14" category="inline-xref-macro-rx"></block> para quaisquer hosts Windows, Microsoft SQL Server, Oracle Database ou Linux com os quais o NetApp Backup and Recovery precise se autenticar. Isso inclui as credenciais do sistema operacional convidado Windows usadas ao restaurar arquivos ou pastas do sistema convidado.</block>
   <block id="a22707a596fa8306e8d6a5944e2eda1e" category="list-text"><block ref="89ad28258fc3723b5b08e269206e91aa" category="inline-xref-macro-rx"></block>. (Apenas cargas de trabalho KVM)</block>
   <block id="e0981966cb393b67a49dfbe74acbcaa9" category="paragraph">Adicione credenciais para recursos do host. O NetApp Backup and Recovery usa essas credenciais para descobrir cargas de trabalho e aplicar políticas de backup.</block>
@@ -5052,4 +5046,46 @@
   <block id="b9c809d8faa35e3cecf28c39b12a0890" category="list-text">ASP.NET Core Runtime 8.0.23 Hosting Bundle (e todos os patches 8.0.x subsequentes)</block>
   <block id="d5339ec2460f6dc04a037cc1e0c21e2c" category="list-text">PowerShell 7.4.13</block>
   <block id="6d379457554ecca51ab298da606eeb2d" category="list-text">PowerShell 7.4.13 ou posterior</block>
+  <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="doc">Cargas de trabalho KVM suportadas na General Availability (GA)</block>
+  <block id="e58f3c7a76cad4e6c2c7f515b3171f76" category="section-title">Kubernetes com suporte em General Availability (GA)</block>
+  <block id="2c4d488d266d9d0655ce2e1451e05b2d" category="paragraph">O suporte para cargas de trabalho do Kubernetes agora está disponível para o público em geral (GA) no NetApp Backup and Recovery. Esta versão das cargas de trabalho do Kubernetes também introduz os seguintes recursos aprimorados:</block>
+  <block id="2329c3692bdf2d2f098db291ec4e9427" category="paragraph">*Suporte a relatórios*: Agora você pode gerar relatórios de atividades de proteção para clusters Kubernetes e aplicativos protegidos pelo NetApp Backup and Recovery.</block>
+  <block id="2b9a71c68fa2528dcd54a63d6e7b908d" category="paragraph">Observe o seguinte ao usar a pré-visualização privada de cargas de trabalho KVM com NetApp Backup and Recovery.</block>
+  <block id="bc077e67c7216de25b87f90d5ec28ac0" category="list-text">Os backups podem falhar se o QEMU Guest Agent não estiver em execução em uma VM protegida. Como solução alternativa, certifique-se de que o <block ref="c17d9742912ea08e0cfecda90a08c954" prefix=" " category="inline-code"></block> daemon esteja em execução na VM antes de iniciar o backup.</block>
+  <block id="66330fd6b5a015d85e0b01e96c040005" category="summary">Crie relatórios de proteção para cargas de trabalho do Kubernetes para visualizar o status e os detalhes da proteção, incluindo contagens de backups bem-sucedidos e com falha, tipos de backup, informações sobre a integridade do cluster e muito mais.</block>
+  <block id="7e9944e42087b52e398e40511794ab10" category="doc">Crie e gerencie relatórios de proteção para cargas de trabalho do Kubernetes no NetApp Backup and Recovery</block>
+  <block id="59db8c9d0215fa2a51b2a35609aa5bbd" category="paragraph">Em NetApp Backup and Recovery, crie relatórios de proteção para cargas de trabalho do Kubernetes para visualizar o status e os detalhes da proteção, incluindo contagens de backups bem-sucedidos e com falha, tipos de backup, informações sobre a integridade do cluster e muito mais.</block>
+  <block id="6f0eb8b8a8ac47dbe395a0547f6dba8d" category="paragraph">*Função obrigatória do NetApp Console* Backup and Recovery super admin, Backup and Recovery backup admin ou Backup and Recovery restore admin. Saiba mais sobre <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
+  <block id="d45ba014e75a2424453d999d1ec1584d" category="section-title">Criar um relatório de proteção</block>
+  <block id="cf9569ff04e8697d933d86bb055b6753" category="paragraph">Crie um relatório de proteção para visualizar o status de proteção dos seus clusters.</block>
+  <block id="764cb0718c60ad28fec23c72e06cd3eb" category="list-text">*Tipo de relatório*: escolha se deseja um relatório por conta ou por carga de trabalho (selecione Kubernetes na lista).</block>
+  <block id="32e7d2bef37709329417fce15d4ef70a" category="list-text">*Selecionar cluster*: Se você selecionou por carga de trabalho, escolha o cluster da lista para o qual deseja gerar o relatório e selecione *Aceitar*. Escolha *Selecionar tudo* para gerar um relatório para todos os clusters.</block>
+  <block id="4aa69b04f720d9cf28bddc129bdda982" category="list-text">Defina o período do relatório: escolha se deseja que o relatório inclua dados do último dia, dos últimos 7 dias, dos últimos 30 dias, do último trimestre ou do último ano.</block>
+  <block id="8b1d3f0d4147e569670599b2074a9453" category="list-text">Insira os detalhes de configuração do relatório: escolha se deseja executar o relatório apenas uma vez ou agendar a geração recorrente do relatório. Para relatórios agendados, escolha a frequência de recorrência e selecione uma data de início.</block>
+  <block id="cf5d0c81e1ff395be07be7ab39b273a2" category="list-text">Insira os detalhes de entrega por e-mail: (apenas para relatórios agendados) Se desejar que o relatório seja entregue por e-mail, insira um ou mais endereços de e-mail que devem receber o relatório agendado.</block>
+  <block id="6966f88ce9330f288d2ff468e8f1bf31" category="section-title">Baixe um relatório de proteção</block>
+  <block id="ca0fab6dece474777af6f27a9ab6f7bf" category="paragraph">Faça o download de um relatório de proteção gerado, seja como um arquivo JSON ou um documento PDF, para que você possa visualizá-lo e compartilhá-lo.</block>
+  <block id="16d046f9df08fac82032019de67dd111" category="list-text">Na página *Relatórios*, selecione o menu *Relatórios* para ver a lista de relatórios de proteção gerados.</block>
+  <block id="46d0b33f9602910da192296aa16047c8" category="list-text">Para o relatório que você deseja baixar, selecione o ícone Ações <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Baixar*.</block>
+  <block id="3e67afef1e2a25129f8131a465c1f233" category="list-text">Selecione *Download JSON* para baixar o relatório em formato JSON.</block>
+  <block id="6a6e83b2656cc80c95ff1d51721fdfdf" category="list-text">Selecione *Baixar PDF* para baixar o relatório como um documento PDF.</block>
+  <block id="907ad6bf80ead0c498e1b96eeac0931b" category="section-title">Visualizar um relatório de proteção</block>
+  <block id="5ec71cd773423bccb3eb37e7ca0de834" category="paragraph">Visualize rapidamente os detalhes interativos de um relatório de proteção no NetApp Backup and Recovery. Você pode ver informações resumidas sobre tarefas, status da proteção de dados, detalhes de configuração e muito mais.</block>
+  <block id="4282f8fe4c83ccf233576c6529acd9cf" category="list-text">Para o relatório que você deseja visualizar, selecione o ícone Ações <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Visualizar relatório*.</block>
+  <block id="ba033453bbd04ac2ce08fa3e831d97b0" category="paragraph">Os detalhes do relatório aparecem.</block>
+  <block id="a1c5f902308b29e3dc37ca9471a1016c" category="section-title">Excluir um relatório de proteção</block>
+  <block id="ba71a8f948ce2ac60c238f470758a980" category="paragraph">Exclua um relatório de proteção quando não precisar mais dele.</block>
+  <block id="583b019e08073df7e3a4598861ee7567" category="list-text">Para o relatório que deseja excluir, selecione o ícone Actions <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Excluir*.</block>
+  <block id="ea78509096df982db8c5234ed6ea3e7c" category="list-text">Confirme a ação selecionando *Delete*.</block>
+  <block id="9c7a2480e98d69e7a466d0b0fd60ac07" category="list-text">Edite um grupo de proteção.</block>
+  <block id="3b8d8ee10228976bdc630252832886f7" category="list-text">Selecione um host para listar as VMs disponíveis nesse host. Para incluir VMs de todos os hosts detectados, selecione *All* na lista de hosts.</block>
+  <block id="fc20073811aa1e335ccc2bd9d99eebc7" category="list-text">Selecione as VMs individuais que deseja incluir no grupo de proteção ou selecione *All* para incluir todas as VMs na lista.</block>
+  <block id="b40b521f6bdf32a177d77954a599ae27" category="paragraph">As VMs que você selecionar aparecerão na área *Added virtual machines*. Você pode remover VMs individualmente da lista ou esvaziar a lista completamente. Você pode adicionar VMs de vários hosts KVM à lista.</block>
+  <block id="a9e57cec2c8ac57d718acff237fa31e8" category="list-text">Selecione a política de proteção que você deseja aplicar ao grupo de proteção ou crie uma nova política selecionando *Create new policy*.</block>
+  <block id="7e6254a3c499887f0d500958fc6584ed" category="paragraph">Edite um grupo de proteção se precisar alterar detalhes do grupo de proteção sem excluí-lo e recriá-lo.</block>
+  <block id="78fa67c28bf09a9555618080f725243c" category="list-text">Faça as alterações necessárias nos detalhes gerais e VMs do grupo de proteção.</block>
+  <block id="3573adc4fce66bc7bb13c8f35b9d7e90" category="list-text">Se necessário, altere a política associada ao grupo de proteção.</block>
+  <block id="64599804111c69e57052c204fb880b42" category="doc">Crie relatórios de proteção para cargas de trabalho do Microsoft SQL Server no NetApp Backup and Recovery</block>
+  <block id="8b3c75a910501c009c7e86f190f1825d" category="section-title">23 de fevereiro de 2026</block>
+  <block id="175ddb68a640ea3daeb84c25a2402e6f" category="sidebar">Criar e gerenciar relatórios de proteção</block>
 </blocks>

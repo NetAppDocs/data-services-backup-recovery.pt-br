@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: br-use-kubernetes-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: Crie relatórios de proteção para cargas de trabalho do Kubernetes para visualizar o status e os detalhes da proteção, incluindo contagens de backups bem-sucedidos e com falha, tipos de backup, informações sobre a integridade do cluster e muito mais. 
+---
+= Crie e gerencie relatórios de proteção para cargas de trabalho do Kubernetes no NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Em NetApp Backup and Recovery, crie relatórios de proteção para cargas de trabalho do Kubernetes para visualizar o status e os detalhes da proteção, incluindo contagens de backups bem-sucedidos e com falha, tipos de backup, informações sobre a integridade do cluster e muito mais.
+
+*Função obrigatória do NetApp Console* Backup and Recovery super admin, Backup and Recovery backup admin ou Backup and Recovery restore admin. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
+
+
+== Criar um relatório de proteção
+
+Crie um relatório de proteção para visualizar o status de proteção dos seus clusters.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione a opção *Relatórios*.
+. Selecione *Criar relatório*.
+. Insira os detalhes do escopo do relatório:
++
+** *Nome do relatório*: insira um nome exclusivo para o relatório.
+** *Tipo de relatório*: escolha se deseja um relatório por conta ou por carga de trabalho (selecione Kubernetes na lista).
+** *Selecionar cluster*: Se você selecionou por carga de trabalho, escolha o cluster da lista para o qual deseja gerar o relatório e selecione *Aceitar*. Escolha *Selecionar tudo* para gerar um relatório para todos os clusters.
+
+
+. Defina o período do relatório: escolha se deseja que o relatório inclua dados do último dia, dos últimos 7 dias, dos últimos 30 dias, do último trimestre ou do último ano.
+. Insira os detalhes de configuração do relatório: escolha se deseja executar o relatório apenas uma vez ou agendar a geração recorrente do relatório. Para relatórios agendados, escolha a frequência de recorrência e selecione uma data de início.
++
+.. Insira os detalhes de entrega por e-mail: (apenas para relatórios agendados) Se desejar que o relatório seja entregue por e-mail, insira um ou mais endereços de e-mail que devem receber o relatório agendado.
+
+
++
+Configure notificações por e-mail na página Configurações. Para obter detalhes sobre como configurar notificações por e-mail, consultelink:br-start-configure.html["Configurar definições"] .
+
+. Selecione *Criar*.
+
+
+
+
+== Baixe um relatório de proteção
+
+Faça o download de um relatório de proteção gerado, seja como um arquivo JSON ou um documento PDF, para que você possa visualizá-lo e compartilhá-lo.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione a opção *Relatórios*.
+. Na página *Relatórios*, selecione o menu *Relatórios* para ver a lista de relatórios de proteção gerados.
+. Para o relatório que você deseja baixar, selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Baixar*.
++
+** Selecione *Download JSON* para baixar o relatório em formato JSON.
+** Selecione *Baixar PDF* para baixar o relatório como um documento PDF.
+
+
+
+
+
+
+== Visualizar um relatório de proteção
+
+Visualize rapidamente os detalhes interativos de um relatório de proteção no NetApp Backup and Recovery. Você pode ver informações resumidas sobre tarefas, status da proteção de dados, detalhes de configuração e muito mais.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione a opção *Relatórios*.
+. Na página *Relatórios*, selecione o menu *Relatórios* para ver a lista de relatórios de proteção gerados.
+. Para o relatório que você deseja visualizar, selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Visualizar relatório*.
++
+Os detalhes do relatório aparecem.
+
+
+
+
+
+== Excluir um relatório de proteção
+
+Exclua um relatório de proteção quando não precisar mais dele.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione a opção *Relatórios*.
+. Na página *Relatórios*, selecione o menu *Relatórios* para ver a lista de relatórios de proteção gerados.
+. Para o relatório que deseja excluir, selecione o ícone Actions image:../media/icon-action.png["Opção de ações"] > *Excluir*.
+. Confirme a ação selecionando *Delete*.
+
