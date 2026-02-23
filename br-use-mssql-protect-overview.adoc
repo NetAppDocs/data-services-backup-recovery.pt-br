@@ -78,9 +78,6 @@ Você pode restaurar instâncias e bancos de dados do Microsoft SQL Server de um
 
 
 | StorageGRID | Sistema Cloud Volumes ONTAP ONTAP | Sistema ONTAP local ONTAP S3 
-
-
-| Amazon FSx for NetApp ONTAP | Amazon FSx for NetApp ONTAP | N / D 
 |===
 
 NOTE: Referências a "sistemas ONTAP locais" incluem sistemas FAS e AFF .
