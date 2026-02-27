@@ -147,7 +147,7 @@ sidebar:
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Solução de problemas de restauração de arquivos de convidado
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
-    - title: Proteja cargas de trabalho do KVM (visualização)
+    - title: Proteja cargas de trabalho KVM
       entries:
       - title: Visão geral das cargas de trabalho de proteção do KVM
         url: "/br-use-kvm-protect-overview.html"
@@ -186,7 +186,7 @@ sidebar:
         url: "/br-use-oracle-restore.html"
       - title: Montar e desmontar pontos de recuperação
         url: "/br-use-oracle-mount-unmount.html"
-    - title: Proteja as cargas de trabalho do Kubernetes (visualização)
+    - title: Proteja as cargas de trabalho do Kubernetes
       entries:
       - title: Visão geral das cargas de trabalho do Protect Kubernetes
         url: "/br-use-kubernetes-protect-overview.html"

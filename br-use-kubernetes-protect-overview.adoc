@@ -27,9 +27,6 @@ O NetApp Backup and Recovery oferece os seguintes benefícios para o gerenciamen
 * Backups incrementais permanentes para aplicativos Kubernetes, o que se traduz em Objetivos de Ponto de Recuperação (RPOs) e Objetivos de Tempo de Recuperação (RTOs) mais baixos.
 
 
-
-NOTE: Esta documentação é fornecida como uma prévia da tecnologia.  Durante a visualização, a funcionalidade do Kubernetes não é recomendada para cargas de trabalho de produção. Com esta oferta de visualização, a NetApp reserva-se o direito de modificar os detalhes, o conteúdo e o cronograma da oferta antes da disponibilidade geral.
-
 Você pode realizar as seguintes tarefas relacionadas ao gerenciamento de cargas de trabalho do Kubernetes:
 
 * link:br-start-discover-kubernetes.html["Descubra as cargas de trabalho do Kubernetes"].

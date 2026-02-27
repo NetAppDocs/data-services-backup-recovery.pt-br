@@ -16,7 +16,7 @@ summary: Analise estas limitações de NetApp Backup e recuperação antes de us
 [role="lead"]
 Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem com esta versão estão listados aqui.  Leia estas limitações com atenção.
 
-A seguinte ação não é suportada na versão de pré-visualização privada das cargas de trabalho do Oracle Database em NetApp Backup and Recovery:
+A seguinte ação não é suportada na versão de pré-visualização das cargas de trabalho do Oracle Database em NetApp Backup and Recovery:
 
 * Backup offline
 

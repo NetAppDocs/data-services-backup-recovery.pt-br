@@ -153,7 +153,7 @@ Ao usar o ONTAP 9.13.0 ou superior, você pode restaurar uma pasta junto com tod
 ====
 * Se o arquivo de backup tiver sido configurado com proteção DataLock e Ransomware, a restauração em nível de pasta será suportada somente se a versão do ONTAP for 9.13.1 ou superior.  Se estiver usando uma versão anterior do ONTAP, você poderá restaurar o volume inteiro a partir do arquivo de backup e então acessar a pasta e os arquivos necessários.
 * Se o arquivo de backup residir no armazenamento de arquivamento, a restauração em nível de pasta será suportada somente se a versão do ONTAP for 9.13.1 ou superior.  Se estiver usando uma versão anterior do ONTAP, você pode restaurar a pasta a partir de um arquivo de backup mais recente que não foi arquivado ou pode restaurar o volume inteiro a partir do backup arquivado e então acessar a pasta e os arquivos necessários.
-* Com o ONTAP 9.15.1, você pode restaurar pastas do FlexGroup usando a opção "Navegar e restaurar".  Este recurso está em modo de visualização de tecnologia.
+* Com o ONTAP 9.15.1, você pode restaurar pastas FlexGroup usando a opção "Procurar e restaurar".
 +
 Você pode testá-lo usando um sinalizador especial descrito no https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993#toc-hId-1830672444["Blog de lançamento do NetApp Backup and Recovery de julho de 2024"^] .
 

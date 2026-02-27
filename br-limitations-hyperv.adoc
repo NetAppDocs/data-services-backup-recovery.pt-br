@@ -20,7 +20,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 == Ações não suportadas
 
-As seguintes ações não são suportadas na versão de visualização privada das cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
+As seguintes ações não são suportadas em cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
 
 * Crie grupos de recursos usando máquinas virtuais de vários hosts Hyper-V.
 * Restaurar VMs para um local alternativo
