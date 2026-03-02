@@ -18,7 +18,7 @@ Talvez você queira montar um ponto de recuperação do Oracle Database se preci
 
 
 
-== Montar um ponto de restauração do Oracle Database
+== Montar um ponto de recuperação do Oracle Database
 
 Se você configurar a política de proteção para um banco de dados para reter logs de arquivamento, poderá montar pontos de recuperação para visualizar o histórico de alterações do banco de dados.
 
@@ -50,7 +50,7 @@ O ponto de recuperação é montado no host Oracle.
 
 
 
-== Desmontar um ponto de restauração do banco de dados Oracle
+== Desmontar um ponto de recuperação de banco de dados Oracle
 
 Desmonte o ponto de recuperação quando não precisar mais visualizar as alterações feitas no banco de dados.
 

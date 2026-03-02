@@ -14,13 +14,13 @@ summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de tr
 
 
 [role="lead"]
-O NetApp Backup and Recovery precisa primeiro descobrir seus bancos de dados Oracle para que você possa protegê-los.
+A descoberta de bancos de dados Oracle permite que NetApp Backup and Recovery os proteja criando e restaurando backups e snapshots.
 
 *Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 
 
-== Adicionar um host Oracle e descobrir recursos
+== Adicione um host do Oracle Database e descubra recursos
 
 Adicione informações do host Oracle e deixe o NetApp Backup and Recovery descobrir cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
 
@@ -31,18 +31,27 @@ Adicione informações do host Oracle e deixe o NetApp Backup and Recovery desco
 Se você estiver acessando o Backup and Recovery pela primeira vez e tiver um sistema no Console, mas nenhum recurso descoberto, a página _Bem-vindo ao novo NetApp Backup and Recovery_ será exibida com uma opção para *Descobrir recursos*.
 
 . Selecione *Descobrir recursos*.
-. Insira as seguintes informações:
+. Selecione *Oracle* para o campo *Tipo de carga de trabalho*.
+. Se você ainda não armazenou credenciais para este host Oracle Database, selecione *Adicionar credenciais*.
 +
-.. *Tipo de carga de trabalho*: Selecione *Oracle*.
-.. Se você ainda não armazenou credenciais para este host Oracle, selecione *Adicionar credenciais*.
-+
-... Selecione o agente do Console a ser usado com este host.
-... Digite um nome para esta credencial.
-... Digite o nome de usuário e a senha da conta.
-... Selecione *Concluído*.
+.. Selecione o agente do Console a ser usado com este host.
+.. Digite um nome para esta credencial.
+.. Digite o nome de usuário e a senha da conta.
+.. Selecione *Concluído*.
 
 
-.. *Registro de host*: Adicione um novo host Oracle.  Insira o FQDN ou endereço IP do host, credenciais, agente do console e número da porta.
+. *Registro de host*: Adicione um novo host do Oracle Database. Insira o FQDN ou endereço IP do host, as credenciais, o agente do Console e o número da porta.
+. (Opcional) Se você escolher credenciais para um usuário que não seja root, faça o seguinte:
++
+.. Para obter instruções sobre como adicionar o usuário não root que você selecionou ao arquivo sudoers no host do Oracle Database, selecione *Configurar sudoers*.
+.. Siga as instruções na caixa de diálogo, marque a caixa de seleção quando terminar e selecione *Done*.
+
+
+. *Configurações avançadas*: faça o seguinte:
++
+.. Insira a porta e o caminho de instalação a serem usados para o NetApp plug-in. O plug-in permite a comunicação entre o host do Oracle Database e NetApp Backup and Recovery.
+.. Escolha se deseja permitir que o NetApp Backup and Recovery instale o plug-in automaticamente ou ignorar a instalação (você precisará instalar o plug-in manualmente no host).
+.. Escolha se deseja realizar as verificações pré-instalação ou ignorá-las.
 
 
 . Selecione *Descobrir*.
@@ -53,7 +62,7 @@ TIP: Este processo pode levar alguns minutos.
 
 
 .Resultado
-A carga de trabalho do Oracle é exibida na lista de cargas de trabalho na página Inventário.
+A carga de trabalho do Oracle Database é exibida na lista de cargas de trabalho na página de Inventory.
 
 
 
