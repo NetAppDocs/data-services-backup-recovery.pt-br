@@ -142,6 +142,7 @@ Ao restaurar para um local alternativo, você pode alterar o vCenter de destino,
 
 ** Seção *Opções de pré-restauração*:
 +
+*** *Restauração rápida*: habilite esta opção para instruir o NetApp Backup and Recovery a restaurar apenas os metadados (arquivos, LUNs e namespaces) do armazenamento de objetos. Isso disponibiliza os volumes mais rapidamente do que uma restauração completa.
 *** *Prescript*: Habilite esta opção para automatizar tarefas adicionais executando um script personalizado antes do início da operação de restauração. Insira o caminho completo do script que deve ser executado e quaisquer argumentos que o script receba.
 
 

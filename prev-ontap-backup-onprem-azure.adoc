@@ -444,6 +444,10 @@ TIP: Se você quiser proteger seus arquivos de backup contra modificações ou e
 
 TIP: Se você quiser colocar arquivos de backup mais antigos no Armazenamento de Arquivos do Azure para otimizar ainda mais os custos, certifique-se de que a conta de armazenamento tenha a regra de ciclo de vida apropriada.
 
++
+
+NOTE: Se você selecionar *Traga seu próprio bucket*, certifique-se de que o contêiner que você criar como destino de backup tenha o mesmo nome da conta de armazenamento do Azure.
+
 ** *Chave de criptografia*: se você criou uma nova conta de armazenamento do Azure, insira as informações da chave de criptografia fornecidas pelo provedor.  Escolha se você usará as chaves de criptografia padrão do Azure ou escolherá suas próprias chaves gerenciadas pelo cliente na sua conta do Azure para gerenciar a criptografia dos seus dados.
 +
 Se você optar por usar suas próprias chaves gerenciadas pelo cliente, insira o cofre de chaves e as informações da chave.

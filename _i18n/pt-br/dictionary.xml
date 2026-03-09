@@ -364,8 +364,6 @@
   <block id="eace16d66cdd93ad876c620db7456077" category="list-text">Monte</block>
   <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">Desmontar</block>
   <block id="25e66e51214e8342374fa891a42988b3" category="list-text">Restaurar para local alternativo</block>
-  <block id="00c5709c4d9ca9f8035d5d0e33f2421e" category="list-text">Anexar VMDK</block>
-  <block id="097b06a0d5de05867037a2fdc678ef17" category="list-text">Desanexar VMDK</block>
   <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">Suporte vVol</block>
   <block id="2cc658d562a11cd1528c2219f2d25da7" category="list-text">Suporte NVMe</block>
   <block id="98dc7ecfe4c87955d5fb8b98b895eac7" category="list-text">Integração de e-mail</block>
@@ -452,7 +450,6 @@
   <block id="ff65f252d2a0aa40e634cf2ad7eaa2d3" category="list-text">O backup de volume ad-hoc usando o botão *Fazer backup agora* não é suportado em volumes de proteção de dados.</block>
   <block id="3dd0180637528cde8671a0c957cf90da" category="list-text">Configurações SM-BC não são suportadas.</block>
   <block id="28014e4f484f0639d9b0151965328912" category="list-text">O ONTAP não oferece suporte ao fan-out de relacionamentos do SnapMirror de um único volume para vários armazenamentos de objetos; portanto, essa configuração não é suportada pelo NetApp Backup and Recovery.</block>
-  <block id="139c263dc37495a1365dde941627eb32" category="list-text">O modo WORM/Compliance em um armazenamento de objetos é suportado no Amazon S3, Azure e StorageGRID no momento.  Isso é conhecido como recurso DataLock e deve ser gerenciado usando as configurações do NetApp Backup and Recovery , não usando a interface do provedor de nuvem.</block>
   <block id="3e6e24d49c1e2a7357bbe49c1cf7e682" category="section-title">Restaurar limitações para volumes ONTAP</block>
   <block id="79ec871c574dbe9adf17973bdb4bf029" category="paragraph">Essas limitações se aplicam aos métodos Pesquisar e Restaurar e Navegar e Restaurar para restaurar arquivos e pastas, a menos que sejam especificamente indicados.</block>
   <block id="03a5b9815bb473e6f4be8d24abee633a" category="list-text">O Browse &amp; Restore pode restaurar até 100 arquivos individuais por vez.</block>
@@ -462,8 +459,6 @@
   <block id="118a57e2fb1b730b4d9702fc0590ed48" category="paragraph">Ao usar uma versão do ONTAP anterior à 9.11.1, a restauração de pastas não é suportada.</block>
   <block id="caac6b6b759dd099323676db10be1564" category="list-text">A restauração de diretório/pasta é suportada para dados que residem no armazenamento de arquivo somente quando o cluster está executando o ONTAP 9.13.1 e superior.</block>
   <block id="e8573f3934d023dbb0b6cea67803d326" category="list-text">A restauração de diretório/pasta é suportada para dados protegidos usando DataLock somente quando o cluster está executando o ONTAP 9.13.1 e superior.</block>
-  <block id="2ad2934a6b663d3e1150684467ab796f" category="list-text">A restauração de diretório/pasta não é suportada atualmente por replicações e/ou snapshots locais.</block>
-  <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">A restauração de volumes FlexGroup para volumes FlexVol ou de volumes FlexVol para volumes FlexGroup não é suportada.</block>
   <block id="5f5966e9da5716290dfc2b88ceeb2217" category="list-text">O arquivo que está sendo restaurado deve estar usando o mesmo idioma do volume de destino.  Você receberá uma mensagem de erro se os idiomas não forem os mesmos.</block>
   <block id="0bfb7259f1f6626c1cdf5b3afe490baa" category="list-text">A prioridade de restauração _Alta_ não é suportada ao restaurar dados do armazenamento de arquivamento do Azure para sistemas StorageGRID .</block>
   <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">Se você fizer backup de um volume DP e decidir quebrar o relacionamento do SnapMirror com esse volume, não será possível restaurar os arquivos para esse volume, a menos que você também exclua o relacionamento do SnapMirror ou inverta a direção do SnapMirror .</block>
@@ -1995,7 +1990,6 @@
   <block id="573531ec152a1cc1709422d00088088e" category="section-title">Requisitos para proteger cargas de trabalho do VMware</block>
   <block id="4ccfae37bea4d344c283e2a68013c9c1" category="paragraph">Você precisa de requisitos específicos para descobrir e proteger suas cargas de trabalho do VMware.</block>
   <block id="1269e07e6a9265be5844ea32a0494a7f" category="paragraph">*Suporte de software*</block>
-  <block id="2d5a6b46412544fb6ac242fbc736934e" category="list-text">Versões NFS suportadas: NFS 3 e NFS 4.1</block>
   <block id="40f1a54f3602033103d74e381708e352" category="list-text">Versões do VMware ESXi Server suportadas: 7.0U1 e superior</block>
   <block id="c7d133a7d1fcc4fc9f8bf51535dc3ef0" category="list-text">Versões do VMware vCenter vSphere suportadas: 7.0U1 e superior</block>
   <block id="f3c396a6341d422a1f0e7a503896ed29" category="list-text">Endereços IP: IPv4 e IPv6</block>
@@ -4341,7 +4335,6 @@
   <block id="4db9a239be0f58f8e4742665ad2371e2" category="paragraph">Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a função de Busca e Restauração:</block>
   <block id="d0320c3b870d5944eb8c31ee83638872" category="paragraph">Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada são os seguintes:</block>
   <block id="9078cbf758e0949f0dca426e9aa6c0ce" category="list-text">Utilize um volume NetApp NFS</block>
-  <block id="459af9b852bd375bac17fb30c8c1b979" category="list-text">O NetApp Backup &amp; Recovery não oferece suporte à conversão de um FlexVol volume com um relacionamento de backup em nuvem ativo para um volume FlexGroup , mantendo a funcionalidade de backup em nuvem.</block>
   <block id="063090df0880212c0ba8eec878096a21" category="doc">Melhorias de pré-visualização de cargas de trabalho da VMware</block>
   <block id="24936fb650df7af8295e75a3667becef" category="list-text">Agora você pode restaurar backups e snapshots para um local alternativo. Isso é útil se você quiser gerenciar versões de uma máquina virtual em diferentes implementações do VMware vCenter, hosts VMware ESXi ou datastores VMware.</block>
   <block id="99ee61e75520f174d08caa35e0ad294d" category="list-text">Agora você pode restaurar discos virtuais VMware específicos (imagens VMDK) a partir de um local primário ou secundário, permitindo um controle mais preciso sobre a restauração dos dados da máquina virtual.</block>
@@ -4999,8 +4992,6 @@
   <block id="6108d5ad430f0631e5c6e10714ba980c" category="doc">Cargas de trabalho do Microsoft Hyper-V suportadas em General Availability (GA)</block>
   <block id="c5db154b8366e71dcf87e4624b1a0112" category="paragraph">O suporte para cargas de trabalho do Microsoft Hyper-V agora está geralmente disponível (GA) em NetApp Backup and Recovery.</block>
   <block id="bd7b6aa0517dacb10ee10e479293ef82" category="sidebar">Proteger cargas de trabalho do Oracle Database (prévia)</block>
-  <block id="2e6a10996a90ae08a445bcd92b94e301" category="list-text">Armazenamento conectado compatível: ONTAP 9.13 ou posterior</block>
-  <block id="a58576b20da9581ef64dc73d9299ba68" category="list-text">São suportados armazenamentos de dados NFS e VMFS.</block>
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">Cargas de trabalho VMware suportadas na General Availability (GA)</block>
   <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">Excedendo a capacidade da licença</block>
   <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">Exceder a capacidade da sua licença aciona as tarifas PAYGO; sem uma assinatura PAYGO, você não pode criar novos backups, embora os backups existentes possam ser restaurados sem garantia de serviço. Certifique-se de renovar sua licença antes que ela expire; uma licença expirada impede novos backups e interrompe o serviço.</block>
@@ -5110,4 +5101,29 @@
   <block id="8616a450958f68321bde3e8f34b8c9c5" category="section-title">Desmontar um ponto de recuperação de banco de dados Oracle</block>
   <block id="df197f1a2e9f772f8de9983ed94d9541" category="list-text">*Carga de trabalho*: Exemplos incluem Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, Oracle Database ou Kubernetes.</block>
   <block id="e1589447f05ccd92a0e9ade876573b81" category="sidebar">Clonar cargas de trabalho do Oracle Database</block>
+  <block id="76c3536921b70f0616becde2e9340a54" category="doc">Aprimoramentos nas cargas de trabalho do ONTAP Volumes</block>
+  <block id="78b068f24da5a7e17080acceea02e506" category="paragraph">Nesta versão, as cargas de trabalho de ONTAP Volumes introduzem os seguintes recursos aprimorados:</block>
+  <block id="61f251cc47dddbc52bddd098d342b6d5" category="list-text">*Restaurar para o local de origem*: agora você pode restaurar arquivos de snapshots locais e snapshots replicados para o local de origem, bem como para um local alternativo.</block>
+  <block id="b64975edc0e1d4d2b77bbc09821fe6c1" category="list-text">*Detecção de volume por hora*: O Dashboard agora detecta e atualiza novos volumes mais rapidamente.</block>
+  <block id="9d2169c1c2855b78a7aeaa4f42d27dc7" category="inline-link">NetApp site de suporte</block>
+  <block id="8f504b1c826d739819c7ea02c4fd893f" category="list-text">*Suporte para dark sites*: Agora você pode baixar o Backup and Recovery para dark sites do<block ref="e2fed6b5af5d107fdef5614adaedfcef" category="inline-link-rx"></block>. No momento, NetApp Backup and Recovery para dark sites suporta apenas workloads de ONTAP Volumes.</block>
+  <block id="ccf9e1de6190057c9e2e1a10c6b8f07f" category="list-text">*Melhorias na compatibilidade com Unicode*: a indexação do catálogo agora lida melhor com caracteres Unicode.</block>
+  <block id="a173f0fc9f4786dd11c96099dd446ec8" category="list-text">*Compatibilidade aprimorada do FlexGroup*: Ao converter um volume ONTAP FlexVol para um volume FlexGroup, agora você pode restaurar backups feitos antes da conversão.</block>
+  <block id="f32d4e838dfc925da7a940c6e55acf8c" category="list-text">*Suporte a múltiplos buckets*: agora você pode proteger os volumes dentro de um sistema com até 6 buckets por sistema em diferentes provedores de nuvem.</block>
+  <block id="e32587f34260a350a3a49e3604fb2a4c" category="inline-link">Visão geral da proteção de cargas de trabalho do ONTAP Volume</block>
+  <block id="db44a854b206d5d90008224f3bb5b2da" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho do ONTAP Volume, consulte <block ref="660ec036763d30562702201a56aaa402" category="inline-link-rx"></block>.</block>
+  <block id="f154c542c430b30dc73d2d3e87fd6f65" category="paragraph">Nesta versão, VMware workloads introduz os seguintes recursos aprimorados:</block>
+  <block id="63eb1b3f5c128e6460c85c7b6e5d2bb9" category="list-text">*Restaurar dados de convidados do armazenamento de objetos*: Agora você pode restaurar arquivos e pastas de convidados do armazenamento de objetos.</block>
+  <block id="7d88c93c0ec65e1bcc3564692a490a5b" category="list-text">*Restauração rápida para VMFS/NFS*: Agora você pode habilitar a opção de restauração rápida ao restaurar para um local alternativo. Quando habilitada, somente metadados (arquivos, LUNs e namespaces) são recuperados do armazenamento de objetos, disponibilizando os volumes mais rapidamente do que em uma restauração completa.</block>
+  <block id="ba95b1986315d65e4bb0f2dcb924f870" category="list-text">*Suporte para Amazon FSx for NetApp ONTAP*: As cargas de trabalho VMware agora suportam sistemas de armazenamento Amazon FSx for NetApp ONTAP executando a versão 9.13.1 ou posterior.</block>
+  <block id="4313ef91d0af92358d4bfc05358d4692" category="list-text">Ao converter um volume FlexVol em um volume FlexGroup ou vice-versa, o volume convertido é considerado um novo volume; você precisa configurar a proteção para o volume convertido após a conversão. Você pode restaurar backups criados antes da conversão para um volume diferente.</block>
+  <block id="d88c13a12326a1a581751edb0a83ae1b" category="list-text">O modo WORM/Compliance em um armazenamento de objetos é suportado no Amazon S3, Google Cloud Platform (GCP), Azure e StorageGRID neste momento. Isso é conhecido como o recurso DataLock, e deve ser gerenciado usando as configurações de NetApp Backup and Recovery, não pela interface do provedor de nuvem.</block>
+  <block id="106839ddc74bb36d184d46f6f8d5016f" category="list-text">*spec.dataMover*: (_Opcional, obrigatório para clusters migrados do Trident Protect_) Uma string indicando qual ferramenta de backup usar para a operação de backup. Se este cluster foi migrado para Backup and Recovery do Trident Protect, o valor diferencia maiúsculas de minúsculas e deve ser <block ref="250c51527f347066847969f002be67a2" prefix=" " category="inline-code"></block>.</block>
+  <block id="06e1026570d8a901d8b6dedf9e5d6f66" category="list-text">*Restauração rápida*: habilite esta opção para instruir o NetApp Backup and Recovery a restaurar apenas os metadados (arquivos, LUNs e namespaces) do armazenamento de objetos. Isso disponibiliza os volumes mais rapidamente do que uma restauração completa.</block>
+  <block id="5b6eae3d36833d14f04c696b7a2e75a9" category="list-text">NFSv3, NFSv4.1 e os datastores VMFS são suportados.</block>
+  <block id="eff24131b4bb3e0f34de9a437296c19b" category="list-text">Armazenamento conectado compatível:</block>
+  <block id="9e2d6035ec7a18aa99db06aab17683c8" category="list-text">ONTAP 9.13.1 ou posterior</block>
+  <block id="84926f15fa96e5fbcf319691a6c909e3" category="list-text">Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior</block>
+  <block id="d683472bc4b099b7787d3a9d8df4673e" category="admonition">Se você selecionar *Traga seu próprio bucket*, certifique-se de que o contêiner que você criar como destino de backup tenha o mesmo nome da conta de armazenamento do Azure.</block>
+  <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">09 de março de 2026</block>
 </blocks>

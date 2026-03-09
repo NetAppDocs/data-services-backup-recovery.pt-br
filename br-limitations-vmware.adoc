@@ -20,8 +20,6 @@ As seguintes ações não são suportadas em cargas de trabalho VMware no NetApp
 
 * Monte
 * Desmontar
-* Anexar VMDK
-* Desanexar VMDK
 * Suporte vVol
 * Suporte NVMe
 * Integração de e-mail
