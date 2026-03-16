@@ -50,14 +50,14 @@ Se você estiver acessando o Backup and Recovery pela primeira vez e tiver um si
 . *Configurações avançadas*: faça o seguinte:
 +
 .. Insira a porta e o caminho de instalação a serem usados para o NetApp plug-in. O plug-in permite a comunicação entre o host do Oracle Database e NetApp Backup and Recovery.
-.. Escolha se deseja permitir que o NetApp Backup and Recovery instale o plug-in automaticamente ou ignorar a instalação (você precisará instalar o plug-in manualmente no host).
+.. Escolha se deseja permitir que o NetApp Backup and Recovery instale o plug-in automaticamente ou pular a instalação automática do plug-in (se você ativar *Usar instalação manual*, será necessário instalar o plug-in manualmente no host).
 .. Escolha se deseja realizar as verificações pré-instalação ou ignorá-las.
 
 
 . Selecione *Descobrir*.
 +
 
-TIP: Este processo pode levar alguns minutos.
+TIP: A adição de recursos pode levar vários minutos. Para ver o progresso, selecione *Acompanhar progresso* na caixa de diálogo de status na parte inferior da página de Inventário ou selecione *Monitoramento* no menu à esquerda.
 
 
 

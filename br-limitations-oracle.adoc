@@ -20,5 +20,3 @@ A seguinte ação não é suportada na versão de pré-visualização das cargas
 
 * Backup offline
 
-
-Oracle Database é suportado apenas como uma implementação independente usando NFS, SAN ou ASM SAN na versão de pré-visualização privada das cargas de trabalho do Oracle Database.

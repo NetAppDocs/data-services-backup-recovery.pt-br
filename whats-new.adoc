@@ -18,6 +18,22 @@ Saiba o que há de novo no NetApp Backup and Recovery.
 
 
 
+== 16 de março de 2026
+
+Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
+
+
+
+=== Aprimoramentos de cargas de trabalho da VMware
+
+Nesta versão, VMware workloads apresenta as seguintes melhorias:
+
+*Suporte à consistência de VM por nível de agendamento*: Agora você pode habilitar backups consistentes com a VM e com o aplicativo para níveis de agendamento específicos ao configurar políticas de proteção para cargas de trabalho VMware. Os níveis anual, mensal e semanal são suportados.
+
+Para obter detalhes sobre como proteger cargas de trabalho do VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Visão geral das cargas de trabalho do Protect VMware"] .
+
+
+
 == 09 de março de 2026
 
 Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.

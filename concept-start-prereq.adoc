@@ -88,19 +88,31 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 *Suporte de software*
 
-* NFSv3, NFSv4.1 e os datastores VMFS são suportados.
-* Versões do VMware ESXi Server suportadas: 7.0U1 e superior
-* Versões do VMware vCenter vSphere suportadas: 7.0U1 e superior
-* Endereços IP: IPv4 e IPv6
-* VMware TLS: 1.2, 1.3
-* Armazenamento conectado compatível:
-+
-** ONTAP 9.13.1 ou posterior
-** Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior
+|===
+| Requisito | Suportado 
 
 
+| Tipos de datastore | NFSv3, NFSv4.1 e VMFS 
 
 
+| Versões do VMware ESXi Server | 7.0U1 e superior 
+
+
+| Versões do VMware vCenter vSphere | 7.0U1 e superior 
+
+
+| Tipos de endereço IP | IPv4, IPv6 
+
+
+| Versões TLS do VMware | 1.2, 1.3 
+
+
+| Armazenamento conectado  a| 
+* ONTAP 9.13.1 ou posterior
+* Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior
+
+
+|===
 *Requisitos de conexão e porta para proteger cargas de trabalho do VMware*
 
 [cols="33,66a"]
@@ -114,7 +126,9 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 
 | Cluster de armazenamento ou porta de VM de armazenamento  a| 
-443 (HTTPS), bidirecional. 80 (HTTP), bidirecional. Esta porta é usada para comunicação entre o dispositivo virtual e a VM de armazenamento ou o cluster que contém a VM de armazenamento.
+* 443 (HTTPS), bidirecional.
+* 80 (HTTP), bidirecional. Esta porta é usada para comunicação entre o dispositivo virtual e a máquina virtual de armazenamento ou o cluster que contém a máquina virtual de armazenamento.
+
 
 |===
 *Requisitos de controle de acesso baseado em função (RBAC) para proteger cargas de trabalho do VMware*
@@ -168,25 +182,44 @@ chown -R qemu:qemu <kvm_vm_mount_path> & chmod 771 <kvm_vm_mount_path>
 
 == Requisitos para proteger cargas de trabalho do Oracle Database
 
-Garanta que seu ambiente atenda aos requisitos específicos para descobrir e proteger recursos Oracle.
+Garanta que seu ambiente atenda aos requisitos específicos para descobrir e proteger os recursos do Oracle Database.
 
-* Banco de dados Oracle:
-+
-** O Oracle 19C e 21C são suportados em uma implantação autônoma.
-** O Oracle Database deve ser implantado no armazenamento NetApp ONTAP primário ou secundário.
-** Suporte ao sistema operacional host: Red Hat Enterprise Linux 8 e 9
+|===
+| Requisito | Suportado 
 
 
-* Suporte de armazenamento de objetos:
-+
-** Armazenamento de Objetos do Azure
-** Amazon AWS
-** NetApp StorageGRID
-** ONTAP S3
+| Topologia de implantação  a| 
+* Autônomo (NFS, SAN, ASM SAN)
+* RAC sobre ASM (VMDK em VMFS)
 
 
 
 
+| Versões do Oracle Database  a| 
+* Oracle Database 19c
+* Oracle Database 21c
+
+
+
+
+| Armazenamento de banco de dados | Deve ser implementado no NetApp ONTAP (primário ou secundário) 
+
+
+| OS do host  a| 
+* Red Hat Enterprise Linux 8
+* Red Hat Enterprise Linux 9
+
+
+
+
+| Armazenamento de objetos (destinos de backup)  a| 
+* Armazenamento de Objetos do Azure
+* Amazon AWS
+* NetApp StorageGRID
+* ONTAP S3
+
+
+|===
 
 
 == Requisitos para proteger aplicativos Kubernetes
@@ -220,42 +253,56 @@ Para requisitos do NetApp Console , consulte<<No NetApp Console>> .
 
 Certifique-se de que sua instância do Hyper-V atenda aos requisitos específicos para descobrir e proteger máquinas virtuais.
 
-* Requisitos de software para o host do Hyper-V Windows Server:
-+
-** Edições do Microsoft Hyper-V 2019, 2022 e 2025
-** ASP.NET Core Runtime 8.0.23 Hosting Bundle (e todos os patches 8.0.x subsequentes)
-** PowerShell 7.4.13 ou posterior
-** Se usuários que não fazem parte de um domínio de administrador forem proteger máquinas virtuais Hyper-V, certifique-se de que eles tenham as seguintes permissões:
-+
-*** Certifique-se de que o usuário seja membro do grupo de administradores locais.
-*** Certifique-se de que o usuário faça parte da política de segurança local "Fazer logon como serviço".
+*Requisitos de software para o host Windows Server Hyper-V*
+
+|===
+| Requisito | Suportado 
 
 
-** Certifique-se de que o tráfego HTTPS bidirecional seja permitido para as seguintes portas nas configurações do Firewall do Windows:
-+
-*** 8144 (Plug-in NetApp para Hyper-V)
-*** 8145 (Plug-in NetApp para Windows)
+| Microsoft Hyper-V | 2019, 2022 e 2025 editions 
+
+
+| ASP.NET Core Runtime | Pacote de hospedagem 8.0.23 (e todos os patches 8.0.x subsequentes) 
+
+
+| PowerShell | 7.0U1 e superior 
+
+
+| Se usuários sem privilégios de administrador forem proteger máquinas virtuais do Hyper-V, certifique-se de que eles tenham as seguintes permissões  a| 
+* Membro do grupo de administradores locais
+* Parte da política de segurança local "Log on as service"
 
 
 
 
-* Requisitos de hardware para o host Hyper-V:
-+
-** Hosts autônomos e agrupados pela FCI são suportados
-** Mínimo de 1 GB de RAM para o plug-in NetApp Hyper-V no host Hyper-V
-** 5 GB de espaço mínimo para instalação e log do plug-in no host Hyper-V
+| Certifique-se de que o tráfego HTTPS bidirecional esteja permitido para as seguintes portas nas configurações do Windows Firewall  a| 
+* TCP 8144 (NetApp Plug-in para Hyper-V)
+* TCP 8145 (NetApp Plug-in para Windows)
+
+
+
+
+| Armazenamento conectado  a| 
+* ONTAP 9.13.1 ou posterior
+* Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior
+
+
+|===
+*Requisitos de hardware para o host Hyper-V*
+
+* Hosts autônomos e agrupados pela FCI são suportados
+* Mínimo de 1 GB de RAM para o plug-in NetApp Hyper-V no host Hyper-V
+* 5 GB de espaço mínimo para instalação e log do plug-in no host Hyper-V
 +
 
 NOTE: Certifique-se de alocar espaço em disco suficiente no host Hyper-V para a pasta de logs e monitore regularmente seu uso.  O espaço necessário depende da frequência com que ocorrem backups e operações de proteção de dados.  Se não houver espaço suficiente, os logs não serão gerados.
 
 
 
-* Requisitos de configuração do NetApp ONTAP :
-+
-** Um sistema ONTAP primário (ONTAP 9.14.1 ou posterior)
-** Para implantações do Hyper-V usando compartilhamentos CIFS para armazenar dados de máquina virtual, certifique-se de que a propriedade de compartilhamento de disponibilidade contínua esteja habilitada no sistema ONTAP .  Consulte o https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["Documentação do ONTAP"^] para obter instruções.
+*NetApp Requisitos de configuração do ONTAP*
 
-
+* Um sistema ONTAP primário (ONTAP 9.14.1 ou posterior)
+* Para implantações do Hyper-V usando compartilhamentos CIFS para armazenar dados de máquina virtual, certifique-se de que a propriedade de compartilhamento de disponibilidade contínua esteja habilitada no sistema ONTAP .  Consulte o https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["Documentação do ONTAP"^] para obter instruções.
 
 
 
