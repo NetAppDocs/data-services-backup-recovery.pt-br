@@ -188,11 +188,7 @@ Garanta que seu ambiente atenda aos requisitos específicos para descobrir e pro
 | Requisito | Suportado 
 
 
-| Topologia de implantação  a| 
-* Autônomo (NFS, SAN, ASM SAN)
-* RAC sobre ASM (VMDK em VMFS)
-
-
+| Topologia de implantação | Autônomo (NFS, SAN, ASM SAN) 
 
 
 | Versões do Oracle Database  a| 
