@@ -5120,7 +5120,6 @@
   <block id="a5f167b540745795bfa82881525658b7" category="paragraph">Garanta que seu ambiente atenda aos requisitos específicos para descobrir e proteger os recursos do Oracle Database.</block>
   <block id="be84d19651fadb3105ee4563b1a749a1" category="cell">Topologia de implantação</block>
   <block id="6573228c28e984dea35ef8e206b9b22e" category="list-text">Autônomo (NFS, SAN, ASM SAN)</block>
-  <block id="40462b3520e204c56d496704b2197731" category="list-text">RAC sobre ASM (VMDK em VMFS)</block>
   <block id="23288ce9e4c4065a0c262950a798255a" category="cell">Versões do Oracle Database</block>
   <block id="0ac3a1f034484f75f44fe8688e650ffe" category="list-text">Oracle Database 19c</block>
   <block id="e78bd68f4ea5809752852eea2f74942d" category="list-text">Oracle Database 21c</block>
@@ -5147,4 +5146,5 @@
   <block id="86a1075e6640849bd364878900fd5412" category="paragraph">Você também pode seguir estas etapas para substituir o agente do Console e restaurar os dados de configuração armazenados nele ao usar o NetApp Backup and Recovery no _modo padrão_ localmente, quando nenhuma conta de nuvem estiver envolvida (por exemplo, ao usar NetApp StorageGrid como destino de backup).</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Execute o comando *ls* para garantir que a pasta "catalogdb1" foi criada e que contém as subpastas<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>, e<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>.</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16 de março de 2026</block>
+  <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 ou posterior</block>
 </blocks>

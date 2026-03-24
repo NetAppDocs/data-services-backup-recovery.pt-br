@@ -261,7 +261,7 @@ Certifique-se de que sua instância do Hyper-V atenda aos requisitos específico
 | ASP.NET Core Runtime | Pacote de hospedagem 8.0.23 (e todos os patches 8.0.x subsequentes) 
 
 
-| PowerShell | 7.0U1 e superior 
+| PowerShell | 7.4.13 ou posterior 
 
 
 | Se usuários sem privilégios de administrador forem proteger máquinas virtuais do Hyper-V, certifique-se de que eles tenham as seguintes permissões  a| 
