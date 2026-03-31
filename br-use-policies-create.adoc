@@ -231,6 +231,13 @@ Opcionalmente, você pode configurar configurações avançadas na política.  E
 . Habilite qualquer uma das configurações que você deseja visualizar ou alterar e selecione *Aceitar*.
 . Forneça as seguintes informações:
 +
+** *Configurações do catálogo RMAN*: (aplica-se somente a cargas de trabalho do Oracle Database) Habilite a opção *Catalogar backup com o Oracle Recovery Manager (RMAN)* para catalogar automaticamente os metadados das operações de backup e recuperação do banco de dados Oracle. Os metadados são armazenados de acordo com as configurações de *Configurar catálogo RMAN* escolhidas para o banco de dados (no arquivo de controle por padrão). Consulte link:br-start-configure-oracle-database.html["Configurar um banco de dados Oracle"] para alterar essas configurações para um banco de dados.
+** *SnapMirror formato de volume e instantâneo*: Escolha uma das seguintes opções:
++
+*** *Usar formato de nome personalizado para cópia do instantâneo*: escolha um esquema de nomenclatura para os instantâneos. Se deixado em branco, um carimbo de data/hora é adicionado ao final de cada nome de instantâneo.
+*** *Fornecer formato de volume SnapMirror*: especifique um prefixo, um sufixo ou ambos para modificar o nome padrão do volume SnapMirror. Por padrão, um volume SnapMirror herda o nome do volume de origem.
+
+
 ** *Backup somente cópia*: (Aplica-se somente a cargas de trabalho do Microsoft SQL Server) Escolha o backup somente cópia (um tipo de backup do Microsoft SQL Server) se precisar fazer backup de seus recursos usando outro aplicativo de backup.
 ** *Configurações do grupo de disponibilidade*: (Aplica-se somente a cargas de trabalho do Microsoft SQL Server) Selecione réplicas de backup preferenciais ou especifique uma réplica específica.  Essa configuração é útil se você tiver um grupo de disponibilidade do SQL Server e quiser controlar qual réplica será usada para backups.
 ** *Taxa máxima de transferência*: Para não definir um limite no uso da largura de banda, selecione *Ilimitado*.  Se você quiser limitar a taxa de transferência, selecione *Limitado* e selecione a largura de banda de rede entre 1 e 1.000 Mbps alocada para carregar backups no armazenamento de objetos.  Por padrão, o ONTAP pode usar uma quantidade ilimitada de largura de banda para transferir os dados de backup de volumes no sistema para o armazenamento de objetos.  Se você perceber que o tráfego de backup está afetando as cargas de trabalho normais dos usuários, considere diminuir a quantidade de largura de banda da rede usada durante a transferência.

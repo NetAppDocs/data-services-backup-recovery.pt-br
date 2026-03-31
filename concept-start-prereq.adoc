@@ -101,6 +101,9 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 | Versões do VMware vCenter vSphere | 7.0U1 e superior 
 
 
+| VMware Tools | O VMware Tools é necessário ao usar o recurso de restauração de arquivos e pastas e backups consistentes com a máquina virtual. Para garantir que a versão do VMware Tools seja compatível com a sua versão do ESXi Server, consulte o  https://packages.vmware.com/tools/versions["Informações de mapeamento de versão do VMware"]. 
+
+
 | Tipos de endereço IP | IPv4, IPv6 
 
 
@@ -121,7 +124,7 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 
 | Porta do servidor VMware ESXi  a| 
-443 (HTTPS), bidirecional. O recurso Restauração de arquivo convidado usa esta porta.
+443 (HTTPS), bidirecional. O recurso de restauração de arquivos e pastas utiliza esta porta.
 
 
 
@@ -133,9 +136,9 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 |===
 *Requisitos de controle de acesso baseado em função (RBAC) para proteger cargas de trabalho do VMware*
 
-A conta de administrador do vCenter deve ter os privilégios necessários do vCenter.
+Sua conta de usuário do Console precisa ter a função de superadministrador de NetApp Backup and Recovery para funcionar com cargas de trabalho do VMware.
 
-Para obter uma lista de privilégios do vCenter necessários, consulte https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["Privilégios necessários do SnapCenter Plug-in for VMware vSphere vCenter"^] .
+Para obter mais informações sobre as funções de backup e recuperação, consulte  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de backup e recuperação no NetApp Console"].
 
 
 
@@ -188,7 +191,11 @@ Garanta que seu ambiente atenda aos requisitos específicos para descobrir e pro
 | Requisito | Suportado 
 
 
-| Topologia de implantação | Autônomo (NFS, SAN, ASM SAN) 
+| Topologia de implantação  a| 
+* Autônomo (NFS, SAN, ASM SAN)
+* RAC sobre ASM (VMDK em VMFS)
+
+
 
 
 | Versões do Oracle Database  a| 

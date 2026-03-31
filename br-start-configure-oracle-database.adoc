@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: br-start-configure-oracle-database.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, workloads, protect, Oracle, configure 
+summary: Configure seu banco de dados Oracle em NetApp Backup e Recovery. 
+---
+= Configurar um banco de dados Oracle em NetApp Backup e Recuperação
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode alterar as configurações de autenticação e de nó para um novo banco de dados Oracle independente ou em cluster. NetApp Backup e recuperação protege os bancos de dados sem essas alterações. Se o seu ambiente mudar após a descoberta, talvez seja necessário atualizar as configurações do banco de dados.
+
+*Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+
+
+== Configurar um banco de dados Oracle
+
+Altere a configuração de um banco de dados Oracle independente ou em cluster.
+
+.Passos
+. No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
+. Em *Cargas de trabalho*, selecione o bloco *Oracle*.
+. No inventário do Oracle, selecione o menu *Databases*.
+. Na lista de bancos de dados, selecione *Configurar banco de dados* (banco de dados independente) ou *Configurar RAC database* (banco de dados em cluster) para o banco de dados que você deseja configurar.
+. *Configurar as definições do banco de dados*: Configurar as definições de autenticação para o banco de dados autônomo ou em cluster.
++
+** Selecione *autenticação do sistema operacional* para autenticar somente com o sistema operacional do host. O NetApp Backup and Recovery usa as credenciais do host que você especificou durante a descoberta.
+** Selecione *autenticação de banco de dados* quando o banco de dados exigir credenciais. Em seguida, escolha credenciais existentes ou adicione novas e selecione a porta a ser usada para a conexão.
+
+
+. *Configurar catálogo RMAN*: Escolha onde os metadados para backups e operações de recuperação serão armazenados para este banco de dados ou cluster quando a catalogação automática estiver habilitada na política de proteção ou quando você catalogar manualmente um ponto de recuperação:
++
+** Selecione *Target control file* para armazenar metadados no arquivo de controle de destino.
+** Selecione *Banco de dados do catálogo* para armazenar metadados no catálogo de recuperação do RMAN. Escolha as credenciais e o nome do Transparent Network Substrate (TNS) para conectar-se ao catálogo de recuperação.
++
+O catálogo de recuperação do RMAN é um esquema de banco de dados separado usado pelo utilitário RMAN para armazenar metadados sobre backup e operações de recuperação de bancos de dados registrados. Ele fornece redundância e retenção de longo prazo caso o arquivo de controle seja perdido ou quando dados históricos forem necessários. Habilite esta opção para registrar arquivos de dados e cópias de logs de arquivamento no repositório do RMAN, para que o RMAN possa rastrear e gerenciar essas cópias para geração de relatórios e recuperação.
+
+
+
+. *Configurar nós* (somente bancos de dados em cluster): adicione ou remova nós da proteção ou altere a prioridade do nó usando os botões de seta.
++
+Os nós com maior prioridade são protegidos primeiro. Os nós com menor prioridade são protegidos somente se os nós com maior prioridade estiverem inacessíveis ou apresentarem problemas.
+
+. Ao terminar, selecione *Concluído*.
+
+
+.Resultado
+O Backup e Recovery se conecta ao banco de dados usando as novas configurações.
