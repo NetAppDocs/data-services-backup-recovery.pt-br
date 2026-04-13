@@ -23,11 +23,6 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 As seguintes ações não são suportadas em cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
 
 * Crie grupos de recursos usando máquinas virtuais de vários hosts Hyper-V.
-* Restaurar VMs para um local alternativo
 * Discos de abrangência (em vários compartilhamentos CIFS)
-* Proteja VMs em SAN
 * Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
 
-
-
-NOTE: Na versão de 19 de janeiro de 2026, não será possível atualizar os plugins da NetApp para Hyper-V ou Windows usando a opção *Atualizar* no menu Ações. Em vez disso, remova cada host Hyper-V e adicione-o novamente para atualizar os plugins.

@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-from-vmdks.html
 keywords:  
 summary: Você pode restaurar um ou mais arquivos ou pastas de um VMDK em um sistema operacional convidado Windows. 
 ---
-= Restaurar arquivos e pastas de convidados de VMDKs
+= Restaurar arquivos e pastas de VMDKs
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,59 +14,150 @@ summary: Você pode restaurar um ou mais arquivos ou pastas de um VMDK em um sis
 
 
 [role="lead"]
-Você pode restaurar um ou mais arquivos ou pastas de um VMDK em um sistema operacional convidado Windows.
+Você pode restaurar um ou mais arquivos ou pastas de um VMDK para a VM original ou para uma VM diferente no mesmo servidor vCenter VMware. Windows e Linux guests são suportados.
 
 .Antes de começar
-Você precisa criar credenciais para a máquina virtual convidada no NetApp Backup and Recovery antes de poder restaurar arquivos e pastas dela. O NetApp Backup and Recovery usa essas credenciais para autenticar com a máquina virtual convidada ao conectar o disco virtual.
+* Analise os pré-requisitos e as limitações em link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisitos e limitações na restauração de arquivos e pastas de convidados"].
+* Você precisa criar credenciais para a máquina virtual convidada no NetApp Backup and Recovery antes de poder restaurar arquivos e pastas dela. O NetApp Backup and Recovery usa essas credenciais para autenticar com a máquina virtual convidada ao conectar o disco virtual.
+
 
 .Sobre esta tarefa
-O desempenho da restauração de arquivos ou pastas convidados depende de dois fatores: o tamanho dos arquivos ou pastas que estão sendo restaurados; e o número de arquivos ou pastas que estão sendo restaurados. Restaurar um grande número de arquivos pequenos pode levar mais tempo do que o previsto em comparação à restauração de um pequeno número de arquivos grandes, se o conjunto de dados a ser restaurado for do mesmo tamanho.
+O desempenho da restauração de arquivos ou pastas depende de dois fatores: o tamanho dos arquivos ou pastas a serem restaurados; e a quantidade de arquivos ou pastas a serem restaurados. Restaurar um grande número de arquivos pequenos pode levar mais tempo do que o previsto em comparação com a restauração de um pequeno número de arquivos grandes, caso o conjunto de dados a ser restaurado tenha o mesmo tamanho.
+
+É possível restaurar para uma máquina virtual remota (conhecido como restauração entre máquinas virtuais), mas os sistemas operacionais de origem e destino devem ser os mesmos.
 
 
 IMPORTANT: Somente uma operação de anexação ou restauração pode ser executada ao mesmo tempo em uma VM. Não é possível executar operações paralelas de anexação ou restauração na mesma VM.
 
 
-IMPORTANT: Com o recurso de restauração para convidados, você pode visualizar e restaurar arquivos de sistema e arquivos ocultos, além de visualizar arquivos criptografados. Não sobrescreva um arquivo de sistema existente nem restaure arquivos criptografados para uma pasta criptografada. Durante a operação de restauração, os atributos ocultos, de sistema e criptografados dos arquivos do sistema operacional convidado não são mantidos no arquivo restaurado. A visualização ou navegação em partições reservadas pode causar um erro.
+IMPORTANT: Com o recurso de restauração de arquivos e pastas, você pode visualizar e restaurar arquivos de sistema e ocultos, além de visualizar arquivos criptografados. Não sobrescreva um arquivo de sistema existente nem restaure arquivos criptografados para uma pasta criptografada. Durante a operação de restauração, os atributos oculto, de sistema e criptografado dos arquivos convidados não são mantidos no arquivo restaurado. A visualização ou navegação em partições reservadas pode causar um erro.
+
+[role="tabbed-block"]
+====
+.Restaurar arquivos e pastas para a máquina virtual original
+--
+Restaurar arquivos e pastas de um disco virtual para a máquina virtual original (fonte).
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione o menu *Máquinas virtuais*.
-. Escolha na lista uma máquina virtual que contenha os arquivos que você deseja restaurar.
-. Selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] para essa máquina virtual.
+. Na lista de máquinas virtuais, selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] para uma máquina virtual que contém os arquivos que você deseja restaurar.
 . Selecione *Restaurar arquivos e pastas*.
 . Selecione um instantâneo a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.
 . Escolha o local do snapshot a partir do qual deseja restaurar. Se você escolher um local secundário, selecione o instantâneo secundário na lista.
 . Selecione *Avançar*.
-. Escolha o disco virtual da lista para conectar à máquina virtual e selecione *Avançar*.
-. Na página _Selecionar credencial da máquina virtual_, se você ainda não tiver armazenado uma credencial para a máquina virtual convidada, selecione *Adicionar credenciais* e faça o seguinte:
+. Escolha um disco virtual da lista para conectar à máquina virtual e selecione *Avançar*.
+. Na página _Detalhes da máquina virtual convidada_, faça o seguinte:
 +
-.. *Nome das credenciais*: Insira um nome para as credenciais.
-.. *Modo de autenticação*: Selecione *Windows*.
-.. *Agentes*: Selecione um agente de console na lista que irá gerenciar a comunicação entre o NetApp Backup and Recovery e este host.
-.. *Domínio e nome de usuário*: insira o NetBIOS ou o FQDN do domínio e o nome de usuário para as credenciais.
-.. *Senha*: Digite uma senha para a credencial.
-.. Selecione *Adicionar*.
-
-
-. Escolha uma credencial de máquina virtual para usar na autenticação com a máquina virtual convidada.
+.. Na seção *Detalhes da máquina virtual convidada*, anexe o disco virtual à máquina virtual original selecionando *Máquina virtual original*.
+.. Na seção *Credenciais da máquina virtual convidada*, se você ainda não tiver armazenado uma credencial para a máquina virtual convidada, selecione *Adicionar credenciais*, insira as informações de credencial para o host Windows ou Linux e selecione *Adicionar*.
+.. Escolha uma credencial de máquina virtual para usar na autenticação com a máquina virtual convidada.
+.. Selecione *Avançar*.
 +
-O NetApp Backup and Recovery conecta o disco virtual à máquina virtual e exibe todos os arquivos e pastas, incluindo os ocultos. Ele atribui uma letra de unidade a cada partição, incluindo as partições reservadas pelo sistema.
+NetApp Backup and Recovery conecta o disco virtual à máquina virtual e exibe todos os arquivos e pastas, incluindo os ocultos. Para convidados Windows, ele atribui uma letra de unidade a cada partição, incluindo as partições reservadas pelo sistema.
 
 +
-Os arquivos e pastas que você selecionou são listados no painel direito da tela.
+Você pode usar o ícone de lupa (pesquisa) próximo ao painel do navegador de arquivos para procurar arquivos e pastas. A correspondência de padrões não é suportada, mas você pode pesquisar arquivos ou pastas com base em um subconjunto do nome ou da extensão.
+
+
+
+. Selecione arquivos ou pastas para restaurar.
++
+Os arquivos e pastas que você selecionou para restaurar são listados no painel direito da tela.
 
 . Selecione *Avançar*.
-. Digite o caminho de compartilhamento UNC para o convidado onde os arquivos selecionados serão restaurados.
+. Na seção "Restaurar para o caminho", insira o caminho para a máquina virtual onde os arquivos selecionados serão restaurados:
 +
-** Exemplo de endereço IPv4: `\\10.60.136.65\c$`
-** Exemplo de endereço IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+** Para sistemas Windows, insira o caminho de compartilhamento UNC:
++
+*** Exemplo de caminho IPv4: `\\10.60.136.65\c$`
+*** Exemplo de caminho IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
+** Para sistemas operacionais convidados Linux, insira o caminho do sistema de arquivos local ou o endereço e caminho do convidado remoto:
++
+*** Exemplo de caminho local: `/home/user/documents/file.txt`
+*** Exemplo de caminho IPv4: `10.60.136.65:/home/user/restore/`
+*** Exemplo de caminho IPv6: `fd20-8b1e-b255-832e--61.ipv6-literal.net:/home/user/restore/`
+
+
 
 
 +
 Caso já existam arquivos com o mesmo nome, você pode optar por sobrescrevê-los ou ignorá-los.
 
+. Na seção "Opções pós-restauração", você pode opcionalmente desconectar a sessão do convidado após a conclusão da restauração, ativando a configuração *Desconectar sessão do convidado após a conclusão da restauração*. Isso desanexa o VMDK e desmonta o datastore. Isso significa que você precisará reconectar a sessão do convidado antes de realizar quaisquer operações adicionais de restauração de arquivos e pastas.
 . Selecione *Restaurar*.
 +
 Você pode visualizar o progresso da restauração na página de Monitoramento de Tarefas.
 
 
+
+--
+.Restaurar arquivos e pastas para uma máquina virtual diferente
+--
+Utilize uma máquina virtual proxy (uma máquina virtual diferente no mesmo vCenter que a original) para restaurar arquivos e pastas do sistema operacional convidado de um disco virtual para outra máquina virtual.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
+. Selecione o menu *Máquinas virtuais*.
+. Na lista de máquinas virtuais, selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] para uma máquina virtual que contém os arquivos que você deseja restaurar.
+. Selecione *Restaurar arquivos e pastas*.
+. Selecione um instantâneo a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.
+. Escolha o local do snapshot a partir do qual deseja restaurar. Se você escolher um local secundário, selecione o instantâneo secundário na lista.
+. Selecione *Avançar*.
+. Escolha um disco virtual da lista para conectar à máquina virtual e selecione *Avançar*.
+. Na página _Detalhes da máquina virtual convidada_, faça o seguinte:
++
+.. Na seção *Detalhes da máquina virtual convidada*:
++
+... Anexe o disco virtual a uma VM proxy selecionando *Proxy virtual machine*.
+... Selecione a origem vCenter, datacenter e datastore nas listas.
+... Selecione uma máquina virtual (VM) para restaurar. A VM selecionada aparecerá no painel direito.
+
+
+.. Na seção *Credenciais da máquina virtual convidada*, se você ainda não tiver armazenado uma credencial para a máquina virtual convidada, selecione *Adicionar credenciais*, insira as informações de credencial para o host Windows ou Linux e selecione *Adicionar*.
+.. Escolha uma credencial de máquina virtual para usar na autenticação com a máquina virtual convidada.
+.. Selecione *Avançar*.
++
+NetApp Backup and Recovery conecta o disco virtual à máquina virtual e exibe todos os arquivos e pastas, incluindo os ocultos. Para convidados Windows, ele atribui uma letra de unidade a cada partição, incluindo as partições reservadas pelo sistema.
+
++
+Você pode usar o ícone de lupa (pesquisa) próximo ao painel do navegador de arquivos para procurar arquivos e pastas. A correspondência de padrões não é suportada, mas você pode pesquisar arquivos ou pastas com base em um subconjunto do nome ou da extensão.
+
+
+
+. Selecione arquivos ou pastas para restaurar.
++
+Os arquivos e pastas que você selecionou para restaurar são listados no painel direito da tela.
+
+. Selecione *Avançar*.
+. Na seção "Restaurar para o caminho", insira o caminho para a máquina virtual onde os arquivos selecionados serão restaurados:
++
+** Para sistemas Windows, insira o caminho de compartilhamento UNC:
++
+*** Exemplo de caminho IPv4: `\\10.60.136.65\c$`
+*** Exemplo de caminho IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
+** Para sistemas operacionais convidados Linux, insira o caminho do sistema de arquivos local ou o endereço e caminho do convidado remoto:
++
+*** Exemplo de caminho local: `/home/user/documents/file.txt`
+*** Exemplo de caminho IPv4: `10.60.136.65:/home/user/restore/`
+*** Exemplo de caminho IPv6: `fd20-8b1e-b255-832e--61.ipv6-literal.net:/home/user/restore/`
+
+
+
+
++
+Caso já existam arquivos com o mesmo nome, você pode optar por sobrescrevê-los ou ignorá-los.
+
+. Na seção "Opções pós-restauração", você pode opcionalmente desconectar a sessão do convidado após a conclusão da restauração, ativando a configuração *Desconectar sessão do convidado após a conclusão da restauração*. Isso desanexa o VMDK e desmonta o datastore. Isso significa que você precisará reconectar a sessão do convidado antes de realizar quaisquer operações adicionais de restauração de arquivos e pastas.
+. Selecione *Restaurar*.
++
+Você pode visualizar o progresso da restauração na página de Monitoramento de Tarefas.
+
+
+
+--
+====

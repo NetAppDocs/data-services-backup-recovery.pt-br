@@ -25,7 +25,6 @@ As seguintes ações e configurações não são suportadas em cargas de trabalh
 As seguintes ações não são suportadas:
 
 * Clonar, montar ou desmontar VMs
-* Restaurar VMs para um local alternativo
 * Proteja VMs armazenadas em SAN
 * Proteger aplicativos
 * Crie backups definidos pelo usuário (somente backups iniciados no NetApp Console são suportados)

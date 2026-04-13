@@ -31,10 +31,11 @@ Você precisa descobrir pelo menos uma carga de trabalho antes de poder adiciona
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
-. Selecione a aba *Destinos de backup externo*.
+. Selecione a guia *Destinos de backup externo gerenciados*.
 . Selecione *Descobrir destino de backup*.
-. Selecione um dos tipos de destino de backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* ou * ONTAP S3*.
-. Na seção *Escolher local das credenciais*, escolha o local onde as credenciais residem e, em seguida, escolha como associá-las.
+. Selecione um dos tipos de destino de backup disponíveis: *AWS*, *Azure*, *StorageGRID*, *ONTAP S3* ou *GCP*.
+. Selecione *Avançar*.
+. (Apenas para destinos de backup da AWS e do Azure) Na seção *Escolher local das credenciais*, selecione o local onde as credenciais estão armazenadas e, em seguida, escolha como associar as credenciais.
 . Selecione *Avançar*.
 . Insira as informações de credenciais. As informações variam dependendo do tipo de destino de backup selecionado e do local das credenciais escolhido.
 +
@@ -71,6 +72,13 @@ Você precisa descobrir pelo menos uma carga de trabalho antes de poder adiciona
 *** *Chave secreta*: Digite a chave secreta do ONTAP S3.
 
 
+** Para GCP:
++
+*** *Nome da credencial*: Insira o nome da credencial do Google Cloud.
+*** *Chave de acesso*: Insira a chave de acesso do Google Cloud.
+*** *Chave secreta*: Insira a chave secreta do Google Cloud.
+
+
 
 
 . Selecione *Descobrir*.
@@ -84,7 +92,7 @@ Em vez de o NetApp Backup and Recovery descobrir buckets automaticamente, você 
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
-. Selecione *Destinos de backup externos*.
+. Selecione *Destinos de backup externo gerenciados*.
 . Selecione o alvo e à direita, selecione *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Adicionar bucket*.
 . Insira as informações do bucket.  As informações variam dependendo do tipo de destino de backup selecionado.
 +
@@ -135,6 +143,14 @@ Em vez de o NetApp Backup and Recovery descobrir buckets automaticamente, você 
 *** *Capacidade*: insira a capacidade do bucket ONTAP S3.  Esta é a quantidade máxima de dados que podem ser armazenados no bucket.
 *** *Habilitar controle de versão*: selecione esta opção para habilitar o controle de versão para o bucket ONTAP S3.  O controle de versão permite que você mantenha várias versões de objetos no bucket, o que pode ser útil para fins de backup e recuperação.
 *** *Bloqueio de objeto*: selecione esta opção para habilitar o bloqueio de objeto para o bucket ONTAP S3.  O bloqueio de objetos impede que objetos sejam excluídos ou substituídos por um período de retenção especificado, fornecendo uma camada adicional de proteção de dados.  Você pode habilitar isso somente quando estiver criando um bucket e não poderá desativá-lo mais tarde.
+
+
+** Para GCP:
++
+*** *Nome do bucket*: Insira o nome do bucket do Google Cloud.
+*** *Projeto GCP*: selecione o nome do projeto do Google Cloud.
+*** *Região do bucket*: Selecione uma região para o bucket do Google Cloud.
+*** *Bloqueio de objetos*: Selecione esta opção para ativar períodos de retenção para objetos neste bucket. Enquanto um período de retenção estiver em vigor, os objetos não poderão ser modificados ou excluídos e permanecerão imutáveis até o término do período. Se você ativar esta opção para um bucket, ela não poderá ser desativada.
 
 
 

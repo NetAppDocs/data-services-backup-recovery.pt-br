@@ -18,9 +18,9 @@ Crie grupos de proteção para gerenciar as operações de backup e restauraçã
 
 Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
-* Crie um grupo de proteção.
+* Crie um grupo de proteção adicionando VMs manualmente ao grupo ou usando tags do VMware vSphere.
 * Ver detalhes da proteção.
-* Crie um grupo de proteção agora. Verlink:br-use-vmware-backup.html["Faça backup das cargas de trabalho do VMware agora"] .
+* Faça backup de um grupo de proteção agora. Consulte link:br-use-vmware-backup.html["Faça backup das cargas de trabalho do VMware agora"].
 * Suspenda e retome o agendamento de backup de um grupo de proteção.
 * Excluir um grupo de proteção.
 
@@ -42,13 +42,74 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 . Forneça um nome para o grupo de proteção.
 . Selecione as VMs ou bancos de dados que você deseja incluir no grupo de proteção.
 . Selecione *Avançar*.
-. Selecione a *Política de backup* que você deseja aplicar ao grupo de proteção.
+. Selecione a política de proteção que deseja aplicar ao grupo de proteção.
 +
 Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política.  Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
 
 . Selecione *Avançar*.
 . Revise a configuração.
 . Selecione *Criar* para criar o grupo de proteção.
+
+
+
+
+== Crie um grupo de proteção usando vSphere tags
+
+Use a proteção baseada em tags para simplificar a administração de grupos de proteção no NetApp Backup and Recovery.
+
+Aqui estão os benefícios de usar a proteção baseada em tags:
+
+* Ao adicionar uma tag vSphere a uma VM ou datastore no vCenter, esse objeto é automaticamente incluído no próximo backup de qualquer grupo de proteção de Backup and Recovery que faça referência a essa tag.
+* Ao remover uma vSphere tag de uma máquina virtual ou de um datastore, esse objeto é automaticamente excluído dos backups subsequentes para esse grupo de proteção baseado em tag.
+* Se uma vSphere tag for excluída em vCenter, os backups futuros ignorarão essa tag e exibirão um aviso.
+* Se uma máquina virtual for migrada para um datastore diferente, ela permanecerá protegida enquanto ainda possuir a tag que faz parte de um grupo de proteção baseado em tags.
+
+
+
+IMPORTANT: A mistura de tipos de recursos (por exemplo, combinar tags com VMs ou datastores individuais no mesmo grupo de proteção) não é suportada.
+
+.Antes de começar
+* Certifique-se de que seu ambiente esteja usando versões compatíveis do VMware vSphere.
+* Em vCenter, certifique-se de que as máquinas virtuais e os armazenamentos de dados que você deseja proteger já estejam associados a uma ou mais vSphere tags.
+
+
+
+NOTE: A associação de tags é resolvida a partir do vCenter no tempo de backup. Quaisquer alterações feitas nas tags no vCenter (adicionar/remover tags, excluir tags, adicionar/remover VMs) são refletidas automaticamente no próximo backup.
+
+.Passos
+. Sign in no NetApp Backup and Recovery.
+. Acesse a visualização *Grupos de Proteção*.
+. Selecione *Criar Grupo de Proteção*.
+. Em *Detalhes gerais > Nome do grupo de proteção*, insira um nome para o grupo de proteção.
+. Na seção *Detalhes gerais > Recursos do grupo de proteção*, selecione *Tags*.
+. Se vários vCenters estiverem configurados, selecione o vCenter apropriado na lista para exibir as tags disponíveis para esse vCenter.
+. Na seção *Selecionar tags*:
++
+.. Do lado esquerdo:
++
+... Selecione um vCenter da lista.
+... Selecione as caixas de seleção para uma ou mais etiquetas dentro desse vCenter.
+
+
+.. Do lado direito:
++
+... Analise a lista de tags selecionadas, agrupadas por vCenter.
+... Remova qualquer etiqueta que você não queira no grupo de proteção.
+
+
+
+
+. Selecione *Avançar*.
+. Selecione a política de proteção que deseja aplicar ao grupo de proteção.
++
+Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política.  Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
+
+. Selecione *Avançar*.
+. Revise as configurações da tag na etapa *Revisar*.
+. Selecione *Criar* para criar o grupo de proteção.
++
+O novo grupo de proteção baseado em tags aparece na lista, indicado por um ícone de tag.
+
 
 
 

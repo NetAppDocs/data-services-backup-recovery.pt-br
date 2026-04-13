@@ -16,8 +16,8 @@ summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and R
 [role="lead"]
 Faça backup de VMs e datastores VMware de sistemas ONTAP locais para Amazon Web Services, Azure NetApp Files ou StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
 
-* Para fazer backup de cargas de trabalho em um cronograma, crie políticas que controlem as operações de backup e restauração.  Verlink:br-use-policies-create.html["Criar políticas"] para obter instruções.
-* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Verlink:br-use-vmware-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho VMware com o NetApp Backup and Recovery"] para mais informações.
+* Para fazer backup de cargas de trabalho de forma programada, crie políticas que controlem as operações de backup e restauração. Consulte link:br-use-policies-create.html["Criar políticas de proteção"] para obter instruções.
+* Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Veja link:br-use-vmware-protection-groups.html["Criar e gerenciar grupos de proteção"] para mais informações.
 * Faça backup das cargas de trabalho agora (crie um backup sob demanda agora).
 
 
@@ -33,12 +33,12 @@ Crie um backup sob demanda imediatamente.  Talvez você queira executar um backu
 . No menu Backup e Recuperação, selecione *Inventário*.
 . Selecione uma carga de trabalho para visualizar os detalhes da proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
-. Selecione a aba *Grupos de proteção*, *Datastores* ou *Máquinas virtuais*.
-. Selecione o grupo de proteção, os armazenamentos de dados ou as máquinas virtuais dos quais você deseja fazer backup.
+. Selecione o cabeçalho de menu *Grupos de Proteção*, *Datastores*, *Máquinas virtuais* ou *Tags*.
+. Selecione o grupo de proteção, os datastores, as máquinas virtuais ou os recursos etiquetados que você deseja fazer backup.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Faça backup agora*.
 +
 
-NOTE: A política aplicada ao backup é a mesma política atribuída ao grupo de proteção, ao armazenamento de dados ou à máquina virtual.
+NOTE: A política aplicada ao backup é a mesma política atribuída ao grupo de proteção, datastore, máquina virtual ou aos recursos etiquetados.
 
 . Selecione o nível de agendamento.
 . Selecione *Fazer backup agora*.

@@ -231,6 +231,9 @@ Você precisa de requisitos específicos para descobrir recursos do Kubernetes e
 
 Para requisitos do NetApp Console , consulte<<No NetApp Console>> .
 
+
+NOTE: NetApp recomenda fortemente atribuir um endereço IP estático ao agente do Console que você usa para cargas de trabalho do Kubernetes para evitar problemas caso o endereço IP do agente seja alterado.
+
 * Um sistema ONTAP primário (ONTAP 9.16.1 ou posterior)
 * Um cluster do Kubernetes - As distribuições e versões do Kubernetes suportadas incluem:
 +
@@ -288,6 +291,7 @@ Certifique-se de que sua instância do Hyper-V atenda aos requisitos específico
 | Armazenamento conectado  a| 
 * ONTAP 9.13.1 ou posterior
 * Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior
+* Armazenamento SAN (prévia) (compatível com backups e restauração para o local original a partir do storage primário e secundário)
 
 
 |===

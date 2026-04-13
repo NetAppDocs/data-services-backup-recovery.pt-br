@@ -14,7 +14,7 @@ summary: 'Você pode restaurar arquivos ou pastas de um disco de máquina virtua
 
 
 [role="lead"]
-Você pode restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows.
+Você pode restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows ou Linux.
 
 
 
@@ -44,25 +44,13 @@ Restaurar os arquivos ou pastas selecionados para um local especificado.
 
 == Pré-requisitos para restaurar arquivos e pastas de convidados
 
-Analise todos os requisitos antes de restaurar arquivos ou pastas de um VMDK em um sistema operacional convidado Windows.
+Analise todos os requisitos antes de restaurar arquivos ou pastas de um VMDK.
 
 * As ferramentas VMware devem estar instaladas e em execução.
 +
-O NetApp Backup and Recovery utiliza informações das ferramentas VMware para estabelecer uma conexão com o sistema operacional convidado VMware.
-
-* O sistema operacional convidado Windows deve estar executando o Windows Server 2008 R2 ou posterior.
-+
-Para obter as informações mais recentes sobre as versões suportadas, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .
-
-* As credenciais para a máquina virtual de destino usam a conta de administrador local ou de domínio integrada com o nome de usuário "Administrator". Antes de iniciar a operação de restauração, configure as credenciais da máquina virtual onde deseja conectar o disco virtual. São necessárias credenciais tanto para as operações de anexação quanto para as de restauração. Usuários de grupos de trabalho podem usar a conta de administrador local integrada.
-+
-
-IMPORTANT: Se você precisar usar uma conta que não seja a conta de administrador interna, mas que tenha privilégios administrativos na VM, será necessário desabilitar o UAC na VM convidada.
+NetApp Backup and Recovery utiliza informações das ferramentas VMware para estabelecer uma conexão com o sistema operacional convidado do VMware.
 
 * Você deve saber o snapshot de backup e o VMDK para restaurar.
-+
-O NetApp Backup and Recovery não oferece suporte à busca de arquivos ou pastas para restauração. Antes de começar, você precisa saber onde os arquivos ou pastas estão localizados no snapshot e o respectivo arquivo VMDK.
-
 * O disco virtual a ser conectado deve estar presente em um backup do NetApp Backup and Recovery .
 +
 O disco virtual que contém o arquivo ou pasta que você deseja restaurar deve estar em um backup de máquina virtual que foi realizado usando o NetApp Backup and Recovery.
@@ -75,6 +63,38 @@ Você pode restaurar arquivos com nomes não alfabéticos, como Kanji japonês, 
 
 
 
+Para obter as informações mais recentes sobre suporte a sistemas operacionais convidados, consulte o  https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^].
+
+
+
+=== Convidados do Windows
+
+* O sistema operacional convidado Windows deve estar executando o Windows Server 2008 R2 ou posterior.
++
+Para obter as informações mais recentes sobre as versões suportadas, consulte https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .
+
+* As credenciais para a máquina virtual de destino usam a conta de administrador local ou de domínio integrada com o nome de usuário "Administrator". Antes de iniciar a operação de restauração, configure as credenciais da máquina virtual onde deseja conectar o disco virtual. São necessárias credenciais tanto para as operações de anexação quanto para as de restauração. Usuários de grupos de trabalho podem usar a conta de administrador local integrada.
++
+
+IMPORTANT: Se você precisar usar uma conta que não seja a conta de administrador interna, mas que tenha privilégios administrativos na VM, será necessário desabilitar o UAC na VM convidada.
+
+
+
+
+
+=== Convidados Linux
+
+* As seguintes distribuições de sistemas operacionais convidados são suportadas:
++
+** Red Hat Enterprise Linux
+** Ubuntu
+** Debian
+
+
+* A conta Run-As precisa de permissões de root ou sudo.
+* Para restauração entre máquinas virtuais (restaurar para uma máquina virtual Linux diferente), o SSH deve estar em execução na máquina virtual de destino.
+
+
 
 
 == Limitações de restauração de arquivos de convidado
@@ -85,10 +105,7 @@ Antes de restaurar um arquivo ou pasta de um sistema operacional convidado, voc�
 * Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido.
 * Você não pode restaurar arquivos ou pastas para uma pasta criptografada.
 * Arquivos e pastas ocultos são exibidos na página de navegação de arquivos e não podem ser filtrados.
-* Não é possível restaurar a partir de um sistema operacional convidado Linux.
-+
-Não é possível restaurar arquivos e pastas de uma VM que esteja executando um sistema operacional convidado Linux. No entanto, você pode anexar um VMDK e restaurar manualmente os arquivos e pastas. Para obter as informações mais recentes sobre o sistema operacional convidado compatível, consulte o https://imt.netapp.com/imt/imt.jsp?components=180121;&solution=1517&isHWU&src=IMT["Ferramenta de Matriz de Interoperabilidade NetApp (IMT)"^] .
-
+* Não é possível restaurar arquivos ou pastas entre máquinas virtuais com sistemas operacionais diferentes (ao restaurar para uma máquina virtual diferente, o tipo de sistema operacional de destino deve ser o mesmo que o tipo de sistema operacional de origem).
 * Não é possível restaurar de um sistema de arquivos NTFS para um sistema de arquivos FAT.
 +
 Quando você tenta restaurar do formato NTFS para o formato FAT, o descritor de segurança NTFS não é copiado porque o sistema de arquivos FAT não oferece suporte aos atributos de segurança do Windows.

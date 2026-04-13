@@ -140,6 +140,11 @@ Ao restaurar para um local alternativo, você pode alterar o vCenter de destino,
 *** *Nome da máquina virtual*: Insira o nome da máquina virtual onde você deseja restaurar o snapshot. Se o nome corresponder a uma VM já existente no armazenamento de dados, o Backup e Recuperação tornará o nome único, acrescentando um carimbo de data/hora atual.
 
 
+** Seção *Armazenamento de destino* (visível somente ao restaurar a partir do armazenamento de objetos):
++
+*** *Alterar local de armazenamento padrão*: Habilite esta opção para restaurar um backup de armazenamento de objetos em uma VM de armazenamento diferente caso o local de armazenamento de origem esteja inacessível ou cheio. Escolha um cluster, VM de armazenamento ou agregado diferente para usar.
+
+
 ** Seção *Opções de pré-restauração*:
 +
 *** *Restauração rápida*: habilite esta opção para instruir o NetApp Backup and Recovery a restaurar apenas os metadados (arquivos, LUNs e namespaces) do armazenamento de objetos. Isso disponibiliza os volumes mais rapidamente do que uma restauração completa.

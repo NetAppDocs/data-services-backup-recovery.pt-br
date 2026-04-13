@@ -28,6 +28,7 @@ Você pode restaurar máquinas virtuais de diferentes locais de inicialização:
 Você pode restaurar dados para estes pontos:
 
 * Restaurar para o local original
+* Restaurar para um local alternativo
 
 
 .Considerações sobre restauração de armazenamento de objetos
@@ -47,13 +48,13 @@ Ao restaurar máquinas virtuais, ocorre o seguinte:
 * Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o sistema original ou para um sistema ONTAP local.
 
 
-Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode restaurar uma VM, mesmo que não se lembre do nome exato, do local em que ela reside ou da data em que esteve em boas condições pela última vez. Você pode pesquisar o instantâneo usando filtros.
+Na página Restaurar, você pode restaurar uma máquina virtual, mesmo que não se lembre do nome exato, da localização em que ela está ou da data em que estava em bom estado pela última vez. Você pode pesquisar o snapshot usando filtros.
 
 
 
-== Restaurar VMs a partir da opção Restaurar (Pesquisar e Restaurar)
+== Restaurar máquinas virtuais KVM
 
-Restaure máquinas virtuais KVM usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.
+Restaure máquinas virtuais KVM usando o menu Restaurar. Você pode procurar o snapshot pelo nome ou usando filtros.
 
 *Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -71,39 +72,48 @@ Uma lista de possíveis pontos de restauração é exibida.
 
 . Selecione o ponto de restauração que você deseja usar.
 . Selecione um local de origem para o instantâneo.
-
-
 . Selecione *Próximo* para continuar.
 . Escolha o destino e as configurações de restauração:
-
-
++
 [discrete]
 ===== Seleção de destino
 
++
 [role="tabbed-block"]
 ====
 .Restaurar para o local original
 --
-. *Ativar restauração rápida*: selecione esta opção para executar uma operação de restauração rápida. Os volumes e dados restaurados estarão disponíveis imediatamente. Não use isso em volumes que exigem alto desempenho porque, durante o processo de restauração rápida, o acesso aos dados pode ser mais lento que o normal.
-. *Opções de pré-restauração*: insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
-. *Opções pós-restauração*:
-+
-** *Reiniciar VM*: selecione esta opção para reiniciar a VM após a conclusão da operação de restauração e após a aplicação do script pós-restauração.
-** *Postscript*: Insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
-
-
-. Seção *Notificação*:
-+
-** *Ativar notificações por e-mail*: selecione esta opção para receber notificações por e-mail sobre a operação de restauração e indique que tipo de notificação você deseja receber.
-
-
-. Selecione *Restaurar*.
+.. Selecione o painel *Localização original*.
+.. Na seção *Opções pós-restauração*, habilite a opção *Reiniciar máquina virtual* para reiniciar a máquina virtual após a conclusão da operação de restauração.
 
 
 --
 .Restaurar para local alternativo
 --
-Não disponível para cargas de trabalho KVM.
+.. Selecione o painel *Localização alternativa*.
+.. Na seção *Cloudstack settings*: forneça as seguintes informações:
++
+*** *Zona*: Escolha uma zona de destino CloudStack na lista.
+*** *Pod*: Escolha um pod de destino dentro da zona selecionada na lista.
+*** *Cluster*: escolha um cluster de destino dentro do pod selecionado na lista.
+*** *Host*: Escolha um host de destino no cluster a partir da lista.
+*** *Pool de storage*: Selecione um pool de storage de destino na lista (o volume de destino deve estar localizado aqui).
+*** *Rede*: selecione a rede à qual a VM restaurada será conectada.
+*** *Nome da VM*: Insira um nome para a VM a ser restaurada.
+*** *Nome de Exibição*: Insira o nome que deve ser exibido para esta VM no Backup and Recovery.
+*** *Caminho do pool de storage*: Insira o caminho do pool de storage onde os volumes da máquina virtual serão armazenados.
+
+
+.. Escolha uma oferta de serviço que defina o seu nível preferido de alocação de recursos na lista *Selecionar oferta de serviço*.
+.. Ative a opção *Forçado* para importar a VM restaurada mesmo que um ou mais endereços MAC das NICs da VM já estejam presentes. Se um endereço MAC já existir, um novo endereço MAC será gerado para essa NIC.
+.. Na seção *Opções pós-restauração*, considere as seguintes opções:
++
+*** *Reiniciar máquina virtual*: Habilite esta opção para inicializar a nova máquina virtual após a restauração.
+
+
+
 
 --
 ====
+. Selecione *Restaurar*.
+
