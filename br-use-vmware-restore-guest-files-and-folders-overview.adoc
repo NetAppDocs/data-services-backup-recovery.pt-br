@@ -24,7 +24,7 @@ As operações de restauração do sistema operacional convidado incluem as segu
 
 . Anexar
 +
-Anexe um disco virtual a uma máquina virtual convidada e inicie uma sessão de restauração de arquivos da máquina virtual convidada.
+Anexe um disco virtual a uma máquina virtual convidada ou a uma máquina virtual proxy e inicie uma sessão de restauração de arquivos do convidado.
 
 . Espere
 +
@@ -32,7 +32,7 @@ Aguarde a conclusão da operação de anexação antes de poder navegar e restau
 
 . Selecionar arquivos ou pastas
 +
-Navegue pelos arquivos VMDK e selecione um ou mais arquivos ou pastas para restaurar.
+Navegue ou pesquise os arquivos do disco virtual e selecione um ou mais arquivos ou pastas para restaurar.
 
 . Restaurar
 +
@@ -55,7 +55,9 @@ NetApp Backup and Recovery utiliza informações das ferramentas VMware para est
 +
 O disco virtual que contém o arquivo ou pasta que você deseja restaurar deve estar em um backup de máquina virtual que foi realizado usando o NetApp Backup and Recovery.
 
-
+* Para usar uma máquina virtual proxy, a máquina virtual proxy precisa ser configurada.
++
+Se você deseja conectar um disco virtual a uma máquina virtual proxy, a máquina virtual proxy deve ser configurada antes do início da operação de conexão e restauração.
 
 * Para arquivos com nomes que não sejam do alfabeto inglês, você deve restaurá-los em um diretório, não como um único arquivo.
 +
