@@ -312,21 +312,24 @@ CAUTION: Use esta opção com cuidado e somente em casos de extrema necessidade 
 
 Excluir todos os backups de um volume também desabilita backups futuros para esse volume.
 
+
+NOTE: Não é possível excluir arquivos de backup de volume individuais depois que o relacionamento de backup for excluído. Exclua os arquivos de backup de um volume antes de excluir o relacionamento de backup do volume.
+
 .Passos
-. Na aba *Volumes*, clique emimage:icon-actions-horizontal.gif["Mais ícone"] para o volume de origem e selecione *Detalhes e lista de backup*.
+. No menu *Volumes*, clique image:icon-actions-horizontal.gif["Mais ícone"] para o volume de origem e selecione *Gerenciar backups > Exibir backup*.
 +
 A lista de todos os arquivos de backup é exibida.
 
-. Selecione *Ações* > *Excluir todos os backups*.
-. Digite o nome do volume.
-. Selecione *Configurações avançadas*.
-. *Forçar exclusão de backups*: indique se você deseja ou não forçar a exclusão de todos os backups.
+. Escolha um backup da lista e selecione *Ações > Excluir todos os backups*.
+. Confirme a exclusão inserindo o nome do volume.
+. Expanda a área *Configurações avançadas*.
+. Em *Forçar exclusão de backups*, selecione se deseja forçar a exclusão de todos os backups.
 +
-Em alguns casos extremos, você pode querer que o NetApp Backup and Recovery não tenha mais acesso aos backups. Isso pode acontecer, por exemplo, se o serviço não tiver mais acesso ao bucket de backup ou se os backups forem protegidos pelo DataLock, mas você não os quiser mais. Anteriormente, não era possível excluí-los sozinho e era necessário ligar para o Suporte da NetApp . Com esta versão, você pode usar a opção para forçar a exclusão de backups (nos níveis de volume e sistema).
+Em casos raros, pode ser necessário revogar o acesso do NetApp Backup and Recovery aos backups; por exemplo, se o Backup and Recovery perder o acesso ao bucket de backup ou se os backups estiverem DataLock-protegidos, mas você não os quiser mais. Use esta opção para forçar a exclusão de backups no nível do volume e do sistema.
 
 +
 
-CAUTION: Use esta opção com cuidado e somente em casos de extrema necessidade de limpeza. O NetApp Backup and Recovery não terá mais acesso a esses backups, mesmo que eles não sejam excluídos do armazenamento de objetos. Você precisará ir ao seu provedor de nuvem e excluir manualmente os backups.
+CAUTION: Use esta opção apenas para limpeza extrema. Depois de ativado, NetApp Backup and Recovery não acessará mais esses backups (mesmo que os objetos permaneçam no storage de nuvem). Você deve excluí-los manualmente do seu provedor de nuvem.
 
 . Selecione *Excluir*.
 
@@ -335,9 +338,10 @@ CAUTION: Use esta opção com cuidado e somente em casos de extrema necessidade 
 
 === Excluir um único arquivo de backup de um volume
 
-Você pode excluir um único arquivo de backup se não precisar mais dele. Isso inclui a exclusão de um único backup de um snapshot de volume ou de um backup em armazenamento de objetos.
+Exclua um backup individual quando ele não for mais necessário. Não é possível excluir volumes replicados (volumes de proteção de dados).
 
-Não é possível excluir volumes replicados (volumes de proteção de dados).
+
+NOTE: Não é possível excluir arquivos de backup de volume individuais depois que o relacionamento de backup for excluído. No entanto, você pode <<Excluir todos os arquivos de backup de um volume,Excluir todos os arquivos de backup do volume>>.
 
 .Passos
 . Na aba *Volumes*, selecioneimage:icon-actions-horizontal.gif["Mais ícone"] para o volume de origem e selecione *Exibir detalhes do volume*.
@@ -362,7 +366,7 @@ Este recurso estará disponível somente se o seu sistema estiver executando o O
 Não é possível excluir o volume de origem da interface do usuário do NetApp Backup and Recovery .  No entanto, você pode abrir a página Detalhes do Volume na página *Sistemas* do Console e https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["apague o volume de lá"] .
 
 
-NOTE: Não é possível excluir arquivos de backup de volume individuais depois que o relacionamento tiver sido excluído.  No entanto, você pode excluir todos os backups do volume.
+NOTE: Não é possível excluir arquivos de backup de volume individuais depois que o relacionamento de backup for excluído. No entanto, você pode <<Excluir todos os arquivos de backup de um volume,Excluir todos os arquivos de backup do volume>>. Se precisar excluir um relacionamento de backup para um volume, certifique-se de excluir primeiro os backups do volume e, em seguida, excluir o relacionamento de backup.
 
 .Passos
 . Na aba *Volumes*, selecioneimage:icon-actions-horizontal.gif["Ícone de ações"] para o volume de origem e selecione *Backup* > *Excluir relacionamento*.
@@ -372,7 +376,7 @@ NOTE: Não é possível excluir arquivos de backup de volume individuais depois 
 
 == Desativar o NetApp Backup and Recovery para um sistema
 
-Desativar o NetApp Backup and Recovery para um sistema desabilita os backups de cada volume no sistema e também desabilita a capacidade de restaurar um volume.  Nenhum backup existente será excluído.  Isso não cancela o registro do serviço de backup deste sistema; basicamente, permite que você pause todas as atividades de backup e restauração por um período de tempo.
+Desativar o NetApp Backup and Recovery para um sistema pausa os backups e restaurações de todos os seus volumes sem excluir os backups existentes. Isso permite pausar toda a atividade de backup e restauração por um período de tempo sem cancelar o registro do serviço de backup nesse sistema.
 
 Observe que você continuará sendo cobrado pelo seu provedor de nuvem pelos custos de armazenamento de objetos referentes à capacidade que seus backups usam, a menos que você<<Excluir backups,excluir os backups>> .
 
