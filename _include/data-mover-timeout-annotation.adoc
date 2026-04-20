@@ -6,7 +6,7 @@
 
 == Anotação de tempo limite do data mover
 
-Durante as operações de backup e restauração, você pode usar a anotação  `protect.trident.netapp.io/data-mover-timeout-sec` para configurar o tempo limite para operações de movimentação de dados. Essa anotação especifica o tempo máximo, em segundos, que um data mover deve aguardar a conclusão de uma operação específica antes de expirar o tempo limite. Ela é particularmente útil em situações em que problemas de rede ou outros fatores podem causar a paralisação das operações de movimentação de dados. Ela ajuda a detectar e lidar com operações paralisadas, em vez de definir um tempo limite geral para todo o processo. Por exemplo, se não houver progresso na restauração dos dados do volume devido a problemas de rede, a operação expirará com base na duração especificada.
+Use a anotação  `protect.trident.netapp.io/data-mover-timeout-sec` para definir um tempo limite por operação de movimentação de dados (em segundos) durante backup e restauração. Ela especifica quanto tempo um data mover aguarda o progresso de uma operação antes de atingir o tempo limite. Isso é útil para detectar e lidar com transferências interrompidas (por exemplo, quando problemas de rede impedem o progresso da restauração de dados do volume).
 
 Você pode usar essa anotação em seu arquivo YAML conforme mostrado abaixo:
 

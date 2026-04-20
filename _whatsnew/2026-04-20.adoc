@@ -1,0 +1,14 @@
+= Aprimoramentos de cargas de trabalho da VMware
+:allow-uri-read: 
+
+
+
+
+=== Aprimoramentos de cargas de trabalho da VMware
+
+Nesta versão, VMware workloads apresenta a seguinte melhoria:
+
+* *ASA r2 suporte a SAN*: As cargas de trabalho do VMware agora oferecem suporte à proteção de VMs em datastores VMFS hospedados em ambientes NetApp ASA r2 somente SAN.
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Visão geral das cargas de trabalho do Protect VMware"] .
