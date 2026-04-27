@@ -32,7 +32,7 @@ Você pode restaurar dados para estes pontos:
 
 
 .Considerações sobre restauração de armazenamento de objetos
-Se a Resiliência contra Ransomware estiver habilitada para um arquivo de backup no armazenamento de objetos, você será solicitado a executar uma verificação extra antes da restauração.  Recomendamos realizar a verificação.
+Se a proteção contra ransomware estiver ativada para um arquivo de backup no storage de objetos, você será solicitado a executar uma verificação adicional antes de restaurá-lo. Recomendamos realizar a verificação.
 
 
 TIP: Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arquivo de backup.

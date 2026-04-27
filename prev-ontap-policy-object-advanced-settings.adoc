@@ -102,7 +102,7 @@ Ao selecionar o rótulo de backup "anual" para uma política de backup de qualqu
 
 As verificações de proteção contra ransomware são ativadas por padrão. A configuração padrão para a frequência de verificação é de 7 dias. A verificação ocorre apenas no instantâneo mais recente.
 
-Para obter detalhes sobre as opções de DataLock e Ransomware Resilience, consultelink:prev-ontap-policy-object-options.html["Opções de resiliência do DataLock e do Ransomware"] .
+Para obter detalhes sobre as opções de proteção Datalock e Ransomware, consulte link:prev-ontap-policy-object-options.html["Opções de bloqueio de dados e proteção contra ransomware"].
 
 Você pode alterar essa programação para dias ou semanas ou desativá-la, economizando custos.
 

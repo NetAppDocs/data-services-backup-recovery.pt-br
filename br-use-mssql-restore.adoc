@@ -33,7 +33,7 @@ Você pode restaurar dados para o snapshot mais recente ou para estes pontos:
 
 
 .Considerações sobre restauração de armazenamento de objetos
-Se você selecionar um arquivo de backup no armazenamento de objetos e a Resiliência contra Ransomware estiver ativa para esse backup (se você habilitou o DataLock e a Resiliência contra Ransomware na política de backup), você será solicitado a executar uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados.  Recomendamos que você execute a verificação.
+Se você selecionar um arquivo de backup no storage de objetos e a proteção contra ransomware estiver ativa para esse backup (caso tenha habilitado o Datalock e a proteção contra ransomware na política de backup), será solicitado que você execute uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados. Recomendamos que você execute a verificação.
 
 
 TIP: Você paga taxas extras ao seu provedor de nuvem para acessar o arquivo de backup.

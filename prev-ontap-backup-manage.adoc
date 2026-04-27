@@ -67,7 +67,7 @@ Você pode alterar as políticas de backup atribuídas aos seus volumes existent
 . No menu *Volumes*, localize o volume para o qual deseja modificar as configurações de política e selecione o menu Ações. image:icon-action.png["Ícone de ações"] No final da linha, selecione *Editar estratégia de backup*.
 . Na página _Editar estratégia de backup_, faça alterações nas políticas de backup existentes para snapshots locais, volumes replicados e arquivos de backup e selecione *Avançar*.
 +
-Se você habilitou _DataLock e Ransomware Resilience_ para backups em nuvem na política de backup inicial ao ativar o NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock.  E se você não habilitou o _DataLock e o Ransomware Resilience_ ao ativar o NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm o DataLock configurado.
+Se você habilitou _Datalock and Ransomware protection_ para backups em nuvem na política de backup ao ativar NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock. E se você não habilitou _Datalock and Ransomware protection_ ao ativar NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm DataLock configurado.
 
 . Revise as configurações de backup para este volume e selecione *Ativar backup*.
 
@@ -110,7 +110,7 @@ Quando mais de cinco volumes estão habilitados para backup, o NetApp Backup and
 |===
 . Na página de backup que aparece, faça as alterações nas políticas de backup existentes para snapshots locais, volumes replicados ou arquivos de backup e selecione *Salvar*.
 +
-Se você habilitou _DataLock e Ransomware Resilience_ para backups em nuvem na política de backup inicial ao ativar o NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock.  E se você não habilitou o _DataLock e o Ransomware Resilience_ ao ativar o NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm o DataLock configurado.
+Se você habilitou _Datalock and Ransomware protection_ para backups em nuvem na política de backup ao ativar NetApp Backup and Recovery para este cluster, você verá apenas outras políticas que foram configuradas com DataLock. E se você não habilitou _Datalock and Ransomware protection_ ao ativar NetApp Backup and Recovery, você verá apenas outras políticas de backup em nuvem que não têm DataLock configurado.
 
 
 
@@ -124,7 +124,7 @@ Você pode criar um snapshot ou backup ad-hoc de um volume para o armazenamento 
 
 O nome do backup inclui o registro de data e hora para que você possa identificar seu backup sob demanda de outros backups agendados.
 
-Se você habilitou _DataLock e Ransomware Resilience_ ao ativar o NetApp Backup and Recovery para este cluster, o backup sob demanda também será configurado com DataLock e o período de retenção será de 30 dias.  As verificações de ransomware não são suportadas para backups ad-hoc. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção DataLock e Ransomware"^].
+Se você habilitou _Datalock e proteção contra ransomware_ ao ativar NetApp Backup and Recovery para este cluster, o backup sob demanda também será configurado com DataLock, e o período de retenção será de 30 dias. As verificações de ransomware não são compatíveis com backups ad-hoc. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção DataLock e Ransomware"^].
 
 Quando você cria um backup ad-hoc, um instantâneo é criado no volume de origem.  Como esse snapshot não faz parte de uma programação normal de snapshot, ele não será desativado.  Talvez você queira excluir manualmente este instantâneo do volume de origem quando o backup estiver concluído.  Isso permitirá que os blocos relacionados a este instantâneo sejam liberados.  O nome do Snapshot começará com `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Veja como excluir um Snapshot usando o ONTAP CLI"^] .
 
@@ -157,7 +157,7 @@ São exibidos os detalhes do volume e a lista de snapshots.
 
 O NetApp Backup and Recovery verifica seus arquivos de backup em busca de evidências de um ataque de ransomware quando um backup em um arquivo de objeto é criado e quando os dados de um arquivo de backup estão sendo restaurados.  Você também pode executar uma verificação sob demanda a qualquer momento para verificar a usabilidade de um arquivo de backup específico no armazenamento de objetos.  Isso pode ser útil se você teve um problema de ransomware em um volume específico e deseja verificar se os backups desse volume não foram afetados.
 
-Este recurso estará disponível somente se o backup de volume tiver sido criado em um sistema com ONTAP 9.11.1 ou superior e se você tiver habilitado _DataLock e Ransomware Resilience_ na política de backup para objeto.
+Este recurso está disponível somente se o backup do volume foi criado a partir de um sistema com ONTAP 9.11.1 ou superior e se você habilitou _Datalock and Ransomware protection_ na política de backup para objeto.
 
 .Passos
 . Na aba *Volumes*, selecioneimage:icon-actions-horizontal.gif["Ícone de ações"] para o volume de origem e selecione *Exibir detalhes do volume*.
@@ -167,7 +167,7 @@ Os detalhes do volume são exibidos.
 . Selecione *Backup* para ver a lista de arquivos de backup no armazenamento de objetos.
 . Selecioneimage:icon-actions-horizontal.gif["Ícone de ações"] para o arquivo de backup de volume que você deseja verificar em busca de ransomware e clique em *Verificar em busca de ransomware*.
 +
-A coluna Resiliência do Ransomware mostra que a verificação está Em andamento.
+A coluna de proteção contra ransomware mostra que a verificação está em andamento.
 
 
 
@@ -222,7 +222,7 @@ Você pode alterar os atributos de uma política de backup que está sendo aplic
 
 [NOTE]
 ====
-* Se você habilitou _DataLock e Resiliência contra Ransomware_ na política inicial ao ativar o NetApp Backup and Recovery para este cluster, todas as políticas que você editar deverão ser configuradas com a mesma configuração de DataLock (Governança ou Conformidade).  E se você não habilitou o _DataLock e o Ransomware Resilience_ ao ativar o NetApp Backup and Recovery, não será possível habilitar o DataLock agora.
+* Se você habilitou _Datalock and Ransomware protection_ na política inicial ao ativar NetApp Backup and Recovery para este cluster, todas as políticas que você editar deverão ser configuradas com a mesma configuração DataLock (Governance ou Compliance). E se você não habilitou _Datalock and Ransomware protection_ ao ativar NetApp Backup and Recovery, não poderá habilitar DataLock agora.
 * Ao criar backups na AWS, se você escolher _S3 Glacier_ ou _S3 Glacier Deep Archive_ na sua primeira política de backup ao ativar o NetApp Backup and Recovery, essa camada será a única camada de arquivamento disponível ao editar políticas de backup.  E se você não selecionou nenhuma camada de arquivamento em sua primeira política de backup, o _S3 Glacier_ será sua única opção de arquivamento ao editar uma política.
 
 
@@ -253,7 +253,7 @@ Se você quiser aplicar uma nova política de backup a determinados volumes em u
 
 [NOTE]
 ====
-* Se você habilitou _DataLock e Resiliência contra Ransomware_ na política inicial ao ativar o NetApp Backup and Recovery para este cluster, quaisquer políticas adicionais que você criar deverão ser configuradas com a mesma configuração de DataLock (Governança ou Conformidade).  E se você não habilitou o _DataLock e o Ransomware Resilience_ ao ativar o NetApp Backup and Recovery, não poderá criar novas políticas que usem o DataLock.
+* Se você habilitou _Datalock and Ransomware protection_ na política inicial ao ativar NetApp Backup and Recovery para este cluster, quaisquer políticas adicionais que você criar deverão ser configuradas com a mesma configuração DataLock (Governance ou Compliance). E se você não habilitou _Datalock and Ransomware protection_ ao ativar NetApp Backup and Recovery, não poderá criar novas políticas que usem DataLock.
 * Ao criar backups na AWS, se você escolher _S3 Glacier_ ou _S3 Glacier Deep Archive_ na sua primeira política de backup ao ativar o NetApp Backup and Recovery, essa camada será a única camada de arquivamento disponível para futuras políticas de backup para esse cluster.  E se você não selecionou nenhuma camada de arquivamento em sua primeira política de backup, o _S3 Glacier_ será sua única opção de arquivamento para políticas futuras.
 
 
