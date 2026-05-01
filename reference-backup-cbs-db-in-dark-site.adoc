@@ -67,7 +67,7 @@ Este arquivo está localizado no seguinte local no bucket `netapp-backup-<GUID>/
 
 === Instalar um novo agente de console em um novo host Linux local
 
-Ao instalar um novo agente do Console, baixe a mesma versão de software do agente original.  Alterações no banco de dados do NetApp Backup and Recovery podem fazer com que versões mais recentes do software não funcionem com backups de bancos de dados antigos. Você pode https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualize o software do agente do Console para a versão mais atual após restaurar o banco de dados de backup"^] .
+Ao instalar um novo agente do Console, baixe a mesma versão de software do agente original. Alterações no banco de dados do NetApp Backup and Recovery podem fazer com que versões mais recentes do software não funcionem com backups de banco de dados antigos. Você pode  https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualize o software do agente do Console para a versão mais atual após restaurar o banco de dados de backup"^].
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instale o agente do Console em um novo host Linux local"^]
 . Efetue login no Console usando as credenciais de usuário administrador que você acabou de criar.

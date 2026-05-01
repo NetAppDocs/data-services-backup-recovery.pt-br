@@ -20,7 +20,7 @@ Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us
 
 === Suporte à carga de trabalho do Hyper-V como uma visualização privada
 
-Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:
+Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:
 
 * Fazer backup e restaurar VMs em instâncias autônomas, bem como instâncias de cluster de failover (FCI)
 * Proteja VMs armazenadas em compartilhamentos SMB3
@@ -36,7 +36,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte 
 
 === Suporte à carga de trabalho KVM como uma visualização privada
 
-Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho KVM:
+Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho KVM:
 
 * Fazer backup e restaurar imagens de VM qcow2 armazenadas em compartilhamentos NFS
 * Fazer backup de pools de armazenamento

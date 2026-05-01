@@ -47,7 +47,7 @@ Os administradores da organização ou administradores de pasta ou projeto desco
 
 . Adicionar usuários aos projetos.
 +
-Os administradores da organização ou os administradores de pastas/projetos adicionam usuários do Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base em suas necessidades de acesso. Os usuários com a função de Backup and Recovery adequada obterão acesso automaticamente a novas cargas de trabalho nesses projetos.
+Os administradores da organização ou os administradores de pastas/projetos adicionam usuários do Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base em suas necessidades de acesso. Os usuários com a função de Backup and Recovery apropriada obterão acesso automático a novas cargas de trabalho nesses projetos.
 
 
 

@@ -39,4 +39,4 @@ Embora esse recurso esteja em versão prévia, há certas limitações:
 
 *Começando*
 
-Para começar a usar este recurso de visualização, você deve habilitar um sinalizador no agente do Console.  Você pode então inserir os detalhes de conexão do seu armazenamento de objetos de terceiros MinIO no fluxo de trabalho de proteção escolhendo Armazenamento de objetos *Compatível com terceiros* na seção de backup.
+Para começar a usar este recurso de pré-visualização, você deve habilitar um sinalizador no agente do Console. Em seguida, você poderá inserir os detalhes de conexão do seu armazenamento de objetos MinIO de terceiro no fluxo de trabalho de proteção, selecionando *Third party Compatible* armazenamento de objetos na seção de backup.

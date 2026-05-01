@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-cvo-aws.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery. 
+summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
 ---
 = Faça backup dos dados do Cloud Volumes ONTAP no Amazon S3 com o NetApp Backup and Recovery
 :hardbreaks:

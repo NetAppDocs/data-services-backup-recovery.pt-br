@@ -54,7 +54,7 @@ Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, 
 
 Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias na política de proteção:
 
-* *Editar políticas de proteção*: Agora você pode editar as políticas de proteção de cargas de trabalho do Kubernetes se precisar alterar
+* *Editar políticas de proteção*: Agora você pode editar as políticas de proteção de cargas de trabalho do Kubernetes, caso precise alterá-las.
 * *Suporte a backup disco a disco*: Agora você pode configurar políticas de proteção do Kubernetes com uma arquitetura de backup disco a disco.
 * *Suporte a buckets de armazenamento do Google Cloud Platform*: Agora você pode configurar políticas de proteção do Kubernetes para fazer backup em buckets de armazenamento do Google Cloud Platform.
 
@@ -353,7 +353,7 @@ Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us
 
 === Suporte à carga de trabalho do Hyper-V como uma visualização privada
 
-Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:
+Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:
 
 * Fazer backup e restaurar VMs em instâncias autônomas, bem como instâncias de cluster de failover (FCI)
 * Proteja VMs armazenadas em compartilhamentos SMB3
@@ -369,7 +369,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte 
 
 === Suporte à carga de trabalho KVM como uma visualização privada
 
-Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho KVM:
+Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho KVM:
 
 * Fazer backup e restaurar imagens de VM qcow2 armazenadas em compartilhamentos NFS
 * Fazer backup de pools de armazenamento
@@ -546,7 +546,7 @@ Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
 
 === Suporte à carga de trabalho do Kubernetes como uma prévia
 
-Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Kubernetes:
+Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho do Kubernetes:
 
 * Descubra o Red Hat OpenShift e os clusters Kubernetes de código aberto, apoiados pelo NetApp ONTAP, sem compartilhar arquivos kubeconfig.
 * Descubra, gerencie e proteja aplicativos em vários clusters do Kubernetes usando um plano de controle unificado.
@@ -637,7 +637,7 @@ Se você desabilitar essa configuração, será necessário criar manualmente o 
 
 === Suporte para SnapMirror para ressincronização em nuvem no ONTAP S3
 
-A versão anterior introduziu suporte para SnapMirror para Cloud Resync (SM-C Resync). O recurso simplifica a proteção de dados durante a migração de volume em ambientes NetApp . Esta versão adiciona suporte para SM-C Resync no ONTAP S3, bem como outros provedores compatíveis com S3, como Wasabi e MinIO.
+A versão anterior introduziu suporte para SnapMirror ao Cloud Resync (SM-C Resync). Esse recurso simplifica a proteção de dados durante a migração de volumes em ambientes NetApp. Esta versão adiciona suporte para o SM-C Resync no ONTAP S3, bem como em outros provedores compatíveis com S3, como Wasabi e MinIO.
 
 
 
@@ -690,7 +690,7 @@ Embora esse recurso esteja em versão prévia, há certas limitações:
 
 *Começando*
 
-Para começar a usar este recurso de visualização, você deve habilitar um sinalizador no agente do Console.  Você pode então inserir os detalhes de conexão do seu armazenamento de objetos de terceiros MinIO no fluxo de trabalho de proteção escolhendo Armazenamento de objetos *Compatível com terceiros* na seção de backup.
+Para começar a usar este recurso de pré-visualização, você deve habilitar um sinalizador no agente do Console. Em seguida, você poderá inserir os detalhes de conexão do seu armazenamento de objetos MinIO de terceiro no fluxo de trabalho de proteção, selecionando *Third party Compatible* armazenamento de objetos na seção de backup.
 
 
 
@@ -885,9 +885,9 @@ Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
 
 === Modos de proteção SnapLock Compliance e SnapLock Enterprise
 
-O NetApp Backup and Recovery agora pode fazer backup de volumes FlexVol e FlexGroup locais configurados usando os modos de proteção SnapLock Compliance ou SnapLock Enterprise . Seus clusters devem estar executando o ONTAP 9.14 ou superior para esse suporte. O backup de volumes FlexVol usando o modo SnapLock Enterprise é suportado desde a versão 9.11.1 do ONTAP . Versões anteriores do ONTAP não oferecem suporte para backup de volumes de proteção SnapLock .
+NetApp Backup and Recovery agora pode fazer backup de volumes FlexVol e FlexGroup locais que estão configurados usando os modos de proteção SnapLock Compliance ou SnapLock Enterprise. Seus clusters devem estar executando ONTAP 9.14 ou posterior para esse suporte. O backup de volumes FlexVol no modo SnapLock Enterprise é suportado desde o ONTAP 9.11.1. Versões anteriores do ONTAP não oferecem suporte ao backup de volumes protegidos por SnapLock.
 
-Veja a lista completa de volumes suportados no https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Saiba mais sobre o NetApp Backup and Recovery"] .
+Consulte a lista completa de volumes suportados em  https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Saiba mais sobre o NetApp Backup and Recovery"].
 
 
 
@@ -896,11 +896,11 @@ Veja a lista completa de volumes suportados no https://docs.netapp.com/us-en/dat
 Antes de poder usar a Pesquisa e Restauração, você precisa habilitar a "Indexação" em cada sistema de origem do qual deseja restaurar dados de volume.  Isso permite que o Catálogo Indexado rastreie os arquivos de backup de cada volume.  A página Volumes agora mostra o status de indexação:
 
 * Indexado: Os volumes foram indexados.
-* Em andamento
-* Não indexado
-* Indexação pausada
-* Erro
-* Não habilitado
+* Em andamento: a indexação está em andamento.
+* Não indexado: a indexação ainda não foi iniciada.
+* Indexação pausada: a indexação está pausada.
+* Erro: ocorreu um erro de indexação.
+* Não ativado: a indexação não está ativada para esta fonte.
 
 
 
@@ -915,7 +915,7 @@ Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
 
 O NetApp Backup and Recovery agora oferece suporte a restaurações de arquivos e pastas no Red Hat Enterprise Linux (RHEL) versões 8 e 9 usando o mecanismo Podman.  Isso se aplica ao método Navegar e Restaurar do NetApp Backup and Recovery .
 
-A versão 3.9.40 do agente do console oferece suporte a determinadas versões do Red Hat Enterprise Linux 8 e 9 para qualquer instalação manual do software do agente do console em um host RHEL 8 ou 9, independentemente do local, além dos sistemas operacionais mencionados no https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisitos do host"^] .  Essas versões mais recentes do RHEL exigem o mecanismo Podman em vez do mecanismo Docker.  Anteriormente, o NetApp Backup and Recovery tinha duas limitações ao usar o mecanismo Podman.  Essas limitações foram removidas.
+A versão 3.9.40 do agente de Console oferece suporte a determinadas versões do Red Hat Enterprise Linux 8 e 9 para instalações manuais do agente de Console em hosts RHEL, além dos sistemas operacionais listados na  https://docs.netapp.com/us-en/console-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["requisitos do host"^]. Essas versões mais recentes do RHEL exigem o mecanismo Podman em vez do mecanismo Docker. Anteriormente, NetApp Backup and Recovery apresentava duas limitações ao usar o mecanismo Podman; essas limitações foram removidas.
 
 https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-restore.html["Saiba mais sobre como restaurar dados ONTAP de arquivos de backup"].
 

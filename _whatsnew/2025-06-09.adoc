@@ -31,7 +31,7 @@ Se você desabilitar essa configuração, será necessário criar manualmente o 
 
 === Suporte para SnapMirror para ressincronização em nuvem no ONTAP S3
 
-A versão anterior introduziu suporte para SnapMirror para Cloud Resync (SM-C Resync). O recurso simplifica a proteção de dados durante a migração de volume em ambientes NetApp . Esta versão adiciona suporte para SM-C Resync no ONTAP S3, bem como outros provedores compatíveis com S3, como Wasabi e MinIO.
+A versão anterior introduziu suporte para SnapMirror ao Cloud Resync (SM-C Resync). Esse recurso simplifica a proteção de dados durante a migração de volumes em ambientes NetApp. Esta versão adiciona suporte para o SM-C Resync no ONTAP S3, bem como em outros provedores compatíveis com S3, como Wasabi e MinIO.
 
 
 

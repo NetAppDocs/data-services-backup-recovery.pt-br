@@ -151,7 +151,7 @@ Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o 
 
 * Os LIFs intercluster dos nós podem acessar o armazenamento de objetos (não é necessário quando o agente do Console está instalado em um site "escuro").
 * Os servidores DNS foram configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurar serviços DNS para o SVM"^] .
-* Se você estiver usando um IPspace diferente do Padrão, talvez seja necessário criar uma rota estática para obter acesso ao armazenamento de objetos.
+* Se você estiver usando um IPspace diferente do Default, talvez seja necessário criar uma rota estática para acessar o storage de objetos.
 * Atualize as regras de firewall, se necessário, para permitir conexões de serviço do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta especificada (normalmente a porta 443) e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).
 
 
@@ -194,7 +194,7 @@ Para utilizar DataLock & proteção contra ransomware em seus backups, seus sist
 
 Para colocar backups mais antigos em camadas no armazenamento de arquivo em nuvem, seus sistemas StorageGRID devem estar executando a versão 11.3 ou superior.  Além disso, seus sistemas StorageGRID devem ser descobertos na página *Sistemas* do Console.
 
-Para usar o armazenamento de arquivo, é necessário acesso IP ao nó de administração.
+Para utilizar o armazenamento de arquivamento, é necessário acesso ao endereço IP do nó de administração.
 
 O acesso IP do gateway é sempre necessário.
 

@@ -41,27 +41,18 @@
   <block id="cd4619af82dfe7627dc934e29e85a6e9" category="paragraph">Com esta versão, o suporte para restauração de pastas FlexGroup é uma prévia da tecnologia.</block>
   <block id="abbf2484b45da9fd7be677fe96c511eb" category="inline-link">Restaurar pastas e arquivos usando Navegar e Restaurar</block>
   <block id="20a9fe231d3378f3b995e621821a5fb1" category="paragraph">Para mais detalhes, consulte<block ref="eb7fa071b1afec4a727e847897c52430" category="inline-link-rx"></block> .</block>
-  <block id="da9489b6abd27b653b6c28d99ae2ac6b" category="paragraph">Para obter detalhes sobre como habilitá-lo manualmente, consulte<block ref="cb48ac5d5b1e506c1ce232053a519e6a" category="inline-link-rx"></block> .</block>
   <block id="aa6a53998d98bae73a6913ff1c2eecbc" category="doc">Suporte ao Podman no RHEL 8 ou 9 com Navegar e Restaurar</block>
   <block id="adc0925d00b7b860ba010d483035a38d" category="paragraph">O NetApp Backup and Recovery agora oferece suporte a restaurações de arquivos e pastas no Red Hat Enterprise Linux (RHEL) versões 8 e 9 usando o mecanismo Podman.  Isso se aplica ao método Navegar e Restaurar do NetApp Backup and Recovery .</block>
   <block id="5462103113dfca7582cf43f266db09a2" category="inline-link">requisitos do host</block>
-  <block id="6be4e0f7143419aee9499b2a2505b0ab" category="paragraph">A versão 3.9.40 do agente do console oferece suporte a determinadas versões do Red Hat Enterprise Linux 8 e 9 para qualquer instalação manual do software do agente do console em um host RHEL 8 ou 9, independentemente do local, além dos sistemas operacionais mencionados no<block ref="10c1911da0601c7d780b4af72d11f3ab" category="inline-link-rx"></block> .  Essas versões mais recentes do RHEL exigem o mecanismo Podman em vez do mecanismo Docker.  Anteriormente, o NetApp Backup and Recovery tinha duas limitações ao usar o mecanismo Podman.  Essas limitações foram removidas.</block>
   <block id="6111aa812639d5e432842ceca200ea78" category="inline-link">Saiba mais sobre como restaurar dados ONTAP de arquivos de backup</block>
   <block id="f807d2e87806a64e8251db4daa8c0686" category="paragraph"><block ref="a417ea89f701f9bc0a6d7405552ab71a" category="inline-link-rx"></block>.</block>
   <block id="3abe4a789c1c33e285d9452cca8c493b" category="section-title">Indexação de catálogo mais rápida melhora a Pesquisa e Restauração</block>
   <block id="9353e94049314c6236b51712848f2572" category="paragraph">Esta versão inclui um índice de catálogo aprimorado que conclui a indexação de base muito mais rápido.  A indexação mais rápida permite que você use o recurso Pesquisar e Restaurar mais rapidamente.</block>
   <block id="517624d736bd2a385ee8cda71584112f" category="doc">Modos de proteção SnapLock Compliance e SnapLock Enterprise</block>
-  <block id="c9c56efcf255aca32ed492e84095d7c2" category="paragraph">O NetApp Backup and Recovery agora pode fazer backup de volumes FlexVol e FlexGroup locais configurados usando os modos de proteção SnapLock Compliance ou SnapLock Enterprise . Seus clusters devem estar executando o ONTAP 9.14 ou superior para esse suporte. O backup de volumes FlexVol usando o modo SnapLock Enterprise é suportado desde a versão 9.11.1 do ONTAP . Versões anteriores do ONTAP não oferecem suporte para backup de volumes de proteção SnapLock .</block>
   <block id="d41c5b540be0c3c679bd7d5c99b06670" category="inline-link">Saiba mais sobre o NetApp Backup and Recovery</block>
-  <block id="97b3d65b7c467100f6712b88b990af6d" category="paragraph">Veja a lista completa de volumes suportados no<block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block> .</block>
   <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">Indexação para processo de Pesquisa e Restauração na página Volumes</block>
   <block id="15400d9962ba34aa5fdf096b27ab90a3" category="paragraph">Antes de poder usar a Pesquisa e Restauração, você precisa habilitar a "Indexação" em cada sistema de origem do qual deseja restaurar dados de volume.  Isso permite que o Catálogo Indexado rastreie os arquivos de backup de cada volume.  A página Volumes agora mostra o status de indexação:</block>
   <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">Indexado: Os volumes foram indexados.</block>
-  <block id="02e4eb80c967f3b9add2ba16a690eef2" category="list-text">Em andamento</block>
-  <block id="838534d879f74e7af515a7de57e72b71" category="list-text">Não indexado</block>
-  <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">Indexação pausada</block>
-  <block id="902b0d55fddef6f8d651fe1035b7d4bd" category="list-text">Erro</block>
-  <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">Não habilitado</block>
   <block id="1ef2d1ba8a2963702ac1e5240f81ffde" category="doc">Versão prévia do NetApp Backup and Recovery</block>
   <block id="501af319d8923aa4758190eb4fbada30" category="paragraph">Esta versão de pré-visualização do NetApp Backup and Recovery fornece uma interface de usuário atualizada que permite gerenciar cargas de trabalho do Microsoft SQL Server usando uma estratégia de proteção 3-2-1, familiar no NetApp Backup and Recovery. Com esta nova versão, você pode fazer backup dessas cargas de trabalho no armazenamento primário, replicá-las no armazenamento secundário e fazer backup delas no armazenamento de objetos na nuvem.</block>
   <block id="a2e3a30df706bb24099d5e00888df71a" category="admonition">Esta documentação é fornecida como uma prévia da tecnologia. Com esta oferta de visualização, a NetApp reserva-se o direito de modificar os detalhes, o conteúdo e o cronograma da oferta antes da disponibilidade geral.</block>
@@ -152,7 +143,6 @@
   <block id="2a42543b31a44385d9801b2e6d715417" category="list-text">A ativação do DataLock na política não é suportada.</block>
   <block id="bd38f0d8ed5d82f6a34eef6f60e82afc" category="list-text">A ativação do modo de arquivamento na política não é suportada.</block>
   <block id="7f4d22b3de45045172408ddd711a85a1" category="paragraph">*Começando*</block>
-  <block id="532a003570e90a57b7965cafcf69d336" category="paragraph">Para começar a usar este recurso de visualização, você deve habilitar um sinalizador no agente do Console.  Você pode então inserir os detalhes de conexão do seu armazenamento de objetos de terceiros MinIO no fluxo de trabalho de proteção escolhendo Armazenamento de objetos *Compatível com terceiros* na seção de backup.</block>
   <block id="c65f3468fbd84ca6a3ed5c4f86c93ec8" category="doc">Painel de volume ONTAP aprimorado</block>
   <block id="4fd717f9bf23502f14b97a4e0dd209e6" category="paragraph">Em abril de 2025, lançamos uma prévia de um Painel de Volume ONTAP aprimorado que é muito mais rápido e eficiente.</block>
   <block id="24c045ea49f5ec7c22662da2305601e6" category="paragraph">Este painel foi projetado para ajudar clientes corporativos com um grande número de cargas de trabalho. Mesmo para clientes com 20.000 volumes, o novo painel carrega em &lt;10 segundos.</block>
@@ -187,13 +177,11 @@
   <block id="2211c8a4939111428200ceec5f271f42" category="paragraph">Você pode habilitar ou desabilitar esta opção ao habilitar a proteção ou iniciar o processo de restauração.</block>
   <block id="e642532444d0db4591ce8b9d729f92b3" category="paragraph">Se você desabilitar essa configuração, será necessário criar manualmente o endpoint privado para que o NetApp Backup and Recovery funcione corretamente. Sem a conectividade adequada, talvez você não consiga executar tarefas de backup e recuperação com sucesso.</block>
   <block id="fad4c67d1d97874133e7a367fe5038fd" category="section-title">Suporte para SnapMirror para ressincronização em nuvem no ONTAP S3</block>
-  <block id="8e0a943cdbcd7f9c7f29128489119715" category="paragraph">A versão anterior introduziu suporte para SnapMirror para Cloud Resync (SM-C Resync). O recurso simplifica a proteção de dados durante a migração de volume em ambientes NetApp . Esta versão adiciona suporte para SM-C Resync no ONTAP S3, bem como outros provedores compatíveis com S3, como Wasabi e MinIO.</block>
   <block id="fa551b5810fe894fcd21bf7c8ffc98d1" category="section-title">Traga seu próprio bucket para o StorageGRID</block>
   <block id="4b2511d38450982bde4f504e80a44028" category="paragraph">Ao criar arquivos de backup no armazenamento de objetos para um ambiente de trabalho, por padrão, o NetApp Backup and Recovery cria o contêiner (bucket ou conta de armazenamento) para os arquivos de backup na conta de armazenamento de objetos que você configurou. Anteriormente, você podia substituir isso e especificar seu próprio contêiner para Amazon S3, Azure Blob Storage e Google Cloud Storage. Com esta versão, agora você pode trazer seu próprio contêiner de armazenamento de objetos StorageGRID .</block>
   <block id="e6e5a011626c6db86099687e0a358c1f" category="inline-link">Crie seu próprio contêiner de armazenamento de objetos</block>
   <block id="51c4ba7436895c5fa861c805e1caee68" category="paragraph">Ver<block ref="63f7d9c65b21d9a782eb05b351422f54" category="inline-link-rx"></block> .</block>
   <block id="5d8fc779baf0d068c296ee5013b2224f" category="doc">Suporte à carga de trabalho do Kubernetes como uma prévia</block>
-  <block id="3544c31b5491dc7ecb73e28d6e25a1e8" category="paragraph">Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Kubernetes:</block>
   <block id="200a1ca96330b8c7561607ba3e8efa76" category="list-text">Descubra o Red Hat OpenShift e os clusters Kubernetes de código aberto, apoiados pelo NetApp ONTAP, sem compartilhar arquivos kubeconfig.</block>
   <block id="bc97cde5f3a6fe336563401fb4b522a7" category="list-text">Descubra, gerencie e proteja aplicativos em vários clusters do Kubernetes usando um plano de controle unificado.</block>
   <block id="8671fb87efe354c05f9373edb6889d96" category="list-text">Descarregue operações de movimentação de dados para backup e recuperação de aplicativos Kubernetes para o NetApp ONTAP.</block>
@@ -252,7 +240,6 @@
   <block id="387c71fcb2fb7fdf9038db9d12137530" category="inline-link-macro">Notas de versão do NetApp Console .</block>
   <block id="3a1e37eecca95e81d9e509646022ffda" category="paragraph">Para obter detalhes sobre o que mudou, consulte o<block ref="019a5c722618673de9fa5ca0cf2abddb" category="inline-link-macro-rx"></block></block>
   <block id="86df852f08da7feceb910d31327e83d7" category="section-title">Suporte à carga de trabalho do Hyper-V como uma visualização privada</block>
-  <block id="9fb98f9a29d9d72ef6008750be44e084" category="paragraph">Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:</block>
   <block id="bd0905239cb012ebf878ac40c3981660" category="list-text">Fazer backup e restaurar VMs em instâncias autônomas, bem como instâncias de cluster de failover (FCI)</block>
   <block id="cb861f226468f5c5741c826734953432" category="list-text">Proteja VMs armazenadas em compartilhamentos SMB3</block>
   <block id="165a3a57ae6cbe2ce8d382109a648112" category="list-text">Proteção em massa no nível da máquina virtual</block>
@@ -262,7 +249,6 @@
   <block id="57a29df96f4bdf53f80c56b739785313" category="inline-link">Visão geral das cargas de trabalho de proteção do Hyper-V</block>
   <block id="f7bc6e5577bf047a5f192d548391185c" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte<block ref="8b99e6e4e6dfd30b0b16292fe5edfbd4" category="inline-link-rx"></block> .</block>
   <block id="ade0d83a8d5df6524dcf5bc339bf6236" category="section-title">Suporte à carga de trabalho KVM como uma visualização privada</block>
-  <block id="c42adba211239f644f4ee6954d8a909e" category="paragraph">Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho KVM:</block>
   <block id="99803398691d47a569fe2e0eeaf8a74c" category="list-text">Fazer backup e restaurar imagens de VM qcow2 armazenadas em compartilhamentos NFS</block>
   <block id="81e3905959a6e11107e52c1db1aa927a" category="list-text">Fazer backup de pools de armazenamento</block>
   <block id="be660bd29054ec196c26b5d7ab12eca9" category="list-text">Proteção de pool de armazenamento e VM em massa usando grupos de proteção</block>
@@ -324,8 +310,6 @@
   <block id="a0d08a35ff701967dbc1c996dc96b450" category="paragraph">Ao fazer chamadas de API, você adicionará o token do usuário no cabeçalho Authorization e o ID do agente do Console no cabeçalho x-agent-id.  Você deve usar o ID da conta do NetApp Console nas APIs.</block>
   <block id="92ab15f0eb1b97b8c4bdb14a10948af8" category="inline-link">Crie um token de acesso ao serviço</block>
   <block id="e5f2b8ab19b544e0e970070da0ef345c" category="admonition">Se estiver usando uma conta de serviço, você deverá usar o token de acesso de serviço em vez de um token de usuário. O valor para "client_id" ("Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC") é um valor fixo e não pode ser alterado. Neste caso, siga as instruções aqui:<block ref="ad1a67426fea429db40073e48bac82e2" category="inline-link-rx"></block> .</block>
-  <block id="cb27bd3cf10a5c5ee3ef77ed62b4ec63" category="list-text">Obtenha um token de usuário no site do NetApp NetApp Console .</block>
-  <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">Certifique-se de gerar o token de atualização no seguinte link: https://services.cloud.netapp.com/refresh-token/.  O token de atualização é uma sequência alfanumérica que você usará para gerar um token de usuário.</block>
   <block id="4130aadba8d01957d2f7bc7a8826bbc7" category="admonition">O token do usuário do site do NetApp Console tem uma data de validade. A resposta da API inclui um campo "expires_in" que indica quando o token expira.  Para atualizar o token, você precisará chamar esta API novamente.</block>
   <block id="354fecdc1c1045cf24231c0bec3c74cd" category="list-text">Obtenha o ID da sua conta do NetApp Console .</block>
   <block id="8249fee34290d25027be632b8f27da68" category="paragraph">Esta API retornará uma resposta como a seguinte. Você pode recuperar o ID da conta analisando a saída de *[0].[ accountPublicId]*.</block>
@@ -520,7 +504,6 @@
   <block id="5b67703bc7ab6a4716dda43c544c9f7d" category="list-text">*Credenciais existentes*: Se você selecionar esta opção, poderá usar as credenciais existentes que você já adicionou.  Digite o nome das credenciais.</block>
   <block id="29c1c21dae903f81a5ce83243375ad66" category="list-text">*Adicionar novas credenciais*: Se você não tiver credenciais de host do SnapCenter existentes, poderá adicionar novas credenciais. Digite o nome das credenciais, o modo de autenticação, o nome de usuário e a senha.</block>
   <block id="d9f0e4ad58dd91513c083d85b8d9abac" category="list-text">Selecione *Importar* para validar suas entradas e registrar o SnapCenter Server.</block>
-  <block id="e2aca1a90b2505bdbd8989fd67da5b73" category="admonition">Se o SnapCenter Server já estiver registrado, você poderá atualizar os detalhes de registro existentes.</block>
   <block id="1a2fd2144a03d5f7da4895a769c5f322" category="paragraph">A página Inventário mostra os recursos importados do SnapCenter .</block>
   <block id="c836a45d41f4d6fac973334982e0121b" category="section-title">Gerenciar recursos do host SnapCenter</block>
   <block id="8a44019232b730c71ae86feed08e1f3a" category="paragraph">Depois de importar os recursos do SnapCenter , gerencie esses recursos de host no NetApp Backup and Recovery.  Depois de selecionar o gerenciamento desses recursos importados, o NetApp Backup and Recovery pode fazer backup e recuperar os recursos que você está importando do SnapCenter.  Você não precisa mais gerenciar esses recursos no SnapCenter Server.</block>
@@ -529,7 +512,6 @@
   <block id="1fb988937b21c00da1e824876b010dc1" category="list-text">Selecione *Gerenciar no NetApp Console*.</block>
   <block id="67c5a09051e18a795b9e554ac46c53fc" category="paragraph">A página Inventário mostra *Gerenciado* sob o nome do host para indicar que os recursos do host selecionados agora são gerenciados pelo NetApp Backup and Recovery.</block>
   <block id="dd65b1fcdfdbfc9273253615b14bdeb7" category="section-title">Editar recursos importados do SnapCenter</block>
-  <block id="34cc7187d0a3d7c2dd259f99b254962d" category="paragraph">Mais tarde, você pode reimportar os recursos do SnapCenter ou editar os recursos importados do SnapCenter para atualizar os detalhes de registro.</block>
   <block id="2dadcaeef8b607b311c6e42ed35272c1" category="paragraph">Você pode alterar apenas os detalhes da porta e da senha do SnapCenter Server.</block>
   <block id="0f9066b0f9e42b12f45badda9e9c8254" category="list-text">Selecione a seta para baixo para *Importar do SnapCenter*.</block>
   <block id="88b324247ad56ee6b822b2ad7363ece8" category="paragraph">A página Importar do SnapCenter mostra todas as importações anteriores.</block>
@@ -1662,7 +1644,6 @@
   <block id="5d49eb458c546b4f70a99f4b37bbcc20" category="list-text">Escolha restaurar para a classe de armazenamento padrão ou para uma classe de armazenamento diferente.</block>
   <block id="12c3c958b266fff57134abb1c9649419" category="list-text">Opcionalmente, se você optar por restaurar para uma classe de armazenamento diferente, selecione uma classe de armazenamento de destino para corresponder a cada classe de armazenamento de origem.</block>
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="section-title">Excluir backups</block>
-  <block id="f34f3b4d83a98c1f03d57b6ce4176300" category="summary">Proteja suas cargas de trabalho VMware com o NetApp NetApp Backup and Recovery.</block>
   <block id="d1980609675dd3ea40abaebd4a0989d8" category="doc">Faça backup de cargas de trabalho do VMware com o NetApp Backup and Recovery</block>
   <block id="30a409f022898dd26f006e04486b81e0" category="paragraph">Faça backup de VMs e datastores VMware de sistemas ONTAP locais para Amazon Web Services, Azure NetApp Files ou StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.</block>
   <block id="f941928782d55bd3ba649990c808fcbd" category="inline-link-macro">Crie e gerencie grupos de proteção para cargas de trabalho VMware com o NetApp Backup and Recovery</block>
@@ -2530,7 +2511,6 @@
   <block id="15791d531460b4c275e03017399fcd1a" category="inline-link">Saiba mais sobre IPspaces</block>
   <block id="c96f0b5929f61d63c7ae3512d00fb22b" category="list-text">Os LIFs intercluster devem ser associados ao _IPspace_ que o ONTAP deve usar para se conectar ao armazenamento de objetos.<block ref="0edb32ced43734581c082142ee8a87a9" category="inline-link-rx"></block> .</block>
   <block id="d23d9fa8bc8aada34e7bfaf673a1e1d7" category="paragraph">Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o IPspace a ser usado. Você deve escolher o IPspace ao qual esses LIFs estão associados. Pode ser o IPspace "padrão" ou um IPspace personalizado que você criou.</block>
-  <block id="f2d23bc0f0e4ec1066fdf58d41ab19ab" category="paragraph">Se você estiver usando um IPspace diferente do "Padrão", talvez seja necessário criar uma rota estática para obter acesso ao armazenamento de objetos.</block>
   <block id="187b50ee8f2351a69b8fa6b8b42687d5" category="paragraph">Todos os LIFs intercluster dentro do IPspace devem ter acesso ao armazenamento de objetos. Se você não puder configurar isso para o IPspace atual, será necessário criar um IPspace dedicado onde todos os LIFs intercluster tenham acesso ao armazenamento de objetos.</block>
   <block id="16b737dd94da3821905b2064f8068f45" category="inline-link">configurar serviços DNS para o SVM</block>
   <block id="e30347a67bfdcb246f056cfd9aa4efbd" category="list-text">Os servidores DNS devem ter sido configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como<block ref="f1c08d303d78e879204468f0ff96d977" category="inline-link-rx"></block> .</block>
@@ -2621,7 +2601,6 @@
   <block id="352e593026b22ecd240cab27c36a6aa8" category="paragraph">Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o IPspace a ser usado. Você deve escolher o IPspace ao qual cada LIF está associado. Pode ser o IPspace "padrão" ou um IPspace personalizado que você criou.</block>
   <block id="4ac800b4e5d934f314da963c023ec8e3" category="list-text">Os LIFs dos nós e interclusters conseguem acessar o armazenamento de objetos.</block>
   <block id="cf4f978809886b33abb134b8d95a53fa" category="list-text">Os servidores DNS foram configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como<block ref="f1c08d303d78e879204468f0ff96d977" category="inline-link-rx"></block> .</block>
-  <block id="113b5e7186c305ad07d9c9c046e30198" category="list-text">Se você estiver usando um IPspace diferente do Padrão, talvez seja necessário criar uma rota estática para obter acesso ao armazenamento de objetos.</block>
   <block id="c6ab18cd48dd0f412dee7654780c4eef" category="list-text">Atualize as regras de firewall, se necessário, para permitir conexões de serviço do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta 443 e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).</block>
   <block id="dc6287483bb6663eb24a6b4a97292566" category="section-title">Prepare o Azure Blob como seu destino de backup</block>
   <block id="7c6c6d3f55cf70ec4e78761174989411" category="list-text">Você pode usar suas próprias chaves personalizadas para criptografia de dados no assistente de ativação em vez de usar as chaves de criptografia padrão gerenciadas pela Microsoft.  Neste caso, você precisará ter a Assinatura do Azure, o nome do Key Vault e a Chave.<block ref="5499082d3ade4f2b56fcc95816a14476" category="inline-link-rx"></block> .</block>
@@ -2667,7 +2646,6 @@
   <block id="12b49f489ea72468724070c09fc7f45d" category="list-text">O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.  O agente do Console pode residir em uma VPC do Google Cloud Platform.</block>
   <block id="8bdfdad72ee7298056198e1b5d8fb704" category="list-text">Os LIFs intercluster dos nós conseguem acessar o armazenamento de objetos.</block>
   <block id="7dfd82301201229d10d2b7f30a3a9e1e" category="paragraph">Se você estiver usando o Private Google Access ou o Private Service Connect, certifique-se de que seus servidores DNS foram configurados para apontar<block ref="3f4ca1d8ed90e1a3c0451eb42e58e5ef" prefix=" " category="inline-code"></block> para o endereço IP interno (privado) correto.</block>
-  <block id="6f10fb0bdda82988a0fa6dcc2515c346" category="list-text">Observe que se você estiver usando um IPspace diferente do Padrão, talvez seja necessário criar uma rota estática para obter acesso ao armazenamento de objetos.</block>
   <block id="a62451f46dc42982cf209550cb11486e" category="list-text">Atualize as regras de firewall, se necessário, para permitir conexões do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta 443 e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).</block>
   <block id="496645a84a32070fadbf91b2c575e751" category="paragraph">Se o destino do Google Cloud Storage para seus backups existir como na página *Sistemas* do Console, você poderá arrastar o cluster ONTAP para o armazenamento de objetos do Google Cloud.</block>
   <block id="8b7d5c44d9577dfc1c061905392bd3f1" category="list-text">*Snapshots locais*: se você estiver executando replicação ou backup no armazenamento de objetos, Snapshots locais deverão ser criados.</block>
@@ -2718,7 +2696,6 @@
   <block id="cfb67c066deff155999e8b4bab9d5bd1" category="list-text">O cluster ONTAP inicia uma conexão HTTPS por meio de uma porta especificada pelo usuário do LIF intercluster para o servidor ONTAP S3 para operações de backup e restauração.  A porta é configurável durante a configuração do backup.</block>
   <block id="da21bd86fb59a4ebcb3e9faa287bbb0d" category="list-text">O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.</block>
   <block id="13af414a6c38f36f8a15bdef0358f5c4" category="list-text">Os LIFs intercluster dos nós podem acessar o armazenamento de objetos (não é necessário quando o agente do Console está instalado em um site "escuro").</block>
-  <block id="a82a5bb2727df3f1958829955576a139" category="list-text">Se você estiver usando um IPspace diferente do Padrão, talvez seja necessário criar uma rota estática para obter acesso ao armazenamento de objetos.</block>
   <block id="b470d5270f42332102265af5da8e545a" category="list-text">Atualize as regras de firewall, se necessário, para permitir conexões de serviço do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta especificada (normalmente a porta 443) e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).</block>
   <block id="6da2ce1a0bc0894620f6c533f7a2f2b4" category="section-title">Prepare o ONTAP S3 como seu destino de backup</block>
   <block id="c3bf5d608f066a6b405a40012a2fc10c" category="inline-link">Documentação do ONTAP S3</block>
@@ -2778,7 +2755,6 @@
   <block id="793640ee72b7150dff71a288a821c67c" category="list-text">Versões do StorageGRID suportadas</block>
   <block id="8a456872aea50fd247449bd552854586" category="list-text">O StorageGRID 10.3 e versões posteriores são suportados.</block>
   <block id="a3c3d46eb7dece1ea66293e26e27c747" category="paragraph">Para colocar backups mais antigos em camadas no armazenamento de arquivo em nuvem, seus sistemas StorageGRID devem estar executando a versão 11.3 ou superior.  Além disso, seus sistemas StorageGRID devem ser descobertos na página *Sistemas* do Console.</block>
-  <block id="de84af939f41492b1264ce8c3df573a9" category="paragraph">Para usar o armazenamento de arquivo, é necessário acesso IP ao nó de administração.</block>
   <block id="a99287c7990930f58a55c1e2dba88d64" category="paragraph">O acesso IP do gateway é sempre necessário.</block>
   <block id="5a7e671d36e7ddbd948f2001988ffe33" category="inline-link">Veja a documentação do StorageGRID para mais detalhes</block>
   <block id="c794a55c739e453d58e6bcd42293fda2" category="list-text">Você deve ter criado uma conta de locatário do S3 para controlar o acesso ao seu armazenamento StorageGRID .<block ref="71eb6cc3bcb687d271a4ec87759d7b9d" category="inline-link-rx"></block> .</block>
@@ -3073,7 +3049,6 @@
   <block id="b3f1b65a3c7ad581029671863ce84f3e" category="section-title">Sistemas suportados e provedores de armazenamento de objetos</block>
   <block id="04caa6fde87b21be8738fc7aac2130d5" category="paragraph">Você pode habilitar a proteção DataLock e Ransomware em volumes ONTAP dos seguintes sistemas ao usar o armazenamento de objetos nos seguintes provedores de nuvem pública e privada.</block>
   <block id="155ec659cc4e13b84e26ac8a60d0983e" category="cell">Cloud Volumes ONTAP no Google Cloud</block>
-  <block id="f3ec603ab9c35660f371c0fc057b7fd1" category="list-text">Seus clusters devem executar o ONTAP 9.11.1 ou superior</block>
   <block id="6eccb1b4300ae9587c674c0708c7ee79" category="list-text">O agente do Console pode ser implantado na nuvem ou em suas instalações</block>
   <block id="685a143757efe250c8c69c08616cbe33" category="list-text">As seguintes permissões do S3 devem fazer parte da função do IAM que fornece permissões ao agente do Console.  Eles residem na seção "backupS3Policy" do recurso "arn:aws:s3:::netapp-backup-*":</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">Permissões do AWS S3</block>
@@ -3105,7 +3080,6 @@
   <block id="2575b79b2cd768a027306db8b9e8614a" category="list-text">s3:ObterVersãoDoObjeto</block>
   <block id="7b2b7c08da06dd437ae98c50b4ace20f" category="inline-link">Veja o formato JSON completo da política onde você pode copiar e colar as permissões necessárias</block>
   <block id="14fe833125ea1176d7706671e8ef16cc" category="paragraph"><block ref="44b6ea42a3069db8220a474116b68855" category="inline-link-rx"></block>.</block>
-  <block id="4f411ed71b5f872404c482a3c45285e2" category="list-text">Seus clusters devem executar o ONTAP 9.12.1 ou superior</block>
   <block id="8dcc4563f1d723683eb1d9c883e3a1eb" category="list-text">Para o Google Cloud:</block>
   <block id="f17f73c90517746e41e59ce4e6a2072f" category="list-text">Seus clusters devem estar executando o ONTAP 9.17.1 ou superior</block>
   <block id="43757ece62940efe206ed418c8c8f76b" category="list-text">Seus sistemas StorageGRID devem estar executando 11.6.0.3 ou superior</block>
@@ -3198,7 +3172,6 @@
   <block id="307fac06deb7cfd0fa48e676ffc86224" category="paragraph">Se você criar políticas personalizadas para replicação ou backup, os rótulos das políticas (por exemplo, "diário" ou "semanal") deverão corresponder aos rótulos existentes nas suas políticas de instantâneo, ou os volumes replicados e os arquivos de backup não serão criados.</block>
   <block id="8cb2e913decbf9b532c186901104e076" category="inline-link-macro">adicionando uma nova política de backup</block>
   <block id="ee49cee7c44ccb04a139f40fb9f4a214" category="paragraph">Você pode criar snapshot, replicação e backup para políticas de armazenamento de objetos na interface de usuário do NetApp Backup and Recovery .  Veja a seção para<block ref="0559f444e8f88edb894615ec30a1d00b" category="inline-link-macro-rx"></block> para mais detalhes.</block>
-  <block id="4cbdf0f70d1e657d5de76d924cb80f7c" category="paragraph">Além de usar o NetApp Backup and Recovery para criar políticas personalizadas, você pode usar o System Manager ou a Interface de Linha de Comando (CLI) do ONTAP :</block>
   <block id="c2fc643b815b9305bcbcfd94e340a3cc" category="inline-link">Crie uma política de snapshot usando o System Manager ou o ONTAP CLI</block>
   <block id="fc3b34c5669f34396b08c49ba3f73599" category="list-text"><block ref="fc3b34c5669f34396b08c49ba3f73599" category="inline-link-rx"></block></block>
   <block id="e722bdc21722d564815561c634007199" category="inline-link">Crie uma política de replicação usando o System Manager ou o ONTAP CLI</block>
@@ -3742,11 +3715,9 @@
   <block id="ff6cbd3287f545a89d1e5e58f0d17bd4" category="section-title">Agendas diárias importadas do SnapCenter</block>
   <block id="61ed4c8e3ffbc53bcf1724532421e782" category="paragraph">O NetApp Backup and Recovery ajusta os agendamentos do SnapCenter da seguinte forma:</block>
   <block id="c08c2154284f4af8503c116de1e73d16" category="paragraph">*Exemplo*: Se você tiver uma política diária do SnapCenter com um intervalo de repetição de 3 dias a partir de segunda-feira, o NetApp Backup and Recovery definirá o agendamento para semanalmente às segundas, quintas e domingos.  Alguns dias serão pulados porque não são exatamente a cada 3 dias.</block>
-  <block id="9f6a1fee7b57b18f64bf8bca4ad36e30" category="list-text">Se o agendamento do SnapCenter for definido para mais de 7 dias, o NetApp Backup and Recovery definirá o agendamento como mensal.  Alguns instantâneos serão ignorados durante o mês.</block>
   <block id="9430705db67f982f601f840df3cc16d6" category="section-title">Cronogramas horários importados do SnapCenter</block>
   <block id="3002d82ef196f81026a4e21905803959" category="paragraph">As políticas horárias do SnapCenter com intervalos de repetição maiores que uma hora são convertidas em uma política diária no NetApp Backup and Recovery.</block>
   <block id="a3e76bcb5e859bfa4430da805976f2bd" category="paragraph">Qualquer política horária com intervalos repetidos que não sejam um fator de 24 (por exemplo, 5, 7, etc.) pulará alguns instantâneos em um dia.</block>
-  <block id="9ffb5bf344108bbac86816e15898f943" category="paragraph">*Exemplo*: Se você tiver uma política horária do SnapCenter com um intervalo de repetição a cada 5 horas, começando à 1h, o NetApp Backup and Recovery (após a migração) definirá a programação como diária com intervalos de 5 horas à 1h, 6h, 11h, 16h e 21h.  Algumas horas serão ignoradas, depois das 21:00 deve ser 2:00 da manhã para repetir a cada 5 horas, mas será sempre 1:00 da manhã.</block>
   <block id="6a7a60343b8fa701471b08effbb43285" category="section-title">Retenção de logs de políticas do SnapCenter</block>
   <block id="26d5fd5ccf3209caaffe340f43009814" category="paragraph">Se você tiver um recurso no SnapCenter com várias políticas, o NetApp Backup and Recovery usará a seguinte ordem de prioridade para atribuir o valor de retenção de log:</block>
   <block id="e38f6416749d06acffe55900ce6dfec5" category="list-text">Para "Backup completo com política de backup de log" mais políticas "somente log" no SnapCenter, o NetApp Backup and Recovery usa o valor de retenção da política somente log.</block>
@@ -3786,7 +3757,6 @@
   <block id="cbeefab9985d18cf649d85c32d79d188" category="summary">Crie um certificado de segurança para permitir a comunicação entre o NetApp Backup and Recovery e o StorageGRID ou ONTAP.</block>
   <block id="63b31af683f5a728cbf36267c289589f" category="doc">Configurar certificados de segurança para StorageGRID e ONTAP no NetApp Backup and Recovery</block>
   <block id="67fc617cb862496da73f0d13f68e5e84" category="section-title">Crie um certificado de segurança para StorageGRID</block>
-  <block id="f4ea80cc019b2160c012d4312934a08a" category="paragraph">Se a comunicação entre os contêineres do NetApp Backup and Recovery e o StorageGRID verificar o certificado do StorageGRID , conclua as etapas a seguir.</block>
   <block id="66474d54a0b8e88b5463c446c79940ef" category="paragraph">O certificado gerado deve ter CN e Nome Alternativo do Assunto como o nome fornecido no NetApp Backup and Recovery quando você ativou o backup.</block>
   <block id="04fad0ac16d7f2deb1987a5510c738a1" category="list-text">Siga as etapas na documentação do StorageGRID para criar o certificado do StorageGRID .</block>
   <block id="3b513e24628a82f33115f07ebd442378" category="inline-link">Informações do StorageGRID sobre a configuração de certificados</block>
@@ -3798,7 +3768,6 @@
   <block id="cdff415187609f29944bf1c630161ca7" category="admonition">O nome do volume difere entre os modos de implantação Padrão, Privado e Restrito. Este exemplo usa o modo Padrão. Consulte<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
   <block id="8e7afc71bbbdb7a90d5effeee846b799" category="list-text">Localize o ponto de montagem do volume do NetApp Backup and Recovery . Correr:</block>
   <block id="e97115c3e90314c60ded3b359ea70498" category="admonition">O ponto de montagem difere entre os modos de implantação Padrão, Privado e Restrito. Este exemplo mostra uma implantação de nuvem padrão. Consulte<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
-  <block id="16a11dc8e42e07e3f4167ea593dc06be" category="list-text">Mude para o diretório MountPoint. Correr:</block>
   <block id="096c73b5512780e3a3a1510cb1d77009" category="list-text">Se o certificado do StorageGRID for assinado pela CA raiz e uma CA intermediária, anexe o<block ref="8921ffd638d5e5fd424e4c197e829486" prefix=" " category="inline-code"></block> arquivos de ambos em um arquivo chamado<block ref="0cf87cdc35b35ebc25d6a3bf7c9a3198" prefix=" " category="inline-code"></block> no local atual. Não adicione o certificado de folha a este arquivo.</block>
   <block id="22945d914abe20d687b81ff6fbc05c67" category="section-title">Etapas para o contêiner cloudmanager_cbs</block>
   <block id="f96abe500d7acb97552081ca537d4b46" category="paragraph">Você precisará habilitar a verificação do certificado do StorageGRID Server no NetApp Backup and Recovery (Cloud Backup Service).</block>
@@ -3836,7 +3805,6 @@
   <block id="70e79bc1dae40cb4d65ff9311b208121" category="list-text"><block ref="70e79bc1dae40cb4d65ff9311b208121" category="inline-link-rx"></block></block>
   <block id="94127ba5494a8ba1866437839940b777" category="inline-link">Como gerenciar certificados SSL ONTAP com o System Manager</block>
   <block id="490355a668be7c4c18c41a966a22c161" category="list-text"><block ref="490355a668be7c4c18c41a966a22c161" category="inline-link-rx"></block></block>
-  <block id="b5864db94d8bb2d25b7f4630a16f599e" category="list-text">Efetue login no agente do Console como root. Correr:</block>
   <block id="94a9166a0ff55136e38b559d3099942f" category="list-text">Obtenha o volume do Docker do NetApp Backup and Recovery . Correr:</block>
   <block id="d09a6e67f757bf6ab00dd35df5db31cb" category="admonition">O nome do volume difere entre os modos de implantação Padrão, Privado e Restrito. Este exemplo mostra uma implantação de nuvem padrão. Consulte<block ref="731df046572b68b75f040bb1dced01d2" category="inline-link-rx"></block> .</block>
   <block id="3e964e8f45e1fd19df3c5413fcbd6674" category="list-text">Obtenha a montagem para o volume. Correr:</block>
@@ -3955,7 +3923,6 @@
   <block id="361cc78877d7de2ea952f510e7626ad4" category="paragraph">É feito backup desses dados uma vez por dia à meia-noite, e no máximo 7 cópias de cada arquivo são retidas. Se o agente do Console estiver gerenciando vários sistemas ONTAP locais, os arquivos de NetApp Backup and Recovery serão armazenados no bucket do sistema que foi ativado primeiro.</block>
   <block id="2be5ff28599e1447ad26486d058560b3" category="paragraph">Se o seu agente do Console local parar de funcionar, você precisará instalar um novo agente do Console e restaurar os dados do NetApp Backup and Recovery para o novo agente do Console.</block>
   <block id="af0d8358ca0559646ed05a1f70fb056c" category="paragraph">Depois de verificar se o sistema está funcionando, crie novos arquivos de backup.</block>
-  <block id="05eb9ffbcd3a4a40092374a3d60d7ac2" category="paragraph">Ao instalar um novo agente do Console, baixe a mesma versão de software do agente original.  Alterações no banco de dados do NetApp Backup and Recovery podem fazer com que versões mais recentes do software não funcionem com backups de bancos de dados antigos. Você pode<block ref="cf9f37e0e8c15b290b50a2dd76357649" category="inline-link-rx"></block> .</block>
   <block id="5d1e43ba5c03c383925fef923fa745db" category="paragraph">Você deverá ver todos os backups criados para seus volumes.</block>
   <block id="6e16e42b061f3ee3519b7b870fdcf125" category="list-text">*Diariamente*: Opção de repetir a cada número definido de dias, por exemplo, a cada 3 dias.</block>
   <block id="e8aab330f851827afe9d27b0aec63d26" category="list-text">*Mensal*: de janeiro a dezembro, com opção de apresentação em dias específicos ou em vários dias de cada mês, por exemplo, no dia 7.</block>
@@ -4070,7 +4037,6 @@
   <block id="7f04f32c4656d50b5019019cf54c568c" category="list-text">Certifique-se de que seu cluster ONTAP tenha permissões para acessar o bucket S3.</block>
   <block id="8caf5a345895253ff6b6c49a438599d4" category="list-text">Certifique-se de que os volumes exibidos sejam os mesmos que existiam em seu ambiente original.</block>
   <block id="432f26fda10ddec4232e210d763f233e" category="paragraph">O NetApp Backup and Recovery avalia aplicativos do Microsoft SQL Server. O serviço avalia o nível de proteção existente, incluindo as políticas de proteção de backup atuais, snapshots e opções de backup e recuperação.</block>
-  <block id="1bf1acc6c6a3e3af639e9ae129364ba0" category="paragraph">Esta primeira etapa importa os recursos do host do SnapCenter e exibe esses recursos na página de Inventário de NetApp Backup and Recovery . Nesse ponto, os recursos ainda não são gerenciados pelo NetApp Backup and Recovery.</block>
   <block id="f0b87199311bf1c15f240b666518084c" category="list-text">AWS:<block ref="e5469c6686b5a2c86b78502f7ea8c335" category="inline-link-rx"></block> .</block>
   <block id="6d641e087ca9cbb2e0778a492ac1066a" category="list-text">Azure:<block ref="211ed702bd160a1aa192248c846136e5" category="inline-link-rx"></block> .</block>
   <block id="80720981863bfe0c9cc6702701d24f18" category="list-text">Google Cloud:<block ref="5aa99f120ab43d5669622268ca1e3fd1" category="inline-link-rx"></block> .</block>
@@ -4428,7 +4394,6 @@
   <block id="efdc15efa02d496331c0b53a11beab72" category="paragraph">Para corrigir o problema, coloque manualmente os VMDKs online novamente no sistema operacional convidado. Quando os VMDKs estiverem online, a sessão de restauração do arquivo convidado exibirá o conteúdo correto.</block>
   <block id="f9364c3689e8fa9d558080e005772cd1" category="section-title">Falha na operação de restauração de arquivo convidado e anexação de disco</block>
   <block id="95c259e43559e78a13dbc7969fdef7cf" category="paragraph">Esse problema ocorre quando você inicia uma operação de restauração de arquivo convidado, mas a operação de anexação de disco falha mesmo que as ferramentas do VMware estejam em execução e as credenciais do sistema operacional convidado estejam corretas. Se isso ocorrer, o seguinte erro será retornado:</block>
-  <block id="9b71c1817815e7cd4130bed94e2ea447" category="paragraph"><block ref="294cedeefde97d4fb81e2aaa200cfe43" prefix="" category="inline-code"></block></block>
   <block id="359361098bd32a62519f56fcb0c584b3" category="paragraph">Para corrigir o problema, reinicie o serviço VMware Tools Windows no sistema operacional convidado e tente novamente a operação de restauração do arquivo convidado.</block>
   <block id="e2b253374500e2e93f1c334a2bb7ddd4" category="section-title">Os backups não são desanexados após a sessão de restauração do arquivo convidado ser descontinuada</block>
   <block id="898c4d9cd797d45ca2066478fd269974" category="paragraph">Esse problema ocorre quando você executa uma operação de restauração de arquivo convidado a partir de um backup consistente com VM. Enquanto a sessão de restauração do arquivo convidado estiver ativa, outro backup consistente com a VM será executado para a mesma VM. Quando a sessão de restauração de arquivos do convidado é desconectada, manual ou automaticamente após 24 horas, os backups da sessão não são desanexados.</block>
@@ -4595,7 +4560,6 @@
   <block id="55cf8812c6c22803ddfa5fd41279187d" category="list-text">Disco para disco</block>
   <block id="0f6d38819f95da81f8bc80258fee7071" category="list-text">Disco para storage de objetos</block>
   <block id="e3b858c29172bddae0dbb7e461b2f7df" category="list-text">Cascata</block>
-  <block id="6e56df4eb422b0b15187c84ba551237e" category="summary">Analise estas limitações de NetApp Backup e recuperação antes de usar Backup e Recuperação em seu ambiente.</block>
   <block id="36f1a2626b3ec6834b4eb361bac96c37" category="doc">Limitações conhecidas com NetApp Backup and Recovery para cargas de trabalho do Kubernetes</block>
   <block id="36c070b302c08836d912ffb6841bb46e" category="section-title">Alterando a política de proteção de um aplicativo</block>
   <block id="ad4e872c3df8cab19a9d649f27b25605" category="paragraph">Ao alterar a política de proteção associada a um aplicativo para usar um bucket diferente ou um destino de replicação secundário, a política de proteção pode falhar.</block>
@@ -4621,7 +4585,6 @@
   <block id="da57866549888e8bceaf30a4db33bfc5" category="list-text">Descubra cargas de trabalho em Backup and Recovery.</block>
   <block id="63e4e660d97fd26bbffa7cb3968c22c4" category="paragraph">Os administradores da organização ou administradores de pasta ou projeto descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado.</block>
   <block id="0e8d553f80f80eac9e99c265bf9f4d72" category="list-text">Adicionar usuários aos projetos.</block>
-  <block id="0da282e170c520798099314d27620ed4" category="paragraph">Os administradores da organização ou os administradores de pastas/projetos adicionam usuários do Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base em suas necessidades de acesso. Os usuários com a função de Backup and Recovery adequada obterão acesso automaticamente a novas cargas de trabalho nesses projetos.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="section-title">Informações relacionadas</block>
   <block id="728d17e7146dcd6218a24c46a1de8943" category="inline-link-macro">Saiba mais sobre o gerenciamento de identidade e acesso do NetApp Console</block>
   <block id="d612358528f4a89a703f161a8c3e4a9e" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block>.</block>
@@ -5057,7 +5020,6 @@
   <block id="cd11b988c9f7b5a4f534d244c8f742a8" category="inline-link">Visão geral das cargas de trabalho do Protect ONTAP Volumes</block>
   <block id="cb64e7530a451b6a29edd3427495ec90" category="paragraph">Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, consulte <block ref="c12abefe1b46a590752410462324e2ee" category="inline-link-rx"></block>.</block>
   <block id="19455401d550e37f86235df1de2da367" category="paragraph">Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias na política de proteção:</block>
-  <block id="8832a3317e409faa663d5b3be7a37383" category="list-text">*Editar políticas de proteção*: Agora você pode editar as políticas de proteção de cargas de trabalho do Kubernetes se precisar alterar</block>
   <block id="67c0c04b74d317df3fb38678dfce9d57" category="list-text">*Suporte a backup disco a disco*: Agora você pode configurar políticas de proteção do Kubernetes com uma arquitetura de backup disco a disco.</block>
   <block id="1f22edbdac095058ea8301cd1b0fa03f" category="list-text">*Suporte a buckets de armazenamento do Google Cloud Platform*: Agora você pode configurar políticas de proteção do Kubernetes para fazer backup em buckets de armazenamento do Google Cloud Platform.</block>
   <block id="55dcb475c806e158ae812c3e721ff829" category="inline-link">Crie e gerencie políticas de proteção em NetApp Backup and Recovery</block>
@@ -5318,4 +5280,41 @@
   <block id="a38244f145eb7bb81ea84601f169276b" category="paragraph">E se a proteção contra ransomware estiver ativa para o arquivo de backup (se você habilitou Datalock e proteção contra ransomware na política de backup), você será solicitado a executar uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique o arquivo de backup em busca de ransomware. (Você incorrerá em custos adicionais de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)</block>
   <block id="936866268a423c45b2ef9ad24698c8e0" category="paragraph">O suporte para backup e recuperação já está integrado a todos os sistemas ONTAP, portanto não há necessidade de hardware adicional ou gateways de mídia. Isso torna as operações de backup simples e econômicas. O NetApp Console simplifica a implementação de qualquer estratégia de backup, incluindo toda a gama de variantes de backup 3-2-1, sem a necessidade de múltiplos gerentes de recursos ou pessoal especializado.</block>
   <block id="eb93c206074e97dfb7bf08b81a6c72c1" category="list-text">Você deve configurar uma LIF de dados NFS IPv4 na VM de armazenamento e uma exportação NFS para o volume. Busca e Restauração é compatível com volumes NFS e SMB/CIFS.</block>
+  <block id="a2d15c88cd74ef2c07cf5a883fe0b88d" category="paragraph">Para obter detalhes sobre como habilitá-lo manualmente, consulte <block ref="cb48ac5d5b1e506c1ce232053a519e6a" category="inline-link-rx"></block>.</block>
+  <block id="b61dac5f94b9ddeb94321e1a35a17efe" category="paragraph">A versão 3.9.40 do agente de Console oferece suporte a determinadas versões do Red Hat Enterprise Linux 8 e 9 para instalações manuais do agente de Console em hosts RHEL, além dos sistemas operacionais listados na <block ref="10c1911da0601c7d780b4af72d11f3ab" category="inline-link-rx"></block>. Essas versões mais recentes do RHEL exigem o mecanismo Podman em vez do mecanismo Docker. Anteriormente, NetApp Backup and Recovery apresentava duas limitações ao usar o mecanismo Podman; essas limitações foram removidas.</block>
+  <block id="28afb94b906782446ccfc717207cf806" category="paragraph">NetApp Backup and Recovery agora pode fazer backup de volumes FlexVol e FlexGroup locais que estão configurados usando os modos de proteção SnapLock Compliance ou SnapLock Enterprise. Seus clusters devem estar executando ONTAP 9.14 ou posterior para esse suporte. O backup de volumes FlexVol no modo SnapLock Enterprise é suportado desde o ONTAP 9.11.1. Versões anteriores do ONTAP não oferecem suporte ao backup de volumes protegidos por SnapLock.</block>
+  <block id="6a8ed4de7ab1aa813fb6d9a4e2939ec1" category="paragraph">Consulte a lista completa de volumes suportados em <block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block>.</block>
+  <block id="dc8f8e2a17149271a7db8586e1cda422" category="list-text">Em andamento: a indexação está em andamento.</block>
+  <block id="769d056387975f8dc9019bf628646aa9" category="list-text">Não indexado: a indexação ainda não foi iniciada.</block>
+  <block id="feee87f6c7abb4d53e4a9b94fb0dfb31" category="list-text">Indexação pausada: a indexação está pausada.</block>
+  <block id="a25aee605a3e2d5a74f5276d624b0f5b" category="list-text">Erro: ocorreu um erro de indexação.</block>
+  <block id="ab7c98eb7b63bf725490a49407c4e35b" category="list-text">Não ativado: a indexação não está ativada para esta fonte.</block>
+  <block id="42f50deda405c659127ecb5cd695b30b" category="paragraph">Para começar a usar este recurso de pré-visualização, você deve habilitar um sinalizador no agente do Console. Em seguida, você poderá inserir os detalhes de conexão do seu armazenamento de objetos MinIO de terceiro no fluxo de trabalho de proteção, selecionando *Third party Compatible* armazenamento de objetos na seção de backup.</block>
+  <block id="472faf2431c49adc0b2536c0b6dd5f8d" category="paragraph">A versão anterior introduziu suporte para SnapMirror ao Cloud Resync (SM-C Resync). Esse recurso simplifica a proteção de dados durante a migração de volumes em ambientes NetApp. Esta versão adiciona suporte para o SM-C Resync no ONTAP S3, bem como em outros provedores compatíveis com S3, como Wasabi e MinIO.</block>
+  <block id="adbe969e927a15ae116084381be98d67" category="paragraph">Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho do Kubernetes:</block>
+  <block id="26afd870812fc0397b60acfa7ed436c0" category="paragraph">Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:</block>
+  <block id="9961d7a185cfa9d439cc427ed38dc48f" category="paragraph">Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho KVM:</block>
+  <block id="b8b08cc8479793cbf90cf90739d5d44a" category="list-text">*Editar políticas de proteção*: Agora você pode editar as políticas de proteção de cargas de trabalho do Kubernetes, caso precise alterá-las.</block>
+  <block id="756c384ea097ecc82b23f490eb2208a9" category="list-text">Obtenha um token de usuário no site do NetApp Console.</block>
+  <block id="0aebe097f5e5955c53107ce221189235" category="paragraph">Certifique-se de gerar o token de atualização a partir do seguinte link: https://services.cloud.netapp.com/refresh-token/. O token de atualização é uma sequência alfanumérica que você usará para gerar um token de usuário.</block>
+  <block id="00971dcc6a1f39c384a02f00d3e60974" category="summary">Analise estas limitações do NetApp Backup and Recovery antes de usar Backup and Recovery em seu ambiente.</block>
+  <block id="4897b8cd591825888a626536927740b9" category="paragraph">Os administradores da organização ou os administradores de pastas/projetos adicionam usuários do Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base em suas necessidades de acesso. Os usuários com a função de Backup and Recovery apropriada obterão acesso automático a novas cargas de trabalho nesses projetos.</block>
+  <block id="3325ba2bc09d36a530988abb840fc8c2" category="admonition">Se o SnapCenter Server já estiver registrado, você pode atualizar os detalhes de registro existentes.</block>
+  <block id="0a73bc800936bebcd3c8b8e4898bf3e3" category="paragraph">Posteriormente, você poderá reimportar os recursos do SnapCenter ou editar os recursos do SnapCenter importados para atualizar os dados de registro.</block>
+  <block id="00c16ea9dbe4f4e4a298cb14dbc7bf03" category="summary">Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.</block>
+  <block id="3e843348ced3f9e4c35fbe2e1319ecf5" category="paragraph"><block ref="b167760d93d5326c0be83a7248a528cb" prefix="" category="inline-code"></block></block>
+  <block id="18925d044201253060ba6dfa01ea5700" category="paragraph">Se você estiver usando um IPspace diferente de "Default", talvez seja necessário criar uma rota estática para acessar o storage de objetos.</block>
+  <block id="fb7c7bf4cc7539dceb5fac958b277143" category="list-text">Se você estiver usando um IPspace diferente do Default, talvez seja necessário criar uma rota estática para acessar o storage de objetos.</block>
+  <block id="611a454ad0b8d9c9bf65b6315d891435" category="list-text">Observe que, se você estiver usando um IPspace diferente do Default, talvez seja necessário criar uma rota estática para acessar o storage de objetos.</block>
+  <block id="2947f85112e3c257c3ac83e6fbdafb4e" category="list-text">Se você estiver usando um IPspace diferente do Default, talvez seja necessário criar uma rota estática para acessar o storage de objetos.</block>
+  <block id="fcfda8ebf2d138d3fcac111b9373c707" category="paragraph">Para utilizar o armazenamento de arquivamento, é necessário acesso ao endereço IP do nó de administração.</block>
+  <block id="432eebe4a7604b59dce3cc920c1188ae" category="list-text">Seus clusters devem estar executando ONTAP 9.11.1 ou superior</block>
+  <block id="39e9a2df2a2b2ec0f86c3e48b198f446" category="list-text">Seus clusters devem estar executando ONTAP 9.12.1 ou superior</block>
+  <block id="75ff6d4c7d81cf2bce3cb6709b5f2544" category="paragraph">Além de usar NetApp Backup and Recovery para criar políticas personalizadas, você pode usar System Manager ou a ONTAP Command Line Interface (CLI):</block>
+  <block id="2b8bfee882b822ee5f16bca77595ab0f" category="paragraph">Ao instalar um novo agente do Console, baixe a mesma versão de software do agente original. Alterações no banco de dados do NetApp Backup and Recovery podem fazer com que versões mais recentes do software não funcionem com backups de banco de dados antigos. Você pode <block ref="cf9f37e0e8c15b290b50a2dd76357649" category="inline-link-rx"></block>.</block>
+  <block id="e85a7923d13a33ad929302f3f0390a8b" category="list-text">Se o agendamento do SnapCenter estiver definido para mais de 7 dias, o NetApp Backup and Recovery definirá o agendamento como mensal. Alguns snapshots serão ignorados durante o mês.</block>
+  <block id="5854806eb7a037bac498023782dd080f" category="paragraph">*Exemplo*: Se você tiver uma política SnapCenter de execução por hora com um intervalo de repetição a cada 5 horas, começando à 1h da manhã, NetApp Backup and Recovery (após a migração) definirá a programação para diária, com intervalos de 5 horas às 1h, 6h, 11h, 16h e 21h. Algumas horas serão puladas — após as 21h, o horário de repetição a cada 5 horas deveria ser 2h da manhã, mas sempre será 1h da manhã.</block>
+  <block id="1f4f4cafd8d76357721d91da817797be" category="paragraph">Se a comunicação entre os contêineres de NetApp Backup and Recovery e StorageGRID deve verificar o certificado do StorageGRID, siga as etapas abaixo.</block>
+  <block id="c2ced4c78e453bfc0c402989d4c4a226" category="list-text">Acesse o diretório do ponto de montagem. Execute:</block>
+  <block id="287ce13946349495fddc07c65c39c410" category="list-text">Faça login no agente do Console como root. Execute:</block>
 </blocks>

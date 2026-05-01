@@ -18,7 +18,7 @@ Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, 
 
 Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias na política de proteção:
 
-* *Editar políticas de proteção*: Agora você pode editar as políticas de proteção de cargas de trabalho do Kubernetes se precisar alterar
+* *Editar políticas de proteção*: Agora você pode editar as políticas de proteção de cargas de trabalho do Kubernetes, caso precise alterá-las.
 * *Suporte a backup disco a disco*: Agora você pode configurar políticas de proteção do Kubernetes com uma arquitetura de backup disco a disco.
 * *Suporte a buckets de armazenamento do Google Cloud Platform*: Agora você pode configurar políticas de proteção do Kubernetes para fazer backup em buckets de armazenamento do Google Cloud Platform.
 

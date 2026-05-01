@@ -53,7 +53,7 @@ O NetApp Backup and Recovery ajusta os agendamentos do SnapCenter da seguinte fo
 +
 *Exemplo*: Se você tiver uma política diária do SnapCenter com um intervalo de repetição de 3 dias a partir de segunda-feira, o NetApp Backup and Recovery definirá o agendamento para semanalmente às segundas, quintas e domingos.  Alguns dias serão pulados porque não são exatamente a cada 3 dias.
 
-* Se o agendamento do SnapCenter for definido para mais de 7 dias, o NetApp Backup and Recovery definirá o agendamento como mensal.  Alguns instantâneos serão ignorados durante o mês.
+* Se o agendamento do SnapCenter estiver definido para mais de 7 dias, o NetApp Backup and Recovery definirá o agendamento como mensal. Alguns snapshots serão ignorados durante o mês.
 +
 *Exemplo*: Se você tiver uma política diária do SnapCenter com um intervalo de repetição de 10 dias a partir do dia 2 do mês, o NetApp Backup and Recovery, após a migração, definirá o agendamento como mensal nos dias 2, 12 e 22 do mês.  O NetApp Backup and Recovery pulará alguns dias no mês seguinte.
 
@@ -67,7 +67,7 @@ As políticas horárias do SnapCenter com intervalos de repetição maiores que 
 
 Qualquer política horária com intervalos repetidos que não sejam um fator de 24 (por exemplo, 5, 7, etc.) pulará alguns instantâneos em um dia.
 
-*Exemplo*: Se você tiver uma política horária do SnapCenter com um intervalo de repetição a cada 5 horas, começando à 1h, o NetApp Backup and Recovery (após a migração) definirá a programação como diária com intervalos de 5 horas à 1h, 6h, 11h, 16h e 21h.  Algumas horas serão ignoradas, depois das 21:00 deve ser 2:00 da manhã para repetir a cada 5 horas, mas será sempre 1:00 da manhã.
+*Exemplo*: Se você tiver uma política SnapCenter de execução por hora com um intervalo de repetição a cada 5 horas, começando à 1h da manhã, NetApp Backup and Recovery (após a migração) definirá a programação para diária, com intervalos de 5 horas às 1h, 6h, 11h, 16h e 21h. Algumas horas serão puladas — após as 21h, o horário de repetição a cada 5 horas deveria ser 2h da manhã, mas sempre será 1h da manhã.
 
 
 
