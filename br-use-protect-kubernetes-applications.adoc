@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery permite que você gerencie informações d
 
 
 [role="lead"]
-O NetApp Backup and Recovery permite que você descubra facilmente seus clusters Kubernetes, sem gerar e carregar arquivos kubeconfig.  Você pode conectar clusters do Kubernetes e instalar o software necessário usando comandos simples copiados da interface do usuário do NetApp Console .
+NetApp Backup and Recovery permite que você adicione aplicações Kubernetes através da interface web ou aplicando arquivos de recursos personalizados. As aplicações podem ser baseadas em namespaces, compostas por recursos padrão do Kubernetes, ou baseadas em máquinas virtuais, compostas por uma ou mais máquinas virtuais.
 
 .Função necessária do NetApp Console
 Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
@@ -23,14 +23,14 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 
 == Adicionar e proteger um novo aplicativo Kubernetes
 
-O primeiro passo para proteger aplicativos Kubernetes é criar um aplicativo no NetApp Backup and Recovery.  Ao criar um aplicativo, você torna o Console ciente do aplicativo em execução no cluster do Kubernetes.
+O primeiro passo para proteger aplicações Kubernetes é criar uma aplicação no NetApp Backup and Recovery. Ao criar uma aplicação, você informa ao Backup and Recovery que ela está em execução no cluster Kubernetes.
 
 .Antes de começar
 Antes de poder adicionar e proteger um aplicativo Kubernetes, você precisalink:br-start-discover.html["descubra as cargas de trabalho do Kubernetes"] .
 
 [role="tabbed-block"]
 ====
-.Adicione um aplicativo usando a interface web
+.Adicionar um aplicativo baseado em namespace (interface web)
 --
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.
@@ -38,22 +38,54 @@ Antes de poder adicionar e proteger um aplicativo Kubernetes, você precisalink:
 . Selecione a aba *Aplicativos*.
 . Selecione *Criar aplicativo*.
 . Digite um nome para o aplicativo.
+. Na lista *Cluster*, selecione o cluster que hospeda o aplicativo.
+. Em *Filtros*, escolha *Namespace* para filtrar aplicativos por namespace.
 . Opcionalmente, escolha qualquer um dos seguintes campos para pesquisar os recursos que você deseja proteger:
 +
-** Cluster associado
 ** Espaços de nomes associados
 ** Tipos de recursos
 ** Seletores de rótulos
-
-
-. Opcionalmente, selecione *Recursos com Escopo de Cluster* para escolher quaisquer recursos com escopo no nível do cluster. Se você incluí-los, eles serão adicionados ao aplicativo quando você o criar.
-. Opcionalmente, selecione *Pesquisar* para encontrar os recursos com base nos seus critérios de pesquisa.
++
+... Selecione *Adicionar recursos com escopo de cluster* para adicionar recursos que têm escopo no nível do cluster. Se você os incluir, eles serão adicionados ao aplicativo quando você o criar.
+... Opcionalmente, selecione *Pesquisar* para encontrar os recursos com base nos seus critérios de pesquisa.
 +
 
-NOTE: O Console não armazena os parâmetros ou resultados da pesquisa; os parâmetros são usados para pesquisar no cluster Kubernetes selecionado recursos que podem ser incluídos no aplicativo.
+NOTE: O Backup and Recovery não armazena os parâmetros ou resultados da pesquisa; os parâmetros são usados para pesquisar no cluster Kubernetes selecionado recursos que podem ser incluídos no aplicativo.
 
-. O Console exibe uma lista de recursos que correspondem aos seus critérios de pesquisa.
+
+
+
+
+. Backup and Recovery exibe uma lista de recursos que correspondem aos seus critérios de pesquisa.
 . Se a lista contiver os recursos que você deseja proteger, selecione *Avançar*.
+. Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você podelink:br-use-policies-create.html#create-a-policy["adicionar uma política de proteção"] mais tarde.
+. Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Para habilitar prescrições ou pós-escritos, você deve ter criado pelo menos umlink:br-use-manage-execution-hook-templates.html["modelo de gancho de execução"] .
+. Selecione *Criar*.
+
+
+.Resultado
+O aplicativo é criado e aparece na lista de aplicativos na guia *Aplicativos* do inventário do Kubernetes. Backup and Recovery permite a proteção do aplicativo com base nas suas configurações, e você pode monitorar o progresso na área *Monitoramento*.
+
+--
+.Adicionar um aplicativo baseado em máquina virtual (web UI)
+--
+.Passos
+. No NetApp Backup and Recovery, selecione *Inventário*.
+. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione a aba *Aplicativos*.
+. Selecione *Criar aplicativo*.
+. Digite um nome para o aplicativo.
+. Na lista *Cluster*, selecione o cluster que hospeda o aplicativo.
+. Em *Filtros*, escolha *Máquinas virtuais* para criar um aplicativo baseado em máquina virtual.
+. Encontre máquinas virtuais para adicionar ao aplicativo, escolhendo um namespace e, opcionalmente, incluindo seletores de rótulo.
++
+
+NOTE: Se você selecionar VMs da lista, a definição do aplicativo será estática — novas VMs não serão adicionadas ao aplicativo posteriormente (você precisa editar o aplicativo para adicioná-las e protegê-las). Se você usar seletores de rótulo, não poderá escolher VMs individualmente nem editar a lista gerada, mas qualquer VM que corresponda ao seletor posteriormente será incluída automaticamente e protegida.
+
++
+As máquinas virtuais selecionadas aparecem na lista à direita.
+
+. Se a lista contiver as VMs que você deseja proteger, selecione *Next*.
 . Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você podelink:br-use-policies-create.html#create-a-policy["adicionar uma política de proteção"] mais tarde.
 . Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Para habilitar prescrições ou pós-escritos, você deve ter criado pelo menos umlink:br-use-manage-execution-hook-templates.html["modelo de gancho de execução"] .
 . Selecione *Criar*.
@@ -63,7 +95,7 @@ NOTE: O Console não armazena os parâmetros ou resultados da pesquisa; os parâ
 O aplicativo é criado e aparece na lista de aplicativos na guia *Aplicativos* do inventário do Kubernetes.  O NetApp Console permite a proteção do aplicativo com base em suas configurações, e você pode monitorar o progresso na área *Monitoramento* de backup e recuperação.
 
 --
-.Adicionar um aplicativo usando um CR
+.Adicionar um aplicativo baseado em namespace (CR)
 --
 .Passos
 . Crie o arquivo CR do aplicativo de destino:

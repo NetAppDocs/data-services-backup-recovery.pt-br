@@ -14,7 +14,7 @@ summary: Você pode proteger aplicativos e dados de aplicativos do Kubernetes de
 
 
 [role="lead"]
-Gerenciar cargas de trabalho do Kubernetes no NetApp Backup and Recovery permite que você descubra, gerencie e proteja seus clusters e aplicativos do Kubernetes em um só lugar. Você pode gerenciar recursos e aplicações hospedados em seus clusters do Kubernetes. Você também pode criar e associar políticas de proteção às suas cargas de trabalho do Kubernetes, tudo usando uma única interface.
+O gerenciamento de cargas de trabalho do Kubernetes no NetApp Backup and Recovery permite descobrir, gerenciar e proteger seus clusters e aplicativos do Kubernetes em um único local. Você pode gerenciar recursos e aplicativos hospedados em seus clusters do Kubernetes. Também é possível criar e associar políticas de proteção aos seus aplicativos do Kubernetes, tudo usando uma única interface.
 
 O diagrama a seguir mostra os componentes e a arquitetura básica de backup e recuperação para cargas de trabalho do Kubernetes e como diferentes cópias dos seus dados podem ser armazenadas em diferentes locais:
 

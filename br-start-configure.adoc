@@ -16,12 +16,13 @@ summary: Conclua algumas etapas para configurar o NetApp Backup and Recovery.
 [role="lead"]
 Depois de configurar o NetApp Console, defina as configurações de backup e recuperação.  Adicione credenciais para recursos de host, importe recursos do SnapCenter , configure diretórios de log e defina configurações do VMware vCenter.  Conclua estas etapas antes de fazer backup ou recuperar dados.
 
-* <<Adicionar credenciais para recursos do host>> para quaisquer hosts Windows, Microsoft SQL Server, Oracle Database ou Linux com os quais o NetApp Backup and Recovery precise se autenticar. Isso inclui as credenciais do sistema operacional convidado Windows usadas ao restaurar arquivos ou pastas do sistema convidado.
+* <<Adicionar credenciais para recursos do host>> para qualquer host Windows, Microsoft SQL Server, Oracle Database ou Linux com o qual o NetApp Backup and Recovery precise se autenticar. Isso inclui as credenciais do sistema operacional convidado usadas ao restaurar arquivos ou pastas.
 * <<Manter as configurações do VMware vCenter>>.
 * <<Importar e gerenciar recursos do host SnapCenter>>. (Somente cargas de trabalho do Microsoft SQL Server)
 * <<Adicione uma plataforma de gerenciamento KVM>>. (Apenas cargas de trabalho KVM)
 * <<Configurar diretórios de log em instantâneos para hosts Windows>>.
 * <<Crie um modelo de gancho de execução>> para executar scripts antes e depois dos trabalhos de backup. (Apenas cargas de trabalho do Kubernetes)
+* <<Crie um modelo de transformação de recursos>> Para modificar os recursos à medida que os restaura.
 
 
 *Função necessária do NetApp Console * Superadministrador de backup e recuperação, administrador de backup de backup e recuperação, administrador de restauração de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
@@ -292,4 +293,36 @@ NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de 
 +
 Depois de criar o modelo, ele aparece na lista de modelos na seção *Modelo de gancho de execução*.
 
+
+
+
+
+== Crie um modelo de transformação de recursos
+
+Crie modelos de transformação de recursos para armazenar as transformações comuns que você realiza nos recursos ao restaurá-los.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Configurações*.
+. Selecione a seta para baixo para expandir a seção *Resource modifer template*.
+. Selecione *Criar modelo*.
+. Insira um nome para o modelo de transformação de recursos.
+. Opcionalmente, insira uma descrição do modelo.
+. Descreva o recurso de destino:
++
+.. Insira o tipo de recurso (como Pod ou Deployment). Este campo é obrigatório.
+.. Opcionalmente, insira um grupo de recursos, versão, nome.
+
+
+. Criar uma operação:
++
+.. Selecione uma operação da lista *Operação*.
+.. Insira o caminho JSON ao qual a operação se aplica.
+.. Se aplicável, insira um valor para adicionar ou atualizar, ou um caminho JSON de onde mover.
++
+Esses campos só aparecem para operações que os exigem.
+
+.. Para adicionar outra operação a este modelo, selecione *Adicionar operação*.
+
+
+. Ao terminar, selecione *Adicionar*.
 

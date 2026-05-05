@@ -31,3 +31,9 @@ Ao alterar a política de proteção associada a um aplicativo para usar um buck
 Ao criar uma política de proteção 3-2-1 em que nenhum backup de storage de objetos ocorre ao mesmo tempo que a replicação para storage secundário, a política de proteção trava ao proteger o aplicativo.
 
 *Solução alternativa*: Remova e adicione novamente o aplicativo e proteja-o com uma política de proteção diferente.
+
+
+
+== Restaurações in-place de aplicativos baseados em máquinas virtuais a partir de snapshots locais não são suportadas
+
+A restauração in-place (restauração para o namespace e cluster originais) de aplicativos baseados em máquina virtual a partir de snapshots locais não é suportada atualmente.

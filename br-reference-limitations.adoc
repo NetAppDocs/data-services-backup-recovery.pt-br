@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-reference-limitations.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, SAP HANA database 
 summary: Limitações conhecidas identificam funções que não são suportadas por esta versão do produto ou que não interoperam corretamente com ele. Revise essas limitações cuidadosamente. 
 ---
 = Limitações conhecidas com o NetApp Backup and Recovery para volumes ONTAP

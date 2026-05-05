@@ -16,11 +16,36 @@ summary: O NetApp Backup and Recovery permite restaurar aplicativos que você pr
 [role="lead"]
 O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. Para restaurar um aplicativo, ele precisa ter pelo menos um ponto de restauração disponível. Um ponto de restauração consiste no snapshot local ou no backup no repositório de objetos (ou ambos). Você pode restaurar um aplicativo usando o arquivo local, secundário ou do repositório de objetos.
 
+
+
+== Exibir recursos protegidos para um ponto de restauração do aplicativo
+
+Para cada aplicativo que você protege com o NetApp Backup and Recovery, você pode visualizar os recursos que foram copiados para um ponto de recuperação específico.
+
+.Função necessária do NetApp Console
+Visualizador de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
+.Passos
+. Em NetApp Backup and Recovery, selecione *Inventário* > *Aplicativos*.
+. Na lista de aplicativos, escolha um aplicativo e selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Visualizar e Restaurar*.
+. Na lista de pontos de restauração, escolha um ponto de restauração e selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Exibir recursos*.
++
+Uma lista de recursos e seus detalhes é exibida. Você pode visualizar os recursos por namespace ou escopo de cluster e baixar a lista como um arquivo JSON para auditorias futuras.
+
+. Ao terminar, selecione *Fechar*.
+
+
+
+
+== Restaurar aplicativos Kubernetes
+
+Você pode restaurar aplicativos baseados em namespace ou em máquinas virtuais a partir de um ponto de restauração, restaurando todos os recursos ou selecionando um subconjunto de recursos para restaurar.
+
 .Antes de começar
 Se você estiver restaurando um aplicativo que foi copiado usando Trident Protect, certifique-se de que Trident Protect esteja instalado tanto no cluster de origem quanto no cluster de destino.
 
 .Função necessária do NetApp Console
-Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+Administrador avançado de backup e recuperação ou administrador de restauração de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup e Recuperação, selecione *Restaurar*.
@@ -29,58 +54,88 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 A lista de pontos de restauração é exibida.
 
 . Selecione o botão *Restaurar* para o ponto de recuperação que deseja usar.
-
-
-[discrete]
-===== Configurações gerais
++
+O assistente de restauração de dados é iniciado e a página _Configurações gerais_ é exibida.
 
 . Escolha o local de origem do qual restaurar.
 . Escolha o cluster de destino na lista *Cluster*.
+. Escolha restaurar nos namespaces originais ou em novos namespaces.
 +
 
-NOTE: Restaurar um snapshot local criado pelo Trident Protect para um cluster diferente não é suportado no momento.
+NOTE: A restauração in-place (restauração para o namespace e cluster originais) de aplicativos baseados em máquina virtual a partir de snapshots locais não é suportada atualmente.
 
-. Escolha restaurar nos namespaces originais ou em novos namespaces.
 . Se você optar por restaurar para novos namespaces, insira o namespace ou namespaces de destino a serem usados.
 . Selecione *Avançar*.
-
-
-[discrete]
-===== Seleção de recursos
++
+A página _Seleção de recursos_ é exibida.
 
 . Escolha se deseja restaurar todos os recursos associados ao aplicativo ou usar um filtro para selecionar recursos específicos para restaurar:
-
-
++
 [role="tabbed-block"]
 ====
-.Restaurar todos os recursos
+.Todos os recursos
 --
-. Selecione *Restaurar todos os recursos*.
-. Selecione *Avançar*.
+.. Selecione *Restaurar todos os recursos*.
++
+Ao restaurar um aplicativo baseado em máquina virtual, o Backup and Recovery lista todas as máquinas virtuais no ponto de recuperação.
+
+.. Selecione *Avançar*.
 
 
 --
-.Restaurar recursos específicos
+.Recursos de aplicativos específicos baseados em namespace
 --
-. Selecione *Recursos seletivos*.
-. Escolha o comportamento do filtro de recursos.  Se você escolher *Incluir*, os recursos selecionados serão restaurados.  Se você escolher *Excluir*, os recursos selecionados não serão restaurados.
-. Selecione *Adicionar regras* para adicionar regras que definem filtros para selecionar recursos.  Você precisa de pelo menos uma regra para filtrar recursos.
+.. Selecione *Recursos seletivos* e escolha se deseja filtrar os recursos que você seleciona com base em regras ou com base no namespace.
++
+[cols="1,1"]
+|===
+| Método de seleção de recursos | Passos 
+
+
+| Filtrar recursos usando regras  a| 
+... Selecione a aba *Regras*.
+... Escolha o comportamento do filtro de recursos.  Se você escolher *Incluir*, os recursos selecionados serão restaurados.  Se você escolher *Excluir*, os recursos selecionados não serão restaurados.
+... Selecione *Adicionar regras* para adicionar regras que definem filtros para selecionar recursos.  Você precisa de pelo menos uma regra para filtrar recursos.
 +
 Cada regra pode filtrar critérios como namespace do recurso, rótulos, grupo, versão e tipo.
 
-. Selecione *Salvar* para salvar cada regra.
-. Depois de adicionar todas as regras necessárias, selecione *Pesquisar* para ver os recursos disponíveis no arquivo de backup que correspondem aos seus critérios de filtro.
+... Selecione *Salvar* para salvar cada regra.
+... Depois de adicionar todas as regras necessárias, selecione *Mostrar recursos* para visualizar os recursos disponíveis no arquivamento de backup que correspondem aos seus critérios de filtro.
+
+
+
+
+| Selecionar manualmente os recursos de uma lista  a| 
+... Selecione a aba *Personalizado*.
+... Selecione *Com escopo de namespace* ou *Com escopo de cluster* para visualizar os recursos correspondentes.
++
+Backup e recuperação lista todos os recursos no ponto de recuperação.
+
+... Selecione quais recursos incluir na operação de restauração.
+
+
+|===
 +
 
 NOTE: Os recursos mostrados são os recursos que existem atualmente no cluster.
 
-. Quando estiver satisfeito com os resultados, selecione *Avançar*.
+.. Ao terminar, selecione *Próximo*.
+
+
+--
+.Recursos específicos de aplicativos baseados em VM
+--
+.. Selecione *Recursos seletivos*.
++
+Backup e Recovery lista todas as máquinas virtuais no ponto de recuperação. Você pode selecionar quais VMs incluir na operação de restauração.
+
+.. Ao terminar, selecione *Próximo*.
 
 
 --
 ====
-[discrete]
-===== Configurações de destino
++
+A página _Configurações de destino_ é exibida.
 
 . Expanda a seção *Configurações de destino* e escolha restaurar para a classe de armazenamento padrão, para uma classe de armazenamento diferente ou, se estiver restaurando para um cluster diferente, mapear as classes de armazenamento para o cluster de destino.
 . Se você optar por restaurar para uma classe de armazenamento diferente, selecione uma classe de armazenamento de destino que corresponda a cada classe de armazenamento de origem.
@@ -90,5 +145,24 @@ NOTE: Os recursos mostrados são os recursos que existem atualmente no cluster.
 NOTE: Se você precisar criar um AppVault em um cluster Kubernetes para facilitar a restauração de um backup ou snapshot criado usando Trident Protect, consulte  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Use objetos do Trident Protect AppVault para gerenciar buckets"].
 
 . Opcionalmente, expanda a seção *Scripts de restauração* e habilite a opção *Pós-script* para escolher um modelo de gancho de execução que será executado após a conclusão da operação de restauração. Se necessário, insira quaisquer argumentos que o script precise e adicione seletores de rótulo para filtrar recursos com base nos rótulos dos recursos.
-. Selecione *Restaurar*.
+. Opcionalmente, expanda a seção *Transformações de recursos* para adicionar, remover ou modificar atributos de recursos durante o processo de restauração. Em seguida, faça o seguinte:
++
+
+NOTE: Modificar PersistentVolumeClaims e namespaces não é suportado atualmente.
+
++
+.. Ative a opção *Transformação de recursos* para fazer alterações no modificador.
+.. Selecione um modelo na lista *Modelos* para aplicar rapidamente as configurações de modificadores que você usa com frequência. Essa lista inclui modelos predefinidos para cenários comuns, bem como modelos personalizados que você criou.
++
+
+NOTE: Crie modelos de transformação de recursos na área global link:br-start-configure.html#create-a-resource-modifier-template["Configurações"^].
+
+.. Especifique qual recurso você deseja modificar, inserindo o grupo de recursos, a versão, o tipo e o nome.
+.. Especifique a operação que deseja executar no recurso selecionando uma operação na lista *Operation*.
+.. Insira um caminho JSON para a chave específica que você deseja alterar.
+.. Se aplicável, insira um novo valor a ser usado. O campo *Valor* só aparece para determinadas operações (como *Adicionar* ou *Substituir*).
+.. Opcionalmente, adicione mais transformações de recursos conforme necessário.
+
+
+. Ao terminar, selecione *Restaurar*.
 

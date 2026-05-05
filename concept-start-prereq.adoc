@@ -235,19 +235,10 @@ Para requisitos do NetApp Console , consulte<<No NetApp Console>> .
 
 NOTE: NetApp recomenda fortemente atribuir um endereço IP estático ao agente do Console que você usa para cargas de trabalho do Kubernetes para evitar problemas caso o endereço IP do agente seja alterado.
 
-* Um sistema ONTAP primário (ONTAP 9.16.1 ou posterior)
-* Um cluster do Kubernetes - As distribuições e versões do Kubernetes suportadas incluem:
-+
-** Anthos On-Prem (VMware) e Anthos em bare metal 1.16
-** Kubernetes 1.27 - 1.33
-** OpenShift 4.10 - 4.18
-** Rancher Kubernetes Engine 2 (RKE2) v1.26.7+rke2r1, v1.28.5+rke2r1
-** Suse Rancher
-
-
-* NetApp Trident 24.10 ou posterior
-* NetApp Trident Protect 25.07 ou posterior (instalado durante a descoberta de workload do Kubernetes)
-* NetApp Trident Protect Connector 25.07 ou posterior (instalado durante a descoberta de cargas de trabalho do Kubernetes)
+* Um sistema ONTAP primário (sistemas ASA r2 não são suportados)
+* NetApp Trident 25.02 ou posterior
+* NetApp Trident Protect 26.05 ou posterior (instalado no cluster Kubernetes durante a descoberta)
+* Um cluster Kubernetes - As distribuições e versões do Kubernetes suportadas incluem aquelas suportadas por https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect"].
 +
 ** Certifique-se de que a porta TCP 443 esteja desbloqueada na direção de saída entre o cluster Kubernetes, o Trident Protect Connector e o proxy Trident Protect.
 

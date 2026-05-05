@@ -211,6 +211,9 @@ sidebar:
           url: "/br-use-restore-kubernetes-applications-cr.html"
         - title: Use configurações avançadas de restauração de recursos personalizados
           url: "/br-use-kubernetes-advanced-restore-settings.html"
+        - title: Modifique recursos durante operações de restauração usando recursos
+            personalizados
+          url: "/br-use-modify-resources-kubernetes-cr.html"
       - title: Gerenciar clusters do Kubernetes
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: Gerenciar aplicativos Kubernetes
