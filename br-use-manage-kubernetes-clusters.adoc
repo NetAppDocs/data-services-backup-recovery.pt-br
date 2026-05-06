@@ -53,7 +53,7 @@ Para parar de proteger um cluster do Kubernetes, desative a proteção e exclua 
 
 == Atualizar Trident Protect
 
-Para clusters Kubernetes executando Trident Protect 26.04 ou posterior, você pode atualizar Trident Protect diretamente do NetApp Backup and Recovery. A opção de atualização só aparece se uma versão mais recente estiver disponível.
+Para clusters Kubernetes executando Trident Protect 26.05 ou posterior, você pode atualizar Trident Protect diretamente do NetApp Backup and Recovery. A opção de atualização só aparece se uma versão mais recente estiver disponível.
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
