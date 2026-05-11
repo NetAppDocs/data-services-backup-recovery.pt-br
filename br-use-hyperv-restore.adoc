@@ -21,14 +21,17 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 
 * Restaurar de um local primário (instantâneo local)
 * Restaurar de um recurso replicado no armazenamento secundário
-* Restaurar de um backup de armazenamento de objetos
+* Restaurar de um backup de storage de objetos (somente para o local original)
 
+
+
+NOTE: A restauração a partir de backup de armazenamento de objetos não é compatível com máquinas virtuais que residem em armazenamento SAN.
 
 .Restaurar para estes pontos
 Você pode restaurar dados para estes pontos:
 
-* Restaurar para o local original
-* Restaurar para um local alternativo
+* Restaurar para a localização original (do storage primário, secundário e de objetos)
+* Restaurar para um local alternativo (a partir do storage primário e secundário)
 
 
 .Considerações sobre restauração de armazenamento de objetos

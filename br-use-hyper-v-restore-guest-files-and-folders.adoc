@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
+keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
+summary: Você pode restaurar um ou mais arquivos ou pastas de um snapshot de uma máquina virtual Hyper-V para uma máquina virtual convidada do Windows. 
+---
+= Restaurar arquivos e pastas de backups de máquinas virtuais Hyper-V
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaurar arquivos e pastas de backups de máquinas virtuais Hyper-V no storage primário para uma máquina virtual Windows convidada.
+
+
+
+== Restaurar arquivos e pastas
+
+Monte um disco virtual a partir de um snapshot e restaure arquivos e pastas dele para a máquina virtual Windows original (source).
+
+.Antes de começar
+Antes de restaurar arquivos e pastas, você precisa criar uma credencial para a máquina virtual de origem no NetApp Backup and Recovery. Essa credencial é usada para autenticar na máquina virtual durante o processo de restauração.
+
+.Sobre esta tarefa
+Ao abrir uma sessão de restauração de arquivos e pastas montando um disco virtual, a sessão permanece ativa por 48 horas.
+
+O desempenho da restauração depende tanto do tamanho quanto da quantidade de arquivos ou pastas que estão sendo restaurados. Para um determinado conjunto de dados, restaurar um grande número de arquivos pequenos geralmente leva mais tempo do que restaurar um pequeno número de arquivos grandes.
+
+Observe o seguinte ao restaurar arquivos e pastas:
+
+[NOTE]
+====
+* No momento, não é possível restaurar arquivos e pastas em máquinas virtuais convidadas Linux.
+* A restauração de arquivos e pastas não é suportada a partir de backups armazenados em storage secundário ou storage de objetos.
+* Não é possível restaurar arquivos ou pastas em máquinas virtuais que residem em storage SAN.
+* Somente uma operação de anexação ou restauração pode ser executada ao mesmo tempo em uma VM. Não é possível executar operações paralelas de anexação ou restauração na mesma VM.
+* A visualização ou navegação em partições reservadas pode causar um erro.
+* Durante a operação de restauração, os atributos oculto, de sistema e criptografado dos arquivos convidados não são mantidos no arquivo restaurado.
+* Você pode visualizar e restaurar arquivos de sistema e ocultos e visualizar arquivos criptografados.
+* Não sobrescreva um arquivo de sistema existente nem restaure arquivos criptografados para uma pasta criptografada.
+
+
+====
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Restaurar*.
+. Selecione *Hyper-V* na lista de cargas de trabalho no canto superior direito da página.
+. Na lista de máquinas virtuais, selecione a ação *Restaurar* para uma máquina virtual que contém arquivos ou pastas que você deseja restaurar.
+. Selecione *Arquivos e pastas*.
+. Na página *Restaurar a partir de snapshots*, faça o seguinte:
++
+.. Opcionalmente, selecione um período para filtrar a lista de Snapshots por data de criação.
+.. Selecione um snapshot no storage primário a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.
+
+
+. Na lista, escolha um disco virtual que contenha os arquivos e pastas que você precisa restaurar e selecione *Next*.
+. Na página _Detalhes da máquina virtual convidada_, faça o seguinte:
++
+.. Na seção *Detalhes da máquina virtual convidada*, anexe o disco virtual à máquina virtual original selecionando *Máquina virtual original*.
+.. Opcionalmente, na seção *Credenciais da máquina virtual convidada*, se você ainda não tiver armazenado uma credencial para o disco virtual de origem e para a máquina virtual de destino, selecione *Adicionar credenciais*, insira as informações de credencial do Windows e selecione *Adicionar*.
+.. Na lista, escolha uma credencial de máquina virtual para usar.
+.. Selecione *Avançar*.
++
+NetApp Backup and Recovery conecta o disco virtual à máquina virtual original e exibe todos os arquivos e pastas, incluindo os ocultos. Ele atribui uma letra de unidade a cada partição, incluindo as partições reservadas pelo sistema.
+
++
+Você pode usar o ícone de lupa (pesquisa) próximo ao painel do navegador de arquivos para procurar arquivos e pastas. A correspondência de padrões não é suportada, mas você pode pesquisar arquivos ou pastas com base em um subconjunto do nome ou da extensão.
+
+
+
+. Na página _Escolher arquivos ou pastas para restaurar_, faça o seguinte:
++
+.. Selecione arquivos ou pastas para restaurar.
++
+Os arquivos e pastas que você selecionou para restaurar são listados na área *Arquivos e pastas selecionados*.
+
+.. Selecione *Avançar*.
+
+
+. Na página _Restauração de arquivos do convidado - destino_, faça o seguinte:
++
+.. Na seção "Restaurar para o caminho", insira o caminho UNC para a máquina virtual de destino e o local do sistema de arquivos onde os arquivos selecionados serão restaurados:
++
+*** Exemplo de caminho IPv4: `\\10.60.136.65\c$`
+*** Exemplo de caminho IPv6: `\\fd20-8b1e-b255-832e--61.ipv6-literal.net\C\restore`
+
+
+
+
++
+Caso já existam arquivos com o mesmo nome, você pode optar por sobrescrevê-los ou ignorá-los.
+
+. Na seção "Opções pós-restauração", você pode opcionalmente desconectar a sessão do convidado após a conclusão da restauração, ativando a configuração *Desconectar sessão do convidado após a conclusão da restauração*. Isso desvincula o disco virtual e desmonta o datastore. Isso significa que você precisará reconectar a sessão do convidado antes de executar quaisquer operações adicionais de restauração de arquivos e pastas.
+. Selecione *Restaurar*.
++
+Você pode visualizar o progresso da restauração na página de Monitoramento de Tarefas.
+
+
+
+
+
+== Gerenciar sessões ativas de montagem de disco em tempo real
+
+Visualize, utilize e exclua as sessões ativas de restauração de arquivos e pastas do Hyper-V diretamente no Backup and Recovery.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
+. Selecione *Hyper-V* na lista de cargas de trabalho no canto superior direito da página.
+. Selecione o menu *Sessões de montagem de disco ao vivo*.
++
+A lista de sessões de montagem de disco virtual abertas é exibida.
+
+. Opcionalmente, para usar uma sessão para restaurar arquivos e pastas em uma máquina virtual convidada, abra o menu Ações image:../media/icon-action.png["Opção de ações"] para uma sessão e selecione *Restaurar arquivos e pastas*.
+. Opcionalmente, para excluir uma sessão, abra o menu Ações image:../media/icon-action.png["Opção de ações"] para uma sessão e selecione *Excluir*.
+

@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-clone.html 
+keywords: clone, clone application data, NetApp backup and recovery, VMware 
+summary: Clone suas cargas de trabalho de máquinas virtuais VMware com NetApp Backup and Recovery. 
+---
+= Clone cargas de trabalho do VMware usando NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Use NetApp Backup and Recovery para criar clones graváveis de máquinas virtuais VMware a partir de snapshots primários ou secundários. Com clones de máquinas virtuais, você pode criar e gerenciar máquinas virtuais para testes, integração e treinamento sem afetar dados de produção.
+
+*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Antes de começar
+Certifique-se de que todas as máquinas virtuais cujos snapshots você deseja clonar tenham sido adicionadas a um grupo de proteção e tenham sido feitas backups.
+
+
+
+== Criar um clone de uma máquina virtual VMware
+
+Crie um clone imediatamente a partir de um snapshot existente.
+
+
+NOTE: Após criar um clone de uma máquina virtual, você deve atualizar o endereço IP da máquina virtual clonada para evitar conflitos de endereço IP com a máquina virtual original.
+
+.Passos
+. No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
+. Em *Cargas de trabalho*, selecione o bloco *VMware*.
+. Selecione *Clone*.
+. Selecione *Criar novo clone*.
+. Na seção *Selecionar máquinas virtuais*, escolha um grupo de proteção. As máquinas virtuais do grupo de proteção aparecem na lista de seleção.
+. Selecione uma ou mais VMs da lista para clonar. As VMs selecionadas aparecerão na lista de VMs selecionadas à direita.
+. Ao terminar, selecione *Próximo*.
+. Na seção *Instantâneos* da página *Selecionar um instantâneo*, selecione um período para filtrar os instantâneos por data de criação.
+. Escolha um instantâneo existente da lista para usar como base para o clone e selecione *Avançar*.
++
+A opção *Selecionar local do instantâneo* aparece se o instantâneo estiver armazenado em mais de um local.
+
+. Escolha o local do snapshot que deseja usar e selecione *Avançar*.
+. Na página *Configurações de destino*, faça o seguinte:
++
+.. Selecione o FQDN ou endereço IP do destino vCenter server onde o clone da VM deve ser criado.
+.. Selecione o host ESXi que irá hospedar o clone.
+.. Selecione o ambiente de rede para o clone.
+.. No campo *Nome da máquina virtual*, insira um sufixo para a nova máquina virtual clonada.
+
+
+. Selecione *Clone*.
+
+
+
+
+== Dividir um clone
+
+Você pode dividir um clone de uma máquina virtual VMware para desvinculá-lo do seu volume pai. Uma vez dividido, o clone se torna um volume independente que não depende mais do volume pai.
+
+Após a divisão, os datastores associados à máquina virtual clonada tornam-se um novo datastore independente. A própria máquina virtual clonada é preservada.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
+. Selecione um clone.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Clone dividido*.
+. Analise os detalhes na caixa de diálogo e selecione *Dividir*.
+. Quando a nova máquina virtual independente for criada, você poderá visualizá-la na página *Inventory*.
+
+
+
+
+== Remover um clone
+
+Você pode remover um clone de uma VM do VMware. Ao remover um clone de VM, o clone é removido do vCenter, e os datastores associados à VM são desmontados e excluídos do sistema de storage.
+
+Se uma política proteger o clone, tanto o clone quanto sua tarefa serão removidos.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Clonar*.
+. Selecione um clone.
+. Selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Remover*.
+. Na caixa de diálogo de confirmação de remoção, revise os detalhes da exclusão.
+. Selecione *Remove*.
+. Quando o clone é excluído, ele é removido da página *Inventário*.
+

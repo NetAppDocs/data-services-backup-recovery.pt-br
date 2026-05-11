@@ -56,8 +56,6 @@ sidebar:
       url: "/br-start-login.html"
     - title: Visualizar a saúde da proteção no Painel
       url: "/br-use-dashboard.html"
-    - title: Crie políticas para controlar backups e restaurações
-      url: "/br-use-policies-create.html"
     - title: Proteja cargas de trabalho de volume ONTAP
       entries:
       - title: Visão geral das cargas de trabalho de volume Protect ONTAP
@@ -109,6 +107,9 @@ sidebar:
         url: "/concept-start-prereq-snapcenter-import.html"
       - title: Descubra as cargas de trabalho do Microsoft SQL Server
         url: "/br-start-discover.html"
+      - title: Criar e gerenciar políticas de backup de cargas de trabalho do Microsoft
+          SQL Server
+        url: "/br-use-policies-mssql-create.html"
       - title: Fazer backup de cargas de trabalho do Microsoft SQL Server
         url: "/br-use-mssql-backup.html"
       - title: Restaurar cargas de trabalho do Microsoft SQL Server
@@ -129,8 +130,12 @@ sidebar:
         url: "/br-use-vmware-discovery.html"
       - title: Crie e gerencie grupos de proteção para cargas de trabalho do VMware
         url: "/br-use-vmware-protection-groups.html"
+      - title: Criar e gerenciar políticas de backup de cargas de trabalho do VMware
+        url: "/br-use-policies-vmware-create.html"
       - title: Fazer backup de cargas de trabalho do VMware
         url: "/br-use-vmware-backup.html"
+      - title: Clonar cargas de trabalho do VMware
+        url: "/br-use-vmware-clone.html"
       - title: Restaurar cargas de trabalho do VMware
         entries:
         - title: Restaurar máquinas virtuais VMware
@@ -153,6 +158,8 @@ sidebar:
         url: "/br-start-discover-kvm.html"
       - title: Crie e gerencie grupos de proteção para cargas de trabalho KVM
         url: "/br-use-kvm-protection-groups.html"
+      - title: Criar e gerenciar políticas de backup de cargas de trabalho KVM
+        url: "/br-use-policies-kvm-create.html"
       - title: Fazer backup de cargas de trabalho do KVM
         url: "/br-use-kvm-backup.html"
       - title: Restaurar cargas de trabalho do KVM
@@ -165,10 +172,16 @@ sidebar:
         url: "/br-start-discover-hyperv.html"
       - title: Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V
         url: "/br-use-hyperv-protection-groups.html"
+      - title: Criar e gerenciar políticas de backup de cargas de trabalho do Hyper-V
+        url: "/br-use-policies-hyper-v-create.html"
       - title: Fazer backup de cargas de trabalho do Hyper-V
         url: "/br-use-hyperv-backup.html"
       - title: Restaurar cargas de trabalho do Hyper-V
-        url: "/br-use-hyperv-restore.html"
+        entries:
+        - title: Restaurar cargas de trabalho do Hyper-V
+          url: "/br-use-hyperv-restore.html"
+        - title: Restaurar arquivos e pastas
+          url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Proteger cargas de trabalho do Oracle Database (Prévia)
       entries:
       - title: Visão geral da proteção de cargas de trabalho do Oracle Database
@@ -180,6 +193,9 @@ sidebar:
       - title: Criar e gerenciar grupos de proteção para cargas de trabalho do Oracle
           Database
         url: "/br-use-oracle-protection-groups.html"
+      - title: Criar e gerenciar políticas de backup de cargas de trabalho do Oracle
+          Database
+        url: "/br-use-policies-oracle-create.html"
       - title: Fazer backup das cargas de trabalho do Oracle Database
         url: "/br-use-oracle-backup.html"
       - title: Clonar cargas de trabalho do Oracle Database
@@ -198,6 +214,8 @@ sidebar:
         entries:
         - title: Adicionar e proteger aplicativos Kubernetes
           url: "/br-use-protect-kubernetes-applications.html"
+        - title: Criar e gerenciar políticas de backup de cargas de trabalho do Kubernetes
+          url: "/br-use-policies-kubernetes-create.html"
         - title: Faça backup de um aplicativo Kubernetes agora usando a interface
             web
           url: "/br-use-back-up-now-kubernetes-applications-web-ui.html"

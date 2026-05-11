@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: br-use-policies-kubernetes-create.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: No NetApp Backup and Recovery, crie suas próprias políticas que controlam a frequência do backup, o horário em que o backup é feito e o número de arquivos de backup que são retidos. 
+---
+= Crie e gerencie políticas de backup do Kubernetes em NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+No NetApp Backup and Recovery, crie suas próprias políticas de backup do Kubernetes que determinam a frequência do backup, o horário em que o backup é realizado e o número de arquivos de backup que são retidos.
+
+
+NOTE: Algumas dessas opções e seções de configuração não estão disponíveis para todas as cargas de trabalho.
+
+Se você importar recursos do SnapCenter, poderá encontrar algumas diferenças entre as políticas usadas no SnapCenter e aquelas usadas no NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferenças de política entre SnapCenter e NetApp Backup and Recovery"] .
+
+Você pode atingir os seguintes objetivos relacionados às políticas:
+
+* Criar uma política de instantâneo local
+* Crie uma política para replicação para armazenamento secundário
+* Crie uma política para configurações de armazenamento de objetos
+* Configurar configurações avançadas de política
+* Editar políticas
+* Excluir políticas
+
+
+
+
+== Ver políticas
+
+. No menu NetApp Backup and Recovery , selecione *Políticas*.
+. Analise os detalhes da política. Por exemplo:
++
+** *Carga de trabalho*: Exemplos incluem Microsoft SQL Server, ONTAP Volumes, VMware, KVM, Hyper-V, Oracle Database ou Kubernetes.
+** *Tipo de backup*: Exemplos incluem backup completo e backup de log.
+** *Arquitetura*: Exemplos incluem snapshot local, fan-out, cascateamento, disco para disco e disco para armazenamento de objetos.
+** *Recursos protegidos*: mostra quantos recursos do total de recursos naquela carga de trabalho estão protegidos.
+** *Proteção contra ransomware*: mostra se a política inclui bloqueio de snapshot no snapshot local, bloqueio de snapshot no armazenamento secundário ou bloqueio de DataLock no armazenamento de objetos.
+
+
+
+
+
+
+== Criar uma política
+
+Você pode criar políticas que controlam seus snapshots locais, replicações para armazenamento secundário e backups para armazenamento de objetos. Parte da sua estratégia 3-2-1 envolve a criação de um snapshot das instâncias, bancos de dados, aplicativos ou máquinas virtuais no sistema de armazenamento *primário*.
+
+*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Antes de começar
+Se você planeja replicar para armazenamento secundário e deseja usar o bloqueio de snapshot em snapshots locais ou em armazenamento secundário ONTAP remoto, primeiro precisa inicializar o relógio de conformidade ONTAP no nível do cluster.  Este é um requisito para habilitar o bloqueio de snapshot na política.
+
+Para obter instruções sobre como fazer isso, consulte https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["Inicializar o relógio de conformidade no ONTAP"^] .
+
+Para obter informações sobre bloqueio de instantâneo em geral, consulte https://docs.netapp.com/us-en/ontap/snaplock/snapshot-lock-concept.html["Bloqueio de instantâneo no ONTAP"^] .
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Políticas*.
+. Na página Políticas, selecione *Criar nova política*.
++
+A página de Policies é exibida.
+
+. Insira as informações na seção *Detalhes*:
++
+** Tipo de carga de trabalho: selecione *Kubernetes*.
+** Insira um nome de política.
+** Selecione um agente do Console na lista *Agente*.
+
+
+. Insira as informações na seção *Arquitetura de backup*. Selecione o fluxo de dados para o backup na lista:
++
+** *Fanout 3-2-1*: storage primário (disco) para storage secundário (disco) para nuvem (armazenamento de objetos). Cria múltiplas cópias de dados em diferentes sistemas de storage, como ONTAP para ONTAP e ONTAP para configurações de armazenamento de objetos. Isso pode ser um armazenamento de objetos de hyperscaler de nuvem ou um armazenamento de objetos privado. Melhor para proteção de dados ideal e recuperação de desastres. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
+** *Disco para disco*: storage primário (disco) para storage secundário (disco). A estratégia de proteção de dados ONTAP para ONTAP replica dados entre dois sistemas ONTAP para garantir alta disponibilidade e recuperação de desastres. Isso geralmente é feito usando SnapMirror, que oferece suporte tanto à replicação síncrona quanto à replicação assíncrona. Esse método mantém seus dados atualizados e disponíveis em diferentes locais, proporcionando forte proteção de dados.
+** *Armazenamento de disco para objeto*: Do storage primário (disco) para a nuvem (armazenamento de objetos). Isso replica dados de um sistema ONTAP para um sistema de storage de objetos. Isso pode ser um armazenamento de objetos de hyperscaler de nuvem ou um armazenamento de objetos privado, como o StorageGRID. Esse método é ideal para retenção de dados a longo prazo e arquivamento.
+** *Instantâneos locais*: Instantâneo local no volume selecionado. Isso cria cópias somente leitura, ponto no tempo, dos volumes de produção onde suas cargas de trabalho estão sendo executadas. Você pode usar instantâneos locais para se recuperar de perda de dados ou corrupção, bem como para criar backups para fins de recuperação de desastres.
+
+
+. Forneça informações para a seção *Configurações de instantâneo local*:
++
+** Selecione a opção *Adicionar agendamento* para selecionar o agendamento ou agendamentos de instantâneos.  Você pode ter no máximo 5 agendamentos.
+** *Frequência do instantâneo*: selecione a frequência: horária, diária, semanal, mensal ou anual.  A frequência anual não está disponível para cargas de trabalho do Kubernetes.
+** *Retenção de instantâneos*: insira o número de instantâneos a serem mantidos.
+** *Provedor*: selecione o provedor de armazenamento que hospeda os recursos do aplicativo Kubernetes e insira as credenciais para autenticar com o provedor.
+
+
+. Forneça informações para a seção *Configurações secundárias* (replicação para storage secundário):
++
+** *Backup*: Selecione a frequência: horária, diária, semanal, mensal ou anual.
+** *Destino do backup*: Selecione o sistema de destino no armazenamento secundário para o backup.
+** *Retenção*: Insira o número de snapshots a serem mantidos.
+** *Ativar bloqueio de instantâneos*: selecione se deseja ativar instantâneos à prova de violação.
+** *Período de bloqueio do snapshot*: insira o número de dias, meses ou anos que você deseja bloquear o snapshot.
+** *Transferência para o secundário*:
++
+*** A opção * Agendamento de transferência ONTAP - Em linha* é selecionada por padrão e indica que os instantâneos são transferidos para o sistema de armazenamento secundário imediatamente.  Você não precisa agendar o backup.
+*** Outras opções: Se você escolher uma transferência diferida, as transferências não serão imediatas e você poderá definir um cronograma.
+
+
+** * Relacionamento secundário do SnapMirror e do SnapVault SMAS*: use relacionamentos secundários do SnapMirror e do SnapVault SMAS para cargas de trabalho do SQL Server.
+** *Provedor*: selecione o provedor de armazenamento que hospeda os recursos do aplicativo Kubernetes e insira as credenciais para autenticar com o provedor.
+
+
+. Forneça informações para a seção *Configurações do armazenamento de objetos* (backup para o storage de objetos):
++
+
+NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura selecionada.
+
++
+** *Provedor*: Selecione o provedor para seu armazenamento de objetos e insira as credenciais nos campos apropriados (os campos de credenciais variam dependendo do provedor).
+** *Destino de backup*: Selecione um destino de armazenamento de objeto registrado.  Certifique-se de que o destino esteja acessível dentro do seu ambiente de backup.
+** *IPspace*: Selecione o IPspace a ser usado para as operações de backup.  Isso é útil se você tiver vários IPspaces e quiser controlar qual deles será usado para backups.
+** *Configurações de agendamento*: selecione o agendamento que foi definido para os instantâneos locais.  Você pode remover uma programação, mas não pode adicionar uma porque as programações são definidas de acordo com as programações de instantâneos locais.
+** *Cópias de retenção*: insira o número de instantâneos a serem mantidos.
+** *Executar em*: Escolha o agendamento de transferência ONTAP para fazer backup de dados no armazenamento de objetos.
+** *Coloque seus backups em camadas do armazenamento de objetos para o armazenamento de arquivamento*: se você optar por colocar os backups em camadas para o armazenamento de arquivamento (por exemplo, AWS Glacier), selecione a opção de camada e o número de dias para arquivamento.
+
+
+
+
+
+
+== Editar uma política
+
+Você pode editar a arquitetura de backup, a frequência de backup, a política de retenção e outras configurações de uma política. Para políticas de cargas de trabalho do Kubernetes, você pode editar apenas as configurações de agendamento e retenção.
+
+Você pode adicionar outro nível de proteção ao editar uma política, mas não pode remover um nível de proteção.  Por exemplo, se a política estiver protegendo apenas instantâneos locais, você poderá adicionar replicação ao armazenamento secundário ou backups ao armazenamento de objetos.  Se você tiver snapshots e replicação locais, poderá adicionar armazenamento de objetos.  No entanto, se você tiver snapshots locais, replicação e armazenamento de objetos, não poderá remover um desses níveis.
+
+Se estiver editando uma política que faz backup no armazenamento de objetos, você pode habilitar o arquivamento.
+
+Se você importou recursos do SnapCenter, poderá encontrar algumas diferenças entre as políticas usadas no SnapCenter e aquelas usadas no NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferenças de política entre SnapCenter e NetApp Backup and Recovery"] .
+
+.Função necessária do NetApp Console
+Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+
+.Passos
+. No NetApp Console, acesse *Proteção* > *Backup e Recuperação*.
+. Selecione a opção *Políticas*.
+. Selecione a política que você deseja editar.
+. Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Editar*.
+
+
+
+
+== Excluir uma política
+
+Você pode excluir uma política se não precisar mais dela.
+
+
+TIP: Não é possível excluir uma política associada a uma carga de trabalho.
+
+.Passos
+. No Console, vá para *Proteção* > *Backup e Recuperação*.
+. Selecione a opção *Políticas*.
+. Selecione a política que você deseja excluir.
+. Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Excluir*.
+. Confirme a ação e selecione *Excluir*.
+

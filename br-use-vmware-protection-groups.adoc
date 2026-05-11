@@ -27,37 +27,13 @@ Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
 
 
-== Crie um grupo de proteção
+== Grupos de proteção baseados em etiquetas
 
-Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção para fazer backup e restaurá-las juntas.
+Ao selecionar recursos para adicionar a um grupo de proteção, você pode organizá-los por armazenamentos de dados, máquinas virtuais ou por vSphere tags.
 
-*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+A proteção baseada em tags (utilizando vSphere tags) simplifica a administração de grupos de proteção no NetApp Backup and Recovery.
 
-.Passos
-. No menu NetApp Backup and Recovery , selecione *Inventário*.
-. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
-. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
-. Selecione a aba *Grupos de proteção*.
-. Selecione *Criar grupo de proteção*.
-. Forneça um nome para o grupo de proteção.
-. Selecione as VMs ou bancos de dados que você deseja incluir no grupo de proteção.
-. Selecione *Avançar*.
-. Selecione a política de proteção que deseja aplicar ao grupo de proteção.
-+
-Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política.  Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
-
-. Selecione *Avançar*.
-. Revise a configuração.
-. Selecione *Criar* para criar o grupo de proteção.
-
-
-
-
-== Crie um grupo de proteção usando vSphere tags
-
-Use a proteção baseada em tags para simplificar a administração de grupos de proteção no NetApp Backup and Recovery.
-
-Aqui estão os benefícios de usar a proteção baseada em tags:
+O uso da proteção baseada em tags apresenta algumas vantagens:
 
 * Ao adicionar uma tag vSphere a uma VM ou datastore no vCenter, esse objeto é automaticamente incluído no próximo backup de qualquer grupo de proteção de Backup and Recovery que faça referência a essa tag.
 * Ao remover uma vSphere tag de uma máquina virtual ou de um datastore, esse objeto é automaticamente excluído dos backups subsequentes para esse grupo de proteção baseado em tag.
@@ -65,51 +41,52 @@ Aqui estão os benefícios de usar a proteção baseada em tags:
 * Se uma máquina virtual for migrada para um datastore diferente, ela permanecerá protegida enquanto ainda possuir a tag que faz parte de um grupo de proteção baseado em tags.
 
 
+A associação de tags é resolvida a partir do vCenter no tempo de backup. Quaisquer alterações feitas nas tags no vCenter (adicionar/remover tags, excluir tags, adicionar/remover VMs) são refletidas automaticamente no próximo backup.
 
-IMPORTANT: A mistura de tipos de recursos (por exemplo, combinar tags com VMs ou datastores individuais no mesmo grupo de proteção) não é suportada.
+
+
+== Crie um grupo de proteção
+
+Crie um grupo de proteção para organizar os recursos que você deseja fazer backup e restaurar em conjunto.
+
+*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
 .Antes de começar
 * Certifique-se de que seu ambiente esteja usando versões compatíveis do VMware vSphere.
-* Em vCenter, certifique-se de que as máquinas virtuais e os armazenamentos de dados que você deseja proteger já estejam associados a uma ou mais vSphere tags.
+* Ao criar um grupo de proteção baseado em tags, certifique-se de que as máquinas virtuais e os datastores que você deseja proteger já estejam associados a uma ou mais vSphere tags em vCenter.
 
-
-
-NOTE: A associação de tags é resolvida a partir do vCenter no tempo de backup. Quaisquer alterações feitas nas tags no vCenter (adicionar/remover tags, excluir tags, adicionar/remover VMs) são refletidas automaticamente no próximo backup.
 
 .Passos
-. Sign in no NetApp Backup and Recovery.
-. Acesse a visualização *Grupos de Proteção*.
-. Selecione *Criar Grupo de Proteção*.
-. Em *Detalhes gerais > Nome do grupo de proteção*, insira um nome para o grupo de proteção.
-. Na seção *Detalhes gerais > Recursos do grupo de proteção*, selecione *Tags*.
-. Se vários vCenters estiverem configurados, selecione o vCenter apropriado na lista para exibir as tags disponíveis para esse vCenter.
-. Na seção *Selecionar tags*:
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione *Criar grupo de proteção*.
+. Forneça um nome para o grupo de proteção e escolha como deseja adicionar recursos ao grupo de proteção. Você pode adicionar recursos organizados por *Datastores*, *máquinas virtuais* ou *Tags*.
 +
-.. Do lado esquerdo:
+
+IMPORTANT: A mistura de tipos de recursos (por exemplo, combinar tags com VMs ou datastores individuais no mesmo grupo de proteção) não é suportada.
+
+. Na lista que aparece, selecione os recursos que deseja incluir no grupo de proteção.
 +
-... Selecione um vCenter da lista.
-... Selecione as caixas de seleção para uma ou mais etiquetas dentro desse vCenter.
+Você pode filtrar os recursos disponíveis na lista selecionando um vCenter específico ou datacenter. Os recursos selecionados aparecem na lista à direita.
 
-
-.. Do lado direito:
+. Ao terminar, selecione *Próximo*.
+. Escolha como o grupo de proteção lida com VMs cujos discos virtuais abrangem vários datastores:
 +
-... Analise a lista de tags selecionadas, agrupadas por vCenter.
-... Remova qualquer etiqueta que você não queira no grupo de proteção.
-
-
+** *Sempre excluir todos os datastores que abrangem vários domínios*: O grupo de proteção incluirá apenas os datastores que forem adicionados diretamente a ele, juntamente com o datastore primário de quaisquer VMs adicionadas diretamente ao grupo de proteção.
+** *Sempre inclua todos os datastores abrangidos*: O grupo de proteção incluirá todos os datastores abrangidos pelas VMs incluídas.
+** *Selecionar manualmente os datastores abrangentes a serem incluídos*: Se você selecionar esta opção, precisará escolher manualmente quais datastores abrangentes incluir no grupo de proteção a partir da lista exibida. Essa seleção é estática; você deve atualizar a lista de datastores abrangentes cada vez que novas VMs forem adicionadas ao grupo.
 
 
 . Selecione *Avançar*.
 . Selecione a política de proteção que deseja aplicar ao grupo de proteção.
 +
-Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política.  Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
+Para criar uma nova política, selecione *Criar nova política* e siga as instruções. Consulte link:br-use-policies-create.html["Criar políticas"] para obter mais informações.
 
 . Selecione *Avançar*.
-. Revise as configurações da tag na etapa *Revisar*.
+. Revise a configuração.
 . Selecione *Criar* para criar o grupo de proteção.
-+
-O novo grupo de proteção baseado em tags aparece na lista, indicado por um ícone de tag.
-
 
 
 
