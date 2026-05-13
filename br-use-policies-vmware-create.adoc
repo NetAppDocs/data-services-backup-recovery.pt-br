@@ -86,7 +86,7 @@ Para cargas de trabalho do VMware, isso configura o snapshot local nos datastore
 +
 Para cargas de trabalho do VMware, isso configura o snapshot local nos datastores ou VMwares no sistema de armazenamento primário e, em seguida, replica os dados do sistema de armazenamento em disco primário para o sistema de armazenamento em disco secundário.
 
-** *Armazenamento de disco para objeto*: Do storage primário (disco) para a nuvem (armazenamento de objetos). Isso replica dados de um sistema ONTAP para um sistema de storage de objetos. Isso pode ser um armazenamento de objetos de hyperscaler de nuvem ou um armazenamento de objetos privado, como o StorageGRID. Esse método é ideal para retenção de dados a longo prazo e arquivamento.
+** *Armazenamento de disco para objeto*: Do storage primário (disco) para a nuvem (armazenamento de objetos). Isso replica dados de um sistema ONTAP para um sistema de storage de objetos. Isso pode ser um storage de objetos de hyperscaler de nuvem ou um storage de objetos privado, como StorageGRID. Esse método é ideal para retenção de dados a longo prazo e arquivamento. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
 +
 Para cargas de trabalho VMWare, isso configura o snapshot local nos datastores ou VMs no primário e a replicação do armazenamento em disco primário para o armazenamento de objetos na nuvem.
 
