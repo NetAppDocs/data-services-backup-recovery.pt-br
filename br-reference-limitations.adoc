@@ -57,7 +57,7 @@ Não há limitação para volumes FlexVol - você pode selecionar todos os volum
 +
 Para obter uma explicação sobre esses tipos de criptografia, consultehttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Visão geral da configuração da criptografia de volume do NetApp"^] .
 
-* Se snapshots de retenção de longo prazo forem habilitados em um volume de destino do SnapMirror usando o agendamento na política do SnapMirror , os snapshots serão criados diretamente no volume de destino.  Nesse caso, você não deve fazer backup desses volumes usando o NetApp Backup and Recovery porque esses instantâneos não serão movidos para o armazenamento de objetos.
+* Não faça backup de volumes de destino do SnapMirror que tenham snapshots de retenção de longo prazo ativados. Esses snapshots são criados diretamente no destino e não serão movidos para storage de objetos. Essa restrição se aplica mesmo se a política do SnapMirror for alterada posteriormente para desativar a retenção de longo prazo.
 * Quando você cria ou edita uma política de backup quando nenhum volume é atribuído à política, o número de backups retidos pode ser no máximo 1018.  Depois de atribuir volumes à política, você pode editá-la para criar até 4.000 backups.
 * Ao fazer backup de volumes de proteção de dados (DP):
 +

@@ -415,7 +415,6 @@
   <block id="baab0bf328a764b384d4ecab2375f4fa" category="list-text">Ao fazer backup de dados, o NetApp Backup and Recovery não manterá o NetApp Volume Encryption (NVE).  Isso significa que os dados criptografados no volume NVE serão descriptografados enquanto os dados estiverem sendo transferidos para o destino e a criptografia não será mantida.</block>
   <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">Visão geral da configuração da criptografia de volume do NetApp</block>
   <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">Para obter uma explicação sobre esses tipos de criptografia, consulte<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block> .</block>
-  <block id="d13da1ef1c5dbdc58b74265b9363e815" category="list-text">Se snapshots de retenção de longo prazo forem habilitados em um volume de destino do SnapMirror usando o agendamento na política do SnapMirror , os snapshots serão criados diretamente no volume de destino.  Nesse caso, você não deve fazer backup desses volumes usando o NetApp Backup and Recovery porque esses instantâneos não serão movidos para o armazenamento de objetos.</block>
   <block id="3a3d9f6ee5fa05f3aa042e0258eebf58" category="list-text">Quando você cria ou edita uma política de backup quando nenhum volume é atribuído à política, o número de backups retidos pode ser no máximo 1018.  Depois de atribuir volumes à política, você pode editá-la para criar até 4.000 backups.</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">Ao fazer backup de volumes de proteção de dados (DP):</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">Relacionamentos com os rótulos do SnapMirror<block ref="b17c9a947d4e38d7975718380fab6b7a" prefix=" " category="inline-code"></block> e<block ref="02d69a40f5f4cdc817176fabd085b511" prefix=" " category="inline-code"></block> não será feito backup na nuvem.</block>
@@ -4436,7 +4435,6 @@
   <block id="9255ea030351a8ee8402a7708baf0223" category="list-text">Expanda a seção *Verificação de ransomware*.</block>
   <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">19 de janeiro de 2026</block>
   <block id="88009dbb638181324526010a9eff3c19" category="sidebar">Restaurar máquinas virtuais VMware</block>
-  <block id="9b7e5fddcf3e2a7a93fe6669de87fbc2" category="sidebar">Restaurar discos virtuais específicos</block>
   <block id="3a4d751e404219df1dc6de0a13c8db55" category="sidebar">Fluxo de trabalho, pré-requisitos e limitações</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">O sistema operacional convidado Windows deve estar executando o Windows Server 2008 R2 ou posterior.</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido.</block>
@@ -5055,7 +5053,6 @@
   <block id="6cbd33d5e36fc1cca8f70b65396de2b0" category="admonition">A mistura de tipos de recursos (por exemplo, combinar tags com VMs ou datastores individuais no mesmo grupo de proteção) não é suportada.</block>
   <block id="6ad4cf5fcdb7c67f52ade5e3f8eeb6ad" category="list-text">Certifique-se de que seu ambiente esteja usando versões compatíveis do VMware vSphere.</block>
   <block id="735df7f2e37c9dd264e94c878ea7d619" category="admonition">A associação de tags é resolvida a partir do vCenter no tempo de backup. Quaisquer alterações feitas nas tags no vCenter (adicionar/remover tags, excluir tags, adicionar/remover VMs) são refletidas automaticamente no próximo backup.</block>
-  <block id="a22504a40a8afdfa908ab0544ecc4178" category="doc">Restaurar arquivos e pastas de VMDKs</block>
   <block id="32de0b1da4ab4b8f52bfe3ce1811b043" category="list-text">Analise os pré-requisitos e as limitações em <block ref="538cee55729c515ab8aab7ca0ccd040a" category="inline-link-macro-rx"></block>.</block>
   <block id="7b7824cad48305f033e7a7b04105000a" category="paragraph">O desempenho da restauração de arquivos ou pastas depende de dois fatores: o tamanho dos arquivos ou pastas a serem restaurados; e a quantidade de arquivos ou pastas a serem restaurados. Restaurar um grande número de arquivos pequenos pode levar mais tempo do que o previsto em comparação com a restauração de um pequeno número de arquivos grandes, caso o conjunto de dados a ser restaurado tenha o mesmo tamanho.</block>
   <block id="ec4a88c3778360f79e6ff325a92a3d17" category="paragraph">É possível restaurar para uma máquina virtual remota (conhecido como restauração entre máquinas virtuais), mas os sistemas operacionais de origem e destino devem ser os mesmos.</block>
@@ -5549,4 +5546,10 @@
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho do Hyper-V</block>
   <block id="4cd8801cdee679bb024e188753022546" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho do Oracle Database</block>
   <block id="9bb7a57e0f15167076e59ed085570cb6" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho do Kubernetes</block>
+  <block id="2a09eaa4306f964591fbfdee1bad3329" category="list-text">Não faça backup de volumes de destino do SnapMirror que tenham snapshots de retenção de longo prazo ativados. Esses snapshots são criados diretamente no destino e não serão movidos para storage de objetos. Essa restrição se aplica mesmo se a política do SnapMirror for alterada posteriormente para desativar a retenção de longo prazo.</block>
+  <block id="cb7e1594adc03f9d88413ab9198e9c43" category="admonition">Ao criar um contêiner para usar como destino do backup no Azure, certifique-se de que o contêiner que você criar tenha o mesmo nome que a conta de armazenamento do Azure.</block>
+  <block id="76382b5bdb7a0a65db2779738439703c" category="sidebar">Restaurar discos virtuais do VMware</block>
+  <block id="160bf2703f3a2319b3965b541340256a" category="sidebar">Restaurar arquivos e pastas do VMware</block>
+  <block id="b5c91904decad9b84ae436053f327229" category="sidebar">Restaurar arquivos e pastas do VMware a partir de VMDKs</block>
+  <block id="d68e9c9c6cd6479fbac7751c3f91f5a3" category="sidebar">Restaurar arquivos e pastas do Hyper-V</block>
 </blocks>

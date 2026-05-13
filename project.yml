@@ -140,13 +140,13 @@ sidebar:
         entries:
         - title: Restaurar máquinas virtuais VMware
           url: "/br-use-vmware-restore.html"
-        - title: Restaurar discos virtuais específicos
+        - title: Restaurar discos virtuais do VMware
           url: "/br-use-vmware-restore-vmdks-from-backups.html"
-        - title: Restaurar arquivos e pastas
+        - title: Restaurar arquivos e pastas do VMware
           entries:
           - title: Fluxo de trabalho, pré-requisitos e limitações
             url: "/br-use-vmware-restore-guest-files-and-folders-overview.html"
-          - title: Restaurar arquivos e pastas de VMDKs
+          - title: Restaurar arquivos e pastas do VMware a partir de VMDKs
             url: "/br-use-vmware-restore-guest-files-and-folders-from-vmdks.html"
           - title: Solucionar problemas de restauração de arquivos e pastas
             url: "/br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html"
@@ -180,7 +180,7 @@ sidebar:
         entries:
         - title: Restaurar cargas de trabalho do Hyper-V
           url: "/br-use-hyperv-restore.html"
-        - title: Restaurar arquivos e pastas
+        - title: Restaurar arquivos e pastas do Hyper-V
           url: "/br-use-hyper-v-restore-guest-files-and-folders.html"
     - title: Proteger cargas de trabalho do Oracle Database (Prévia)
       entries:
