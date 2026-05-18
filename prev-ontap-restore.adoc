@@ -20,7 +20,7 @@ Os backups dos dados de volume do seu ONTAP são armazenados como snapshots, em 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
 * Você pode restaurar um *volume* (como um novo volume) para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
-* Você pode restaurar uma *pasta* para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta de nuvem ou para um volume em um sistema ONTAP local.
+* Você pode restaurar uma *pasta* de snapshots replicados ou de storage de objetos para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta na nuvem ou para um volume em um sistema ONTAP local. A restauração de pastas a partir de snapshots locais não é suportada.
 * Você pode restaurar *arquivos* para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta de nuvem ou para um volume em um sistema ONTAP local.
 
 
