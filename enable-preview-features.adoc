@@ -116,9 +116,13 @@ NOTE: Para desativar um recurso de pré-visualização, siga os mesmos passos, m
 
 
 
-== Desative a indexação para todos os volumes que pertencem a uma storage VM
+== Desativar indexação para volumes
 
-Siga estes passos para desativar a indexação de todos os volumes pertencentes a uma determinada storage VM, em vez de desativar a indexação para cada volume individualmente.
+Desative a indexação para volumes específicos ou para todos os volumes pertencentes a uma ou mais storage VMs usando as seguintes flags de opção:
+
+* `svms-not-to-index`: Uma lista separada por vírgulas de máquinas virtuais de armazenamento cujos volumes não devem ser indexados
+* `volumes-not-to-index`: Uma lista de volumes individuais, separados por vírgulas, que não devem ser indexados
+
 
 .Passos
 . Utilize SSH para fazer login no agente do console.
@@ -162,13 +166,14 @@ O ponto de montagem difere entre implantações em nuvem e implantações privad
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Crie um arquivo nomeado  `production-customer.json` com o seguinte conteúdo. Substitua os nomes das VMs de armazenamento no exemplo pelos nomes das VMs de armazenamento em seu ambiente:
+. Crie um arquivo chamado  `production-customer.json` e personalize os nomes da storage VM e dos volumes para corresponder ao seu ambiente:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3"
+    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
+    "volumes-not-to-index": "volume_1,volume_2,volume_3"
   }
 }
 ----
