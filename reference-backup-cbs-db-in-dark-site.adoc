@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, Console agent 
-summary: 'Ao usar o NetApp Backup and Recovery em um site sem acesso à Internet, conhecido como "modo privado", os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID ou ONTAP S3 onde seus backups estão sendo armazenados.  Se você tiver um problema com o sistema host do agente do Console no futuro, poderá implantar um novo agente do Console e restaurar os dados críticos do NetApp Backup and Recovery .' 
+summary: 'No modo privado (sem acesso à internet), NetApp Backup and Recovery armazena seus dados de configuração no mesmo bucket StorageGRID ou ONTAP S3 usado para seus backups. Se o sistema host do agente do Console falhar, você pode implantar um novo agente do Console e restaurar esses dados.' 
 ---
 = Restaurar dados de configuração do NetApp Backup and Recovery em um site escuro
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Ao usar o NetApp Backup and Recovery em um site sem acesso à Internet
 
 
 [role="lead"]
-Ao usar o NetApp Backup and Recovery em um site sem acesso à Internet, conhecido como _modo privado_, os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID ou ONTAP S3 onde seus backups estão sendo armazenados.  Se você tiver um problema com o sistema host do agente do Console, poderá implantar um novo agente do Console e restaurar os dados críticos do NetApp Backup and Recovery .
+No modo privado (sem acesso à internet), NetApp Backup and Recovery armazena seus dados de configuração no mesmo bucket StorageGRID ou ONTAP S3 usado para seus backups. Se o sistema host do agente do Console falhar, você pode implantar um novo agente do Console e restaurar esses dados.
 
 Você também pode seguir estas etapas para substituir o agente do Console e restaurar os dados de configuração armazenados nele ao usar o NetApp Backup and Recovery no _modo padrão_ localmente, quando nenhuma conta de nuvem estiver envolvida (por exemplo, ao usar NetApp StorageGrid como destino de backup).
 
