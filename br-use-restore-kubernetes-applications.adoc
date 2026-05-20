@@ -60,10 +60,6 @@ O assistente de restauração de dados é iniciado e a página _Configurações 
 . Escolha o local de origem do qual restaurar.
 . Escolha o cluster de destino na lista *Cluster*.
 . Escolha restaurar nos namespaces originais ou em novos namespaces.
-+
-
-NOTE: A restauração in-place (restauração para o namespace e cluster originais) de aplicativos baseados em máquina virtual a partir de snapshots locais não é suportada atualmente.
-
 . Se você optar por restaurar para novos namespaces, insira o namespace ou namespaces de destino a serem usados.
 . Selecione *Avançar*.
 +
