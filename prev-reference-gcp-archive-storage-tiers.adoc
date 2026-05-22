@@ -16,12 +16,6 @@ summary: O NetApp Backup and Recovery oferece suporte a uma classe de armazename
 [role="lead"]
 O NetApp Backup and Recovery oferece suporte a uma classe de armazenamento de arquivamento do Google e à maioria das regiões.
 
-[]
-====
-
-NOTE: Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
-
-====
 
 
 == Classes de armazenamento de arquivamento do Google com suporte para NetApp Backup and Recovery

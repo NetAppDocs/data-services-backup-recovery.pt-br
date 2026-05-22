@@ -16,12 +16,6 @@ summary: O NetApp Backup and Recovery oferece suporte a uma camada de acesso de 
 [role="lead"]
 O NetApp Backup and Recovery oferece suporte a uma camada de acesso de arquivamento do Azure e à maioria das regiões.
 
-[]
-====
-
-NOTE: Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Mudar para a interface de usuário anterior do NetApp Backup and Recovery"] .
-
-====
 
 
 == Camadas de acesso do Azure Blob com suporte para NetApp Backup and Recovery
