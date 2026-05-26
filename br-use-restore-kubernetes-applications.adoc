@@ -151,7 +151,7 @@ NOTE: Modificar PersistentVolumeClaims e namespaces não é suportado atualmente
 .. Selecione um modelo na lista *Modelos* para aplicar rapidamente as configurações de modificadores que você usa com frequência. Essa lista inclui modelos predefinidos para cenários comuns, bem como modelos personalizados que você criou.
 +
 
-NOTE: Crie modelos de transformação de recursos na área global link:br-start-configure.html#create-a-resource-modifier-template["Configurações"^].
+NOTE: Crie modelos de transformação de recursos na área global link:br-start-configure.html#create-a-resource-transformation-template["Configurações"^].
 
 .. Especifique qual recurso você deseja modificar, inserindo o grupo de recursos, a versão, o tipo e o nome.
 .. Especifique a operação que deseja executar no recurso selecionando uma operação na lista *Operation*.

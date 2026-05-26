@@ -343,14 +343,9 @@
   <block id="def5bb1c4fff047ce52153ac1f2ef9b5" category="list-text">Tipos de pool de armazenamento diferentes de NetFS (somente NetFS é suportado)</block>
   <block id="203b3a4b594fb28b853f0cb7e5561c26" category="list-text">Backup offline</block>
   <block id="11750133b5aeccdb05ec0c5b1027ace4" category="doc">Limitações conhecidas do NetApp Backup and Recovery para cargas de trabalho VMware</block>
-  <block id="eace16d66cdd93ad876c620db7456077" category="list-text">Monte</block>
-  <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">Desmontar</block>
   <block id="25e66e51214e8342374fa891a42988b3" category="list-text">Restaurar para local alternativo</block>
   <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">Suporte vVol</block>
-  <block id="2cc658d562a11cd1528c2219f2d25da7" category="list-text">Suporte NVMe</block>
   <block id="98dc7ecfe4c87955d5fb8b98b895eac7" category="list-text">Integração de e-mail</block>
-  <block id="7c007efb4505aa1063c750565e9e0eac" category="list-text">Editar política</block>
-  <block id="2af86af91c3987a4d2353d4ec7912d76" category="list-text">Editar grupo de proteção</block>
   <block id="eaaed5c467c733cb37141573cd1396cf" category="doc">Limitações conhecidas do NetApp Backup and Recovery para cargas de trabalho do Microsoft SQL Server</block>
   <block id="84c88b39fd4f46203da512886dfca56b" category="section-title">Suporte ao ciclo de vida do clone</block>
   <block id="3c068270aa0287f7c64a3c9c3a4f89a7" category="list-text">A clonagem do armazenamento de objetos não é suportada.</block>
@@ -877,8 +872,6 @@
   <block id="9772979b1b90e72fc3981d222d55243a" category="paragraph">Você pode fazer backup de cargas de trabalho do Hyper-V no Amazon Web Services S3 ou StorageGRID e restaurar cargas de trabalho do Hyper-V em um host Hyper-V local.</block>
   <block id="b7bf580752a61d71227184a60f0fbfd3" category="paragraph">Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:</block>
   <block id="79c28420811a3b277df19fdd38cd10e0" category="list-text">Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.</block>
-  <block id="532ee325506687dccb969b2e88d92b32" category="inline-link-macro">Mudar para a interface de usuário anterior do NetApp Backup and Recovery</block>
-  <block id="9847581c7ebe97c62f71ab1d90ed1696" category="admonition">Para alternar entre as versões da interface de usuário do NetApp Backup and Recovery , consulte<block ref="3a517a59babeb4a2a4c0dc21bafb9259" category="inline-link-macro-rx"></block> .</block>
   <block id="124a0ee1a6efcb80b27fc999fe308e62" category="paragraph">Você pode usar o NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do Hyper-V:</block>
   <block id="e853aa4eb98908dd4b95a8cc80d9972f" category="list-text"><block ref="e853aa4eb98908dd4b95a8cc80d9972f" category="inline-link-macro-rx"></block></block>
   <block id="17eed7efdf891efe01a3f9078fc5227d" category="inline-link-macro">Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V</block>
@@ -1573,7 +1566,6 @@
   <block id="812f9cbafb4aa2378e7470b20baa1fef" category="list-text">Opcionalmente, selecione *Pesquisar* para encontrar os recursos com base nos seus critérios de pesquisa.</block>
   <block id="aa49cc3a36d2c16ec191533800daa634" category="list-text">Se a lista contiver os recursos que você deseja proteger, selecione *Avançar*.</block>
   <block id="4d3ca3588667d04ddbd4f318cdd7677e" category="inline-link-macro">adicionar uma política de proteção</block>
-  <block id="2769be0838f5e6f63e01200eeeec1910" category="list-text">Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você pode<block ref="99c823f28a98717f81cda4eb0c448db5" category="inline-link-macro-rx"></block> mais tarde.</block>
   <block id="4049c9e3b9c424f5991c5f917ad92c40" category="inline-link-macro">modelo de gancho de execução</block>
   <block id="5e97a71c79e2f24deabf91daa3d20cd1" category="list-text">Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Para habilitar prescrições ou pós-escritos, você deve ter criado pelo menos um<block ref="3059f3d40a47ddab4d322199b8601d95" category="inline-link-macro-rx"></block> .</block>
   <block id="9f77aac915c7dddb04d022bff72e881d" category="paragraph">O aplicativo é criado e aparece na lista de aplicativos na guia *Aplicativos* do inventário do Kubernetes.  O NetApp Console permite a proteção do aplicativo com base em suas configurações, e você pode monitorar o progresso na área *Monitoramento* de backup e recuperação.</block>
@@ -5354,7 +5346,6 @@
   <block id="4068d5ec1a7b4b267d864b4ad09e26cf" category="list-text">Ative a opção *Transformação de recursos* para fazer alterações no modificador.</block>
   <block id="58277b3a38eb38eb305ae4faa19d846d" category="list-text">Selecione um modelo na lista *Modelos* para aplicar rapidamente as configurações de modificadores que você usa com frequência. Essa lista inclui modelos predefinidos para cenários comuns, bem como modelos personalizados que você criou.</block>
   <block id="f4f70727dc34561dfde1a3c529b6205c" category="inline-link-macro">Configurações</block>
-  <block id="632317b2bb237c1d7d24b46218476569" category="admonition">Crie modelos de transformação de recursos na área global <block ref="676a0eaa3ab155e3d0da7696107f049f" category="inline-link-macro-rx"></block>.</block>
   <block id="4f92a8032a0def18d5e7cfbe7fc6b465" category="list-text">Especifique qual recurso você deseja modificar, inserindo o grupo de recursos, a versão, o tipo e o nome.</block>
   <block id="0be96bf87a216fa4424d9b22e1624c4c" category="list-text">Especifique a operação que deseja executar no recurso selecionando uma operação na lista *Operation*.</block>
   <block id="526aad7c01abce8bd37b72aea1adf9a2" category="list-text">Insira um caminho JSON para a chave específica que você deseja alterar.</block>
@@ -5558,4 +5549,6 @@
   <block id="54f8a7826ae5101b3374158dadb22dbe" category="list-text">*Atualize Trident Protect a partir do Backup e Recovery*: Se o seu cluster Kubernetes estiver executando Trident Protect 26.05 ou mais recente, agora você pode atualizar Trident Protect diretamente a partir do Backup e Recovery.</block>
   <block id="482d8dda04ea30da4fa480c529cb09b0" category="list-text">*Trident Protect 26.05.1*: Esta versão inclui Trident Protect 26.05.1.</block>
   <block id="d0426b89e832dc9c7bd7771552d69499" category="list-text">*Restauração in-place para aplicativos baseados em máquinas virtuais*: agora você pode restaurar aplicativos baseados em máquinas virtuais para o namespace e cluster originais.</block>
+  <block id="b53801e3c4b30277c5f2975ffed7720c" category="list-text">Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova política. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você pode <block ref="ee6916d2984f9ce63f3c3b8b1b4f14f9" category="inline-link-macro-rx"></block> depois.</block>
+  <block id="fefcfa5dbc8a28e96b9d098440cd7d4a" category="admonition">Crie modelos de transformação de recursos na área global <block ref="3ce10431a19a41e956e68fb70b49b83e" category="inline-link-macro-rx"></block>.</block>
 </blocks>

@@ -58,7 +58,7 @@ NOTE: O Backup and Recovery não armazena os parâmetros ou resultados da pesqui
 
 . Backup and Recovery exibe uma lista de recursos que correspondem aos seus critérios de pesquisa.
 . Se a lista contiver os recursos que você deseja proteger, selecione *Avançar*.
-. Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você podelink:br-use-policies-create.html#create-a-policy["adicionar uma política de proteção"] mais tarde.
+. Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova política. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você pode link:br-use-policies-kubernetes-create.html#create-a-policy["adicionar uma política de proteção"] depois.
 . Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Para habilitar prescrições ou pós-escritos, você deve ter criado pelo menos umlink:br-use-manage-execution-hook-templates.html["modelo de gancho de execução"] .
 . Selecione *Criar*.
 
@@ -86,7 +86,7 @@ NOTE: Se você selecionar VMs da lista, a definição do aplicativo será estát
 As máquinas virtuais selecionadas aparecem na lista à direita.
 
 . Se a lista contiver as VMs que você deseja proteger, selecione *Next*.
-. Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você podelink:br-use-policies-create.html#create-a-policy["adicionar uma política de proteção"] mais tarde.
+. Opcionalmente, na área *Política*, escolha uma política de proteção existente para proteger o aplicativo ou crie uma nova política. Se você não selecionar uma política, o aplicativo será criado sem uma política de proteção. Você pode link:br-use-policies-kubernetes-create.html#create-a-policy["adicionar uma política de proteção"] depois.
 . Na área *Prescrições e postscripts*, habilite e configure quaisquer ganchos de execução de prescrições ou postscripts que você deseja executar antes ou depois das operações de backup.  Para habilitar prescrições ou pós-escritos, você deve ter criado pelo menos umlink:br-use-manage-execution-hook-templates.html["modelo de gancho de execução"] .
 . Selecione *Criar*.
 
