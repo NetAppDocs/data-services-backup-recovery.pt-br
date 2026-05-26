@@ -18,12 +18,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 As seguintes ações não são suportadas em cargas de trabalho VMware no NetApp Backup and Recovery:
 
-* Monte
-* Desmontar
 * Suporte vVol
-* Suporte NVMe
 * Integração de e-mail
-* Editar política
-* Editar grupo de proteção
 * Suporte ao controle de acesso baseado em função (RBAC)
 
