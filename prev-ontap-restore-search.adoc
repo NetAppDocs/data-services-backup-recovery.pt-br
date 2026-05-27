@@ -42,6 +42,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restaura�
 * Se o arquivo de backup no armazenamento de objetos residir no armazenamento de arquivamento, a restauração em nível de pasta será suportada somente se a versão do ONTAP for 9.13.1 ou superior.  Se estiver usando uma versão anterior do ONTAP, você pode restaurar a pasta a partir de um arquivo de backup mais recente que não foi arquivado ou pode restaurar o volume inteiro a partir do backup arquivado e então acessar a pasta e os arquivos necessários.
 * A prioridade de restauração "Alta" não é suportada ao restaurar dados do armazenamento de arquivamento do Azure para sistemas StorageGRID .
 * Atualmente, a restauração de pastas não é suportada em volumes no armazenamento de objetos ONTAP S3.
+* Ao restaurar um volume com SnapLock habilitado, o volume restaurado mantém a proteção SnapLock somente se o armazenamento de destino tiver WORM habilitado. Se você restaurar para um destino que não seja WORM, o status SnapLock será removido do volume restaurado.
 
 
 ====

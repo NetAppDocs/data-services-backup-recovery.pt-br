@@ -17,7 +17,7 @@ summary: Você pode usar a função Pesquisar e Restaurar para recuperar volumes
 Os backups dos dados de volume do seu ONTAP são armazenados como snapshots, em volumes replicados ou em armazenamento de objetos.  Você pode restaurar dados de qualquer um desses locais em um ponto específico no tempo.  Com o NetApp Backup and Recovery, você pode restaurar um volume inteiro, uma pasta ou arquivos individuais conforme necessário.
 
 
-NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
+NOTE: Ao restaurar um volume com SnapLock habilitado, o volume restaurado mantém a proteção SnapLock somente se o armazenamento de destino tiver WORM habilitado. Se você restaurar para um destino que não seja WORM, o status SnapLock será removido do volume restaurado.
 
 * Você pode restaurar um *volume* (como um novo volume) para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
 * Você pode restaurar uma *pasta* de snapshots replicados ou de storage de objetos para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta na nuvem ou para um volume em um sistema ONTAP local. A restauração de pastas a partir de snapshots locais não é suportada.
