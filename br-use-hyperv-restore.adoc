@@ -24,9 +24,6 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 * Restaurar de um backup de storage de objetos (somente para o local original)
 
 
-
-NOTE: A restauração a partir de backup de armazenamento de objetos não é compatível com máquinas virtuais que residem em armazenamento SAN.
-
 .Restaurar para estes pontos
 Você pode restaurar dados para estes pontos:
 

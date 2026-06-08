@@ -4,7 +4,7 @@ permalink: concept-start-prereq.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
 summary: Comece a usar o NetApp Backup and Recovery verificando a prontidão do seu ambiente operacional, do agente do Console e da conta do Console.  Para usar o NetApp Backup and Recovery, você precisará destes pré-requisitos. 
 ---
-= Pré-requisitos do NetApp Backup and Recovery
+= NetApp Backup and Recovery requisitos
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,22 +14,75 @@ summary: Comece a usar o NetApp Backup and Recovery verificando a prontidão do 
 
 
 [role="lead"]
-Comece a usar o NetApp Backup and Recovery verificando a prontidão do seu ambiente operacional, do agente do NetApp Console e da conta do NetApp Console .  Para usar o NetApp Backup and Recovery, você precisará destes pré-requisitos.
+Antes de começar a usar NetApp Backup and Recovery, certifique-se de que seu NetApp Console e ambiente operacional atendam aos seguintes requisitos.
 
 
 
-== Pré-requisito para ONTAP 9.8 e posterior
+== Prepare o NetApp Console
 
-Uma licença ONTAP One deve ser habilitada na instância ONTAP local.
+Você acessa o NetApp Backup and Recovery por meio do NetApp Console. Para preparar o Console para o Backup and Recovery, você deve:
+
+* Adicionar um agente de Console
+* Adicione pelo menos um sistema de storage
+* Configurar uma organização do Console e funções de usuário
+
+
+Você precisa da função de administrador da organização ou superadministrador no NetApp Console para concluir esta preparação.
+
+Para saber mais sobre NetApp Console, consulte  https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Console para gerenciamento de storage unificado"^].
 
 
 
-== Pré-requisitos para backups no armazenamento de objetos
+=== Conclua a configuração inicial do NetApp Console
 
-Para usar o armazenamento de objetos como destinos de backup, você precisa de uma conta no AWS S3, Microsoft Azure Blob, StorageGRID ou ONTAP e as permissões de acesso apropriadas configuradas.
+Conclua a configuração inicial do NetApp Console, caso ainda não o tenha feito.
 
-* link:prev-ontap-protect-overview.html["Proteja seus dados de volume ONTAP"]
+https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["Fluxo de trabalho de primeiros passos para NetApp Console (aplicativo SaaS)"^]
 
+
+
+=== Implantar um agente de Console
+
+Um agente do Console é um componente de software leve que você instala em sua rede para conectar sua infraestrutura de storage ao NetApp Console. Ele permite orquestração avançada de storage, serviços de dados e integração segura com a nuvem.
+
+https://docs.netapp.com/us-en/console-setup-admin/concept-agents.html["Saiba mais sobre os agentes do Console"^] https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Implantar um agente de Console"^]
+
+
+
+=== Adicione um sistema de storage
+
+Antes de poder proteger cargas de trabalho no NetApp Backup and Recovery, você precisa adicionar um sistema de storage ONTAP ao NetApp Console.
+
+https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html["Descubra clusters ONTAP locais no NetApp Console"^]
+
+
+
+=== Configurar uma organização e funções de usuário
+
+Aprenda sobre organizações, projetos e funções de usuário e, em seguida, configure os usuários com as permissões apropriadas necessárias para executar suas tarefas.
+
+Consulte  https://docs.netapp.com/us-en/console-setup-admin/task-iam-manage-members-permissions.html["Adicionar usuários a uma organização do NetApp Console"] para obter informações sobre como usar uma organização e projetos para controlar o acesso a recursos.
+
+Consulte  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de NetApp Backup and Recovery no ​​NetApp Console"] para obter detalhes sobre as funções e permissões necessárias para executar operações em NetApp Backup and Recovery.
+
+
+
+== Requisitos para backups em storage de objetos
+
+Para usar storage de objetos como destino de backup, você precisa de uma conta no AWS S3, Google Cloud Storage, Microsoft Azure Blob, StorageGRID ou ONTAP e das permissões de acesso apropriadas configuradas.
+
+
+
+== Requisitos para proteger cargas de trabalho de volume do ONTAP
+
+Para usar NetApp Backup and Recovery para cargas de trabalho de volume ONTAP, você precisa dos seguintes pré-requisitos de sistema host, espaço e dimensionamento.
+
+* É necessário o ONTAP 9.8 ou posterior.
+* Uma licença ONTAP One deve estar habilitada na instância ONTAP local.
+* Fazer backup ou restaurar para storage de objetos compatível com S3 requer ONTAP 9.17.1 ou posterior.
+
+
+Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte link:prev-ontap-protect-overview.html["Proteja seus dados de volume ONTAP"].
 
 
 
@@ -80,13 +133,38 @@ Aloque espaço em disco suficiente e monitore o consumo de armazenamento pela pa
 Para obter as informações mais recentes sobre as versões suportadas, consulte o https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["Ferramenta de Matriz de Interoperabilidade da NetApp"^] .
 
 |===
+[cols="33,66a"]
+|===
+| Host do banco de dados | Storage suportado 
+
+
+| Servidor físico  a| 
+* LUNs apresentadas via Fibre Channel
+* LUNs apresentadas via iSCSI
+
+
+
+
+| VMware VM  a| 
+* LUNs iSCSI conectados diretamente ao sistema convidado pelo iniciador iSCSI
+* Sistemas de Arquivos de Máquina Virtual (VMFS)
+* Datastores NFS
+
+
+
+
+| Máquina virtual Hyper-V  a| 
+LUNs iSCSI conectados diretamente ao sistema convidado pelo iniciador iSCSI
+
+
+NOTE: A proteção de bancos de dados armazenados em discos pass-through ou arquivos VHD/VHDX provisionados no NetApp storage não é suportada.
+
+|===
 
 
 == Requisitos para proteger cargas de trabalho do VMware
 
 Você precisa de requisitos específicos para descobrir e proteger suas cargas de trabalho do VMware.
-
-*Suporte de software*
 
 |===
 | Requisito | Suportado 
@@ -117,8 +195,6 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 
 |===
-*Requisitos de conexão e porta para proteger cargas de trabalho do VMware*
-
 [cols="33,66a"]
 |===
 | Tipo de porta | Porta pré-configurada 
@@ -135,8 +211,7 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 
 |===
-*Requisitos de controle de acesso baseado em função (RBAC) para proteger cargas de trabalho do VMware*
-
+.Requisitos de controle de acesso baseado em funções (RBAC) para proteger cargas de trabalho do VMware
 Sua conta de usuário do Console precisa ter a função de superadministrador de NetApp Backup and Recovery para funcionar com cargas de trabalho do VMware.
 
 Para obter mais informações sobre as funções de backup e recuperação, consulte  https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de backup e recuperação no NetApp Console"].
@@ -231,7 +306,7 @@ Garanta que seu ambiente atenda aos requisitos específicos para descobrir e pro
 
 Você precisa de requisitos específicos para descobrir recursos do Kubernetes e proteger seus aplicativos Kubernetes.
 
-Para requisitos do NetApp Console , consulte<<No NetApp Console>> .
+Para requisitos do NetApp Console , consulte<<In NetApp Console>> .
 
 
 NOTE: NetApp recomenda fortemente atribuir um endereço IP estático ao agente do Console que você usa para cargas de trabalho do Kubernetes para evitar problemas caso o endereço IP do agente seja alterado.
@@ -251,8 +326,6 @@ NOTE: NetApp recomenda fortemente atribuir um endereço IP estático ao agente d
 == Requisitos para proteger cargas de trabalho do Hyper-V
 
 Certifique-se de que sua instância do Hyper-V atenda aos requisitos específicos para descobrir e proteger máquinas virtuais.
-
-*Requisitos de software para o host Windows Server Hyper-V*
 
 |===
 | Requisito | Suportado 
@@ -288,8 +361,7 @@ Certifique-se de que sua instância do Hyper-V atenda aos requisitos específico
 
 
 |===
-*Requisitos de hardware para o host Hyper-V*
-
+.Requisitos de hardware para o host Hyper-V
 * Hosts autônomos e agrupados pela FCI são suportados
 * Mínimo de 1 GB de RAM para o plug-in NetApp Hyper-V no host Hyper-V
 * 5 GB de espaço mínimo para instalação e log do plug-in no host Hyper-V
@@ -299,55 +371,7 @@ NOTE: Certifique-se de alocar espaço em disco suficiente no host Hyper-V para a
 
 
 
-*NetApp Requisitos de configuração do ONTAP*
-
+.NetApp Requisitos de configuração do ONTAP
 * Um sistema ONTAP primário (ONTAP 9.14.1 ou posterior)
 * Para implantações do Hyper-V usando compartilhamentos CIFS para armazenar dados de máquina virtual, certifique-se de que a propriedade de compartilhamento de disponibilidade contínua esteja habilitada no sistema ONTAP .  Consulte o https://docs.netapp.com/us-en/ontap/smb-hyper-v-sql/configure-shares-continuous-availability-task.html["Documentação do ONTAP"^] para obter instruções.
 
-
-
-
-== No NetApp Console
-
-Certifique-se de que o NetApp Console atenda aos seguintes requisitos.
-
-* Um usuário do Console deve ter a função e os privilégios necessários para executar operações em cargas de trabalho do Microsoft SQL Server e do Kubernetes.  Para descobrir os recursos, você precisa ter a função de Superadministrador do NetApp Backup and Recovery .  Verlink:reference-roles.html["Acesso baseado em função do NetApp Backup and Recovery aos recursos"] para obter detalhes sobre as funções e permissões necessárias para executar operações no NetApp Backup and Recovery.
-* Uma organização do Console com pelo menos um agente do Console ativo que se conecta a clusters ONTAP locais ou ao Cloud Volumes ONTAP.
-* Pelo menos um sistema de console com um cluster NetApp ONTAP local ou Cloud Volumes ONTAP .
-* Um agente de console
-+
-Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Aprenda a configurar um agente de console"] e https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["requisitos padrão do NetApp Console"^] .
-
-+
-** A versão de visualização requer o sistema operacional Ubuntu 22.04 LTS para o agente do Console.
-
-
-
-
-
-
-=== Configurar o NetApp Console
-
-A próxima etapa é configurar o Console e o NetApp Backup and Recovery.
-
-Análise https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["requisitos padrão do NetApp Console"^] .
-
-
-
-=== Criar um agente de console
-
-Você deve entrar em contato com sua equipe de produtos da NetApp para testar o Backup e a recuperação.  Então, quando você usar o agente do Console, ele incluirá os recursos apropriados para o serviço.
-
-Para criar um agente do Console no NetApp Console antes de usar o serviço, consulte a documentação do Console que descreve https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["como criar um agente de console"^] .
-
-.Onde instalar o agente do Console
-Para concluir uma operação de restauração, o agente do Console pode ser instalado nos seguintes locais:
-
-* Para o Amazon S3, o agente do Console pode ser implantado em suas instalações.
-* Para o Azure Blob, o agente do Console pode ser implantado em suas instalações.
-* Para o StorageGRID, o agente do Console deve ser implantado em suas instalações; com ou sem acesso à Internet.
-* Para o ONTAP S3, o agente do Console pode ser implantado em suas instalações (com ou sem acesso à Internet) ou em um ambiente de provedor de nuvem
-
-
-
-NOTE: Referências a "sistemas ONTAP locais" incluem sistemas FAS e AFF .

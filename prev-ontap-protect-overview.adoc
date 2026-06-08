@@ -105,27 +105,64 @@ https://bluexp.netapp.com/cloud-volumes-global-regions["Saiba mais usando o Mapa
 
 O NetApp Backup and Recovery permite fazer backup de volumes ONTAP dos seguintes sistemas de origem para os seguintes sistemas secundários e armazenamento de objetos em provedores de nuvem pública e privada. Os snapshots residem no sistema de origem.
 
+
+NOTE: Atualmente, a Wasabi é a única provedora de storage de objetos compatível com S3 qualificada. Outros provedores compatíveis com S3 ainda não foram validados.
+
 [cols="33,33,33"]
 |===
 | Sistema de origem | Sistema secundário (Replicação) | Armazenamento de Objetos de Destino (Backup) 
 
 
-| Cloud Volumes ONTAP na AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Amazon S3 
+| Cloud Volumes ONTAP na AWS  a| 
+* Cloud Volumes ONTAP na AWS
+* Sistema ONTAP local
+
+| Amazon S3 
 
 
-| Cloud Volumes ONTAP no Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Blob do Azure 
+| Cloud Volumes ONTAP no Azure  a| 
+* Cloud Volumes ONTAP no Azure
+* Sistema ONTAP local
+
+| Blob do Azure 
 
 
-| Cloud Volumes ONTAP no Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP | Armazenamento em nuvem do Google 
+| Cloud Volumes ONTAP no Google  a| 
+* Cloud Volumes ONTAP no Google
+* Sistema ONTAP local
+
+| Armazenamento em nuvem do Google 
 
 
-| Sistema ONTAP local | Sistema Cloud Volumes ONTAP ONTAP | Amazon S3, Azure Blob, Google Cloud Storage, NetApp StorageGRID , ONTAP , S3 
+| Sistema ONTAP local  a| 
+* Cloud Volumes ONTAP
+* Sistema ONTAP local
+
+ a| 
+* Amazon S3
+* Armazenamento compatível com S3
+* Blob do Azure
+* Armazenamento em nuvem do Google
+* NetApp StorageGRID
+* ONTAP S3
+
+
+
+
+| Cloud Volumes ONTAP em storage de objetos compatível com S3  a| 
+* Cloud Volumes ONTAP em storage de objetos compatível com S3
+* Sistema ONTAP local
+
+| Storage de objetos compatível com S3 
 |===
 
 
 === Destinos de restauração suportados
 
 Você pode restaurar dados do ONTAP a partir de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados para esse mesmo sistema.
+
+
+NOTE: Atualmente, a Wasabi é a única provedora de storage de objetos compatível com S3 qualificada. Outros provedores compatíveis com S3 ainda não foram validados.
 
 [cols="33,33,33"]
 |===
@@ -135,19 +172,62 @@ Você pode restaurar dados do ONTAP a partir de um arquivo de backup que reside 
 | *Armazenamento de Objetos (Backup)* | *Sistema Secundário (Replicação)* |  
 
 
-| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP na AWS
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP na AWS
+* Sistema ONTAP local
 
 
-| Blob do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure 
 
 
-| Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
+| Blob do Azure  a| 
+* Cloud Volumes ONTAP no Azure
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP no Azure
+* Sistema ONTAP local
 
 
-| NetApp StorageGRID | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
 
 
-| ONTAP S3 | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
+| Armazenamento em nuvem do Google  a| 
+* Cloud Volumes ONTAP no Google
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP no Google
+* Sistema ONTAP local
+
+
+
+
+| NetApp StorageGRID  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
+
+
+| ONTAP S3  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
+
+
+| Storage de objetos compatível com S3  a| 
+* Cloud Volumes ONTAP em storage de objetos compatível com S3
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP em storage de objetos compatível com S3
+* Sistema ONTAP local
+
+
 |===
 Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF e ONTAP Select .
 

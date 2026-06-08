@@ -94,6 +94,7 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 Essas limitações se aplicam aos métodos Pesquisar e Restaurar e Navegar e Restaurar para restaurar arquivos e pastas, a menos que sejam especificamente indicados.
 
 * A restauração de pastas a partir de snapshots locais não é suportada.
+* Restauração de arquivos e pastas em uma configuração de recuperação de desastres (DR): após uma falha, os volumes em uma VM de armazenamento configurada para DR mantêm os relacionamentos SnapMirror preexistentes em um estado interrompido. As tentativas de restaurar arquivos ou pastas que criam relacionamentos RST temporários SnapMirror são bloqueadas pelo ONTAP porque o volume de destino já possui um relacionamento.
 * O Browse & Restore pode restaurar até 100 arquivos individuais por vez.
 * O Search & Restore pode restaurar 1 arquivo por vez.
 * Ao usar o ONTAP 9.13.0 ou superior, o Browse & Restore e o Search & Restore podem restaurar uma pasta junto com todos os arquivos e subpastas dentro dela.

@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: reference-audit-actions.html 
+keywords: audit, audit actions, NetApp Console, Backup and Recovery, audit log 
+summary: Referência das ações de backup e recuperação suportadas pela auditoria do NetApp Console. 
+---
+= Ações auditadas de backup e recuperação
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+A página de Auditoria do NetApp Console registra as seguintes ações que os usuários executam em Backup and Recovery como parte de seu recurso de auditoria. Para obter detalhes sobre como visualizar e filtrar eventos de auditoria, consulte  https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Audite a atividade do usuário na página Audit."^] a documentação do Console.
+
+Para cada ação auditada, o Console registra o nome do serviço, o agente, o recurso, o usuário e o status da ação.
+
+.Ações auditadas de backup e recuperação
+* Restaurar volume ou arquivos a partir de backup
+* Reverter volume para o instantâneo
+* Iniciar explorador de arquivos
+* Restaurar arquivos a partir de um instantâneo
+* Registre credenciais de nuvem
+* Atualizar credenciais de nuvem
+* Excluir credenciais de nuvem
+* Criar bucket de storage de objetos
+* Modificar storage de objetos
+* Validar migração de backup
+* Migrar backups entre sistemas ONTAP
+* Inicializar proteção de origem
+* Clusters de pares para proteção
+* Inicializar proteção de destino
+* Iniciar replicação de volume
+* Criar sistema de cofre cibernético
+* Excluir sistema Cyber Vault
+* Habilitar o acesso ao Cyber Vault
+* Desativar o acesso ao Cyber Vault
+* Criar instantâneo ad hoc
+* Descubra volumes e relacionamentos
+* Atualizar configuração do aplicativo
+* Ative a proteção panorâmica para volumes
+* Modificar a proteção panorâmica para volumes
+* Modificar storage de objetos para o sistema
+* Criar backup em nuvem ad hoc
+* Inicializar proteção para o sistema
+* Ative a proteção panorâmica para volumes
+* Modificar a proteção panorâmica para volumes
+* Atualizar metadados de backup do volume (agendado)
+* Ativar backup em um volume
+* Modificar a proteção panorâmica para volumes
+* Excluir política de snapshot ANF
+* Ative a proteção panorâmica em um sistema
+* Modificar a proteção panorâmica em um sistema
+
+
+
+
+== Mais informações
+
+* https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#audit-user-activity-from-the-audit-page["Audite a atividade do usuário na página Audit."^]
+

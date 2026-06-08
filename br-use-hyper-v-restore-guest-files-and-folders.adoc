@@ -14,7 +14,7 @@ summary: Você pode restaurar um ou mais arquivos ou pastas de um snapshot de um
 
 
 [role="lead"]
-Restaurar arquivos e pastas de backups de máquinas virtuais Hyper-V no storage primário para uma máquina virtual Windows convidada.
+Restaure arquivos e pastas de backups de máquinas virtuais Hyper-V em storage primário ou secundário para uma máquina virtual Windows convidada.
 
 
 
@@ -35,8 +35,7 @@ Observe o seguinte ao restaurar arquivos e pastas:
 [NOTE]
 ====
 * No momento, não é possível restaurar arquivos e pastas em máquinas virtuais convidadas Linux.
-* A restauração de arquivos e pastas não é suportada a partir de backups armazenados em storage secundário ou storage de objetos.
-* Não é possível restaurar arquivos ou pastas em máquinas virtuais que residem em storage SAN.
+* A restauração de arquivos e pastas a partir de backups armazenados em storage de objetos não é suportada.
 * Somente uma operação de anexação ou restauração pode ser executada ao mesmo tempo em uma VM. Não é possível executar operações paralelas de anexação ou restauração na mesma VM.
 * A visualização ou navegação em partições reservadas pode causar um erro.
 * Durante a operação de restauração, os atributos oculto, de sistema e criptografado dos arquivos convidados não são mantidos no arquivo restaurado.
@@ -53,7 +52,7 @@ Observe o seguinte ao restaurar arquivos e pastas:
 . Na página *Restaurar a partir de snapshots*, faça o seguinte:
 +
 .. Opcionalmente, selecione um período para filtrar a lista de Snapshots por data de criação.
-.. Selecione um snapshot no storage primário a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.
+.. Selecione um instantâneo no storage primário ou secundário a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.
 
 
 . Na lista, escolha um disco virtual que contenha os arquivos e pastas que você precisa restaurar e selecione *Next*.
