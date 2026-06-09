@@ -147,13 +147,6 @@ NOTE: Atualmente, a Wasabi é a única provedora de storage de objetos compatív
 * ONTAP S3
 
 
-
-
-| Cloud Volumes ONTAP em storage de objetos compatível com S3  a| 
-* Cloud Volumes ONTAP em storage de objetos compatível com S3
-* Sistema ONTAP local
-
-| Storage de objetos compatível com S3 
 |===
 
 
@@ -219,17 +212,10 @@ NOTE: Atualmente, a Wasabi é a única provedora de storage de objetos compatív
 | Sistema ONTAP local 
 
 
-| Storage de objetos compatível com S3  a| 
-* Cloud Volumes ONTAP em storage de objetos compatível com S3
-* Sistema ONTAP local
-
- a| 
-* Cloud Volumes ONTAP em storage de objetos compatível com S3
-* Sistema ONTAP local
-
-
+| Storage de objetos compatível com S3 | Sistema ONTAP local | Sistema ONTAP local 
 |===
-Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF e ONTAP Select .
+
+NOTE: As referências a "on-premises ONTAP system" incluem os sistemas FAS, AFF e ONTAP Select.
 
 
 

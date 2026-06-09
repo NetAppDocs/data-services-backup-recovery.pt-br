@@ -5572,7 +5572,6 @@
   <block id="47d7a1c349dd710c7b70de2cc5f8bef1" category="admonition">Atualmente, a Wasabi é a única provedora de storage de objetos compatível com S3 qualificada. Outros provedores compatíveis com S3 ainda não foram validados.</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="811a794fc3af22bb5e0566f56adc0406" category="list-text">Armazenamento compatível com S3</block>
-  <block id="d0a6d4081b2093e4e5a535bdce1e44c0" category="cell">Cloud Volumes ONTAP em storage de objetos compatível com S3</block>
   <block id="29fc78ad7b30ceab82a6fad5327f5e05" category="cell">Storage de objetos compatível com S3</block>
   <block id="d0eb32456912dd737e495d1233503746" category="summary">Referência das ações de backup e recuperação suportadas pela auditoria do NetApp Console.</block>
   <block id="a29588ca393407a53992df452b4d7451" category="doc">Ações auditadas de backup e recuperação</block>
@@ -5615,4 +5614,5 @@
   <block id="0714572f5e60fbb935fc53015369f585" category="list-text"><block ref="0714572f5e60fbb935fc53015369f585" category="inline-link-rx"></block></block>
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">08 de junho de 2026</block>
   <block id="83600b516c30dfc55e0311442c5d9002" category="sidebar">Faça backup do Cloud Volumes ONTAP para storage compatível com S3</block>
+  <block id="3a6182405315948a2b482f267396231c" category="admonition">As referências a "on-premises ONTAP system" incluem os sistemas FAS, AFF e ONTAP Select.</block>
 </blocks>
