@@ -60,7 +60,13 @@ O assistente de restauração de dados é iniciado e a página _Configurações 
 . Escolha o local de origem do qual restaurar.
 . Escolha o cluster de destino na lista *Cluster*.
 . Escolha restaurar nos namespaces originais ou em novos namespaces.
-. Se você optar por restaurar para novos namespaces, insira o namespace ou namespaces de destino a serem usados.
+. Se você optar por restaurar para novos namespaces, faça o seguinte:
++
+.. Insira o namespace de destino ou os namespaces de destino que você deseja usar.
+.. Insira o nome do aplicativo de destino.
+.. Opcionalmente, selecione a opção *Não criar um aplicativo para recursos restaurados* para restaurar recursos sem criar um objeto de recurso personalizado de aplicativo. Isso reduz entradas desnecessárias no inventário de aplicativos.
+
+
 . Selecione *Avançar*.
 +
 A página _Seleção de recursos_ é exibida.
@@ -122,8 +128,17 @@ NOTE: Os recursos mostrados são os recursos que existem atualmente no cluster.
 .Recursos específicos de aplicativos baseados em VM
 --
 .. Selecione *Recursos seletivos*.
+.. Faça um dos seguintes:
++
+*** Para restaurar máquinas virtuais inteiras, selecione a guia *Máquinas virtuais*.
 +
 Backup e Recovery lista todas as máquinas virtuais no ponto de recuperação. Você pode selecionar quais VMs incluir na operação de restauração.
+
+*** Para restaurar reivindicações de volume persistente individuais, selecione a guia *Persistent volume claims*.
++
+Backup e Recovery lista todas as persistent volume claims no ponto de recuperação. Você pode selecionar quais persistent volume claims incluir na operação de restauração.
+
+
 
 .. Ao terminar, selecione *Próximo*.
 
