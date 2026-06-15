@@ -306,7 +306,7 @@ Garanta que seu ambiente atenda aos requisitos específicos para descobrir e pro
 
 Você precisa de requisitos específicos para descobrir recursos do Kubernetes e proteger seus aplicativos Kubernetes.
 
-Para requisitos do NetApp Console , consulte<<In NetApp Console>> .
+Para os requisitos do NetApp Console, consulte <<Prepare o NetApp Console>>.
 
 
 NOTE: NetApp recomenda fortemente atribuir um endereço IP estático ao agente do Console que você usa para cargas de trabalho do Kubernetes para evitar problemas caso o endereço IP do agente seja alterado.

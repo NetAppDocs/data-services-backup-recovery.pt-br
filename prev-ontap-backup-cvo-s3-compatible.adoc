@@ -45,7 +45,7 @@ As seguintes ações são suportadas ao fazer backup em storage compatível com 
 
 * Backup de snapshots consistentes com falhas e consistentes com aplicativos do ONTAP local para armazenamento de objetos compatível com S3 de terceiro
 * Fluxos de trabalho essenciais para proteção de dados: backup, restauração e exclusão de backups
-* Validado em relação a provedores compatíveis com S3, incluindo Wasabi, MinIO, IBM Object Store e Apple Object Store
+* Testado e validado com Wasabi storage de objetos; clientes também relataram implantações bem-sucedidas com MinIO, IBM Cloud Object Storage e Apple Object Store
 * NetApp Support aceita e tria todas as solicitações de suporte envolvendo armazenamentos de objetos compatíveis com S3 de terceiro
 
 
