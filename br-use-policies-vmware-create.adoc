@@ -29,6 +29,9 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 
 
 
+NOTE: Para cargas de trabalho VMware, os agendamentos de backup usam o fuso horário do servidor VMware vCenter, não UTC ou a hora local do seu navegador. Esse fuso horário é definido quando você cria o agendamento. Se o fuso horário do host for alterado, você deve atualizar o host e recriar o agendamento para que o novo fuso horário entre em vigor. Consulte link:br-use-vmware-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do VMware"] para mais informações.
+
+
 
 == Ver políticas
 

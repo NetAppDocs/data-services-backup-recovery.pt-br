@@ -54,6 +54,7 @@ Crie um grupo de proteção para organizar os recursos que você deseja fazer ba
 .Antes de começar
 * Certifique-se de que seu ambiente esteja usando versões compatíveis do VMware vSphere.
 * Ao criar um grupo de proteção baseado em tags, certifique-se de que as máquinas virtuais e os datastores que você deseja proteger já estejam associados a uma ou mais vSphere tags em vCenter.
+* Esteja ciente de que, para cargas de trabalho VMware, o tempo de backup é interpretado no fuso horário do host de gerenciamento. Consulte link:br-use-policies-vmware-create.html["Crie e gerencie políticas de backup do VMware no NetApp Backup and Recovery"] para mais informações.
 
 
 .Passos
@@ -125,6 +126,40 @@ O status da proteção muda de "Em manutenção" quando você suspende um grupo 
 
 .Resultado
 O sistema valida os agendamentos e altera o status da proteção para "Protegido" se os agendamentos forem válidos. Se os agendamentos não forem válidos, o sistema exibirá uma mensagem de erro e não retomará o grupo de proteção.
+
+
+
+== Editar um grupo de proteção
+
+Edite um grupo de proteção para alterar seu nome ou configurações. Você pode querer editar um grupo de proteção se os recursos do grupo tiverem sido alterados.
+
+.Passos
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
+. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
+. Selecione a aba *Grupos de proteção*.
+. Selecione o grupo de proteção que deseja editar.
+. Selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Editar*.
++
+O assistente Edit protection group orienta você nas configurações do grupo de proteção.
+
+. Faça as alterações necessárias em cada tela do assistente.
+. Ao terminar, selecione *Enviar*.
+
+
+
+
+=== Aplicar um fuso horário atualizado do vCenter a um grupo de proteção existente
+
+Os backups agendados usam o fuso horário do servidor vCenter que é registrado quando o agendamento do grupo de proteção é criado. Se você alterar o fuso horário do servidor vCenter, os grupos de proteção existentes continuarão sendo executados em seu fuso horário original (normalmente UTC) até que você atualize seus agendamentos.
+
+
+NOTE: Os agendamentos são recriados apenas quando você modifica o nome do grupo de proteção, adiciona ou remove uma máquina virtual, altera a política atribuída ou atualiza os scripts de pré/pós-backup. Salvar sem fazer alterações não atualizará os agendamentos. Essa atualização de agendamento é uma ação única por grupo de proteção e não inicia um backup imediato.
+
+.Passos
+. Atualize o servidor vCenter para que seu fuso horário atual seja recuperado.
+. Edite o grupo de proteção e altere o nome para um valor diferente, depois salve.
+
 
 
 

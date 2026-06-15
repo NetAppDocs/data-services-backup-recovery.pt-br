@@ -27,6 +27,9 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 
 
 
+NOTE: Para cargas de trabalho Hyper-V, os agendamentos de backup usam o fuso horário do host Hyper-V, não o UTC ou o horário local do seu navegador. Esse fuso horário é definido quando você cria o agendamento. Se o fuso horário do host mudar, você deve atualizar o host e recriar o agendamento para que o novo fuso horário entre em vigor. Consulte link:br-use-hyperv-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V"] para obter mais informações.
+
+
 
 == Ver políticas
 

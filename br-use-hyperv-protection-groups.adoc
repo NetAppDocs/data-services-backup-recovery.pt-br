@@ -32,6 +32,10 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 
 *Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
+.Antes de começar
+* Esteja ciente de que, para cargas de trabalho Hyper-V, o tempo de backup é interpretado no fuso horário do host de gerenciamento. Consulte link:br-use-policies-hyper-v-create.html["Crie e gerencie políticas de backup do Hyper-V no NetApp Backup and Recovery"] para mais informações.
+
+
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione uma carga de trabalho para visualizar os detalhes da proteção.
@@ -60,10 +64,25 @@ Edite um grupo de proteção para alterar seu nome ou configurações. Você pod
 . Selecione a aba *Grupos de proteção*.
 . Selecione o grupo de proteção que deseja editar.
 . Selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Editar*.
-. Altere quaisquer configurações do grupo de proteção, como o nome ou quais máquinas virtuais estão no grupo.
-. Selecione *Avançar*.
-. Altere a política de proteção, se necessário. Ao terminar, selecione *Próximo*.
-. Revise a configuração e selecione *Enviar*.
++
+O assistente Edit protection group orienta você nas configurações do grupo de proteção.
+
+. Faça as alterações necessárias em cada tela do assistente.
+. Ao terminar, selecione *Enviar*.
+
+
+
+
+=== Aplicar um fuso horário de host atualizado a um grupo de proteção existente
+
+Os backups agendados usam o fuso horário do host Hyper-V, que é registrado quando o agendamento do grupo de proteção é criado. Se você alterar o fuso horário do host, os grupos de proteção existentes continuarão sendo executados em seu fuso horário original (normalmente UTC) até que você atualize seus agendamentos.
+
+
+NOTE: Os agendamentos são recriados apenas quando você modifica o nome do grupo de proteção, adiciona ou remove uma máquina virtual, altera a política atribuída ou atualiza os scripts de pré/pós-backup. Salvar sem fazer alterações não atualizará os agendamentos. Essa atualização de agendamento é uma ação única por grupo de proteção e não inicia um backup imediato.
+
+.Passos
+. Atualize o host Hyper-V para que seu fuso horário atual seja recuperado.
+. Edite o grupo de proteção e altere o nome para um valor diferente, depois salve.
 
 
 
