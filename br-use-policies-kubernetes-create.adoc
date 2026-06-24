@@ -94,15 +94,6 @@ A página de Policies é exibida.
 ** *Backup*: Selecione a frequência: horária, diária, semanal, mensal ou anual.
 ** *Destino do backup*: Selecione o sistema de destino no armazenamento secundário para o backup.
 ** *Retenção*: Insira o número de snapshots a serem mantidos.
-** *Ativar bloqueio de instantâneos*: selecione se deseja ativar instantâneos à prova de violação.
-** *Período de bloqueio do snapshot*: insira o número de dias, meses ou anos que você deseja bloquear o snapshot.
-** *Transferência para o secundário*:
-+
-*** A opção * Agendamento de transferência ONTAP - Em linha* é selecionada por padrão e indica que os instantâneos são transferidos para o sistema de armazenamento secundário imediatamente.  Você não precisa agendar o backup.
-*** Outras opções: Se você escolher uma transferência diferida, as transferências não serão imediatas e você poderá definir um cronograma.
-
-
-** * Relacionamento secundário do SnapMirror e do SnapVault SMAS*: use relacionamentos secundários do SnapMirror e do SnapVault SMAS para cargas de trabalho do SQL Server.
 ** *Provedor*: selecione o provedor de armazenamento que hospeda os recursos do aplicativo Kubernetes e insira as credenciais para autenticar com o provedor.
 
 
