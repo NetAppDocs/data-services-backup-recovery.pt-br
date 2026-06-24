@@ -78,8 +78,9 @@ Para usar storage de objetos como destino de backup, você precisa de uma conta 
 Para usar NetApp Backup and Recovery para cargas de trabalho de volume ONTAP, você precisa dos seguintes pré-requisitos de sistema host, espaço e dimensionamento.
 
 * É necessário o ONTAP 9.8 ou posterior.
+* ONTAP 9.12.1 ou posterior é necessário para a proteção de volumes FlexGroup. Consulte link:br-reference-limitations.html["Limitações conhecidas com o NetApp Backup and Recovery para volumes ONTAP"] para mais informações.
+* ONTAP 9.17.1 ou posterior é necessário para fazer backup ou restaurar em storage de objetos compatível com S3.
 * Uma licença ONTAP One deve estar habilitada na instância ONTAP local.
-* Fazer backup ou restaurar para storage de objetos compatível com S3 requer ONTAP 9.17.1 ou posterior.
 
 
 Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte link:prev-ontap-protect-overview.html["Proteja seus dados de volume ONTAP"].

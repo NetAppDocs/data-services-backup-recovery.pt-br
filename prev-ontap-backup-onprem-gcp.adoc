@@ -371,7 +371,7 @@ Você pode optar por proteger volumes FlexVol ou FlexGroup ; no entanto, não é
 [NOTE]
 ====
 * Você pode ativar um backup somente em um único volume FlexGroup por vez.
-* Os volumes selecionados devem ter a mesma configuração SnapLock .  Todos os volumes devem ter o SnapLock Enterprise habilitado ou o SnapLock desabilitado.
+* Ao selecionar os volumes de origem que você deseja proteger, só é possível selecionar volumes que tenham configurações de SnapLock correspondentes. Os volumes que você selecionar devem ter todos o recurso SnapLock ativado ou todos o recurso SnapLock desativado.
 
 
 ====
