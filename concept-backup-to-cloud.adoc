@@ -43,10 +43,10 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Consultelink:br-use-mssql-protect-overview.html["Proteja as cargas de trabalho do Microsoft SQL Server"] .
 
 
-* *Cargas de trabalho VMware (com nova interface de usuário sem SnapCenter Plug-in para VMware vSphere)*:
+* *Cargas de trabalho VMware*:
 +
 ** Proteja suas VMs e armazenamentos de dados VMware com o NetApp Backup and Recovery.
-** Faça backup das cargas de trabalho do VMware para Amazon Web Services S3 ou StorageGRID.
+** Faça backup das cargas de trabalho do VMware em provedores de armazenamento compatíveis.
 ** Restaure dados do VMware da nuvem para o vCenter local.
 ** Você pode restaurar a VM exatamente no mesmo local de onde o backup foi feito ou em um local alternativo.
 ** Use o NetApp Backup and Recovery sem o SnapCenter Plug-in for VMware vSphere.
@@ -209,12 +209,12 @@ O NetApp Backup and Recovery protege os seguintes tipos de cargas de trabalho:
 
 
 .Destinos de backup suportados
-* Amazon Web Services (AWS) S3
-* Armazenamento compatível com S3 (somente para cargas de trabalho de volumes ONTAP)
-* Armazenamento em nuvem do Google
 * Armazenamento de Blobs do Microsoft Azure
+* Amazon Web Services (AWS) S3
+* Google Cloud Storage (somente volumes ONTAP e cargas de trabalho do Kubernetes)
 * StorageGRID
 * ONTAP S3
+* Armazenamento compatível com S3 (somente para cargas de trabalho de volumes ONTAP)
 
 
 

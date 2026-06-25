@@ -99,9 +99,9 @@ A página de Policies é exibida.
 ** *Transferir para o armazenamento secundário*: Escolha quando transferir os snapshots para o storage secundário.
 +
 *** A opção * Agendamento de transferência ONTAP - Em linha* é selecionada por padrão e indica que os instantâneos são transferidos para o sistema de armazenamento secundário imediatamente.  Você não precisa agendar o backup.
-*** Outras opções: Se você escolher uma transferência diferida, as transferências não serão imediatas e você poderá definir um cronograma.
 
 
+** *Usar relacionamento secundário existente do SnapMirror e SyncMirror*: habilite esta opção para usar o relacionamento existente do SnapMirror ou SyncMirror para transferir snapshots para o cluster de destino.
 
 
 . Forneça informações para a seção *Configurações do armazenamento de objetos* (backup para o storage de objetos):

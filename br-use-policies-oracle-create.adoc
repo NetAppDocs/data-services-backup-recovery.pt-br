@@ -108,7 +108,7 @@ A página de Policies é exibida.
 *** Outras opções: Se você escolher uma transferência diferida, as transferências não serão imediatas e você poderá definir um cronograma.
 
 
-** * Relacionamento secundário do SnapMirror e do SnapVault SMAS*: use relacionamentos secundários do SnapMirror e do SnapVault SMAS para cargas de trabalho do SQL Server.
+** *Usar relacionamento secundário existente do SnapMirror e SyncMirror*: habilite esta opção para usar o relacionamento existente do SnapMirror ou SyncMirror para transferir snapshots para o cluster de destino.
 
 
 . Forneça informações para a seção *Configurações do armazenamento de objetos* (backup para o storage de objetos):

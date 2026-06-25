@@ -1513,7 +1513,6 @@
   <block id="b46669fe80ca2a5b9a2d07aed9bdb568" category="list-text">*Transferência para o secundário*:</block>
   <block id="c6b1efb6a3381715b935aaf64195be83" category="list-text">A opção * Agendamento de transferência ONTAP - Em linha* é selecionada por padrão e indica que os instantâneos são transferidos para o sistema de armazenamento secundário imediatamente.  Você não precisa agendar o backup.</block>
   <block id="ea593eb0ffc75f929e0088d1e36356cf" category="list-text">Outras opções: Se você escolher uma transferência diferida, as transferências não serão imediatas e você poderá definir um cronograma.</block>
-  <block id="cc7a1e67eff230a3c65fb315a1c8d1f0" category="list-text">* Relacionamento secundário do SnapMirror e do SnapVault SMAS*: use relacionamentos secundários do SnapMirror e do SnapVault SMAS para cargas de trabalho do SQL Server.</block>
   <block id="5d53f1521f3c11d2c706909ba7322fd1" category="admonition">Os campos que aparecem diferem dependendo do provedor e da arquitetura selecionada.</block>
   <block id="aea6f666cce57b356fb2085a81658754" category="list-text">*IPspace*: Selecione o IPspace a ser usado para as operações de backup.  Isso é útil se você tiver vários IPspaces e quiser controlar qual deles será usado para backups.</block>
   <block id="61c7ccb12ec5421abd7bf85769ede78b" category="list-text">*Configurações de agendamento*: selecione o agendamento que foi definido para os instantâneos locais.  Você pode remover uma programação, mas não pode adicionar uma porque as programações são definidas de acordo com as programações de instantâneos locais.</block>
@@ -4724,8 +4723,6 @@
   <block id="5a7772dd6a45520c18defbce09d0dedf" category="paragraph">A seguinte ação não é suportada na versão de pré-visualização das cargas de trabalho do Oracle Database em NetApp Backup and Recovery:</block>
   <block id="fffe6dab1367a6da9b1ff43e10e3c12a" category="paragraph">As seguintes ações não são suportadas em cargas de trabalho VMware no NetApp Backup and Recovery:</block>
   <block id="97c13d527bcfec5ed7f29badd43016d8" category="list-text">Editar políticas (não disponível para cargas de trabalho VMware)</block>
-  <block id="332f36926e04f03459b83b7c8da214a6" category="list-text">*Cargas de trabalho VMware (com nova interface de usuário sem SnapCenter Plug-in para VMware vSphere)*:</block>
-  <block id="66484fcd4199c3f1b40e50c680ad4e56" category="list-text">Faça backup das cargas de trabalho do VMware para Amazon Web Services S3 ou StorageGRID.</block>
   <block id="6a4470b3ca7a52803928f40d397b0521" category="list-text">*Cargas de trabalho KVM*:</block>
   <block id="c4d36d8f4f3b72c9d5cac59995049781" category="list-text">*Cargas de trabalho do Hyper-V*:</block>
   <block id="b6178e1ff85723d95932c36399cc61c2" category="list-text">*Cargas de trabalho do Kubernetes*:</block>
@@ -4835,7 +4832,6 @@
   <block id="4698b69bed4ee276f187d88f25644b08" category="cell">Certifique-se de que o tráfego HTTPS bidirecional esteja permitido para as seguintes portas nas configurações do Windows Firewall</block>
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144 (NetApp Plug-in para Hyper-V)</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145 (NetApp Plug-in para Windows)</block>
-  <block id="86a1075e6640849bd364878900fd5412" category="paragraph">Você também pode seguir estas etapas para substituir o agente do Console e restaurar os dados de configuração armazenados nele ao usar o NetApp Backup and Recovery no _modo padrão_ localmente, quando nenhuma conta de nuvem estiver envolvida (por exemplo, ao usar NetApp StorageGrid como destino de backup).</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Execute o comando *ls* para garantir que a pasta "catalogdb1" foi criada e que contém as subpastas<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>, e<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>.</block>
   <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16 de março de 2026</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 ou posterior</block>
@@ -5643,4 +5639,9 @@
   <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">ONTAP 9.12.1 ou posterior é necessário para a proteção de volumes FlexGroup. Consulte <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> para mais informações.</block>
   <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">ONTAP 9.17.1 ou posterior é necessário para fazer backup ou restaurar em storage de objetos compatível com S3.</block>
   <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">Ao selecionar os volumes de origem que você deseja proteger, só é possível selecionar volumes que tenham configurações de SnapLock correspondentes. Os volumes que você selecionar devem ter todos o recurso SnapLock ativado ou todos o recurso SnapLock desativado.</block>
+  <block id="fa428977bbfd079a1a152d734ac0da9a" category="list-text">*Usar relacionamento secundário existente do SnapMirror e SyncMirror*: habilite esta opção para usar o relacionamento existente do SnapMirror ou SyncMirror para transferir snapshots para o cluster de destino.</block>
+  <block id="2d86afc1dea874d04cb6b44f9329cb39" category="list-text">*Cargas de trabalho VMware*:</block>
+  <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">Faça backup das cargas de trabalho do VMware em provedores de armazenamento compatíveis.</block>
+  <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage (somente volumes ONTAP e cargas de trabalho do Kubernetes)</block>
+  <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">Você também pode seguir estas etapas para substituir o agente do Console e restaurar os dados de configuração armazenados nele ao usar o Backup e Recovery no _modo padrão_ localmente, quando nenhuma conta de nuvem estiver envolvida (por exemplo, ao usar NetApp StorageGRID como destino de backup).</block>
 </blocks>
