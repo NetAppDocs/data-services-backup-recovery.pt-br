@@ -778,7 +778,6 @@
   <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">Para cargas de trabalho do Kubernetes, consulte<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> .</block>
   <block id="47531513e36377c6a5c78be39708d962" category="summary">Antes de usar o NetApp Backup and Recovery, execute algumas etapas para configurar destinos de backup.</block>
   <block id="e902bc2010ef35580633bf1114aee5b3" category="doc">Configure destinos de backup antes de usar o NetApp Backup and Recovery</block>
-  <block id="8a0933307f827fb9f8c7b526a219880b" category="paragraph">Antes de usar o NetApp Backup and Recovery, execute algumas etapas para configurar destinos de backup.</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">pré-requisitos</block>
   <block id="1ee0b624eb9dbd226bf2ec0c999c84a7" category="paragraph">Antes de começar, revise<block ref="2eebb303c5f465d9ddee1afb9c070240" category="inline-link-macro-rx"></block> para garantir que seu ambiente esteja pronto.</block>
   <block id="7fada33e4007d6c45f21f39f8f564f62" category="section-title">Preparar o destino do backup</block>
@@ -5298,7 +5297,6 @@
   <block id="87e187714ad3406b822e2c0bf109240b" category="summary">Você pode restaurar um ou mais arquivos ou pastas de um snapshot de uma máquina virtual Hyper-V para uma máquina virtual convidada do Windows.</block>
   <block id="cd21aa174cd18a8828140ba323628bfb" category="doc">Restaurar arquivos e pastas de backups de máquinas virtuais Hyper-V</block>
   <block id="d822ec23856d26a5af79fad29ce2f55e" category="paragraph">Monte um disco virtual a partir de um snapshot e restaure arquivos e pastas dele para a máquina virtual Windows original (source).</block>
-  <block id="d4bb35603ef1e4c4f849336d35413c6f" category="paragraph">Antes de restaurar arquivos e pastas, você precisa criar uma credencial para a máquina virtual de origem no NetApp Backup and Recovery. Essa credencial é usada para autenticar na máquina virtual durante o processo de restauração.</block>
   <block id="17a458fd7a6b6ae191ac9219e3b46deb" category="paragraph">Ao abrir uma sessão de restauração de arquivos e pastas montando um disco virtual, a sessão permanece ativa por 48 horas.</block>
   <block id="392177f0b4a0bc4b5bc23ef82eee9fff" category="paragraph">O desempenho da restauração depende tanto do tamanho quanto da quantidade de arquivos ou pastas que estão sendo restaurados. Para um determinado conjunto de dados, restaurar um grande número de arquivos pequenos geralmente leva mais tempo do que restaurar um pequeno número de arquivos grandes.</block>
   <block id="0c1d8f103b8f05dc9e681f213a4140ed" category="paragraph">Observe o seguinte ao restaurar arquivos e pastas:</block>
@@ -5378,7 +5376,6 @@
   <block id="96cd77faff8587f3ee978f6d738fc506" category="list-text">*Servidor de verificação*: Opcionalmente, selecione um ou mais hosts Oracle registrados na lista para usar como servidores de verificação externos. Se nenhum servidor for selecionado, a verificação será executada diretamente no host do banco de dados de origem. Caso contrário, Backup and Recovery monta o clone do Snapshot em um dos hosts selecionados e verifica o backup lá, isolando a E/S de verificação do servidor do banco de dados de produção. Um servidor de verificação deve:</block>
   <block id="a96c5b49f0e2679b8f6884c399905c08" category="list-text">Tenha o plug-in da NetApp instalado</block>
   <block id="aa525d522adb224988fcdcd6f1e78c30" category="list-text">Tenha os binários do Oracle Database instalados</block>
-  <block id="7ed52864c10e2ddd715752fb3ab3a33f" category="list-text">Tenha a mesma versão do Oracle Database que o banco de dados de origem</block>
   <block id="ed72ca5994ca086c703a8fad4669ac29" category="list-text">Ter acesso à rede ao storage que contém o Snapshot (primário ou secundário)</block>
   <block id="a6b9c0ae442c5226d495a5c8fcbaec6c" category="list-text">Seja capaz de montar o volume clonado e executar o utilitário DBVERIFY do Oracle Database.</block>
   <block id="ee722f1985ae6abb41cf3cea75ae2afd" category="list-text">*Taxa de transferência máxima*: Habilite a opção *Habilitar taxa de transferência máxima* para definir uma taxa de transferência máxima para os hosts selecionados. Para não definir um limite para utilização de largura de banda, selecione *Ilimitado*. Se desejar limitar a taxa de transferência, selecione *Limitado* e escolha a largura de banda entre 1 e 1.000 Mbps alocada para o upload de backups para o storage de objetos. Por padrão, ONTAP pode usar uma quantidade ilimitada de largura de banda para transferir os dados de backup dos volumes do sistema para o storage de objetos. Se o tráfego de backup afetar as cargas de trabalho, reduza a largura de banda para as transferências.</block>
@@ -5644,4 +5641,6 @@
   <block id="2b4ccece5f6493a03ab0eed818dd5e54" category="list-text">Faça backup das cargas de trabalho do VMware em provedores de armazenamento compatíveis.</block>
   <block id="947289c8d4497907d6f4aedc1502dce8" category="list-text">Google Cloud Storage (somente volumes ONTAP e cargas de trabalho do Kubernetes)</block>
   <block id="0692ea49da3133a6dc624be3e9654369" category="paragraph">Você também pode seguir estas etapas para substituir o agente do Console e restaurar os dados de configuração armazenados nele ao usar o Backup e Recovery no _modo padrão_ localmente, quando nenhuma conta de nuvem estiver envolvida (por exemplo, ao usar NetApp StorageGRID como destino de backup).</block>
+  <block id="2be7e1093c386d54e43c7fc0e8de4a1f" category="paragraph">Antes de restaurar arquivos e pastas, você precisa criar uma credencial para a máquina virtual de origem no NetApp Backup and Recovery. Essa credencial é usada para autenticar na máquina virtual durante o processo de restauração.</block>
+  <block id="9f5917bbc05d835882ed9022aa56ac20" category="list-text">Tenha a mesma versão do Oracle Database que o banco de dados de origem</block>
 </blocks>
