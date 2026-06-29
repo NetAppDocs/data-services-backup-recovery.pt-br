@@ -336,9 +336,10 @@ Se você quiser usar as chaves de criptografia padrão do Amazon S3 para criptog
 
 Se, em vez disso, você quiser usar suas próprias chaves gerenciadas pelo cliente para criptografia de dados em vez de usar as chaves padrão, será necessário ter as chaves gerenciadas de criptografia já configuradas antes de iniciar o assistente do NetApp Backup and Recovery .
 
-https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Veja como usar suas próprias chaves de criptografia da Amazon com o Cloud Volumes ONTAP"^].
 
-https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["Veja como usar suas próprias chaves de criptografia da Amazon com o NetApp Backup and Recovery"^].
+NOTE: A criptografia gerenciada pelo cliente é compatível apenas com Amazon FSx for NetApp ONTAP. Não é compatível com Cloud Volumes ONTAP para AWS.
+
+Consulte  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Configure a criptografia gerenciada pelo cliente na AWS"^].
 
 
 
