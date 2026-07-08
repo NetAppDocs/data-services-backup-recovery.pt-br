@@ -729,7 +729,6 @@
   <block id="782af9afc0728a9389fd837476a88107" category="inline-link">Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços</block>
   <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">Use um contrato anual</block>
   <block id="e8081693b5a02447f0b48df91b9f65d8" category="paragraph">Pague pelo NetApp Backup and Recovery anualmente adquirindo um contrato anual.  Eles estão disponíveis em prazos de 1, 2 ou 3 anos.</block>
-  <block id="ba3a3b81b7867cbfec5cb03d1bbc6d9a" category="paragraph">Se você tiver um contrato anual de um marketplace, todo o consumo do NetApp Backup and Recovery será cobrado desse contrato.  Você não pode misturar e combinar um contrato de mercado anual com um BYOL.</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">Página do AWS Marketplace</block>
   <block id="dda622e647d2d5d64503c046c508cc10" category="paragraph">Ao usar a AWS, há dois contratos anuais disponíveis na<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> para sistemas Cloud Volumes ONTAP e ONTAP locais:</block>
   <block id="c776759ca58ab152a9abc5e0b4f7ae66" category="list-text">Um plano "Cloud Backup" que permite fazer backup de dados Cloud Volumes ONTAP e de dados ONTAP locais.</block>
@@ -5644,4 +5643,5 @@
   <block id="9823593ea29f31b6d988e92cd15483f6" category="list-text">Compartilhamentos SMB</block>
   <block id="e3438f0f5d63a3c8de989b98d3095c8d" category="list-text">Armazenamento SAN conectado via iSCSI ou Fibre Channel</block>
   <block id="81bdc0623ea533b24d0e11cb1d26ba25" category="list-text">Para implementações do Hyper-V que utilizam compartilhamentos SMB para armazenar dados de máquinas virtuais, certifique-se de que a propriedade de compartilhamento de disponibilidade contínua esteja habilitada no sistema ONTAP. Consulte a <block ref="5c340db4eb0fc64db199962e418ffbd0" category="inline-link-rx"></block> para obter instruções.</block>
+  <block id="09e4a6980ec8e49e9c338d71a078b029" category="paragraph">Se você possui um contrato anual com um marketplace, todo o consumo de NetApp Backup and Recovery será cobrado de acordo com esse contrato.</block>
 </blocks>
