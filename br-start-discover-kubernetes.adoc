@@ -37,7 +37,7 @@ Ao descobrir um cluster que está atualmente protegido com Trident Protect, quai
 
 
 . Selecione o tipo de carga de trabalho *Kubernetes*.
-. Insira um nome de cluster e escolha um conector para usar com o cluster.
+. Insira um nome de cluster e escolha um agente de Console para usar com o cluster.
 . Siga as instruções da linha de comando que aparecem:
 +
 ** Crie um namespace Trident Protect
