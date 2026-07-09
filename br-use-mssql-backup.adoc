@@ -23,6 +23,7 @@ Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP l
 
 
 
+[[view-workload-protection-status]]
 == Exibir status de proteção da carga de trabalho
 
 Antes de iniciar um backup, visualize o status de proteção das suas cargas de trabalho.
@@ -38,6 +39,7 @@ Antes de iniciar um backup, visualize o status de proteção das suas cargas de 
 
 
 
+[[configure-the-log-directory-for-discovered-hosts]]
 == Configurar o diretório de log para hosts descobertos
 
 Defina o caminho do log de atividades para hosts descobertos para rastrear o status da operação antes de fazer backup das cargas de trabalho.
@@ -61,6 +63,7 @@ NOTE: Os campos exibidos diferem dependendo do modelo de implantação seleciona
 
 
 
+[[create-a-protection-group]]
 == Crie um grupo de proteção
 
 Crie um grupo de proteção para gerenciar operações de backup e restauração para várias cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho.
@@ -87,6 +90,7 @@ Se você quiser criar uma política, selecione *Criar nova política* e siga as 
 
 
 
+[[back-up-workloads-now-with-an-on-demand-backup]]
 == Faça backup de cargas de trabalho agora com um backup sob demanda
 
 Execute um backup sob demanda antes de fazer alterações no seu sistema para garantir que seus dados estejam protegidos.
@@ -107,6 +111,7 @@ Execute um backup sob demanda antes de fazer alterações no seu sistema para ga
 
 
 
+[[suspend-the-backup-schedule]]
 == Suspender o agendamento de backup
 
 Suspenda o agendamento para interromper temporariamente os backups durante a manutenção ou solução de problemas.
@@ -124,6 +129,7 @@ Suspenda o agendamento para interromper temporariamente os backups durante a man
 
 
 
+[[delete-a-protection-group]]
 == Excluir um grupo de proteção
 
 A exclusão de um grupo de proteção o remove, juntamente com todos os agendamentos de backup associados. Talvez você queira excluir um grupo de proteção se ele não for mais necessário.
@@ -140,6 +146,7 @@ A exclusão de um grupo de proteção o remove, juntamente com todos os agendame
 
 
 
+[[remove-protection-from-a-workload]]
 == Remover proteção de uma carga de trabalho
 
 Você pode remover a proteção de uma carga de trabalho se não quiser mais fazer backup dela ou se quiser parar de gerenciá-la no NetApp Backup and Recovery.

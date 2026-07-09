@@ -20,6 +20,7 @@ Você pode alterar as configurações de autenticação e de nó para um novo ba
 
 
 
+[[configure-an-oracle-database]]
 == Configurar um banco de dados Oracle
 
 Altere a configuração de um banco de dados Oracle independente ou em cluster.

@@ -29,6 +29,7 @@ Depois de configurar o NetApp Console, defina as configurações de backup e rec
 
 
 
+[[add-credentials-for-host-resources]]
 == Adicionar credenciais para recursos do host
 
 Adicione credenciais para recursos do host. O NetApp Backup and Recovery usa essas credenciais para descobrir cargas de trabalho e aplicar políticas de backup.
@@ -116,6 +117,7 @@ TIP: Para cargas de trabalho do Microsoft SQL Server, você precisa inserir cred
 
 
 
+[[edit-credentials-for-host-resources]]
 === Editar credenciais para recursos do host
 
 Você poderá editar posteriormente a senha de quaisquer credenciais que tenha criado.
@@ -133,6 +135,7 @@ Você poderá editar posteriormente a senha de quaisquer credenciais que tenha c
 
 
 
+[[maintain-vmware-vcenter-settings]]
 == Manter as configurações do VMware vCenter
 
 Forneça credenciais do VMware vCenter para descobrir cargas de trabalho para backup.  Se você não tiver credenciais, crie-as com permissões para acessar e gerenciar as cargas de trabalho do VMware vCenter Server.
@@ -154,6 +157,7 @@ Forneça credenciais do VMware vCenter para descobrir cargas de trabalho para ba
 
 
 
+[[import-and-manage-snapcenter-host-resources]]
 == Importar e gerenciar recursos do host SnapCenter
 
 Se você usou anteriormente o SnapCenter para fazer backup de seus recursos, poderá importar e gerenciar esses recursos no NetApp Backup and Recovery. Esta opção permite importar informações do servidor SnapCenter para registrar vários servidores SnapCenter e descobrir cargas de trabalho do banco de dados.
@@ -166,6 +170,7 @@ Este é um processo de duas partes:
 
 
 
+[[import-snapcenter-server-application-and-host-resources]]
 === Importar recursos do aplicativo e do host do SnapCenter Server
 
 Esta primeira etapa importa recursos de host do SnapCenter e exibe esses recursos na página Inventário de NetApp Backup and Recovery .  Nesse ponto, os recursos ainda não são gerenciados pelo NetApp Backup and Recovery.
@@ -203,6 +208,7 @@ A página Inventário mostra os recursos importados do SnapCenter .
 
 
 
+[[manage-snapcenter-host-resources]]
 === Gerenciar recursos do host SnapCenter
 
 Depois de importar os recursos do SnapCenter , gerencie esses recursos de host no NetApp Backup and Recovery.  Depois de selecionar o gerenciamento desses recursos importados, o NetApp Backup and Recovery pode fazer backup e recuperar os recursos que você está importando do SnapCenter.  Você não precisa mais gerenciar esses recursos no SnapCenter Server.
@@ -218,6 +224,7 @@ A página Inventário mostra *Gerenciado* sob o nome do host para indicar que os
 
 
 
+[[edit-imported-snapcenter-resources]]
 === Editar recursos importados do SnapCenter
 
 Posteriormente, você poderá reimportar os recursos do SnapCenter ou editar os recursos do SnapCenter importados para atualizar os dados de registro.
@@ -237,6 +244,7 @@ A página Importar do SnapCenter mostra todas as importações anteriores.
 
 
 
+[[add-a-kvm-management-platform]]
 == Adicione uma plataforma de gerenciamento KVM
 
 Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar recursos KVM, é necessário integrá-la ao NetApp Backup and Recovery para que este possa detectar e proteger os hosts KVM e as VMs gerenciadas.
@@ -259,6 +267,7 @@ Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar 
 
 
 
+[[configure-log-directories-in-snapshots-for-windows-hosts]]
 == Configurar diretórios de log em instantâneos para hosts Windows
 
 Antes de criar políticas para hosts Windows, você deve configurar diretórios de log em instantâneos para hosts Windows.  Os diretórios de log são usados para armazenar os logs gerados durante o processo de backup.
@@ -274,6 +283,7 @@ Antes de criar políticas para hosts Windows, você deve configurar diretórios 
 
 
 
+[[create-an-execution-hook-template]]
 == Crie um modelo de gancho de execução
 
 Você pode criar um modelo de gancho de execução personalizado que pode ser usado para executar ações antes ou depois de uma operação de proteção de dados em um aplicativo.
@@ -297,6 +307,7 @@ Depois de criar o modelo, ele aparece na lista de modelos na seção *Modelo de 
 
 
 
+[[create-a-resource-transformation-template]]
 == Crie um modelo de transformação de recursos
 
 Crie modelos de transformação de recursos para armazenar as transformações comuns que você realiza nos recursos ao restaurá-los.

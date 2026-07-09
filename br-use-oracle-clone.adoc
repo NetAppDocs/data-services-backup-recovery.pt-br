@@ -20,6 +20,7 @@ Use NetApp Backup and Recovery para criar clones graváveis de bancos de dados O
 
 
 
+[[create-a-clone-of-an-oracle-database]]
 == Crie um clone de um banco de dados Oracle
 
 Crie um clone imediatamente a partir de um snapshot existente. Use este método para criar um clone único que não é atualizado continuamente a partir de um snapshot.
@@ -50,6 +51,7 @@ A opção *Selecionar local do instantâneo* aparece se o instantâneo estiver a
 
 
 
+[[schedule-a-clone-of-an-oracle-database]]
 == Agendar a clonagem de um banco de dados Oracle
 
 Agende a criação instantânea de um clone e a atualização contínua do clone. Isso cria o clone mais atualizado possível do banco de dados. Use este método se quiser atualizar continuamente o clone a partir do estado mais recente do banco de dados, de acordo com uma programação que você escolher.
@@ -77,6 +79,7 @@ Agende a criação instantânea de um clone e a atualização contínua do clone
 
 
 
+[[split-a-clone]]
 == Dividir um clone
 
 Você pode dividir um clone de suas cargas de trabalho do Oracle Database. Dividir um clone cria um novo backup a partir do clone. Você pode usar o novo backup para restaurar bancos de dados.
@@ -95,6 +98,7 @@ A tarefa de clonagem não é removida e pode ser reutilizada para outros clones.
 
 
 
+[[delete-a-clone]]
 == Excluir um clone
 
 Você pode excluir um clone de suas cargas de trabalho do Oracle Database. Ao excluir um clone, ele é removido do armazenamento de objetos, liberando espaço de storage.

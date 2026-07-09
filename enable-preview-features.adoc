@@ -20,10 +20,12 @@ Ative a pré-visualização e os recursos ocultos para NetApp Backup and Recover
 
 
 
+[[available-preview-features]]
 == Recursos de pré-visualização disponíveis
 
 Você pode ativar os seguintes recursos de pré-visualização para NetApp Backup and Recovery.
 
+[[anchor-flags]]
 [cols="50,50"]
 |===
 | Sinalizador de recurso | Descrição da funcionalidade 
@@ -36,6 +38,7 @@ Você pode ativar os seguintes recursos de pré-visualização para NetApp Backu
 |===
 
 
+[[enable-preview-features]]
 == Ativar recursos de pré-visualização
 
 Habilite as opções de pré-visualização para usar funcionalidades que ainda não estão disponíveis ao público em geral. Use recursos de pré-visualização com cautela em ambientes de produção.
@@ -116,6 +119,7 @@ NOTE: Para desativar um recurso de pré-visualização, siga os mesmos passos, m
 
 
 
+[[disable-indexing-for-volumes]]
 == Desativar indexação para volumes
 
 Desative a indexação para volumes específicos ou para todos os volumes pertencentes a uma ou mais storage VMs usando as seguintes flags de opção:

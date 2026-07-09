@@ -44,6 +44,7 @@ Você pode realizar as seguintes tarefas relacionadas ao gerenciamento do seu in
 
 
 
+[[manage-host-information]]
 == Gerenciar informações do host
 
 Você pode gerenciar as informações do host para garantir que os hosts certos estejam protegidos.  Você pode visualizar, editar e excluir informações do host.
@@ -58,6 +59,7 @@ Você pode gerenciar as informações do host para garantir que os hosts certos 
 
 
 
+[[manage-hosts]]
 === Gerenciar hosts
 
 Você pode gerenciar os hosts descobertos no seu sistema.  Você pode gerenciá-los separadamente ou em grupo.
@@ -88,6 +90,7 @@ Depois de gerenciar os hosts no NetApp Backup and Recovery, o SnapCenter não ge
 
 
 
+[[suspend-schedules]]
 === Suspender horários
 
 Suspenda agendamentos para interromper operações de backup e restauração durante a manutenção do host.
@@ -101,6 +104,7 @@ Suspenda agendamentos para interromper operações de backup e restauração dur
 
 
 
+[[edit-a-host]]
 === Editar um host
 
 Você pode alterar as informações do servidor vCenter, as credenciais de registro do host e as opções de configurações avançadas.
@@ -115,6 +119,7 @@ Você pode alterar as informações do servidor vCenter, as credenciais de regis
 
 
 
+[[delete-a-host]]
 === Excluir um host
 
 Você pode excluir as informações do host para interromper as cobranças de serviço.
@@ -128,6 +133,7 @@ Você pode excluir as informações do host para interromper as cobranças de se
 
 
 
+[[manage-instances-information]]
 == Gerenciar informações de instâncias
 
 Você pode gerenciar informações de instâncias para atribuir as credenciais apropriadas para proteção de recursos e fazer backup de recursos das seguintes maneiras:
@@ -143,6 +149,7 @@ Você pode gerenciar informações de instâncias para atribuir as credenciais a
 
 
 
+[[protect-database-instances]]
 === Proteger instâncias de banco de dados
 
 Você pode atribuir uma política a uma instância de banco de dados usando políticas que controlam os agendamentos e a retenção da proteção de recursos.
@@ -174,6 +181,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 
 
+[[associate-credentials-with-a-resource]]
 === Associar credenciais a um recurso
 
 Você pode associar credenciais a um recurso para que a proteção possa ocorrer.
@@ -191,6 +199,7 @@ Para mais detalhes, vejalink:br-start-configure.html["Configurar as configuraç�
 
 
 
+[[edit-protection-settings]]
 === Editar configurações de proteção
 
 Você pode alterar a política, criar uma nova política, definir um cronograma e definir configurações de retenção.
@@ -208,6 +217,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 
 
+[[back-up-now]]
 === Faça backup agora
 
 Faça backup dos seus dados agora para protegê-los imediatamente.
@@ -226,6 +236,7 @@ Para obter detalhes sobre como criar um backup ad hoc, consultelink:br-use-mssql
 
 
 
+[[manage-database-information]]
 == Gerenciar informações do banco de dados
 
 Você pode gerenciar informações do banco de dados das seguintes maneiras:
@@ -239,6 +250,7 @@ Você pode gerenciar informações do banco de dados das seguintes maneiras:
 
 
 
+[[protect-databases]]
 === Proteger bancos de dados
 
 Você pode alterar a política, criar uma nova política, definir um cronograma e definir configurações de retenção.
@@ -258,6 +270,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 
 
+[[restore-databases]]
 === Restaurar bancos de dados
 
 Restaure um banco de dados para proteger seus dados.
@@ -274,6 +287,7 @@ Para obter informações sobre como restaurar cargas de trabalho, consultelink:b
 
 
 
+[[edit-protection-settings]]
 === Editar configurações de proteção
 
 Você pode alterar a política, criar uma nova política, definir um cronograma e definir configurações de retenção.
@@ -293,6 +307,7 @@ Para obter detalhes sobre como criar uma política, consultelink:br-use-policies
 
 
 
+[[back-up-now]]
 === Faça backup agora
 
 Você pode fazer backup de suas instâncias e bancos de dados do Microsoft SQL Server agora para proteger seus dados imediatamente.

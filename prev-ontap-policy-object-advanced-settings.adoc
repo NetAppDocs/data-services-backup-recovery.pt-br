@@ -34,6 +34,7 @@ Você pode alterar as seguintes opções na página Configurações avançadas:
 
 
 
+[[view-cluster-level-backup-settings]]
 == Exibir configurações de backup em nível de cluster
 
 Você pode visualizar as configurações do sistema em nível de cluster e as configurações do provedor para cada sistema.
@@ -51,6 +52,7 @@ Observe que algumas opções podem não estar disponíveis dependendo da versão
 
 
 
+[[change-the-network-bandwidth-available-to-upload-backups-to-object-storage]]
 == Alterar a largura de banda de rede disponível para fazer upload de backups para armazenamento de objetos
 
 Quando você ativa o NetApp Backup and Recovery para um sistema, por padrão, o ONTAP pode usar uma quantidade ilimitada de largura de banda para transferir os dados de backup de volumes no sistema para o armazenamento de objetos.  Se você perceber que o tráfego de backup está afetando as cargas de trabalho normais dos usuários, você pode limitar a quantidade de largura de banda de rede usada durante a transferência usando a opção Taxa máxima de transferência na página Configurações avançadas.
@@ -68,6 +70,7 @@ Esta configuração não afeta a largura de banda alocada para quaisquer outros 
 
 
 
+[[change-whether-historical-snapshots-are-exported-as-backup-files]]
 == Alterar se os snapshots históricos serão exportados como arquivos de backup
 
 Se houver snapshots locais para volumes que correspondam ao rótulo de agendamento de backup que você está usando neste sistema (por exemplo, diário, semanal etc.), você pode exportar esses snapshots históricos para o armazenamento de objetos como arquivos de backup.  Isso permite que você inicialize seus backups na nuvem movendo snapshots mais antigos para a cópia de backup de referência.
@@ -84,6 +87,7 @@ Observe que esta opção só se aplica a novos arquivos de backup para novos vol
 
 
 
+[[change-whether-yearly-snapshots-are-removed-from-the-source-system]]
 == Alterar se os snapshots "anuais" são removidos do sistema de origem
 
 Ao selecionar o rótulo de backup "anual" para uma política de backup de qualquer um dos seus volumes, o snapshot criado será muito grande. Por padrão, esses instantâneos anuais são excluídos automaticamente do sistema de origem após serem transferidos para o armazenamento de objetos. Você pode alterar esse comportamento padrão na seção Exclusão anual de instantâneos.
@@ -98,6 +102,7 @@ Ao selecionar o rótulo de backup "anual" para uma política de backup de qualqu
 
 
 
+[[enable-or-disable-ransomware-scans]]
 == Habilitar ou desabilitar verificações de ransomware
 
 As verificações de proteção contra ransomware são ativadas por padrão. A configuração padrão para a frequência de verificação é de 7 dias. A verificação ocorre apenas no instantâneo mais recente.
@@ -115,6 +120,7 @@ Consultelink:prev-ontap-policy-manage.html["Gerenciar políticas"] para obter de
 
 
 
+[[enable-or-disable-ransomware-scans-for-a-system]]
 === Ativar ou desativar verificações de ransomware para um sistema
 
 Você pode ativar ou desativar as verificações de ransomware para um cluster.
@@ -132,6 +138,7 @@ Você pode ativar ou desativar as verificações de ransomware para um cluster.
 
 
 
+[[enable-or-disable-ransomware-scans-for-a-provider]]
 === Ativar ou desativar verificações de ransomware para um provedor
 
 Você pode ativar ou desativar as verificações de ransomware no nível do provedor usando a página de configurações do provedor. As configurações desta página são relevantes para o bucket que você selecionar na parte superior da página.

@@ -39,6 +39,7 @@ NOTE: O SnapMirror para Cloud Resync após migrações usando os métodos SVM-Mi
 
 
 
+[[how-netapp-backup-and-recovery-snapmirror-to-cloud-resync-works]]
 == Como funciona o NetApp Backup and Recovery SnapMirror para a ressincronização na nuvem
 
 Se você concluir uma atualização técnica ou migrar volumes de um cluster ONTAP para outro, é importante que seus backups continuem funcionando sem interrupção.  O NetApp Backup and Recovery SnapMirror to Cloud Resync ajuda com isso, garantindo que seus backups na nuvem permaneçam consistentes mesmo após uma migração de volume.
@@ -72,6 +73,7 @@ image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery 
 
 
 
+[[procedure-notes]]
 == Notas de procedimento
 
 * Migrações e atualizações de tecnologia não são realizadas usando o NetApp Backup and Recovery.  Elas devem ser realizadas por uma equipe de serviços profissionais ou por um administrador de armazenamento qualificado.
@@ -81,6 +83,7 @@ image:diagram-snapmirror-cloud-resync-migration.png["NetApp Backup and Recovery 
 
 
 
+[[how-to-migrate-volumes-using-snapmirror-to-cloud-resync]]
 == Como migrar volumes usando o SnapMirror para o Cloud Resync
 
 A migração de volumes usando o SnapMirror para o Cloud Resync envolve as seguintes etapas principais, cada uma descrita com mais detalhes abaixo:
@@ -94,6 +97,7 @@ image:diagram-snapmirror-cloud-resync-migration-steps.png["Etapas para migrar vo
 
 
 
+[[follow-a-pre-migration-checklist]]
 === Siga uma lista de verificação pré-migração
 
 Antes da migração, a equipe NetApp Tech Refresh verifica esses pré-requisitos para evitar a perda de dados e garantir um processo tranquilo.
@@ -108,6 +112,7 @@ Antes da migração, a equipe NetApp Tech Refresh verifica esses pré-requisitos
 
 
 
+[[follow-a-post-migration-checklist]]
 === Siga uma lista de verificação pós-migração
 
 Após a migração, uma equipe de atualização técnica da NetApp garante que as seguintes etapas sejam concluídas para estabelecer a proteção e se preparar para a ressincronização.
@@ -126,6 +131,7 @@ NOTE: O UUID da instância do volume deve ser usado, não o ID do volume. O UUID
 
 
 
+[[perform-a-snapmirror-to-cloud-resync]]
 === Execute uma ressincronização do SnapMirror para a nuvem
 
 Após a migração, uma equipe do NetApp Tech Refresh executa uma operação de ressincronização do SnapMirror para a nuvem para retomar os backups na nuvem dos volumes recém-migrados.

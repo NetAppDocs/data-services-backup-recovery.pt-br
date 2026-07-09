@@ -26,6 +26,7 @@ Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
 
 
+[[create-a-protection-group]]
 == Crie um grupo de proteção
 
 Agrupe VMs e pools de armazenamento que você deseja proteger em um grupo de proteção.
@@ -52,6 +53,7 @@ Se você quiser criar uma política, selecione *Criar nova política* e siga as 
 
 
 
+[[delete-a-protection-group]]
 == Excluir um grupo de proteção
 
 A exclusão de um grupo de proteção o remove, juntamente com todos os agendamentos de backup associados. Talvez você queira excluir um grupo de proteção se ele não for mais necessário.

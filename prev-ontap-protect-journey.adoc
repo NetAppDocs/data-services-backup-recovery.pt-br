@@ -30,6 +30,7 @@ Analisaremos as seguintes opções:
 
 
 
+[[which-protection-features-will-you-use]]
 == Quais recursos de proteção você usará
 
 Antes de selecionar os recursos que você usará, aqui está uma explicação rápida sobre o que cada recurso faz e que tipo de proteção ele oferece.
@@ -84,6 +85,7 @@ Além desses critérios, storage de nuvem oferece opções de segurança adicion
 |===
 
 
+[[which-backup-architecture-will-you-use]]
 == Qual arquitetura de backup você usará
 
 Ao criar volumes replicados e arquivos de backup, você pode escolher uma arquitetura de fan-out ou em cascata para fazer backup dos seus volumes.
@@ -112,6 +114,7 @@ Esta tabela fornece uma comparação das arquiteturas fan-out e cascata.
 |===
 
 
+[[will-you-use-the-default-policies-for-snapshots-replications-and-backups]]
 == Você usará as políticas padrão para snapshots, replicações e backups
 
 Você pode usar as políticas padrão fornecidas pela NetApp para criar seus backups ou pode criar políticas personalizadas.  Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas que já existam no sistema (Cloud Volumes ONTAP ou sistema ONTAP local).  Se quiser usar uma política diferente das políticas existentes, você pode criá-la antes de começar ou enquanto usa o assistente de ativação.
@@ -163,6 +166,7 @@ NOTE: Somente políticas de cofre podem ser usadas para backup em relacionamento
 
 
 
+[[where-do-my-policies-reside]]
 == Onde ficam minhas políticas?
 
 As políticas de backup residem em locais diferentes dependendo da arquitetura de backup que você planeja usar: Fan-out ou Cascading.  As políticas de replicação e as políticas de backup não são projetadas da mesma forma porque as replicações emparelham dois sistemas de armazenamento ONTAP e o backup para objeto usa um provedor de armazenamento como destino.
@@ -190,6 +194,7 @@ Se você estiver usando as políticas padrão que existem em todos os sistemas O
 
 
 
+[[do-you-want-to-create-your-own-object-storage-container]]
 == Você quer criar seu próprio contêiner de armazenamento de objetos
 
 Ao criar arquivos de backup no armazenamento de objetos de um sistema, por padrão, o serviço de backup e recuperação cria o contêiner (bucket ou conta de armazenamento) para os arquivos de backup na conta de armazenamento de objetos que você configurou.  O bucket AWS ou GCP é chamado "netapp-backup-<uuid>" por padrão.  A conta de armazenamento de Blobs do Azure é chamada "netappbackup<uuid>".
@@ -228,6 +233,7 @@ Se você planeja mover arquivos de backup mais antigos para armazenamento de arq
 
 
 
+[[which-console-agent-deployment-mode-are-you-using]]
 == Qual modo de implantação do agente do console você está usando
 
 Se você já estiver usando o Console para gerenciar seu armazenamento, um agente do Console já terá sido instalado.  Se você planeja usar o mesmo agente do Console com o NetApp Backup and Recovery, está tudo pronto.  Se precisar usar um agente de console diferente, você precisará instalá-lo antes de iniciar a implementação de backup e recuperação.
@@ -238,6 +244,7 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Saiba mais
 
 
 
+[[support-for-sites-with-full-internet-connectivity]]
 === Suporte para sites com conectividade total à Internet
 
 Quando o NetApp Backup and Recovery é usado em um site com conectividade total à Internet (também conhecido como _modo padrão_ ou _modo SaaS_), você pode criar volumes replicados em qualquer sistema ONTAP local ou Cloud Volumes ONTAP gerenciado pelo Console e pode criar arquivos de backup no armazenamento de objetos em qualquer um dos provedores de nuvem suportados. link:concept-backup-to-cloud.html["Veja a lista completa de destinos de backup suportados"].
@@ -256,6 +263,7 @@ Para obter uma lista de locais válidos do agente do Console, consulte um dos se
 
 
 
+[[support-for-sites-with-limited-internet-connectivity]]
 === Suporte para sites com conectividade de internet limitada
 
 O NetApp Backup and Recovery pode ser usado em um local com conectividade de internet limitada (também conhecido como _modo restrito_) para fazer backup de dados de volume.  Nesse caso, você precisará implantar o agente do Console na região da nuvem de destino.
@@ -266,6 +274,7 @@ O NetApp Backup and Recovery pode ser usado em um local com conectividade de int
 
 
 
+[[support-for-sites-with-no-internet-connectivity]]
 === Suporte para sites sem conectividade com a Internet
 
 O NetApp Backup and Recovery pode ser usado em um site sem conectividade com a Internet (também conhecido como _modo privado_ ou sites _escuros_) para fazer backup de dados de volume.  Nesse caso, você precisará implantar o agente do Console em um host Linux no mesmo site.

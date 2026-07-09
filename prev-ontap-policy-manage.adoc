@@ -47,6 +47,7 @@ TIP: Ao usar o Gerenciador do Sistema, selecione *Assíncrono* como o tipo de po
 
 
 
+[[view-policies-for-a-system]]
 == Exibir políticas para um sistema
 
 . Na interface do usuário do console, selecione *Volumes* > *Configurações de backup*.
@@ -59,6 +60,7 @@ A página Gerenciamento de políticas é exibida.  As políticas de instantâneo
 
 
 
+[[create-policies]]
 == Criar políticas
 
 Você pode criar políticas que regem seus snapshots, replicações e backups para armazenamento de objetos:
@@ -70,6 +72,7 @@ Você pode criar políticas que regem seus snapshots, replicações e backups pa
 
 
 
+[[create-a-snapshot-policy-before-initiating-the-snapshot]]
 === Crie uma política de snapshot antes de iniciar o snapshot
 
 Parte da sua estratégia 3-2-1 envolve a criação de um snapshot do volume no sistema de armazenamento *primário*.
@@ -118,6 +121,7 @@ Este exemplo cria uma política de snapshot com dois clusters:
 
 
 
+[[create-a-replication-policy-before-initiating-the-replication]]
 === Crie uma política de replicação antes de iniciar a replicação
 
 Sua estratégia 3-2-1 pode incluir a replicação de um volume em um sistema de armazenamento diferente.  A política de replicação reside no sistema de armazenamento *secundário*.
@@ -132,6 +136,7 @@ Sua estratégia 3-2-1 pode incluir a replicação de um volume em um sistema de 
 
 
 
+[[create-a-backup-to-object-storage-policy-before-initiating-the-backup]]
 === Crie uma política de backup para armazenamento de objetos antes de iniciar o backup
 
 Sua estratégia 3-2-1 pode incluir o backup de um volume no armazenamento de objetos.
@@ -163,6 +168,7 @@ link:prev-ontap-policy-object-options.html["Saiba mais sobre as configurações 
 
 
 
+[[edit-a-policy]]
 == Editar uma política
 
 Você pode editar uma política personalizada de snapshot, replicação ou backup.
@@ -181,6 +187,7 @@ NOTE: O processo é o mesmo para políticas de replicação e backup.
 
 
 
+[[delete-a-policy]]
 == Excluir uma política
 
 Você pode excluir políticas que não estejam associadas a nenhum volume.
@@ -194,6 +201,7 @@ Se uma política estiver associada a um volume e você quiser excluí-la, será 
 
 
 
+[[find-more-information]]
 == Encontre mais informações
 
 Para obter instruções sobre como criar políticas usando o System Manager ou o ONTAP CLI, consulte o seguinte:

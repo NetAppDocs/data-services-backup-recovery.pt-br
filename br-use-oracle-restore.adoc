@@ -32,6 +32,7 @@ Você pode restaurar dados para o local original; restaurar para um local altern
 
 
 
+[[how-restoring-oracle-databases-works]]
 == Como funciona a restauração de bancos de dados Oracle
 
 Ao restaurar bancos de dados Oracle, ocorre o seguinte:
@@ -45,6 +46,7 @@ Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode 
 
 
 
+[[restore-an-oracle-database]]
 == Restaurar um banco de dados Oracle
 
 Dependendo de suas necessidades, restaure um banco de dados Oracle para um ponto específico no tempo, para um número de alteração do sistema (SCN) específico ou para o último estado bom.  Você também pode simplesmente restaurar o banco de dados a partir de instantâneos e pular o processo de recuperação automatizado.  Talvez você queira pular o processo de recuperação automatizado se quiser executar a recuperação manualmente.  Você pode pesquisar o banco de dados usando seu nome ou com filtros específicos.

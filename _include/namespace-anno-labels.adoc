@@ -4,6 +4,7 @@
 
 
 
+[[namespace-annotations-and-labels-during-restore-and-failover-operations]]
 == Anotações e rótulos de namespace durante operações de restauração e failover
 
 Durante a restauração e o failover, os rótulos e anotações do namespace de destino são atualizados para corresponder à origem: as chaves da origem são adicionadas ou substituem as chaves de destino, enquanto as chaves que existem apenas no destino permanecem inalteradas.
@@ -32,6 +33,7 @@ Se você usou o Helm com a  `--create-namespace` flag para instalar o aplicativo
 
 
 
+[[example]]
 === Exemplo
 
 O exemplo a seguir mostra namespaces de origem e destino com rótulos e anotações diferentes, e exibe o namespace de destino antes e depois da operação para ilustrar como as chaves são adicionadas, mescladas ou sobrescritas.

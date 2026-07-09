@@ -4,6 +4,7 @@
 
 
 
+[[create-an-execution-hook-template]]
 == Crie um modelo de gancho de execução
 
 Você pode criar um modelo de gancho de execução personalizado que pode ser usado para executar ações antes ou depois de uma operação de proteção de dados em um aplicativo.

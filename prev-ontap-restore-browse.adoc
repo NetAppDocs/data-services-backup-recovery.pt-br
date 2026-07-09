@@ -37,6 +37,7 @@ NOTE: A alta prioridade não é suportada ao restaurar dados do armazenamento de
 
 
 
+[[browse-restore-supported-systems-and-object-storage-providers]]
 == Navegar e restaurar sistemas suportados e provedores de armazenamento de objetos
 
 Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
@@ -75,6 +76,7 @@ NOTE: Se a versão do ONTAP no seu sistema for inferior a 9.13.1, você não pod
 
 
 
+[[restore-volumes-using-browse-restore]]
 == Restaurar volumes usando Navegar e Restaurar
 
 Quando você restaura um volume de um arquivo de backup, o NetApp Backup and Recovery cria um _novo_ volume usando os dados do backup.  Ao usar um backup do armazenamento de objetos, você pode restaurar os dados para um volume no sistema original, para um sistema diferente localizado na mesma conta de nuvem que o sistema de origem ou para um sistema ONTAP local.
@@ -141,6 +143,7 @@ Observe que restaurar um volume de um arquivo de backup que reside no armazename
 
 
 
+[[restore-folders-and-files-using-browse-restore]]
 == Restaurar pastas e arquivos usando Navegar e Restaurar
 
 Se precisar restaurar apenas alguns arquivos de um backup de volume ONTAP , você pode optar por restaurar uma pasta ou arquivos individuais em vez de restaurar o volume inteiro.  Você pode restaurar pastas e arquivos para um volume existente no sistema original ou para um sistema diferente que esteja usando a mesma conta de nuvem.  Você também pode restaurar pastas e arquivos para um volume em um sistema ONTAP local.
@@ -165,6 +168,7 @@ Você pode testá-lo usando um sinalizador especial descrito no https://communit
 ====
 
 
+[[restore-folders-and-files]]
 === Restaurar pastas e arquivos
 
 Siga estas etapas para restaurar pastas ou arquivos para um volume a partir de um backup de volume ONTAP .  Você deve saber o nome do volume e a data do arquivo de backup que deseja usar para restaurar a pasta ou o(s) arquivo(s).  Esta funcionalidade usa a Navegação ao Vivo para que você possa visualizar a lista de diretórios e arquivos dentro de cada arquivo de backup.

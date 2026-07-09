@@ -26,6 +26,7 @@ NOTE: Para fazer backup de grupos de proteção ou bancos de dados individuais e
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Faça backup de grupos de proteção agora com um backup sob demanda
 
 Execute um backup sob demanda antes de fazer alterações no sistema para garantir que seus dados estejam protegidos.
@@ -51,6 +52,7 @@ NOTE: O NetApp Backup and Recovery usa a mesma política para o backup e o grupo
 
 
 
+[[back-up-a-database-now-with-an-on-demand-backup]]
 == Faça backup de um banco de dados agora com um backup sob demanda
 
 Você pode executar um backup sob demanda de um único banco de dados.

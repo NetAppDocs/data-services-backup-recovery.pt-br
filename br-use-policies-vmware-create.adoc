@@ -33,6 +33,7 @@ NOTE: Para cargas de trabalho VMware, os agendamentos de backup usam o fuso hor�
 
 
 
+[[view-policies]]
 == Ver políticas
 
 . No menu NetApp Backup and Recovery , selecione *Políticas*.
@@ -49,6 +50,7 @@ NOTE: Para cargas de trabalho VMware, os agendamentos de backup usam o fuso hor�
 
 
 
+[[create-a-policy]]
 == Criar uma política
 
 Você pode criar políticas que controlam seus snapshots locais, replicações para armazenamento secundário e backups para armazenamento de objetos. Parte da sua estratégia 3-2-1 envolve a criação de um snapshot das instâncias, bancos de dados, aplicativos ou máquinas virtuais no sistema de armazenamento *primário*.
@@ -146,6 +148,7 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 
 
 
+[[configure-advanced-settings-in-the-policy]]
 === Configurar configurações avançadas na política
 
 [%collapsible]
@@ -185,6 +188,7 @@ TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, ju
 ====
 
 
+[[delete-a-policy]]
 == Excluir uma política
 
 Você pode excluir uma política se não precisar mais dela.

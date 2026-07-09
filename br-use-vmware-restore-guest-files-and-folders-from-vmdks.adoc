@@ -18,6 +18,7 @@ Restaure arquivos ou pastas individuais de um disco virtual para a VM original o
 
 
 
+[[restore-files-and-folders-from-virtual-disks]]
 == Restaurar arquivos e pastas de discos virtuais
 
 Restaure arquivos ou pastas de um disco virtual para a VM original ou para outra VM. Se preferir não conectar o disco virtual à VM original, você pode conectá-lo a uma VM proxy.
@@ -178,6 +179,7 @@ Você pode visualizar o progresso da restauração na página de Monitoramento d
 ====
 
 
+[[view-active-vmdk-mount-sessions]]
 == Visualizar sessões de montagem VMDK ativas
 
 Visualize as sessões de convidado ativas ao restaurar arquivos ou pastas. Isso mostra os VMDKs que estão atualmente conectados a sessões abertas.

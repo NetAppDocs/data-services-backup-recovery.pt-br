@@ -20,6 +20,7 @@ A descoberta de bancos de dados Oracle permite que NetApp Backup and Recovery os
 
 
 
+[[add-an-oracle-database-host-and-discover-resources]]
 == Adicione um host do Oracle Database e descubra recursos
 
 Adicione informações do host Oracle e deixe o NetApp Backup and Recovery descobrir cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
@@ -75,6 +76,7 @@ A carga de trabalho do Oracle Database é exibida na lista de cargas de trabalho
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continue para o Painel de NetApp Backup and Recovery
 
 . No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.

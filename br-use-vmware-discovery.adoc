@@ -20,6 +20,7 @@ O serviço NetApp Backup and Recovery precisa primeiro descobrir datastores e VM
 
 
 
+[[discover-vmware-workloads-and-optionally-import-snapcenter-resources]]
 == Descubra cargas de trabalho do VMware e, opcionalmente, importe recursos do SnapCenter
 
 Durante a fase de descoberta, o NetApp Backup and Recovery analisa as cargas de trabalho do VMware em sua organização e avalia e importa as políticas de proteção, snapshots e opções de backup e restauração existentes.
@@ -52,6 +53,7 @@ NOTE: Se você já tiver o SnapCenter Plug-in, certifique-se de atender aos pré
 
 
 
+[[if-snapcenter-plug-in-is-not-already-installed-add-a-vcenter-and-discover-resources]]
 === Se o plug-in SnapCenter ainda não estiver instalado, adicione um vCenter e descubra recursos
 
 Se você ainda não tiver o SnapCenter Plug-in para VMware instalado, adicione informações do vCenter e faça com que o NetApp Backup and Recovery descubra cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
@@ -83,6 +85,7 @@ TIP: Este processo pode levar alguns minutos.
 
 
 
+[[if-snapcenter-plug-in-is-already-installed-import-snapcenter-plug-in-for-vmware-resources-into-netapp-backup-and-recovery]]
 === Se o SnapCenter Plug-in já estiver instalado, importe os recursos do SnapCenter Plug-in para VMware no NetApp Backup and Recovery
 
 Se você já tiver o SnapCenter Plug-in para VMware instalado, importe os recursos do SnapCenter Plug-in para o NetApp Backup and Recovery seguindo estas etapas.  O Console descobre hosts ESXi, datastores e VMs em vCenters e agenda a partir do Plug-in; você não precisa recriar todas essas informações.

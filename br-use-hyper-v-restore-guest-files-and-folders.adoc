@@ -18,6 +18,7 @@ Restaure arquivos e pastas de backups de máquinas virtuais Hyper-V em storage p
 
 
 
+[[restore-files-and-folders]]
 == Restaurar arquivos e pastas
 
 Monte um disco virtual a partir de um snapshot e restaure arquivos e pastas dele para a máquina virtual Windows original (source).
@@ -101,6 +102,7 @@ Você pode visualizar o progresso da restauração na página de Monitoramento d
 
 
 
+[[manage-active-live-disk-mount-sessions]]
 == Gerenciar sessões ativas de montagem de disco em tempo real
 
 Visualize, utilize e exclua as sessões ativas de restauração de arquivos e pastas do Hyper-V diretamente no Backup and Recovery.

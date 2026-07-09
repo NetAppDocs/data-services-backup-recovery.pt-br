@@ -20,6 +20,7 @@ O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho do
 
 
 
+[[discover-microsoft-sql-server-workloads-and-optionally-import-snapcenter-resources]]
 == Descubra cargas de trabalho do Microsoft SQL Server e, opcionalmente, importe recursos do SnapCenter
 
 Durante a descoberta, o NetApp Backup and Recovery analisa instâncias e bancos de dados do Microsoft SQL Server em sistemas dentro da sua organização.
@@ -38,6 +39,7 @@ NOTE: Se você já tem o SnapCenter, primeiro verifique se atendeu aos pré-requ
 
 
 
+[[if-snapcenter-is-already-installed-import-snapcenter-resources-into-netapp-backup-and-recovery]]
 === Se o SnapCenter já estiver instalado, importe os recursos do SnapCenter para o NetApp Backup and Recovery
 
 Se você já tiver o SnapCenter instalado, importe os recursos do SnapCenter para o NetApp Backup and Recovery seguindo estas etapas.  O NetApp Console descobre recursos, hosts, credenciais e agendamentos do SnapCenter; você não precisa recriar todas essas informações.
@@ -131,6 +133,7 @@ Se você já descobriu recursos, pode importar recursos do SnapCenter da página
 
 
 
+[[if-you-dont-have-snapcenter-installed-add-a-vcenter-and-discover-resources]]
 === Se você não tiver o SnapCenter instalado, adicione um vCenter e descubra recursos
 
 Se você ainda não tiver o SnapCenter instalado, poderá adicionar informações do vCenter e fazer com que o backup e a recuperação do NetApp descubram cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.

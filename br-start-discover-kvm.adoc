@@ -20,6 +20,7 @@ O NetApp Backup and Recovery precisa descobrir os hosts KVM e as máquinas virtu
 
 
 
+[[add-a-management-platform-kvm-host-and-discover-resources]]
 == Adicione uma plataforma de gerenciamento, um host KVM e descubra recursos.
 
 Adicione informações sobre a plataforma de gerenciamento e o host KVM e permita que o NetApp Backup and Recovery descubra as cargas de trabalho.
@@ -71,6 +72,7 @@ A carga de trabalho do KVM é exibida na lista de cargas de trabalho na página 
 
 
 
+[[continue-to-the-netapp-backup-and-recovery-dashboard]]
 == Continue para o Painel de NetApp Backup and Recovery
 
 .Passos

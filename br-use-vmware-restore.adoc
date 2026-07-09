@@ -39,6 +39,7 @@ TIP: Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arqui
 
 
 
+[[how-restoring-workloads-works]]
 == Como funciona a restauração de cargas de trabalho
 
 Ao restaurar cargas de trabalho, ocorre o seguinte:
@@ -55,6 +56,7 @@ Na página Restaurar (Pesquisar e Restaurar), você pode restaurar um recurso pe
 
 
 
+[[restore-workload-data-from-the-restore-option-search-restore]]
 == Restaurar dados de carga de trabalho a partir da opção Restaurar (Pesquisar e Restaurar)
 
 Restaure cargas de trabalho do VMware usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.

@@ -18,6 +18,7 @@ O NetApp Backup and Recovery oferece suporte a uma camada de acesso de arquivame
 
 
 
+[[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == Camadas de acesso do Azure Blob com suporte para NetApp Backup and Recovery
 
 Quando os arquivos de backup são criados inicialmente, eles são armazenados na camada de acesso _Cool_.  Esta camada é otimizada para armazenar dados que são acessados com pouca frequência, mas que podem ser acessados imediatamente quando necessário.
@@ -30,6 +31,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Saib
 
 
 
+[[restore-data-from-archival-storage]]
 == Restaurar dados do armazenamento de arquivo
 
 Embora armazenar arquivos de backup mais antigos no armazenamento de arquivo seja muito mais barato do que no armazenamento frio, acessar dados de um arquivo de backup no Azure Archive para operações de restauração levará mais tempo e custará mais dinheiro.

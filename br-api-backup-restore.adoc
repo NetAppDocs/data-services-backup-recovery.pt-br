@@ -32,12 +32,14 @@ Há dez categorias de endpoints definidas no NetApp Backup and Recovery:
 
 
 
+[[api-reference]]
 == Referência de API
 
 A documentação para cada API de NetApp Backup and Recovery está disponível em https://docs.netapp.com/us-en/console-automation/cbs/overview.html["Automação do NetApp Console para NetApp Backup and Recovery"^] .
 
 
 
+[[getting-started]]
 == Começando
 
 Para começar a usar as APIs de NetApp Backup and Recovery , você precisará obter um token de usuário, sua ID de conta do NetApp Console e a ID do agente do Console.
@@ -112,6 +114,7 @@ Você pode recuperar o ID do agente da resposta analisando a saída de *occm.[0]
 
 
 
+[[example-using-the-apis]]
 == Exemplo usando as APIs
 
 O exemplo a seguir mostra uma chamada de API para ativar o NetApp Backup and Recovery em um sistema com uma nova política que tem rótulos diários, horários e semanais definidos, arquivamento após dias definido como 180 dias, na região East-US-2 na nuvem do Azure.  Observe que isso só habilita o backup no sistema, mas nenhum volume é copiado.

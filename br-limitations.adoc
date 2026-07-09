@@ -18,6 +18,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 
 
+[[clone-lifecycle-support]]
 == Suporte ao ciclo de vida do clone
 
 * A clonagem do armazenamento de objetos não é suportada.
@@ -28,18 +29,21 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 
 
+[[standard-deployment-mode-only]]
 == Somente modo de implantação padrão
 
 Esta versão do NetApp Backup and Recovery funciona apenas no modo de implantação padrão, não nos modos restrito ou privado.
 
 
 
+[[windows-cluster-name-restriction]]
 == Restrição de nome de cluster do Windows
 
 O nome do cluster do Windows não pode conter um caractere de sublinhado (_).
 
 
 
+[[snapcenter-migration-issues]]
 == Problemas de migração do SnapCenter
 
 A migração de recursos do SnapCenter para o NetApp Backup and Recovery tem as seguintes limitações.
@@ -48,6 +52,7 @@ Para obter detalhes sobre como as políticas do SnapCenter migram para as polít
 
 
 
+[[resource-group-limitations]]
 === Limitações do grupo de recursos
 
 Se todos os recursos em um grupo de recursos estiverem protegidos e um desses recursos também estiver protegido fora do grupo de recursos, a migração do SnapCenter será bloqueada.
@@ -56,6 +61,7 @@ Se todos os recursos em um grupo de recursos estiverem protegidos e um desses re
 
 
 
+[[resources-with-multiple-policies-using-the-same-schedule-tier-not-supported]]
 === Recursos com várias políticas usando a mesma camada de agendamento não são suportados
 
 Não é possível atribuir várias políticas que usam o mesmo nível de agendamento (por exemplo, por hora, diariamente, semanalmente, etc.) a um recurso.  O NetApp Backup and Recovery não importará esses recursos do SnapCenter.
@@ -64,6 +70,7 @@ Não é possível atribuir várias políticas que usam o mesmo nível de agendam
 
 
 
+[[hourly-policies-must-begin-at-the-start-of-the-hour]]
 === As políticas horárias devem começar no início da hora
 
 Se você tiver uma política do SnapCenter que se repete a cada hora, mas não usa intervalos no início da hora, o NetApp Backup and Recovery não importará o recurso.  Por exemplo, políticas com agendamentos de 1:30, 2:30, 3:30, etc. não são suportadas, enquanto políticas com agendamentos de 1:00, 2:00, 3:00, etc. são suportadas.
@@ -72,6 +79,7 @@ Se você tiver uma política do SnapCenter que se repete a cada hora, mas não u
 
 
 
+[[both-daily-and-monthly-policies-attached-to-one-resource-not-supported]]
 === Políticas diárias e mensais vinculadas a um recurso não são suportadas
 
 Se uma política do SnapCenter for repetida em intervalos de um dia e de um mês, o NetApp Backup and Recovery não importará a política.
@@ -82,12 +90,14 @@ Por exemplo, você não pode anexar uma política diária (com menos ou igual a 
 
 
 
+[[on-demand-backup-policies-not-migrated]]
 === Políticas de backup sob demanda não migradas
 
 O NetApp Backup and Recovery não importa políticas de backup sob demanda do SnapCenter.
 
 
 
+[[log-only-backup-policies-not-migrated]]
 === Políticas de backup somente de log não migradas
 
 O NetApp Backup and Recovery não importa políticas de backup somente de log do SnapCenter.  Se uma política do SnapCenter incluir backups somente de log, o NetApp Backup and Recovery não importará o recurso.
@@ -96,6 +106,7 @@ O NetApp Backup and Recovery não importa políticas de backup somente de log do
 
 
 
+[[host-mapping]]
 === Mapeamento de host
 
 O SnapCenter não tem clusters de armazenamento de mapas ou SVMs para os recursos dos hosts, mas o NetApp Backup and Recovery tem.  O cluster ONTAP local ou SVM não será mapeado para um host nas versões de visualização do NetApp Backup and Recovery .  Além disso, o NetApp Console não oferece suporte a SVMs.
@@ -104,6 +115,7 @@ O SnapCenter não tem clusters de armazenamento de mapas ou SVMs para os recurso
 
 
 
+[[schedules-not-in-15-minute-intervals]]
 === Horários não em intervalos de 15 minutos
 
 Se você tiver uma programação de política do SnapCenter que começa em um determinado horário e se repete em intervalos diferentes de 15 minutos, o NetApp Backup and Recovery não importará a programação.

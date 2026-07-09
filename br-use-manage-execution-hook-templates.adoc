@@ -30,6 +30,7 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 
 
 
+[[types-of-execution-hooks]]
 == Tipos de ganchos de execução
 
 O NetApp Backup and Recovery oferece suporte aos seguintes tipos de ganchos de execução, com base em quando eles podem ser executados:
@@ -43,6 +44,7 @@ O NetApp Backup and Recovery oferece suporte aos seguintes tipos de ganchos de e
 
 
 
+[[order-of-execution]]
 === Ordem de execução
 
 Quando uma operação de proteção de dados é executada, os eventos de gancho de execução ocorrem na seguinte ordem:
@@ -70,6 +72,7 @@ NOTE: Se um gancho de execução pré-snapshot adicionar, alterar ou remover rec
 
 
 
+[[important-notes-about-custom-execution-hooks]]
 == Notas importantes sobre ganchos de execução personalizados
 
 Considere o seguinte ao planejar ganchos de execução para seus aplicativos.
@@ -85,6 +88,7 @@ NOTE: Ganchos de execução podem reduzir ou desabilitar a funcionalidade do apl
 
 
 
+[[execution-hook-filters]]
 == Filtros de gancho de execução
 
 Ao adicionar ou editar um gancho de execução para um aplicativo, você pode adicionar filtros ao gancho de execução para gerenciar quais contêineres o gancho corresponderá.  Os filtros são úteis para aplicativos que usam a mesma imagem de contêiner em todos os contêineres, mas podem usar cada imagem para uma finalidade diferente (como o Elasticsearch).  Os filtros permitem que você crie cenários em que os ganchos de execução são executados em alguns contêineres idênticos, mas não necessariamente em todos.  Se você criar vários filtros para um único gancho de execução, eles serão combinados com um operador lógico AND.  Você pode ter até 10 filtros ativos por gancho de execução.
@@ -96,6 +100,7 @@ NOTE: Se você adicionar um filtro de namespace a um gancho de execução execut
 
 
 
+[[execution-hook-examples]]
 == Exemplos de ganchos de execução
 
 Visite o https://github.com/NetApp/Verda["Projeto NetApp Verda GitHub"] para baixar ganchos de execução reais para aplicativos populares, como Apache Cassandra e Elasticsearch.  Você também pode ver exemplos e obter ideias para estruturar seus próprios ganchos de execução personalizados.
@@ -105,6 +110,7 @@ NOTE: Os scripts no repositório GitHub Verda são fornecidos como estão e não
 
 
 
+[[create-an-execution-hook-template]]
 == Crie um modelo de gancho de execução
 
 Você pode criar um modelo de gancho de execução personalizado que pode ser usado para executar ações antes ou depois de uma operação de proteção de dados em um aplicativo.

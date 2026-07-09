@@ -4,6 +4,7 @@
 
 
 
+[[oracle-database-workloads-enhancements]]
 === Aprimoramentos nas cargas de trabalho do Oracle Database
 
 Nesta versão, as cargas de trabalho do Oracle Database introduzem a seguinte melhoria:

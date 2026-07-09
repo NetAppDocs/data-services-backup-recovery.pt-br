@@ -37,6 +37,7 @@ Você pode revisar os seguintes tipos de informações:
 
 
 
+[[view-the-protection-summary]]
 == Ver o resumo da proteção
 
 Revise as seguintes informações no resumo de proteção:
@@ -52,6 +53,7 @@ TIP: Um banco de dados protegido é aquele que tem uma política de backup atrib
 
 
 
+[[view-the-job-summary]]
 == Ver o resumo do trabalho
 
 Revise o total de trabalhos concluídos, em execução ou com falha no Resumo do trabalho.
@@ -63,6 +65,7 @@ Revise o total de trabalhos concluídos, em execução ou com falha no Resumo do
 
 
 
+[[view-the-restore-summary]]
 == Ver o resumo da restauração
 
 Revise as seguintes informações no resumo da restauração:

@@ -4,6 +4,7 @@
 
 
 
+[[hyper-v-workloads-enhancements]]
 === Aprimoramentos nas cargas de trabalho do Hyper-V
 
 Nesta versão, as cargas de trabalho do Hyper-V introduzem as seguintes melhorias:
@@ -17,6 +18,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte 
 
 
 
+[[kvm-workloads-enhancements]]
 === Aprimoramentos nas cargas de trabalho do KVM
 
 Nesta versão, as cargas de trabalho KVM introduzem a seguinte melhoria:
@@ -27,6 +29,7 @@ Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte https:/
 
 
 
+[[oracle-database-workloads-enhancements]]
 === Aprimoramentos nas cargas de trabalho do Oracle Database
 
 Nesta versão, as cargas de trabalho do Oracle Database introduzem as seguintes melhorias:
@@ -39,6 +42,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, c
 
 
 
+[[vmware-workloads-enhancements]]
 === Aprimoramentos de cargas de trabalho da VMware
 
 Nesta versão, VMware workloads apresenta as seguintes melhorias:
@@ -51,6 +55,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do VMware, consulte h
 
 
 
+[[kubernetes-workloads-enhancements]]
 === Aprimoramentos de cargas de trabalho do Kubernetes
 
 Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias:

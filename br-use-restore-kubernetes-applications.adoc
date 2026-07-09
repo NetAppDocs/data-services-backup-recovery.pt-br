@@ -18,6 +18,7 @@ O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu co
 
 
 
+[[view-protected-resources-for-an-application-restore-point]]
 == Exibir recursos protegidos para um ponto de restauração do aplicativo
 
 Para cada aplicativo que você protege com o NetApp Backup and Recovery, você pode visualizar os recursos que foram copiados para um ponto de recuperação específico.
@@ -37,6 +38,7 @@ Uma lista de recursos e seus detalhes é exibida. Você pode visualizar os recur
 
 
 
+[[restore-kubernetes-applications]]
 == Restaurar aplicativos Kubernetes
 
 Você pode restaurar aplicativos baseados em namespace ou em máquinas virtuais a partir de um ponto de restauração, restaurando todos os recursos ou selecionando um subconjunto de recursos para restaurar.

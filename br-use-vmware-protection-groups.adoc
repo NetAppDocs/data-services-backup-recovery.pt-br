@@ -27,6 +27,7 @@ Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
 
 
+[[tag-based-protection-groups]]
 == Grupos de proteção baseados em etiquetas
 
 Ao selecionar recursos para adicionar a um grupo de proteção, você pode organizá-los por armazenamentos de dados, máquinas virtuais ou por vSphere tags.
@@ -45,6 +46,7 @@ A associação de tags é resolvida a partir do vCenter no tempo de backup. Quai
 
 
 
+[[create-a-protection-group]]
 == Crie um grupo de proteção
 
 Crie um grupo de proteção para organizar os recursos que você deseja fazer backup e restaurar em conjunto.
@@ -92,6 +94,7 @@ Para criar uma nova política, selecione *Criar nova política* e siga as instru
 
 
 
+[[suspend-a-protection-groups-backup-schedule]]
 == Suspender o agendamento de backup de um grupo de proteção
 
 Suspenda um grupo de proteção para pausar seus backups agendados.
@@ -109,6 +112,7 @@ O status da proteção muda para "Em manutenção" quando você suspende um grup
 
 
 
+[[resume-a-protection-groups-backup-schedule]]
 == Retomar o cronograma de backup de um grupo de proteção
 
 Retomar um grupo de proteção suspenso reinicia os backups agendados para o grupo de proteção.
@@ -129,6 +133,7 @@ O sistema valida os agendamentos e altera o status da proteção para "Protegido
 
 
 
+[[edit-a-protection-group]]
 == Editar um grupo de proteção
 
 Edite um grupo de proteção para alterar seu nome ou configurações. Você pode querer editar um grupo de proteção se os recursos do grupo tiverem sido alterados.
@@ -149,6 +154,7 @@ O assistente Edit protection group orienta você nas configurações do grupo de
 
 
 
+[[apply-an-updated-vcenter-time-zone-to-an-existing-protection-group]]
 === Aplicar um fuso horário atualizado do vCenter a um grupo de proteção existente
 
 Os backups agendados usam o fuso horário do servidor vCenter que é registrado quando o agendamento do grupo de proteção é criado. Se você alterar o fuso horário do servidor vCenter, os grupos de proteção existentes continuarão sendo executados em seu fuso horário original (normalmente UTC) até que você atualize seus agendamentos.
@@ -163,6 +169,7 @@ NOTE: Os agendamentos são recriados apenas quando você modifica o nome do grup
 
 
 
+[[delete-a-protection-group]]
 == Excluir um grupo de proteção
 
 Ao excluir um grupo de proteção, você o remove, juntamente com todos os agendamentos de backup do grupo.  Exclua um grupo de proteção se não precisar mais dele.

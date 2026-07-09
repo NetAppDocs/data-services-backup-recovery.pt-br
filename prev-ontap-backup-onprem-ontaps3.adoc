@@ -23,6 +23,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 
 
+[[identify-the-connection-method]]
 == Identifique o método de conexão
 
 Há muitas configurações nas quais você pode criar backups para um bucket S3 em um sistema ONTAP .  Dois cenários são mostrados abaixo.
@@ -41,12 +42,14 @@ Neste cenário, o agente do Console deve ser implantado no mesmo ambiente do pro
 
 
 
+[[prepare-your-console-agent]]
 == Prepare seu agente de console
 
 O agente do Console é o software principal para a funcionalidade do Console.  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
 
 
 
+[[create-or-switch-console-agents]]
 === Criar ou alternar agentes do Console
 
 Ao fazer backup de dados no ONTAP S3, um agente do Console deve estar disponível em suas instalações ou na nuvem.  Você precisará instalar um novo agente do Console ou certificar-se de que o agente do Console selecionado atualmente resida em um desses locais.  O agente do Console local pode ser instalado em um site com ou sem acesso à Internet.
@@ -60,6 +63,7 @@ Ao fazer backup de dados no ONTAP S3, um agente do Console deve estar disponíve
 
 
 
+[[prepare-console-agent-networking-requirements]]
 === Preparar os requisitos de rede do agente do console
 
 Certifique-se de que a rede onde o agente do Console está instalado habilite as seguintes conexões:
@@ -79,6 +83,7 @@ Quando você usa o NetApp Backup and Recovery em um ambiente SaaS padrão, os da
 
 
 
+[[verify-license-requirements]]
 == Verificar requisitos de licença
 
 Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp. A licença é para backup e restauração em armazenamento de objetos; nenhuma licença é necessária para criar snapshots ou volumes replicados. Esta licença é para a conta e pode ser usada em vários sistemas.
@@ -90,6 +95,7 @@ TIP: O licenciamento PAYGO não é suportado ao fazer backup de arquivos no ONTA
 
 
 
+[[prepare-your-ontap-clusters]]
 == Prepare seus clusters ONTAP
 
 Prepare seu sistema ONTAP local de origem e quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP .
@@ -104,6 +110,7 @@ Preparar seus clusters ONTAP envolve as seguintes etapas:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Descubra seus sistemas ONTAP no NetApp Console
 
 Tanto o sistema ONTAP local de origem quanto quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP devem estar disponíveis na página *Sistemas* do NetApp Console .
@@ -112,6 +119,7 @@ Você precisará saber o endereço IP de gerenciamento do cluster e a senha da c
 
 
 
+[[verify-ontap-system-requirements]]
 === Verifique os requisitos do sistema ONTAP
 
 Certifique-se de que seu sistema ONTAP atenda aos seguintes requisitos:
@@ -133,6 +141,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Verifique os requisitos de rede ONTAP para fazer backup de dados no armazenamento de objetos
 
 Você deve garantir que os seguintes requisitos sejam atendidos no sistema que se conecta ao armazenamento de objetos.
@@ -166,6 +175,7 @@ Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o 
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Verifique os requisitos de rede ONTAP para replicar volumes
 
 Se você planeja criar volumes replicados em um sistema ONTAP secundário usando o NetApp Backup and Recovery, certifique-se de que os sistemas de origem e destino atendam aos seguintes requisitos de rede.
@@ -190,6 +200,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 
 
+[[prepare-ontap-s3-as-your-backup-target]]
 == Prepare o ONTAP S3 como seu destino de backup
 
 Você deve habilitar um servidor de armazenamento de objetos do Simple Storage Service (S3) no cluster ONTAP que você planeja usar para backups de armazenamento de objetos. Veja o https://docs.netapp.com/us-en/ontap/s3-config/index.html["Documentação do ONTAP S3"^] para mais detalhes.
@@ -221,6 +232,7 @@ Essas chaves de acesso devem ser associadas a um usuário que tenha as seguintes
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Ative backups em seus volumes ONTAP
 
 Ative backups a qualquer momento diretamente do seu sistema local.
@@ -236,6 +248,7 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 
 
 
+[[start-the-wizard]]
 === Inicie o assistente
 
 .Passos
@@ -258,6 +271,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Selecione os volumes dos quais deseja fazer backup
 
 Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que possui um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup para objeto.
@@ -286,6 +300,7 @@ Observe que, se os volumes escolhidos já tiverem políticas de snapshot ou repl
 
 
 
+[[define-the-backup-strategy]]
 === Defina a estratégia de backup
 
 Definir a estratégia de backup envolve configurar as seguintes opções:
@@ -389,6 +404,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 
+[[review-your-selections]]
 === Revise suas seleções
 
 Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
@@ -412,6 +428,7 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 
 
 
+[[show-the-api-commands]]
 === Mostrar os comandos da API
 
 Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.

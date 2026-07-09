@@ -18,6 +18,7 @@ Ao tentar restaurar um arquivo convidado, você pode encontrar qualquer um dos s
 
 
 
+[[guest-file-restore-session-is-blank]]
 == A sessão de restauração do arquivo convidado está em branco
 
 Esse problema ocorre se você criar uma sessão de restauração de arquivos em um sistema operacional convidado e o sistema operacional convidado for reiniciado durante a sessão. Os arquivos VMDK no sistema operacional convidado podem permanecer offline, portanto, a lista de sessões de restauração de arquivos do convidado fica em branco.
@@ -26,6 +27,7 @@ Para corrigir o problema, coloque manualmente os VMDKs online novamente no siste
 
 
 
+[[guest-file-restore-attach-disk-operation-fails]]
 == Falha na operação de restauração de arquivo convidado e anexação de disco
 
 Esse problema ocorre quando você inicia uma operação de restauração de arquivo convidado, mas a operação de anexação de disco falha mesmo que as ferramentas do VMware estejam em execução e as credenciais do sistema operacional convidado estejam corretas. Se isso ocorrer, o seguinte erro será retornado:
@@ -36,6 +38,7 @@ Para corrigir o problema, reinicie o serviço VMware Tools Windows no sistema op
 
 
 
+[[backups-are-not-detached-after-guest-file-restore-session-is-discontinued]]
 == Os backups não são desanexados após a sessão de restauração do arquivo convidado ser descontinuada
 
 Esse problema ocorre quando você executa uma operação de restauração de arquivo convidado a partir de um backup consistente com VM. Enquanto a sessão de restauração do arquivo convidado estiver ativa, outro backup consistente com a VM será executado para a mesma VM. Quando a sessão de restauração de arquivos do convidado é desconectada, manual ou automaticamente após 24 horas, os backups da sessão não são desanexados.

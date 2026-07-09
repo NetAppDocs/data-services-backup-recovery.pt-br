@@ -24,6 +24,7 @@ NOTE: Para fazer backup de grupos de proteção em um cronograma, crie política
 
 
 
+[[back-up-protection-groups-now-with-an-on-demand-backup]]
 == Faça backup de grupos de proteção agora com um backup sob demanda
 
 Você pode executar um backup sob demanda imediatamente.  Isso é útil se você estiver prestes a fazer alterações no seu sistema e quiser garantir que tenha um backup antes de começar.

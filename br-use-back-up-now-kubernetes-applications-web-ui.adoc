@@ -21,6 +21,7 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 
 
 
+[[back-up-a-kubernetes-application-now-using-the-web-ui]]
 == Faça backup de um aplicativo Kubernetes agora usando a interface web
 
 Crie manualmente um backup de um aplicativo Kubernetes para estabelecer uma linha de base para futuros backups e snapshots ou para garantir que os dados mais recentes estejam protegidos.

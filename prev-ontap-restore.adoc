@@ -41,6 +41,7 @@ NOTE: Para limitações relacionadas à restauração de dados ONTAP , consultel
 
 
 
+[[the-restore-dashboard]]
 == O Painel de Restauração
 
 Use o Painel de Restauração para executar operações de restauração de volumes, pastas e arquivos. Para acessar o Painel de Restauração, selecione *Backup e recuperação* no menu Console e, em seguida, selecione a guia *Restaurar*.  Você também pode selecionarimage:icon-options-vertical.gif["Botão Mais"] > *Visualizar Painel de Restauração* no serviço de Backup e Recuperação, no painel Serviços.
@@ -52,6 +53,7 @@ O Painel de Restauração oferece duas maneiras diferentes de restaurar dados de
 
 
 
+[[comparing-browse-restore-and-search-restore]]
 == Comparando Navegar e Restaurar e Pesquisar e Restaurar
 
 Em termos gerais, _Navegar e Restaurar_ normalmente é melhor quando você precisa restaurar um volume, pasta ou arquivo específico da última semana ou mês — e você sabe o nome e o local do arquivo, além da data em que ele esteve em boas condições pela última vez.  _Pesquisar e Restaurar_ normalmente é melhor quando você precisa restaurar um volume, pasta ou arquivo, mas não se lembra do nome exato, do volume em que ele reside ou da data em que esteve em boas condições pela última vez.

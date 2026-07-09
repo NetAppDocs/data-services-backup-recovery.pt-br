@@ -21,6 +21,7 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 
 
 
+[[unprotect-a-kubernetes-application]]
 == Desproteger um aplicativo Kubernetes
 
 Você pode desproteger um aplicativo se não quiser mais protegê-lo. Quando você desprotege um aplicativo, o NetApp Backup and Recovery para de protegê-lo, mas mantém todos os backups e instantâneos associados.
@@ -39,6 +40,7 @@ NOTE: Não é possível remover a proteção de um aplicativo enquanto as opera�
 
 
 
+[[delete-a-kubernetes-application]]
 == Excluir um aplicativo Kubernetes
 
 Exclua um aplicativo que você não precisa mais.  O NetApp Backup and Recovery interrompe a proteção e remove todos os backups e snapshots de aplicativos excluídos.
@@ -59,6 +61,7 @@ CAUTION: Você não poderá mais restaurar o aplicativo usando esses snapshots e
 
 
 
+[[remove-a-restore-point-for-a-kubernetes-application]]
 == Remover um ponto de recuperação para um aplicativo Kubernetes
 
 Pode ser necessário remover um ponto de recuperação de um aplicativo se você precisar desprotegê-lo e operações de proteção estiverem em execução.

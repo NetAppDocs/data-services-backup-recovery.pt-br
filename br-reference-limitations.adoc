@@ -32,6 +32,7 @@ Para obter detalhes sobre como criar um agente de console no Azure, consulte htt
 
 
 
+[[replication-limitations-for-ontap-volumes]]
 == Limitações de replicação para volumes ONTAP
 
 * Você pode selecionar apenas um volume FlexGroup por vez para replicação.  Você precisará ativar backups separadamente para cada volume FlexGroup .
@@ -51,6 +52,7 @@ Não há limitação para volumes FlexVol - você pode selecionar todos os volum
 
 
 
+[[backup-to-object-limitations-for-ontap-volumes]]
 == Limitações de backup para objeto para volumes ONTAP
 
 * Ao fazer backup de dados, o NetApp Backup and Recovery não manterá o NetApp Volume Encryption (NVE).  Isso significa que os dados criptografados no volume NVE serão descriptografados enquanto os dados estiverem sendo transferidos para o destino e a criptografia não será mantida.
@@ -89,6 +91,7 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 
 
 
+[[restore-limitations-for-ontap-volumes]]
 == Restaurar limitações para volumes ONTAP
 
 Essas limitações se aplicam aos métodos Pesquisar e Restaurar e Navegar e Restaurar para restaurar arquivos e pastas, a menos que sejam especificamente indicados.
@@ -121,6 +124,7 @@ Ao usar uma versão do ONTAP anterior à 9.11.1, a restauração de pastas não 
 
 
 
+[[enabling-indexing-in-a-disaster-recovery-configuration]]
 == Habilitando a indexação em uma configuração de recuperação de desastres
 
 Ao habilitar a indexação em um cluster de SVMs de armazenamento em uma configuração de recuperação de desastres (DR), um erro é exibido informando que a operação não é permitida em um SVM configurado como destino para DR de SVM. Apesar do erro, o processo de backend define o `snapdiff-rpc-server` status como "ativado" para os SVMs de armazenamento de origem. Após a execução do agendamento da política de DR do SVM de armazenamento, esse status é propagado para os SVMs de armazenamento de destino.

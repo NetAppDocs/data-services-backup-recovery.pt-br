@@ -50,6 +50,7 @@ Antes de começar, você deve ter uma ideia do nome ou local do volume ou arquiv
 
 
 
+[[search-restore-supported-systems-and-object-storage-providers]]
 == Sistemas suportados de pesquisa e restauração e provedores de armazenamento de objetos
 
 Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
@@ -91,6 +92,7 @@ Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF 
 
 
 
+[[search-restore-prerequisites]]
 == Pesquisar e restaurar pré-requisitos
 
 Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a função de Busca e Restauração:
@@ -107,6 +109,7 @@ Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a fu
 
 
 
+[[legacy-search-restore-prerequisites-using-indexed-catalog-v1]]
 === Pré-requisitos para a função de Busca e Restauração Legada (usando o Catálogo Indexado v1)
 
 Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada são os seguintes:
@@ -160,6 +163,7 @@ Mesmo que você esteja usando um agente do Console local, os requisitos do prove
 ====
 
 
+[[search-restore-process]]
 == Processo de busca e restauração
 
 O processo é assim:
@@ -185,6 +189,7 @@ Basta saber parte do nome e o NetApp Backup and Recovery pesquisa em todos os ar
 
 
 
+[[enable-the-indexed-catalog-for-each-system]]
 == Habilitar o Catálogo Indexado para cada sistema
 
 Antes de poder usar a Pesquisa e Restauração, você precisa habilitar a "Indexação" em cada sistema de origem do qual planeja restaurar volumes ou arquivos.  Isso permite que o Catálogo Indexado rastreie cada volume e cada arquivo de backup, tornando suas pesquisas muito rápidas e eficientes.
@@ -257,6 +262,7 @@ Dependendo do tamanho dos volumes no sistema e do número de arquivos de backup 
 
 
 
+[[restore-volumes-folders-and-files-using-search-restore]]
 == Restaurar volumes, pastas e arquivos usando Pesquisar e Restaurar
 
 Depois de você ter<<enable-the-indexed-catalog-for-each-system,indexação habilitada para seu sistema>> , você pode restaurar volumes, pastas e arquivos usando Pesquisar e Restaurar. Isso permite que você use uma ampla gama de filtros para encontrar o arquivo ou volume exato que deseja restaurar de todos os arquivos de backup.

@@ -31,6 +31,7 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 
 
 
+[[view-policies]]
 == Ver políticas
 
 . No menu NetApp Backup and Recovery , selecione *Políticas*.
@@ -47,6 +48,7 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 
 
 
+[[create-a-policy]]
 == Criar uma política
 
 Você pode criar políticas que controlam seus snapshots locais, replicações para armazenamento secundário e backups para armazenamento de objetos. Parte da sua estratégia 3-2-1 envolve a criação de um snapshot das instâncias, bancos de dados, aplicativos ou máquinas virtuais no sistema de armazenamento *primário*.
@@ -116,6 +118,7 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 
 
 
+[[edit-a-policy]]
 == Editar uma política
 
 Você pode editar a arquitetura de backup, a frequência de backup, a política de retenção e outras configurações de uma política. Para políticas de cargas de trabalho do Kubernetes, você pode editar apenas as configurações de agendamento e retenção.
@@ -138,6 +141,7 @@ Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/cons
 
 
 
+[[delete-a-policy]]
 == Excluir uma política
 
 Você pode excluir uma política se não precisar mais dela.

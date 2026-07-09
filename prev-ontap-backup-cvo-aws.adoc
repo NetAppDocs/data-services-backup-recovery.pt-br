@@ -21,6 +21,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 
 
+[[verify-support-for-your-configuration]]
 == Verifique o suporte para sua configuração
 
 Leia os seguintes requisitos para garantir que você tenha uma configuração compatível antes de começar a fazer backup de volumes no S3.
@@ -39,6 +40,7 @@ Informações necessárias para usar chaves gerenciadas pelo cliente para cripto
 
 
 
+[[verify-license-requirements]]
 == Verificar requisitos de licença
 
 Para o licenciamento PAYGO do NetApp Backup and Recovery , uma assinatura do Console está disponível no AWS Marketplace que permite implantações do Cloud Volumes ONTAP e do NetApp Backup and Recovery.  Você precisa https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["assinar esta assinatura do NetApp Console"^] antes de habilitar o NetApp Backup and Recovery.  O faturamento do NetApp Backup and Recovery é feito por meio desta assinatura.
@@ -53,6 +55,7 @@ E você precisa ter uma conta AWS para o espaço de armazenamento onde seus back
 
 
 
+[[prepare-your-console-agent]]
 == Prepare seu agente de console
 
 O agente do Console deve ser instalado em uma região da AWS com acesso total ou limitado à Internet (modo "padrão" ou "restrito"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte os modos de implantação do NetApp Console para obter detalhes"^] .
@@ -64,6 +67,7 @@ O agente do Console deve ser instalado em uma região da AWS com acesso total ou
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Verifique ou adicione permissões ao agente do Console
 
 A função do IAM que fornece permissões ao Console deve incluir permissões do S3 da versão mais recente https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Política de console"^] .  Se a política não contiver todas essas permissões, consulte o https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentação da AWS: Editando políticas do IAM"^] .
@@ -173,6 +177,7 @@ link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 == Verifique os requisitos de rede ONTAP para replicar volumes
 
 Se você planeja criar volumes replicados em um sistema ONTAP secundário usando o NetApp Backup and Recovery, certifique-se de que os sistemas de origem e destino atendam aos seguintes requisitos de rede.
@@ -200,6 +205,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 
 
+[[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Habilitar NetApp Backup and Recovery em Cloud Volumes ONTAP
 
 Habilitar o NetApp Backup and Recovery é fácil.  As etapas variam um pouco dependendo se você tem um sistema Cloud Volumes ONTAP existente ou um novo.
@@ -234,6 +240,7 @@ Se o destino do Amazon S3 para seus backups existir como um cluster na página *
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Ative backups em seus volumes ONTAP
 
 Ative backups a qualquer momento diretamente do seu sistema local.
@@ -249,6 +256,7 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 
 
 
+[[start-the-wizard]]
 === Inicie o assistente
 
 .Passos
@@ -274,6 +282,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Selecione os volumes dos quais deseja fazer backup
 
 Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que tem um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup em objeto.
@@ -302,6 +311,7 @@ Se os volumes escolhidos já tiverem políticas de snapshot ou replicação apli
 
 
 
+[[define-the-backup-strategy]]
 === Defina a estratégia de backup
 
 Definir a estratégia de backup envolve definir as seguintes opções:
@@ -415,6 +425,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 
+[[review-your-selections]]
 === Revise suas seleções
 
 Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
@@ -438,6 +449,7 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 
 
 
+[[show-the-api-commands]]
 === Mostrar os comandos da API
 
 Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.

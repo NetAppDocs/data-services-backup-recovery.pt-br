@@ -22,6 +22,7 @@ O NetApp Backup and Recovery mantém as informações do trabalho por 15 dias e,
 
 
 
+[[view-job-status-on-the-job-monitor]]
 == Ver o status do trabalho no Job Monitor
 
 Você pode visualizar uma lista de todas as operações de snapshot, replicação, backup para armazenamento de objetos e restauração e seus status atuais na guia *Monitoramento de tarefas*.  Isso inclui operações do seu Cloud Volumes ONTAP, ONTAP local, aplicativos e máquinas virtuais.  Cada operação, ou trabalho, tem um ID e um status exclusivos.
@@ -47,6 +48,7 @@ NOTE: Se você atualizou seus sistemas ONTAP para 9.13.x e não vê operações 
 
 
 
+[[search-and-filter-the-list-of-jobs]]
 === Pesquise e filtre a lista de empregos
 
 Na página de Monitoramento de Tarefas, você pode filtrar as operações usando diversos filtros, como política, rótulo do snapshot, tipo de operação (proteção, restauração, retenção ou outro) e tipo de proteção (snapshot local, replicação ou backup na nuvem).
@@ -83,6 +85,7 @@ A maioria dos filtros é autoexplicativa. O filtro "Carga de trabalho" permite q
 
 
 
+[[view-job-details]]
 === Ver detalhes do trabalho
 
 Você pode visualizar detalhes correspondentes a um trabalho concluído específico.  Você pode exportar detalhes de um trabalho específico em um formato JSON.
@@ -100,6 +103,7 @@ Os trabalhos de restauração mostram detalhes como provedor de destino de backu
 
 
 
+[[download-job-monitoring-results-as-a-report]]
 === Baixe os resultados do monitoramento de tarefas como um relatório
 
 Você pode baixar o conteúdo da página principal do Job Monitoring como um relatório depois de filtrar ou classificar os resultados. O NetApp Backup and Recovery gera e baixa um arquivo .CSV que você pode revisar e enviar para outros grupos, conforme necessário. O arquivo .CSV inclui até 10.000 linhas de dados.
@@ -114,6 +118,7 @@ Nas informações de Detalhes do monitoramento de trabalho, você pode baixar um
 
 
 
+[[review-retention-backup-lifecycle-jobs]]
 == Revisar tarefas de retenção (ciclo de vida de backup)
 
 Monitore os fluxos de retenção (_ciclo de vida do backup_) para verificar backups, mantê-los seguros e dar suporte a auditorias.  Identifique quando as cópias de backup expiram para rastrear o ciclo de vida.
@@ -130,6 +135,7 @@ O tipo de tarefa "Retenção" captura todas as tarefas de exclusão de snapshots
 
 
 
+[[review-backup-and-restore-alerts-in-the-netapp-console-notification-center]]
 == Revise os alertas de backup e restauração no Centro de Notificações do NetApp Console
 
 O Centro de Notificações do NetApp Console rastreia o progresso dos trabalhos de backup e restauração que você iniciou para que você possa verificar se a operação foi bem-sucedida ou não.
@@ -248,6 +254,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 
 
 
+[[review-operation-activity-in-console-timeline]]
 == Revisar a atividade da operação na Linha do Tempo do Console
 
 Você pode visualizar detalhes das operações de backup e restauração para investigação posterior na Linha do tempo do console.  A Linha do tempo do console fornece detalhes de cada evento, seja iniciado pelo usuário ou pelo sistema, e mostra ações iniciadas na interface do usuário ou por meio da API.

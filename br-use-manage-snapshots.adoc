@@ -18,6 +18,7 @@ Você pode gerenciar snapshots do Microsoft SQL Server excluindo-os do NetApp Ba
 
 
 
+[[delete-a-snapshot]]
 == Excluir um instantâneo
 
 Você pode excluir somente snapshots locais.

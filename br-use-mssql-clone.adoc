@@ -34,6 +34,7 @@ Você pode atingir as seguintes metas de proteção:
 
 
 
+[[create-a-clone]]
 == Criar um clone
 
 Você pode criar um clone das suas cargas de trabalho do Microsoft SQL Server.  Um clone é uma cópia dos dados de origem criada a partir de um backup.  O clone é armazenado em um repositório de objetos na sua conta de nuvem pública ou privada.  Você pode usar o clone para restaurar suas cargas de trabalho em caso de perda ou corrupção de dados.
@@ -105,6 +106,7 @@ Opcionalmente, selecione *Sufixo* na lista suspensa de nomes de destino e adicio
 
 
 
+[[refresh-a-clone]]
 == Atualizar um clone
 
 Você pode atualizar um clone de suas cargas de trabalho do Microsoft SQL Server.  Atualizar um clone atualiza o clone com os dados mais recentes da carga de trabalho de origem.  Isso é útil se você quiser manter o clone atualizado com a carga de trabalho de origem.
@@ -135,6 +137,7 @@ Você tem a opção de alterar o nome do banco de dados, usar o snapshot instant
 
 
 
+[[skip-a-clone-refresh]]
 == Pular uma atualização de clone
 
 Ignore uma atualização de clone para mantê-lo inalterado.
@@ -153,6 +156,7 @@ Ignore uma atualização de clone para mantê-lo inalterado.
 
 
 
+[[split-a-clone]]
 == Dividir um clone
 
 Você pode dividir um clone de suas cargas de trabalho do Microsoft SQL Server.  Dividir um clone cria um novo backup a partir do clone.  O novo backup pode ser usado para restaurar as cargas de trabalho.
@@ -171,6 +175,7 @@ A tarefa de clonagem não é removida e pode ser reutilizada para outros clones.
 
 
 
+[[delete-a-clone]]
 == Excluir um clone
 
 Você pode excluir um clone de suas cargas de trabalho do Microsoft SQL Server.  Excluir um clone remove o clone do armazenamento de objetos e libera espaço de armazenamento.

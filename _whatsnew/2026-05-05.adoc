@@ -4,6 +4,7 @@
 
 
 
+[[kubernetes-workloads-enhancements]]
 === Aprimoramentos de cargas de trabalho do Kubernetes
 
 Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias:

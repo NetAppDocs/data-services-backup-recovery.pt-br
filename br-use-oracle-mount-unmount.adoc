@@ -18,6 +18,7 @@ Você pode querer montar um ponto de recuperação do Oracle Database se precisa
 
 
 
+[[mount-an-oracle-database-recovery-point]]
 == Montar um ponto de recuperação do Oracle Database
 
 Se você configurar a política de proteção para um banco de dados para reter logs de arquivamento, poderá montar pontos de recuperação para visualizar o histórico de alterações do banco de dados.
@@ -50,6 +51,7 @@ O ponto de recuperação é montado no host Oracle.
 
 
 
+[[unmount-an-oracle-database-recovery-point]]
 == Desmontar um ponto de recuperação de banco de dados Oracle
 
 Desmonte o ponto de recuperação quando não precisar mais visualizar as alterações feitas no banco de dados.
@@ -70,6 +72,7 @@ Uma lista de pontos de recuperação para esse banco de dados é exibida.
 
 
 
+[[catalog-an-oracle-database-recovery-point]]
 == Catalogar um ponto de recuperação de banco de dados Oracle
 
 Catalogar manualmente um ponto de recuperação quando precisar preservar seus metadados de backup e recuperação. Os metadados são armazenados de acordo com as configurações de *Configurar catálogo RMAN* escolhidas para o banco de dados (no arquivo de controle por padrão). Você só precisa catalogar manualmente se a catalogação automática estiver desativada na política de proteção associada.

@@ -24,6 +24,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 
 
+[[identify-the-connection-method]]
 == Identifique o método de conexão
 
 Escolha qual dos dois métodos de conexão você usará ao configurar backups de sistemas ONTAP locais para o Google Cloud Storage.
@@ -44,12 +45,14 @@ image:diagram_cloud_backup_onprem_gcp_private.png["Um diagrama mostrando como o 
 
 
 
+[[prepare-your-console-agent]]
 == Prepare seu agente de console
 
 O agente do Console é o software principal para a funcionalidade do Console.  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
 
 
 
+[[create-or-switch-console-agents]]
 === Criar ou alternar agentes do Console
 
 Se você já tiver um agente de console implantado na sua VPC do Google Cloud Platform, está tudo pronto.
@@ -62,6 +65,7 @@ Caso contrário, você precisará criar um agente do Console nesse local para fa
 
 
 
+[[prepare-networking-for-the-console-agent]]
 == Preparar a rede para o agente do Console
 
 Certifique-se de que o agente do Console tenha as conexões de rede necessárias.
@@ -81,6 +85,7 @@ Siga as instruções do Google para configurar essas opções de acesso privado.
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Verifique ou adicione permissões ao agente do Console
 
 Para usar a funcionalidade "Pesquisar e restaurar" do NetApp Backup and Recovery , você precisa ter permissões específicas na função do agente do Console para que ele possa acessar o serviço Google Cloud BigQuery.  Revise as permissões abaixo e siga as etapas se precisar modificar a política.
@@ -110,6 +115,7 @@ bigquery.tables.create
 
 
 
+[[verify-license-requirements]]
 == Verificar requisitos de licença
 
 * Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará assinar uma oferta do Console Marketplace de pagamento conforme o uso (PAYGO) do Google ou comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp.  Essas licenças são para sua conta e podem ser usadas em vários sistemas.
@@ -127,6 +133,7 @@ Você pode criar backups de sistemas locais para o Google Cloud Storage em todas
 
 
 
+[[prepare-your-ontap-clusters]]
 == Prepare seus clusters ONTAP
 
 Prepare seu sistema ONTAP local de origem e quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP .
@@ -141,6 +148,7 @@ Preparar seus clusters ONTAP envolve as seguintes etapas:
 
 
 
+[[discover-your-ontap-systems-in-netapp-console]]
 === Descubra seus sistemas ONTAP no NetApp Console
 
 Tanto o sistema ONTAP local de origem quanto quaisquer sistemas ONTAP locais secundários ou Cloud Volumes ONTAP devem estar disponíveis na página *Sistemas* do NetApp Console .
@@ -149,6 +157,7 @@ Você precisará saber o endereço IP de gerenciamento do cluster e a senha da c
 
 
 
+[[verify-ontap-system-requirements]]
 === Verifique os requisitos do sistema ONTAP
 
 Certifique-se de que seu sistema ONTAP atenda aos seguintes requisitos:
@@ -170,6 +179,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
+[[verify-ontap-networking-requirements-for-backing-up-data-to-object-storage]]
 === Verifique os requisitos de rede ONTAP para fazer backup de dados no armazenamento de objetos
 
 Você deve configurar os seguintes requisitos no sistema que se conecta ao armazenamento de objetos.
@@ -200,6 +210,7 @@ Se você estiver usando o Private Google Access ou o Private Service Connect, ce
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 === Verifique os requisitos de rede ONTAP para replicar volumes
 
 Se você planeja criar volumes replicados em um sistema ONTAP secundário usando o NetApp Backup and Recovery, certifique-se de que os sistemas de origem e destino atendam aos seguintes requisitos de rede.
@@ -224,6 +235,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 
 
+[[prepare-google-cloud-storage-as-your-backup-target]]
 == Prepare o Google Cloud Storage como seu destino de backup
 
 Preparar o Google Cloud Storage como seu destino de backup envolve as seguintes etapas:
@@ -235,6 +247,7 @@ Preparar o Google Cloud Storage como seu destino de backup envolve as seguintes 
 
 
 
+[[set-up-permissions]]
 === Configurar permissões
 
 Você precisa fornecer chaves de acesso de armazenamento para uma conta de serviço que tenha permissões específicas usando uma função personalizada.  Uma conta de serviço permite que o NetApp Backup and Recovery autentique e acesse os buckets do Cloud Storage usados ​​para armazenar backups. As chaves são necessárias para que o Google Cloud Storage saiba quem está fazendo a solicitação.
@@ -280,6 +293,7 @@ Você precisará inserir as chaves no NetApp Backup and Recovery mais tarde, ao 
 
 
 
+[[create-your-own-buckets]]
 === Crie seus próprios baldes
 
 Por padrão, o serviço cria buckets para você.  Ou, se quiser usar seus próprios buckets, você pode criá-los antes de iniciar o assistente de ativação de backup e, em seguida, selecionar esses buckets no assistente.
@@ -288,6 +302,7 @@ link:prev-ontap-protect-journey.html["Saiba mais sobre como criar seus próprios
 
 
 
+[[set-up-customer-managed-encryption-keys-cmek-for-data-encryption]]
 === Configurar chaves de criptografia gerenciadas pelo cliente (CMEK) para criptografia de dados
 
 Você pode usar suas próprias chaves gerenciadas pelo cliente para criptografar dados em vez de usar as chaves de criptografia padrão gerenciadas pelo Google.  Chaves entre regiões e entre projetos são suportadas, então você pode escolher um projeto para um bucket que seja diferente do projeto da chave CMEK.
@@ -322,6 +337,7 @@ cloudkms.keyRings.setIamPolicy
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Ative backups em seus volumes ONTAP
 
 Ative backups a qualquer momento diretamente do seu sistema local.
@@ -337,6 +353,7 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 
 
 
+[[start-the-wizard]]
 === Inicie o assistente
 
 .Passos
@@ -362,6 +379,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Selecione os volumes dos quais deseja fazer backup
 
 Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que tem um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup em objeto.
@@ -390,6 +408,7 @@ Se os volumes escolhidos já tiverem políticas de snapshot ou replicação apli
 
 
 
+[[define-the-backup-strategy]]
 === Defina a estratégia de backup
 
 Definir a estratégia de backup envolve definir as seguintes opções:
@@ -503,6 +522,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 
+[[review-your-selections]]
 === Revise suas seleções
 
 Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
@@ -524,6 +544,7 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 
 
 
+[[show-the-api-commands]]
 === Mostrar os comandos da API
 
 Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.

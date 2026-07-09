@@ -40,6 +40,7 @@ TIP: Você paga taxas extras ao seu provedor de nuvem para acessar o arquivo de 
 
 
 
+[[how-restoring-workloads-works]]
 == Como funciona a restauração de cargas de trabalho
 
 Ao restaurar cargas de trabalho, ocorre o seguinte:
@@ -54,6 +55,7 @@ image:diagram_browse_restore_volume-unified.png["Um diagrama que mostra o fluxo 
 
 
 
+[[restore-methods]]
 == Métodos de restauração
 
 Restaure cargas de trabalho usando um destes métodos:
@@ -66,6 +68,7 @@ Restaure cargas de trabalho usando um destes métodos:
 
 
 
+[[restore-workload-data-from-the-restore-option]]
 == Restaurar dados de carga de trabalho a partir da opção Restaurar
 
 Restaure cargas de trabalho do banco de dados usando a opção Restaurar.
@@ -84,6 +87,7 @@ Restaure cargas de trabalho do banco de dados usando a opção Restaurar.
 
 
 
+[[restore-workloads-from-snapshots]]
 === Restaurar cargas de trabalho de snapshots
 
 . Continuando na página Opções de restauração, selecione *Restaurar de instantâneos*.
@@ -121,6 +125,7 @@ Você verá as opções de destino em seguida.
 
 
 
+[[restore-to-specific-point-in-time]]
 === Restaurar para um ponto específico no tempo
 
 O NetApp Backup and Recovery usa logs e os snapshots mais recentes para criar uma restauração pontual dos seus dados.
@@ -160,6 +165,7 @@ O NetApp Backup and Recovery usa logs e os snapshots mais recentes para criar um
 
 
 
+[[restore-to-the-latest-backup]]
 === Restaurar para o backup mais recente
 
 Esta opção usa os backups completos e de log mais recentes para restaurar seus dados ao último estado bom.  O sistema verifica os logs do último instantâneo até o presente.  O processo rastreia alterações e atividades para restaurar a versão mais recente e precisa dos seus dados.
@@ -197,6 +203,7 @@ O NetApp Backup and Recovery mostra os snapshots disponíveis para a operação 
 
 
 
+[[restore-workload-data-from-the-inventory-option]]
 == Restaurar dados de carga de trabalho da opção Inventário
 
 Restaure cargas de trabalho do banco de dados na página Inventário.  Usando a opção Inventário, você pode restaurar apenas bancos de dados, não instâncias.

@@ -21,6 +21,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 
 
+[[verify-support-for-your-configuration]]
 == Verifique o suporte para sua configuração
 
 Leia os seguintes requisitos para garantir que você tenha uma configuração compatível antes de começar a fazer backup de volumes no armazenamento de Blobs do Azure.
@@ -43,6 +44,7 @@ Configuração necessária para criar backups em uma assinatura diferente do Azu
 
 
 
+[[verify-license-requirements]]
 == Verificar requisitos de licença
 
 Para o licenciamento PAYGO do NetApp Backup and Recovery , é necessária uma assinatura por meio do Azure Marketplace antes de habilitar o NetApp Backup and Recovery.  O faturamento do NetApp Backup and Recovery é feito por meio desta assinatura. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Você pode se inscrever na página Detalhes e credenciais do assistente do sistema"^] .
@@ -53,6 +55,7 @@ E você precisa ter uma assinatura do Microsoft Azure para o espaço de armazena
 
 
 
+[[prepare-your-console-agent]]
 == Prepare seu agente de console
 
 O agente do Console pode ser instalado em uma região do Azure com acesso total ou limitado à Internet (modo "padrão" ou "restrito"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte os modos de implantação do NetApp Console para obter detalhes"^] .
@@ -64,6 +67,7 @@ O agente do Console pode ser instalado em uma região do Azure com acesso total 
 
 
 
+[[verify-or-add-permissions-to-the-console-agent]]
 === Verifique ou adicione permissões ao agente do Console
 
 Para usar a funcionalidade de pesquisa e restauração do NetApp Backup and Recovery , você precisa ter permissões específicas na função do agente do Console para que ele possa acessar a conta do Azure Synapse Workspace e do Data Lake Storage.  Veja as permissões abaixo e siga as etapas se precisar modificar a política.
@@ -142,6 +146,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
+[[required-information-for-using-customer-managed-keys-for-data-encryption]]
 === Informações necessárias para usar chaves gerenciadas pelo cliente para criptografia de dados
 
 Você pode usar suas próprias chaves gerenciadas pelo cliente para criptografia de dados no assistente de ativação em vez de usar as chaves de criptografia padrão gerenciadas pela Microsoft.  Nesse caso, você precisará ter a Assinatura do Azure, o nome do Key Vault e a Chave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Veja como usar suas próprias chaves"^] .
@@ -150,6 +155,7 @@ O NetApp Backup and Recovery oferece suporte às _políticas de acesso do Azure_
 
 
 
+[[create-your-azure-blob-storage-account]]
 === Crie sua conta de armazenamento de Blobs do Azure
 
 Por padrão, o serviço cria contas de armazenamento para você.  Se quiser usar suas próprias contas de armazenamento, você pode criá-las antes de iniciar o assistente de ativação de backup e, em seguida, selecionar essas contas de armazenamento no assistente.
@@ -158,6 +164,7 @@ link:prev-ontap-protect-journey.html["Saiba mais sobre como criar suas próprias
 
 
 
+[[verify-ontap-networking-requirements-for-replicating-volumes]]
 == Verifique os requisitos de rede ONTAP para replicar volumes
 
 Se você planeja criar volumes replicados em um sistema ONTAP secundário usando o NetApp Backup and Recovery, certifique-se de que os sistemas de origem e destino atendam aos seguintes requisitos de rede.
@@ -185,6 +192,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 
 
+[[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Habilitar NetApp Backup and Recovery em Cloud Volumes ONTAP
 
 Habilitar o NetApp Backup and Recovery é fácil.  As etapas variam um pouco dependendo se você tem um sistema Cloud Volumes ONTAP existente ou um novo.
@@ -225,6 +233,7 @@ Se o destino do Blob do Azure para seus backups existir como um sistema na pági
 
 
 
+[[activate-backups-on-your-ontap-volumes]]
 == Ative backups em seus volumes ONTAP
 
 Ative backups a qualquer momento diretamente do seu sistema local.
@@ -240,6 +249,7 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 
 
 
+[[start-the-wizard]]
 === Inicie o assistente
 
 .Passos
@@ -265,6 +275,7 @@ A página Introdução do assistente mostra as opções de proteção, incluindo
 
 
 
+[[select-the-volumes-that-you-want-to-back-up]]
 === Selecione os volumes dos quais deseja fazer backup
 
 Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que tem um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup para objeto.
@@ -293,6 +304,7 @@ Se os volumes escolhidos já tiverem políticas de snapshot ou replicação apli
 
 
 
+[[define-the-backup-strategy]]
 === Defina a estratégia de backup
 
 Definir a estratégia de backup envolve definir as seguintes opções:
@@ -418,6 +430,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 
+[[review-your-selections]]
 === Revise suas seleções
 
 Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
@@ -443,6 +456,7 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 
 
 
+[[show-the-api-commands]]
 === Mostrar os comandos da API
 
 Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.
@@ -454,6 +468,7 @@ Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no
 
 
 
+[[whats-next]]
 == O que vem a seguir?
 
 * Você podelink:prev-ontap-backup-manage.html["gerencie seus arquivos de backup e políticas de backup"] .  Isso inclui iniciar e parar backups, excluir backups, adicionar e alterar o agendamento de backups e muito mais.

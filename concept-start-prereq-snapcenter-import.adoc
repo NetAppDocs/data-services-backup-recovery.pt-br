@@ -18,12 +18,14 @@ Se você for importar recursos do serviço SnapCenter Plug-in para Microsoft SQL
 
 
 
+[[create-systems-in-netapp-console-first]]
 == Crie sistemas no NetApp Console primeiro
 
 Se você for importar recursos do SnapCenter, adicione todo o armazenamento de cluster do SnapCenter local à página *Sistemas* do Console antes de importar do SnapCenter.  Isso garante que os recursos do host possam ser descobertos e importados corretamente.
 
 
 
+[[ensure-host-requirements-to-install-the-snapcenter-plug-in]]
 == Garantir os requisitos do host para instalar o plug-in SnapCenter
 
 Para importar recursos do SnapCenter Plug-in para Microsoft SQL Server, certifique-se de que os requisitos do host para instalar o SnapCenter Plug-in para Microsoft SQL Server sejam atendidos.
@@ -32,6 +34,7 @@ Verifique especificamente os requisitos do SnapCenter emlink:concept-start-prere
 
 
 
+[[disable-user-account-control-remote-restrictions]]
 == Desabilitar restrições remotas do Controle de Conta de Usuário
 
 Antes de importar recursos do SnapCenter, desabilite as restrições remotas do Controle de Conta de Usuário (UAC) no host do SnapCenter no Windows.  Desative o UAC se você usar uma conta administrativa local para se conectar remotamente ao host do SnapCenter Server ou ao host do SQL.
@@ -69,6 +72,7 @@ Faça isso usando um dos seguintes métodos, com instruções a seguir:
 
 
 
+[[method-1-disable-user-account-control-by-using-the-registry-editor]]
 === Método 1: Desabilite o Controle de Conta de Usuário usando o Editor do Registro
 
 Este é um dos métodos que você pode usar para desabilitar o Controle de Conta de Usuário.
@@ -112,6 +116,7 @@ Este exemplo define LocalAccountTokenFilterPolicy como "1", desabilitando restri
 ----
 
 
+[[method-2-disable-user-account-control-by-using-a-powershell-script]]
 === Método 2: Desabilitar o Controle de Conta de Usuário usando um script do PowerShell
 
 Este é outro método que você pode usar para desabilitar o Controle de Conta de Usuário.

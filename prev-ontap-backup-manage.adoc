@@ -24,6 +24,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 
 
+[[view-the-backup-status-of-volumes-in-your-systems]]
 == Visualize o status de backup dos volumes em seus sistemas
 
 Você pode visualizar uma lista de todos os volumes que estão sendo copiados no momento no Painel de Backup de Volumes. Isso inclui todos os tipos de backups, incluindo snapshots, volumes replicados e arquivos de backup em armazenamento de objetos. Você também pode visualizar os volumes nesses sistemas que não estão sendo copiados no momento.
@@ -43,6 +44,7 @@ Cada ícone acende quando o tipo de backup correspondente está ativado e fica c
 
 
 
+[[activate-backup-on-additional-volumes-in-a-system]]
 == Ativar backup em volumes adicionais em um sistema
 
 Se você ativou o backup somente em alguns volumes de um sistema quando habilitou o NetApp Backup and Recovery pela primeira vez, poderá ativar backups em volumes adicionais posteriormente.
@@ -55,12 +57,14 @@ Se você ativou o backup somente em alguns volumes de um sistema quando habilito
 
 
 
+[[change-the-backup-settings-assigned-to-existing-volumes]]
 == Alterar as configurações de backup atribuídas aos volumes existentes
 
 Você pode alterar as políticas de backup atribuídas aos seus volumes existentes que têm políticas atribuídas. Você pode alterar as políticas para seus snapshots locais, volumes replicados e arquivos de backup. Qualquer nova política de snapshot, replicação ou backup que você deseja aplicar aos volumes já deve existir.
 
 
 
+[[edit-backup-settings-on-a-single-volume]]
 === Editar configurações de backup em um único volume
 
 .Passos
@@ -74,6 +78,7 @@ Se você habilitou _Datalock and Ransomware protection_ para backups em nuvem na
 
 
 
+[[edit-backup-settings-on-multiple-volumes]]
 === Editar configurações de backup em vários volumes
 
 Se quiser usar as mesmas configurações de backup em vários volumes, você pode ativar ou editar as configurações de backup em vários volumes ao mesmo tempo.  Você pode selecionar volumes que não têm configurações de backup, apenas configurações de instantâneo, apenas configurações de backup em nuvem e assim por diante, e fazer alterações em massa em todos esses volumes com diversas configurações de backup.
@@ -116,6 +121,7 @@ Se você habilitou _Datalock and Ransomware protection_ para backups em nuvem na
 
 
 
+[[create-a-manual-volume-backup-at-any-time]]
 == Crie um backup de volume manual a qualquer momento
 
 Você pode criar um backup sob demanda a qualquer momento para capturar o estado atual do volume.  Isso pode ser útil se alterações muito importantes foram feitas em um volume e você não quiser esperar pelo próximo backup agendado para proteger esses dados.  Você também pode usar essa funcionalidade para criar um backup para um volume que não está sendo feito backup no momento e você deseja capturar seu estado atual.
@@ -139,6 +145,7 @@ A coluna Status do backup desse volume exibe "Em andamento" até que o backup se
 
 
 
+[[view-the-list-of-backups-for-each-volume]]
 == Veja a lista de backups para cada volume
 
 Você pode visualizar a lista de todos os arquivos de backup existentes para cada volume.  Esta página exibe detalhes sobre o volume de origem, o local de destino e detalhes do backup, como o último backup feito, a política de backup atual, o tamanho do arquivo de backup e muito mais.
@@ -153,6 +160,7 @@ São exibidos os detalhes do volume e a lista de snapshots.
 
 
 
+[[run-a-ransomware-scan-on-a-volume-backup-in-object-storage]]
 == Execute uma verificação de ransomware em um backup de volume no armazenamento de objetos
 
 O NetApp Backup and Recovery verifica seus arquivos de backup em busca de evidências de um ataque de ransomware quando um backup em um arquivo de objeto é criado e quando os dados de um arquivo de backup estão sendo restaurados.  Você também pode executar uma verificação sob demanda a qualquer momento para verificar a usabilidade de um arquivo de backup específico no armazenamento de objetos.  Isso pode ser útil se você teve um problema de ransomware em um volume específico e deseja verificar se os backups desse volume não foram afetados.
@@ -173,6 +181,7 @@ A coluna de proteção contra ransomware mostra que a verificação está em and
 
 
 
+[[manage-the-replication-relationship-with-the-source-volume]]
 == Gerenciar o relacionamento de replicação com o volume de origem
 
 Depois de configurar a replicação de dados entre dois sistemas, você pode gerenciar o relacionamento de replicação de dados.
@@ -216,6 +225,7 @@ Depois de selecionar uma ação, o Console atualiza o relacionamento.
 
 
 
+[[edit-an-existing-backup-to-cloud-policy]]
 == Editar uma política de backup para nuvem existente
 
 Você pode alterar os atributos de uma política de backup que está sendo aplicada atualmente aos volumes em um sistema.  Alterar a política de backup afeta todos os volumes existentes que estão usando a política.
@@ -245,6 +255,7 @@ Observe que quaisquer arquivos de backup que tenham sido armazenados em camadas 
 
 
 
+[[add-a-new-backup-to-cloud-policy]]
 == Adicionar uma nova política de backup para a nuvem
 
 Quando você habilita o NetApp Backup and Recovery para um sistema, todos os volumes selecionados inicialmente são copiados usando a política de backup padrão que você definiu.  Se você quiser atribuir políticas de backup diferentes a determinados volumes que têm objetivos de ponto de recuperação (RPO) diferentes, você pode criar políticas adicionais para esse cluster e atribuí-las a outros volumes.
@@ -273,6 +284,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre o uso do ar
 
 
 
+[[delete-backups]]
 == Excluir backups
 
 O NetApp Backup and Recovery permite que você exclua um único arquivo de backup, exclua todos os backups de um volume ou exclua todos os backups de todos os volumes em um sistema.  Talvez você queira excluir todos os backups se não precisar mais deles ou se tiver excluído o volume de origem e quiser remover todos os backups.
@@ -284,6 +296,7 @@ CAUTION: Se você planeja excluir um sistema ou cluster que tenha backups, você
 
 
 
+[[delete-all-backup-files-for-a-system]]
 === Excluir todos os arquivos de backup de um sistema
 
 A exclusão de todos os backups no armazenamento de objetos de um sistema não desabilita backups futuros de volumes neste sistema.  Se você quiser parar de criar backups de todos os volumes em um sistema, você pode desativar os backups<<Desativar o NetApp Backup and Recovery para um sistema,conforme descrito aqui>> .
@@ -308,6 +321,7 @@ CAUTION: Use esta opção com cuidado e somente em casos de extrema necessidade 
 
 
 
+[[delete-all-backup-files-for-a-volume]]
 === Excluir todos os arquivos de backup de um volume
 
 Excluir todos os backups de um volume também desabilita backups futuros para esse volume.
@@ -336,6 +350,7 @@ CAUTION: Use esta opção apenas para limpeza extrema. Depois de ativado, NetApp
 
 
 
+[[delete-a-single-backup-file-for-a-volume]]
 === Excluir um único arquivo de backup de um volume
 
 Exclua um backup individual quando ele não for mais necessário. Não é possível excluir volumes replicados (volumes de proteção de dados).
@@ -355,6 +370,7 @@ Os detalhes do volume são exibidos e você pode selecionar *Instantâneo*, *Rep
 
 
 
+[[delete-volume-backup-relationships]]
 == Excluir relacionamentos de backup de volume
 
 Excluir o relacionamento de backup de um volume fornece um mecanismo de arquivamento se você quiser interromper a criação de novos arquivos de backup e excluir o volume de origem, mas manter todos os arquivos de backup existentes.  Isso lhe dá a capacidade de restaurar o volume do arquivo de backup no futuro, se necessário, enquanto libera espaço do seu sistema de armazenamento de origem.
@@ -374,6 +390,7 @@ NOTE: Não é possível excluir arquivos de backup de volume individuais depois 
 
 
 
+[[deactivate-netapp-backup-and-recovery-for-a-system]]
 == Desativar o NetApp Backup and Recovery para um sistema
 
 Desativar o NetApp Backup and Recovery para um sistema pausa os backups e restaurações de todos os seus volumes sem excluir os backups existentes. Isso permite pausar toda a atividade de backup e restauração por um período de tempo sem cancelar o registro do serviço de backup nesse sistema.
@@ -391,6 +408,7 @@ NOTE: Um botão *Ativar backup* aparece para esse sistema enquanto o backup est�
 
 
 
+[[unregister-netapp-backup-and-recovery-for-a-system]]
 == Cancelar o registro do NetApp Backup and Recovery para um sistema
 
 Você pode cancelar o registro do NetApp Backup and Recovery para um sistema se não quiser mais usar a funcionalidade de backup e quiser parar de ser cobrado por backups nesse sistema.  Normalmente, esse recurso é usado quando você planeja excluir um sistema e deseja cancelar o serviço de backup.

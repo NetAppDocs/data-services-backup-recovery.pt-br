@@ -18,6 +18,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 
 
+[[changing-the-protection-policy-for-an-application]]
 == Alterando a política de proteção de um aplicativo
 
 Ao alterar a política de proteção associada a um aplicativo para usar um bucket diferente ou um destino de replicação secundário, a política de proteção pode falhar.
@@ -26,6 +27,7 @@ Ao alterar a política de proteção associada a um aplicativo para usar um buck
 
 
 
+[[3-2-1-protection-policy-configuration-limitation]]
 == Limitação de configuração da política de proteção 3-2-1
 
 Ao criar uma política de proteção 3-2-1 em que nenhum backup de storage de objetos ocorre ao mesmo tempo que a replicação para storage secundário, a política de proteção trava ao proteger o aplicativo.

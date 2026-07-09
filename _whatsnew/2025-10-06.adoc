@@ -4,12 +4,14 @@
 
 
 
+[[bluexp-backup-and-recovery-is-now-netapp-backup-and-recovery]]
 === O BlueXP backup and recovery agora são NetApp Backup and Recovery
 
 O BlueXP backup and recovery foi renomeado para NetApp Backup and Recovery.
 
 
 
+[[bluexp-is-now-netapp-console]]
 === BlueXP agora é NetApp Console
 
 O NetApp Console, criado com base na base aprimorada e reestruturada do BlueXP , fornece gerenciamento centralizado do armazenamento NetApp e do NetApp Data Services em ambientes locais e na nuvem em nível empresarial, fornecendo insights em tempo real, fluxos de trabalho mais rápidos e administração simplificada, altamente segura e compatível.
@@ -18,6 +20,7 @@ Para obter detalhes sobre o que mudou, consulte olink:https://docs.netapp.com/us
 
 
 
+[[hyper-v-workload-support-as-a-private-preview]]
 === Suporte à carga de trabalho do Hyper-V como uma visualização privada
 
 Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho do Hyper-V:
@@ -34,6 +37,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte 
 
 
 
+[[kvm-workload-support-as-a-private-preview]]
 === Suporte à carga de trabalho KVM como uma visualização privada
 
 Esta versão do NetApp Backup and Recovery introduz suporte para descoberta e gerenciamento de cargas de trabalho KVM:
@@ -50,6 +54,7 @@ Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte https:/
 
 
 
+[[kubernetes-preview-enhancements]]
 === Melhorias na visualização do Kubernetes
 
 A versão prévia das cargas de trabalho do Kubernetes apresenta os seguintes recursos aprimorados:
@@ -73,6 +78,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consul
 
 
 
+[[vmware-preview-enhancements]]
 === Melhorias na visualização do VMware
 
 A versão de pré-visualização das cargas de trabalho do VMware apresenta os seguintes recursos aprimorados:
@@ -90,6 +96,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do VMware, consulte h
 
 
 
+[[oracle-database-workload-support-as-a-private-preview]]
 === Suporte à carga de trabalho do Oracle Database como uma visualização privada
 
 Esta versão do NetApp Backup and Recovery apresenta suporte para descoberta e gerenciamento de cargas de trabalho do Oracle Database:
@@ -108,6 +115,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, c
 
 
 
+[[ontap-volume-workload-enhancements]]
 === Melhorias na carga de trabalho do volume ONTAP
 
 Esta versão das cargas de trabalho de volume ONTAP apresenta os seguintes recursos aprimorados:

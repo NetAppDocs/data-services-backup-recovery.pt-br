@@ -4,6 +4,7 @@
 
 
 
+[[netapp-backup-and-recovery-preview-release]]
 === Versão prévia do NetApp Backup and Recovery
 
 Esta versão de pré-visualização do NetApp Backup and Recovery fornece uma interface de usuário atualizada que permite gerenciar cargas de trabalho do Microsoft SQL Server usando uma estratégia de proteção 3-2-1, familiar no NetApp Backup and Recovery. Com esta nova versão, você pode fazer backup dessas cargas de trabalho no armazenamento primário, replicá-las no armazenamento secundário e fazer backup delas no armazenamento de objetos na nuvem.

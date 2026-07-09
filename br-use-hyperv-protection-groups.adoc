@@ -26,6 +26,7 @@ Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
 
 
+[[create-a-protection-group]]
 == Crie um grupo de proteção
 
 Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção. Crie um grupo de proteção para fazer backup e restaurar cargas de trabalho em conjunto.
@@ -53,6 +54,7 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 
 
 
+[[edit-a-protection-group]]
 == Editar um grupo de proteção
 
 Edite um grupo de proteção para alterar seu nome ou configurações. Você pode querer editar um grupo de proteção se os recursos do grupo tiverem sido alterados.
@@ -73,6 +75,7 @@ O assistente Edit protection group orienta você nas configurações do grupo de
 
 
 
+[[apply-an-updated-host-time-zone-to-an-existing-protection-group]]
 === Aplicar um fuso horário de host atualizado a um grupo de proteção existente
 
 Os backups agendados usam o fuso horário do host Hyper-V, que é registrado quando o agendamento do grupo de proteção é criado. Se você alterar o fuso horário do host, os grupos de proteção existentes continuarão sendo executados em seu fuso horário original (normalmente UTC) até que você atualize seus agendamentos.
@@ -87,6 +90,7 @@ NOTE: Os agendamentos são recriados apenas quando você modifica o nome do grup
 
 
 
+[[delete-a-protection-group]]
 == Excluir um grupo de proteção
 
 A exclusão de um grupo de proteção o remove, juntamente com todos os agendamentos de backup associados. Talvez você queira excluir um grupo de proteção se ele não for mais necessário.

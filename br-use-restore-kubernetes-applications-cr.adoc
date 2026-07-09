@@ -26,6 +26,7 @@ Você pode usar recursos personalizados para restaurar seus aplicativos a partir
 ====
 
 
+[[restore-a-backup-to-a-different-namespace]]
 == Restaurar um backup para um namespace diferente
 
 Ao restaurar um backup para um namespace diferente usando uma BackupRestore CR, NetApp Backup and Recovery restaura o aplicativo em um novo namespace e cria uma CR de aplicativo para o aplicativo restaurado. Para proteger o aplicativo restaurado, crie backups ou snapshots sob demanda, ou estabeleça um cronograma de proteção.
@@ -130,6 +131,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 
 
 
+[[restore-a-backup-to-the-original-namespace]]
 == Restaurar um backup para o namespace original
 
 Você pode restaurar um backup para o namespace original a qualquer momento.
@@ -228,6 +230,7 @@ kubectl apply -f trident-protect-backup-ipr-cr.yaml
 
 
 
+[[restore-a-backup-to-a-different-cluster]]
 == Restaurar um backup em um cluster diferente
 
 Você pode restaurar um backup em um cluster diferente se houver um problema com o cluster original.
@@ -335,6 +338,7 @@ kubectl apply -f trident-protect-backup-restore-cr.yaml
 
 
 
+[[restore-a-snapshot-to-a-different-namespace]]
 == Restaurar um snapshot para um namespace diferente
 
 Você pode restaurar dados de um snapshot usando um arquivo de recurso personalizado (CR) para um namespace diferente ou para o namespace de origem original. Ao restaurar um snapshot para um namespace diferente usando um SnapshotRestore CR, NetApp Backup and Recovery restaura o aplicativo em um novo namespace e cria um CR de aplicativo para o aplicativo restaurado. Para proteger o aplicativo restaurado, crie backups ou snapshots sob demanda, ou estabeleça um agendamento de proteção.
@@ -436,6 +440,7 @@ kubectl apply -f trident-protect-snapshot-restore-cr.yaml
 
 
 
+[[restore-a-snapshot-to-the-original-namespace]]
 == Restaurar um snapshot para o namespace original
 
 Você pode restaurar um snapshot para o namespace original a qualquer momento.

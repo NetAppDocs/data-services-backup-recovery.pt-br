@@ -39,6 +39,7 @@ TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para a
 
 
 
+[[how-restoring-workloads-works]]
 == Como funciona a restauração de cargas de trabalho
 
 Ao restaurar cargas de trabalho, ocorre o seguinte:
@@ -51,6 +52,7 @@ Na página Restaurar, você pode restaurar um recurso, mesmo que não se lembre 
 
 
 
+[[restore-hyper-v-workloads]]
 == Restaurar cargas de trabalho do Hyper-V
 
 Restaure cargas de trabalho do Hyper-V usando o menu Restore. Você pode pesquisar o snapshot pelo nome ou usando filtros.

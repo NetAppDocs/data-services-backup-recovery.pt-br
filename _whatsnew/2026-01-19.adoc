@@ -4,6 +4,7 @@
 
 
 
+[[ontap-volume-workloads-enhancements]]
 === Aprimoramentos nas cargas de trabalho de volume do ONTAP
 
 Esta versão das cargas de trabalho de volume ONTAP apresenta os seguintes recursos aprimorados:
@@ -14,6 +15,7 @@ link:https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-back
 
 
 
+[[vmware-workloads-enhancements]]
 === Aprimoramentos de cargas de trabalho da VMware
 
 Esta versão das cargas de trabalho da VMware introduz as seguintes funcionalidades aprimoradas:
@@ -26,6 +28,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-restor
 
 
 
+[[hyper-v-workloads-preview-enhancements]]
 === Pré-visualização de melhorias para cargas de trabalho do Hyper-V
 
 Esta versão das cargas de trabalho do Hyper-V introduz as seguintes funcionalidades aprimoradas:
@@ -42,6 +45,7 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-restor
 
 
 
+[[kvm-workloads-preview-enhancements]]
 === Pré-visualização de melhorias para cargas de trabalho KVM
 
 A pré-visualização de cargas de trabalho KVM agora protege hosts KVM e máquinas virtuais que são gerenciadas pelo Apache CloudStack.

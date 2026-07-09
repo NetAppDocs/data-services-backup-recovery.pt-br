@@ -18,6 +18,7 @@ Antes de começar, reviselink:concept-start-prereq.html["pré-requisitos"] para 
 
 
 
+[[prepare-the-backup-destination]]
 == Preparar o destino do backup
 
 Prepare um ou mais dos seguintes destinos de backup:
@@ -53,6 +54,7 @@ Depois de configurar as opções no próprio destino de backup, você o configur
 
 
 
+[[set-up-s3-permissions]]
 == Configurar permissões S3
 
 Você precisará configurar dois conjuntos de permissões do AWS S3:
