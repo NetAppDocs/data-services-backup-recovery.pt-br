@@ -28,7 +28,7 @@ Faça backup de dados de aplicativos do Microsoft SQL Server de sistemas ONTAP l
 
 Antes de iniciar um backup, visualize o status de proteção das suas cargas de trabalho.
 
-*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clone de backup e recuperação ou função de visualizador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clonagem de backup e recuperação ou função de visualizador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -44,7 +44,7 @@ Antes de iniciar um backup, visualize o status de proteção das suas cargas de 
 
 Defina o caminho do log de atividades para hosts descobertos para rastrear o status da operação antes de fazer backup das cargas de trabalho.
 
-*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: Visualizador de armazenamento, superadministrador de Backup and Recovery, administrador de backup do Backup and Recovery ou administrador de restauração do Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -68,7 +68,7 @@ NOTE: Os campos exibidos diferem dependendo do modelo de implantação seleciona
 
 Crie um grupo de proteção para gerenciar operações de backup e restauração para várias cargas de trabalho.  Um grupo de proteção é um agrupamento lógico de cargas de trabalho.
 
-*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: Storage viewer, Backup and Recovery super admin ou Backup and Recovery backup admin. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -95,7 +95,7 @@ Se você quiser criar uma política, selecione *Criar nova política* e siga as 
 
 Execute um backup sob demanda antes de fazer alterações no seu sistema para garantir que seus dados estejam protegidos.
 
-*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: Storage viewer, Backup and Recovery super admin ou Backup and Recovery backup admin. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu, selecione *Inventário*.
@@ -116,7 +116,7 @@ Execute um backup sob demanda antes de fazer alterações no seu sistema para ga
 
 Suspenda o agendamento para interromper temporariamente os backups durante a manutenção ou solução de problemas.
 
-*Função necessária do NetApp Console * Visualizador de armazenamento, superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: Storage viewer, Backup and Recovery super admin ou Backup and Recovery backup admin. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.

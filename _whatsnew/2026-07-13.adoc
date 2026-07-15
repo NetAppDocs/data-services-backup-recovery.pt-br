@@ -1,0 +1,14 @@
+= Aprimoramentos nas cargas de trabalho do ONTAP Volumes
+:allow-uri-read: 
+
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== Aprimoramentos nas cargas de trabalho do ONTAP Volumes
+
+Nesta versão, as cargas de trabalho do ONTAP Volumes introduzem a seguinte melhoria:
+
+*Suporte aprimorado para múltiplos buckets*: A partir do ONTAP 9.19.1 e versões mais recentes, agora você pode proteger os volumes dentro de um sistema com até 100 buckets por sistema em diferentes provedores de nuvem.
+
+Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Visão geral das cargas de trabalho do Protect ONTAP Volumes"].
