@@ -18,7 +18,6 @@ Você pode licenciar o NetApp Backup and Recovery comprando uma assinatura de pa
 
 Algumas notas antes de continuar lendo:
 
-* Se você já assinou a assinatura pré-paga (PAYGO) no marketplace do seu provedor de nuvem para um sistema Cloud Volumes ONTAP , você também estará automaticamente inscrito no NetApp Backup and Recovery . Você não precisará assinar novamente.
 * A licença BYOL (Bring Your Own License) do NetApp Backup and Recovery é uma licença flutuante que você pode usar em todos os sistemas associados à sua organização ou conta do NetApp Console .  Portanto, se você tiver capacidade de backup suficiente disponível em uma licença BYOL existente, não precisará comprar outra licença BYOL.
 * Se você estiver usando uma licença BYOL, é recomendável que você assine também uma assinatura PAYGO.  Se você fizer backup de mais dados do que o permitido pela sua licença BYOL, ou se o prazo da sua licença expirar, o backup continuará por meio da sua assinatura paga conforme o uso - não haverá interrupção do serviço.
 * Ao fazer backup de dados ONTAP locais no StorageGRID, você precisa de uma licença BYOL, mas não há custo para espaço de armazenamento do provedor de nuvem.

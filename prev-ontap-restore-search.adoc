@@ -101,7 +101,7 @@ Certifique-se de que seu ambiente atenda a esses requisitos antes de ativar a fu
 +
 ** A versão do ONTAP deve ser 9.8 ou superior.
 ** Você deve configurar uma LIF de dados NFS IPv4 na VM de armazenamento e uma exportação NFS para o volume. Busca e Restauração é compatível com volumes NFS e SMB/CIFS.
-** O servidor SnapDiff RPC deve ser ativado no SVM. O Console faz isso automaticamente quando você habilita a indexação no sistema. (SnapDiff é a tecnologia que identifica rapidamente as diferenças entre arquivos e diretórios em diferentes snapshots.)
+** O SnapDiff RPC Server deve ser ativado na storage VM. O Console faz isso automaticamente quando você habilita a indexação no sistema. (SnapDiff é a tecnologia que identifica rapidamente as diferenças de arquivos e diretórios entre snapshots.)
 
 
 * A NetApp recomenda montar um volume separado no agente do console para aumentar a resiliência do recurso de Busca e Restauração. Para obter instruções, consulte<<mount-volume-steps,Monte o volume para reindexar o catálogo.>> .

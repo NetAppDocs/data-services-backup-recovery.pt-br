@@ -109,7 +109,7 @@ O NetApp Backup and Recovery não importa políticas de backup somente de log do
 [[host-mapping]]
 === Mapeamento de host
 
-O SnapCenter não tem clusters de armazenamento de mapas ou SVMs para os recursos dos hosts, mas o NetApp Backup and Recovery tem.  O cluster ONTAP local ou SVM não será mapeado para um host nas versões de visualização do NetApp Backup and Recovery .  Além disso, o NetApp Console não oferece suporte a SVMs.
+SnapCenter não mapeia clusters de storage ou VMs de storage para os recursos em hosts, mas o NetApp Backup and Recovery mapeia. O cluster ONTAP local ou a VM de storage não será mapeado para um host nas versões de prévia do NetApp Backup and Recovery. Além disso, o NetApp Console não oferece suporte a VMs de storage.
 
 *Solução alternativa*: antes de importar recursos do SnapCenter, crie um sistema no NetApp Backup and Recovery para todos os sistemas de armazenamento ONTAP locais registrados no SnapCenter local.  Em seguida, importe os recursos desse cluster do SnapCenter para o NetApp Backup and Recovery.
 

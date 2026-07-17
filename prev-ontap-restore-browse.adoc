@@ -14,7 +14,7 @@ summary: Com NetApp Backup and Recovery, restaure os dados do ONTAP usando Naveg
 
 
 [role="lead"]
-Com o NetApp Backup and Recovery, restaure dados do ONTAP usando a opção Navegar e Restaurar. Antes de restaurar, anote o nome do volume de origem, o sistema de origem, o SVM e a data do arquivo de backup. Você pode restaurar dados do ONTAP a partir de um snapshot, um volume replicado ou de backups armazenados em armazenamento de objetos.
+Com o NetApp Backup and Recovery, restaure dados do ONTAP usando a opção Browse & Restore. Antes de restaurar, anote o nome do volume de origem, o sistema de origem, a storage VM e a data do arquivo de backup. Você pode restaurar dados do ONTAP a partir de um Snapshot, de um volume replicado ou de backups armazenados em storage de objetos.
 
 As funcionalidades de restauração dependem da sua versão do ONTAP :
 

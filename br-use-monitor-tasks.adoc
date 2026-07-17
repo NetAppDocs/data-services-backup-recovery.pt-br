@@ -43,7 +43,7 @@ NOTE: Se você atualizou seus sistemas ONTAP para 9.13.x e não vê operações 
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Monitoramento*.
-. Para mostrar colunas adicionais (Sistema, SVM, Nome do usuário, Carga de trabalho, Nome da política, Rótulo do instantâneo), selecione o sinal de mais.
+. Para exibir colunas adicionais (Sistema, VM de armazenamento, Nome do usuário, Carga de trabalho, Nome da política, Rótulo do Snapshot), selecione o sinal de mais.
 
 
 
@@ -75,7 +75,7 @@ A maioria dos filtros é autoexplicativa. O filtro "Carga de trabalho" permite q
 +
 [TIP]
 ====
-** Você pode pesquisar dados dentro de um "SVM" específico somente se tiver selecionado primeiro um Sistema.
+** Você só pode pesquisar dados em uma máquina virtual de armazenamento específica se você tiver selecionado um sistema primeiro.
 ** Você pode pesquisar usando o filtro "Tipo de proteção" somente quando tiver selecionado o "Tipo" de "Proteção".
 
 
@@ -92,7 +92,7 @@ Você pode visualizar detalhes correspondentes a um trabalho concluído específ
 
 Você pode visualizar detalhes como tipo de trabalho (agendado ou sob demanda), tipo de backup do SnapMirror (inicial ou periódico), horários de início e término, duração, quantidade de dados transferidos do sistema para o armazenamento de objetos, taxa média de transferência, nome da política, bloqueio de retenção habilitado, verificação de ransomware realizada, detalhes da origem da proteção e detalhes do destino da proteção.
 
-Os trabalhos de restauração mostram detalhes como provedor de destino de backup (Amazon Web Services, Microsoft Azure, Google Cloud, local), nome do bucket S3, nome do SVM, nome do volume de origem, volume de destino, rótulo do instantâneo, contagem de objetos recuperados, nomes de arquivos, tamanhos de arquivos, data da última modificação e caminho completo do arquivo.
+Os trabalhos de restauração exibem detalhes como o provedor de destino do backup (Amazon Web Services, Microsoft Azure, Google Cloud, local), nome do bucket S3, nome da VM de armazenamento, nome do volume de origem, volume de destino, rótulo do snapshot, contagem de objetos recuperados, nomes dos arquivos, tamanhos dos arquivos, data da última modificação e caminho completo do arquivo.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Monitoramento*.

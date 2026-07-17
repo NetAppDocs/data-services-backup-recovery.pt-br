@@ -353,7 +353,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 . *Replicação*: Defina as seguintes opções:
 +
-** *Destino de replicação*: Selecione o sistema de destino e o SVM.  Opcionalmente, selecione o(s) agregado(s) de destino e o prefixo ou sufixo que serão adicionados ao nome do volume replicado.
+** *Destino da replicação*: Selecione o sistema de destino e a máquina virtual de armazenamento. Opcionalmente, selecione o agregado ou agregados de destino e o prefixo ou sufixo que serão adicionados ao nome do volume replicado.
 ** *Política de replicação*: Escolha uma política de replicação existente ou crie uma.
 +
 
