@@ -28,7 +28,7 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 Você pode restaurar dados para estes pontos:
 
 * Restaurar para a localização original (do storage primário, secundário e de objetos)
-* Restaurar para um local alternativo (a partir do storage primário e secundário)
+* Restaurar para um local alternativo (do primário, secundário e storage de objetos)
 
 
 .Considerações sobre restauração de armazenamento de objetos

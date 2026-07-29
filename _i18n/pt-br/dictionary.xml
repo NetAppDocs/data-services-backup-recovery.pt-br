@@ -5285,7 +5285,6 @@
   <block id="57c9526981addf2ea70c6ad409673cb5" category="list-text">Opcionalmente, para excluir uma sessão, abra o menu Ações <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> para uma sessão e selecione *Excluir*.</block>
   <block id="970e7dbe358429eacf37bb0e37943138" category="list-text">Restaurar de um backup de storage de objetos (somente para o local original)</block>
   <block id="4b59b9c80f0f0e40294e53eb75b4e004" category="list-text">Restaurar para a localização original (do storage primário, secundário e de objetos)</block>
-  <block id="a6f964fecafa0484fc07f1b47496f82c" category="list-text">Restaurar para um local alternativo (a partir do storage primário e secundário)</block>
   <block id="bff6f5877ada2718589866425ae83e38" category="doc">Crie e gerencie políticas de backup do Hyper-V no NetApp Backup and Recovery</block>
   <block id="7c54de5e880bd010125642ffb949ccad" category="paragraph">Em NetApp Backup and Recovery, crie suas próprias políticas de backup do Hyper-V que determinam a frequência do backup, o horário em que o backup é realizado e o número de arquivos de backup que são retidos.</block>
   <block id="110202b139c8c8a25346f036c902b4c8" category="list-text">Editar políticas</block>
@@ -5436,7 +5435,6 @@
   <block id="860b17c21dae4758109cd6109bb92be4" category="list-text">*Aprimoramentos na restauração de arquivos e pastas para uma máquina virtual convidada*: Agora você pode restaurar arquivos e pastas de um snapshot no storage primário ou secundário para uma máquina virtual Windows convidada. Esse recurso agora é compatível com VMs CIFS e SAN.</block>
   <block id="3e96e50a62c2cc112989ccd5d4d264aa" category="list-text">Restauração de arquivos e pastas em uma configuração de recuperação de desastres (DR): após uma falha, os volumes em uma VM de armazenamento configurada para DR mantêm os relacionamentos SnapMirror preexistentes em um estado interrompido. As tentativas de restaurar arquivos ou pastas que criam relacionamentos RST temporários SnapMirror são bloqueadas pelo ONTAP porque o volume de destino já possui um relacionamento.</block>
   <block id="d98b87c41bd7151a94b3271b45bd340f" category="paragraph">Restaure arquivos e pastas de backups de máquinas virtuais Hyper-V em storage primário ou secundário para uma máquina virtual Windows convidada.</block>
-  <block id="7438f70a76f855b704ba892f9c003542" category="list-text">A restauração de arquivos e pastas a partir de backups armazenados em storage de objetos não é suportada.</block>
   <block id="7d3d3c20273081b66e3ecec1f0d07f51" category="list-text">Selecione um instantâneo no storage primário ou secundário a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.</block>
   <block id="3808991f408e2ffd90ae953886ec1e79" category="doc">NetApp Backup and Recovery requisitos</block>
   <block id="44b68849dd3e2689fb41242f736a140f" category="paragraph">Antes de começar a usar NetApp Backup and Recovery, certifique-se de que seu NetApp Console e ambiente operacional atendam aos seguintes requisitos.</block>
@@ -5654,4 +5652,6 @@
   <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">É necessário o ONTAP 9.19.1 ou posterior para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem (até 100 buckets no máximo).</block>
   <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 ou posterior (ONTAP 9.19.1 ou posterior é necessário para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem; até 100 buckets no máximo)</block>
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">Um sistema ONTAP primário (ONTAP 9.14.1 ou posterior - ONTAP 9.19.1 ou posterior é necessário para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem; até 100 buckets no máximo)</block>
+  <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">A proteção de VMs de segunda geração armazenadas em storage SAN não é compatível com Microsoft Windows Server 2025.</block>
+  <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">Restaurar para um local alternativo (do primário, secundário e storage de objetos)</block>
 </blocks>

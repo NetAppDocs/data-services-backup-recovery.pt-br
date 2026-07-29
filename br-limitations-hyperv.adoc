@@ -23,6 +23,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 As seguintes ações não são suportadas em cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
 
+* A proteção de VMs de segunda geração armazenadas em storage SAN não é compatível com Microsoft Windows Server 2025.
 * Crie grupos de recursos usando máquinas virtuais de vários hosts Hyper-V.
 * Discos de abrangência (em vários compartilhamentos CIFS)
 * Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
