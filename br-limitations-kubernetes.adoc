@@ -18,6 +18,13 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 
 
+[[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
+=== Limitação da prévia do Backup and Recovery para implantação local do NetApp Console
+
+Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
+
+
+
 [[changing-the-protection-policy-for-an-application]]
 == Alterando a política de proteção de um aplicativo
 

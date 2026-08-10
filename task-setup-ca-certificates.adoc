@@ -33,13 +33,13 @@ https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-load-balancer-en
 . Atualize o StorageGRID com o certificado, caso ainda não tenha feito isso.
 . Efetue login no agente do Console como usuário root. Correr:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Obtenha o volume do Docker do NetApp Backup and Recovery (Cloud Backup Service). Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -57,7 +57,7 @@ NOTE: O nome do volume difere entre os modos de implantação Padrão, Privado e
 
 . Localize o ponto de montagem do volume do NetApp Backup and Recovery . Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -75,7 +75,7 @@ NOTE: O ponto de montagem difere entre os modos de implantação Padrão, Privad
 
 . Acesse o diretório do ponto de montagem. Execute:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
@@ -91,13 +91,13 @@ Você precisará habilitar a verificação do certificado do StorageGRID Server 
 
 . Altere os diretórios para o volume do Docker obtido nas etapas anteriores.
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
 . Altere os diretórios para o diretório config.
 +
-[source, console]
+[source, shell]
 ----
 cd cbs_config
 ----
@@ -129,13 +129,13 @@ Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["M
 
 . Saia do contêiner. Correr:
 +
-[source, console]
+[source, shell]
 ----
 exit
 ----
 . Reiniciar `cloudmanager_cbs` . Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -150,13 +150,13 @@ Em seguida, você precisará habilitar a verificação do certificado do Storage
 
 . Alterar diretórios para o volume do Docker:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
 . Configurar o catálogo. Correr:
 +
-[source, console]
+[source, shell]
 ----
 cd cbs_catalog_config
 ----
@@ -188,7 +188,7 @@ Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["M
 
 . Reinicie o catálogo. Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----
@@ -205,7 +205,7 @@ docker restart cloudmanager_cbs_catalog
 
 . Copie o certificado SGWS para `/usr/local/share/ca-certificates` . Aqui está um exemplo:
 +
-[source, console]
+[source, shell]
 ----
 cp /config/sgws.crt /usr/local/share/ca-certificates/
 ----
@@ -214,7 +214,7 @@ onde `sgws.crt` é o certificado da CA raiz.
 
 . Atualize os certificados do host com o certificado StorageGRID . Correr
 +
-[source, console]
+[source, shell]
 ----
 sudo update-ca-certificates
 ----
@@ -226,7 +226,7 @@ sudo update-ca-certificates
 
 . Copie o certificado SGWS para `/etc/pki/ca-trust/source/anchors/` .
 +
-[source, console]
+[source, shell]
 ----
 cp /config/sgws.crt /etc/pki/ca-trust/source/anchors/
 ----
@@ -235,20 +235,20 @@ onde `sgws.crt` é o certificado da CA raiz.
 
 . Atualize os certificados do host com o certificado StorageGRID .
 +
-[source, console]
+[source, shell]
 ----
 update-ca-trust extract
 ----
 . Atualizar o `ca-bundle.crt`
 +
-[source, console]
+[source, shell]
 ----
 cd /etc/pki/tls/certs/
 openssl x509 -in ca-bundle.crt -text -noout
 ----
 . Para verificar se os certificados estão presentes, execute o seguinte comando:
 +
-[source, console]
+[source, shell]
 ----
 openssl crl2pkcs7 -nocrl -certfile /etc/pki/tls/certs/ca-bundle.crt | openssl pkcs7 -print_certs | grep subject | head
 ----
@@ -272,13 +272,13 @@ Use a documentação do System Manager para criar um novo certificado CA para o 
 .Passos
 . Faça login no agente do Console como root. Execute:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Obtenha o volume do Docker do NetApp Backup and Recovery . Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -296,7 +296,7 @@ NOTE: O nome do volume difere entre os modos de implantação Padrão, Privado e
 
 . Obtenha a montagem para o volume. Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -314,7 +314,7 @@ NOTE: O ponto de montagem difere entre os modos de implantação Padrão, Privad
 
 . Mude para o diretório do ponto de montagem. Correr:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
@@ -335,13 +335,13 @@ Em seguida, ative a verificação do certificado do servidor ONTAP no NetApp Bac
 
 . Altere os diretórios para o volume do Docker obtido nas etapas anteriores.
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
 . Mude para o diretório de configuração. Correr:
 +
-[source, console]
+[source, shell]
 ----
 cd cbs_config
 ----
@@ -371,13 +371,13 @@ Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["M
 
 . Saia do contêiner. Correr:
 +
-[source, console]
+[source, shell]
 ----
 exit
 ----
 . Reinicie o NetApp Backup and Recovery. Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -392,13 +392,13 @@ Habilite a verificação do certificado do servidor ONTAP para o Serviço de Cat
 
 . Altere os diretórios para o volume do Docker. Correr:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
 ----
 . Correr:
 +
-[source, console]
+[source, shell]
 ----
 cd cbs_catalog_config
 ----
@@ -428,7 +428,7 @@ Consulte https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["M
 
 . Reinicie o NetApp Backup and Recovery. Correr:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----

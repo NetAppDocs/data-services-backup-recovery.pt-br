@@ -52,8 +52,6 @@ image:diagram_browse_restore_volume-unified.png["Um diagrama que mostra o fluxo 
 * Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o sistema original ou para um sistema ONTAP local.
 
 
-Na página Restaurar (Pesquisar e Restaurar), você pode restaurar um recurso pesquisando o snapshot com filtros, mesmo que não se lembre do nome exato, local ou última data conhecida.
-
 
 
 [[restore-workload-data-from-the-restore-option-search-restore]]

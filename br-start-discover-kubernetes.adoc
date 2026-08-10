@@ -23,7 +23,7 @@ O NetApp Backup and Recovery precisa descobrir cargas de trabalho do Kubernetes 
 [[discover-kubernetes-workloads]]
 == Descubra as cargas de trabalho do Kubernetes
 
-No inventário de Backup e Recuperação, descubra cargas de trabalho do Kubernetes em seu ambiente.  Adicionar uma carga de trabalho adiciona um cluster Kubernetes ao NetApp Backup and Recovery.  Você pode então adicionar aplicativos e proteger os recursos do cluster.
+No inventário de Backup and Recovery, descubra cargas de trabalho do Kubernetes em seu ambiente. Adicionar uma carga de trabalho adiciona um cluster do Kubernetes ao NetApp Backup and Recovery. Em seguida, você pode adicionar aplicativos e proteger os recursos do cluster. Opcionalmente, você pode descobrir recursos locais do Kubernetes isolados da internet usando a implantação local do NetApp Console.
 
 [NOTE]
 ====
@@ -39,18 +39,45 @@ Ao descobrir um cluster que está atualmente protegido com Trident Protect, quai
 
 . Selecione o tipo de carga de trabalho *Kubernetes*.
 . Insira um nome de cluster e escolha um agente de Console para usar com o cluster.
-. Siga as instruções da linha de comando que aparecem:
 +
-** Crie um namespace Trident Protect
-** Crie um segredo do Kubernetes
-** Adicionar um repositório Helm
-** Instale ou atualize Trident Protect e o conector Trident Protect
+O NetApp Backup and Recovery fornece instruções que variam de acordo com o tipo de instalação que você seleciona. Se você usar a implantação local do NetApp Console, poderá escolher instruções que permitem descobrir recursos isolados, sem conectividade de rede externa.
+
+. Escolha um tipo de instalação para visualizar as instruções para instalar o Trident Protect no seu cluster Kubernetes:
 +
-Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.
+** Selecione *Conectado* para descobrir clusters que possuem conectividade de rede externa.
+** Selecione *Isolado da rede* para descobrir clusters que não possuem conectividade de rede externa.
++
+[role="tabbed-block"]
+====
+.Descoberta conectada
+--
+... Siga as instruções da linha de comando que aparecem no NetApp Backup and Recovery. Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.
 
 
+--
+.Descoberta air-gapped
+--
+... Insira a URL do seu registro de contêineres Docker privado. Esse registro é usado para baixar as imagens do Trident Protect e do Trident Protect Connector durante a instalação.
+... Se o seu registro de contêineres privado exigir autenticação, use um dos seguintes métodos para configurar as credenciais do registro:
++
+**** *Autenticação no nível do nó*: Configure as credenciais de registro no ambiente de execução do contêiner em cada nó. Uma vez configurado, todos os pods podem baixar imagens sem a necessidade de configurações adicionais do Helm.
+**** *Segredo para extrair imagens do Kubernetes*: Crie um segredo para extrair imagens do Kubernetes no  `trident-protect` namespace e, em seguida, faça referência a ele durante a etapa de atualização do Helm nas instruções de instalação do Trident Protect:
++
+[source, console]
+----
+--set trident-protect.imagePullSecrets[0].name=<pull-secret-name>
+--set connector.imagePullSecrets[0].name=<pull-secret-name>
+----
 
-. Após concluir as etapas, selecione *Descobrir*.
+
+... Siga as instruções da linha de comando que aparecem no NetApp Backup and Recovery, adicionando as informações do segredo de pull da imagem durante a etapa do Helm (se necessário). Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.
+
+
+--
+====
+
+
+. Após concluir as etapas de instalação do Trident Protect, selecione *Descobrir*.
 +
 O cluster é adicionado ao inventário.
 
@@ -65,7 +92,7 @@ O cluster é adicionado ao inventário.
 Siga estas etapas para visualizar o Painel de NetApp Backup and Recovery .
 
 . No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
-. Selecione um bloco de carga de trabalho (por exemplo, Microsoft SQL Server).
+. Selecione o bloco de carga de trabalho do Kubernetes.
 . No menu Backup e Recuperação, selecione *Painel*.
 . Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
 +

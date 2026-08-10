@@ -32,7 +32,7 @@ Crie um backup sob demanda imediatamente.  Talvez você queira executar um backu
 
 .Passos
 . No menu Backup e Recuperação, selecione *Inventário*.
-. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione a carga de trabalho do VMware.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
 . Selecione o cabeçalho de menu *Grupos de Proteção*, *Datastores*, *Máquinas virtuais* ou *Tags*.
 . Selecione o grupo de proteção, os datastores, as máquinas virtuais ou os recursos etiquetados que você deseja fazer backup.
@@ -43,4 +43,39 @@ NOTE: A política aplicada ao backup é a mesma política atribuída ao grupo de
 
 . Selecione o nível de agendamento.
 . Selecione *Fazer backup agora*.
+
+
+
+
+[[delete-backups]]
+== Excluir backups
+
+Você pode excluir backups locais que não são mais necessários para liberar espaço de storage ou atender aos requisitos de retenção de dados.
+
+.Passos
+. Faça login no NetApp Backup and Recovery e, na tela inicial, selecione o bloco da carga de trabalho do VMware.
++
+A página de inventário da VMware é exibida.
+
+. Selecione o cabeçalho *Máquinas virtuais*.
+. Na lista de máquinas virtuais, escolha uma máquina virtual e selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Exibir detalhes de proteção*.
+. Selecione um período de tempo para exibir os snapshots relevantes.
+. Excluir um ou mais snapshots:
++
+[role="tabbed-block"]
+====
+.Excluir um único snapshot
+--
+.. Escolha um instantâneo da lista que você deseja excluir e selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Excluir instantâneo local*.
+
+
+--
+.Excluir vários instantâneos
+--
+.. Selecione a caixa de seleção à esquerda de cada snapshot que você deseja excluir.
+.. Selecione *Excluir selecionados*.
+
+
+--
+====
 

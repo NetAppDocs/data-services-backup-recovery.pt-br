@@ -20,7 +20,7 @@ RESTORE_SKIP_NAMESPACE_ANNOTATIONS
 ----
 Antes da restauração ou failover, para evitar que anotações específicas do namespace de destino sejam sobrescritas. Por exemplo:
 
-[source, console]
+[source, shell]
 ----
 helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-protect \
   --set-string restoreSkipNamespaceAnnotations="{<annotation_key_to_skip_1>,<annotation_key_to_skip_2>}" \

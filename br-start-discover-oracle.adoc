@@ -20,6 +20,113 @@ A descoberta de bancos de dados Oracle permite que NetApp Backup and Recovery os
 
 
 
+[[configure-dns-for-air-gapped-host-discovery-in-netapp-console-local-deployment]]
+== Configurar DNS para descoberta de hosts isolados da internet na implantação local do NetApp Console
+
+Se você estiver usando a implantação local do NetApp Console em um ambiente isolado (air-gapped) onde os hosts do banco de dados não são acessíveis por meio de DNS padrão, você deve modificar temporariamente a configuração interna do CoreDNS do RKE2. Isso permite que os pods resolvam nomes de host específicos para endereços IP dentro do cluster, de forma semelhante à adição de entradas em  `/etc/hosts` em um nó.
+
+
+IMPORTANT: Antes de efetuar alterações, verifique a configuração existente do CoreDNS para evitar sobrescrever quaisquer personalizações já feitas. Utilize os manifestos RKE2 para aplicar essa alteração, garantindo que ela seja gerenciada de forma consistente pelo operador e pelo runtime do RKE2.
+
+.Antes de começar
+* Mantenha o arquivo HelmChartConfig sob controle de alterações sempre que possível.
+* Use um nome de arquivo claro para que a finalidade da substituição do CoreDNS fique óbvia.
+* Se o registro DNS esperado não estiver visível no Corefile, verifique os logs do servidor RKE2 e confirme a sintaxe do arquivo de manifesto.
+
+
+.Passos
+. Verifique a configuração existente do CoreDNS para garantir que você não esteja sobrescrevendo uma alteração já existente:
++
+[source, shell]
+----
+kubectl -n kube-system get cm rke2-coredns-rke2-coredns -o jsonpath='{.data.Corefile}'
+----
+. Copie o seguinte bloco de comando e edite a área  `configBlock` para adicionar seus registros DNS estáticos. Isso cria um arquivo YAML HelmChartConfig na pasta de manifestos do RKE2, que o RKE2 aplica automaticamente para substituir a configuração do CoreDNS:
++
+[source, shell]
+----
+sudo tee /var/lib/rancher/rke2/server/manifests/rke2-coredns-config.yaml >/dev/null <<'YAML'
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: rke2-coredns
+  namespace: kube-system
+spec:
+  # NOTE: This is a HelmChartConfig that *overlays* values onto the rke2-coredns
+  # HelmChart already managed by RKE2. RKE2 watches /var/lib/rancher/rke2/server/manifests
+  # and will re-render the rke2-coredns Helm release whenever this file changes.
+  #
+  # The `servers:` list below REPLACES the chart's default server definition,
+  # so every plugin that was in the stock Corefile must be present here.
+  # Do NOT delete plugins you don't recognize -- they are required for cluster DNS.
+  valuesContent: |-
+    servers:
+    - zones:
+      - zone: .
+      port: 53
+      plugins:
+      - name: errors
+      - name: health
+        configBlock: |-
+          lameduck 10s
+      - name: ready
+      - name: kubernetes
+        parameters: cluster.local in-addr.arpa ip6.arpa
+        configBlock: |-
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+          ttl 30
+      # ───────────────────────── EDIT BELOW ─────────────────────────
+      # Static DNS records for hosts the corporate DNS cannot resolve.
+      # Format:  <IP>  <FQDN>  [optional aliases...]
+      # `fallthrough` MUST stay as the last line -- it lets every other
+      # name go to the upstream resolver via the `forward` plugin below.
+      - name: hosts
+        configBlock: |-
+          1.2.3.4 example.domain.com exampleshortname
+          fallthrough
+      # ───────────────────────── EDIT ABOVE ─────────────────────────
+      - name: prometheus
+        parameters: 0.0.0.0:9153
+      - name: forward
+        parameters: . /etc/resolv.conf
+      - name: cache
+        parameters: 30
+      - name: loop
+      - name: reload
+      - name: loadbalance
+YAML
+sudo chmod 600 /var/lib/rancher/rke2/server/manifests/rke2-coredns-config.yaml
+----
+. Verifique se o CoreDNS detectou a alteração:
++
+[source, shell]
+----
+kubectl -n kube-system get cm rke2-coredns-rke2-coredns -o jsonpath='{.data.Corefile}'
+----
++
+Se a alteração não estiver visível após alguns minutos, reinicie a implantação do CoreDNS e verifique o Corefile novamente:
+
++
+[source, shell]
+----
+kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
+----
+. Se você precisar remover as entradas depois de descobrir os hosts do banco de dados, faça o seguinte:
++
+.. Exclua o arquivo HelmChartConfig da pasta de manifestos.
+.. Reinicie a implementação do CoreDNS:
++
+[source, shell]
+----
+kubectl -n kube-system rollout restart deploy/rke2-coredns-rke2-coredns
+----
+
+
+
+
+
+
 [[add-an-oracle-database-host-and-discover-resources]]
 == Adicione um host do Oracle Database e descubra recursos
 

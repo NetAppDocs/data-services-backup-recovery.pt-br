@@ -609,15 +609,9 @@
   <block id="dfbbf83657db8e9ef8d6ee3a468873c2" category="doc">Descubra cargas de trabalho do Kubernetes no NetApp Backup and Recovery</block>
   <block id="d1b560b331735fdf9cef92794cc2cff2" category="paragraph">O NetApp Backup and Recovery precisa descobrir cargas de trabalho do Kubernetes antes de protegê-las.</block>
   <block id="f0338e38e7978ec30d1f5eb9b845e843" category="section-title">Descubra as cargas de trabalho do Kubernetes</block>
-  <block id="a74bdf5d9abca25c000c1902f13999c8" category="paragraph">No inventário de Backup e Recuperação, descubra cargas de trabalho do Kubernetes em seu ambiente.  Adicionar uma carga de trabalho adiciona um cluster Kubernetes ao NetApp Backup and Recovery.  Você pode então adicionar aplicativos e proteger os recursos do cluster.</block>
   <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">Faça um dos seguintes:</block>
   <block id="6226950d1b144f972ce9b5d3caea9b42" category="list-text">Se você já descobriu cargas de trabalho do Kubernetes, no NetApp Backup and Recovery, selecione *Inventário* &gt; *Cargas de trabalho* e, em seguida, selecione *Descobrir recursos*.</block>
   <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">Selecione o tipo de carga de trabalho *Kubernetes*.</block>
-  <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">Siga as instruções da linha de comando que aparecem:</block>
-  <block id="ed6eabebedff09350cdabab556887c62" category="list-text">Crie um segredo do Kubernetes</block>
-  <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">Adicionar um repositório Helm</block>
-  <block id="efa5307bfad4cbe53b6ae3c88baa522e" category="paragraph">Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.</block>
-  <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">Após concluir as etapas, selecione *Descobrir*.</block>
   <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">O cluster é adicionado ao inventário.</block>
   <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">Selecione *Exibir* na carga de trabalho do Kubernetes associada para ver a lista de aplicativos, clusters e namespaces para essa carga de trabalho.</block>
   <block id="b0719c20a836424f725e51c9b181748d" category="paragraph">Siga estas etapas para visualizar o Painel de NetApp Backup and Recovery .</block>
@@ -688,7 +682,6 @@
   <block id="b7dfb6860d9af743a7d3f0fe2adfde3d" category="list-text">*Ignorar verificações de pré-instalação opcionais*: marque esta caixa para ignorar verificações de pré-instalação opcionais.  Você pode querer fazer isso, por exemplo, se souber que considerações de memória ou espaço serão alteradas em um futuro próximo e quiser instalar o plugin agora.</block>
   <block id="2a9ab4f690bade887dade42f4a0f412b" category="inline-link">Modos de implantação do NetApp Console</block>
   <block id="02a0978d1df3ca052a64d05249709cc3" category="summary">Você pode licenciar o NetApp Backup and Recovery comprando uma assinatura de pagamento conforme o uso ou anual do marketplace do seu provedor de nuvem ou comprando uma licença "traga sua própria" da NetApp.  Uma licença válida é necessária para ativar o NetApp Backup and Recovery em um sistema, criar backups dos seus dados de produção e restaurar dados de backup em um sistema de produção.</block>
-  <block id="d44c500b8ff5c565a7d3b02d14def6a3" category="paragraph">Você pode licenciar o NetApp Backup and Recovery comprando uma assinatura de pagamento conforme o uso (PAYGO) ou anual do mercado para * NetApp Intelligent Services* do seu provedor de nuvem ou comprando uma licença "traga sua própria licença" (BYOL) da NetApp.  Uma licença válida é necessária para ativar o NetApp Backup and Recovery em um sistema, criar backups dos seus dados de produção e restaurar dados de backup em um sistema de produção.</block>
   <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">Algumas notas antes de continuar lendo:</block>
   <block id="0afafddaf42e76b83acff428b8613a7e" category="list-text">A licença BYOL (Bring Your Own License) do NetApp Backup and Recovery é uma licença flutuante que você pode usar em todos os sistemas associados à sua organização ou conta do NetApp Console .  Portanto, se você tiver capacidade de backup suficiente disponível em uma licença BYOL existente, não precisará comprar outra licença BYOL.</block>
   <block id="98ed4c44ab8a3c8a5b08f8e91a585c40" category="list-text">Se você estiver usando uma licença BYOL, é recomendável que você assine também uma assinatura PAYGO.  Se você fizer backup de mais dados do que o permitido pela sua licença BYOL, ou se o prazo da sua licença expirar, o backup continuará por meio da sua assinatura paga conforme o uso - não haverá interrupção do serviço.</block>
@@ -721,7 +714,6 @@
   <block id="7744fc20060f2753538eb1cbe03db4f0" category="paragraph">Use estes links para assinar o NetApp Backup and Recovery no marketplace do seu provedor de nuvem:</block>
   <block id="14c403304e8650321be08c9edd75c486" category="inline-link">Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços</block>
   <block id="782af9afc0728a9389fd837476a88107" category="inline-link">Acesse a oferta do Marketplace para NetApp Intelligent Services para obter detalhes sobre preços</block>
-  <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">Use um contrato anual</block>
   <block id="e8081693b5a02447f0b48df91b9f65d8" category="paragraph">Pague pelo NetApp Backup and Recovery anualmente adquirindo um contrato anual.  Eles estão disponíveis em prazos de 1, 2 ou 3 anos.</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">Página do AWS Marketplace</block>
   <block id="dda622e647d2d5d64503c046c508cc10" category="paragraph">Ao usar a AWS, há dois contratos anuais disponíveis na<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> para sistemas Cloud Volumes ONTAP e ONTAP locais:</block>
@@ -754,7 +746,6 @@
   <block id="ae5c737a541e095839e199ea2ab82f0f" category="paragraph">Para efetuar login no NetApp Console, você pode usar suas credenciais do site de suporte da NetApp ou pode se inscrever para um login no NetApp Console usando seu e-mail e uma senha.<block ref="3546779ff62edcb806e94b283f4a603a" category="inline-link-rx"></block> .</block>
   <block id="03169a1f1f9d0a03d15fd58f20cbb63e" category="paragraph">Para adicionar um agente do Console, você precisa ter a função de superadministrador do Backup and Recovery.</block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="inline-link">NetApp Console</block>
-  <block id="6a65fb509b9c682f9df5eb122484e2f7" category="list-text">Abra um navegador da web e vá para o<block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block> .</block>
   <block id="0daac1b9cd4c3a240bf2f6b44ba178a1" category="paragraph">A página de login do NetApp Console é exibida.</block>
   <block id="4a43cddfeeabba4570c14c252dec0bd1" category="list-text">Efetue login no Console.</block>
   <block id="4d2b18ba50dc1294ccb141fdc1041417" category="inline-link">Introdução ao modo padrão do NetApp Console</block>
@@ -3775,7 +3766,6 @@
   <block id="b4ae20208d5c757b694d673276341786" category="paragraph">Restaure um banco de dados para proteger seus dados.</block>
   <block id="3f6fab6bedfff19150a3d6ab054b0391" category="paragraph">Você pode fazer backup de suas instâncias e bancos de dados do Microsoft SQL Server agora para proteger seus dados imediatamente.</block>
   <block id="2b2261b532e949e52edc443eb38fcb1c" category="admonition">Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arquivo de backup.</block>
-  <block id="d4356e3242caba9699bd9bc147a04798" category="paragraph">Na página Restaurar (Pesquisar e Restaurar), você pode restaurar um recurso pesquisando o snapshot com filtros, mesmo que não se lembre do nome exato, local ou última data conhecida.</block>
   <block id="fd7bb5c3777005321645f38a2d07ea27" category="admonition">Se a operação de restauração não for concluída, aguarde até que o Job Monitor mostre "Falha" antes de tentar a operação de restauração novamente.</block>
   <block id="51e153ee1aa6cdb4ca7796e926180b53" category="admonition">Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consulte<block ref="e56b09183f5489111204017fecace77e" category="inline-link-macro-rx"></block> .</block>
   <block id="2f52181b09a7c053aed22699e227b9db" category="paragraph">Quando você usa o NetApp Backup and Recovery em um ambiente SaaS com o agente do Console implantado no seu provedor de nuvem ou no seu próprio host conectado à Internet, o sistema faz backup e protege todos os dados de configuração importantes na nuvem.  Se você tiver um problema com o agente do Console, crie um novo agente do Console e adicione seus sistemas.  Os detalhes do backup são restaurados automaticamente.</block>
@@ -3918,7 +3908,6 @@
   <block id="d04d7ffd1d421df13a11259032d9191e" category="paragraph">Com o NetApp Backup and Recovery, gerencie backups para seus sistemas Cloud Volumes ONTAP e ONTAP locais alterando o agendamento de backup, habilitando/desabilitando backups de volume, pausando backups, excluindo backups, forçando a exclusão de backups e muito mais. Isso inclui todos os tipos de backups, incluindo snapshots, volumes replicados e arquivos de backup em armazenamento de objetos. Você também pode cancelar o registro do NetApp Backup and Recovery.</block>
   <block id="294441075d63ebaf575b2bea27e26a8b" category="paragraph">Você pode visualizar uma lista de todos os volumes que estão sendo copiados no momento no Painel de Backup de Volumes. Isso inclui todos os tipos de backups, incluindo snapshots, volumes replicados e arquivos de backup em armazenamento de objetos. Você também pode visualizar os volumes nesses sistemas que não estão sendo copiados no momento.</block>
   <block id="16733ccec61246c84b6ccea8b096ea96" category="list-text">Revise o status das opções de proteção na coluna "Proteção existente". Os 3 ícones representam "Instantâneos locais", "Volumes replicados" e "Backups no armazenamento de objetos".</block>
-  <block id="41164544ff8c92dec6c6202f3c48b888" category="list-text">Na página _Definir estratégia de backup_, selecione a arquitetura de backup e, em seguida, defina as políticas e outros detalhes para snapshots locais, volumes replicados e arquivos de backup. Veja os detalhes das opções de backup dos volumes iniciais que você ativou neste sistema. Em seguida, selecione *Avançar*.</block>
   <block id="6c93c0ee904d580923385784899b59a3" category="paragraph">Você pode alterar as políticas de backup atribuídas aos seus volumes existentes que têm políticas atribuídas. Você pode alterar as políticas para seus snapshots locais, volumes replicados e arquivos de backup. Qualquer nova política de snapshot, replicação ou backup que você deseja aplicar aos volumes já deve existir.</block>
   <block id="257aa7f9d15bc46fa7c45edeac5b1ab7" category="list-text">Na página _Editar estratégia de backup_, faça alterações nas políticas de backup existentes para snapshots locais, volumes replicados e arquivos de backup e selecione *Avançar*.</block>
   <block id="96f9f5071945e75714c9ffbe54f80851" category="list-text">Na página de backup que aparece, faça as alterações nas políticas de backup existentes para snapshots locais, volumes replicados ou arquivos de backup e selecione *Salvar*.</block>
@@ -4295,7 +4284,6 @@
   <block id="5a3443bdabcca33a88f837ed431e4140" category="list-text">*Exportar snapshot existente*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar para este sistema (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup, garantindo a proteção mais completa para seus volumes.</block>
   <block id="fd5c6f657b9b82dc2fc86f506dacc05d" category="list-text">Opcionalmente, marque a caixa para *Corrigir automaticamente rótulos incompatíveis em snapshots locais, replicação e backup*. Isso cria instantâneos com um rótulo que corresponde aos rótulos nas políticas de instantâneo, replicação e backup.</block>
   <block id="a85910c6eeb75a045489c2b16a61b922" category="paragraph">Cada ícone acende quando o tipo de backup correspondente está ativado e fica cinza quando o tipo de backup está inativo. Você pode posicionar o cursor sobre cada ícone para visualizar a política de backup que está sendo utilizada, bem como outras informações relevantes para cada tipo de backup.</block>
-  <block id="ff171d855d9a99655f572a9bb5b1628f" category="list-text">Na guia *Volumes*, identifique o volume no qual deseja ativar os backups e selecione o menu Ações. <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> Ao final da linha, selecione *Ativar proteção 3-2-1*.</block>
   <block id="1ae9b0331f20d420feb95df3c5f492ec" category="list-text">No menu *Volumes*, localize o volume para o qual deseja modificar as configurações de política e selecione o menu Ações. <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> No final da linha, selecione *Editar estratégia de backup*.</block>
   <block id="7a8eafe0820d78646db0118a296f0af3" category="paragraph">Quando mais de cinco volumes estão habilitados para backup, o NetApp Backup and Recovery inicializa apenas cinco volumes por vez. Quando essas etapas forem concluídas, o processo continua em grupos de 5 até que todos os volumes sejam inicializados.</block>
   <block id="a3836fe1cde887edc4dd8114527d3364" category="paragraph">Você pode criar um snapshot ou backup ad-hoc de um volume para o armazenamento de objetos. Não é possível criar um volume replicado ad-hoc.</block>
@@ -4416,7 +4404,6 @@
   <block id="3f21300a12c48d2767fb3e5b7f83112b" category="doc">Limitações conhecidas com NetApp Backup e Recovery para cargas de trabalho do Oracle Database</block>
   <block id="92342f1ac80ff519b37da9a3148cbbd9" category="summary">Para aumentar a segurança, configure o acesso para funções específicas no NetApp Backup e Recovery.</block>
   <block id="42481383ace46d9a4716cce3ab760979" category="doc">Configurar controle de acesso baseado em funções no NetApp Backup e Restauração</block>
-  <block id="c43786d5855026fcdf77809fb14618c9" category="paragraph">Para aumentar a segurança e controlar o acesso aos recursos, configure o controle de acesso baseado em funções para NetApp Backup e Recovery. O NetApp Console oferece suporte ao controle de acesso baseado em funções (RBAC) para algumas cargas de trabalho de backup e restauração. Você pode atribuir funções administrativas ou de visualizador específicas para essas cargas de trabalho. Outras cargas de trabalho que ainda não oferecem suporte ao controle de acesso baseado em funções permanecem acessíveis a todos os usuários com funções de backup e restauração até que a associação em nível de projeto seja suportada.</block>
   <block id="0095575f49738915ec4332a4cab3f770" category="paragraph">Siga estes passos para controlar o acesso aos recursos da sua organização. Faça as alterações na página *Administração &gt; Identidade e acesso* no menu NetApp Console.</block>
   <block id="4ce081445a8183fac4f9d6fc6a51691e" category="admonition">Esses passos pressupõem que você tenha a função Organization Admin atribuída no Console.</block>
   <block id="c9b674f0a38b83f43d155669dc9e1dae" category="list-text">Crie a estrutura do projeto de identidade e acesso.</block>
@@ -4438,8 +4425,6 @@
   <block id="509c51772921c8ab860f75456880683f" category="list-text"><block ref="a16a606232229e0e62a5010aaabec2ae" category="inline-xref-macro-rx"></block> para executar scripts antes e depois dos trabalhos de backup. (Apenas cargas de trabalho do Kubernetes)</block>
   <block id="1d74d204f5274b499e41d2e0238b7bdd" category="inline-link-macro">crie uma nova política de proteção</block>
   <block id="c7a4eea6d62999931e3442bac0f23c29" category="paragraph">Ao descobrir um cluster que está atualmente protegido com Trident Protect, quaisquer agendamentos de backup usados com Trident Protect são desativados durante o processo de descoberta (os agendamentos de backup do Trident Protect não são compatíveis com Backup and Recovery). Para proteger os aplicativos do cluster, <block ref="f0814d3538b9ea88d5e27855ca8d3a8e" category="inline-link-macro-rx"></block> ou associe os aplicativos a uma política existente. Você pode então remover os agendamentos de backup do Trident Protect, se necessário.</block>
-  <block id="a44ad7bb8f2123fa1919c8eb91adac29" category="list-text">Crie um namespace Trident Protect</block>
-  <block id="75457b35c4c6b70a7664a43e080563ca" category="list-text">Instale ou atualize Trident Protect e o conector Trident Protect</block>
   <block id="dff3994b6daee1be81638e1c4964af92" category="doc">Descubra as cargas de trabalho do Oracle Database em NetApp Backup and Recovery</block>
   <block id="e242e6f8581d6d11d04b2c80d7a16519" category="inline-link-macro">Descubra cargas de trabalho do Oracle Database</block>
   <block id="ec9157f5af288c671e8006da3677d9c3" category="list-text">Para cargas de trabalho do Oracle Database, consulte <block ref="c9b387ac576fa007292bb17c9c97e163" category="inline-link-macro-rx"></block>.</block>
@@ -4635,7 +4620,6 @@
   <block id="dbeedec7ca35d125dd2a7ee8355c41f5" category="section-title">Cargas de trabalho VMware suportadas na General Availability (GA)</block>
   <block id="1fe60033089958dd8dab2fc11925056d" category="section-title">Excedendo a capacidade da licença</block>
   <block id="73b5f5184f0b378b50b42a6e8ceb743c" category="paragraph">Exceder a capacidade da sua licença aciona as tarifas PAYGO; sem uma assinatura PAYGO, você não pode criar novos backups, embora os backups existentes possam ser restaurados sem garantia de serviço. Certifique-se de renovar sua licença antes que ela expire; uma licença expirada impede novos backups e interrompe o serviço.</block>
-  <block id="d5339ec2460f6dc04a037cc1e0c21e2c" category="list-text">PowerShell 7.4.13</block>
   <block id="5a9e2fbc6e8b2849a76465cd1a86c575" category="doc">Cargas de trabalho KVM suportadas na General Availability (GA)</block>
   <block id="2c4d488d266d9d0655ce2e1451e05b2d" category="paragraph">O suporte para cargas de trabalho do Kubernetes agora está disponível para o público em geral (GA) no NetApp Backup and Recovery. Esta versão das cargas de trabalho do Kubernetes também introduz os seguintes recursos aprimorados:</block>
   <block id="2329c3692bdf2d2f098db291ec4e9427" category="paragraph">*Suporte a relatórios*: Agora você pode gerar relatórios de atividades de proteção para clusters Kubernetes e aplicativos protegidos pelo NetApp Backup and Recovery.</block>
@@ -5238,8 +5222,6 @@
   <block id="0fde83b735dcda0bbb69a0e90ce0981f" category="list-text">Opcionalmente, adicione mais transformações de recursos conforme necessário.</block>
   <block id="90f8ed9c2f4259835c05c9de87feb364" category="list-text">Ao terminar, selecione *Restaurar*.</block>
   <block id="a1ff2aac5244b20dc12ea8c0b87d23d5" category="list-text">Um sistema ONTAP primário (sistemas ASA r2 não são suportados)</block>
-  <block id="573f06d1963120e22aae7292a8177d4b" category="list-text">NetApp Trident 25.02 ou posterior</block>
-  <block id="c625623a3b3c56ebd1c8d5915f2e3a96" category="list-text">NetApp Trident Protect 26.05 ou posterior (instalado no cluster Kubernetes durante a descoberta)</block>
   <block id="9b6a034e6854c5f27feb3ac185829f8d" category="inline-link">Trident Protect</block>
   <block id="d02c2883bbfa212e02daa2b45bd11760" category="list-text">Um cluster Kubernetes - As distribuições e versões do Kubernetes suportadas incluem aquelas suportadas por<block ref="f56ec4bb79bf67d191baea2a353be3ab" category="inline-link-rx"></block>.</block>
   <block id="2966006d3447f3363606a7ddf7d88713" category="section-title">05 de maio de 2026</block>
@@ -5391,7 +5373,6 @@
   <block id="aefd2cbeb423f608e4e14dc18e7cda38" category="section-title">Visualizar sessões de montagem VMDK ativas</block>
   <block id="a2c3693f6f1b657d3365bb6121bebfc1" category="paragraph">Visualize as sessões de convidado ativas ao restaurar arquivos ou pastas. Isso mostra os VMDKs que estão atualmente conectados a sessões abertas.</block>
   <block id="29760f5766da0c4d6a0ac770b454e9d0" category="paragraph">É exibida uma lista de sessões de montagem VMDK abertas. Você pode ver o backup associado, a VM de origem, o caminho de montagem e outras informações.</block>
-  <block id="e77e2a03d88f40058869e1cc3d680930" category="list-text">ASP.NET Core Runtime 8.0.24 Hosting Bundle (e todos os patches 8.0.x subsequentes)</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Banco de dados Oracle AI 26ai</block>
   <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">Pacote de hospedagem 8.0.24 (e todos os patches 8.0.x subsequentes)</block>
   <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">11 de maio de 2026</block>
@@ -5438,8 +5419,6 @@
   <block id="7d3d3c20273081b66e3ecec1f0d07f51" category="list-text">Selecione um instantâneo no storage primário ou secundário a partir do qual deseja restaurar e, em seguida, selecione *Avançar*.</block>
   <block id="3808991f408e2ffd90ae953886ec1e79" category="doc">NetApp Backup and Recovery requisitos</block>
   <block id="44b68849dd3e2689fb41242f736a140f" category="paragraph">Antes de começar a usar NetApp Backup and Recovery, certifique-se de que seu NetApp Console e ambiente operacional atendam aos seguintes requisitos.</block>
-  <block id="b4d91981598471b84bcf3da4e96f7970" category="section-title">Prepare o NetApp Console</block>
-  <block id="64450efd5ca18cf6cebe654b9c7c05f3" category="paragraph">Você acessa o NetApp Backup and Recovery por meio do NetApp Console. Para preparar o Console para o Backup and Recovery, você deve:</block>
   <block id="37326d6fc2dae8eb70c8e5c6290c961a" category="list-text">Adicionar um agente de Console</block>
   <block id="f7738f6711f0ef1fb3f5a4464e7fcfb4" category="list-text">Adicione pelo menos um sistema de storage</block>
   <block id="5fc19bba732118fb6de20131945d3a1f" category="list-text">Configurar uma organização do Console e funções de usuário</block>
@@ -5448,8 +5427,6 @@
   <block id="4422b0b5b9637937564bf621f2610c7a" category="paragraph">Para saber mais sobre NetApp Console, consulte <block ref="26a35b83e5712f1703b96c54f1ac11b8" category="inline-link-rx"></block>.</block>
   <block id="a859e03fa525c25dee858dad62f9aec0" category="section-title">Conclua a configuração inicial do NetApp Console</block>
   <block id="d1a0bf528dab9557b3add986fac96df8" category="paragraph">Conclua a configuração inicial do NetApp Console, caso ainda não o tenha feito.</block>
-  <block id="91edb8869565e8b84d0bb89e65038d3a" category="inline-link">Fluxo de trabalho de primeiros passos para NetApp Console (aplicativo SaaS)</block>
-  <block id="19de064230f9802ad2a46adc704c00c1" category="paragraph"><block ref="19de064230f9802ad2a46adc704c00c1" category="inline-link-rx"></block></block>
   <block id="4cdcdd6cc684e8847f57a8c461306706" category="section-title">Implantar um agente de Console</block>
   <block id="41f59680b33ea7227eb6c7e09010d262" category="paragraph">Um agente do Console é um componente de software leve que você instala em sua rede para conectar sua infraestrutura de storage ao NetApp Console. Ele permite orquestração avançada de storage, serviços de dados e integração segura com a nuvem.</block>
   <block id="413f5c2acfdfdb1a561ffc22afe211b9" category="paragraph"><block ref="4818e913b60896a6e56bad9a383343fa" category="inline-link-rx"></block> <block ref="e0b8910c1bc5f58f6e1bc7ed243fa39c" category="inline-link-rx"></block></block>
@@ -5458,9 +5435,7 @@
   <block id="d1b29fc7b35be872f620d5d931e8766c" category="inline-link">Descubra clusters ONTAP locais no NetApp Console</block>
   <block id="7a9a5755110e2914f0ad288a141356cb" category="paragraph"><block ref="7a9a5755110e2914f0ad288a141356cb" category="inline-link-rx"></block></block>
   <block id="e17c2185b4352c73f48a1a8e84f1a8ed" category="section-title">Configurar uma organização e funções de usuário</block>
-  <block id="9104b82e5e7be42a60370d0e13b27403" category="paragraph">Aprenda sobre organizações, projetos e funções de usuário e, em seguida, configure os usuários com as permissões apropriadas necessárias para executar suas tarefas.</block>
   <block id="692fa8c1472b3f5b389ae8b229a03338" category="inline-link">Adicionar usuários a uma organização do NetApp Console</block>
-  <block id="6a66c8d307ddd017849b5680e53c609c" category="paragraph">Consulte <block ref="04f37aa952e829e9448a7d043a30911e" category="inline-link-rx"></block> para obter informações sobre como usar uma organização e projetos para controlar o acesso a recursos.</block>
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">Consulte <block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block> para obter detalhes sobre as funções e permissões necessárias para executar operações em NetApp Backup and Recovery.</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">Requisitos para backups em storage de objetos</block>
   <block id="fbb5639a46ec6a30ce9e9021778a91a2" category="paragraph">Para usar storage de objetos como destino de backup, você precisa de uma conta no AWS S3, Google Cloud Storage, Microsoft Azure Blob, StorageGRID ou ONTAP e das permissões de acesso apropriadas configuradas.</block>
@@ -5560,7 +5535,6 @@
   <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">Para restaurar reivindicações de volume persistente individuais, selecione a guia *Persistent volume claims*.</block>
   <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">Backup e Recovery lista todas as persistent volume claims no ponto de recuperação. Você pode selecionar quais persistent volume claims incluir na operação de restauração.</block>
   <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">15 de junho de 2026</block>
-  <block id="eb985c23c2b4157b8059d99e50538799" category="paragraph">Para os requisitos do NetApp Console, consulte <block ref="a1e048c2b33797bd5e09f13ddaff6fff" category="inline-xref-macro-rx"></block>.</block>
   <block id="11cb5552207ff0aa19a1682353b76f93" category="list-text">*Os grupos de proteção agora usam o agendamento de fuso horário do host*: Os grupos de proteção agora usam o fuso horário do host Hyper-V. Os grupos de proteção criados antes da introdução do agendamento de fuso horário do host continuam usando o horário configurado anteriormente (normalmente UTC). Para atualizar esses grupos de proteção para usar o fuso horário do host Hyper-V, você deve recriar os agendamentos. Consulte <block ref="d7b709a60ba856948f2de1f387e47906" category="inline-link-rx"></block> para obter mais informações.</block>
   <block id="327e5e3e392a7cf832926cb52870097c" category="list-text">*Os grupos de proteção agora usam o agendamento pelo fuso horário do host*: Os grupos de proteção agora usam o fuso horário do servidor VMware vCenter que os hospeda. Os grupos de proteção criados antes da introdução do agendamento pelo fuso horário do host continuam a ser executados no fuso horário configurado anteriormente (normalmente UTC). Para usar o fuso horário do vCenter, você deve recriar os agendamentos. Consulte <block ref="5181f9a713551c0880da1b785cb2e8f3" category="inline-link-rx"></block> para mais informações.</block>
   <block id="d041f642a2d3785a0e94ba8db99dbb87" category="list-text">Esteja ciente de que, para cargas de trabalho Hyper-V, o tempo de backup é interpretado no fuso horário do host de gerenciamento. Consulte <block ref="6abbe22a47895e202e8193141aa3411e" category="inline-link-macro-rx"></block> para mais informações.</block>
@@ -5654,4 +5628,181 @@
   <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">A proteção de VMs de segunda geração armazenadas em storage SAN não é compatível com Microsoft Windows Server 2025.</block>
   <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">Restaurar para um local alternativo (do primário, secundário e storage de objetos)</block>
   <block id="62ff0d9db122207756fd73342a3eb3ad" category="paragraph">NetApp Backup and Recovery agora oferece suporte à proteção das cargas de trabalho em um sistema com até 100 buckets em diferentes provedores de nuvem. ONTAP 9.19.1 ou posterior é necessário para oferecer suporte a mais de 6 buckets por sistema.</block>
+  <block id="a804a09090ab946ea48120427df5be47" category="paragraph">Se você estiver usando a implantação local do NetApp Console em um ambiente isolado (air-gapped) onde os hosts do banco de dados não são acessíveis por meio de DNS padrão, você deve modificar temporariamente a configuração interna do CoreDNS do RKE2. Isso permite que os pods resolvam nomes de host específicos para endereços IP dentro do cluster, de forma semelhante à adição de entradas em <block ref="ad942c725cd0cae65ca4c63717ec464c" prefix=" " category="inline-code"></block> em um nó.</block>
+  <block id="d38c5698c3f0a0cc565d84f0583ddbe8" category="admonition">Antes de efetuar alterações, verifique a configuração existente do CoreDNS para evitar sobrescrever quaisquer personalizações já feitas. Utilize os manifestos RKE2 para aplicar essa alteração, garantindo que ela seja gerenciada de forma consistente pelo operador e pelo runtime do RKE2.</block>
+  <block id="0d1c49b7f34131be8c6ddbc862cc359d" category="list-text">Mantenha o arquivo HelmChartConfig sob controle de alterações sempre que possível.</block>
+  <block id="feb789eaa0d039f7e4fc241b5a35b268" category="list-text">Use um nome de arquivo claro para que a finalidade da substituição do CoreDNS fique óbvia.</block>
+  <block id="1c675544711def39976f57e2f6b7e39d" category="list-text">Se o registro DNS esperado não estiver visível no Corefile, verifique os logs do servidor RKE2 e confirme a sintaxe do arquivo de manifesto.</block>
+  <block id="d36d322fa13411cc64a12177b6ad51ce" category="list-text">Verifique a configuração existente do CoreDNS para garantir que você não esteja sobrescrevendo uma alteração já existente:</block>
+  <block id="f4edd834d634c666190d7b67f0c12622" category="list-text">Copie o seguinte bloco de comando e edite a área <block ref="10e11b33e0776f6cd4b1e675accff1f5" prefix=" " category="inline-code"></block> para adicionar seus registros DNS estáticos. Isso cria um arquivo YAML HelmChartConfig na pasta de manifestos do RKE2, que o RKE2 aplica automaticamente para substituir a configuração do CoreDNS:</block>
+  <block id="b893a4548c6b5490f347a2312c465362" category="list-text">Verifique se o CoreDNS detectou a alteração:</block>
+  <block id="ad5eadc57f2e0ed4fdd17752bad0fe52" category="paragraph">Se a alteração não estiver visível após alguns minutos, reinicie a implantação do CoreDNS e verifique o Corefile novamente:</block>
+  <block id="9e04101c187aa923054a894c988f5aeb" category="list-text">Se você precisar remover as entradas depois de descobrir os hosts do banco de dados, faça o seguinte:</block>
+  <block id="606b05130da19f4457434aa58ba985b8" category="list-text">Exclua o arquivo HelmChartConfig da pasta de manifestos.</block>
+  <block id="5b25c5946d94965af8af242970d2aee2" category="list-text">Reinicie a implementação do CoreDNS:</block>
+  <block id="64c0705ecd150a07e521638d5157a4ec" category="doc">Melhorias gerais em NetApp Backup and Recovery</block>
+  <block id="7700d007f970d2c042d61e3551aa039e" category="list-text">*Suporte para implantação local do NetApp Console*: Esta versão do NetApp Backup and Recovery oferece suporte à implantação local do NetApp Console em status de prévia.</block>
+  <block id="ce2f56e5c9015b28eb92d0581ad9a718" category="list-text">*90 dias de retenção de tarefas*: O NetApp Backup and Recovery agora retém as informações das tarefas no Monitor de Tarefas por 90 dias.</block>
+  <block id="1a83c2d5d73015e6e971eff46d37e9d8" category="list-text">*Suporte para restauração em local alternativo para VMs SAN*: Agora você pode restaurar backups de VMs baseadas em SAN para um local alternativo.</block>
+  <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Suporte para exclusão de vários backups*: Agora você pode excluir vários backups de uma só vez.</block>
+  <block id="7ac62e0d250037c318f5fcf102e2e700" category="list-text">*Restauração e clonagem de banco de dados plugável (PDB)*: o serviço Backup and Recovery for NetApp Console agora suporta a restauração e a clonagem de bancos de dados plugáveis.</block>
+  <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Suporte prévio para recursos isolados da internet*: Se você estiver executando o NetApp Backup and Recovery em uma implantação local do NetApp Console, você pode descobrir, proteger e restaurar recursos do Kubernetes isolados da internet. Este recurso está em prévia para este lançamento.</block>
+  <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">Nesta versão, as cargas de trabalho do ONTAP Volumes introduzem as seguintes melhorias:</block>
+  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Priorizar tarefas de restauração em relação aos backups*: Agora você pode priorizar tarefas de restauração em relação às tarefas de backup ao restaurar máquinas virtuais ou arquivos.</block>
+  <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*Descubra os sistemas ONTAP e volumes sem ativar o NetApp Backup and Recovery*: Agora você pode descobrir sistemas e volumes sem ativar o NetApp Backup and Recovery.</block>
+  <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.</block>
+  <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">Limitação da prévia do Backup and Recovery para implantação local do NetApp Console</block>
+  <block id="100ccba98eb51c65bd8c14443e1fd850" category="paragraph">Para aumentar a segurança e controlar o acesso aos recursos, configure o controle de acesso baseado em funções para o NetApp Backup and Recovery. O NetApp Console oferece controle de acesso baseado em funções (RBAC) para algumas cargas de trabalho de Backup and Recovery. Você pode atribuir funções administrativas ou de visualização específicas para essas cargas de trabalho. Outras cargas de trabalho que ainda não oferecem controle de acesso baseado em funções permanecem acessíveis a todos os usuários com funções de Backup and Recovery até que a associação em nível de projeto ou de fleet seja compatível.</block>
+  <block id="32e1c572f7e144c1646e5a596a5a1451" category="admonition">NetApp Console usa projetos para organizar recursos em pastas, enquanto NetApp Console implantação local se refere a projetos como frotas.</block>
+  <block id="4adee4f45a74219d1cd07ce797df9f99" category="paragraph">No inventário de Backup and Recovery, descubra cargas de trabalho do Kubernetes em seu ambiente. Adicionar uma carga de trabalho adiciona um cluster do Kubernetes ao NetApp Backup and Recovery. Em seguida, você pode adicionar aplicativos e proteger os recursos do cluster. Opcionalmente, você pode descobrir recursos locais do Kubernetes isolados da internet usando a implantação local do NetApp Console.</block>
+  <block id="32fd98562c6a156ac87022787c83fd6e" category="paragraph">O NetApp Backup and Recovery fornece instruções que variam de acordo com o tipo de instalação que você seleciona. Se você usar a implantação local do NetApp Console, poderá escolher instruções que permitem descobrir recursos isolados, sem conectividade de rede externa.</block>
+  <block id="c9f1fbd3541e041c7aefce17e569d706" category="list-text">Escolha um tipo de instalação para visualizar as instruções para instalar o Trident Protect no seu cluster Kubernetes:</block>
+  <block id="eb91a7499802a37e3cd48fa310c15a57" category="list-text">Selecione *Conectado* para descobrir clusters que possuem conectividade de rede externa.</block>
+  <block id="42549739c293d276ceebe73a196959c7" category="list-text">Selecione *Isolado da rede* para descobrir clusters que não possuem conectividade de rede externa.</block>
+  <block id="c81c81c33dcdd7c4d24b501795cfae12" category="open-title">Descoberta conectada</block>
+  <block id="b2e76d956d1446ebd1dc9cf7262e7a73" category="list-text">Siga as instruções da linha de comando que aparecem no NetApp Backup and Recovery. Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.</block>
+  <block id="2b7add97385bfd3948413e32d55ea9b3" category="open-title">Descoberta air-gapped</block>
+  <block id="8e073c87439fbb7907d40a3b2b4f20db" category="list-text">Insira a URL do seu registro de contêineres Docker privado. Esse registro é usado para baixar as imagens do Trident Protect e do Trident Protect Connector durante a instalação.</block>
+  <block id="b40fdc2f50180e3dc294592258666241" category="list-text">Se o seu registro de contêineres privado exigir autenticação, use um dos seguintes métodos para configurar as credenciais do registro:</block>
+  <block id="9a7eca7534aaacf48a2e6ab580310efb" category="list-text">*Autenticação no nível do nó*: Configure as credenciais de registro no ambiente de execução do contêiner em cada nó. Uma vez configurado, todos os pods podem baixar imagens sem a necessidade de configurações adicionais do Helm.</block>
+  <block id="ccf6fbb85e170dcc8a339f853dd9ecd1" category="list-text">*Segredo para extrair imagens do Kubernetes*: Crie um segredo para extrair imagens do Kubernetes no <block ref="9a82c7a4099124e5bfaa83e7c5997bd4" prefix=" " category="inline-code"></block> namespace e, em seguida, faça referência a ele durante a etapa de atualização do Helm nas instruções de instalação do Trident Protect:</block>
+  <block id="e83c36aded47a82f3a80094d5e40c8ec" category="list-text">Siga as instruções da linha de comando que aparecem no NetApp Backup and Recovery, adicionando as informações do segredo de pull da imagem durante a etapa do Helm (se necessário). Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.</block>
+  <block id="b369100bdd2bca7404427091ea1773f0" category="list-text">Após concluir as etapas de instalação do Trident Protect, selecione *Descobrir*.</block>
+  <block id="b5f7c930c601cdb6867c5fa448e058de" category="list-text">Selecione o bloco de carga de trabalho do Kubernetes.</block>
+  <block id="3157af79837d704f357cbe0fb5ca681e" category="section-title">Configurar DNS para descoberta de hosts isolados da internet na implantação local do NetApp Console</block>
+  <block id="9130f3e76360b4e0b50d62c02b73f297" category="summary">Habilite o backup e a recuperação em um sistema no NetApp Console ou NetApp Console em uma implantação local.</block>
+  <block id="3b1f21f533f4569ccdb069a224c3fc8b" category="doc">Ative o NetApp Backup and Recovery para proteger os volumes</block>
+  <block id="fce3336a53277a34c72eaf26ae68eb3c" category="paragraph">Você precisa habilitar o NetApp Backup and Recovery para um sistema de storage no NetApp Console ou NetApp Console em implantação local antes de poder proteger cargas de trabalho de Volumes ONTAP. Você pode habilitar o Backup and Recovery em um sistema ao adicioná-lo ou em outro momento.</block>
+  <block id="64c73d6afa3e4d25eb2bf5b546c3dcf2" category="section-title">Ativar backup e recuperação no NetApp Console</block>
+  <block id="cb120e5cd2b396558aacbb18f19389be" category="paragraph">Ative o serviço de Backup e Recovery no NetApp Console.</block>
+  <block id="bd449026fb2b3bf3a1ff4cb4c323ddee" category="list-text">Selecione o menu *Volumes*.</block>
+  <block id="afa0bb87d54f156e627003dfa34823a6" category="list-text">Na página de visão geral da proteção de volumes, selecione *Configurações de backup*.</block>
+  <block id="204a48efa1a8f290d2951f016919ea7c" category="list-text">Identifique o sistema no qual você deseja ativar os backups e selecione o botão *Ativar backup*.</block>
+  <block id="247ff6666bd29c91fd85627e96b3510b" category="list-text">Selecione os volumes de origem que deseja proteger e selecione *Avançar*.</block>
+  <block id="05339b07e52d64122e9141dc4c7ce142" category="list-text">Na página Definir estratégia de backup, selecione a arquitetura de backup e, em seguida, defina as políticas e outros detalhes para snapshots locais, volumes replicados e arquivos de backup. Veja os detalhes das opções de backup dos volumes iniciais que você ativou neste sistema. Depois, selecione *Avançar*.</block>
+  <block id="99fc855c46d2e6f60c45d31a733d59a3" category="list-text">Opcionalmente, escolha fazer com que o NetApp Backup and Recovery corrija automaticamente as incompatibilidades nos rótulos de backup, snapshot e replicação.</block>
+  <block id="9f3d5403b8dc8b2031f6b4fc3737cd37" category="list-text">Os volumes que você protegeu aparecem na página Visão geral dos volumes.</block>
+  <block id="4b064ddd7a02084e346fa166ed7bb6cb" category="section-title">Habilite o backup e a recuperação na implantação local do NetApp Console</block>
+  <block id="14f23530841dd1cfad164a8e134f88ea" category="paragraph">Ative o serviço de Backup e Recovery na implantação local do NetApp Console.</block>
+  <block id="388e989dd77f81541d749ac165d92200" category="inline-link">Obtenha uma licença</block>
+  <block id="eb3ebbfc3ab12363d471b8aec28b7d88" category="paragraph">Certifique-se de ter obtido uma licença para o NetApp Backup and Recovery. Consulte <block ref="f655a90fa3a25d2cdc287fbda8576bbe" category="inline-link-rx"></block> para mais informações.</block>
+  <block id="3f8f1a22fc87e0c9826e6b21c5a926be" category="list-text">No menu NetApp Console, selecione *Armazenamento &gt; Frotas*.</block>
+  <block id="21b2098e073151f4bd9c33b9ffefa2aa" category="list-text">Se necessário, adicione os detalhes da sua frota selecionando *Adicionar frota*.</block>
+  <block id="c2dab7efe42335c34a0f152ae2750987" category="list-text">Selecione *Administração &gt; Licenças*.</block>
+  <block id="ec01ce5d7a75843507cddc0f1e980f6a" category="inline-link">Adicionar uma licença</block>
+  <block id="27012ade26486f85495fbb2267fed618" category="list-text">Selecione *Adicionar licença* para adicionar uma licença para o NetApp Backup and Recovery. Para mais informações sobre como adicionar uma licença, consulte <block ref="e9f7bfb753a05c7d1690a9e4e7b2ce56" category="inline-link-rx"></block>.</block>
+  <block id="5e62bf511aa053fcc08329f483488665" category="list-text">Selecione *Storage* &gt; *Fleets* e, em seguida, abra o menu *Systems*.</block>
+  <block id="3b173fe4c1bd68bf7dd8db9c524dc8a7" category="list-text">Selecione *Adicionar* para adicionar um sistema, insira os detalhes do sistema e salve o novo sistema selecionando *Adicionar*.</block>
+  <block id="07c87e1a7ad1cef370fca4fd17f11406" category="list-text">Escolha um sistema e selecione um cluster. No painel de informações à direita da página, selecione o botão *Ativar* para o serviço de NetApp Backup and Recovery.</block>
+  <block id="650a46b766c48de5003178d3c64c3e35" category="list-text">Selecione *Volumes de backup*.</block>
+  <block id="c02715a613f1d27ea0d77a20a3d25376" category="paragraph">Dependendo se você estiver usando o NetApp Console ou o NetApp Console (implantação local), você pode licenciar o NetApp Backup and Recovery adquirindo uma assinatura de pagamento conforme o uso (PAYGO) ou uma assinatura anual do marketplace para *NetApp Intelligent Services* do seu provedor de nuvem, ou adquirindo uma licença bring-your-own-license (BYOL) da NetApp. Uma licença válida é necessária para ativar o NetApp Backup and Recovery em um sistema, para criar backups dos seus dados de produção e para restaurar dados de backup em um sistema de produção.</block>
+  <block id="d63e296034547bf26cb0cadf2f6380a7" category="list-text">Se você estiver usando o Backup and Recovery com NetApp Console, poderá assinar a licença de pagamento conforme o uso (PAYGO) ou adquirir uma licença bring-your-own-license (BYOL).</block>
+  <block id="4f423dab0b2a066d43aa7c2770125156" category="list-text">Se você estiver usando o Backup and Recovery com NetApp Console em implantação local, só poderá adquirir uma licença bring-your-own-license (BYOL).</block>
+  <block id="c25cac16b9617f72907c0630edc1b01c" category="paragraph">Configure o licenciamento para o NetApp Backup and Recovery.</block>
+  <block id="1ee6f4a6521039e0ae82dbbbba308a27" category="section-title">Utilize um contrato anual com licenças de marketplace ou BYOL (Bring Your Own License)</block>
+  <block id="f553546046684a79a8a9f772a3ba1d69" category="section-title">Configure o licenciamento para o NetApp Backup and Recovery implantação local</block>
+  <block id="81f4d3c9ac626f319c4045d07dc88068" category="paragraph">Configure o licenciamento para a versão local do NetApp Console.</block>
+  <block id="e686efc70811cf9c1330fb2efbfde349" category="paragraph">Você usa a implantação local do NetApp Console para gerenciar licenças BYOL. Você pode adicionar novas licenças, atualizar licenças existentes e visualizar o status das licenças no Console.</block>
+  <block id="703de1576e07d34f2860aa3e1da40baf" category="list-text">Se você estiver usando o NetApp Console, abra um navegador da web e acesse o <block ref="d6205946f936217747639e85e1340e8f" category="inline-link-rx"></block>.</block>
+  <block id="5cb1f0001bf54c75c97113f354e00531" category="list-text">Se você estiver usando a implantação local do NetApp Console, abra um navegador da web e acesse o endereço IP da interface web da sua implantação local do Console.</block>
+  <block id="7c55093665daac77f8dd76430cb75dfa" category="inline-link">Configure regras de notificação para alertas na implantação local do NetApp Console</block>
+  <block id="f9bee688793a428e0d9f7ec70aa5e128" category="paragraph"><block ref="d002346fd3a4e505164eb1f97ce43042" category="inline-link-rx"></block>.</block>
+  <block id="8a694efe640190f66766a628dd36f07a" category="list-text">Selecione a carga de trabalho do VMware.</block>
+  <block id="56fa99412e731bf74dfe0e92bfc1a799" category="paragraph">Você pode excluir backups locais que não são mais necessários para liberar espaço de storage ou atender aos requisitos de retenção de dados.</block>
+  <block id="4ba79ff2175b296fa6e60a343f55f890" category="list-text">Faça login no NetApp Backup and Recovery e, na tela inicial, selecione o bloco da carga de trabalho do VMware.</block>
+  <block id="384972b6673da7b24e3d0b2560f6a88f" category="paragraph">A página de inventário da VMware é exibida.</block>
+  <block id="13e9141fa63d8f037f1f9d57eb55d7cd" category="list-text">Selecione o cabeçalho *Máquinas virtuais*.</block>
+  <block id="e4fa3a00894276c9b73f4a5fbea2b8b6" category="list-text">Na lista de máquinas virtuais, escolha uma máquina virtual e selecione o ícone Ações <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Exibir detalhes de proteção*.</block>
+  <block id="48c896058bf313b7b8c3e5d0d059d0b5" category="list-text">Selecione um período de tempo para exibir os snapshots relevantes.</block>
+  <block id="1f6e5768c369e513177719a55ddb10b9" category="list-text">Excluir um ou mais snapshots:</block>
+  <block id="621aa8040403a0524dc805bb41b10d5c" category="open-title">Excluir um único snapshot</block>
+  <block id="df9690d930ba43ffe814d178e0dc946f" category="list-text">Escolha um instantâneo da lista que você deseja excluir e selecione o ícone Ações <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Excluir instantâneo local*.</block>
+  <block id="3c6317f4ac9a23c959a2cb8d8e0ac466" category="open-title">Excluir vários instantâneos</block>
+  <block id="d8fb1204bc24f18b837d45773c94ad3f" category="list-text">Selecione a caixa de seleção à esquerda de cada snapshot que você deseja excluir.</block>
+  <block id="52930d2f80d2c62aee1edf1f424cca24" category="list-text">Selecione *Excluir selecionados*.</block>
+  <block id="e73ac3f158df9b045a6b3779d75dd829" category="section-title">Prepare-se para usar o NetApp Backup and Recovery</block>
+  <block id="bb5b370bd7de303eeaf48da0ac823498" category="paragraph">Você acessa o NetApp Backup and Recovery por meio do NetApp Console. Execute estas tarefas para preparar o Console para o NetApp Backup and Recovery, dependendo se você estiver usando o NetApp Console ou a implantação local do NetApp Console.</block>
+  <block id="a13a878a01fe30a9dc231ed21ce14d86" category="section-title">Prepare-se para usar o NetApp Backup and Recovery no NetApp Console</block>
+  <block id="9e781c93fe77a834e50a700943322044" category="paragraph">Para preparar o NetApp Console para Backup e Recovery, você deve:</block>
+  <block id="f6f6e076664f3fcf9fd5ac3712c1c4e3" category="list-text">Conclua a configuração inicial</block>
+  <block id="e114d8cf5b97d8a06057760568b034cd" category="list-text">Ativar Backup and Recovery</block>
+  <block id="0b1338766341d9e4efb068789c59087a" category="inline-link">Fluxo de trabalho de primeiros passos para NetApp Console</block>
+  <block id="2b5a20633ae8165987b5d83e836bded7" category="paragraph"><block ref="2b5a20633ae8165987b5d83e836bded7" category="inline-link-rx"></block></block>
+  <block id="63cfc085cd8deb50d0fe4aee5d0e650a" category="paragraph">Você pode ativar o NetApp Backup and Recovery em um sistema ao adicioná-lo ou posteriormente.</block>
+  <block id="044b5c77027bf301184b5e0ade8798d5" category="inline-link-macro">Ative o NetApp Backup and Recovery para um sistema</block>
+  <block id="67cb34703319339892e803e99681624a" category="paragraph"><block ref="b42fc317c2ac82fa1e68e771a5aef85a" category="inline-link-macro-rx"></block>.</block>
+  <block id="f5ad467a98dc6a5895620ec9cfd7929a" category="paragraph">Aprenda sobre organizações, projetos, frotas e funções de usuário e, em seguida, configure os usuários com as permissões apropriadas necessárias para executar suas tarefas.</block>
+  <block id="d501e17169facc1a138d3fc8e9175373" category="paragraph">Consulte <block ref="04f37aa952e829e9448a7d043a30911e" category="inline-link-rx"></block> para obter informações sobre como controlar o acesso aos recursos.</block>
+  <block id="232ad6d71a356fe268501304d4498151" category="section-title">Prepare-se para usar o Backup and Recovery na implantação local do NetApp Console</block>
+  <block id="0ba77f30bb461b885a18b790dc1c7fed" category="paragraph">Para se preparar para usar o NetApp Backup and Recovery na implantação local do NetApp Console, você deve:</block>
+  <block id="5fb18472c65b22e6aed72da32e038aec" category="list-text">Conclua a configuração inicial de implantação local do NetApp Console</block>
+  <block id="1a990df39107b1e639f4fd55a4b39ac5" category="list-text">Inscreva-se para a pré-inscrição</block>
+  <block id="568f1f6b8bbc4b5eee65743da6e30afb" category="list-text">Conceda acesso a recursos para usuários</block>
+  <block id="5d65636e37c16188531efc5248b04ea4" category="paragraph">Você precisa da função de administrador da organização ou superadministrador na implantação local do NetApp Console para concluir esta preparação.</block>
+  <block id="ac2d7625e323010740bb75ef56225b3d" category="inline-link">Saiba mais sobre a implantação local do NetApp Console</block>
+  <block id="c62e20f5538087472dc438eb3f0eeca6" category="paragraph">Para saber mais sobre a implantação local do NetApp Console, consulte <block ref="327be2ef9e4468a98c588ef8c879bec6" category="inline-link-rx"></block>.</block>
+  <block id="df25e49020c58ef73da6befa0eb72dd2" category="paragraph">Conclua a configuração inicial para a implantação local do NetApp Console, caso ainda não tenha feito isso. Concluir a configuração inicial inclui adicionar licenças para serviços de dados (incluindo NetApp Backup and Recovery).</block>
+  <block id="6c67e4958bd3ecc4ebc2486fe40c9fb6" category="inline-link">Primeiros passos com a implantação local do NetApp Console</block>
+  <block id="2c6df80c002181573883566420c83445" category="paragraph"><block ref="2c6df80c002181573883566420c83445" category="inline-link-rx"></block></block>
+  <block id="33dff0ff51e9773f32a9999496de90ea" category="section-title">Inscreva-se para a prévia de inscrição do NetApp Backup and Recovery</block>
+  <block id="1081e691742befdfc0131302b893d29c" category="paragraph">Inscreva-se para a prévia do NetApp Backup and Recovery na implantação local do NetApp Console:</block>
+  <block id="29baeb7c31a3e708d97805f86fcb505a" category="inline-link">Preencha o formulário de inscrição prévia</block>
+  <block id="4d405e082b9036b99ea8ef4d4c6b3cae" category="paragraph"><block ref="570de0e604bd7f8002cc6704e0146ea7" category="inline-link-rx"></block></block>
+  <block id="a3b49aeb70a4060b1c36c4a694debc5c" category="inline-link">Adicionar armazenamento na implantação local do NetApp Console</block>
+  <block id="de0f709d7b0812e121e9fa6bdb8b87b3" category="paragraph"><block ref="de0f709d7b0812e121e9fa6bdb8b87b3" category="inline-link-rx"></block></block>
+  <block id="5867ad8a560196a64df2278876df70c2" category="paragraph"><block ref="fd61760e9709a64e2426151a909b6045" category="inline-link-macro-rx"></block>.</block>
+  <block id="83524f1d1d58a585ea5008790d8e85cf" category="paragraph">Aprenda sobre gerenciamento de identidade e acesso e, em seguida, configure os usuários com as permissões apropriadas para executar suas tarefas.</block>
+  <block id="acb0fa18e6cbdd062b1c342d22b5d7e9" category="inline-link">Comece a usar identidade e acesso na implantação local do NetApp Console</block>
+  <block id="951c1419bc6678a290628918eb471078" category="paragraph">Consulte <block ref="ea5b8c83a53307fc473cf87abf76dc05" category="inline-link-rx"></block> para obter informações sobre identidade e acesso.</block>
+  <block id="614c9b8c0079226ae2c76caf00bdc9d7" category="list-text">Pacote de hospedagem do ASP.NET Core Runtime 10.0.10</block>
+  <block id="2c03c04d013cd18a2b08ffdaa3807fc6" category="list-text">PowerShell 7.6.4</block>
+  <block id="3b93068d4eec990f1969b952fef82849" category="list-text">NetApp Trident 25.06 a 26.02.1</block>
+  <block id="c6ee0c0b0d79479e99725d43f4f2b0f8" category="list-text">NetApp Trident Protect 26.06 (instalado no cluster Kubernetes durante a descoberta)</block>
+  <block id="0ac549660d0a9677d9f22785c2d2c924" category="paragraph">Consulte <block ref="2f1950f09c9a71aa668e32b381c98250" category="inline-link-macro-rx"></block> para obter instruções.</block>
+  <block id="e75b3a902ee99b25571be4a98b084a31" category="summary">Descubra sistemas e volumes sem ativar o NetApp Backup and Recovery.</block>
+  <block id="bf768851617c703a4014233f58b31de3" category="doc">Descubra sistemas e volumes ONTAP sem ativação</block>
+  <block id="2887d4ffc35ab6898bed2a982c5423a2" category="paragraph">Você pode descobrir sistemas e volumes ao ativar o NetApp Backup and Recovery para os volumes ou antes de ativar o NetApp Backup and Recovery. Se você descobrir volumes sem ativação, não poderá protegê-los até que ative o NetApp Backup and Recovery para eles.</block>
+  <block id="c05c8d19188da81641764e4d99fba036" category="list-text">Acesse *Proteção &gt; NetApp Backup and Recovery*.</block>
+  <block id="aade6a4ecb73182997804e0dc7dbdb4b" category="list-text">Selecione o bloco *Volumes*.</block>
+  <block id="cd443e02f5cbebd87795406cf9cb796d" category="paragraph">O painel de controle de Volumes é exibido.</block>
+  <block id="6d2d3f5b63dfbdd66641a095c0ad211b" category="list-text">Selecione *Discover systems*.</block>
+  <block id="860cf33608268fe2d5a3ed1713fe9107" category="list-text">Na lista, selecione todos os sistemas cujos volumes você deseja descobrir.</block>
+  <block id="f256471c6761fa054c01bf424427f283" category="paragraph">O processo de descoberta começa. Você pode ver o status e o resultado da descoberta no Monitor de Tarefas.</block>
+  <block id="8bfcbad5f6e35a5fb200847e49a3e066" category="summary">Aumente o desempenho do índice do catálogo em ambientes de implantação local do NetApp Console.</block>
+  <block id="1b8e826b73c0743e53c07bcd60fec634" category="doc">Aumente o desempenho da Busca e Restauração de Volumes ao usar o NetApp Console na implantação local</block>
+  <block id="626ff7e0402d85582fdc0561907b9fe6" category="paragraph">Migre o armazenamento do índice do catálogo da classe de armazenamento padrão do cluster para um compartilhamento NFS com suporte do ONTAP para melhorar significativamente o desempenho do catálogo para a implantação local do NetApp Console. O catálogo de índice é usado para a funcionalidade de busca e restauração. Embora o catálogo funcione com o armazenamento padrão, o uso de NFS com suporte do ONTAP proporciona melhorias mensuráveis de desempenho para busca e restauração.</block>
+  <block id="adb346c6a3b4c2c621493a5c3df68916" category="paragraph">Certifique-se de ter o seguinte antes de começar:</block>
+  <block id="86f1b6285159d589785ea087767c5ad1" category="list-text">Um StorageClass NFS do ONTAP configurado no cluster e capacidade suficiente no sistema ONTAP.</block>
+  <block id="5bd55eb44ebdfd90229d8601c0ee18b7" category="list-text">Credenciais de administrador do cluster com permissões para obter, criar, aplicar, executar, corrigir, dimensionar e excluir recursos.</block>
+  <block id="2d6416018a758bac07ba133aba8edfbe" category="list-text">Um backup validado dos dados no PVC de origem (faça um snapshot ou copie para outro local antes da migração).</block>
+  <block id="60ada73ffb582db867e106e713a19b22" category="floating-title">Reduza o número de workers</block>
+  <block id="2fbb9ae01a9a1d1d00f103cebbc113ba" category="paragraph">Liste as implantações de worker e reduza a escala de cada uma para zero réplicas.</block>
+  <block id="4f15c81d8d6f0d7c242aa5a7caaacaeb" category="list-text">Liste todas as implantações de catalog worker:</block>
+  <block id="e525caa32927c48e8f475f147ed69285" category="list-text">Reduza a escala de cada deployment de worker para zero réplicas:</block>
+  <block id="94308a11171ffd5f25d06ce5924aaf34" category="list-text">Confirme que não restam pods de worker:</block>
+  <block id="e48416869ee325cb8ec14ca6aa79059a" category="floating-title">Monte o volume do ONTAP na implantação local do NetApp Console e copie do pod</block>
+  <block id="38a39e1403e6d98341c4add54dcf2c53" category="list-text">Monte a exportação NFS do ONTAP em um ponto de montagem local na VM criada quando o OVA de implantação local do NetApp Console foi implantado.</block>
+  <block id="b767a193f4efe7e250ea2b6743324418" category="list-text">Copie os dados do pod coordenador em execução para o ponto de montagem do ONTAP, sem diretório intermediário. O coordenador deve estar em execução.</block>
+  <block id="0d3fdcf062c36d66c6074134cb8fedb3" category="admonition">Copie o conteúdo para a raiz do volume, não para um subdiretório. O volume ONTAP é o novo <block ref="98c39705410022b33dadad6bd4b4e449" prefix=" " category="inline-code"></block>diretório. Os dados devem estar na raiz do volume para que o aplicativo os encontre nos mesmos caminhos (por exemplo, /opt/netapp/cbs/catalog/shared/cbs/&lt;DATASET_NAME&gt;/...). O formato do comando tar nos comandos a seguir transmite o conteúdo do diretório (incluindo arquivos ocultos) para a raiz de montagem, evitando uma pasta <block ref="9e81e7b963c71363e2fb3eefcfecfc0e" prefix=" " category="inline-code"></block>aninhada.</block>
+  <block id="12d8a9b322a08784194798a9d8f80277" category="list-text">Monte a exportação NFS do ONTAP em um ponto de montagem local na implantação local do NetApp Console. Use o mesmo servidor/caminho que você usará posteriormente em pv.yaml:</block>
+  <block id="8ed7d227f3bbb6ffea13ffbfc6c368b5" category="list-text">Copie o volume compartilhado do pod para o local de montagem do ONTAP:</block>
+  <block id="3db51ef8f1296af2a14290a2c745a8ad" category="list-text">Defina a propriedade para corresponder à identidade do pod:</block>
+  <block id="e213fca4007bf319dd8a71f9e597dfbd" category="list-text">Verifique se os dados foram copiados para a raiz do volume (você deve ver a pasta "cbs" diretamente abaixo do ponto de montagem, não uma "shared/" aninhada):</block>
+  <block id="e8498c948b994ff098aaa8e52531da7e" category="list-text">Verifique a cópia e, em seguida, desmonte (o pod irá montá-la posteriormente via PVC):</block>
+  <block id="558bd5dc4964f474c8391676490b6f25" category="list-text">Reduza a escala do coordenador. Por exemplo:</block>
+  <block id="9609c99c56c51052acb8aed3f8f46c04" category="floating-title">Exclua o antigo PVC e PV</block>
+  <block id="5fd4a320b36fd6fc70d429b0bc8335a3" category="list-text">Capture informações sobre o PV vinculado e, em seguida, exclua o PVC e o PV antigos:</block>
+  <block id="5919fc794547c38fbe49ed0dcc8fbd54" category="floating-title">Crie o PV e o PVC estáticos do ONTAP</block>
+  <block id="2a07b5cff72e4d597937f878e0b4d76b" category="list-text">Crie os seguintes objetos YAML PV e PVC:</block>
+  <block id="d3124d17f5a064210152a2174f3da379" category="paragraph">*<block ref="2b7a31ccb2b33fdd062e9e3f10e075d5" prefix="*" category="inline-code"></block>**</block>
+  <block id="bf6a3296a98dd303ceb6ada20b938af0" category="paragraph">*<block ref="88bf8ee4d993e535425148da6a64c1c2" prefix="*" category="inline-code"></block>**</block>
+  <block id="d22a94b0231cd881dea01a8d9bb97cf4" category="list-text">Aplique os objetos YAML, aplicando primeiro o PV e depois o PVC (o PV deve existir para que o seletor de rótulo do PVC possa ser vinculado). Em seguida, verifique se a claim do PVC está vinculada:</block>
+  <block id="5828c7ac9e00c56c881334dd15e14acd" category="list-text">Aumente a escala do coordenador para 1 réplica:</block>
+  <block id="6d8037d122cd0d4fd1490aa574dee37f" category="list-text">Se você reduziu manualmente o número de workers e eles não foram desativados automaticamente, aumente-os manualmente (isso pode não ser necessário, pois os workers normalmente são provisionados automaticamente):</block>
+  <block id="9a19304cff6834a89aa2e5a2fcc7b323" category="list-text">Verifique o status da montagem e dos dados. Certifique-se de que os dados estejam presentes e pertençam ao usuário e grupo 10001:10001:</block>
+  <block id="aafe04b5477e90484ecb5a97ab35b2e5" category="list-text">*Política de recuperação<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>:* excluir o PVC não apagará os dados do ONTAP; o PV liberado deverá ser limpo manualmente caso você precise reprovisionar.</block>
+  <block id="0ca13922f073b075ebe35843a4741a65" category="list-text">*Mantenha o Helm sincronizado:* como o PVC é normalmente renderizado pelo gráfico, uma versão futura <block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> pode tentar recriá-lo ou modificá-lo. Para manter este PVC ONTAP manual, aponte o gráfico para os mesmos valores <block ref="da653f0609e1ee5bf4ad3210bbae68f7" prefix="(" category="inline-code"></block> (com tamanho/modo de acesso correspondentes) ou exclua o PVC compartilhado da versão.</block>
+  <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">Se você executar manualmente <block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block> e depois tentar reinstalar, o PV será instalado com o mesmo nome e causará um conflito de nomenclatura.</block>
+  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
+  <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Aumente o desempenho da Busca e Restauração de Volumes para NetApp Console em implantações locais</block>
 </blocks>

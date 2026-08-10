@@ -376,7 +376,7 @@ Se estiver usando a porta 443 (HTTPS) para comunicação com o endpoint privado,
 . Obtenha o nome DNS do endpoint no Console da AWS.
 . Obtenha o certificado do endpoint S3 da VPC. Você faz isso por https://docs.netapp.com/us-en/console-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["efetuar login na VM que hospeda o agente do Console"^] e executando o seguinte comando. Ao inserir o nome DNS do endpoint, adicione "bucket" no início, substituindo o "*":
 +
-[source, console]
+[source, shell]
 ----
 openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
 ----
@@ -396,9 +396,9 @@ GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
 ----
 . Efetue login na CLI do cluster ONTAP e aplique o certificado que você copiou usando o seguinte comando (substitua pelo nome da sua própria VM de armazenamento):
 +
-[source, console]
+[source, shell]
 ----
-cluster1::> security certificate install -vserver cluster1 -type server-ca
+security certificate install -vserver cluster1 -type server-ca
 Please enter Certificate: Press <Enter> when done
 ----
 

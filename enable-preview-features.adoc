@@ -47,13 +47,13 @@ Habilite as opções de pré-visualização para usar funcionalidades que ainda 
 . Utilize SSH para fazer login no agente do console.
 . Altere para o usuário raiz:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Localize o volume de Backup and Recovery no Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -67,7 +67,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Localize o ponto de montagem do volume:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -81,7 +81,7 @@ O ponto de montagem difere entre implantações em nuvem e implantações privad
 ----
 . Acesse o diretório de configuração do volume do Docker, que está dentro do diretório do ponto de montagem. Por exemplo:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
 ----
@@ -106,7 +106,7 @@ Consulte <<anchor-flags,bandeiras disponíveis>> para informações sobre sinali
 
 . Reinicie o contêiner do NetApp Backup and Recovery:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs
 ----
@@ -132,13 +132,13 @@ Desative a indexação para volumes específicos ou para todos os volumes perten
 . Utilize SSH para fazer login no agente do console.
 . Altere para o usuário raiz:
 +
-[source, console]
+[source, shell]
 ----
 sudo su
 ----
 . Localize o volume de Backup and Recovery no Docker:
 +
-[source, console]
+[source, shell]
 ----
 docker volume ls | grep cbs
 ----
@@ -152,7 +152,7 @@ local service-manager-2_cloudmanager_cbs_volume
 ----
 . Localize o ponto de montagem do volume:
 +
-[source, console]
+[source, shell]
 ----
 docker volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
 ----
@@ -166,7 +166,7 @@ O ponto de montagem difere entre implantações em nuvem e implantações privad
 ----
 . Acesse o diretório de configuração do volume do Docker, que está dentro do diretório do ponto de montagem. Por exemplo:
 +
-[source, console]
+[source, shell]
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
@@ -183,7 +183,7 @@ cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_c
 ----
 . Reinicie o contêiner do catálogo de indexação de backup e recuperação:
 +
-[source, console]
+[source, shell]
 ----
 docker restart cloudmanager_cbs_catalog
 ----

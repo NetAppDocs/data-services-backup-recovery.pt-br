@@ -27,9 +27,14 @@ Para efetuar login no NetApp Console, você pode usar suas credenciais do site d
 Para adicionar um agente do Console, você precisa ter a função de superadministrador do Backup and Recovery.
 
 .Passos
-. Abra um navegador da web e vá para o https://console.netapp.com/["NetApp Console"^] .
+. Faça um dos seguintes:
++
+** Se você estiver usando o NetApp Console, abra um navegador da web e acesse o  https://console.netapp.com/["NetApp Console"^].
+** Se você estiver usando a implantação local do NetApp Console, abra um navegador da web e acesse o endereço IP da interface web da sua implantação local do Console.
 +
 A página de login do NetApp Console é exibida.
+
+
 
 . Efetue login no Console.
 . Na navegação à esquerda do Console, selecione *Proteção* > *Backup e Recuperação*.

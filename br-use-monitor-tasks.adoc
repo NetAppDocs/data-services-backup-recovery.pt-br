@@ -247,6 +247,8 @@ Para receber alertas por e-mail do NetApp Backup and Recovery , você precisará
 
 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html["Aprenda a enviar e-mails de alerta para tarefas de backup e restauração"^].
 
+https://docs.netapp.com/us-en/console-local/task-alert-rules-manage.html["Configure regras de notificação para alertas na implantação local do NetApp Console"^].
+
 .Passos
 . No menu Console, selecione (image:icon_bell.png["sino de notificação"] ).
 . Revise as notificações.

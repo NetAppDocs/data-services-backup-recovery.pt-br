@@ -1,0 +1,209 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-protect-migrate-pvc.html 
+keywords: migrate, pvc, nfs, storage, performance, persistence 
+summary: Aumente o desempenho do índice do catálogo em ambientes de implantação local do NetApp Console. 
+---
+= Aumente o desempenho da Busca e Restauração de Volumes ao usar o NetApp Console na implantação local
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Migre o armazenamento do índice do catálogo da classe de armazenamento padrão do cluster para um compartilhamento NFS com suporte do ONTAP para melhorar significativamente o desempenho do catálogo para a implantação local do NetApp Console. O catálogo de índice é usado para a funcionalidade de busca e restauração. Embora o catálogo funcione com o armazenamento padrão, o uso de NFS com suporte do ONTAP proporciona melhorias mensuráveis de desempenho para busca e restauração.
+
+.Antes de começar
+Certifique-se de ter o seguinte antes de começar:
+
+* Um StorageClass NFS do ONTAP configurado no cluster e capacidade suficiente no sistema ONTAP.
+* Credenciais de administrador do cluster com permissões para obter, criar, aplicar, executar, corrigir, dimensionar e excluir recursos.
+* Um backup validado dos dados no PVC de origem (faça um snapshot ou copie para outro local antes da migração).
+
+
+[discrete]
+===== Reduza o número de workers
+
+Liste as implantações de worker e reduza a escala de cada uma para zero réplicas.
+
+. Liste todas as implantações de catalog worker:
++
+[source, shell]
+----
+kubectl get deploy -n cbs -o name | grep '/cloudmanager-cbs-catalog-worker-'
+----
+. Reduza a escala de cada deployment de worker para zero réplicas:
++
+[source, shell]
+----
+for d in $(kubectl get deploy -n cbs -o name | grep '/cloudmanager-cbs-catalog-worker-'); do
+  kubectl scale "$d" --replicas=0 -n cbs
+done
+----
+. Confirme que não restam pods de worker:
++
+[source, shell]
+----
+kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no worker pods running"
+----
+
+
+[discrete]
+===== Monte o volume do ONTAP na implantação local do NetApp Console e copie do pod
+
+. Monte a exportação NFS do ONTAP em um ponto de montagem local na VM criada quando o OVA de implantação local do NetApp Console foi implantado.
+. Copie os dados do pod coordenador em execução para o ponto de montagem do ONTAP, sem diretório intermediário. O coordenador deve estar em execução.
++
+
+NOTE: Copie o conteúdo para a raiz do volume, não para um subdiretório. O volume ONTAP é o novo  `/opt/netapp/cbs/catalog/shared`diretório. Os dados devem estar na raiz do volume para que o aplicativo os encontre nos mesmos caminhos (por exemplo, /opt/netapp/cbs/catalog/shared/cbs/<DATASET_NAME>/...). O formato do comando tar nos comandos a seguir transmite o conteúdo do diretório (incluindo arquivos ocultos) para a raiz de montagem, evitando uma pasta  `shared`aninhada.
+
+. Monte a exportação NFS do ONTAP em um ponto de montagem local na implantação local do NetApp Console. Use o mesmo servidor/caminho que você usará posteriormente em pv.yaml:
++
+[source, shell]
+----
+sudo mkdir -p /mnt/ontap_nfs_vol
+sudo mount -t nfs 10.x.x.x:/my_nfs_vol /mnt/ontap_nfs_vol   # ONTAP SVM data LIF IP : junction path
+----
+. Copie o volume compartilhado do pod para o local de montagem do ONTAP:
++
+[source, shell]
+----
+POD=$(kubectl get pod -n cbs -l app=cloudmanager-cbs-catalog -o jsonpath='{.items[0].metadata.name}')
+kubectl exec -n cbs "$POD" -- tar cf - -C /opt/netapp/cbs/catalog/shared . \
+  | sudo tar xf - -C /mnt/ontap_nfs_vol
+----
+. Defina a propriedade para corresponder à identidade do pod:
++
+[source, shell]
+----
+sudo chown -R 10001:10001 /mnt/ontap_nfs_vol
+----
+. Verifique se os dados foram copiados para a raiz do volume (você deve ver a pasta "cbs" diretamente abaixo do ponto de montagem, não uma "shared/" aninhada):
++
+[source, shell]
+----
+ls -la /mnt/ontap_nfs_vol
+----
+. Verifique a cópia e, em seguida, desmonte (o pod irá montá-la posteriormente via PVC):
++
+[source, shell]
+----
+sudo umount /mnt/ontap_nfs_vol
+----
+. Reduza a escala do coordenador. Por exemplo:
++
+[source, shell]
+----
+kubectl scale deployment cloudmanager-cbs-catalog --replicas=0 -n cbs
+kubectl rollout status deployment/cloudmanager-cbs-catalog -n cbs
+----
+
+
+[discrete]
+===== Exclua o antigo PVC e PV
+
+. Capture informações sobre o PV vinculado e, em seguida, exclua o PVC e o PV antigos:
++
+[source, shell]
+----
+PV=$(kubectl get pvc cloudmanager-cbs-catalog-shared-pvc -n cbs -o jsonpath='{.spec.volumeName}')
+kubectl delete pvc cloudmanager-cbs-catalog-shared-pvc -n cbs
+kubectl delete pv "$PV"
+----
+
+
+[discrete]
+===== Crie o PV e o PVC estáticos do ONTAP
+
+. Crie os seguintes objetos YAML PV e PVC:
++
+**`pv.yaml`**
+
++
+[source, yaml]
+----
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ontap-manual-pv
+  labels:
+    volume: ontap-nfs-share # Used by the PVC selector to find this exact volume
+spec:
+  capacity:
+    storage: 50Gi # Match or remain under the actual ONTAP volume size
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany # Allows multiple Pods to share the NFS mount
+  persistentVolumeReclaimPolicy: Retain # Retains ONTAP data if the PVC is deleted
+  storageClassName: "" # Leave blank for manual/static provisioning
+  nfs:
+    server: 10.x.x.x # Replace with your ONTAP SVM data LIF IP address
+    path: /my_nfs_vol # Replace with your ONTAP junction path
+----
++
+**`pvc.yaml`**
+
++
+[source, yaml]
+----
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cloudmanager-cbs-catalog-shared-pvc
+  annotations:
+    "helm.sh/resource-policy": keep
+spec:
+  accessModes:
+    - ReadWriteMany # Must match the PV's access mode
+  resources:
+    requests:
+      storage: 50Gi # Must be <= the PV capacity (50Gi)
+  storageClassName: "" # Explicitly matches the empty StorageClass on the PV
+  selector:
+    matchLabels:
+      volume: ontap-nfs-share # Forces binding to the specific PV above
+----
+. Aplique os objetos YAML, aplicando primeiro o PV e depois o PVC (o PV deve existir para que o seletor de rótulo do PVC possa ser vinculado). Em seguida, verifique se a claim do PVC está vinculada:
++
+[source, shell]
+----
+kubectl apply -f pv.yaml
+kubectl apply -f pvc.yaml -n cbs
+kubectl get pvc cloudmanager-cbs-catalog-shared-pvc -n cbs   # expect STATUS: Bound
+----
+. Aumente a escala do coordenador para 1 réplica:
++
+[source, shell]
+----
+kubectl scale deployment cloudmanager-cbs-catalog --replicas=1 -n cbs
+kubectl rollout status deployment/cloudmanager-cbs-catalog -n cbs
+----
+. Se você reduziu manualmente o número de workers e eles não foram desativados automaticamente, aumente-os manualmente (isso pode não ser necessário, pois os workers normalmente são provisionados automaticamente):
++
+[source, shell]
+----
+for d in $(kubectl get deploy -n cbs -o name | grep '/cloudmanager-cbs-catalog-worker-'); do
+  kubectl scale "$d" --replicas=1 -n cbs
+done
+----
+. Verifique o status da montagem e dos dados. Certifique-se de que os dados estejam presentes e pertençam ao usuário e grupo 10001:10001:
++
+[source, shell]
+----
+POD=$(kubectl get pod -n cbs -l app=cloudmanager-cbs-catalog -o jsonpath='{.items[0].metadata.name}')
+kubectl exec -n cbs "$POD" -- mount | grep /opt/netapp/cbs/catalog/shared
+kubectl exec -n cbs "$POD" -- ls -la /opt/netapp/cbs/catalog/shared
+----
+
+
+[NOTE]
+====
+* *Política de recuperação `Retain`:* excluir o PVC não apagará os dados do ONTAP; o PV liberado deverá ser limpo manualmente caso você precise reprovisionar.
+* *Mantenha o Helm sincronizado:* como o PVC é normalmente renderizado pelo gráfico, uma versão futura  `helm upgrade` pode tentar recriá-lo ou modificá-lo. Para manter este PVC ONTAP manual, aponte o gráfico para os mesmos valores (`storageClass: ""` (com tamanho/modo de acesso correspondentes) ou exclua o PVC compartilhado da versão.
+* Se você executar manualmente  `helm uninstall` e depois tentar reinstalar, o PV será instalado com o mesmo nome e causará um conflito de nomenclatura.
+
+
+====

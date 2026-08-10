@@ -12,7 +12,10 @@ summary: Para aumentar a segurança, configure o acesso para funções específi
 
 
 [role="lead"]
-Para aumentar a segurança e controlar o acesso aos recursos, configure o controle de acesso baseado em funções para NetApp Backup e Recovery. O NetApp Console oferece suporte ao controle de acesso baseado em funções (RBAC) para algumas cargas de trabalho de backup e restauração. Você pode atribuir funções administrativas ou de visualizador específicas para essas cargas de trabalho. Outras cargas de trabalho que ainda não oferecem suporte ao controle de acesso baseado em funções permanecem acessíveis a todos os usuários com funções de backup e restauração até que a associação em nível de projeto seja suportada.
+Para aumentar a segurança e controlar o acesso aos recursos, configure o controle de acesso baseado em funções para o NetApp Backup and Recovery. O NetApp Console oferece controle de acesso baseado em funções (RBAC) para algumas cargas de trabalho de Backup and Recovery. Você pode atribuir funções administrativas ou de visualização específicas para essas cargas de trabalho. Outras cargas de trabalho que ainda não oferecem controle de acesso baseado em funções permanecem acessíveis a todos os usuários com funções de Backup and Recovery até que a associação em nível de projeto ou de fleet seja compatível.
+
+
+NOTE: NetApp Console usa projetos para organizar recursos em pastas, enquanto NetApp Console implantação local se refere a projetos como frotas.
 
 Siga estes passos para controlar o acesso aos recursos da sua organização. Faça as alterações na página *Administração > Identidade e acesso* no menu NetApp Console.
 

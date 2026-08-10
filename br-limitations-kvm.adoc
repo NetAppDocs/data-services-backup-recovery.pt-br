@@ -25,6 +25,7 @@ As seguintes ações e configurações não são suportadas em cargas de trabalh
 
 As seguintes ações não são suportadas:
 
+* Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
 * Clonar, montar ou desmontar VMs
 * Proteja VMs armazenadas em SAN
 * Proteger aplicativos

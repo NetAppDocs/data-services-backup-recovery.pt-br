@@ -2,7 +2,7 @@
 settings:
   name: NetApp Backup and Recovery
   release_notes_autogen:
-    release_notes_repo: console-relnotes
+    release_notes_repo: console-local-relnotes, console-relnotes
   internal:
     pdf_enabled: true
   prod:
@@ -60,8 +60,15 @@ sidebar:
       entries:
       - title: Visão geral das cargas de trabalho de volume Protect ONTAP
         url: "/prev-ontap-protect-overview.html"
+      - title: Ative o NetApp Backup and Recovery para proteger os volumes
+        url: "/br-start-enable.html"
+      - title: Aumente o desempenho da Busca e Restauração de Volumes para NetApp
+          Console em implantações locais
+        url: "/prev-ontap-protect-migrate-pvc.html"
       - title: Planeje sua jornada de proteção para volumes ONTAP
         url: "/prev-ontap-protect-journey.html"
+      - title: Descubra sistemas e volumes ONTAP sem ativação
+        url: "/prev-ontap-discover-no-activate.html"
       - title: Gerenciar políticas para volumes ONTAP
         url: "/prev-ontap-policy-manage.html"
       - title: Opções de política de backup para objeto para volumes ONTAP

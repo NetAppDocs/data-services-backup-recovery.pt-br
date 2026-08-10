@@ -23,6 +23,7 @@ Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem c
 
 As seguintes ações não são suportadas em cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
 
+* Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
 * A proteção de VMs de segunda geração armazenadas em storage SAN não é compatível com Microsoft Windows Server 2025.
 * Crie grupos de recursos usando máquinas virtuais de vários hosts Hyper-V.
 * Discos de abrangência (em vários compartilhamentos CIFS)
