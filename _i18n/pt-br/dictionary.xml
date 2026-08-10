@@ -2029,7 +2029,6 @@
   <block id="dd67539e70d93b9889e0cb5a77274b0b" category="paragraph">Para usar a funcionalidade de pesquisa e restauração do NetApp Backup and Recovery , você precisa ter permissões específicas na função do agente do Console para que ele possa acessar a conta do Azure Synapse Workspace e do Data Lake Storage.  Veja as permissões abaixo e siga as etapas se precisar modificar a política.</block>
   <block id="bf49a2af93184828c602f30985ab7b3e" category="list-title">Antes de começar</block>
   <block id="ad21a85e531f324768ed107500147c11" category="inline-link">Veja como registrar este provedor de recursos para sua assinatura</block>
-  <block id="8e735e680b7368147fd11864544dafdc" category="list-text">Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado "Microsoft.Synapse") com sua Assinatura.<block ref="66e7a06283e2f9b1945c2e3b539d5c17" category="inline-link-rx"></block> .  Você deve ser o *Proprietário* ou *Colaborador* da Assinatura para registrar o provedor de recursos.</block>
   <block id="31dc01c9493f1634e02a0b09bd5b59bd" category="list-text">A porta 1433 deve estar aberta para comunicação entre o agente do Console e os serviços do Azure Synapse SQL.</block>
   <block id="caf1eee1629cb07ebbce66130fb04f94" category="list-text">Identifique a função atribuída à máquina virtual do agente do Console:</block>
   <block id="dd7dc066cb6a0b619ef397e8b37b57c3" category="list-text">No portal do Azure, abra o serviço de máquinas virtuais.</block>
@@ -5645,7 +5644,6 @@
   <block id="ce2f56e5c9015b28eb92d0581ad9a718" category="list-text">*90 dias de retenção de tarefas*: O NetApp Backup and Recovery agora retém as informações das tarefas no Monitor de Tarefas por 90 dias.</block>
   <block id="1a83c2d5d73015e6e971eff46d37e9d8" category="list-text">*Suporte para restauração em local alternativo para VMs SAN*: Agora você pode restaurar backups de VMs baseadas em SAN para um local alternativo.</block>
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Suporte para exclusão de vários backups*: Agora você pode excluir vários backups de uma só vez.</block>
-  <block id="7ac62e0d250037c318f5fcf102e2e700" category="list-text">*Restauração e clonagem de banco de dados plugável (PDB)*: o serviço Backup and Recovery for NetApp Console agora suporta a restauração e a clonagem de bancos de dados plugáveis.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Suporte prévio para recursos isolados da internet*: Se você estiver executando o NetApp Backup and Recovery em uma implantação local do NetApp Console, você pode descobrir, proteger e restaurar recursos do Kubernetes isolados da internet. Este recurso está em prévia para este lançamento.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">Nesta versão, as cargas de trabalho do ONTAP Volumes introduzem as seguintes melhorias:</block>
   <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Priorizar tarefas de restauração em relação aos backups*: Agora você pode priorizar tarefas de restauração em relação às tarefas de backup ao restaurar máquinas virtuais ou arquivos.</block>
@@ -5805,4 +5803,5 @@
   <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">Se você executar manualmente <block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block> e depois tentar reinstalar, o PV será instalado com o mesmo nome e causará um conflito de nomenclatura.</block>
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Aumente o desempenho da Busca e Restauração de Volumes para NetApp Console em implantações locais</block>
+  <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado "Microsoft.Synapse") em sua assinatura.<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block> Você deve ser o *Proprietário* ou *Colaborador* da assinatura para registrar o provedor de recursos.</block>
 </blocks>
