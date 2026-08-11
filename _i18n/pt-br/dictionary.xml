@@ -3267,11 +3267,9 @@
   <block id="e57e5c06a7f562addb87315f013677ab" category="inline-link-macro">Saiba mais sobre como restaurar do armazenamento de arquivo do Google</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">A alta prioridade não é suportada ao restaurar dados do armazenamento de arquivamento do Azure para sistemas StorageGRID .</block>
   <block id="598e51a2b37024d5f553af642c739db8" category="section-title">Navegar e restaurar sistemas suportados e provedores de armazenamento de objetos</block>
-  <block id="bc6bfb0b14fd7cced8ee62c645d8aa17" category="paragraph">*Observação:* você pode restaurar um volume de qualquer tipo de arquivo de backup, mas pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos neste momento.</block>
   <block id="4392d15c8884c7cc66b17ff794eb41d2" category="cell">*Do Object Store (Backup)*</block>
   <block id="a4e7ccecf7c1ff2d3e2de88d9f7559d4" category="cell">*Da Primária (Instantâneo)*</block>
   <block id="c1ad4111606308626e152e2bc5089a8b" category="cell">*Do Sistema Secundário (Replicação)*</block>
-  <block id="f6bc09197fbc5599ccf48032f3ead672" category="cell">Para o sistema ONTAP local</block>
   <block id="56a66e1fc15e989f40186eb5d1841f59" category="paragraph">Para Navegar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:</block>
   <block id="26b66b8e6541c0f2e46ee638955dab17" category="list-text">Para o Amazon S3, o agente do Console pode ser implantado na AWS ou em suas instalações</block>
   <block id="ead25fef0ccdffb4daf4bbf7bcb1dfb5" category="list-text">Para o Azure Blob, o agente do Console pode ser implantado no Azure ou em suas instalações</block>
@@ -5804,4 +5802,6 @@
   <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
   <block id="874b4474de89858c50d77a501e5764e2" category="sidebar">Aumente o desempenho da Busca e Restauração de Volumes para NetApp Console em implantações locais</block>
   <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado "Microsoft.Synapse") em sua assinatura.<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block> Você deve ser o *Proprietário* ou *Colaborador* da assinatura para registrar o provedor de recursos.</block>
+  <block id="309ab91ccf975daed364d3636f21792a" category="paragraph">Você pode restaurar os dados do ONTAP a partir de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em storage de objetos (um arquivo de backup) para os seguintes sistemas.</block>
+  <block id="e9a171dcb6f5a1441f086b12be8cbc6b" category="cell">Storages de objetos compatíveis com S3</block>
 </blocks>

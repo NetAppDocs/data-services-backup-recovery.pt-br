@@ -40,25 +40,77 @@ NOTE: A alta prioridade não é suportada ao restaurar dados do armazenamento de
 [[browse-restore-supported-systems-and-object-storage-providers]]
 == Navegar e restaurar sistemas suportados e provedores de armazenamento de objetos
 
-Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em um armazenamento de objetos (um arquivo de backup) para os seguintes sistemas. Os snapshots residem no sistema de origem e só podem ser restaurados nesse mesmo sistema.
-
-*Observação:* você pode restaurar um volume de qualquer tipo de arquivo de backup, mas pode restaurar uma pasta ou arquivos individuais somente de um arquivo de backup no armazenamento de objetos neste momento.
+Você pode restaurar os dados do ONTAP a partir de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em storage de objetos (um arquivo de backup) para os seguintes sistemas.
 
 [cols="25,25,25,25"]
 |===
 | *Do Object Store (Backup)* | *Da Primária (Instantâneo)* | *Do Sistema Secundário (Replicação)* | Para o sistema de destino 
 
 
-| Amazon S3 | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Cloud Volumes ONTAP no sistema ONTAP local da AWS | Blob do Azure 
+| Amazon S3  a| 
+* Cloud Volumes ONTAP na AWS
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP na AWS
+* Sistema ONTAP local
+
+ a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
 
 
-| Cloud Volumes ONTAP no sistema ONTAP local do Azure | Cloud Volumes ONTAP no sistema ONTAP local do Azure | Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
 
 
-| Cloud Volumes ONTAP no sistema Google On-premises ONTAP | NetApp StorageGRID | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
+| Blob do Azure  a| 
+* Cloud Volumes ONTAP no Azure
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP no Azure
+* Sistema ONTAP local
+
+ a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
 
 
-| Para o sistema ONTAP local | ONTAP S3 | Sistema ONTAP local | Sistema ONTAP local Cloud Volumes ONTAP 
+
+
+| Armazenamento em nuvem do Google  a| 
+* Cloud Volumes ONTAP no Google
+* Sistema ONTAP local
+
+ a| 
+* Cloud Volumes ONTAP no Google
+* Sistema ONTAP local
+
+ a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+
+
+
+| NetApp StorageGRID | Sistema ONTAP local  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
+
+
+| ONTAP S3 | Sistema ONTAP local  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
+
+
+| Storages de objetos compatíveis com S3 | Sistema ONTAP local  a| 
+* Sistema ONTAP local
+* Cloud Volumes ONTAP
+
+| Sistema ONTAP local 
 |===
 Para Navegar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:
 
