@@ -4,7 +4,7 @@ permalink: br-use-vmware-restore-guest-files-and-folders-overview.html
 keywords:  
 summary: 'Você pode restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows.' 
 ---
-= Requisitos e limitações na restauração de arquivos e pastas de convidados
+= Requisitos de restauração de arquivos de convidado do VMware em NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -9,7 +9,7 @@
 
 O suporte para cargas de trabalho KVM agora está geralmente disponível (GA) em NetApp Backup and Recovery.
 
-Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Visão geral das cargas de trabalho de proteção do KVM"] .
+Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho KVM com o NetApp Backup and Recovery"].
 
 
 

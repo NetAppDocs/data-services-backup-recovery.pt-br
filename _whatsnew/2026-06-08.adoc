@@ -24,7 +24,7 @@ Nesta versão, as cargas de trabalho do Hyper-V introduzem as seguintes melhoria
 * *Os grupos de proteção agora usam o agendamento de fuso horário do host*: Os grupos de proteção agora usam o fuso horário do host Hyper-V. Os grupos de proteção criados antes da introdução do agendamento de fuso horário do host continuam usando o horário configurado anteriormente (normalmente UTC). Para atualizar esses grupos de proteção para usar o fuso horário do host Hyper-V, você deve recriar os agendamentos. Consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V"] para obter mais informações.
 
 
-Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Visão geral das cargas de trabalho de proteção do Hyper-V"] .
+Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Fluxo de trabalho de proteção do Hyper-V com o NetApp Backup and Recovery"].
 
 
 

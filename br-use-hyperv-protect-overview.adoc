@@ -4,7 +4,7 @@ permalink: br-use-hyperv-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Você pode proteger máquinas virtuais Hyper-V desde sistemas ONTAP locais até armazenamento primário e secundário, garantindo que seus dados estejam protegidos. 
 ---
-= Visão geral das cargas de trabalho de proteção do Hyper-V
+= Fluxo de trabalho de proteção do Hyper-V com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

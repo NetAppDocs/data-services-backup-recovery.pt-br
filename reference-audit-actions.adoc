@@ -4,7 +4,7 @@ permalink: reference-audit-actions.html
 keywords: audit, audit actions, NetApp Console, Backup and Recovery, audit log 
 summary: Referência das ações de backup e recuperação suportadas pela auditoria do NetApp Console. 
 ---
-= Ações auditadas de backup e recuperação
+= Ações auditadas de NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

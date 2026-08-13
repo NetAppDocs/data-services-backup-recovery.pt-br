@@ -40,7 +40,7 @@ Nesta versão, as cargas de trabalho do Hyper-V introduzem as seguintes melhoria
 * *Suporte a SAN (prévia)*: NetApp Backup and Recovery agora oferece suporte à proteção de máquinas virtuais Hyper-V armazenadas em storage SAN.
 
 
-Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Visão geral das cargas de trabalho de proteção do Hyper-V"] .
+Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Fluxo de trabalho de proteção do Hyper-V com o NetApp Backup and Recovery"].
 
 
 
@@ -53,7 +53,7 @@ Nesta versão, as cargas de trabalho KVM introduzem as seguintes melhorias:
 * *Restaurar para local alternativo (prévia)*: agora você pode restaurar VMs KVM para um destino alternativo. Para obter mais informações, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-restore.html["Restaurar máquinas virtuais KVM com o NetApp Backup and Recovery"].
 
 
-Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Visão geral das cargas de trabalho de proteção do KVM"] .
+Para obter detalhes sobre como proteger cargas de trabalho KVM, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kvm-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho KVM com o NetApp Backup and Recovery"].
 
 
 

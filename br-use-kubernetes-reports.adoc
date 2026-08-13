@@ -4,7 +4,7 @@ permalink: br-use-kubernetes-reports.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: Crie relatórios de proteção para cargas de trabalho do Kubernetes para visualizar o status e os detalhes da proteção, incluindo contagens de backups bem-sucedidos e com falha, tipos de backup, informações sobre a integridade do cluster e muito mais. 
 ---
-= Crie e gerencie relatórios de proteção para cargas de trabalho do Kubernetes no NetApp Backup and Recovery
+= Gerencie relatórios de proteção do Kubernetes no NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

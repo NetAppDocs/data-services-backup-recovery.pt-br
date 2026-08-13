@@ -4,7 +4,7 @@ permalink: br-use-back-up-now-kubernetes-applications-cr.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
 summary: 'NetApp Backup and Recovery permite que você faça backup manual de aplicativos Kubernetes usando recursos personalizados (CRs).' 
 ---
-= Faça backup de aplicativos Kubernetes agora usando recursos personalizados em Backup and Recovery
+= Faça backup de aplicativos Kubernetes agora usando recursos personalizados em NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
