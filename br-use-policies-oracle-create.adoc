@@ -129,24 +129,10 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ** *Habilitar verificação de integridade*: selecione se deseja habilitar as verificações de integridade (bloqueio de snapshot) no storage de objetos. Isso garante que os backups sejam válidos e restauráveis. A frequência da verificação de integridade é definida como 7 dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar as verificações de integridade no snapshot mais recente.
 
 
-
-
-
-
-[[configure-advanced-settings-in-the-policy]]
-=== Configurar configurações avançadas na política
-
+. Opcionalmente, configure as definições avançadas na política.
++
 [%collapsible]
 ====
-Você pode opcionalmente configurar opções avançadas na política. Você pode usar essas opções para todas as arquiteturas de backup e destinos de storage. As opções avançadas disponíveis dependem da carga de trabalho que você seleciona na parte superior da página, portanto, algumas opções descritas aqui podem não se aplicar a todas as cargas de trabalho.
-
-.Passos
-. No menu NetApp Backup and Recovery , selecione *Políticas*.
-. Na página Políticas, selecione *Criar nova política*.
-. Na seção *Política > Configurações avançadas*, selecione o menu *Selecionar ação avançada* para escolher em uma lista de configurações avançadas.
-. Habilite qualquer uma das configurações que você deseja visualizar ou alterar e selecione *Aceitar*.
-. Forneça as seguintes informações:
-+
 ** *Configurações do catálogo RMAN*: Habilite a opção *Catalogar backup com o Oracle Recovery Manager (RMAN)* para catalogar automaticamente metadados das operações de backup e recuperação do banco de dados Oracle. Os metadados são armazenados de acordo com as configurações de *Configurar catálogo RMAN* escolhidas para o banco de dados (no arquivo de controle de destino por padrão). Consulte link:br-start-configure-oracle-database.html["Configurar um banco de dados Oracle"] para alterar essas configurações para um banco de dados.
 ** *Verificação de backup*: selecione se deseja ativar a verificação de backup e se deseja que ela seja executada imediatamente ou posteriormente. Esse recurso garante que os backups sejam válidos e possam ser restaurados com sucesso. Recomendamos que você ative essa opção para garantir a integridade dos seus backups. Por padrão, a verificação de backup é executada a partir do storage secundário, se o storage secundário estiver configurado. Se o storage secundário não estiver configurado, a verificação de backup será executada a partir do storage primário.
 +
@@ -196,9 +182,10 @@ TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, ju
 ** *Notificação*: Escolha se deseja ativar as notificações por e-mail para operações de backup. Você pode selecionar quais eventos acionam uma notificação — por exemplo, quando um backup é bem-sucedido, falha ou é concluído com avisos.
 
 
-
-
 ====
+. Ao terminar, selecione *Criar*.
+
+
 
 
 [[edit-a-policy]]
@@ -220,6 +207,12 @@ Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/cons
 . Selecione a opção *Políticas*.
 . Selecione a política que você deseja editar.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Editar*.
+. Ao terminar a edição, selecione *Concluído*.
+. Na caixa de diálogo de confirmação, digite o nome da política para confirmar as alterações.
++
+Salvar as alterações afeta todos os aplicativos protegidos por esta política.
+
+. Selecione *Concluído* para confirmar.
 
 
 

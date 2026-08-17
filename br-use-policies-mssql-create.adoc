@@ -121,24 +121,10 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ** *Coloque seus backups em camadas do armazenamento de objetos para o armazenamento de arquivamento*: se você optar por colocar os backups em camadas para o armazenamento de arquivamento (por exemplo, AWS Glacier), selecione a opção de camada e o número de dias para arquivamento.
 
 
-
-
-
-
-[[configure-advanced-settings-in-the-policy]]
-=== Configurar configurações avançadas na política
-
+. Opcionalmente, configure as definições avançadas na política.
++
 [%collapsible]
 ====
-Você pode opcionalmente configurar opções avançadas na política. Você pode usar essas opções para todas as arquiteturas de backup e destinos de storage. As opções avançadas disponíveis dependem da carga de trabalho que você seleciona na parte superior da página, portanto, algumas opções descritas aqui podem não se aplicar a todas as cargas de trabalho.
-
-.Passos
-. No menu NetApp Backup and Recovery , selecione *Políticas*.
-. Na página Políticas, selecione *Criar nova política*.
-. Na seção *Política > Configurações avançadas*, selecione o menu *Selecionar ação avançada* para escolher em uma lista de configurações avançadas.
-. Habilite qualquer uma das configurações que você deseja visualizar ou alterar e selecione *Aceitar*.
-. Forneça as seguintes informações:
-+
 ** *SnapMirror formato de volume e instantâneo*: Escolha uma das seguintes opções:
 +
 *** *Usar formato de nome personalizado para cópia do instantâneo*: escolha um esquema de nomenclatura para os instantâneos. Se deixado em branco, um carimbo de data/hora é adicionado ao final de cada nome de instantâneo.
@@ -170,9 +156,10 @@ TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, ju
 ** *Notificação*: Escolha se deseja ativar as notificações por e-mail para operações de backup. Você pode selecionar quais eventos acionam uma notificação — por exemplo, quando um backup é bem-sucedido, falha ou é concluído com avisos.
 
 
-
-
 ====
+. Ao terminar, selecione *Criar*.
+
+
 
 
 [[edit-a-policy]]
@@ -194,6 +181,12 @@ Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/cons
 . Selecione a opção *Políticas*.
 . Selecione a política que você deseja editar.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Editar*.
+. Ao terminar a edição, selecione *Concluído*.
+. Na caixa de diálogo de confirmação, digite o nome da política para confirmar as alterações.
++
+Salvar as alterações afeta todos os aplicativos protegidos por esta política.
+
+. Selecione *Concluído* para confirmar.
 
 
 

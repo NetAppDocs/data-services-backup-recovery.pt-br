@@ -132,24 +132,10 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ** *Habilitar verificação de integridade*: selecione se deseja habilitar as verificações de integridade (bloqueio de snapshot) no storage de objetos. Isso garante que os backups sejam válidos e restauráveis. A frequência da verificação de integridade é definida como 7 dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar as verificações de integridade no snapshot mais recente.
 
 
-
-
-
-
-[[configure-advanced-settings-in-the-policy]]
-=== Configurar configurações avançadas na política
-
+. Opcionalmente, configure as definições avançadas na política.
++
 [%collapsible]
 ====
-Você pode opcionalmente configurar opções avançadas na política. Você pode usar essas opções para todas as arquiteturas de backup e destinos de storage. As opções avançadas disponíveis dependem da carga de trabalho que você seleciona na parte superior da página, portanto, algumas opções descritas aqui podem não se aplicar a todas as cargas de trabalho.
-
-.Passos
-. No menu NetApp Backup and Recovery , selecione *Políticas*.
-. Na página Políticas, selecione *Criar nova política*.
-. Na seção *Política > Configurações avançadas*, selecione o menu *Selecionar ação avançada* para escolher em uma lista de configurações avançadas.
-. Habilite qualquer uma das configurações que você deseja visualizar ou alterar e selecione *Aceitar*.
-. Forneça as seguintes informações:
-+
 ** *Configurações da VM*:
 +
 *** *Habilitar snapshot consistente com o aplicativo*: Habilite esta opção para criar snapshots consistentes com o aplicativo. Isso requer que os Serviços de Integração do Hyper-V e o VSS estejam em execução na máquina virtual. Se algum dos serviços não estiver em execução, um backup consistente com falhas será criado. Observe que habilitar a consistência do aplicativo pode aumentar o tempo de backup e a utilização de storage. Além disso, a memória da máquina virtual não é incluída nos snapshots consistentes com o aplicativo.
@@ -171,9 +157,10 @@ TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, ju
 ** *Notificação*: Escolha se deseja ativar as notificações por e-mail para operações de backup. Você pode selecionar quais eventos acionam uma notificação — por exemplo, quando um backup é bem-sucedido, falha ou é concluído com avisos.
 
 
-
-
 ====
+. Ao terminar, selecione *Criar*.
+
+
 
 
 [[edit-a-policy]]
@@ -195,6 +182,12 @@ Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/cons
 . Selecione a opção *Políticas*.
 . Selecione a política que você deseja editar.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Editar*.
+. Ao terminar a edição, selecione *Concluído*.
+. Na caixa de diálogo de confirmação, digite o nome da política para confirmar as alterações.
++
+Salvar as alterações afeta todos os aplicativos protegidos por esta política.
+
+. Selecione *Concluído* para confirmar.
 
 
 

@@ -144,24 +144,10 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ** *Habilitar verificação de integridade*: selecione se deseja habilitar as verificações de integridade (bloqueio de snapshot) no storage de objetos. Isso garante que os backups sejam válidos e restauráveis. A frequência da verificação de integridade é definida como 7 dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar as verificações de integridade no snapshot mais recente.
 
 
-
-
-
-
-[[configure-advanced-settings-in-the-policy]]
-=== Configurar configurações avançadas na política
-
+. Opcionalmente, configure as definições avançadas na política.
++
 [%collapsible]
 ====
-Você pode opcionalmente configurar opções avançadas na política. Você pode usar essas opções para todas as arquiteturas de backup e destinos de storage. As opções avançadas disponíveis dependem da carga de trabalho que você seleciona na parte superior da página, portanto, algumas opções descritas aqui podem não se aplicar a todas as cargas de trabalho.
-
-.Passos
-. No menu NetApp Backup and Recovery , selecione *Políticas*.
-. Na página Políticas, selecione *Criar nova política*.
-. Na seção *Política > Configurações avançadas*, selecione o menu *Selecionar ação avançada* para escolher em uma lista de configurações avançadas.
-. Habilite qualquer uma das configurações que você deseja visualizar ou alterar e selecione *Aceitar*.
-. Forneça as seguintes informações:
-+
 ** *Configurações da VM*:
 +
 *** *Habilitar snapshot consistente com a VM e com o aplicativo*: Habilite esta opção para criar snapshots consistentes com a VM e com o aplicativo. Isso requer que o VMware Tools esteja em execução na VM. Se o VMware Tools não estiver em execução, os snapshots serão consistentes com falhas. Observe que habilitar esta opção pode aumentar o tempo de backup e usar mais armazenamento. Além disso, a RAM ativa da VM não é incluída nos snapshots consistentes.
@@ -183,9 +169,10 @@ TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, ju
 ** *Notificação*: Escolha se deseja ativar as notificações por e-mail para operações de backup. Você pode selecionar quais eventos acionam uma notificação — por exemplo, quando um backup é bem-sucedido, falha ou é concluído com avisos.
 
 
-
-
 ====
+. Ao terminar, selecione *Criar*.
+
+
 
 
 [[delete-a-policy]]

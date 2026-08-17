@@ -114,6 +114,27 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ** *Coloque seus backups em camadas do armazenamento de objetos para o armazenamento de arquivamento*: se você optar por colocar os backups em camadas para o armazenamento de arquivamento (por exemplo, AWS Glacier), selecione a opção de camada e o número de dias para arquivamento.
 
 
+. Opcionalmente, configure as definições avançadas na política.
++
+[%collapsible]
+====
+** *Repetições de backup*: Para repetir a tarefa um determinado número de vezes em caso de falha ou interrupção, expanda a seção *Repetições de backup* e insira o número máximo de repetições da tarefa de snapshot e backup e o intervalo de tempo entre as repetições.
+
+
+
+TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, juntamente com a contagem de novas tentativas, não deverá exceder 45 minutos.
+
+** *Sucesso parcial*: Habilite esta opção para permitir que uma operação de backup seja concluída com êxito, mesmo que o Backup e Recovery falhe ao fazer backup de todos os recursos.
+** *Configuração da VM*: selecione o tipo de consistência de backup que você precisa:
++
+*** *Backup consistente com falhas*: selecione esta opção para ignorar o congelamento da VM antes de tirar um snapshot ou backup. O snapshot ou backup será consistente com falhas, o que significa que a memória no momento do snapshot ou backup não será capturada.
+*** *Backup consistente com a VM*: selecione esta opção para congelar as VMs antes de criar um snapshot ou backup. Isso captura o estado completo da VM (incluindo memória) para fornecer proteção consistente com a VM. Opcionalmente, em *Max VMs at once*, especifique quantas VMs o Backup e Recovery pode congelar e fazer backup ao mesmo tempo. Se você habilitar a opção *Freeze all VMs*, o Backup e Recovery congela todas as VMs simultaneamente, inicia os backups e, em seguida, descongela todas as VMs após a conclusão de todas as operações de backup.
+
+
+
+
+====
+. Ao terminar, selecione *Concluído*.
 
 
 
@@ -137,6 +158,12 @@ Administrador avançado de backup e recuperação. Se você estiver protegendo d
 . Selecione a opção *Políticas*.
 . Selecione a política que você deseja editar.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Editar*.
+. Ao terminar a edição, selecione *Concluído*.
+. Na caixa de diálogo de confirmação, digite o nome da política para confirmar as alterações.
++
+Salvar as alterações afeta todos os aplicativos protegidos por esta política.
+
+. Selecione *Concluído* para confirmar.
 
 
 
