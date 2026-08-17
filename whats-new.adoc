@@ -18,6 +18,54 @@ Saiba o que há de novo no NetApp Backup and Recovery.
 
 
 
+[[17-august-2026]]
+== 17 de agosto de 2026
+
+Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Aprimoramentos nas cargas de trabalho do Hyper-V
+
+Nesta versão, o Hyper-V introduz a seguinte melhoria:
+
+*Restaurar backup de storage de objetos para um local alternativo*: Agora você pode restaurar VMs, arquivos e pastas do Hyper-V do storage de objetos para um local de armazenamento alternativo.
+
+Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do Hyper-V com o NetApp Backup and Recovery"].
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Aprimoramentos de cargas de trabalho do Kubernetes
+
+Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias:
+
+* *Trident Protect 26.08*: Esta versão inclui Trident Protect 26.08.
+* *Repetições de backup*: Agora você pode habilitar as repetições de backup e configurar o número de tentativas de repetição e os intervalos entre as tentativas como configurações avançadas nas políticas de proteção do Kubernetes.
+* *Sucesso parcial do backup*: Agora você pode configurar definições avançadas nas políticas de proteção do Kubernetes para continuar o backup mesmo quando recursos individuais falharem, permitindo que os trabalhos de backup sejam concluídos com sucesso parcial. Isso permite que você restaure os recursos de backup mesmo que alguns recursos falhem durante a operação de backup.
+* *Backups consistentes com falhas e consistentes com VM*: o serviço Backup and Recovery para o NetApp Console agora permite configurar políticas de proteção que criam backups ou snapshots consistentes com falhas ou consistentes com VM. Você também pode personalizar como os congelamentos de VM são realizados durante a operação de proteção.
+* *Reconectar o cluster Kubernetes após a alteração do IP do agente do Console*: o serviço de Backup and Recovery para o NetApp Console agora permite que você reconecte um cluster ao seu agente do Console se o endereço IP do agente for alterado.
+* *Migrar cluster para o novo agente do Console*: O serviço NetApp Backup and Recovery para o NetApp Console agora permite que você migre um cluster para um novo agente do Console se o agente original falhar ou for excluído, garantindo proteção ininterrupta do aplicativo.
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do Kubernetes com NetApp Backup and Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do Oracle Database
+
+Nesta versão, as cargas de trabalho do Oracle Database introduzem as seguintes melhorias:
+
+* *Restauração de Pluggable Database (PDB)*: Agora você pode restaurar pluggable databases (PDBs) e tablespaces de PDBs individuais, incluindo recuperação para um ponto no tempo.
+* *Clonagem de banco de dados plugável (PDB)*: Agora você pode clonar um único PDB em um banco de dados de contêiner (CDB) de destino existente e, opcionalmente, excluir PDBs ao clonar um banco de dados de contêiner completo.
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Saiba mais sobre como proteger as cargas de trabalho do Oracle Database com NetApp Backup and Recovery"].
+
+
+
 [[10-august-2026]]
 == 10 de agosto de 2026
 

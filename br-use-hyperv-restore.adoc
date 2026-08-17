@@ -21,7 +21,7 @@ Você pode restaurar cargas de trabalho de diferentes locais de partida:
 
 * Restaurar de um local primário (instantâneo local)
 * Restaurar de um recurso replicado no armazenamento secundário
-* Restaurar de um backup de storage de objetos (somente para o local original)
+* Restaurar de um backup de armazenamento de objetos
 
 
 .Restaurar para estes pontos
@@ -101,6 +101,11 @@ Uma lista de possíveis pontos de restauração é exibida.
 *** *Rede*: Selecione a rede de destino onde deseja restaurar o snapshot.
 *** *Nome da máquina virtual*: Insira o nome da máquina virtual que você deseja restaurar.
 *** *Local de destino*: Insira a pasta de destino ou o compartilhamento CIFS que deve conter os dados restaurados.
+
+
+.. Na seção *Armazenamento de destino* (visível somente ao restaurar a partir do armazenamento de objetos):
++
+*** *Alterar local de armazenamento padrão*: habilite esta opção para restaurar um backup de armazenamento de objetos em um local diferente caso o local de armazenamento de origem esteja inacessível ou cheio. Escolha um cluster, VM de armazenamento ou agregado diferente para usar.
 
 
 .. Na seção *Opções de pré-restauração*, considere as seguintes opções:

@@ -142,7 +142,7 @@ Ao restaurar para um local alternativo, você pode alterar o vCenter de destino,
 
 ** Seção *Armazenamento de destino* (visível somente ao restaurar a partir do armazenamento de objetos):
 +
-*** *Alterar local de armazenamento padrão*: Habilite esta opção para restaurar um backup de armazenamento de objetos em uma VM de armazenamento diferente caso o local de armazenamento de origem esteja inacessível ou cheio. Escolha um cluster, VM de armazenamento ou agregado diferente para usar.
+*** *Alterar local de armazenamento padrão*: habilite esta opção para restaurar um backup de armazenamento de objetos em um local diferente caso o local de armazenamento de origem esteja inacessível ou cheio. Escolha um cluster, VM de armazenamento ou agregado diferente para usar.
 
 
 ** Seção *Opções de pré-restauração*:
