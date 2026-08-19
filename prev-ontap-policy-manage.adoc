@@ -14,12 +14,12 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-Com o NetApp Backup and Recovery, use as políticas de backup padrão fornecidas pela NetApp para criar seus backups ou crie políticas personalizadas.  As políticas controlam a frequência do backup, o horário em que o backup é feito e o número de arquivos de backup que são retidos.
+No NetApp Backup and Recovery, você pode usar as políticas de backup padrão ou criar políticas personalizadas para seus volumes ONTAP. As políticas controlam a frequência de backup, o horário do backup e a retenção.
 
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas que já existam no sistema (Cloud Volumes ONTAP ou sistema ONTAP local).  Se quiser usar uma política diferente das políticas existentes, você pode criá-la antes ou enquanto usa o assistente de ativação.
+Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas já existentes no sistema (Cloud Volumes ONTAP ou sistema ONTAP local). Se você quiser usar uma política diferente das políticas existentes, pode criar a política antes ou enquanto usa o assistente de ativação.
 
 Para saber mais sobre as políticas de backup padrão fornecidas, consultelink:prev-ontap-protect-journey.html["Planeje sua jornada de proteção"] .
 
@@ -85,7 +85,7 @@ Parte do processo de criação de políticas envolve a identificação de rótul
 +
 A página Gerenciamento de políticas é exibida.
 
-. Na página Políticas, selecione *Criar política* > *Criar política de instantâneo*.
+. Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política do Snapshot*.
 . Especifique o nome da política.
 . Selecione o agendamento ou agendamentos de snapshot.  Você pode ter no máximo 5 rótulos.  Ou crie uma programação.
 . Se você optar por criar uma programação:
@@ -127,7 +127,7 @@ Este exemplo cria uma política de snapshot com dois clusters:
 Sua estratégia 3-2-1 pode incluir a replicação de um volume em um sistema de armazenamento diferente.  A política de replicação reside no sistema de armazenamento *secundário*.
 
 .Passos
-. Na página Políticas, selecione *Criar política* > *Criar política de replicação*.
+. Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política de replicação*.
 . Na seção Detalhes da política, especifique o nome da política.
 . Especifique os rótulos do SnapMirror (máximo de 5) que indicam a retenção de cada rótulo.
 . Especifique o cronograma de transferência.
@@ -148,7 +148,7 @@ Esta política de armazenamento reside em diferentes locais do sistema de armaze
 
 
 .Passos
-. Na página Gerenciamento de políticas, selecione *Criar política* > *Criar política de backup*.
+. Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política de backup*.
 . Na seção Detalhes da política, especifique o nome da política.
 . Especifique os rótulos do SnapMirror (máximo de 5) que indicam a retenção de cada rótulo.
 . Especifique as configurações, incluindo o cronograma de transferência e quando arquivar backups.

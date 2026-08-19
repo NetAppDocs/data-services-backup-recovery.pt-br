@@ -14,7 +14,7 @@ summary: Ative a pré-visualização e os recursos ocultos para NetApp Backup an
 
 
 [role="lead"]
-Ative a pré-visualização e os recursos ocultos para NetApp Backup and Recovery.
+Siga estas etapas para ativar a pré-visualização e os recursos ocultos do NetApp Backup and Recovery. Use os recursos de pré-visualização com cautela em ambientes de produção.
 
 *Função necessária do NetApp Console* superadministrador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
@@ -44,7 +44,7 @@ Você pode ativar os seguintes recursos de pré-visualização para NetApp Backu
 Habilite as opções de pré-visualização para usar funcionalidades que ainda não estão disponíveis ao público em geral. Use recursos de pré-visualização com cautela em ambientes de produção.
 
 .Passos
-. Utilize SSH para fazer login no agente do console.
+. Utilize SSH para fazer login no agente do Console.
 . Altere para o usuário raiz:
 +
 [source, shell]
@@ -129,7 +129,7 @@ Desative a indexação para volumes específicos ou para todos os volumes perten
 
 
 .Passos
-. Utilize SSH para fazer login no agente do console.
+. Utilize SSH para fazer login no agente do Console.
 . Altere para o usuário raiz:
 +
 [source, shell]

@@ -14,7 +14,7 @@ summary: Você pode restaurar um ou mais arquivos ou pastas de um VMDK para uma 
 
 
 [role="lead"]
-Restaure arquivos ou pastas individuais de um disco virtual para a VM original ou para outra VM. Isso é útil quando você não precisa restaurar uma VM inteira, mas apenas arquivos ou pastas específicos.
+Restaure arquivos ou pastas individuais de um VMDK para a máquina virtual original ou para outra máquina virtual. Use esta opção quando você precisar de arquivos ou pastas específicos em vez da máquina virtual inteira.
 
 
 
@@ -25,12 +25,12 @@ Restaure arquivos ou pastas de um disco virtual para a VM original ou para outra
 
 .Antes de começar
 * Analise os pré-requisitos e as limitações em link:br-use-vmware-restore-guest-files-and-folders-overview.html["Requisitos de restauração de arquivos de convidado do VMware em NetApp Backup and Recovery"].
-* Para restaurar arquivos e pastas usando uma máquina virtual proxy, certifique-se de que a máquina virtual proxy já esteja configurada antes de iniciar o processo de restauração de arquivos e pastas.
+* Para restaurar arquivos e pastas usando uma máquina virtual proxy, certifique-se de que a máquina virtual proxy já esteja configurada antes de iniciar o processo de restauração.
 * É necessário criar credenciais para o disco virtual de origem e para a máquina virtual de destino no NetApp Backup and Recovery antes de poder restaurar arquivos e pastas. NetApp Backup and Recovery usa essas credenciais para autenticar com o disco virtual e a máquina virtual de destino ao restaurar arquivos e pastas.
 
 
 .Sobre esta tarefa
-O desempenho da restauração de arquivos ou pastas depende de dois fatores: o tamanho dos arquivos ou pastas a serem restaurados; e a quantidade de arquivos ou pastas a serem restaurados. Restaurar um grande número de arquivos pequenos pode levar mais tempo do que o previsto em comparação com a restauração de um pequeno número de arquivos grandes, caso o conjunto de dados a ser restaurado tenha o mesmo tamanho.
+O desempenho da restauração de arquivos ou pastas depende do tamanho e da quantidade de itens que você restaura. Restaurar muitos arquivos pequenos pode levar mais tempo do que restaurar alguns arquivos grandes com o mesmo tamanho total.
 
 É possível restaurar para uma máquina virtual remota (conhecido como restauração entre máquinas virtuais), mas os sistemas operacionais de origem e destino devem ser os mesmos.
 
@@ -75,7 +75,7 @@ Você pode usar o ícone de lupa (pesquisa) próximo ao painel do navegador de a
 
 . Selecione arquivos ou pastas para restaurar.
 +
-Os arquivos e pastas que você selecionou para restaurar são listados no painel direito da tela.
+Os arquivos e pastas que você seleciona para restaurar aparecem no painel direito.
 
 . Selecione *Avançar*.
 . Na seção "Restaurar para o caminho", insira o caminho para a máquina virtual de destino e o local do sistema de arquivos onde os arquivos selecionados serão restaurados:
@@ -108,7 +108,7 @@ Você pode visualizar o progresso da restauração na página de Monitoramento d
 --
 .Anexe o VMDK a uma máquina virtual proxy para restaurar arquivos e pastas
 --
-Utilize uma máquina virtual proxy (uma máquina virtual diferente no mesmo vCenter que a original) para restaurar arquivos e pastas do sistema operacional convidado quando não desejar conectar o disco virtual à máquina virtual original.
+Utilize uma máquina virtual proxy, que é uma máquina virtual diferente no mesmo vCenter que a máquina virtual original, para restaurar arquivos e pastas do sistema operacional convidado quando você não quiser conectar o disco virtual à máquina virtual original.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Restaurar*.
@@ -145,7 +145,7 @@ Você pode usar o ícone de lupa (pesquisa) próximo ao painel do navegador de a
 
 . Selecione arquivos ou pastas para restaurar.
 +
-Os arquivos e pastas que você selecionou para restaurar são listados no painel direito da tela.
+Os arquivos e pastas que você seleciona para restaurar aparecem no painel direito.
 
 . Selecione *Avançar*.
 . Na seção "Restaurar para o caminho", insira o caminho para a máquina virtual de destino e o local do sistema de arquivos onde os arquivos selecionados serão restaurados:
@@ -182,7 +182,7 @@ Você pode visualizar o progresso da restauração na página de Monitoramento d
 [[view-active-vmdk-mount-sessions]]
 == Visualizar sessões de montagem VMDK ativas
 
-Visualize as sessões de convidado ativas ao restaurar arquivos ou pastas. Isso mostra os VMDKs que estão atualmente conectados a sessões abertas.
+Visualize as sessões de convidado ativas ao restaurar arquivos ou pastas. Esta visualização mostra os VMDKs que estão atualmente conectados com sessões abertas.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Clonar*.

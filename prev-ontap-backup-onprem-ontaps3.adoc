@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus principais sistemas ONTAP locais.  Você pode enviar backups para um sistema de armazenamento ONTAP secundário (um volume replicado) ou para um bucket em um sistema ONTAP configurado como um servidor S3 (um arquivo de backup), ou ambos.
+No NetApp Backup and Recovery, você pode fazer backup dos dados de volume dos seus sistemas ONTAP locais primários para o ONTAP S3 e, opcionalmente, para um sistema ONTAP secundário para replicação. Use esta página para preparar seu ambiente e ativar backups.
 
 O sistema ONTAP local principal pode ser um sistema FAS, AFF ou ONTAP Select .  O sistema ONTAP secundário pode ser um sistema ONTAP local ou Cloud Volumes ONTAP .  O armazenamento de objetos pode estar em um sistema ONTAP local ou em um sistema Cloud Volumes ONTAP no qual você habilitou um servidor de armazenamento de objetos do Simple Storage Service (S3).
 
@@ -45,7 +45,7 @@ Neste cenário, o agente do Console deve ser implantado no mesmo ambiente do pro
 [[prepare-your-console-agent]]
 == Prepare seu agente de console
 
-O agente do Console é o software principal para a funcionalidade do Console.  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
+O agente do Console é o software principal para a funcionalidade do NetApp Console .  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
 
 
 
@@ -252,14 +252,14 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 === Inicie o assistente
 
 .Passos
-. Acesse o assistente Ativar backup e recuperação usando uma das seguintes maneiras:
+. Acesse o assistente Ativar Backup e Recuperação usando uma das seguintes maneiras:
 +
-** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de Backup e recuperação no painel direito.
+** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de NetApp Backup and Recovery no painel direito.
 ** Selecione *Volumes* na barra Backup e recuperação.  Na guia Volumes, selecione a opção *Ações (...)* e selecione *Ativar backup* para um único volume (que ainda não tenha replicação ou backup para armazenamento de objetos habilitado).
 
 
 +
-A página Introdução do assistente mostra as opções de proteção, incluindo instantâneos locais, replicações e backups.  Se você escolheu a segunda opção nesta etapa, a página Definir estratégia de backup aparecerá com um volume selecionado.
+A página de Introdução do assistente mostra as opções de proteção, incluindo snapshots locais, replicação e backups. Se você selecionou a segunda opção nesta etapa, a página Definir estratégia de backup é exibida com um volume selecionado.
 
 . Continue com as seguintes opções:
 +
@@ -389,7 +389,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 +
 *** Digite o nome da política.
 *** Selecione até cinco programações, normalmente com frequências diferentes.
-*** Para políticas de backup para objetos, defina as configurações de proteção Datalock e Ransomware. Para obter detalhes sobre a proteção Datalock e Ransomware, consulte link:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"].
+*** Para políticas de backup para objetos, defina as configurações de DataLock e proteção contra ransomware. Para obter detalhes sobre DataLock e proteção contra ransomware, consulte link:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"].
 *** Selecione *Criar*.
 
 
@@ -431,9 +431,9 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 [[show-the-api-commands]]
 === Mostrar os comandos da API
 
-Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.
+Você pode exibir e, opcionalmente, copiar os comandos da API usados no assistente de ativação do NetApp Backup and Recovery. Você pode querer fazer isso para automatizar a ativação de backup em sistemas futuros.
 
 .Passos
-. No assistente Ativar backup e recuperação, selecione *Exibir solicitação de API*.
+. No assistente Ativar backup e recuperação, selecione *Visualizar solicitação de API*.
 . Para copiar os comandos para a área de transferência, selecione o ícone *Copiar*.
 

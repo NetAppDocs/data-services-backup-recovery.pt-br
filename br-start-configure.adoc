@@ -14,9 +14,9 @@ summary: Conclua algumas etapas para configurar o NetApp Backup and Recovery.
 
 
 [role="lead"]
-Depois de configurar o NetApp Console, defina as configurações de backup e recuperação.  Adicione credenciais para recursos de host, importe recursos do SnapCenter , configure diretórios de log e defina configurações do VMware vCenter.  Conclua estas etapas antes de fazer backup ou recuperar dados.
+Configure as configurações de backup e recuperação para adicionar credenciais para workloads, integrar com a infraestrutura existente e preparar as operações de backup e restauração.
 
-* <<Adicionar credenciais para recursos do host>> para qualquer host Windows, Microsoft SQL Server, Oracle Database ou Linux com o qual o NetApp Backup and Recovery precise se autenticar. Isso inclui as credenciais do sistema operacional convidado usadas ao restaurar arquivos ou pastas.
+* <<Adicionar credenciais para recursos do host>> para hosts Windows, Microsoft SQL Server, Oracle Database e Linux com os quais o NetApp Backup and Recovery precisa se autenticar. Isso inclui as credenciais do sistema operacional convidado usadas ao restaurar arquivos ou pastas.
 * <<Manter as configurações do VMware vCenter>>.
 * <<Importar e gerenciar recursos do host SnapCenter>>. (Somente cargas de trabalho do Microsoft SQL Server)
 * <<Adicione uma plataforma de gerenciamento KVM>>. (Apenas cargas de trabalho KVM)
@@ -49,13 +49,13 @@ Você precisa configurar os seguintes tipos de credenciais:
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
 . Selecione a seta para baixo para *Credenciais*.
 . Selecione *Adicionar novas credenciais*.
-. Insira as informações de credenciais. Os campos exibidos variam dependendo do modo de autenticação selecionado. Passe o cursor sobre o ícone de Informação *i* para obter mais informações sobre os campos.
+. Insira as informações para as credenciais. Campos diferentes aparecem dependendo do modo de autenticação que você selecionar. Passe o cursor sobre o ícone de informações *i* para obter mais informações sobre os campos.
 +
 ** *Nome das credenciais*: Insira um nome para as credenciais.
 ** *Modo de autenticação*: Selecione *Windows*, *Microsoft SQL*, *Banco de Dados Oracle* ou *Linux*.
 +
 
-TIP: Para cargas de trabalho do Microsoft SQL Server, você precisa inserir credenciais tanto para o Windows quanto para o Microsoft SQL Server, portanto, será necessário adicionar dois conjuntos de credenciais.
+TIP: Para cargas de trabalho do Microsoft SQL Server, você deve inserir credenciais tanto para o Windows quanto para o Microsoft SQL Server, o que exige dois conjuntos de credenciais.
 
 +
 [role="tabbed-block"]
@@ -138,7 +138,7 @@ Você poderá editar posteriormente a senha de quaisquer credenciais que tenha c
 [[maintain-vmware-vcenter-settings]]
 == Manter as configurações do VMware vCenter
 
-Forneça credenciais do VMware vCenter para descobrir cargas de trabalho para backup.  Se você não tiver credenciais, crie-as com permissões para acessar e gerenciar as cargas de trabalho do VMware vCenter Server.
+Forneça as credenciais do VMware vCenter Server para descobrir cargas de trabalho para backup. Se você não tiver credenciais, crie-as com permissões para acessar e gerenciar cargas de trabalho do VMware vCenter Server.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
@@ -146,7 +146,7 @@ Forneça credenciais do VMware vCenter para descobrir cargas de trabalho para ba
 . Selecione *Adicionar vCenter*.
 . Insira as informações do VMware vCenter Server.
 +
-** *FQDN ou endereço IP do vCenter*: insira um nome FQDN ou o endereço IP do VMware vCenter Server.
+** *vCenter FQDN ou endereço IP*: Insira um FQDN ou o endereço IP para o servidor VMware vCenter.
 ** *Nome de usuário* e *Senha*: Digite o nome de usuário e a senha do VMware vCenter Server.
 ** *Porta*: Digite o número da porta para o VMware vCenter Server.
 ** *Protocolo*: Selecione *HTTP* ou *HTTPS*.
@@ -247,7 +247,7 @@ A página Importar do SnapCenter mostra todas as importações anteriores.
 [[add-a-kvm-management-platform]]
 == Adicione uma plataforma de gerenciamento KVM
 
-Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar recursos KVM, é necessário integrá-la ao NetApp Backup and Recovery para que este possa detectar e proteger os hosts KVM e as VMs gerenciadas.
+Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar recursos KVM, integre-a ao NetApp Backup and Recovery para que o Backup and Recovery possa detectar e proteger os hosts KVM e as VMs gerenciadas.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
@@ -255,7 +255,7 @@ Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar 
 . Selecione *Adicionar credencial da plataforma de gerenciamento*.
 . Insira as seguintes informações:
 +
-** *Endereço IP ou FQDN da plataforma de gerenciamento*: Insira o endereço IP ou o nome de domínio totalmente qualificado da plataforma de gerenciamento.
+** *Endereço IP ou FQDN da plataforma de gerenciamento*: insira o endereço IP ou um FQDN da plataforma de gerenciamento.
 ** *Chave de API*: Insira a chave de API a ser usada para autenticar as solicitações de API.
 ** *Chave secreta*: Insira a chave secreta a ser usada para autenticar as solicitações da API.
 ** *Porta*: Insira a porta a ser usada para comunicação entre o Backup e Recuperação e a plataforma de gerenciamento.
@@ -270,7 +270,7 @@ Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar 
 [[configure-log-directories-in-snapshots-for-windows-hosts]]
 == Configurar diretórios de log em instantâneos para hosts Windows
 
-Antes de criar políticas para hosts Windows, você deve configurar diretórios de log em instantâneos para hosts Windows.  Os diretórios de log são usados para armazenar os logs gerados durante o processo de backup.
+Antes de criar políticas para hosts Windows, configure diretórios de logs em snapshots para armazenar os logs gerados durante o processo de backup.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -310,18 +310,18 @@ Depois de criar o modelo, ele aparece na lista de modelos na seção *Modelo de 
 [[create-a-resource-transformation-template]]
 == Crie um modelo de transformação de recursos
 
-Crie modelos de transformação de recursos para armazenar as transformações comuns que você realiza nos recursos ao restaurá-los.
+Crie modelos de transformação de recursos para armazenar transformações comuns que você aplica aos recursos durante as operações de restauração.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
-. Selecione a seta para baixo para expandir a seção *Resource modifer template*.
+. Selecione a seta para baixo para expandir a seção *Modelo de transformação de recursos*.
 . Selecione *Criar modelo*.
 . Insira um nome para o modelo de transformação de recursos.
 . Opcionalmente, insira uma descrição do modelo.
 . Descreva o recurso de destino:
 +
 .. Insira o tipo de recurso (como Pod ou Deployment). Este campo é obrigatório.
-.. Opcionalmente, insira um grupo de recursos, versão, nome.
+.. Opcionalmente, insira um grupo de recursos, uma versão e um nome.
 
 
 . Criar uma operação:

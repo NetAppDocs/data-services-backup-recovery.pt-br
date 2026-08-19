@@ -14,7 +14,7 @@ summary: Você pode restaurar VMDKs existentes ou VMDKs excluídos ou desanexado
 
 
 [role="lead"]
-Você pode restaurar discos virtuais existentes (VMDKs), ou discos virtuais excluídos ou desanexados, a partir de backups primários ou secundários de VMs tradicionais. Isso permite restaurar apenas dados ou aplicativos específicos da máquina virtual, evitando a necessidade de restaurar toda a máquina virtual e todos os seus discos virtuais associados em situações onde apenas dados específicos são afetados. Após a restauração do disco virtual, ele é anexado à sua máquina virtual original e fica pronto para uso.
+Restaure discos virtuais (VMDKs) existentes, excluídos ou desanexados a partir de backups primários ou secundários de máquinas virtuais tradicionais. Isso permite que você recupere dados ou aplicativos específicos da máquina virtual sem restaurar a máquina virtual inteira. Após a restauração do disco virtual, ele é anexado à sua máquina virtual original e está pronto para uso.
 
 Você pode restaurar um ou mais discos de máquina virtual (VMDKs) em uma máquina virtual para o mesmo armazenamento de dados ou para armazenamentos de dados diferentes.
 
@@ -32,7 +32,7 @@ A VM que você deseja restaurar não deve estar no estado vMotion ou Storage vMo
 .Sobre esta tarefa
 * Se o VMDK for excluído ou desanexado da VM, a operação de restauração anexará o VMDK à VM.
 * Uma operação de restauração pode falhar se a camada de armazenamento do FabricPool onde a VM está localizada não estiver disponível.
-* As operações de anexação e restauração conectam VMDKs usando o controlador SCSi padrão. No entanto, quando VMDKs anexados a uma VM com um disco NVMe são copiados, as operações de anexação e restauração usam o controlador NVMe, se disponível.
+* As operações de anexação e restauração conectam VMDKs usando o controlador SCSI padrão. No entanto, se você fizer backup de VMDKs que estão anexados a uma máquina virtual com um disco NVMe, as operações de anexação e restauração usam um controlador NVMe, se houver um disponível.
 
 
 .Passos

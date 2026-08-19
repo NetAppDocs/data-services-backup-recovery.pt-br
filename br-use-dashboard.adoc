@@ -4,7 +4,7 @@ permalink: br-use-dashboard.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
 summary: Monitorar a integridade de suas cargas de trabalho garante que você esteja ciente dos problemas com a proteção da carga de trabalho e possa tomar medidas para resolvê-los.  Visualize o status dos seus backups e restaurações e responda a quaisquer alertas que apareçam no Painel de NetApp Backup and Recovery .  Você pode revisar o resumo de proteção, o resumo de restauração, o resumo do sistema e muito mais. 
 ---
-= Visualize a integridade da proteção no Painel de NetApp Backup and Recovery
+= Visualize a integridade da proteção no painel do NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,12 +14,12 @@ summary: Monitorar a integridade de suas cargas de trabalho garante que você es
 
 
 [role="lead"]
-Monitorar a integridade de suas cargas de trabalho garante que você esteja ciente dos problemas com a proteção da carga de trabalho e possa tomar medidas para resolvê-los.  Veja o status dos seus backups e restaurações no Painel de NetApp Backup and Recovery .  Você pode revisar o resumo do sistema, o resumo da proteção, o resumo do trabalho, o resumo da restauração e muito mais.
+Monitore a integridade de suas cargas de trabalho para identificar problemas de proteção e responder a alertas. Visualize o status de backups e restaurações e revise os resumos de Sistema, Proteção, Tarefa e Restauração no Painel de Backup e Recuperação da NetApp.
 
-*Função necessária do NetApp Console* Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de backup e recuperação, administrador de restauração de backup e recuperação, administrador de clonagem de backup e recuperação ou função de visualizador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+*Função necessária do NetApp Console*: Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin ou Backup and Recovery viewer role. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
-. No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
+. No menu NetApp Console, selecione *Proteção* > *Backup e Recuperação*.
 . Selecione um bloco de carga de trabalho (por exemplo, Microsoft SQL Server).
 . No menu Backup e Recuperação, selecione *Painel*.
 +
@@ -56,11 +56,11 @@ TIP: Um banco de dados protegido é aquele que tem uma política de backup atrib
 [[view-the-job-summary]]
 == Ver o resumo do trabalho
 
-Revise o total de trabalhos concluídos, em execução ou com falha no Resumo do trabalho.
+Confira o número total de tarefas concluídas, em execução ou com falha no resumo de tarefas.
 
 .Passos
-. Para cada distribuição de trabalho, altere um filtro para mostrar o resumo de tarefas com falha, em execução e concluídas com base no número de dias, por exemplo, os últimos 30 dias, os últimos 7 dias, as últimas 24 horas ou o último 1 ano.
-. Veja detalhes dos trabalhos com falha, em execução e concluídos selecionando *Exibir monitoramento de trabalhos*.
+. Para cada distribuição de tarefas, altere o filtro para exibir o resumo das tarefas com falha, em execução e concluídas com base no número de dias, por exemplo, os últimos 30 dias, os últimos 7 dias, as últimas 24 horas ou o último ano.
+. Veja os detalhes das tarefas com falha, em execução e concluídas selecionando *Visualizar monitoramento de tarefas*.
 
 
 
@@ -68,7 +68,7 @@ Revise o total de trabalhos concluídos, em execução ou com falha no Resumo do
 [[view-the-restore-summary]]
 == Ver o resumo da restauração
 
-Revise as seguintes informações no resumo da restauração:
+Analise as seguintes informações no resumo da restauração:
 
 * O número total de trabalhos de restauração realizados
 * A quantidade total de capacidade que foi restaurada

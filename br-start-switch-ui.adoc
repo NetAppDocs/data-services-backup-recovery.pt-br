@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: br-start-switch-ui.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Você pode alternar entre as diferentes cargas de trabalho do NetApp Backup and Recovery .  Algumas cargas de trabalho usam uma interface de usuário diferente. 
+summary: NetApp Backup e Recovery suporta vários tipos de cargas de trabalho, e algumas cargas de trabalho usam uma interface de usuário diferente. Use o seletor de cargas de trabalho para alternar entre elas. 
 ---
-= Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery
+= Altere para uma carga de trabalho diferente do NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Você pode alternar entre as diferentes cargas de trabalho do NetApp Ba
 
 
 [role="lead"]
-Você pode alternar entre as diferentes cargas de trabalho do NetApp Backup and Recovery .
+NetApp Backup e Recovery suporta vários tipos de cargas de trabalho, e algumas cargas de trabalho usam uma interface de usuário diferente. Use o seletor de cargas de trabalho para alternar entre elas.
 
 
 

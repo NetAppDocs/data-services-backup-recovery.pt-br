@@ -14,7 +14,7 @@ summary: Conclua algumas etapas no NetApp Backup and Recovery para começar a fa
 
 
 [role="lead"]
-Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus sistemas ONTAP primários locais para um sistema de armazenamento secundário e para o armazenamento de objetos nos seus sistemas NetApp StorageGRID .
+No NetApp Backup and Recovery, você pode fazer backup dos dados de volume dos seus sistemas ONTAP locais primários para um sistema de storage secundário e para o StorageGRID storage de objetos. Use esta página para preparar seu ambiente e ativar os backups.
 
 
 NOTE: Os "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select .
@@ -40,7 +40,7 @@ Quando o agente do Console e o sistema ONTAP local são instalados em um local s
 [[prepare-your-console-agent]]
 == Prepare seu agente de console
 
-O agente do Console é o software principal para a funcionalidade do Console.  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
+O agente do Console é o software principal para a funcionalidade do NetApp Console .  Um agente do Console é necessário para fazer backup e restaurar seus dados ONTAP .
 
 
 
@@ -73,7 +73,7 @@ Certifique-se de que a rede onde o agente do Console está instalado habilite as
 
 * A funcionalidade de NetApp Backup and Recovery está integrada ao agente do Console.  Quando instalado no modo privado, você precisará atualizar o software do agente do Console periodicamente para ter acesso a novos recursos.  Verifique olink:whats-new.html["Novidades do NetApp Backup and Recovery"] para ver os novos recursos em cada versão do NetApp Backup and Recovery .  Quando você quiser usar os novos recursos, siga as etapas para https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualizar o software do agente do Console"^] .
 +
-A nova versão do NetApp Backup and Recovery , que inclui a capacidade de agendar e criar snapshots e volumes replicados, além de criar backups para armazenamento de objetos, requer que você esteja usando a versão 3.9.31 ou superior do agente do Console. Portanto, é recomendável que você obtenha esta versão mais recente para gerenciar todos os seus backups.
+A nova versão do NetApp Backup e Recuperação, que inclui a capacidade de agendar e criar snapshots e volumes replicados, além de criar backups para storage de objetos, requer que você esteja usando a versão 3.9.31 ou superior do agente do Console. NetApp recomenda que você use esta versão mais recente para gerenciar todos os seus backups.
 
 * Quando você usa o NetApp Backup and Recovery em um ambiente SaaS, os dados de configuração do NetApp Backup and Recovery são armazenados em backup na nuvem.  Quando você usa o NetApp Backup and Recovery em um site sem acesso à Internet, os dados de configuração do NetApp Backup and Recovery são copiados para o bucket StorageGRID onde seus backups estão sendo armazenados.
 
@@ -196,7 +196,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 O StorageGRID deve atender aos seguintes requisitos. Veja o https://docs.netapp.com/us-en/storagegrid-117/["Documentação do StorageGRID"^] para mais informações.
 
-Para obter detalhes sobre os requisitos de proteção contra Datalock e Ransomware para StorageGRID, consulte link:prev-ontap-policy-object-options.html["Opções de política de backup para objeto"].
+Para obter detalhes sobre DataLock e os requisitos de proteção contra ransomware para o StorageGRID, consulte link:prev-ontap-policy-object-options.html["Opções de política de backup para objeto"].
 
 Versões do StorageGRID suportadas:: O StorageGRID 10.3 e versões posteriores são suportados.
 +
@@ -306,9 +306,9 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 === Inicie o assistente
 
 .Passos
-. Acesse o assistente Ativar backup e recuperação usando uma das seguintes maneiras:
+. Acesse o assistente Ativar Backup e Recuperação usando uma das seguintes maneiras:
 +
-** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de Backup e recuperação no painel direito.
+** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de NetApp Backup and Recovery no painel direito.
 +
 Se o destino dos seus backups existir como um sistema na página *Sistemas* do Console, você poderá arrastar o cluster ONTAP para o armazenamento de objetos.
 
@@ -316,7 +316,7 @@ Se o destino dos seus backups existir como um sistema na página *Sistemas* do C
 
 
 +
-A página Introdução do assistente mostra as opções de proteção, incluindo instantâneos locais, replicação e backups.  Se você escolheu a segunda opção nesta etapa, a página Definir estratégia de backup aparecerá com um volume selecionado.
+A página de Introdução do assistente mostra as opções de proteção, incluindo snapshots locais, replicação e backups. Se você selecionou a segunda opção nesta etapa, a página Definir estratégia de backup é exibida com um volume selecionado.
 
 . Continue com as seguintes opções:
 +
@@ -446,9 +446,9 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 +
 *** Digite o nome da política.
 *** Selecione até cinco programações, normalmente com frequências diferentes.
-*** Para políticas de backup para objetos, defina as configurações de proteção Datalock e Ransomware. Para obter detalhes sobre a proteção Datalock e Ransomware, consulte link:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"].
+*** Para políticas de backup para objetos, defina as configurações de DataLock e proteção contra ransomware. Para obter detalhes sobre DataLock e proteção contra ransomware, consulte link:prev-ontap-policy-object-options.html["Configurações de política de backup para objeto"].
 +
-Se o seu cluster estiver usando ONTAP 9.11.1 ou superior, você pode optar por proteger seus backups contra exclusão e ataques de ransomware configurando _DataLock e proteção contra ransomware_. _DataLock_ protege seus arquivos de backup contra modificações ou exclusões, e _proteção contra ransomware_ verifica seus arquivos de backup em busca de evidências de um ataque de ransomware em seus arquivos de backup.
+Se o seu cluster estiver usando o ONTAP 9.11.1 ou superior, você pode optar por proteger seus backups contra exclusão e ataques de ransomware configurando o _DataLock_ e a _proteção contra ransomware_. O _DataLock_ protege seus arquivos de backup contra modificações ou exclusões, e a _proteção contra ransomware_ verifica seus arquivos de backup em busca de evidências de um ataque de ransomware nos seus arquivos de backup.
 
 *** Selecione *Criar*.
 
@@ -498,9 +498,9 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 [[show-the-api-commands]]
 === Mostrar os comandos da API
 
-Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.
+Você pode exibir e, opcionalmente, copiar os comandos da API usados no assistente de ativação do NetApp Backup and Recovery. Você pode querer fazer isso para automatizar a ativação de backup em sistemas futuros.
 
 .Passos
-. No assistente Ativar backup e recuperação, selecione *Exibir solicitação de API*.
+. No assistente Ativar backup e recuperação, selecione *Visualizar solicitação de API*.
 . Para copiar os comandos para a área de transferência, selecione o ícone *Copiar*.
 

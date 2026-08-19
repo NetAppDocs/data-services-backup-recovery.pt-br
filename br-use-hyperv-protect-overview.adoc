@@ -4,7 +4,7 @@ permalink: br-use-hyperv-protect-overview.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Você pode proteger máquinas virtuais Hyper-V desde sistemas ONTAP locais até armazenamento primário e secundário, garantindo que seus dados estejam protegidos. 
 ---
-= Fluxo de trabalho de proteção do Hyper-V com o NetApp Backup and Recovery
+= Proteja as cargas de trabalho do Hyper-V com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Você pode proteger máquinas virtuais Hyper-V desde sistemas ONTAP loc
 
 
 [role="lead"]
-Proteja suas VMs Hyper-V com o NetApp Backup and Recovery. O NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com uso eficiente de espaço, consistentes em caso de falha e consistentes com a máquina virtual, tanto para instâncias autônomas quanto para instâncias de cluster FCI. Você também pode proteger máquinas virtuais Hyper-V provisionadas pelo System Center Virtual Machine Manager (SCVMM) e hospedadas em um compartilhamento CIFS.
+Use o NetApp Backup and Recovery para fazer backup e restaurar máquinas virtuais Hyper-V independentes, instâncias de cluster FCI e máquinas virtuais provisionadas pelo SCVMM hospedadas em um compartilhamento CIFS.
 
-Você pode fazer backup de cargas de trabalho do Hyper-V no Amazon Web Services S3 ou StorageGRID e restaurar cargas de trabalho do Hyper-V em um host Hyper-V local.
+Você pode fazer backup de cargas de trabalho do Hyper-V no Amazon S3 ou no StorageGRID e restaurá-las em um host Hyper-V no local.
 
-Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
+Utilize o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, com 3 cópias dos seus dados de origem em 2 sistemas de storage diferentes e 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
 * Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
 * Vários tipos de mídia garantem a viabilidade de failover no caso de falha física ou lógica de um tipo de mídia.
-* A cópia no local ajuda você a restaurar dados rapidamente, e você pode usar as cópias externas se a cópia no local estiver comprometida.
+* A cópia no local ajuda você a restaurar os dados rapidamente, e você pode usar as cópias externas caso a cópia no local seja comprometida.
 
 
-Quando você adiciona hosts Hyper-V e descobre recursos, o NetApp Backup and Recovery instala o plug-in NetApp Hyper-V e o plug-in NetApp SnapCenter Windows FileSystem no host Hyper-V para ajudar a gerenciar e proteger máquinas virtuais.
+Ao adicionar hosts Hyper-V e descobrir recursos, o NetApp Backup and Recovery instala o NetApp Hyper-V plug-in e o NetApp SnapCenter Windows FileSystem plug-in em cada host Hyper-V para ajudar a gerenciar e proteger máquinas virtuais.
 
 Você pode usar o NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do Hyper-V:
 

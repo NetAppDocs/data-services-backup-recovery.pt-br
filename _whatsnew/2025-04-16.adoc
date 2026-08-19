@@ -34,7 +34,7 @@ O NetApp Backup and Recovery agora estende seu suporte a armazenamentos de objet
 
 ==== Começando com Wasabi
 
-Para começar a usar o armazenamento de terceiros como um armazenamento de objetos, você deve habilitar um sinalizador no agente do Console.  Em seguida, você pode inserir os detalhes de conexão do seu armazenamento de objetos de terceiros e integrá-lo aos seus fluxos de trabalho de backup e recuperação.
+Para começar a usar storage de terceiros como armazenamento de objetos, você precisa habilitar uma opção no agente do Console. Em seguida, você pode inserir os detalhes de conexão do seu armazenamento de objetos de terceiros e integrá-lo aos seus fluxos de trabalho de backup e recuperação.
 
 .Passos
 . Conecte-se via SSH ao seu conector.

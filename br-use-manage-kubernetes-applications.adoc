@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-applications.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: O NetApp Backup and Recovery permite que você desproteja e exclua seus aplicativos Kubernetes e recursos associados. 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, on-premises, applications, virtual machines, backup and recovery, snapcenter 
+summary: Gerencie aplicativos Kubernetes e os dados de proteção relacionados em NetApp Backup and Recovery. 
 ---
 = Gerencie aplicativos Kubernetes em NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery permite que você desproteja e exclua seus
 
 
 [role="lead"]
-O NetApp Backup and Recovery permite que você desproteja e exclua seus aplicativos Kubernetes e recursos associados.
+Desproteja ou exclua aplicativos Kubernetes e remova pontos de restauração quando necessário.
 
 .Função necessária do NetApp Console
 Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
@@ -24,16 +24,16 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 [[unprotect-a-kubernetes-application]]
 == Desproteger um aplicativo Kubernetes
 
-Você pode desproteger um aplicativo se não quiser mais protegê-lo. Quando você desprotege um aplicativo, o NetApp Backup and Recovery para de protegê-lo, mas mantém todos os backups e instantâneos associados.
+Você pode desproteger um aplicativo se não precisar mais protegê-lo. Ao desproteger um aplicativo, o NetApp Backup and Recovery interrompe a proteção do aplicativo, mas mantém todos os backups e snapshots associados.
 
 
-NOTE: Não é possível remover a proteção de um aplicativo enquanto as operações de proteção ainda estiverem em execução. Aguarde a conclusão da operação ou, como solução alternativa, <<Remover um ponto de recuperação para um aplicativo Kubernetes,remover o ponto de restauração>> a operação de proteção em execução está usando. Você pode então remover a proteção do aplicativo.
+NOTE: Você não pode remover a proteção de um aplicativo enquanto as operações de proteção ainda estiverem em execução para ele. Aguarde a conclusão da operação ou remova o ponto de recuperação que a operação de proteção em execução está utilizando. Depois disso, você pode remover a proteção do aplicativo.
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.
-. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione uma instância do Kubernetes e selecione *Visualizar* para abrir os recursos associados a essa instância.
 . Selecione a aba *Aplicativos*.
-. Na lista de aplicativos, escolha um aplicativo que você deseja desproteger e selecione o menu Ações associado.
+. Na lista de aplicativos, selecione o aplicativo que você deseja desproteger e selecione o menu Ações correspondente.
 . Selecione *Desproteger*.
 . Leia o aviso e, quando estiver pronto, selecione *Desproteger*.
 
@@ -43,15 +43,15 @@ NOTE: Não é possível remover a proteção de um aplicativo enquanto as opera�
 [[delete-a-kubernetes-application]]
 == Excluir um aplicativo Kubernetes
 
-Exclua um aplicativo que você não precisa mais.  O NetApp Backup and Recovery interrompe a proteção e remove todos os backups e snapshots de aplicativos excluídos.
+Exclua um aplicativo que você não precisa mais. NetApp Backup and Recovery interrompe a proteção e remove todos os backups e snapshots dos aplicativos excluídos.
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.
-. Escolha uma instância do Kubernetes e selecione *Exibir* para visualizar os recursos associados a essa instância.
+. Selecione uma instância do Kubernetes e selecione *Visualizar* para abrir os recursos associados a essa instância.
 . Selecione a aba *Aplicativos*.
-. Na lista de aplicativos, escolha um aplicativo que você deseja excluir e selecione o menu Ações associado.
+. Na lista de aplicativos, selecione o aplicativo que você deseja excluir e selecione o menu Ações correspondente.
 . Selecione *Excluir*.
-. Habilite *Excluir snapshots e backups* para remover todos os snapshots e backups do aplicativo.
+. Ative a opção *Excluir snapshots e backups* para remover todos os snapshots e backups do aplicativo.
 +
 
 CAUTION: Você não poderá mais restaurar o aplicativo usando esses snapshots e backups.
@@ -64,13 +64,10 @@ CAUTION: Você não poderá mais restaurar o aplicativo usando esses snapshots e
 [[remove-a-restore-point-for-a-kubernetes-application]]
 == Remover um ponto de recuperação para um aplicativo Kubernetes
 
-Pode ser necessário remover um ponto de recuperação de um aplicativo se você precisar desprotegê-lo e operações de proteção estiverem em execução.
+Remova um ponto de recuperação de um aplicativo se você precisar desprotegê-lo enquanto as operações de proteção estiverem em execução.
 
 .Passos
 . No menu NetApp Backup e Recuperação, selecione *Restaurar*.
-. Escolha um aplicativo Kubernetes da lista e selecione *Visualizar e restaurar* para esse aplicativo.
-+
-A lista de pontos de restauração é exibida.
-
-. Escolha o ponto de recuperação que deseja excluir e selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Excluir ponto de recuperação* para excluí-lo.
+. Selecione um aplicativo Kubernetes na lista e selecione *Visualizar e Restaurar* para abrir seus pontos de restauração.
+. Selecione o ponto de recuperação que você deseja excluir e selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Excluir ponto de recuperação* para excluí-lo.
 

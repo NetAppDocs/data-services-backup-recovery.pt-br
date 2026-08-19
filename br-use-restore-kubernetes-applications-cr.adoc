@@ -4,7 +4,7 @@ permalink: br-use-restore-kubernetes-applications-cr.html
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. 
 ---
-= Restaure aplicações Kubernetes com o NetApp Backup and Recovery usando um recurso personalizado
+= Restaurar aplicativos Kubernetes com recursos personalizados
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery permite restaurar aplicativos que você pr
 
 
 [role="lead"]
-Você pode usar recursos personalizados para restaurar seus aplicativos a partir de um snapshot ou backup. A restauração a partir de um snapshot existente será mais rápida ao restaurar o aplicativo para o mesmo cluster.
+Use recursos personalizados para restaurar seus aplicativos a partir de um snapshot ou backup. A restauração a partir de um snapshot existente geralmente é mais rápida quando você restaura o aplicativo no mesmo cluster.
 
 [NOTE]
 ====
@@ -34,7 +34,7 @@ Ao restaurar um backup para um namespace diferente usando uma BackupRestore CR, 
 [NOTE]
 ====
 * Restaurar um backup para um namespace diferente com recursos existentes não alterará nenhum recurso que compartilhe nomes com aqueles no backup. Para restaurar todos os recursos do backup, exclua e recrie o namespace de destino ou restaure o backup para um novo namespace.
-* Ao usar uma CR para restaurar em um novo namespace, você deve criar manualmente o namespace de destino antes de aplicar a CR. NetApp Backup and Recovery cria namespaces automaticamente somente quando se usa a CLI.
+* Ao usar uma CR para restaurar em um novo namespace, você deve criar manualmente o namespace de destino antes de aplicar a CR. O NetApp Backup and Recovery cria namespaces automaticamente somente quando você usa a CLI.
 
 
 ====
@@ -307,7 +307,7 @@ kubectl get backups <BACKUP_NAME> -n my-app-namespace -o jsonpath='{.status.appA
 ----
 +
 
-NOTE: Se o BackupRestore CR não estiver disponível, você pode usar o comando mencionado na etapa 2 para visualizar o conteúdo do backup.
+NOTE: Se o BackupRestore CR não estiver disponível, você pode usar o comando da etapa 2 para visualizar o conteúdo do backup.
 
 ** *spec.namespaceMapping*: O mapeamento do namespace de origem da operação de restauração para o namespace de destino. Substitua  `my-source-namespace` e  `my-destination-namespace` pelas informações do seu ambiente.
 +

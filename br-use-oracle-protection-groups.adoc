@@ -14,13 +14,13 @@ summary: Crie e gerencie grupos de proteção para cargas de trabalho do Oracle 
 
 
 [role="lead"]
-Crie grupos de proteção para gerenciar as operações de backup de um conjunto de recursos do Oracle Database.  Um grupo de proteção é um agrupamento lógico de recursos, como bancos de dados, que você deseja proteger juntos.  Você precisa criar um grupo de proteção para fazer backup de bancos de dados Oracle.
+Crie grupos de proteção para gerenciar as operações de backup dos recursos do Oracle Database. Um grupo de proteção é um agrupamento lógico de recursos, como bancos de dados, que você deseja proteger em conjunto.
 
 Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
 * Crie um grupo de proteção.
 * Ver detalhes da proteção.
-* Faça backup de um grupo de proteção agora. Veja link:br-use-kvm-backup.html["Faça backup das cargas de trabalho do Oracle Database agora"].
+* Faça backup de um grupo de proteção agora. Veja link:br-use-oracle-backup.html["Faça backup das cargas de trabalho do Oracle Database agora"].
 * Excluir um grupo de proteção.
 
 
@@ -29,7 +29,7 @@ Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 [[create-a-protection-group]]
 == Crie um grupo de proteção
 
-Agrupe VMs e pools de armazenamento que você deseja proteger em um grupo de proteção.
+Agrupe os recursos do Oracle Database que você deseja proteger juntos em um grupo de proteção.
 
 *Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -40,7 +40,7 @@ Agrupe VMs e pools de armazenamento que você deseja proteger em um grupo de pro
 . Selecione a aba *Grupos de proteção*.
 . Selecione *Criar grupo de proteção*.
 . Forneça um nome para o grupo de proteção.
-. Selecione as VMs ou pools de armazenamento que você deseja incluir no grupo de proteção.
+. Selecione os bancos de dados que você deseja incluir no grupo de proteção.
 . Selecione *Avançar*.
 . Selecione a *Política de backup* que você deseja aplicar ao grupo de proteção.
 +

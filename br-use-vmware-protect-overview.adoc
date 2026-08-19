@@ -4,7 +4,7 @@ permalink: br-use-vmware-protect-overview.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
 ---
-= Fluxo de trabalho de proteção do VMware com o NetApp Backup and Recovery
+= Proteja as cargas de trabalho do VMware com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,16 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-Proteja suas VMs e datastores do VMware com NetApp Backup and Recovery. NetApp Backup and Recovery oferece operações de backup e restauração rápidas, com uso eficiente de espaço, consistentes com falhas e consistentes com a VM. Você pode fazer backup de cargas de trabalho do VMware em destinos de backup compatíveis e restaurar cargas de trabalho do VMware de volta para um host VMware local.
+Use o NetApp Backup and Recovery para proteger máquinas virtuais e datastores do VMware. Você pode criar backups rápidos, com uso eficiente de espaço, consistentes com falhas e consistentes com a máquina virtual, armazená-los em destinos de backup compatíveis e restaurar cargas de trabalho do VMware para um host VMware no local.
 
 
 NOTE: Esta versão do NetApp Backup and Recovery oferece suporte apenas ao VMware vCenter e não descobre vVols ou VMs em vVols.
 
-Use o NetApp Backup and Recovery para implementar uma estratégia 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
+Utilize o NetApp Backup and Recovery para implementar uma estratégia 3-2-1 com 3 cópias dos seus dados de origem em 2 sistemas de storage diferentes e 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
 * Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
 * Usar diferentes tipos de mídia ajuda na recuperação caso um tipo falhe.
-* Você pode restaurar rapidamente a partir da cópia local e usar as cópias externas se a cópia local estiver comprometida.
+* Você pode restaurar rapidamente a partir da cópia no local e usar as cópias externas caso a cópia no local seja comprometida.
 
 
 Você pode usar o NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do VMware:

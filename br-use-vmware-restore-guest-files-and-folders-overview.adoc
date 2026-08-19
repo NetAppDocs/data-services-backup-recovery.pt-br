@@ -14,14 +14,14 @@ summary: 'Você pode restaurar arquivos ou pastas de um disco de máquina virtua
 
 
 [role="lead"]
-Você pode restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows ou Linux.
+Use a restauração de arquivos do convidado para restaurar arquivos ou pastas de um disco de máquina virtual (VMDK) em um sistema operacional convidado Windows ou Linux.
 
 
 
-[[guest-restore-workflow]]
-== Fluxo de trabalho de restauração de convidado
+[[guest-file-restore-workflow]]
+== Fluxo de trabalho de restauração de arquivos de convidado
 
-As operações de restauração do sistema operacional convidado incluem as seguintes etapas:
+A restauração de arquivos do sistema operacional convidado inclui as seguintes etapas:
 
 . Anexar
 +
@@ -48,12 +48,12 @@ Restaurar os arquivos ou pastas selecionados para um local especificado.
 
 Analise todos os requisitos antes de restaurar arquivos ou pastas de um VMDK.
 
-* As ferramentas VMware devem estar instaladas e em execução.
+* O VMware Tools deve estar instalado e em execução.
 +
-NetApp Backup and Recovery utiliza informações das ferramentas VMware para estabelecer uma conexão com o sistema operacional convidado do VMware.
+O NetApp Backup and Recovery usa informações do VMware Tools para estabelecer uma conexão com o sistema operacional convidado do VMware.
 
 * Você deve saber o snapshot de backup e o VMDK para restaurar.
-* O disco virtual a ser conectado deve estar presente em um backup do NetApp Backup and Recovery .
+* O disco virtual que você conectar deve estar em um NetApp Backup and Recovery backup.
 +
 O disco virtual que contém o arquivo ou pasta que você deseja restaurar deve estar em um backup de máquina virtual que foi realizado usando o NetApp Backup and Recovery.
 
@@ -61,9 +61,9 @@ O disco virtual que contém o arquivo ou pasta que você deseja restaurar deve e
 +
 Se você deseja conectar um disco virtual a uma máquina virtual proxy, a máquina virtual proxy deve ser configurada antes do início da operação de conexão e restauração.
 
-* Para arquivos com nomes que não sejam do alfabeto inglês, você deve restaurá-los em um diretório, não como um único arquivo.
+* Para arquivos com nomes que contenham caracteres não ingleses, você deve restaurá-los em um diretório, não como um único arquivo.
 +
-Você pode restaurar arquivos com nomes não alfabéticos, como Kanji japonês, restaurando o diretório em que os arquivos estão localizados.
+Você pode restaurar arquivos com caracteres não ingleses, como Kanji japonês, restaurando o diretório em que os arquivos estão localizados.
 
 
 
@@ -106,14 +106,14 @@ IMPORTANT: Se você precisar usar uma conta que não seja a conta de administrad
 [[guest-file-restore-limitations]]
 == Limitações de restauração de arquivos de convidado
 
-Antes de restaurar um arquivo ou pasta de um sistema operacional convidado, você deve estar ciente das limitações do recurso.
+Antes de restaurar um arquivo ou pasta de um guest OS, revise estas limitações.
 
 * Não é possível restaurar tipos de discos dinâmicos dentro de um sistema operacional convidado.
 * Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido.
 * Você não pode restaurar arquivos ou pastas para uma pasta criptografada.
 * Arquivos e pastas ocultos são exibidos na página de navegação de arquivos e não podem ser filtrados.
 * Não é possível restaurar arquivos ou pastas entre máquinas virtuais com sistemas operacionais diferentes (ao restaurar para uma máquina virtual diferente, o tipo de sistema operacional de destino deve ser o mesmo que o tipo de sistema operacional de origem).
-* Não é possível restaurar de um sistema de arquivos NTFS para um sistema de arquivos FAT.
+* Você não pode restaurar de um sistema de arquivos NTFS para um sistema de arquivos FAT.
 +
 Quando você tenta restaurar do formato NTFS para o formato FAT, o descritor de segurança NTFS não é copiado porque o sistema de arquivos FAT não oferece suporte aos atributos de segurança do Windows.
 

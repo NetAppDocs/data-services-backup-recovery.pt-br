@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-O serviço NetApp Backup and Recovery precisa primeiro descobrir datastores e VMs VMware em execução em sistemas ONTAP para que você possa usar o serviço. Opcionalmente, você pode importar dados e políticas de backup do SnapCenter Plug-in for VMware vSphere se já o tiver instalado.
+Antes de você poder proteger datastores VMware e máquinas virtuais em execução em sistemas ONTAP, é necessário descobri-los no NetApp Backup and Recovery. Se você já tem o SnapCenter Plug-in for VMware vSphere instalado, também pode importar seus dados de backup e políticas.
 
 *Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -56,7 +56,7 @@ NOTE: Se você já tiver o SnapCenter Plug-in, certifique-se de atender aos pré
 [[if-snapcenter-plug-in-is-not-already-installed-add-a-vcenter-and-discover-resources]]
 === Se o plug-in SnapCenter ainda não estiver instalado, adicione um vCenter e descubra recursos
 
-Se você ainda não tiver o SnapCenter Plug-in para VMware instalado, adicione informações do vCenter e faça com que o NetApp Backup and Recovery descubra cargas de trabalho. Em cada agente do Console, selecione os sistemas onde você deseja descobrir cargas de trabalho.
+Se você ainda não tiver o SnapCenter Plug-in for VMware instalado, adicione as informações do vCenter para que o NetApp Backup and Recovery possa descobrir as cargas de trabalho. Em cada agente do Console, selecione os sistemas nos quais você deseja descobrir as cargas de trabalho.
 
 .Passos
 . Na navegação à esquerda do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
@@ -88,7 +88,7 @@ TIP: Este processo pode levar alguns minutos.
 [[if-snapcenter-plug-in-is-already-installed-import-snapcenter-plug-in-for-vmware-resources-into-netapp-backup-and-recovery]]
 === Se o SnapCenter Plug-in já estiver instalado, importe os recursos do SnapCenter Plug-in para VMware no NetApp Backup and Recovery
 
-Se você já tiver o SnapCenter Plug-in para VMware instalado, importe os recursos do SnapCenter Plug-in para o NetApp Backup and Recovery seguindo estas etapas.  O Console descobre hosts ESXi, datastores e VMs em vCenters e agenda a partir do Plug-in; você não precisa recriar todas essas informações.
+Se você já tiver o SnapCenter Plug-in for VMware instalado, importe os recursos do SnapCenter Plug-in para o NetApp Backup and Recovery seguindo estes passos. O Console descobre os hosts ESXi, datastores, VMs e agendamentos a partir do Plug-in, então você não precisa recriar essas informações.
 
 Você pode fazer isso das seguintes maneiras:
 
@@ -134,7 +134,7 @@ TIP: Depois de importar metadados do vCenter do plug-in SnapCenter , o NetApp Ba
 . Selecione *Importar* para validar suas entradas e registrar o plug-in SnapCenter .
 +
 
-NOTE: Se o plug-in SnapCenter já estiver registrado, você poderá atualizar os detalhes de registro existentes.
+NOTE: Se o SnapCenter Plug-in já estiver registrado, você pode atualizar os detalhes de registro existentes.
 
 
 
@@ -145,15 +145,15 @@ A página Inventário mostra o vCenter como não gerenciado no NetApp Backup and
 
 ==== Gerenciar recursos importados do plug-in SnapCenter
 
-Depois de importar os metadados do vCenter do SnapCenter Plug-in para VMware, gerencie os recursos no NetApp Backup and Recovery.  Depois de selecionar o gerenciamento desses recursos, o NetApp Backup and Recovery poderá fazer backup e recuperar os recursos que você importou.  Depois de iniciar o gerenciamento no NetApp Backup and Recovery, você não gerencia mais esses recursos no SnapCenter Plug-in.
+Após importar os metadados do vCenter a partir do SnapCenter Plug-in for VMware, gerencie os recursos no NetApp Backup and Recovery. Depois de selecionar gerenciar esses recursos, o NetApp Backup and Recovery pode fazer backup e restaurar os recursos que você importou. Após iniciar o gerenciamento no NetApp Backup and Recovery, você não gerencia mais esses recursos no SnapCenter Plug-in.
 
-Depois de selecionar o gerenciamento dos recursos, os recursos, as VMs e as políticas são importados do SnapCenter Plug-in para VMware. Os grupos de recursos, políticas e snapshots são migrados do plug-in e passam a ser gerenciados no NetApp Backup and Recovery.
+Após você selecionar a opção para gerenciar os recursos, o NetApp Backup and Recovery importa os recursos, as máquinas virtuais e as políticas do SnapCenter Plug-in for VMware. Os grupos de recursos, as políticas e os snapshots são migrados do Plug-in e passam a ser gerenciados no NetApp Backup and Recovery.
 
 .Passos
-. Depois de importar os recursos do VMware do SnapCenter Plug-in, no menu Backup e Recuperação, selecione *Inventário*.
-. Na página Inventário, selecione o vCenter importado que você deseja que o NetApp Backup and Recovery gerencie a partir de agora.
+. Após importar os recursos do VMware do SnapCenter Plug-in, selecione *Inventário* no menu Backup e Recuperação.
+. Na página de Inventário, selecione o vCenter importado que você deseja que o NetApp Backup and Recovery gerencie.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes* para exibir os detalhes da carga de trabalho.
-. Na página Inventário > carga de trabalho, selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Gerenciar* para exibir a página Gerenciar vCenter.
+. Na página Inventário > carga de trabalho, selecione o ícone Ações image:../media/icon-action.png["Opção de ações"] > *Gerenciar* para abrir a página Gerenciar vCenter.
 . Marque a caixa "Deseja continuar com a migração?" e selecione *Migrar*.
 
 
@@ -164,7 +164,7 @@ A página Inventário mostra os recursos do vCenter recém-gerenciados.
 
 ==== Continue para o Painel de NetApp Backup and Recovery
 
-. Para exibir o Painel de Controle, no menu Backup e Recuperação, selecione *Painel de Controle*.
+. Para exibir o Dashboard, selecione *Dashboard* no menu Backup e Recovery.
 . Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
 +
 link:br-use-dashboard.html["Saiba o que o Painel mostra para você"].

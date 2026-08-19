@@ -4,7 +4,7 @@ permalink: reference-policy-differences-snapcenter.html
 keywords: backup policy, backup policies, snapcenter, migration 
 summary: Existem algumas diferenças entre as políticas usadas no NetApp Backup and Recovery e aquelas usadas no SnapCenter. 
 ---
-= Políticas no SnapCenter comparadas com aquelas no NetApp Backup and Recovery
+= Diferenças de política entre SnapCenter e NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: Existem algumas diferenças entre as políticas usadas no NetApp Backup
 
 
 [role="lead"]
-Há algumas diferenças entre as políticas usadas no SnapCenter e aquelas usadas no NetApp Backup and Recovery que podem afetar o que você vê após importar recursos e políticas do SnapCenter.
+Use esta referência para entender as diferenças de política entre SnapCenter e NetApp Backup and Recovery que podem afetar os recursos e as políticas importadas.
 
 
 
@@ -27,7 +27,7 @@ O SnapCenter usa os seguintes níveis de agendamento:
 * *Mensal*: de janeiro a dezembro, com opção de apresentação em dias específicos ou em vários dias de cada mês, por exemplo, no dia 7.
 
 
-O NetApp Backup and Recovery usa os seguintes níveis de agendamento, que são ligeiramente diferentes:
+NetApp Backup and Recovery usa os seguintes níveis de agendamento, que diferem ligeiramente:
 
 * *Por hora*: executa instantâneos somente em intervalos de 15 minutos, por exemplo, intervalos de 1 hora ou 15 minutos menores que 60.
 * *Diariamente*: Horas do dia (0-23) com horário de início, por exemplo, às 10:00, com opção de execução a cada tantas horas.
@@ -50,7 +50,7 @@ Você pode atribuir várias políticas com o mesmo nível de agendamento a um re
 [[imported-snapcenter-daily-schedules]]
 == Agendas diárias importadas do SnapCenter
 
-O NetApp Backup and Recovery ajusta os agendamentos do SnapCenter da seguinte forma:
+NetApp Backup and Recovery ajusta os agendamentos do SnapCenter da seguinte forma:
 
 * Se o agendamento do SnapCenter for definido como menor ou igual a 7 dias, o NetApp Backup and Recovery definirá o agendamento como semanal. Alguns instantâneos são pulados durante a semana.
 +

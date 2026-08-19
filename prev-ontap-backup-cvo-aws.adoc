@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-cvo-aws.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
 ---
-= Faça backup dos dados do Cloud Volumes ONTAP no Amazon S3 com o NetApp Backup and Recovery
+= Faça backup do Cloud Volumes ONTAP para o Amazon S3 com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus sistemas Cloud Volumes ONTAP para o Amazon S3.
+Use o NetApp Backup and Recovery para fazer backup dos dados de volume dos seus sistemas Cloud Volumes ONTAP para o Amazon S3.
 
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
@@ -51,7 +51,7 @@ Para um contrato anual que permite agrupar o Cloud Volumes ONTAP e o NetApp Back
 
 Para o licenciamento BYOL do NetApp Backup and Recovery , você precisa do número de série da NetApp que lhe permite usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].  Você deve usar uma licença BYOL quando o agente do Console e o sistema Cloud Volumes ONTAP forem implantados em um site escuro.
 
-E você precisa ter uma conta AWS para o espaço de armazenamento onde seus backups estarão localizados.
+Você também precisa de uma conta da AWS para o espaço de storage onde seus backups serão armazenados.
 
 
 
@@ -208,7 +208,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 [[enable-netapp-backup-and-recovery-on-cloud-volumes-ontap]]
 == Habilitar NetApp Backup and Recovery em Cloud Volumes ONTAP
 
-Habilitar o NetApp Backup and Recovery é fácil.  As etapas variam um pouco dependendo se você tem um sistema Cloud Volumes ONTAP existente ou um novo.
+Você pode habilitar o NetApp Backup and Recovery em um novo ou existente Cloud Volumes ONTAP. Os passos variam ligeiramente para cada opção.
 
 *Habilitar o NetApp Backup and Recovery em um novo sistema*
 
@@ -232,9 +232,9 @@ O NetApp Backup and Recovery está habilitado no sistema.  Depois de criar volum
 Habilite o NetApp Backup and Recovery em um sistema existente a qualquer momento diretamente do Console.
 
 .Passos
-. Na página *Sistemas* do Console, selecione o cluster e selecione *Ativar* ao lado de Backup e recuperação no painel direito.
+. Na página *Sistemas* do Console, selecione o cluster e selecione *Ativar* ao lado de NetApp Backup and Recovery no painel direito.
 +
-Se o destino do Amazon S3 para seus backups existir como um cluster na página *Sistemas*, você poderá arrastar o cluster para o sistema Amazon S3 para iniciar o assistente de configuração.
+Se o Amazon S3 como destino para seus backups existir como um sistema na página *Sistemas*, você pode arrastar o cluster para o sistema Amazon S3 para iniciar o assistente de instalação.
 
 
 
@@ -243,7 +243,7 @@ Se o destino do Amazon S3 para seus backups existir como um cluster na página *
 [[activate-backups-on-your-ontap-volumes]]
 == Ative backups em seus volumes ONTAP
 
-Ative backups a qualquer momento diretamente do seu sistema local.
+Ative os backups a qualquer momento diretamente do seu Cloud Volumes ONTAP.
 
 Um assistente guia você pelas seguintes etapas principais:
 
@@ -260,17 +260,17 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 === Inicie o assistente
 
 .Passos
-. Acesse o assistente Ativar backup e recuperação usando uma das seguintes maneiras:
+. Acesse o assistente Ativar Backup e Recuperação usando uma das seguintes maneiras:
 +
-** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de Backup e recuperação no painel direito.
+** Na página *Sistemas* do Console, selecione o sistema e selecione *Ativar > Volumes de backup* ao lado de NetApp Backup and Recovery no painel direito.
 +
-Se o destino da AWS para seus backups existir como um sistema na página *Sistemas* do Console, você poderá arrastar o cluster ONTAP para o armazenamento de objetos da AWS.
+Se o Amazon S3 destino para seus backups existir como um sistema na página *Sistemas* do Console, você pode arrastar o cluster ONTAP para o sistema Amazon S3.
 
-** Selecione *Volumes* na barra de Backup e Recuperação. Na guia Volumes, selecione *Ações*. image:icon-action.png["Ícone de ações"] Na opção do ícone, selecione *Ativar proteção 3-2-1* para um único volume (que ainda não tenha replicação ou backup para armazenamento de objetos ativado).
+** Selecione *Volumes* na barra de Backup and Recovery. Na guia Volumes, selecione o ícone image:icon-action.png["Ícone de ações"] *Ações* e selecione *Ativar Proteção 3-2-1* para um único volume (que ainda não tenha replicação ou backup para storage de objetos ativado).
 
 
 +
-A página Introdução do assistente mostra as opções de proteção, incluindo instantâneos locais, replicação e backups.  Se você escolheu a segunda opção nesta etapa, a página Definir estratégia de backup aparecerá com um volume selecionado.
+A página de Introdução do assistente exibe as opções de proteção, incluindo snapshots locais, replicação e backups. Se você usou a segunda opção nesta etapa, a página Definir Estratégia de Backup é exibida com um volume selecionado.
 
 . Continue com as seguintes opções:
 +
@@ -395,7 +395,7 @@ Crie um novo bucket ou selecione um existente.
 
 ** *Criptografia*: Se você criou um novo bucket, insira as informações da chave de criptografia fornecidas pelo provedor. Escolha se deseja usar as chaves de criptografia padrão da AWS ou selecionar suas próprias chaves gerenciadas pelo cliente em sua conta da AWS para gerenciar a criptografia de seus dados. (https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-setting-up-kms.html["Veja como usar suas próprias chaves de criptografia"^]).
 +
-Se você optar por usar suas próprias chaves gerenciadas pelo cliente, insira o cofre de chaves e as informações da chave.
+Se você optar por usar suas próprias chaves gerenciadas pelo cliente, insira as informações da chave.
 
 +
 
@@ -443,7 +443,7 @@ Um volume replicado é criado no cluster de destino que será sincronizado com o
 
 Um bucket S3 é criado na conta de serviço indicada pela chave de acesso S3 e pela chave secreta que você inseriu, e os arquivos de backup são armazenados lá.
 
-O Painel de Backup de Volume é exibido para que você possa monitorar o estado dos backups.
+O painel de controle de backup de volume é exibido para que você possa monitorar o estado dos backups.
 
 Você também pode monitorar o status dos trabalhos de backup e restauração usando olink:br-use-monitor-tasks.html["Página de monitoramento de tarefas"] .
 
@@ -452,9 +452,9 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 [[show-the-api-commands]]
 === Mostrar os comandos da API
 
-Talvez você queira exibir e, opcionalmente, copiar os comandos de API usados no assistente Ativar backup e recuperação.  Talvez você queira fazer isso para automatizar a ativação de backup em sistemas futuros.
+Você pode exibir e, opcionalmente, copiar os comandos da API usados no assistente de ativação do NetApp Backup and Recovery. Você pode querer fazer isso para automatizar a ativação de backup em sistemas futuros.
 
 .Passos
-. No assistente Ativar backup e recuperação, selecione *Exibir solicitação de API*.
+. No assistente Ativar backup e recuperação, selecione *Visualizar solicitação de API*.
 . Para copiar os comandos para a área de transferência, selecione o ícone *Copiar*.
 

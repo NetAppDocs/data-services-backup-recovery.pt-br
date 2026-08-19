@@ -14,7 +14,7 @@ summary: Você pode usar a função Pesquisar e Restaurar para recuperar volumes
 
 
 [role="lead"]
-Você pode usar a função Pesquisar e Restaurar para recuperar volumes, pastas ou arquivos de backup do ONTAP. A função Pesquisar e Restaurar permite pesquisar em todos os backups (incluindo snapshots locais, volumes replicados e storage de objetos) sem a necessidade de nomes exatos de sistema, volume ou arquivo.
+Use a função Pesquisar e Restaurar para recuperar volumes, pastas ou arquivos de backups do ONTAP quando você não souber o nome exato do sistema, volume ou arquivo. Você pode pesquisar em snapshots locais, volumes replicados e backups de storage de objetos.
 
 Restaurar a partir de snapshots locais ou volumes replicados geralmente é mais rápido e menos dispendioso do que restaurar a partir de armazenamento de objetos.
 
@@ -46,7 +46,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restaura�
 
 
 ====
-Antes de começar, você deve ter uma ideia do nome ou local do volume ou arquivo que deseja restaurar.
+Antes de começar, você deve ter uma ideia do nome ou da localização do volume ou arquivo que você deseja restaurar.
 
 
 
@@ -74,21 +74,21 @@ Você pode restaurar dados do ONTAP de um arquivo de backup que reside em um sis
 | Armazenamento em nuvem do Google | Cloud Volumes ONTAP no sistema Google On-premises ONTAP | Cloud Volumes ONTAP no sistema Google On-premises ONTAP 
 
 
-| NetApp StorageGRID | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
+| StorageGRID | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
 
 
 | ONTAP S3 | Sistema ONTAP local Cloud Volumes ONTAP | Sistema ONTAP local 
 |===
 Para Pesquisar e Restaurar, o agente do Console pode ser instalado nos seguintes locais:
 
-* Para o Amazon S3, o agente do Console pode ser implantado na AWS ou em suas instalações
-* Para o Azure Blob, o agente do Console pode ser implantado no Azure ou em suas instalações
+* Para o Amazon S3, o agente do Console pode ser implantado na AWS ou em ambientes locais
+* Para o Azure Blob, o agente do Console pode ser implantado no Azure ou em um ambiente local
 * Para o Google Cloud Storage, o agente do Console deve ser implantado na sua VPC do Google Cloud Platform
-* Para StorageGRID, o agente do Console deve ser implantado em suas instalações; com ou sem acesso à Internet
-* Para o ONTAP S3, o agente do Console pode ser implantado em suas instalações (com ou sem acesso à Internet) ou em um ambiente de provedor de nuvem
+* Para o StorageGRID, o agente do Console deve ser implantado localmente, com ou sem acesso à internet
+* Para o ONTAP S3, o agente do Console pode ser implementado localmente (com ou sem acesso à internet) ou em um ambiente de provedor de nuvem
 
 
-Observe que as referências a "sistemas ONTAP locais" incluem sistemas FAS, AFF e ONTAP Select .
+Observe que as referências a "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select.
 
 
 
@@ -166,7 +166,7 @@ Mesmo que você esteja usando um agente do Console local, os requisitos do prove
 [[search-restore-process]]
 == Processo de busca e restauração
 
-O processo é assim:
+O processo funciona assim:
 
 . Antes de poder usar a Pesquisa e Restauração, você precisa habilitar a "Indexação" em cada sistema de origem do qual deseja restaurar dados de volume.  Isso permite que o Catálogo Indexado rastreie os arquivos de backup de cada volume.
 +
@@ -208,10 +208,10 @@ O Catálogo Indexado suporta o seguinte:
 * O tempo máximo para indexação de linha de base é inferior a 7 dias.  O tempo real variará dependendo do seu ambiente.
 
 
-.Etapas para habilitar a indexação de um sistema:
+.Etapas para habilitar a indexação em um sistema:
 Se a indexação já estiver habilitada para seu sistema, vá para a próxima seção para restaurar seus dados.
 
-Primeiro, você precisará montar um volume separado para armazenar os arquivos de catálogo. Isso evita a perda de dados caso o tamanho dos arquivos que contêm os instantâneos se torne muito grande. Isso não é necessário em todos os clusters; você pode montar qualquer volume de qualquer um dos clusters em seu ambiente. Caso contrário, a indexação poderá não funcionar corretamente.
+Primeiro, monte um volume separado para armazenar os arquivos de catálogo. Isso ajuda a evitar perda de dados caso os arquivos de catálogo de snapshots fiquem muito grandes. Isso não é necessário em todos os clusters; você pode montar qualquer volume de qualquer um dos clusters em seu ambiente. Se você não fizer isso, a indexação pode não funcionar corretamente.
 
 Para o volume montado, utilize as seguintes orientações de dimensionamento:
 
@@ -223,7 +223,7 @@ Para o volume montado, utilize as seguintes orientações de dimensionamento:
 
 
 [[mount-volume-steps]]
-.Etapa para montar o volume para reindexar o catálogo
+.Etapa para montar o volume para reindexação do catálogo
 . Monte o volume em `/opt/application/netapp/cbs` digitando o seguinte comando, onde:
 +
 ** `volume name` é o volume no cluster onde os arquivos de catálogo serão armazenados.
@@ -269,21 +269,20 @@ Depois de você ter<<enable-the-indexed-catalog-for-each-system,indexação habi
 
 .Passos
 . No menu Console, selecione *Proteção > Backup e recuperação*.
-. Selecione a aba *Restaurar* e o Painel de Restauração será exibido.
-. Na seção _Pesquisar e restaurar_, selecione *Pesquisar e restaurar*.
+. Selecione a aba *Restaurar* para exibir o Painel de Restauração.
 . Na seção _Pesquisar e restaurar_, selecione *Pesquisar e restaurar*.
 . Na página Pesquisar e Restaurar:
 +
 .. Na _Barra de pesquisa_, insira um nome de volume completo ou parcial, nome de pasta ou nome de arquivo.
 .. Selecione o tipo de recurso: *Volumes*, *Arquivos*, *Pastas* ou *Todos*.
-.. Na área _Filtrar por_, selecione os critérios de filtro. Por exemplo, você pode selecionar o sistema onde os dados residem e o tipo de arquivo, por exemplo, um arquivo .JPEG. Ou você pode selecionar o tipo de Local de Backup se quiser pesquisar resultados somente em snapshots ou arquivos de backup disponíveis no armazenamento de objetos.
+.. Na área _Filtrar por_, selecione os critérios de filtro. Por exemplo, você pode selecionar o sistema onde os dados residem e o tipo de arquivo, como um arquivo .JPEG. Você também pode selecionar o tipo de local de backup se quiser pesquisar apenas em snapshots disponíveis ou arquivos de backup no storage de objetos.
 
 
 . Selecione *Pesquisar* e a área Resultados da pesquisa exibirá todos os recursos que têm um arquivo, pasta ou volume que corresponde à sua pesquisa.
 . Localize o recurso que contém os dados que você deseja restaurar e selecione *Exibir todos os backups* para exibir todos os arquivos de backup que contêm o volume, pasta ou arquivo correspondente.
 . Localize o arquivo de backup que você deseja usar para restaurar os dados e selecione *Restaurar*.
 +
-Observe que os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo em sua pesquisa.  Você pode optar por restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.
+Observe que os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo da sua pesquisa. Você pode escolher restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.
 
 . Selecione o local de destino onde você deseja que o volume, a pasta ou o(s) arquivo(s) sejam restaurados e selecione *Restaurar*.
 +

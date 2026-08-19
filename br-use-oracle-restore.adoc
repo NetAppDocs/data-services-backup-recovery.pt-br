@@ -4,7 +4,7 @@ permalink: br-use-oracle-restore.html
 keywords: restore, vm, oracle, databases, snapshots, object storage, cloud storage, backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteja suas cargas de trabalho do Oracle Database com NetApp Backup and Recovery. 
 ---
-= Restaure bancos de dados Oracle com o NetApp Backup and Recovery
+= Restaure cargas de trabalho do Oracle Database com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho do Oracle Database com NetApp Backup an
 
 
 [role="lead"]
-Restaure bancos de dados Oracle a partir de snapshots, de um backup replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
+Restaure cargas de trabalho do Oracle Database a partir de snapshots, backups replicados em storage secundário ou backups armazenados em storage de objetos usando o NetApp Backup and Recovery.
 
 .Restaurar a partir desses locais
 Você pode restaurar bancos de dados de diferentes locais de partida:
@@ -32,10 +32,10 @@ Você pode restaurar dados para o local original; restaurar para um local altern
 
 
 
-[[how-restoring-oracle-databases-works]]
-== Como funciona a restauração de bancos de dados Oracle
+[[how-oracle-database-restore-works]]
+== Como funciona a restauração do banco de dados Oracle
 
-Ao restaurar bancos de dados Oracle, ocorre o seguinte:
+Ao restaurar cargas de trabalho do Oracle Database, ocorre o seguinte:
 
 * Quando você restaura um banco de dados de um snapshot local, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
 * Ao restaurar a partir do armazenamento replicado, você pode restaurá-lo para o local original.
@@ -49,9 +49,9 @@ Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode 
 [[restore-an-oracle-database]]
 == Restaurar um banco de dados Oracle
 
-Dependendo de suas necessidades, restaure um banco de dados Oracle para um ponto específico no tempo, para um número de alteração do sistema (SCN) específico ou para o último estado bom.  Você também pode simplesmente restaurar o banco de dados a partir de instantâneos e pular o processo de recuperação automatizado.  Talvez você queira pular o processo de recuperação automatizado se quiser executar a recuperação manualmente.  Você pode pesquisar o banco de dados usando seu nome ou com filtros específicos.
+Dependendo das suas necessidades, restaure um banco de dados Oracle para um ponto específico no tempo, para um número de alteração do sistema (SCN) específico ou para o último estado íntegro. Você também pode restaurar o banco de dados a partir de Snapshots e ignorar o processo de recuperação automatizada, por exemplo, se você quiser realizar a recuperação manualmente. Você pode pesquisar o banco de dados usando seu nome ou com filtros específicos.
 
-*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: superadministrador de backup e recuperação ou administrador de restauração de backup e recuperação https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
@@ -130,13 +130,13 @@ Os instantâneos correspondentes são exibidos.
 . *Opções de pré-restauração*:
 +
 ** Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
-** Escolha um valor de tempo limite para o script.  Se o script não for executado dentro desse período, a restauração continuará de qualquer maneira.
+** Escolha um valor de tempo limite para o script. Se o script não for executado dentro desse período, a restauração prossegue mesmo assim.
 
 
 . *Opções pós-restauração*:
 +
 ** *Postscript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
-** *Abra o banco de dados ou o banco de dados contêiner no modo LEITURA-GRAVAÇÃO após a recuperação*: Após a conclusão da operação de restauração, o Backup e Recuperação habilitará o modo LEITURA-GRAVAÇÃO para o banco de dados.
+** *Abra o banco de dados ou o banco de dados contêiner no modo LEITURA/GRAVAÇÃO após a recuperação*: Após a conclusão da operação de restauração, o NetApp Backup and Recovery habilita o modo LEITURA/GRAVAÇÃO para o banco de dados.
 
 
 . Seção *Notificação*:
@@ -150,7 +150,7 @@ Os instantâneos correspondentes são exibidos.
 --
 .Restaurar para local alternativo
 --
-Não disponível para a prévia de cargas de trabalho do Oracle Database.
+Não disponível para cargas de trabalho do Oracle Database nesta versão prévia.
 
 --
 ====

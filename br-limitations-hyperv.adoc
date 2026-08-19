@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, SAP HANA database, virtual machine, vm 
-summary: Analise estas limitações de NetApp Backup e recuperação antes de usar Backup e Recuperação em seu ambiente. 
+summary: Analise estas limitações do NetApp Backup and Recovery antes de usar Backup and Recovery em seu ambiente. 
 ---
 = Limitações conhecidas com o NetApp Backup and Recovery para cargas de trabalho do Hyper-V
 :hardbreaks:
@@ -14,18 +14,18 @@ summary: Analise estas limitações de NetApp Backup e recuperação antes de us
 
 
 [role="lead"]
-Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem com esta versão estão listados aqui.  Leia estas limitações com atenção.
+Analise as limitações atuais e as ações não suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery.
 
 
 
 [[unsupported-actions]]
 == Ações não suportadas
 
-As seguintes ações não são suportadas em cargas de trabalho do Hyper-V no NetApp Backup and Recovery:
+As seguintes ações não são suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery:
 
 * Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
 * A proteção de VMs de segunda geração armazenadas em storage SAN não é compatível com Microsoft Windows Server 2025.
-* Crie grupos de recursos usando máquinas virtuais de vários hosts Hyper-V.
-* Discos de abrangência (em vários compartilhamentos CIFS)
+* Criando grupos de recursos usando VMs de vários hosts Hyper-V
+* Utilizando discos em vários compartilhamentos CIFS
 * Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
 

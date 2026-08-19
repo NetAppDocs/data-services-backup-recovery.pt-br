@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-Restaure cargas de trabalho do VMware a partir de snapshots, de um backup da carga de trabalho replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
+Use o NetApp Backup and Recovery para restaurar cargas de trabalho do VMware a partir de snapshots, backups replicados em storage secundário ou backups armazenados em storage de objetos.
 
 .Restaurar a partir desses locais
 Você pode restaurar cargas de trabalho de diferentes locais de partida:
@@ -39,8 +39,8 @@ TIP: Você pode pagar taxas extras ao seu provedor de nuvem para acessar o arqui
 
 
 
-[[how-restoring-workloads-works]]
-== Como funciona a restauração de cargas de trabalho
+[[how-vmware-workload-restore-works]]
+== Como funciona a restauração de cargas de trabalho do VMware
 
 Ao restaurar cargas de trabalho, ocorre o seguinte:
 
@@ -57,7 +57,7 @@ image:diagram_browse_restore_volume-unified.png["Um diagrama que mostra o fluxo 
 [[restore-workload-data-from-the-restore-option-search-restore]]
 == Restaurar dados de carga de trabalho a partir da opção Restaurar (Pesquisar e Restaurar)
 
-Restaure cargas de trabalho do VMware usando a opção Restaurar. Você pode procurar o instantâneo pelo nome ou usando filtros.
+Use a opção Restaurar para restaurar cargas de trabalho do VMware. Você pode pesquisar um snapshot pelo nome ou usando filtros.
 
 *Função necessária do NetApp Console*: Visualizador de armazenamento, superadministrador de backup e recuperação, administrador de restauração de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^]
 
@@ -102,7 +102,7 @@ Se optar pelo armazenamento secundário, selecione o local de destino na lista s
 ====
 .Restaurar para o local original
 --
-Ao restaurar para o local original, você não pode alterar o vCenter de destino, o host ESXi, o armazenamento de dados ou o nome da máquina virtual. A máquina virtual original é sobrescrita durante a operação de restauração.
+Ao restaurar para o local original, você não pode alterar o destino vCenter, o host ESXi, o datastore ou o nome da máquina virtual. A operação de restauração sobrescreve a máquina virtual original.
 
 . Selecione o painel *Localização original*.
 . Escolha uma das seguintes opções:
@@ -137,7 +137,7 @@ Ao restaurar para um local alternativo, você pode alterar o vCenter de destino,
 *** *Host ESXi*: Selecione o host onde deseja restaurar o snapshot.
 *** *Rede*: Selecione a rede na qual deseja restaurar o snapshot.
 *** *Repositório de dados*: Na lista suspensa, selecione o nome do repositório de dados onde deseja restaurar o snapshot.
-*** *Nome da máquina virtual*: Insira o nome da máquina virtual onde você deseja restaurar o snapshot. Se o nome corresponder a uma VM já existente no armazenamento de dados, o Backup e Recuperação tornará o nome único, acrescentando um carimbo de data/hora atual.
+*** *Nome da máquina virtual*: Insira o nome da máquina virtual onde você deseja restaurar o snapshot. Se o nome corresponder a uma máquina virtual já existente no datastore, o NetApp Backup and Recovery torna o nome exclusivo ao acrescentar o carimbo de data/hora atual.
 
 
 ** Seção *Armazenamento de destino* (visível somente ao restaurar a partir do armazenamento de objetos):

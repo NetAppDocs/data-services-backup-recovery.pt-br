@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery permite que você gerencie ganchos de exec
 
 
 [role="lead"]
-Um gancho de execução é uma ação personalizada que é executada com uma operação de proteção de dados em um aplicativo Kubernetes gerenciado.  Por exemplo, crie snapshots consistentes com o aplicativo usando um gancho de execução para pausar transações de banco de dados antes de um snapshot e retomá-las depois.  Ao criar um modelo de gancho de execução, especifique o tipo de gancho, o script a ser executado e filtros para contêineres de destino.  Use o modelo para vincular ganchos de execução aos seus aplicativos.
+Crie modelos de gancho de execução para executar scripts personalizados antes ou depois das operações de proteção para aplicativos Kubernetes gerenciados.
 
 [NOTE]
 ====
@@ -33,7 +33,7 @@ Administrador da organização ou administrador do SnapCenter . link:reference-r
 [[types-of-execution-hooks]]
 == Tipos de ganchos de execução
 
-O NetApp Backup and Recovery oferece suporte aos seguintes tipos de ganchos de execução, com base em quando eles podem ser executados:
+O NetApp Backup and Recovery suporta os seguintes tipos de ganchos de execução com base em quando são executados:
 
 * Pré-instantâneo
 * Pós-instantâneo
@@ -53,15 +53,15 @@ Quando uma operação de proteção de dados é executada, os eventos de gancho 
 . Congelamentos do sistema de arquivos ocorrem, se aplicável.
 . A operação de proteção de dados é realizada.
 . Sistemas de arquivos congelados são descongelados, se aplicável.
-. O NetApp Backup and Recovery executa quaisquer ganchos de execução de pré-operação personalizados aplicáveis ​​nos contêineres apropriados.  Você pode criar vários ganchos pós-operação personalizados, mas a ordem de execução deles não é garantida nem configurável.
+. O NetApp Backup and Recovery executa quaisquer hooks de pós-operação personalizados aplicáveis nos contêineres apropriados. Você pode criar vários hooks de pós-operação personalizados, mas a ordem de execução deles não é garantida nem configurável.
 
 
-Se você criar vários ganchos do mesmo tipo, a ordem de execução deles não será garantida.  Ganchos de diferentes tipos sempre são executados na ordem especificada. Por exemplo, a seguir está a ordem de execução de uma configuração que possui todos os diferentes tipos de ganchos:
+Se você criar vários hooks do mesmo tipo, a ordem de execução deles não é garantida. Hooks de tipos diferentes sempre são executados na ordem especificada. Por exemplo, os hooks são executados nesta ordem quando uma configuração inclui todos os tipos de hook suportados:
 
-. Ganchos pré-instantâneos executados
-. Ganchos pós-instantâneos executados
-. Ganchos de pré-backup executados
-. Ganchos pós-backup executados
+. Ganchos pré-snapshot são executados
+. Ganchos pós-snapshot são executados
+. Os ganchos de pré-backup são executados
+. Os hooks pós-backup são executados
 
 
 
@@ -75,25 +75,25 @@ NOTE: Se um gancho de execução pré-snapshot adicionar, alterar ou remover rec
 [[important-notes-about-custom-execution-hooks]]
 == Notas importantes sobre ganchos de execução personalizados
 
-Considere o seguinte ao planejar ganchos de execução para seus aplicativos.
+Considere o seguinte ao planejar os hooks de execução para seus aplicativos.
 
 * Um gancho de execução deve usar um script para executar ações.  Muitos ganchos de execução podem referenciar o mesmo script.
-* Os ganchos de execução precisam ser escritos no formato de scripts de shell executáveis.
+* Os ganchos de execução devem ser scripts shell executáveis.
 * O tamanho do script é limitado a 96 KB.
 * As configurações do gancho de execução e quaisquer critérios correspondentes são usados para determinar quais ganchos são aplicáveis a uma operação de snapshot, backup ou restauração.
 
 
 
-NOTE: Ganchos de execução podem reduzir ou desabilitar a funcionalidade do aplicativo.  Faça com que seus ganchos personalizados sejam executados o mais rápido possível. Se você iniciar uma operação de backup ou snapshot com ganchos de execução associados, mas depois cancelá-la, os ganchos ainda poderão ser executados se a operação de backup ou snapshot já tiver começado. Isso significa que a lógica usada em um gancho de execução pós-backup não pode assumir que o backup foi concluído.
+NOTE: Os hooks de execução podem reduzir ou desativar a funcionalidade do aplicativo. Faça com que seus hooks personalizados sejam executados o mais rápido possível. Se você cancelar uma operação de backup ou de snapshot que tenha hooks de execução associados, esses hooks ainda serão executados se a operação já tiver sido iniciada. A lógica de um hook de execução pós-backup não pode pressupor que o backup foi concluído.
 
 
 
 [[execution-hook-filters]]
 == Filtros de gancho de execução
 
-Ao adicionar ou editar um gancho de execução para um aplicativo, você pode adicionar filtros ao gancho de execução para gerenciar quais contêineres o gancho corresponderá.  Os filtros são úteis para aplicativos que usam a mesma imagem de contêiner em todos os contêineres, mas podem usar cada imagem para uma finalidade diferente (como o Elasticsearch).  Os filtros permitem que você crie cenários em que os ganchos de execução são executados em alguns contêineres idênticos, mas não necessariamente em todos.  Se você criar vários filtros para um único gancho de execução, eles serão combinados com um operador lógico AND.  Você pode ter até 10 filtros ativos por gancho de execução.
+Ao adicionar ou editar um gancho de execução para um aplicativo, você pode adicionar filtros a esse gancho para controlar a quais contêineres ele corresponde. Os filtros são úteis para aplicativos que usam a mesma imagem de contêiner em todos os contêineres, mas que podem usar cada imagem para uma finalidade diferente (como Elasticsearch). Os filtros permitem criar cenários em que os ganchos de execução são executados em alguns, mas não necessariamente em todos os contêineres idênticos. Se você criar vários filtros para um único gancho de execução, eles serão combinados com um operador lógico AND. Você pode ter até 10 filtros ativos por gancho de execução.
 
-Cada filtro que você adiciona a um gancho de execução usa uma expressão regular para corresponder aos contêineres no seu cluster.  Quando um gancho corresponde a um contêiner, o gancho executará seu script associado naquele contêiner.  Expressões regulares para filtros usam a sintaxe Regular Expression 2 (RE2), que não oferece suporte à criação de um filtro que exclua contêineres da lista de correspondências.  Para obter informações sobre a sintaxe que o NetApp Backup and Recovery oferece suporte para expressões regulares em filtros de gancho de execução, consulte https://github.com/google/re2/wiki/Syntax["Suporte à sintaxe de Expressão Regular 2 (RE2)"^] .
+Cada filtro que você adiciona a um gancho de execução usa uma expressão regular para corresponder contêineres no seu cluster. Quando um gancho corresponde a um contêiner, o gancho executa o script associado nesse contêiner. As expressões regulares para filtros usam a sintaxe Regular Expression 2 (RE2), que não permite criar um filtro que exclua contêineres da lista de correspondências. Para obter informações sobre a sintaxe que o NetApp Backup and Recovery oferece suporte para expressões regulares em filtros de ganchos de execução, consulte  https://github.com/google/re2/wiki/Syntax["Suporte à sintaxe de Expressão Regular 2 (RE2)"^].
 
 
 NOTE: Se você adicionar um filtro de namespace a um gancho de execução executado após uma operação de restauração ou clonagem e a origem e o destino da restauração ou clonagem estiverem em namespaces diferentes, o filtro de namespace será aplicado somente ao namespace de destino.

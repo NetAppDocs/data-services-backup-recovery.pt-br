@@ -14,13 +14,13 @@ summary: Você pode usar a função Pesquisar e Restaurar para recuperar volumes
 
 
 [role="lead"]
-Os backups dos dados de volume do seu ONTAP são armazenados como snapshots, em volumes replicados ou em armazenamento de objetos.  Você pode restaurar dados de qualquer um desses locais em um ponto específico no tempo.  Com o NetApp Backup and Recovery, você pode restaurar um volume inteiro, uma pasta ou arquivos individuais conforme necessário.
+Use o NetApp Backup and Recovery para restaurar os dados do seu volume ONTAP a partir de snapshots, volumes replicados ou storage de objetos em um ponto específico no tempo. Você pode restaurar um volume inteiro, uma pasta ou arquivos individuais conforme necessário.
 
 
 NOTE: Ao restaurar um volume com SnapLock habilitado, o volume restaurado mantém a proteção SnapLock somente se o armazenamento de destino tiver WORM habilitado. Se você restaurar para um destino que não seja WORM, o status SnapLock será removido do volume restaurado.
 
 * Você pode restaurar um *volume* (como um novo volume) para o sistema original, para um sistema diferente que esteja usando a mesma conta de nuvem ou para um sistema ONTAP local.
-* Você pode restaurar uma *pasta* de snapshots replicados ou de storage de objetos para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta na nuvem ou para um volume em um sistema ONTAP local. A restauração de pastas a partir de snapshots locais não é suportada.
+* Você pode restaurar uma *pasta* de um volume replicado ou de um backup em storage de objetos para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta na nuvem ou para um volume em um sistema ONTAP local. A restauração de pastas a partir de snapshots locais não é suportada.
 * Você pode restaurar *arquivos* para um volume no sistema original, para um volume em um sistema diferente que esteja usando a mesma conta de nuvem ou para um volume em um sistema ONTAP local.
 
 
@@ -42,7 +42,7 @@ NOTE: Para limitações relacionadas à restauração de dados ONTAP , consultel
 
 
 [[the-restore-dashboard]]
-== O Painel de Restauração
+== O painel de restauração
 
 Use o Painel de Restauração para executar operações de restauração de volumes, pastas e arquivos. Para acessar o Painel de Restauração, selecione *Backup e recuperação* no menu Console e, em seguida, selecione a guia *Restaurar*.  Você também pode selecionarimage:icon-options-vertical.gif["Botão Mais"] > *Visualizar Painel de Restauração* no serviço de Backup e Recuperação, no painel Serviços.
 
@@ -53,10 +53,10 @@ O Painel de Restauração oferece duas maneiras diferentes de restaurar dados de
 
 
 
-[[comparing-browse-restore-and-search-restore]]
-== Comparando Navegar e Restaurar e Pesquisar e Restaurar
+[[compare-browse-restore-and-search-restore]]
+== Compare Navegar e Restaurar com Pesquisar e Restaurar
 
-Em termos gerais, _Navegar e Restaurar_ normalmente é melhor quando você precisa restaurar um volume, pasta ou arquivo específico da última semana ou mês — e você sabe o nome e o local do arquivo, além da data em que ele esteve em boas condições pela última vez.  _Pesquisar e Restaurar_ normalmente é melhor quando você precisa restaurar um volume, pasta ou arquivo, mas não se lembra do nome exato, do volume em que ele reside ou da data em que esteve em boas condições pela última vez.
+Em termos gerais, a opção _Browse & Restore_ é geralmente mais adequada quando você precisa restaurar um volume, pasta ou arquivo específico da última semana ou mês e sabe o nome, a localização e a data em que o arquivo estava em bom estado pela última vez. A opção _Search & Restore_ é geralmente mais adequada quando você precisa restaurar um volume, pasta ou arquivo, mas não se lembra do nome exato, do volume em que ele está localizado ou da data em que estava em bom estado pela última vez.
 
 Esta tabela fornece uma comparação de recursos dos dois métodos.
 
@@ -68,7 +68,7 @@ Esta tabela fornece uma comparação de recursos dos dois métodos.
 | Navegue por uma estrutura de estilo de pasta para encontrar o volume, a pasta ou o arquivo dentro de um único arquivo de backup. | Pesquise um volume, pasta ou arquivo em *todos os arquivos de backup* por nome parcial ou completo do volume, nome parcial ou completo da pasta/arquivo, intervalo de tamanho e filtros de pesquisa adicionais. 
 
 
-| Não realiza a recuperação de arquivos se o arquivo foi excluído ou renomeado e o usuário não sabe o nome original do arquivo | Manipula diretórios recém-criados/excluídos/renomeados e arquivos recém-criados/excluídos/renomeados 
+| Não realiza a recuperação de arquivos se o arquivo tiver sido excluído ou renomeado e você não souber o nome original do arquivo | Gerencia diretórios e arquivos recém-criados, excluídos e renomeados 
 
 
 | A restauração rápida é suportada. | A restauração rápida não é suportada. 

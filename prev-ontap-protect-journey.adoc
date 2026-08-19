@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-journey.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
 ---
-= Opções de planejamento da jornada de proteção no NetApp Backup and Recovery
+= Planeje a proteção de volume ONTAP no NetApp Backup e Recuperação
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-O NetApp Backup and Recovery permite que você crie até três cópias dos seus volumes de origem para proteger seus dados.  Há muitas opções que você pode selecionar ao habilitar o Backup e a Recuperação em seus volumes, então você deve revisar suas escolhas para estar preparado.
+Use esta página para planejar como você protegerá seus volumes do ONTAP com o NetApp Backup and Recovery. Analise os métodos de proteção, arquiteturas, políticas, opções de storage de objetos e modos de implantação do agente do Console antes de habilitar o backup e recuperação.
 
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
@@ -33,7 +33,7 @@ Analisaremos as seguintes opções:
 [[which-protection-features-will-you-use]]
 == Quais recursos de proteção você usará
 
-Antes de selecionar os recursos que você usará, aqui está uma explicação rápida sobre o que cada recurso faz e que tipo de proteção ele oferece.
+Antes de selecionar os recursos que você usará, aqui está uma breve explicação do que cada recurso faz e o tipo de proteção que oferece.
 
 [cols="20,70"]
 |===
@@ -48,7 +48,7 @@ Antes de selecionar os recursos que você usará, aqui está uma explicação r�
 
 | Backup em nuvem | Cria backups dos seus dados na nuvem para proteção e para fins de arquivamento de longo prazo.  Se necessário, você pode restaurar um volume, uma pasta ou arquivos individuais do backup para o mesmo sistema ou para um sistema diferente. 
 |===
-Os instantâneos são a base de todos os métodos de backup e são necessários para usar o serviço de backup e recuperação. Um instantâneo é uma imagem somente leitura de um volume em um determinado momento. A imagem consome um espaço de armazenamento mínimo e acarreta uma sobrecarga de desempenho insignificante, pois registra apenas as alterações feitas nos arquivos desde a última captura instantânea.  O snapshot criado no seu volume é usado para manter o volume replicado e o arquivo de backup sincronizados com as alterações feitas no volume de origem, conforme mostrado na figura.
+Os snapshots são a base de todos os métodos de backup e são necessários para usar o serviço de backup e recuperação. Um snapshot é uma imagem pontual somente leitura de um volume. A imagem consome espaço mínimo de storage e acarreta uma sobrecarga de desempenho insignificante, pois registra apenas as alterações feitas nos arquivos desde que o último snapshot foi criado. O snapshot criado no seu volume é usado para manter o volume replicado e o arquivo de backup sincronizados com as alterações feitas no volume de origem, conforme mostrado na figura.
 
 image:diagram-321-overview.png["Um diagrama mostrando como os arquivos de backup existem no sistema de origem como snapshots, como volumes replicados no sistema de armazenamento secundário e como arquivos de backup no armazenamento de objetos."]
 
@@ -68,7 +68,7 @@ NOTE: A criação inicial de um volume replicado ou arquivo de backup inclui uma
 
 A tabela a seguir mostra uma comparação generalizada dos três métodos de backup.  Embora o espaço de armazenamento de objetos normalmente seja mais barato do que o armazenamento em disco local, se você acha que pode restaurar dados da nuvem com frequência, as taxas de saída dos provedores de nuvem podem reduzir algumas de suas economias.  Você precisará identificar com que frequência precisará restaurar dados dos arquivos de backup na nuvem.
 
-Além desses critérios, storage de nuvem oferece opções de segurança adicionais se você usar o recurso *Datalock and Ransomware protection*, e economia adicional ao selecionar classes de armazenamento de arquivamento para arquivos de backup mais antigos. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção do DataLock e do Ransomware e as configurações de armazenamento de arquivamento"].
+Além desses critérios, o storage de nuvem oferece opções de segurança adicionais se você usar o recurso *DataLock and Ransomware protection*, e economia adicional ao selecionar classes de storage de arquivamento para arquivos de backup mais antigos. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção do DataLock e do Ransomware e as configurações de armazenamento de arquivamento"].
 
 [cols="18,18,22,18,22"]
 |===
@@ -114,10 +114,10 @@ Esta tabela fornece uma comparação das arquiteturas fan-out e cascata.
 |===
 
 
-[[will-you-use-the-default-policies-for-snapshots-replications-and-backups]]
-== Você usará as políticas padrão para snapshots, replicações e backups
+[[will-you-use-the-default-policies-for-snapshots-replication-and-backups]]
+== Você usará as políticas padrão para snapshots, replicação e backups
 
-Você pode usar as políticas padrão fornecidas pela NetApp para criar seus backups ou pode criar políticas personalizadas.  Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas que já existam no sistema (Cloud Volumes ONTAP ou sistema ONTAP local).  Se quiser usar uma política diferente das políticas existentes, você pode criá-la antes de começar ou enquanto usa o assistente de ativação.
+Você pode usar as políticas padrão fornecidas pela NetApp para criar seus backups ou pode criar políticas personalizadas. Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas já existentes no sistema (Cloud Volumes ONTAP ou sistema ONTAP local). Se você quiser usar uma política diferente das políticas existentes, pode criá-la antes de iniciar ou durante o uso do assistente de ativação.
 
 * A política de snapshots padrão cria snapshots horários, diários e semanais, retendo 6 snapshots horários, 2 diários e 2 semanais.
 * A política de replicação padrão replica snapshots diários e semanais, retendo 7 snapshots diários e 52 snapshots semanais.
@@ -126,7 +126,7 @@ Você pode usar as políticas padrão fornecidas pela NetApp para criar seus bac
 
 Se você criar políticas personalizadas para replicação ou backup, os rótulos das políticas (por exemplo, "diário" ou "semanal") deverão corresponder aos rótulos existentes nas suas políticas de instantâneo, ou os volumes replicados e os arquivos de backup não serão criados.
 
-Você pode criar snapshot, replicação e backup para políticas de armazenamento de objetos na interface de usuário do NetApp Backup and Recovery .  Veja a seção paralink:prev-ontap-backup-manage.html["adicionando uma nova política de backup"] para mais detalhes.
+Você pode criar políticas de snapshot, replicação e backup para storage de objetos na interface do usuário do NetApp Backup and Recovery. Consulte link:prev-ontap-backup-manage.html["adicionando uma nova política de backup"] para obter detalhes.
 
 Além de usar NetApp Backup and Recovery para criar políticas personalizadas, você pode usar System Manager ou a ONTAP Command Line Interface (CLI):
 
@@ -169,7 +169,7 @@ NOTE: Somente políticas de cofre podem ser usadas para backup em relacionamento
 [[where-do-my-policies-reside]]
 == Onde ficam minhas políticas?
 
-As políticas de backup residem em locais diferentes dependendo da arquitetura de backup que você planeja usar: Fan-out ou Cascading.  As políticas de replicação e as políticas de backup não são projetadas da mesma forma porque as replicações emparelham dois sistemas de armazenamento ONTAP e o backup para objeto usa um provedor de armazenamento como destino.
+As políticas de backup residem em locais diferentes dependendo se você usa uma arquitetura fan-out ou em cascata. As políticas de replicação e as políticas de backup são projetadas de forma diferente porque a replicação emparelha dois sistemas de armazenamento ONTAP, enquanto o backup para objeto usa um provedor de armazenamento como destino.
 
 * As políticas de instantâneo sempre residem no sistema de armazenamento primário.
 * As políticas de replicação sempre residem no sistema de armazenamento secundário.
@@ -188,7 +188,7 @@ Essas diferenças são mostradas na tabela.
 
 | *Cascata* | Primário | Secundário | Secundário 
 |===
-Portanto, se você estiver planejando criar políticas personalizadas ao usar a arquitetura em cascata, precisará criar as políticas de replicação e backup para objetos no sistema secundário onde os volumes replicados serão criados.  Se você estiver planejando criar políticas personalizadas ao usar a arquitetura fan-out, será necessário criar as políticas de replicação no sistema secundário onde os volumes replicados serão criados e fazer backup em políticas de objeto no sistema primário.
+Portanto, se você planeja criar políticas personalizadas ao usar a arquitetura em cascata, precisará criar as políticas de replicação e de backup para objeto no sistema secundário onde os volumes replicados serão criados. Se você planeja criar políticas personalizadas ao usar a arquitetura fan-out, precisará criar as políticas de replicação no sistema secundário onde os volumes replicados serão criados e as políticas de backup para objeto no sistema primário.
 
 Se você estiver usando as políticas padrão que existem em todos os sistemas ONTAP , então está tudo pronto.
 
@@ -197,7 +197,7 @@ Se você estiver usando as políticas padrão que existem em todos os sistemas O
 [[do-you-want-to-create-your-own-object-storage-container]]
 == Você quer criar seu próprio contêiner de armazenamento de objetos
 
-Ao criar arquivos de backup no armazenamento de objetos de um sistema, por padrão, o serviço de backup e recuperação cria o contêiner (bucket ou conta de armazenamento) para os arquivos de backup na conta de armazenamento de objetos que você configurou.  O bucket AWS ou GCP é chamado "netapp-backup-<uuid>" por padrão.  A conta de armazenamento de Blobs do Azure é chamada "netappbackup<uuid>".
+Quando você cria arquivos de backup no storage de objetos para um sistema, por padrão, o serviço de backup e recuperação cria o contêiner (bucket ou conta de armazenamento) para os arquivos de backup na conta de storage de objetos que você configurou. O bucket da AWS ou do GCP é nomeado "netapp-backup-<uuid>" por padrão. A conta de armazenamento de blobs do Azure é nomeada "netappbackup<uuid>".
 
 Você pode criar o contêiner na conta do provedor de objetos se quiser usar um prefixo específico ou atribuir propriedades especiais.  Se você quiser criar seu próprio contêiner, deverá criá-lo antes de iniciar o assistente de ativação.  O NetApp Backup and Recovery pode usar qualquer bucket e compartilhar buckets.  O assistente de ativação de backup descobrirá automaticamente seus contêineres provisionados para a conta e as credenciais selecionadas para que você possa selecionar o que deseja usar.
 
@@ -236,7 +236,7 @@ Se você planeja mover arquivos de backup mais antigos para armazenamento de arq
 [[which-console-agent-deployment-mode-are-you-using]]
 == Qual modo de implantação do agente do console você está usando
 
-Se você já estiver usando o Console para gerenciar seu armazenamento, um agente do Console já terá sido instalado.  Se você planeja usar o mesmo agente do Console com o NetApp Backup and Recovery, está tudo pronto.  Se precisar usar um agente de console diferente, você precisará instalá-lo antes de iniciar a implementação de backup e recuperação.
+Se você já utiliza o Console para gerenciar seu storage, um agente do Console já está instalado. Se você planeja usar o mesmo agente do Console com o NetApp Backup and Recovery, está tudo pronto. Se você precisar usar um agente do Console diferente, instale-o antes de iniciar a implementação do backup e recuperação.
 
 O NetApp Console oferece vários modos de implantação que permitem que você use o Console de uma maneira que atenda aos seus requisitos comerciais e de segurança.  O _modo padrão_ aproveita a camada SaaS do Console para fornecer funcionalidade completa, enquanto o _modo restrito_ e o _modo privado_ estão disponíveis para organizações com restrições de conectividade.
 
@@ -247,7 +247,7 @@ https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Saiba mais
 [[support-for-sites-with-full-internet-connectivity]]
 === Suporte para sites com conectividade total à Internet
 
-Quando o NetApp Backup and Recovery é usado em um site com conectividade total à Internet (também conhecido como _modo padrão_ ou _modo SaaS_), você pode criar volumes replicados em qualquer sistema ONTAP local ou Cloud Volumes ONTAP gerenciado pelo Console e pode criar arquivos de backup no armazenamento de objetos em qualquer um dos provedores de nuvem suportados. link:concept-backup-to-cloud.html["Veja a lista completa de destinos de backup suportados"].
+Quando o NetApp Backup and Recovery é usado em um site com conectividade total à internet (também conhecido como _modo padrão_ ou _modo SaaS_), você pode criar volumes replicados em qualquer sistema ONTAP local ou Cloud Volumes ONTAP gerenciado pelo Console, e pode criar arquivos de backup em storage de objetos em qualquer um dos provedores de nuvem compatíveis. link:concept-backup-to-cloud.html["Veja a lista completa de destinos de backup suportados"].
 
 Para obter uma lista de locais válidos do agente do Console, consulte um dos seguintes procedimentos de backup para o provedor de nuvem onde você planeja criar arquivos de backup.  Existem algumas restrições em que o agente do Console deve ser instalado manualmente em uma máquina Linux ou implantado em um provedor de nuvem específico.
 
@@ -282,6 +282,6 @@ O NetApp Backup and Recovery pode ser usado em um site sem conectividade com a I
 
 NOTE: O modo privado BlueXP (interface BlueXP legada) normalmente é usado com ambientes locais que não têm conexão com a Internet e com regiões de nuvem seguras, o que inclui AWS Secret Cloud, AWS Top Secret Cloud e Azure IL6. A NetApp continua a oferecer suporte a esses ambientes com a interface legada BlueXP . Para documentação do modo privado na interface BlueXP legada, consulte o https://docs.netapp.com/us-en/console-setup-admin/media/BlueXP-Private-Mode-legacy-interface.pdf["Documentação em PDF para o modo privado do BlueXP"] .
 
-* Você pode fazer backup de dados de sistemas ONTAP locais para sistemas NetApp StorageGRID locais. link:prev-ontap-backup-onprem-storagegrid.html["Faça backup de dados ONTAP locais no StorageGRID"].
+* Você pode fazer backup de dados de sistemas ONTAP locais para sistemas StorageGRID locais. link:prev-ontap-backup-onprem-storagegrid.html["Faça backup de dados ONTAP locais no StorageGRID"].
 * Você pode fazer backup de dados de sistemas ONTAP locais para sistemas ONTAP locais ou sistemas Cloud Volumes ONTAP configurados para armazenamento de objetos S3. link:prev-ontap-backup-onprem-ontaps3.html["Faça backup de dados ONTAP locais no ONTAP S3"].
 

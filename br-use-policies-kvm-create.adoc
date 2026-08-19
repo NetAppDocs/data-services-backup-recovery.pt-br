@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: br-use-policies-kvm-create.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: No NetApp Backup and Recovery, crie suas próprias políticas que controlam a frequência do backup, o horário em que o backup é feito e o número de arquivos de backup que são retidos. 
 ---
 = Crie e gerencie políticas de backup KVM no NetApp Backup and Recovery
@@ -12,7 +12,7 @@ summary: No NetApp Backup and Recovery, crie suas próprias políticas que contr
 
 
 [role="lead"]
-No NetApp Backup and Recovery, crie suas próprias políticas de backup KVM que determinam a frequência do backup, o horário em que o backup é realizado e o número de arquivos de backup que são retidos.
+Use o NetApp Backup and Recovery para criar políticas de backup do KVM que controlem a frequência de backup, o agendamento e a retenção.
 
 
 NOTE: Algumas dessas opções e seções de configuração não estão disponíveis para todas as cargas de trabalho.
@@ -25,7 +25,7 @@ Você pode atingir os seguintes objetivos relacionados às políticas:
 * Crie uma política para replicação para armazenamento secundário
 * Crie uma política para configurações de armazenamento de objetos
 * Configurar configurações avançadas de política
-* Editar políticas (não disponível para cargas de trabalho VMware)
+* Editar políticas
 * Excluir políticas
 
 
@@ -56,7 +56,7 @@ Você pode criar políticas que controlam seus snapshots locais, replicações p
 *Função necessária do NetApp Console* Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Antes de começar
-Se você planeja replicar para armazenamento secundário e deseja usar o bloqueio de snapshot em snapshots locais ou em armazenamento secundário ONTAP remoto, primeiro precisa inicializar o relógio de conformidade ONTAP no nível do cluster.  Este é um requisito para habilitar o bloqueio de snapshot na política.
+Se você planeja replicar para o storage secundário e deseja usar o bloqueio de Snapshot em Snapshots locais ou no ONTAP storage secundário remoto, primeiro é necessário inicializar o ONTAP compliance clock no nível do cluster. Isso é um requisito para habilitar o bloqueio de Snapshot na política.
 
 Para obter instruções sobre como fazer isso, consulte https://docs.netapp.com/us-en/ontap/snaplock/initialize-complianceclock-task.html["Inicializar o relógio de conformidade no ONTAP"^] .
 
@@ -77,18 +77,18 @@ A página de Policies é exibida.
 
 . Insira as informações na seção *Arquitetura de backup*. Selecione o fluxo de dados para o backup na lista:
 +
-** *Fanout 3-2-1*: storage primário (disco) para storage secundário (disco) para nuvem (armazenamento de objetos). Cria múltiplas cópias de dados em diferentes sistemas de storage, como ONTAP para ONTAP e ONTAP para configurações de armazenamento de objetos. Isso pode ser um armazenamento de objetos de hyperscaler de nuvem ou um armazenamento de objetos privado. Melhor para proteção de dados ideal e recuperação de desastres. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
-** *Cascata 3-2-1*: storage primário (disco) para storage secundário (disco) e storage primário (disco) para storage de nuvem (armazenamento de objetos). Isso pode ser um storage de objetos de hyperscaler de nuvem ou um storage de objetos privado, como StorageGRID. Isso cria uma cadeia de replicação de dados em vários sistemas para garantir redundância e confiabilidade. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
+** *Fanout 3-2-1*: storage primário (disco) para storage secundário (disco) para nuvem (armazenamento de objetos). Cria múltiplas cópias de dados em diferentes sistemas de storage, como ONTAP para ONTAP e ONTAP para armazenamento de objetos. Isso pode ser um armazenamento de objetos de provedor de nuvem ou um armazenamento de objetos privado. Melhor opção para proteção de dados ideal e recuperação de desastres. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
+** *Cascata 3-2-1*: storage primário (disco) para storage secundário (disco) e storage primário (disco) para storage de nuvem (armazenamento de objetos). Isso pode ser um armazenamento de objetos de um provedor de nuvem ou um armazenamento de objetos privado, como o StorageGRID. Isso cria uma cadeia de replicação de dados em vários sistemas para garantir redundância e confiabilidade. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
 ** *Disco para disco*: storage primário (disco) para storage secundário (disco). A estratégia de proteção de dados ONTAP para ONTAP replica dados entre dois sistemas ONTAP para garantir alta disponibilidade e recuperação de desastres. Isso geralmente é feito usando SnapMirror, que oferece suporte tanto à replicação síncrona quanto à replicação assíncrona. Esse método mantém seus dados atualizados e disponíveis em diferentes locais, proporcionando forte proteção de dados.
-** *Armazenamento de disco para objeto*: Do storage primário (disco) para a nuvem (armazenamento de objetos). Isso replica dados de um sistema ONTAP para um sistema de storage de objetos. Isso pode ser um storage de objetos de hyperscaler de nuvem ou um storage de objetos privado, como StorageGRID. Esse método é ideal para retenção de dados a longo prazo e arquivamento. Esta opção não está disponível para Amazon FSx for NetApp ONTAP.
+** *Disco para storage de objetos*: storage primário (disco) para nuvem (armazenamento de objetos). Isso replica dados de um sistema ONTAP para um sistema de storage de objetos. Isso pode ser um armazenamento de objetos de provedor de nuvem ou um armazenamento de objetos privado, como o StorageGRID. Esse método é ideal para retenção de dados a longo prazo e arquivamento. Essa opção não está disponível para o Amazon FSx for NetApp ONTAP.
 ** *Fanout de disco para disco*: storage primário (disco) para storage secundário (disco) e storage primário (disco) para storage secundário (disco). Você pode configurar várias configurações secundárias para a opção de fanout de disco para disco.
 ** *Instantâneos locais*: Instantâneo local no volume selecionado. Isso cria cópias somente leitura, ponto no tempo, dos volumes de produção onde suas cargas de trabalho estão sendo executadas. Você pode usar instantâneos locais para se recuperar de perda de dados ou corrupção, bem como para criar backups para fins de recuperação de desastres.
 
 
 . Forneça informações para a seção *Configurações de instantâneo local*:
 +
-** Selecione a opção *Adicionar agendamento* para selecionar o agendamento ou agendamentos de instantâneos.  Você pode ter no máximo 5 agendamentos.
-** *Frequência do instantâneo*: selecione a frequência: horária, diária, semanal, mensal ou anual.  A frequência anual não está disponível para cargas de trabalho do Kubernetes.
+** Selecione a opção *Adicionar agendamento* para selecionar o(s) agendamento(s) de Snapshot. Você pode ter no máximo cinco agendamentos.
+** *Frequência de Snapshot*: selecione a frequência horária, diária, semanal, mensal ou anual.
 ** *Retenção de instantâneos*: insira o número de instantâneos a serem mantidos.
 
 
@@ -115,13 +115,13 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 
 +
 ** *Provedor*: Selecione o provedor para seu armazenamento de objetos e insira as credenciais nos campos apropriados (os campos de credenciais variam dependendo do provedor).
-** *Destino de backup*: Selecione um destino de armazenamento de objeto registrado.  Certifique-se de que o destino esteja acessível dentro do seu ambiente de backup.
+** *Destino de backup*: selecione um storage de objetos registrado como destino. Verifique se o destino está acessível em seu ambiente de backup.
 ** *IPspace*: Selecione o IPspace a ser usado para as operações de backup.  Isso é útil se você tiver vários IPspaces e quiser controlar qual deles será usado para backups.
 ** *Configurações de agendamento*: selecione o agendamento que foi definido para os instantâneos locais.  Você pode remover uma programação, mas não pode adicionar uma porque as programações são definidas de acordo com as programações de instantâneos locais.
 ** *Cópias de retenção*: insira o número de instantâneos a serem mantidos.
 ** *Executar em*: Escolha o agendamento de transferência ONTAP para fazer backup de dados no armazenamento de objetos.
 ** *Coloque seus backups em camadas do armazenamento de objetos para o armazenamento de arquivamento*: se você optar por colocar os backups em camadas para o armazenamento de arquivamento (por exemplo, AWS Glacier), selecione a opção de camada e o número de dias para arquivamento.
-** *Habilitar verificação de integridade*: selecione se deseja habilitar as verificações de integridade (bloqueio de snapshot) no storage de objetos. Isso garante que os backups sejam válidos e restauráveis. A frequência da verificação de integridade é definida como 7 dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar as verificações de integridade no snapshot mais recente.
+** *Habilitar verificação de integridade*: selecione se você deseja habilitar as verificações de integridade (bloqueio de snapshot) no storage de objetos. Isso garante que os backups sejam válidos e restauráveis. A frequência da verificação de integridade é definida como sete dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar as verificações de integridade no snapshot mais recente.
 
 
 . Opcionalmente, configure as definições avançadas na política.
@@ -130,7 +130,7 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ====
 ** *Configurações da VM*:
 +
-*** *Habilitar snapshot consistente com a VM e com o aplicativo*: habilite esta opção para criar snapshots consistentes com a VM e com o aplicativo. Isso requer que o KVM QEMU Guest Agent esteja em execução na VM. Se o Guest Agent não estiver em execução, os snapshots serão consistentes com falhas. Observe que habilitar esta opção pode aumentar o tempo de backup e usar mais armazenamento. Além disso, a RAM ativa da VM não é incluída nos snapshots consistentes.
+*** *Habilitar snapshots consistentes com a VM e com o aplicativo*: habilite esta opção para criar snapshots consistentes com a VM e com o aplicativo. Isso requer que o KVM QEMU Guest Agent esteja em execução na VM. Se o Guest Agent não estiver em execução, os snapshots serão consistentes com falhas. Habilitar esta opção pode aumentar o tempo de backup e utilizar mais espaço de storage. Além disso, a RAM ativa da VM não é incluída nos snapshots consistentes.
 
 
 ** *SnapMirror formato de volume e instantâneo*: Escolha uma das seguintes opções:
@@ -139,13 +139,13 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 *** *Fornecer formato de volume SnapMirror*: especifique um prefixo, um sufixo ou ambos para modificar o nome padrão do volume SnapMirror. Por padrão, um volume SnapMirror herda o nome do volume de origem.
 
 
-** *Taxa máxima de transferência*: Para não definir um limite para utilização de largura de banda, selecione *Ilimitado*. Se desejar limitar a taxa de transferência, selecione *Limitado* e defina a largura de banda entre 1 e 1.000 Mbps alocada para o upload de backups para o storage de objetos. Por padrão, ONTAP pode usar uma quantidade ilimitada de largura de banda para transferir os dados de backup dos volumes do sistema para storage de objetos. Se o tráfego de backup afetar as cargas de trabalho, reduza a largura de banda para as transferências.
+** *Taxa de transferência máxima*: Para deixar a utilização de largura de banda ilimitada, selecione *Ilimitado*. Se você quiser limitar a taxa de transferência, selecione *Limitado* e escolha a largura de banda entre 1 e 1.000 Mbps alocada para o upload de backups para o storage de objetos. Por padrão, o ONTAP pode usar uma quantidade ilimitada de largura de banda para transferir os dados de backup dos volumes do sistema para o storage de objetos. Se o tráfego de backup afetar as cargas de trabalho, reduza a largura de banda para as transferências.
 ** *Repetições de backup*: Para repetir a tarefa em caso de falha ou interrupção, selecione *Habilitar repetições de tarefa durante falha*. Insira o número máximo de repetições de tarefas de snapshot e backup e o intervalo de tempo entre as repetições. O número de repetições deve ser inferior a 10.
 +
 
-TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, juntamente com a contagem de novas tentativas, não deverá exceder 45 minutos.
+TIP: Se a frequência de Snapshot estiver definida para uma hora, o atraso máximo, juntamente com o número de tentativas, não deve exceder 45 minutos.
 
-** *Verificação de ransomware*: selecione se deseja habilitar a verificação de ransomware em cada bucket. Isso requer bloqueio do DataLock no armazenamento de objetos. Insira a frequência da verificação em dias. Esta opção se aplica ao armazenamento de objetos da AWS e do Microsoft Azure. Observe que esta opção pode incorrer em custos adicionais, dependendo do provedor de nuvem.
+** *Verificação de ransomware*: selecione se você deseja ativar a verificação de ransomware em cada bucket. Isso requer o bloqueio DataLock no storage de objetos. Insira a frequência da verificação em dias. Esta opção se aplica ao storage de objetos da AWS e do Microsoft Azure. Esta opção pode gerar custos adicionais, dependendo do provedor de nuvem.
 ** *Notificação*: Escolha se deseja ativar as notificações por e-mail para operações de backup. Você pode selecionar quais eventos acionam uma notificação — por exemplo, quando um backup é bem-sucedido, falha ou é concluído com avisos.
 
 
@@ -158,13 +158,13 @@ TIP: Se a frequência do snapshot for definida como 1 hora, o atraso máximo, ju
 [[edit-a-policy]]
 == Editar uma política
 
-Você pode editar a arquitetura de backup, a frequência de backup, a política de retenção e outras configurações de uma política. Para políticas de cargas de trabalho do Kubernetes, você pode editar apenas as configurações de agendamento e retenção.
+Você pode editar a arquitetura de backup, a frequência de backup, a política de retenção e outras configurações de uma política.
 
 Você pode adicionar outro nível de proteção ao editar uma política, mas não pode remover um nível de proteção.  Por exemplo, se a política estiver protegendo apenas instantâneos locais, você poderá adicionar replicação ao armazenamento secundário ou backups ao armazenamento de objetos.  Se você tiver snapshots e replicação locais, poderá adicionar armazenamento de objetos.  No entanto, se você tiver snapshots locais, replicação e armazenamento de objetos, não poderá remover um desses níveis.
 
 Se estiver editando uma política que faz backup no armazenamento de objetos, você pode habilitar o arquivamento.
 
-Se você importou recursos do SnapCenter, poderá encontrar algumas diferenças entre as políticas usadas no SnapCenter e aquelas usadas no NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferenças de política entre SnapCenter e NetApp Backup and Recovery"] .
+Se você importou recursos do SnapCenter, poderá encontrar algumas diferenças entre as políticas usadas no SnapCenter e as usadas no NetApp Backup and Recovery. Consulte link:reference-policy-differences-snapcenter.html["Diferenças de política entre SnapCenter e NetApp Backup and Recovery"].
 
 .Função necessária do NetApp Console
 Superadministrador de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
@@ -193,7 +193,7 @@ Você pode excluir uma política se não precisar mais dela.
 TIP: Não é possível excluir uma política associada a uma carga de trabalho.
 
 .Passos
-. No Console, vá para *Proteção* > *Backup e Recuperação*.
+. No NetApp Console, acesse *Proteção* > *Backup e Recuperação*.
 . Selecione a opção *Políticas*.
 . Selecione a política que você deseja excluir.
 . Selecione as *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Excluir*.

@@ -72,7 +72,7 @@ Este arquivo está localizado no seguinte local no bucket `netapp-backup-<GUID>/
 Ao instalar um novo agente do Console, baixe a mesma versão de software do agente original. Alterações no banco de dados do NetApp Backup and Recovery podem fazer com que versões mais recentes do software não funcionem com backups de banco de dados antigos. Você pode  https://docs.netapp.com/us-en/console-setup-admin/task-upgrade-connector.html["atualize o software do agente do Console para a versão mais atual após restaurar o banco de dados de backup"^].
 
 . https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Instale o agente do Console em um novo host Linux local"^]
-. Efetue login no Console usando as credenciais de usuário administrador que você acabou de criar.
+. Faça login no NetApp Console usando as credenciais de usuário administrador que você acabou de criar.
 
 
 
@@ -80,7 +80,7 @@ Ao instalar um novo agente do Console, baixe a mesma versão de software do agen
 [[restore-the-netapp-backup-and-recovery-database]]
 === Restaurar o banco de dados de NetApp Backup and Recovery
 
-. Copie o backup do MySQL do local de backup para o novo host do agente do Console. Usaremos o nome de arquivo de exemplo "CBS_DB_Backup_23_05_2023.sql" abaixo.
+. Copie o backup do MySQL do local de backup para o novo host do agente do Console. O exemplo a seguir usa o nome de arquivo  `CBS_DB_Backup_23_05_2023.sql`.
 . Copie o backup para o contêiner Docker do MySQL usando um dos seguintes comandos, dependendo se você estiver usando um contêiner Docker ou Podman:
 +
 [source, cli]
@@ -132,7 +132,7 @@ mysql> select * from volume;
 [[restore-the-indexed-catalog-files]]
 === Restaurar os arquivos do catálogo indexado
 
-. Copie o arquivo zip de backup do Catálogo Indexado (usaremos o nome de arquivo de exemplo "Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip") do local de backup para o novo host do agente do Console na pasta "/opt/application/netapp/cbs".
+. Copie o arquivo ZIP de backup do Catálogo Indexado do local de backup para a pasta  `/opt/application/netapp/cbs` no novo host do agente do Console. O exemplo a seguir usa o nome de arquivo  `Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip`.
 . Descompacte o arquivo "Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip" usando o seguinte comando:
 +
 [source, cli]
@@ -156,7 +156,7 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 [[set-up-the-storagegrid-environment-details]]
 === Configurar os detalhes do ambiente StorageGRID
 
-Adicione os detalhes do sistema StorageGRID associado aos seus sistemas ONTAP conforme eles foram configurados na configuração original do agente do Console usando o https://docs.netapp.com/us-en/console-automation/index.html["APIs do NetApp Console"^] .
+Adicione os detalhes do sistema StorageGRID que está associado aos seus sistemas ONTAP, conforme foram configurados na configuração original do agente do Console, usando o  https://docs.netapp.com/us-en/console-automation/index.html["APIs do NetApp Console"^].
 
 As informações a seguir se aplicam a instalações em modo privado a partir do NetApp Console 3.9.xx.  Para versões mais antigas, use o seguinte procedimento: https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["DarkSite Cloud Backup: backup e restauração de MySQL e catálogo indexado"^] .
 
@@ -170,10 +170,10 @@ curl 'http://10.193.192.202/oauth/token' -X POST -H 'Accept: application/json' -
 > '
 ----
 +
-Embora o endereço IP, o nome de usuário e as senhas sejam valores personalizados, o nome da conta não é. O nome da conta é sempre "account-DARKSITE1". Além disso, o nome de usuário deve usar um nome no formato de e-mail.
+Embora o endereço IP, o nome de usuário e a senha sejam valores personalizados, o nome da conta não é. O nome da conta é sempre  `account-DARKSITE1`. Além disso, o nome de usuário deve ser um nome formatado para e-mail.
 
 +
-Esta API retornará uma resposta como a seguinte. Você pode recuperar o token de autorização conforme mostrado abaixo.
+Esta API retorna uma resposta como a seguinte. Você pode recuperar o token de autorização conforme mostrado abaixo.
 
 +
 [source, text]
@@ -187,14 +187,14 @@ Esta API retornará uma resposta como a seguinte. Você pode recuperar o token d
 curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARKSITE1 -H 'accept: application/json' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzIyNzEzLCJleHAiOjE2NzI3NDQzMTMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9X_cQF8xttD0-S7sU2uph2cdu_kN-fLWpdJJX98HODwPpVUitLcxV28_sQhuopjWobozPelNISf7KvMqcoXc5kLDyX-yE0fH9gr4XgkdswjWcNvw2rRkFzjHpWrETgfqAMkZcAukV4DHuxogHWh6-DggB1NgPZT8A_szHinud5W0HJ9c4AaT0zC-sp81GaqMahPf0KcFVyjbBL4krOewgKHGFo_7ma_4mF39B1LCj7Vc2XvUd0wCaJvDMjwp19-KbZqmmBX9vDnYp7SSxC1hHJRDStcFgJLdJHtowweNH2829KsjEGBTTcBdO8SvIDtctNH_GAxwSgMT3zUfwaOimPw'
 ----
 +
-Esta API retornará uma resposta como a seguinte. O valor em "resourceIdentifier" denota o _WorkingEnvironment Id_ e o valor em "agentId" denota _x-agent-id_.
+Esta API retorna uma resposta como a seguinte. O valor em  `resourceIdentifier` indica o _ID do WorkingEnvironment_ e o valor em  `agentId` indica _x-agent-id_.
 
 +
 [source, text]
 ----
 [{"resourceIdentifier":"OnPremWorkingEnvironment-pMtZND0M","resourceType":"ON_PREM","agentId":"vB_1xShPpBtUosjD7wfBlLIhqDgIPA0wclients","resourceClass":"ON_PREM","name":"CBSFAS8300-01-02","metadata":"{\"clusterUuid\": \"2cb6cb4b-dc07-11ec-9114-d039ea931e09\"}","workspaceIds":["workspace2wKYjTy9"],"agentIds":["vB_1xShPpBtUosjD7wfBlLIhqDgIPA0wclients"]}]
 ----
-. Atualize o banco de dados do NetApp Backup and Recovery com os detalhes do sistema StorageGRID associado aos sistemas. Certifique-se de inserir o Nome de Domínio Totalmente Qualificado do StorageGRID, bem como a Chave de Acesso e a Chave de Armazenamento, conforme mostrado abaixo:
+. Atualize o banco de dados do NetApp Backup and Recovery com os detalhes do sistema StorageGRID que está associado aos sistemas. Certifique-se de inserir o nome de domínio totalmente qualificado do StorageGRID, juntamente com a chave de acesso e a chave de armazenamento, conforme mostrado abaixo:
 +
 [source, shell]
 ----
@@ -211,13 +211,13 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 [[verify-netapp-backup-and-recovery-settings]]
 === Verifique as configurações de NetApp Backup and Recovery
 
-. Selecione cada sistema ONTAP e clique em *Exibir backups* ao lado do serviço de backup e recuperação no painel direito.
+. Selecione cada sistema ONTAP e selecione *Exibir backups* ao lado do serviço NetApp Backup and Recovery no painel direito.
 +
 Você deverá ver todos os backups criados para seus volumes.
 
-. No Painel de restauração, na seção Pesquisar e restaurar, clique em *Configurações de indexação*.
+. No painel de restauração, na seção Pesquisar e restaurar, selecione *Configurações de indexação*.
 +
-Certifique-se de que os sistemas que tinham a Catalogação Indexada habilitada anteriormente permaneçam habilitados.
+Certifique-se de que os sistemas que tinham a Catalogação Indexada ativada anteriormente permaneçam ativados.
 
 . Na página Pesquisar e restaurar, execute algumas pesquisas de catálogo para confirmar se a restauração do catálogo indexado foi concluída com sucesso.
 

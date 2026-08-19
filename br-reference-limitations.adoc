@@ -14,7 +14,7 @@ summary: Limitações conhecidas identificam funções que não são suportadas 
 
 
 [role="lead"]
-Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem com esta versão estão listados aqui.  Leia estas limitações com atenção.
+Analise estas limitações antes de usar o NetApp Backup and Recovery para volumes ONTAP.
 
 * O NetApp Backup and Recovery pode fazer backup do Cloud Volumes ONTAP em um armazenamento de objetos nas regiões da AWS China (incluindo Pequim e Ningxia); no entanto, talvez seja necessário modificar manualmente as políticas de identidade e acesso primeiro.
 +
@@ -35,9 +35,9 @@ Para obter detalhes sobre como criar um agente de console no Azure, consulte htt
 [[replication-limitations-for-ontap-volumes]]
 == Limitações de replicação para volumes ONTAP
 
-* Você pode selecionar apenas um volume FlexGroup por vez para replicação.  Você precisará ativar backups separadamente para cada volume FlexGroup .
+* Você pode selecionar apenas um FlexGroup volume por vez para replicação. Você precisa ativar os backups separadamente para cada FlexGroup volume.
 +
-Não há limitação para volumes FlexVol - você pode selecionar todos os volumes FlexVol no seu sistema e atribuir as mesmas políticas de backup.
+Os volumes FlexVol não têm essa limitação: você pode selecionar todos os volumes FlexVol no seu sistema e atribuir as mesmas políticas de backup.
 
 * A seguinte funcionalidade é suportada em https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , mas não ao usar o recurso de replicação do NetApp Backup and Recovery:
 +
@@ -64,11 +64,11 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 * Quando você cria ou edita uma política de backup quando nenhum volume é atribuído à política, o número de backups retidos pode ser no máximo 1018.  Depois de atribuir volumes à política, você pode editá-la para criar até 4.000 backups.
 * Ao fazer backup de volumes de proteção de dados (DP):
 +
-** Relacionamentos com os rótulos do SnapMirror `app_consistent` e `all_source_snapshot` não será feito backup na nuvem.
-** Se você criar cópias locais de Snapshots no volume de destino do SnapMirror (independentemente dos rótulos do SnapMirror usados), esses Snapshots não serão movidos para a nuvem como backups.  Neste momento, você precisará criar uma política de Snapshot com os rótulos desejados para o volume DP de origem para que o NetApp Backup and Recovery faça backup deles.
+** Os relacionamentos com os SnapMirror rótulos `app_consistent` e `all_source_snapshot` não serão armazenados em backup na nuvem.
+** Se você criar cópias locais de Snapshots no volume de destino do SnapMirror (independentemente dos rótulos do SnapMirror usados), esses Snapshots não serão movidos para a nuvem como backups. Você deve criar uma política do Snapshot com os rótulos desejados no volume DP de origem para que o NetApp Backup and Recovery possa fazer backup deles.
 
 
-* Os backups de volume do FlexGroup não podem ser movidos para armazenamento de arquivamento.
+* Os backups de volume FlexGroup não podem ser movidos para armazenamento de arquivamento.
 * Os backups de volume do FlexGroup podem usar proteção DataLock e Ransomware se o cluster estiver executando o ONTAP 9.13.1 ou superior.
 * O backup de volume SVM-DR é suportado com as seguintes restrições:
 +
@@ -79,14 +79,14 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 
 * Suporte ao MetroCluster :
 +
-** Ao usar o ONTAP 9.12.1 GA ou superior, o backup é suportado quando conectado ao sistema primário.  Toda a configuração de backup é transferida para o sistema secundário para que os backups na nuvem continuem automaticamente após a troca.  Você não precisa configurar o backup no sistema secundário (na verdade, você está impedido de fazer isso).
+** Ao usar o ONTAP 9.12.1 GA ou superior, o backup é compatível quando conectado ao sistema primário. Toda a configuração de backup é transferida para o sistema secundário, de modo que os backups para a nuvem continuem automaticamente após o switchover. Você não precisa configurar o backup no sistema secundário (na verdade, você está impedido de fazê-lo).
 ** Ao usar o ONTAP 9.12.0 e versões anteriores, o backup é suportado apenas no sistema secundário do ONTAP .
 ** A partir do ONTAP 9.18.1, os backups de volumes FlexGroup são suportados em configurações MetroCluster.
 
 
-* O backup de volume ad-hoc usando o botão *Fazer backup agora* não é suportado em volumes de proteção de dados.
+* O backup ad-hoc usando o botão *Backup Now* não é compatível com volumes de proteção de dados.
 * Configurações SM-BC não são suportadas.
-* O ONTAP não oferece suporte ao fan-out de relacionamentos do SnapMirror de um único volume para vários armazenamentos de objetos; portanto, essa configuração não é suportada pelo NetApp Backup and Recovery.
+* O ONTAP não suporta a distribuição de relacionamentos do SnapMirror de um único volume para vários armazenamentos de objetos; portanto, essa configuração não é suportada pelo NetApp Backup and Recovery.
 * O modo WORM/Compliance em um armazenamento de objetos é suportado no Amazon S3, Google Cloud Platform (GCP), Azure e StorageGRID neste momento. Isso é conhecido como o recurso DataLock, e deve ser gerenciado usando as configurações de NetApp Backup and Recovery, não pela interface do provedor de nuvem.
 
 
@@ -100,7 +100,7 @@ Essas limitações se aplicam aos métodos Pesquisar e Restaurar e Navegar e Res
 * A restauração de pastas a partir de snapshots locais não é suportada.
 * Restauração de arquivos e pastas em uma configuração de recuperação de desastres (DR): após uma falha, os volumes em uma VM de armazenamento configurada para DR mantêm os relacionamentos SnapMirror preexistentes em um estado interrompido. As tentativas de restaurar arquivos ou pastas que criam relacionamentos RST temporários SnapMirror são bloqueadas pelo ONTAP porque o volume de destino já possui um relacionamento.
 * O Browse & Restore pode restaurar até 100 arquivos individuais por vez.
-* O Search & Restore pode restaurar 1 arquivo por vez.
+* A função Buscar e Restaurar pode restaurar um arquivo por vez.
 * Ao usar o ONTAP 9.13.0 ou superior, o Browse & Restore e o Search & Restore podem restaurar uma pasta junto com todos os arquivos e subpastas dentro dela.
 +
 Ao usar uma versão do ONTAP superior à 9.11.1, mas anterior à 9.13.0, a operação de restauração pode restaurar apenas a pasta selecionada e os arquivos nela contidos - nenhuma subpasta ou arquivo em subpastas será restaurado.

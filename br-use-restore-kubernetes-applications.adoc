@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery permite restaurar aplicativos que você pr
 
 
 [role="lead"]
-O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. Para restaurar um aplicativo, ele precisa ter pelo menos um ponto de restauração disponível. Um ponto de restauração consiste no snapshot local ou no backup no repositório de objetos (ou ambos). Você pode restaurar um aplicativo usando o arquivo local, secundário ou do repositório de objetos.
+Restaure aplicativos protegidos por uma política de proteção no NetApp Backup and Recovery. Para restaurar um aplicativo, você precisa de pelo menos um ponto de restauração, que pode incluir um snapshot local, um backup em armazenamento de objetos ou ambos. Você pode restaurar a partir da cópia local, secundária ou do armazenamento de objetos.
 
 
 
@@ -57,7 +57,7 @@ A lista de pontos de restauração é exibida.
 
 . Selecione o botão *Restaurar* para o ponto de recuperação que deseja usar.
 +
-O assistente de restauração de dados é iniciado e a página _Configurações gerais_ é exibida.
+O assistente de restauração de dados é aberto e a página _Configurações gerais_ aparece.
 
 . Escolha o local de origem do qual restaurar.
 . Escolha o cluster de destino na lista *Cluster*.
@@ -89,7 +89,7 @@ Ao restaurar um aplicativo baseado em máquina virtual, o Backup and Recovery li
 --
 .Recursos de aplicativos específicos baseados em namespace
 --
-.. Selecione *Recursos seletivos* e escolha se deseja filtrar os recursos que você seleciona com base em regras ou com base no namespace.
+.. Selecione *Recursos seletivos* e escolha se deseja filtrar recursos usando regras ou selecionar recursos manualmente.
 +
 [cols="1,1"]
 |===
@@ -152,7 +152,7 @@ A página _Configurações de destino_ é exibida.
 
 . Expanda a seção *Configurações de destino* e escolha restaurar para a classe de armazenamento padrão, para uma classe de armazenamento diferente ou, se estiver restaurando para um cluster diferente, mapear as classes de armazenamento para o cluster de destino.
 . Se você optar por restaurar para uma classe de armazenamento diferente, selecione uma classe de armazenamento de destino que corresponda a cada classe de armazenamento de origem.
-. Opcionalmente, se estiver restaurando um backup ou snapshot criado com Trident Protect, visualize os detalhes do AppVault usado como o bucket de armazenamento para a operação de restauração. Se houver uma alteração no seu ambiente ou no status do AppVault, selecione *Sincronizar App Vault* para atualizar os detalhes.
+. Opcionalmente, se você estiver restaurando um backup ou snapshot criado com o Trident Protect, visualize os detalhes do AppVault usado como bucket de armazenamento para a operação de restauração. Se o seu ambiente mudar ou o status do AppVault mudar, selecione *Sincronizar App Vault* para atualizar os detalhes.
 +
 
 NOTE: Se você precisar criar um AppVault em um cluster Kubernetes para facilitar a restauração de um backup ou snapshot criado usando Trident Protect, consulte  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Use objetos do Trident Protect AppVault para gerenciar buckets"].

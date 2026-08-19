@@ -4,7 +4,7 @@ permalink: prev-ontap-protect-migrate-pvc.html
 keywords: migrate, pvc, nfs, storage, performance, persistence 
 summary: Aumente o desempenho do índice do catálogo em ambientes de implantação local do NetApp Console. 
 ---
-= Melhore o desempenho de busca e restauração em implantações locais do NetApp Backup and Recovery
+= Migrar o armazenamento do catálogo de pesquisa e restauração para o ONTAP NFS
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Aumente o desempenho do índice do catálogo em ambientes de implantaç
 
 
 [role="lead"]
-Migre o armazenamento do índice do catálogo da classe de armazenamento padrão do cluster para um compartilhamento NFS com suporte do ONTAP para melhorar significativamente o desempenho do catálogo para a implantação local do NetApp Console. O catálogo de índice é usado para a funcionalidade de busca e restauração. Embora o catálogo funcione com o armazenamento padrão, o uso de NFS com suporte do ONTAP proporciona melhorias mensuráveis de desempenho para busca e restauração.
+Para melhorar o desempenho de Busca e Restauração em uma implantação local do NetApp Console, migre o armazenamento do índice do catálogo da classe de armazenamento padrão do cluster para um compartilhamento NFS com suporte do ONTAP. O índice do catálogo oferece suporte a Busca e Restauração, e um NFS com suporte do ONTAP pode proporcionar melhorias de desempenho mensuráveis.
 
 .Antes de começar
 Certifique-se de ter o seguinte antes de começar:
@@ -52,7 +52,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 
 
 [discrete]
-===== Monte o volume do ONTAP na implantação local do NetApp Console e copie do pod
+===== Monte o volume do ONTAP na implantação local do NetApp Console e copie os dados do pod
 
 . Monte a exportação NFS do ONTAP em um ponto de montagem local na VM criada quando o OVA de implantação local do NetApp Console foi implantado.
 . Copie os dados do pod coordenador em execução para o ponto de montagem do ONTAP, sem diretório intermediário. O coordenador deve estar em execução.
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. Aplique os objetos YAML, aplicando primeiro o PV e depois o PVC (o PV deve existir para que o seletor de rótulo do PVC possa ser vinculado). Em seguida, verifique se a claim do PVC está vinculada:
+. Aplique os objetos YAML aplicando primeiro o PV e depois o PVC (o PV deve existir para que o seletor de rótulo do PVC possa ser vinculado). Em seguida, verifique se a declaração do PVC está vinculada:
 +
 [source, shell]
 ----

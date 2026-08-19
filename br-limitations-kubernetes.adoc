@@ -14,12 +14,12 @@ summary: Analise estas limitações do NetApp Backup and Recovery antes de usar 
 
 
 [role="lead"]
-Plataformas, dispositivos ou recursos que não funcionam ou não funcionam bem com esta versão estão listados aqui.  Leia estas limitações com atenção.
+Analise as limitações e soluções alternativas atuais para cargas de trabalho do Kubernetes em NetApp Backup and Recovery.
 
 
 
-[[backup-and-recovery-preview-for-netapp-console-local-deployment-limitation]]
-== Limitação da prévia do Backup and Recovery para implantação local do NetApp Console
+[[limitation-in-the-backup-and-recovery-preview-for-netapp-console-local-deployment]]
+== Limitação na prévia do NetApp Backup and Recovery para implantação local do NetApp Console
 
 Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
 
@@ -28,15 +28,15 @@ Na versão prévia de Backup and Recovery para implantação local do NetApp Con
 [[changing-the-protection-policy-for-an-application]]
 == Alterando a política de proteção de um aplicativo
 
-Ao alterar a política de proteção associada a um aplicativo para usar um bucket diferente ou um destino de replicação secundário, a política de proteção pode falhar.
+Se você alterar a política de proteção de um aplicativo para usar um bucket diferente ou um destino de replicação secundário, a proteção pode falhar.
 
-*Solução alternativa*: remova e adicione novamente o aplicativo.
+*Solução alternativa*: Remova o aplicativo e adicione-o novamente.
 
 
 
 [[3-2-1-protection-policy-configuration-limitation]]
 == Limitação de configuração da política de proteção 3-2-1
 
-Ao criar uma política de proteção 3-2-1 em que nenhum backup de storage de objetos ocorre ao mesmo tempo que a replicação para storage secundário, a política de proteção trava ao proteger o aplicativo.
+Se você criar uma política de proteção 3-2-1 que agende backups de storage de objetos separadamente da replicação para storage secundário, a proteção pode travar.
 
-*Solução alternativa*: Remova e adicione novamente o aplicativo e proteja-o com uma política de proteção diferente.
+*Solução alternativa*: Remova o aplicativo e adicione-o novamente, e então proteja-o com uma política de proteção diferente.

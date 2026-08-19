@@ -14,10 +14,10 @@ summary: Proteja suas cargas de trabalho KVM com o NetApp Backup and Recovery.
 
 
 [role="lead"]
-Restaure máquinas virtuais KVM a partir de snapshots, de um backup de grupo de proteção replicado para armazenamento secundário ou de backups armazenados em armazenamento de objetos usando o NetApp Backup and Recovery.
+Restaure máquinas virtuais KVM a partir de snapshots primários, cópias secundárias replicadas ou backups em storage de objetos.
 
 .Restaurar a partir desses locais
-Você pode restaurar máquinas virtuais de diferentes locais de inicialização:
+Você pode restaurar máquinas virtuais a partir destes locais:
 
 * Restaurar de um local primário (instantâneo local)
 * Restaurar de um recurso replicado no armazenamento secundário
@@ -32,7 +32,7 @@ Você pode restaurar dados para estes pontos:
 
 
 .Considerações sobre restauração de armazenamento de objetos
-Se você selecionar um arquivo de backup no storage de objetos e a proteção contra ransomware estiver ativa para esse backup (caso tenha habilitado o Datalock e a proteção contra ransomware na política de backup), será solicitado que você execute uma verificação de integridade adicional no arquivo de backup antes de restaurar os dados. Recomendamos que você execute a verificação.
+Se você selecionar um backup no storage de objetos e a proteção contra ransomware estiver ativa para esse backup (se você tiver habilitado o DataLock e a proteção contra ransomware na política de backup), será solicitado que você execute uma verificação de integridade adicional antes de restaurar os dados. Recomendamos que você execute a verificação.
 
 
 TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.
@@ -42,21 +42,21 @@ TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para a
 [[how-restoring-virtual-machines-works]]
 == Como funciona a restauração de máquinas virtuais
 
-Ao restaurar máquinas virtuais, ocorre o seguinte:
+Ao restaurar máquinas virtuais, aplica-se o seguinte:
 
 * Quando você restaura uma carga de trabalho de um arquivo de backup local, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
 * Ao restaurar a partir de uma VM replicada, você pode restaurá-la para o sistema original ou para um sistema ONTAP local.
 * Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o sistema original ou para um sistema ONTAP local.
 
 
-Na página Restaurar, você pode restaurar uma máquina virtual, mesmo que não se lembre do nome exato, da localização em que ela está ou da data em que estava em bom estado pela última vez. Você pode pesquisar o snapshot usando filtros.
+Na página Restaurar, você pode restaurar uma máquina virtual mesmo que não se lembre do nome exato, da localização ou da última data em que ela esteve em bom estado. Você pode pesquisar o snapshot usando filtros.
 
 
 
 [[restore-kvm-virtual-machines]]
 == Restaurar máquinas virtuais KVM
 
-Restaure máquinas virtuais KVM usando o menu Restaurar. Você pode procurar o snapshot pelo nome ou usando filtros.
+Restaure máquinas virtuais KVM usando o menu Restaurar. Você pode pesquisar snapshots por nome ou usando filtros.
 
 *Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de restauração de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -64,11 +64,11 @@ Restaure máquinas virtuais KVM usando o menu Restaurar. Você pode procurar o s
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . No menu NetApp Backup and Recovery , selecione *Restaurar*.
 . Na lista suspensa à direita do campo de pesquisa de nome, selecione *KVM*.
-. Insira o nome da VM que você deseja restaurar ou filtre pelo host da VM ou pool de armazenamento onde o recurso que você deseja restaurar está localizado.
+. Insira o nome da máquina virtual que você deseja restaurar ou filtre pelo host da máquina virtual ou pool de storage onde a máquina virtual está localizada.
 +
 Aparece uma lista de instantâneos que correspondem aos seus critérios de pesquisa.
 
-. Selecione o botão *Restaurar* para o instantâneo que você deseja restaurar.
+. Selecione *Restaurar* para o snapshot que você deseja restaurar.
 +
 Uma lista de possíveis pontos de restauração é exibida.
 
@@ -93,7 +93,7 @@ Uma lista de possíveis pontos de restauração é exibida.
 .Restaurar para local alternativo
 --
 .. Selecione o painel *Localização alternativa*.
-.. Na seção *Cloudstack settings*: forneça as seguintes informações:
+.. Na seção *CloudStack settings*:, forneça as seguintes informações:
 +
 *** *Zona*: Escolha uma zona de destino CloudStack na lista.
 *** *Pod*: Escolha um pod de destino dentro da zona selecionada na lista.

@@ -14,12 +14,12 @@ summary: Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V
 
 
 [role="lead"]
-Crie grupos de proteção para gerenciar as operações de backup de um conjunto de máquinas virtuais.  Um grupo de proteção é um agrupamento lógico de recursos, como VMs, que você deseja proteger juntos.
+Crie grupos de proteção para proteger VMs Hyper-V relacionadas em conjunto e gerencie suas operações de backup no NetApp Backup and Recovery.
 
 Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 
 * Crie um grupo de proteção.
-* Ver detalhes da proteção.
+* Veja os detalhes do grupo de proteção.
 * Crie um grupo de proteção agora. Verlink:br-use-hyperv-backup.html["Faça backup das cargas de trabalho do Hyper-V agora"] .
 * Excluir um grupo de proteção.
 
@@ -29,7 +29,7 @@ Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
 [[create-a-protection-group]]
 == Crie um grupo de proteção
 
-Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção. Crie um grupo de proteção para fazer backup e restaurar cargas de trabalho em conjunto.
+Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção. Crie um grupo de proteção para fazer backup e restaurar essas cargas de trabalho em conjunto.
 
 *Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
 
@@ -39,11 +39,11 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
-. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione uma carga de trabalho para visualizar os detalhes de proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
-. Selecione o menu *Grupos de proteção*.
+. Selecione a aba *Grupos de proteção*.
 . Selecione *Criar grupo de proteção*.
-. Forneça um nome para o grupo de proteção.
+. Insira um nome para o grupo de proteção.
 . Selecione as VMs que você deseja incluir no grupo de proteção.
 . Selecione *Avançar*.
 . Selecione a *Política de backup* que você deseja aplicar ao grupo de proteção.
@@ -81,7 +81,7 @@ O assistente Edit protection group orienta você nas configurações do grupo de
 Os backups agendados usam o fuso horário do host Hyper-V, que é registrado quando o agendamento do grupo de proteção é criado. Se você alterar o fuso horário do host, os grupos de proteção existentes continuarão sendo executados em seu fuso horário original (normalmente UTC) até que você atualize seus agendamentos.
 
 
-NOTE: Os agendamentos são recriados apenas quando você modifica o nome do grupo de proteção, adiciona ou remove uma máquina virtual, altera a política atribuída ou atualiza os scripts de pré/pós-backup. Salvar sem fazer alterações não atualizará os agendamentos. Essa atualização de agendamento é uma ação única por grupo de proteção e não inicia um backup imediato.
+NOTE: Os agendamentos são recriados apenas quando você modifica o nome do grupo de proteção, adiciona ou remove uma máquina virtual, altera a política atribuída ou atualiza os scripts de pré/pós-backup. Salvar sem fazer alterações não atualizará os agendamentos. Essa atualização única do agendamento não inicia um backup imediatamente.
 
 .Passos
 . Atualize o host Hyper-V para que seu fuso horário atual seja recuperado.
@@ -97,7 +97,7 @@ A exclusão de um grupo de proteção o remove, juntamente com todos os agendame
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
-. Selecione uma carga de trabalho para visualizar os detalhes da proteção.
+. Selecione uma carga de trabalho para visualizar os detalhes de proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
 . Selecione a aba *Grupos de proteção*.
 . Selecione o grupo de proteção que você deseja excluir.

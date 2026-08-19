@@ -14,14 +14,14 @@ summary: O NetApp Backup and Recovery oferece suporte a uma camada de acesso de 
 
 
 [role="lead"]
-O NetApp Backup and Recovery oferece suporte a uma camada de acesso de arquivamento do Azure e à maioria das regiões.
+Use estas informações para entender o nível de arquivamento do Azure compatível com o NetApp Backup and Recovery. Você também pode consultar os custos de restauração e os tempos de recuperação de backups arquivados.
 
 
 
 [[supported-azure-blob-access-tiers-for-netapp-backup-and-recovery]]
 == Camadas de acesso do Azure Blob com suporte para NetApp Backup and Recovery
 
-Quando os arquivos de backup são criados inicialmente, eles são armazenados na camada de acesso _Cool_.  Esta camada é otimizada para armazenar dados que são acessados com pouca frequência, mas que podem ser acessados imediatamente quando necessário.
+Quando os arquivos de backup são criados inicialmente, eles são armazenados na camada de acesso _Cool_. Essa camada é otimizada para armazenar dados que são acessados com pouca frequência, mas que podem ser acessados imediatamente quando necessário.
 
 Se seus clusters de origem estiverem executando o ONTAP 9.10.1 ou superior, você poderá optar por dividir os backups em camadas do armazenamento _Cool_ para o _Azure Archive_ após um determinado número de dias (normalmente mais de 30 dias) para otimizar ainda mais os custos.  Os dados nesta camada não podem ser acessados ​​imediatamente quando necessário e exigirão um custo de recuperação mais alto, então você precisa considerar com que frequência pode precisar restaurar dados desses arquivos de backup arquivados.  Consulte a seção nesta página sobre restauração de dados do armazenamento de arquivo.
 
@@ -49,7 +49,7 @@ Cada método tem uma taxa diferente de recuperação por GB e por solicitação.
 
 
 
-NOTE: A alta prioridade não é suportada ao restaurar dados do Azure para sistemas StorageGRID .
+NOTE: A prioridade alta não é suportada ao restaurar dados do Azure para os sistemas StorageGRID.
 
 Quanto tempo levará para restaurar meus dados arquivados no Arquivo do Azure?:: Existem 2 partes que compõem o tempo de restauração:
 +

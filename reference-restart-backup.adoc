@@ -14,12 +14,12 @@ summary: Pode haver situações em que você precisará reiniciar o NetApp Backu
 
 
 [role="lead"]
-Pode haver situações em que você precisará reiniciar o NetApp Backup and Recovery.
+Você pode reiniciar o NetApp Backup and Recovery a partir do host do agente do Console quando precisar recuperar o serviço ou aplicar uma alteração. Use o comando que corresponde ao seu tipo de implantação e ao ambiente de execução do contêiner.
 
 O agente do Console inclui a funcionalidade de NetApp Backup and Recovery .
 
 .Passos
-. Conecte-se ao sistema Linux no qual o agente do Console está sendo executado.
+. Conecte-se ao sistema Linux onde o agente do Console está em execução.
 +
 [cols="25,50"]
 |===

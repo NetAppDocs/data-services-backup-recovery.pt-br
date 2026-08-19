@@ -14,11 +14,11 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-Faça backup de VMs e datastores VMware de sistemas ONTAP locais para Amazon Web Services, Azure NetApp Files ou StorageGRID para garantir que seus dados estejam protegidos. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
+Faça backup de máquinas virtuais VMware e datastores de sistemas ONTAP no local para Amazon Web Services, Azure NetApp Files ou StorageGRID para ajudar a proteger seus dados. Os backups são gerados automaticamente e armazenados em um armazenamento de objetos na sua conta de nuvem pública ou privada.
 
 * Para fazer backup de cargas de trabalho de forma programada, crie políticas que controlem as operações de backup e restauração. Consulte link:br-use-policies-create.html["Criar políticas de proteção"] para obter instruções.
 * Crie grupos de proteção para gerenciar as operações de backup e restauração de um conjunto de recursos. Veja link:br-use-vmware-protection-groups.html["Criar e gerenciar grupos de proteção"] para mais informações.
-* Faça backup das cargas de trabalho agora (crie um backup sob demanda agora).
+* Faça backup de suas cargas de trabalho agora mesmo criando um backup sob demanda.
 
 
 
@@ -31,7 +31,7 @@ Crie um backup sob demanda imediatamente.  Talvez você queira executar um backu
 *Função necessária do NetApp Console*: Storage viewer, Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin, Backup and Recovery clone admin ou Backup and Recovery viewer role. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
-. No menu Backup e Recuperação, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione a carga de trabalho do VMware.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
 . Selecione o cabeçalho de menu *Grupos de Proteção*, *Datastores*, *Máquinas virtuais* ou *Tags*.

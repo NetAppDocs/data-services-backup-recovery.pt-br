@@ -14,7 +14,7 @@ summary: Saiba o que há de novo no NetApp Backup and Recovery.
 
 
 [role="lead"]
-Saiba o que há de novo no NetApp Backup and Recovery.
+Saiba mais sobre os novos recursos, melhorias e correções no NetApp Backup and Recovery.
 
 
 
@@ -807,7 +807,7 @@ Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
 [[microsoft-sql-server-workload-supported-in-general-availability-ga]]
 === Carga de trabalho do Microsoft SQL Server com suporte em Disponibilidade Geral (GA)
 
-O suporte à carga de trabalho do Microsoft SQL Server agora está disponível de modo geral (GA) no NetApp Backup and Recovery. Organizações que usam um ambiente MSSQL no ONTAP, Cloud Volumes ONTAP e Amazon FSx for NetApp ONTAP agora podem aproveitar este novo serviço de backup e recuperação para proteger seus dados.
+O suporte para cargas de trabalho do Microsoft SQL Server agora está disponível para o público em geral (GA) no NetApp Backup and Recovery. Organizações que utilizam um ambiente MSSQL no ONTAP, no Cloud Volumes ONTAP e no Amazon FSx for NetApp ONTAP agora podem aproveitar esse novo serviço de Backup and Recovery para proteger seus dados.
 
 Esta versão inclui os seguintes aprimoramentos no suporte à carga de trabalho do Microsoft SQL Server em relação à versão de visualização anterior:
 
@@ -1066,7 +1066,7 @@ O NetApp Backup and Recovery agora estende seu suporte a armazenamentos de objet
 
 ==== Começando com Wasabi
 
-Para começar a usar o armazenamento de terceiros como um armazenamento de objetos, você deve habilitar um sinalizador no agente do Console.  Em seguida, você pode inserir os detalhes de conexão do seu armazenamento de objetos de terceiros e integrá-lo aos seus fluxos de trabalho de backup e recuperação.
+Para começar a usar storage de terceiros como armazenamento de objetos, você precisa habilitar uma opção no agente do Console. Em seguida, você pode inserir os detalhes de conexão do seu armazenamento de objetos de terceiros e integrá-lo aos seus fluxos de trabalho de backup e recuperação.
 
 .Passos
 . Conecte-se via SSH ao seu conector.
@@ -1218,7 +1218,7 @@ NOTE: Esta documentação é fornecida como uma prévia da tecnologia. Com esta 
 
 Esta versão do NetApp Backup and Recovery Preview 2025 inclui as seguintes atualizações.
 
-* Uma interface de usuário redesenhada que oferece uma experiência mais intuitiva para gerenciar suas tarefas de backup e recuperação.
+* Uma interface de usuário redesenhada que proporciona uma experiência mais intuitiva para gerenciar suas tarefas de backup e recuperação.
 * A versão de visualização permite que você faça backup e restaure bancos de dados do Microsoft SQL Server. (Suporte para outras cargas de trabalho será adicionado em versões futuras.)
 * Esta versão integra os recursos do SnapCenter , permitindo que você gerencie e proteja seus recursos do SnapCenter com uma estratégia de proteção de dados 3-2-1 na interface do usuário do NetApp Backup and Recovery .
 * Esta versão permite que você importe cargas de trabalho do SnapCenter para o NetApp Backup and Recovery.

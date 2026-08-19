@@ -12,20 +12,20 @@ summary: Para aumentar a segurança, configure o acesso para funções específi
 
 
 [role="lead"]
-Para aumentar a segurança e controlar o acesso aos recursos, configure o controle de acesso baseado em funções para o NetApp Backup and Recovery. O NetApp Console oferece controle de acesso baseado em funções (RBAC) para algumas cargas de trabalho de Backup and Recovery. Você pode atribuir funções administrativas ou de visualização específicas para essas cargas de trabalho. Outras cargas de trabalho que ainda não oferecem controle de acesso baseado em funções permanecem acessíveis a todos os usuários com funções de Backup and Recovery até que a associação em nível de projeto ou de fleet seja compatível.
+Configure o controle de acesso baseado em funções (RBAC) no NetApp Console para controlar quem pode acessar os recursos do NetApp Backup and Recovery. Você pode atribuir funções administrativas ou de visualizador a cargas de trabalho que suportam RBAC. As cargas de trabalho que ainda não suportam RBAC permanecem acessíveis a todos os usuários com funções de backup e recuperação até que a associação em nível de projeto ou de frota esteja disponível.
 
 
 NOTE: NetApp Console usa projetos para organizar recursos em pastas, enquanto NetApp Console implantação local se refere a projetos como frotas.
 
-Siga estes passos para controlar o acesso aos recursos da sua organização. Faça as alterações na página *Administração > Identidade e acesso* no menu NetApp Console.
+Para controlar o acesso aos recursos da sua organização, conclua estas etapas na página *Administração > Identidade e acesso* do NetApp Console.
 
 
-NOTE: Esses passos pressupõem que você tenha a função Organization Admin atribuída no Console.
+NOTE: Esses passos pressupõem que você tenha a função de administrador da organização no NetApp Console.
 
 .Passos
 . Crie a estrutura do projeto de identidade e acesso.
 +
-Como administrador da organização, configure a pasta Identidade e acesso e a estrutura de projetos onde as cargas de trabalho residirão.
+Como administrador da organização, configure a estrutura de pastas e projetos onde as cargas de trabalho vão residir.
 
 . Atribuir funções de usuário.
 +
@@ -34,8 +34,8 @@ Como administrador da organização, configure a pasta Identidade e acesso e a e
 Adicione usuários a cada projeto designado para cargas de trabalho e atribua a eles a função apropriada. Por exemplo:
 
 +
-*** *Administrador da organização* e *Backup and Recovery super admin*: Um usuário com essas funções pode visualizar todos os recursos em todas as organizações, e descobrir Backup and Recovery workloads e atribuí-los a projetos (por exemplo, US East ou US West).
-*** *Administrador de pasta ou projeto* e *Backup and Recovery super admin*: Um usuário com essas funções pode ver apenas os recursos na pasta ou projeto para o qual possui permissões, mas pode descobrir Backup and Recovery workloads e atribuí-las a esse projeto.
+*** *Administrador da organização* e *superadministrador de Backup and Recovery*: um usuário com essas funções pode visualizar todos os recursos em todas as organizações, além de descobrir cargas de trabalho do Backup and Recovery e atribuí-las a projetos (por exemplo, US East ou US West).
+*** *Administrador de pasta ou projeto* e *superadministrador de NetApp Backup and Recovery*: Um usuário com essas funções pode visualizar apenas os recursos em sua pasta ou projeto atribuído, mas pode descobrir cargas de trabalho do NetApp Backup and Recovery e atribuí-las a esse projeto.
 
 
 .. Opção alternativa:
@@ -46,11 +46,11 @@ Em vez de conceder a um usuário acesso administrativo completo ao Backup and Re
 
 . Descubra cargas de trabalho em Backup and Recovery.
 +
-Os administradores da organização ou administradores de pasta ou projeto descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado.
+Os administradores da organização, de pastas ou de projetos descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado.
 
 . Adicionar usuários aos projetos.
 +
-Os administradores da organização ou os administradores de pastas/projetos adicionam usuários do Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base em suas necessidades de acesso. Os usuários com a função de Backup and Recovery apropriada obterão acesso automático a novas cargas de trabalho nesses projetos.
+Administradores da organização, de pastas ou de projetos adicionam usuários do NetApp Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base nas necessidades de acesso deles. Usuários com a função apropriada de Backup and Recovery obtêm acesso automaticamente a novas cargas de trabalho nesses projetos.
 
 
 
