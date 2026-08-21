@@ -26,7 +26,8 @@ Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 
 Você pode usar NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do Oracle Database:
 
 * link:br-start-discover-oracle.html["Descubra cargas de trabalho do Oracle Database"]
-* link:br-use-oracle-protection-groups.html["Criar e gerenciar grupos de proteção para cargas de trabalho do Oracle Database"]
+* link:br-use-oracle-protection-groups.html["Gerencie grupos de proteção para cargas de trabalho do Oracle Database"]
 * link:br-use-oracle-backup.html["Fazer backup das cargas de trabalho do Oracle Database"]
+* link:br-use-oracle-clone.html["Clonar cargas de trabalho do Oracle Database"]
 * link:br-use-oracle-restore.html["Restaurar cargas de trabalho do Oracle Database"]
 

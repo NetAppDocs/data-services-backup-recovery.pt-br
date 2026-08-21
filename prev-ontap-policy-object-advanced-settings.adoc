@@ -17,7 +17,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 Use a página Configurações Avançadas para alterar as configurações de backup para storage de objetos em nível de cluster para cada sistema ONTAP após você ativar o NetApp Backup and Recovery. Você pode ajustar a largura de banda, a exportação de snapshots históricos, a exclusão anual de snapshots e as configurações de verificação de ransomware.
 
 
-NOTE: Essas configurações estão disponíveis somente para armazenamento de backup em objeto.  Nenhuma dessas configurações afeta suas configurações de Snapshot ou replicação.
+NOTE: Essas configurações estão disponíveis apenas para backup em storage de objetos. Nenhuma dessas configurações afeta suas configurações de snapshot ou replicação.
 
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .

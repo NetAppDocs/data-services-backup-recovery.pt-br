@@ -23,7 +23,7 @@ Ao usar o assistente de ativação para habilitar o serviço de backup e recuper
 
 Para saber mais sobre as políticas de backup padrão fornecidas, consultelink:prev-ontap-protect-journey.html["Planeje sua jornada de proteção"] .
 
-O NetApp Backup and Recovery oferece três tipos de backups de dados ONTAP : snapshots, replicações e backups para armazenamento de objetos.  Suas políticas residem em locais diferentes com base na arquitetura que você usa e no tipo de backup:
+NetApp Backup and Recovery oferece três tipos de backup de dados do ONTAP: snapshots, replicações e backups para storage de objetos. As políticas correspondentes ficam em locais diferentes, dependendo da arquitetura que você utiliza e do tipo de backup:
 
 [cols="25,25,25,25"]
 |===
@@ -85,7 +85,7 @@ Parte do processo de criação de políticas envolve a identificação de rótul
 +
 A página Gerenciamento de políticas é exibida.
 
-. Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política do Snapshot*.
+. Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política de snapshot*.
 . Especifique o nome da política.
 . Selecione o agendamento ou agendamentos de snapshot.  Você pode ter no máximo 5 rótulos.  Ou crie uma programação.
 . Se você optar por criar uma programação:
@@ -206,4 +206,4 @@ Se uma política estiver associada a um volume e você quiser excluí-la, será 
 
 Para obter instruções sobre como criar políticas usando o System Manager ou o ONTAP CLI, consulte o seguinte:
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Crie uma política de instantâneo usando o Gerenciador de sistemas"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Crie uma política de Snapshot usando o ONTAP CLI"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Crie uma política de replicação usando o Gerenciador de Sistema"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Crie uma política de replicação usando o ONTAP CLI"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Crie um backup para uma política de armazenamento de objetos usando o Gerenciador do Sistema"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Crie um backup para uma política de armazenamento de objetos usando o ONTAP CLI"^]
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Crie uma política de snapshot usando o System Manager"^] https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Crie uma política de snapshot usando a CLI do ONTAP"^] https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Crie uma política de replicação usando o Gerenciador de Sistema"^] https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Crie uma política de replicação usando o ONTAP CLI"^] https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Crie um backup para uma política de armazenamento de objetos usando o Gerenciador do Sistema"^] https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Crie um backup para uma política de armazenamento de objetos usando o ONTAP CLI"^]

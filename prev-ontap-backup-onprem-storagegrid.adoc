@@ -331,7 +331,7 @@ A página de Introdução do assistente mostra as opções de proteção, inclui
 [[select-the-volumes-that-you-want-to-back-up]]
 === Selecione os volumes dos quais deseja fazer backup
 
-Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que tem um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup em objeto.
+Escolha os volumes que você deseja proteger.  Um volume protegido é aquele que possui um ou mais dos seguintes: política de instantâneo, política de replicação, política de backup para objeto.
 
 Você pode optar por proteger volumes FlexVol ou FlexGroup ; no entanto, não é possível selecionar uma mistura desses volumes ao ativar o backup de um sistema.  Veja comolink:prev-ontap-backup-manage.html["ativar backup para volumes adicionais no sistema"] (FlexVol ou FlexGroup) depois de configurar o backup para os volumes iniciais.
 
@@ -478,7 +478,7 @@ Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessári
 
 .Passos
 . Na página Revisão, revise suas seleções.
-. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de instantâneo com os rótulos da política de replicação e backup*.  Isso cria instantâneos com um rótulo que corresponde aos rótulos nas políticas de replicação e backup.
+. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de snapshot com os rótulos das políticas de replicação e de backup*. Isso cria snapshots com um rótulo que corresponde aos rótulos nas políticas de replicação e de backup.
 . Selecione *Ativar Backup*.
 
 

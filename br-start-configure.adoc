@@ -25,8 +25,6 @@ Configure as configurações de backup e recuperação para adicionar credenciai
 * <<Crie um modelo de transformação de recursos>> Para modificar os recursos à medida que os restaura.
 
 
-*Função necessária do NetApp Console* Backup and Recovery super admin, Backup and Recovery backup admin, Backup and Recovery restore admin. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
-
 
 
 [[add-credentials-for-host-resources]]
@@ -44,6 +42,8 @@ Você precisa configurar os seguintes tipos de credenciais:
 * Credenciais do banco de dados Oracle
 * credenciais do host Linux
 
+
+*Função necessária do NetApp Console* superadministrador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
@@ -122,6 +122,8 @@ TIP: Para cargas de trabalho do Microsoft SQL Server, você deve inserir credenc
 
 Você poderá editar posteriormente a senha de quaisquer credenciais que tenha criado.
 
+*Função necessária do NetApp Console* superadministrador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
 . Selecione a seta para baixo para expandir a seção *Credenciais*.
@@ -139,6 +141,8 @@ Você poderá editar posteriormente a senha de quaisquer credenciais que tenha c
 == Manter as configurações do VMware vCenter
 
 Forneça as credenciais do VMware vCenter Server para descobrir cargas de trabalho para backup. Se você não tiver credenciais, crie-as com permissões para acessar e gerenciar cargas de trabalho do VMware vCenter Server.
+
+*Função necessária do NetApp Console* superadministrador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
@@ -167,6 +171,8 @@ Este é um processo de duas partes:
 * Importar recursos do aplicativo e do host do SnapCenter Server
 * Gerenciar recursos selecionados do host SnapCenter
 
+
+*Função necessária do NetApp Console* superadministrador de Backup and Recovery ou administrador de backup do Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 
@@ -249,6 +255,8 @@ A página Importar do SnapCenter mostra todas as importações anteriores.
 
 Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar recursos KVM, integre-a ao NetApp Backup and Recovery para que o Backup and Recovery possa detectar e proteger os hosts KVM e as VMs gerenciadas.
 
+*Função necessária do NetApp Console* superadministrador de Backup and Recovery ou administrador de backup do Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
 . Selecione a seta para baixo para expandir a seção *Plataforma de gerenciamento*.
@@ -271,6 +279,8 @@ Se você utiliza a plataforma de gerenciamento Apache CloudStack para gerenciar 
 == Configurar diretórios de log em instantâneos para hosts Windows
 
 Antes de criar políticas para hosts Windows, configure diretórios de logs em snapshots para armazenar os logs gerados durante o processo de backup.
+
+*Função obrigatória do NetApp Console*: superadministrador do NetApp Backup and Recovery, administrador de backup do NetApp Backup and Recovery ou administrador de restauração do NetApp Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
@@ -311,6 +321,8 @@ Depois de criar o modelo, ele aparece na lista de modelos na seção *Modelo de 
 == Crie um modelo de transformação de recursos
 
 Crie modelos de transformação de recursos para armazenar transformações comuns que você aplica aos recursos durante as operações de restauração.
+
+*Função obrigatória do NetApp Console*: superadministrador do NetApp Backup and Recovery, administrador de backup do NetApp Backup and Recovery ou administrador de restauração do NetApp Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.

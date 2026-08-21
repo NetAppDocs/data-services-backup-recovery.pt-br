@@ -31,7 +31,7 @@ NOTE: Para fazer backup de grupos de proteção ou bancos de dados individuais e
 
 Crie um backup sob demanda antes de fazer alterações no sistema para proteger seus dados.
 
-*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: superadministrador de Backup and Recovery ou administrador de backup de Backup and Recovery https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
@@ -57,7 +57,7 @@ NOTE: O NetApp Backup and Recovery usa a mesma política para o backup e o grupo
 
 Crie um backup sob demanda antes de fazer alterações no sistema para proteger seus dados.
 
-*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: superadministrador de Backup and Recovery ou administrador de backup de Backup and Recovery https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.

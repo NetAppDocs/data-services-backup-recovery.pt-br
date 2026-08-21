@@ -29,7 +29,7 @@ NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , con
 
 O NetApp Backup and Recovery permite que você crie várias políticas de backup com agendamentos exclusivos para cada sistema (cluster).  Você pode atribuir diferentes políticas de backup a volumes que tenham diferentes objetivos de ponto de recuperação (RPO).
 
-Cada política de backup fornece uma seção para _Rótulos e retenção_ que você pode aplicar aos seus arquivos de backup.  Observe que a política de Snapshot aplicada ao volume deve ser uma das políticas reconhecidas pelo NetApp Backup and Recovery, ou os arquivos de backup não serão criados.
+Cada política de backup fornece uma seção para _Rótulos e Retenção_ que você pode aplicar aos seus arquivos de backup. Observe que a política de snapshot aplicada ao volume deve ser uma das políticas reconhecidas pelo NetApp Backup and Recovery ou os arquivos de backup não serão criados.
 
 Há duas partes do cronograma: o rótulo e o valor de retenção:
 

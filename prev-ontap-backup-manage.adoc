@@ -128,7 +128,7 @@ O nome do backup inclui o registro de data e hora para que você possa identific
 
 Se você habilitou o _DataLock e a proteção contra ransomware_ ao ativar o NetApp Backup and Recovery para este cluster, o backup sob demanda também será configurado com o DataLock e o período de retenção será de 30 dias. As verificações de ransomware não são compatíveis com backups ad-hoc. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção DataLock e Ransomware"^].
 
-Quando você cria um backup ad-hoc, um instantâneo é criado no volume de origem.  Como esse snapshot não faz parte de uma programação normal de snapshot, ele não será desativado.  Talvez você queira excluir manualmente este instantâneo do volume de origem quando o backup estiver concluído.  Isso permitirá que os blocos relacionados a este instantâneo sejam liberados.  O nome do Snapshot começará com `cbs-snapshot-adhoc-` . https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Veja como excluir um Snapshot usando o ONTAP CLI"^] .
+Quando você cria um backup ad-hoc, um snapshot é criado no volume de origem. Como esse snapshot não faz parte de um cronograma normal de snapshots, ele não será removido automaticamente. Você pode excluir manualmente esse snapshot do volume de origem após a conclusão do backup. Isso permitirá que os blocos relacionados a esse snapshot sejam liberados. O nome do snapshot começará com  `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Veja como excluir um snapshot usando a CLI do ONTAP"^].
 
 
 NOTE: O backup de volume sob demanda não é suportado em volumes de proteção de dados.

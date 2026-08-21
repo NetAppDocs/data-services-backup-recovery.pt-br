@@ -332,7 +332,7 @@ Para obter detalhes sobre essas arquiteturas, consultelink:prev-ontap-protect-jo
 . *Instantâneo local*: escolha uma política de instantâneo existente ou crie uma nova.
 +
 
-TIP: Se você quiser criar uma política personalizada antes de ativar o Snapshot, você pode usar o System Manager ou o ONTAP CLI `snapmirror policy create` comando.  Consulte .
+TIP: Se você deseja criar uma política personalizada antes de ativar o snapshot, pode usar o System Manager ou o comando da CLI do ONTAP `snapmirror policy create`. Consulte .
 
 +
 
@@ -396,7 +396,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 +
-** *Exportar snapshots existentes para armazenamento de objetos como arquivos de backup*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os Snapshots históricos sejam copiados para o armazenamento de objetos como arquivos de backup para garantir a proteção mais completa para seus volumes.
+** *Exportar snapshots existentes para o storage de objetos como arquivos de backup*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os snapshots históricos sejam copiados para o storage de objetos como arquivos de backup, garantindo a proteção mais completa para seus volumes.
 
 
 . Selecione *Avançar*.
@@ -411,7 +411,7 @@ Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessári
 
 .Passos
 . Na página Revisão, revise suas seleções.
-. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de instantâneo com os rótulos da política de replicação e backup*.  Isso cria instantâneos com um rótulo que corresponde aos rótulos nas políticas de replicação e backup.  Se as políticas não corresponderem, os backups não serão criados.
+. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de snapshot com os rótulos das políticas de replicação e de backup*. Isso cria snapshots com um rótulo que corresponde aos rótulos nas políticas de replicação e de backup. Se as políticas não corresponderem, os backups não serão criados.
 . Selecione *Ativar Backup*.
 
 

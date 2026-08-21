@@ -153,7 +153,7 @@ Para restaurar um volume, você precisa do nome do sistema de origem, da máquin
 . Na seção _Navegar e restaurar_, selecione *Restaurar volume*.
 . Na página _Selecionar origem_, navegue até o arquivo de backup do volume que você deseja restaurar.  Selecione o *sistema*, o *Volume* e o arquivo de *Backup* que tem o registro de data/hora do qual você deseja restaurar.
 +
-A coluna *Localização* mostra se o arquivo de backup (Snapshot) é *Local* (um snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Armazenamento de Objetos* (um arquivo de backup no armazenamento de objetos). Escolha o arquivo que você deseja restaurar.
+A coluna *Localização* mostra se o arquivo de backup (snapshot) é *Local* (um snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Storage de Objetos* (um arquivo de backup no storage de objetos). Escolha o arquivo que você quer restaurar.
 
 . Selecione *Avançar*.
 +

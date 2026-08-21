@@ -16,7 +16,7 @@ summary: Clone suas cargas de trabalho do Oracle Database com NetApp Backup and 
 [role="lead"]
 Use o NetApp Backup and Recovery para criar clones graváveis de cargas de trabalho do Oracle Database a partir de sistemas ONTAP locais em storage primário ou secundário. Você também pode agendar atualizações de clones para atender às suas necessidades.
 
-*Função de console necessária* Superadministrador de backup e recuperação ou função de administrador de backup de backup e recuperação. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*: superadministrador de Backup and Recovery ou administrador de clonagem de Backup and Recovery https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 
@@ -31,6 +31,15 @@ Crie um clone imediatamente a partir de um snapshot existente. Use este método 
 . Selecione *Clone*.
 . Selecione *Criar novo clone*.
 . Na seção *Fonte do banco de dados*, escolha o host de origem e o banco de dados de origem nas listas.
++
+.. Se o banco de dados de origem for um banco de dados contêiner (CDB), na seção *Tipo de clone*, selecione uma das seguintes opções:
++
+*** *Clonagem completa do banco de dados*: Clona todo o banco de dados do contêiner, incluindo todos os PDBs.
+*** *Clonagem de PDB*: Clona um PDB específico do backup do banco de dados de contêiner para um banco de dados de contêiner de destino existente.
+
+
+
+
 . Na seção *Banco de dados de destino*, selecione o host de destino e o banco de dados de destino nas listas. O host de destino e o banco de dados de destino podem ser diferentes da origem.
 . Selecione *Avançar*.
 . Na seção *Clonar de* da página *Selecionar ponto de restauração*, selecione *Snapshots existentes*.
@@ -41,8 +50,9 @@ A página *Selecionar local do Snapshot* aparece se o Snapshot estiver armazenad
 . Escolha o local do snapshot que deseja usar e selecione *Avançar*.
 . Na página *Opções avançadas*, faça o seguinte:
 +
-.. Se você já tiver salvo um arquivo de especificações, poderá carregá-lo para personalizar as configurações do banco de dados clonado. Você também pode baixar o arquivo de especificações padrão para o snapshot do banco de dados.
-.. Na seção *Escopo de recuperação*, escolha como limitar o que será restaurado para criar o clone e insira as informações necessárias para a opção que você escolher. Escolher *Nenhum* restaura todos os dados.
+.. Opcionalmente, se você estiver clonando um banco de dados multitenant completo, em *Configurações de clonagem completa do banco de dados*, selecione um ou mais PDBs para excluir da clonagem (o PDB $SEED é sempre excluído). Esta seção não aparece ao clonar um banco de dados de locatário único.
+.. Se você já tiver salvo um arquivo de especificações, poderá ativar a opção *Personalizar parâmetros do banco de dados de destino* para carregá-lo e personalizar as configurações do banco de dados clonado. Você também pode baixar o arquivo de especificações padrão para o snapshot do banco de dados.
+.. Na seção *Escopo de recuperação*, selecione uma opção para recuperar o clone usando os logs de arquivamento e insira os detalhes necessários. Selecionar *Nenhum* ignora a recuperação (o clone é criado a partir do snapshot sem aplicar as alterações dos logs de arquivamento). *Nenhum* não está disponível para clones PDB.
 .. Na seção *Pré-scripts e pós-scripts*, habilite uma ou ambas as opções *Pré-script* e *Pós-script* para executar um script antes que a operação de clonagem comece ou depois que ela for concluída. Para cada opção, insira o caminho completo do script e quaisquer argumentos necessários.
 
 
@@ -55,6 +65,9 @@ A página *Selecionar local do Snapshot* aparece se o Snapshot estiver armazenad
 == Agendar a clonagem de um banco de dados Oracle
 
 Crie um clone instantâneo e agende atualizações regulares para mantê-lo atualizado com o estado mais recente do banco de dados.
+
+
+NOTE: A criação de um snapshot instantâneo e de um clone com agendamento de atualização aplica-se somente a clones completos de banco de dados. Não está disponível para um clone de PDB.
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.

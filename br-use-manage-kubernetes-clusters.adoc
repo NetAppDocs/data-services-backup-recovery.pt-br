@@ -16,9 +16,6 @@ summary: O NetApp Backup and Recovery permite que você descubra e gerencie seus
 [role="lead"]
 Descubra e gerencie clusters Kubernetes para proteger seus recursos hospedados.
 
-.Função necessária do NetApp Console
-Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
-
 
 NOTE: Para descobrir clusters do Kubernetes, consultelink:br-start-discover.html["Descubra as cargas de trabalho do Kubernetes"] .
 
@@ -28,6 +25,10 @@ NOTE: Para descobrir clusters do Kubernetes, consultelink:br-start-discover.html
 == Editar informações do cluster Kubernetes
 
 Você pode editar um cluster se precisar alterar seu nome.
+
+*Função necessária do NetApp Console*
+
+Superadministrador do NetApp Backup and Recovery ou administrador de backup do NetApp Backup and Recovery. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
@@ -44,6 +45,10 @@ Você pode editar um cluster se precisar alterar seu nome.
 
 Para parar de proteger um cluster do Kubernetes, desative a proteção e exclua os aplicativos associados e, em seguida, remova o cluster do NetApp Backup and Recovery.  O NetApp Backup and Recovery não exclui o cluster ou seus recursos; ele apenas remove o cluster do inventário do NetApp Console .
 
+*Função necessária do NetApp Console*
+
+Administrador avançado de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
 . Na lista de clusters, selecione o cluster que você deseja remover e selecione o menu Ações associado.
@@ -57,6 +62,10 @@ Para parar de proteger um cluster do Kubernetes, desative a proteção e exclua 
 == Atualizar Trident Protect
 
 Para clusters Kubernetes executando Trident Protect 26.05 ou posterior, você pode atualizar Trident Protect diretamente do NetApp Backup and Recovery. A opção de atualização só aparece se uma versão mais recente estiver disponível.
+
+*Função necessária do NetApp Console*
+
+Administrador avançado de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
@@ -76,6 +85,10 @@ Para clusters Kubernetes executando Trident Protect 26.05 ou posterior, você po
 
 Se o endereço IP do seu agente do Console mudar (por exemplo, após um reiniciar), seu cluster Kubernetes perderá a conexão com o agente e você precisará se reconectar.
 
+*Função necessária do NetApp Console*
+
+Administrador avançado de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário* > *Clusters*.
 . Selecione um cluster Kubernetes desconectado e selecione o ícone Ação image:../media/icon-action.png["Opção de ações"] > *Modificar cluster* > *Reconectar cluster*.
@@ -92,6 +105,10 @@ Após a conclusão do comando, seu cluster deverá se reconectar automaticamente
 == Migrar um cluster Kubernetes para um novo agente de Console
 
 Se o seu agente de Console for excluído ou ficar indisponível, migre todos os clusters que o utilizam para um novo agente para evitar a interrupção da proteção do aplicativo.
+
+*Função necessária do NetApp Console*
+
+Administrador avançado de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 .Antes de começar
 * https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["Implante um novo agente do Console."^]

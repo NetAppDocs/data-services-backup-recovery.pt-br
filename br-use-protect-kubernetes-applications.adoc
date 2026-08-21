@@ -16,8 +16,9 @@ summary: O NetApp Backup and Recovery permite que você gerencie informações d
 [role="lead"]
 Use a interface web do NetApp Backup and Recovery ou arquivos de recursos personalizados para adicionar aplicativos Kubernetes para proteção. Você pode adicionar aplicativos baseados em namespace que usam recursos padrão do Kubernetes ou aplicativos baseados em máquina virtual que usam uma ou mais máquinas virtuais.
 
-.Função necessária do NetApp Console
-Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*
+
+Superadministrador do NetApp Backup and Recovery ou administrador de backup do NetApp Backup and Recovery. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 

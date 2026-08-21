@@ -16,7 +16,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 [role="lead"]
 Antes de você poder proteger datastores VMware e máquinas virtuais em execução em sistemas ONTAP, é necessário descobri-los no NetApp Backup and Recovery. Se você já tem o SnapCenter Plug-in for VMware vSphere instalado, também pode importar seus dados de backup e políticas.
 
-*Função de console necessária* Superadministrador de backup e recuperação.  Aprenda sobrelink:reference-roles.html["Funções e privilégios de backup e recuperação"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console* superadministrador de backup e recuperação. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 

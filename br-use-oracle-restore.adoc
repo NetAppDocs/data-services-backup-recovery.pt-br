@@ -121,29 +121,37 @@ Os instantâneos correspondentes são exibidos.
 ====
 .Restaurar para o local original
 --
+[NOTE]
+====
+Se você estiver restaurando PDBs ou espaços de tabela PDB para um ponto específico no tempo ou SCN:
+
+* Selecione apenas um PDB. A recuperação de ponto no tempo não é compatível com a restauração de vários PDBs.
+* O PDB $SEEDnão pode ser selecionado para recuperação de ponto no tempo.
+* A restauração do arquivo de controle não pode ser combinada com a recuperação de ponto no tempo de PDBs ou tablespaces.
+* Certifique-se de que o backup de dados e os backups de log necessários estejam catalogados.
+
+
+====
 . *Configurações de destino*:
+. Selecione o que você deseja restaurar:
 +
-** Escolha restaurar o banco de dados inteiro ou apenas os tablespaces do banco de dados.
-** *Arquivos de controle*: Opcionalmente, habilite esta opção para restaurar também os arquivos de controle do banco de dados.
+** Selecione *Todos os arquivos de dados* para restaurar todo o banco de dados ou o banco de dados contêiner (CDB).
+** Selecione *Bancos de dados plugáveis (PDBs)* para restaurar um ou mais PDBs de um CDB sem afetar os outros PDBs no contêiner. Em seguida, selecione os PDBs na lista.
+** Selecione *Tablespaces de banco de dados plugável (PDB)* (exibidos como *Tablespaces* para um banco de dados não-CDB) para restaurar tablespaces PDB específicos. Em seguida, selecione o PDB e os tablespaces.
 
 
-. *Opções de pré-restauração*:
+. Opcionalmente, habilite a opção *Arquivos de controle* para restaurar também os arquivos de controle do banco de dados. Essa opção não está disponível para recuperação de ponto no tempo ou SCN de PDBs ou tablespaces de PDBs.
+. Opcionalmente, habilite a opção *Alterar o estado do banco de dados, se necessário, para restauração e recuperação* para permitir que o NetApp Backup and Recovery gerencie o estado do banco de dados dependendo do tipo de recuperação.
+. Opcionalmente, habilite a opção *Forçar restauração no local* para usar um método de restauração mais rápido para bancos de dados SAN/ASM, ignorando a verificação de validação de arquivos externos. O banco de dados e o grupo de discos ASM são restaurados ao ponto de criação do backup.
+. Especifique o local dos arquivos de log de arquivamento externo se estiver restaurando PDBs ou tablespaces de PDB para um ponto específico no tempo ou SCN. Insira o local onde o RMAN cria a instância auxiliar para realizar a recuperação. Insira um caminho do sistema de arquivos que comece com "/" ou um grupo de discos ASM que comece com "+". Use os botões "mais" e "menos" ao lado do campo de entrada de texto para adicionar ou remover locais.
+. Opcionalmente, habilite a opção *Abrir o banco de dados ou o banco de dados contêiner no modo LEITURA/GRAVAÇÃO após a recuperação* para abrir os bancos de dados no modo LEITURA/GRAVAÇÃO após restaurá-los. Isso coloca os tablespaces restaurados online.
+. *Prescripts e postscripts*:
 +
-** Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script aceite.
-** Escolha um valor de tempo limite para o script. Se o script não for executado dentro desse período, a restauração prossegue mesmo assim.
-
-
-. *Opções pós-restauração*:
-+
+** *Prescript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script receba.
 ** *Postscript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
-** *Abra o banco de dados ou o banco de dados contêiner no modo LEITURA/GRAVAÇÃO após a recuperação*: Após a conclusão da operação de restauração, o NetApp Backup and Recovery habilita o modo LEITURA/GRAVAÇÃO para o banco de dados.
 
 
-. Seção *Notificação*:
-+
-** *Ativar notificações por e-mail*: selecione esta opção para receber notificações por e-mail sobre a operação de restauração e indique que tipo de notificação você deseja receber.
-
-
+. Escolha um valor de tempo limite para o script. Se o script não for executado dentro desse período, a restauração prosseguirá mesmo assim.
 . Selecione *Restaurar*.
 
 

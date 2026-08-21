@@ -25,8 +25,9 @@ NetApp Backup and Recovery congela e descongela sistemas de arquivos para aplica
 
 
 ====
-.Função necessária do NetApp Console
-Administrador da organização ou administrador do SnapCenter . link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"] . https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^] .
+*Função necessária do NetApp Console*
+
+NetApp Backup and Recovery super admin, NetApp Backup and Recovery backup admin ou NetApp Backup and Recovery restore admin. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 

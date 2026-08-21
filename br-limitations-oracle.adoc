@@ -18,6 +18,7 @@ Analise as limitações atuais e as ações não suportadas para cargas de traba
 
 As seguintes ações não são suportadas para cargas de trabalho do Oracle Database na versão prévia do NetApp Backup and Recovery:
 
+* Após realizar uma recuperação incompleta restaurando um banco de dados para um ponto específico no tempo ou SCN, se posteriormente você precisar restaurar para um ponto anterior a essa recuperação, também deverá selecionar *arquivos de controle* nas configurações de destino da restauração. Sem restaurar o arquivo de controle, o banco de dados não poderá ser restaurado para um ponto anterior à recuperação incompleta anterior.
 * Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
 * Backups offline
 
