@@ -53,6 +53,19 @@ Dependendo das suas necessidades, restaure um banco de dados Oracle para um pont
 
 *Função necessária do NetApp Console*: superadministrador de backup e recuperação ou administrador de restauração de backup e recuperação https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
+[NOTE]
+====
+Se estiver restaurando PDBs ou tablespaces para um ponto específico no tempo ou SCN:
+
+* Selecione apenas um PDB. A recuperação de ponto no tempo não é compatível com a restauração de vários PDBs.
+* `PDB$SEED`Não pode ser selecionado para recuperação de ponto no tempo.
+* A restauração do arquivo de controle não pode ser combinada com a recuperação de ponto no tempo de PDBs ou tablespaces de PDBs.
+* Certifique-se de que o backup de dados e os backups de log necessários estejam catalogados.
+* Os  `SYSTEM`, `SYSAUX` e  `UNDO` espaços de tabela não podem ser selecionados.
+* Verifique se o backup de dados e os backups de arquivo de log necessários estão catalogados.
+
+
+====
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . No menu NetApp Backup and Recovery , selecione *Restaurar*.
@@ -72,8 +85,15 @@ Aparece uma lista de instantâneos que correspondem aos seus critérios de pesqu
 .. Selecione *Avançar*.
 .. Escolha uma data no menu suspenso e selecione *Pesquisar*.
 +
-Uma lista de instantâneos correspondentes na data especificada é exibida.
+O snapshot mais próximo da data e hora especificadas é exibido.
 
+.. Opcionalmente, selecione *Exibir backups de log* para ver os backups de log associados.
++
+... Verifique se os backups de log estão montados.
+
+
+.. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
+.. Selecione *Avançar*.
 
 
 --
@@ -83,8 +103,15 @@ Uma lista de instantâneos correspondentes na data especificada é exibida.
 .. Selecione *Avançar*.
 .. Digite o SCN a ser usado como ponto de restauração e selecione *Pesquisar*.
 +
-Uma lista de instantâneos correspondentes para o SCN especificado é exibida.
+O snapshot mais próximo para o SCN especificado é exibido.
 
+.. Opcionalmente, selecione *Exibir backups de log* para ver os backups de log associados.
++
+... Verifique se os backups de log estão montados.
+
+
+.. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
+.. Selecione *Avançar*.
 
 
 --
@@ -93,66 +120,71 @@ Uma lista de instantâneos correspondentes para o SCN especificado é exibida.
 .. Selecione *Restaurar para o backup mais recente*.
 .. Selecione *Avançar*.
 +
-Os backups completos e de log mais recentes são exibidos.
+O último instantâneo é exibido. A operação de restauração recupera o último estado válido usando todos os backups de arquivo de log disponíveis.
 
+.. Opcionalmente, selecione *Exibir backups de log* para ver os backups de log associados.
++
+... Verifique se os backups de log estão montados.
+
+
+.. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
+.. Selecione *Avançar*.
 
 
 --
 .Restaurar de instantâneos sem recuperação
 --
 .. Selecione *Restaurar de instantâneos sem recuperação*.
++
+Selecionar esta opção significa que o banco de dados será restaurado a partir de snapshots, mas a recuperação será ignorada (os arquivos de log não serão aplicados).
+
 .. Selecione *Avançar*.
 +
-Os instantâneos correspondentes são exibidos.
+As snapshots disponíveis são exibidas.
 
+.. Selecione um snapshot da lista e clique em *Avançar*.
+.. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
+.. Selecione *Avançar*.
 
 
 --
 ====
-. Selecione um local de origem para o instantâneo.
-. Selecione *Próximo* para continuar.
 . Escolha o destino e as configurações de restauração:
-
-
-[discrete]
-===== Seleção de destino
-
++
 [role="tabbed-block"]
 ====
 .Restaurar para o local original
 --
-[NOTE]
-====
-Se você estiver restaurando PDBs ou espaços de tabela PDB para um ponto específico no tempo ou SCN:
-
-* Selecione apenas um PDB. A recuperação de ponto no tempo não é compatível com a restauração de vários PDBs.
-* O PDB $SEEDnão pode ser selecionado para recuperação de ponto no tempo.
-* A restauração do arquivo de controle não pode ser combinada com a recuperação de ponto no tempo de PDBs ou tablespaces.
-* Certifique-se de que o backup de dados e os backups de log necessários estejam catalogados.
-
-
-====
-. *Configurações de destino*:
-. Selecione o que você deseja restaurar:
+.. Na seção *Configurações de destino*, faça o seguinte:
 +
-** Selecione *Todos os arquivos de dados* para restaurar todo o banco de dados ou o banco de dados contêiner (CDB).
-** Selecione *Bancos de dados plugáveis (PDBs)* para restaurar um ou mais PDBs de um CDB sem afetar os outros PDBs no contêiner. Em seguida, selecione os PDBs na lista.
-** Selecione *Tablespaces de banco de dados plugável (PDB)* (exibidos como *Tablespaces* para um banco de dados não-CDB) para restaurar tablespaces PDB específicos. Em seguida, selecione o PDB e os tablespaces.
-
-
-. Opcionalmente, habilite a opção *Arquivos de controle* para restaurar também os arquivos de controle do banco de dados. Essa opção não está disponível para recuperação de ponto no tempo ou SCN de PDBs ou tablespaces de PDBs.
-. Opcionalmente, habilite a opção *Alterar o estado do banco de dados, se necessário, para restauração e recuperação* para permitir que o NetApp Backup and Recovery gerencie o estado do banco de dados dependendo do tipo de recuperação.
-. Opcionalmente, habilite a opção *Forçar restauração no local* para usar um método de restauração mais rápido para bancos de dados SAN/ASM, ignorando a verificação de validação de arquivos externos. O banco de dados e o grupo de discos ASM são restaurados ao ponto de criação do backup.
-. Especifique o local dos arquivos de log de arquivamento externo se estiver restaurando PDBs ou tablespaces de PDB para um ponto específico no tempo ou SCN. Insira o local onde o RMAN cria a instância auxiliar para realizar a recuperação. Insira um caminho do sistema de arquivos que comece com "/" ou um grupo de discos ASM que comece com "+". Use os botões "mais" e "menos" ao lado do campo de entrada de texto para adicionar ou remover locais.
-. Opcionalmente, habilite a opção *Abrir o banco de dados ou o banco de dados contêiner no modo LEITURA/GRAVAÇÃO após a recuperação* para abrir os bancos de dados no modo LEITURA/GRAVAÇÃO após restaurá-los. Isso coloca os tablespaces restaurados online.
-. *Prescripts e postscripts*:
+... Para bancos de dados RAC, selecione o nó RAC no qual deseja executar a restauração. Esta opção aparece somente para bancos de dados RAC.
+... Selecione o que você deseja restaurar:
 +
-** *Prescript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script receba.
-** *Postscript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+**** Selecione *Todos os arquivos de dados* para restaurar todo o banco de dados ou o banco de dados contêiner (CDB).
+**** Selecione *Bancos de dados plugáveis (PDBs)* para restaurar um ou mais PDBs de um CDB sem afetar os outros PDBs no contêiner. Em seguida, selecione os PDBs na lista.
+**** Selecione *Tablespaces de banco de dados plugável (PDB)* (exibidos como *Tablespaces* para um banco de dados não-CDB) para restaurar tablespaces PDB específicos. Em seguida, selecione o PDB e os tablespaces.
 
 
-. Escolha um valor de tempo limite para o script. Se o script não for executado dentro desse período, a restauração prosseguirá mesmo assim.
-. Selecione *Restaurar*.
+... Opcionalmente, habilite a opção *Arquivos de controle* para restaurar também os arquivos de controle do banco de dados. Essa opção não pode ser selecionada para recuperação de ponto no tempo ou SCN de PDBs ou tablespaces de PDBs.
+... Opcionalmente, habilite a opção *Alterar o estado do banco de dados, se necessário, para restauração e recuperação* para permitir que o NetApp Backup and Recovery gerencie o estado do banco de dados dependendo do tipo de recuperação.
+... Opcionalmente, habilite a opção *Forçar restauração no local* para executar uma restauração no local quando novos arquivos de dados forem adicionados após o backup ou quando LUNs forem adicionados, excluídos ou recriados em um grupo de discos LVM. Isso substitui a verificação de arquivos externos; a recuperação de banco de dados prossegue usando a opção de restauração que você selecionou.
+... Especifique os locais dos arquivos de log de arquivamento externos no campo *Locais dos arquivos de log de arquivamento externos* se você estiver restaurando PDBs ou tablespaces para um ponto específico no tempo ou SCN e os logs de arquivamento não estiverem no local configurado. Insira um caminho de sistema de arquivos que comece com  `/` ou um grupo de discos ASM que comece com  `+`. Use os botões "mais" e "menos" ao lado do campo de entrada de texto para adicionar ou remover locais. Este campo não aparece quando você restaura a partir de snapshots sem recuperação.
+... Opcionalmente, habilite a opção *Abrir o banco de dados ou o banco de dados contêiner no modo LEITURA-GRAVAÇÃO após a recuperação* e selecione uma subopção que corresponda ao escopo da restauração (essas opções não aparecem ao restaurar a partir de snapshots sem recuperação):
++
+**** *Todos os arquivos de dados*: Abra o banco de dados ou o banco de dados contêiner no modo LEITURA-GRAVAÇÃO após a recuperação.
+**** *PDBs ou tablespaces de PDBs*: Abra os bancos de dados plugáveis no modo READ-WRITE após a recuperação.
+**** *Tablespaces não-CDB*: Coloque os tablespaces online após a recuperação.
+
+
+
+
+.. Na seção *Prescripts and postscripts*, faça o seguinte:
++
+... *Prescript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado antes da operação de restauração e quaisquer argumentos que o script receba.
+... *Postscript*: Opcionalmente, habilite esta opção e insira o caminho completo para um script que deve ser executado após a operação de restauração e quaisquer argumentos que o script aceite.
+... Escolha um valor de tempo limite para o script. Se o script não for executado dentro desse período, a restauração prosseguirá mesmo assim.
+
+
 
 
 --
@@ -162,3 +194,5 @@ Não disponível para cargas de trabalho do Oracle Database nesta versão prévi
 
 --
 ====
+. Selecione *Restaurar*.
+
