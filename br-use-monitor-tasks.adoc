@@ -16,7 +16,7 @@ summary: Com o NetApp Backup and Recovery, monitore snapshots locais, replicaç�
 [role="lead"]
 Monitore tarefas de Snapshot, replicação, backup e restauração. Configure notificações por e-mail e use a Linha do Tempo do Console para investigar a atividade.
 
-NetApp Backup and Recovery mantém as informações das tarefas por 15 dias, depois as exclui e as remove do Monitor de Tarefas.
+NetApp Backup and Recovery mantém as informações das tarefas por 90 dias, depois as exclui e as remove do Monitor de Tarefas.
 
 *Função obrigatória do NetApp Console*: superadministrador do NetApp Backup and Recovery, administrador de backup do NetApp Backup and Recovery, administrador de restauração do NetApp Backup and Recovery, administrador de clonagem do NetApp Backup and Recovery ou função de visualizador do NetApp Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"] https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
