@@ -460,7 +460,7 @@ Certifique-se de que sua instância do Hyper-V atenda aos requisitos específico
 
 |===
 .Requisitos de hardware para o host Hyper-V
-* Hosts autônomos e agrupados pela FCI são suportados
+* Hosts autônomos e configurações de cluster de failover são suportados
 * Mínimo de 1 GB de RAM para o plug-in NetApp Hyper-V no host Hyper-V
 * 5 GB de espaço mínimo para instalação e log do plug-in no host Hyper-V
 +
