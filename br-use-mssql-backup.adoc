@@ -101,7 +101,7 @@ Execute um backup sob demanda antes de fazer alterações no seu sistema para ga
 . No menu NetApp Backup and Recovery , selecione *Inventário*.
 . Selecione uma carga de trabalho para visualizar os detalhes da proteção.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes*.
-. Selecione a guia *Grupos de proteção*, *Instâncias* ou *Bancos de dados*.
+. Selecione a guia *Grupos de proteção*, *Grupos de disponibilidade*, *Instâncias* ou *Bancos de dados*.
 . Selecione a instância ou banco de dados que você deseja fazer backup.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Faça backup agora*.
 . Selecione a política a ser aplicada ao backup.
