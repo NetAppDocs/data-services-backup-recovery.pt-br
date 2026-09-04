@@ -46,3 +46,9 @@ Quanto tempo levará para restaurar meus objetos arquivados no Google Archive?::
 
 --
 
+
+[NOTE]
+====
+Restaurar um volume ou arquivo do armazenamento de arquivo morto pode levar mais tempo. A tarefa permanece *Em andamento* no Monitor de Tarefas enquanto o Backup e Recovery tenta novamente a restauração com base na prioridade selecionada. Monitore a restauração no *Monitor de Tarefas*; ela será concluída quando a tarefa atingir um status final, como *Concluído* ou *Falha*, após todas as tentativas. Não inicie outra restauração a menos que a tarefa falhe definitivamente.
+
+====
