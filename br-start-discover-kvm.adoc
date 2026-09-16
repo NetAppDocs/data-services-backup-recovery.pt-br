@@ -31,9 +31,6 @@ NOTE: Após adicionar um sistema de storage ao NetApp Console, aguarde alguns mi
 .Passos
 . No menu do NetApp Console , selecione *Proteção* > *Backup e recuperação*.
 . Em *Cargas de trabalho*, selecione o bloco *KVM*.
-+
-Se esta for a sua primeira vez acessando o NetApp Backup and Recovery e você já tiver um sistema na Console, mas nenhum recurso descoberto, a página "Bem-vindo ao novo NetApp Backup and Recovery" será exibida com uma opção para *Descobrir recursos*.
-
 . Selecione *Descobrir recursos*.
 . Insira as seguintes informações:
 +
@@ -52,15 +49,26 @@ Se esta for a sua primeira vez acessando o NetApp Backup and Recovery e você j�
 ... Ao terminar, selecione *Adicionar*.
 
 
-.. *Configurações do KVM*: Adicione um novo host KVM inserindo as seguintes informações:
+.. *Configurações do KVM*: Faça o seguinte:
 +
-*** *Nome de domínio totalmente qualificado (FQDN) ou endereço IP do KVM*: Insira o FQDN ou o endereço IP do host.
-*** *Credenciais*: Insira o nome de usuário e a senha do host KVM.
-*** *Agente de console*: Selecione o agente de console a ser usado para comunicação entre o Backup e Recuperação e o host KVM.
-*** *Número da porta*: Insira a porta a ser usada para comunicação entre o Backup e Recuperação e o host KVM.
-*** *Plataforma de gerenciamento*: Se o host KVM for gerenciado e você tiver adicionado a plataforma de gerenciamento ao Backup e Recuperação, selecione a plataforma de gerenciamento na lista.
+... Se você ainda não armazenou credenciais para este host KVM, selecione *Adicionar credenciais*.
++
+**** Selecione o agente do Console a ser usado com este host.
+**** Digite um nome para esta credencial.
+**** Digite o nome de usuário e a senha da conta.
+**** Selecione *Concluído*.
 
 
+... Adicione um novo host KVM inserindo as seguintes informações:
++
+**** *Nome de domínio totalmente qualificado (FQDN) ou endereço IP do KVM*: Insira o FQDN ou o endereço IP do host.
+**** *Agentes*: Selecione o agente do Console a ser usado para comunicação entre o NetApp Backup and Recovery e o host KVM.
+**** *Credenciais*: selecione uma credencial armazenada para o host KVM.
+
+
+
+
+.. *Configurações avançadas*: Opcionalmente, insira uma porta para se comunicar com o host KVM e selecione a plataforma de gerenciamento do host na lista.
 
 
 . Selecione *Descobrir*.

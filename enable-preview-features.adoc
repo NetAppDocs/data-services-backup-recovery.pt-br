@@ -35,6 +35,9 @@ Você pode ativar os seguintes recursos de pré-visualização para NetApp Backu
 
 
 | `"prioritize-restore": true` | Torna a opção *Priorizar restauração em relação à fila de tarefas existente* selecionável durante o fluxo de trabalho de restauração na interface web de NetApp Backup and Recovery. Ao selecionar esta opção durante o fluxo de trabalho de restauração, as operações de restauração são priorizadas em relação a outras tarefas na fila, para que sejam executadas mesmo quando a fila estiver ocupada. 
+
+
+| `"data-transfer-report": true` | Habilita o relatório diário de transferência de dados de backup na guia Relatórios em NetApp Backup and Recovery para Volumes. O relatório fornece informações diárias sobre a atividade de transferência de dados de backup e replicação em todo o seu ambiente. 
 |===
 
 

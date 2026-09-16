@@ -46,8 +46,17 @@ Agrupe as cargas de trabalho que você deseja proteger em um grupo de proteção
 . Insira um nome para o grupo de proteção.
 . Selecione as VMs que você deseja incluir no grupo de proteção.
 . Selecione *Avançar*.
-. Selecione a *Política de backup* que você deseja aplicar ao grupo de proteção.
+. Selecione um comportamento para discos de abrangência. Atualmente, *Sempre incluir todos os discos de abrangência* é suportado.
++
+
+NOTE: Para configurações CIFS, o NetApp Backup and Recovery protege automaticamente todos os discos conectados a cada VM no grupo de proteção. Isso inclui arquivos distribuídos em vários volumes ONTAP ou sistemas de armazenamento ONTAP (discos de abrangência) e arquivos limitados a um único local (discos sem abrangência). Para configurações SAN, todos os discos sem abrangência serão incluídos no grupo de proteção.
+
 . Selecione *Avançar*.
+. Selecione a política de proteção que deseja aplicar ao grupo de proteção.
++
+Opcionalmente, você pode selecionar *Criar nova política* para criar uma nova política de proteção. Ao selecionar uma política, os detalhes da política são exibidos.
+
+. Ao terminar, selecione *Próximo*.
 . Revise a configuração.
 . Selecione *Criar* para criar o grupo de proteção.
 

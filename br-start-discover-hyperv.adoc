@@ -33,22 +33,24 @@ NOTE: Quando você adiciona hosts Hyper-V e descobre recursos, o NetApp Backup a
 
 .Passos
 . No menu NetApp Console, selecione *Proteção* > *Backup e Recuperação*.
-+
-Se esta for a sua primeira vez acessando o NetApp Backup and Recovery e você já tiver um sistema na Console, mas ainda não tiver descoberto recursos, a página inicial "Bem-vindo ao novo NetApp Backup and Recovery" será exibida com uma opção para *Descobrir recursos*.
-
 . Selecione *Descobrir recursos*.
 . Insira as seguintes informações:
 +
 .. *Tipo de carga de trabalho*: Selecione *Hyper-V*.
-.. Se você ainda não armazenou credenciais para este host Hyper-V, selecione *Adicionar credenciais*.
+.. *Configurações do Hyper-V*: faça o seguinte:
 +
-... Selecione o agente do Console a ser usado com este host.
-... Digite um nome para esta credencial.
-... Digite o nome de usuário e a senha da conta.
-... Selecione *Concluído*.
+... Se você ainda não armazenou credenciais para este host Hyper-V, selecione *Adicionar credenciais*.
++
+**** Selecione o agente do Console a ser usado com este host.
+**** Digite um nome para esta credencial.
+**** Digite o nome de usuário e a senha da conta.
+**** Selecione *Concluído*.
 
 
-.. *Registro de host*: Adicione um novo host Hyper-V inserindo o FQDN ou endereço IP do host, as credenciais, o agente do Console e o número da porta. Se o FQDN não puder ser resolvido pelo agente do Console, use o endereço IP. Para clusters de failover, insira o endereço IP de gerenciamento do cluster.
+... Adicione um novo host Hyper-V inserindo o FQDN ou endereço IP do host e selecionando um agente do Console e as credenciais. Se o FQDN não puder ser resolvido pelo agente do Console, use o endereço IP. Para clusters de failover, insira o endereço IP de gerenciamento do cluster.
+
+
+.. *Configurações avançadas*: Opcionalmente, insira um caminho de instalação para o plug-in Hyper-V da NetApp.
 
 
 . Selecione *Descobrir*.
