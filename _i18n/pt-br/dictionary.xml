@@ -4876,7 +4876,6 @@
   <block id="29baeb7c31a3e708d97805f86fcb505a" category="inline-link">Preencha o formulário de inscrição prévia</block>
   <block id="4d405e082b9036b99ea8ef4d4c6b3cae" category="paragraph"><block ref="570de0e604bd7f8002cc6704e0146ea7" category="inline-link-rx"></block></block>
   <block id="a3b49aeb70a4060b1c36c4a694debc5c" category="inline-link">Adicionar armazenamento na implantação local do NetApp Console</block>
-  <block id="de0f709d7b0812e121e9fa6bdb8b87b3" category="paragraph"><block ref="de0f709d7b0812e121e9fa6bdb8b87b3" category="inline-link-rx"></block></block>
   <block id="5867ad8a560196a64df2278876df70c2" category="paragraph"><block ref="fd61760e9709a64e2426151a909b6045" category="inline-link-macro-rx"></block>.</block>
   <block id="83524f1d1d58a585ea5008790d8e85cf" category="paragraph">Aprenda sobre gerenciamento de identidade e acesso e, em seguida, configure os usuários com as permissões apropriadas para executar suas tarefas.</block>
   <block id="acb0fa18e6cbdd062b1c342d22b5d7e9" category="inline-link">Comece a usar identidade e acesso na implantação local do NetApp Console</block>
@@ -5981,4 +5980,5 @@
   <block id="65fa180bca046084f17003e06ddb0b9f" category="list-text">Selecione o grupo de disponibilidade.</block>
   <block id="129dd3dd8cd4324317ed888dd78c8d3e" category="list-text">Selecione a guia *Grupos de proteção*, *Grupos de disponibilidade*, *Instâncias* ou *Bancos de dados*.</block>
   <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">Restaurar um volume ou arquivo do armazenamento de arquivo morto pode levar mais tempo. A tarefa permanece *Em andamento* no Monitor de Tarefas enquanto o Backup e Recovery tenta novamente a restauração com base na prioridade selecionada. Monitore a restauração no *Monitor de Tarefas*; ela será concluída quando a tarefa atingir um status final, como *Concluído* ou *Falha*, após todas as tentativas. Não inicie outra restauração a menos que a tarefa falhe definitivamente.</block>
+  <block id="534cf708a73e1e3ff80e4b70322d78d6" category="paragraph"><block ref="534cf708a73e1e3ff80e4b70322d78d6" category="inline-link-rx"></block></block>
 </blocks>
