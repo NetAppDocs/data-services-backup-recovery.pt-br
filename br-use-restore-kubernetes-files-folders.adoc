@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-files-folders.html 
+keywords: backing up, restoring, back up, backup, file, folder, files and folders, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: NetApp Backup and Recovery permite que você restaure e baixe arquivos e pastas que foram copiados de backup de um aplicativo baseado em máquina virtual. 
+---
+= Restaure ou baixe arquivos e pastas de aplicativos baseados em máquinas virtuais usando o NetApp Backup and Recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Restaure ou baixe arquivos e pastas que foram copiados de um aplicativo Kubernetes baseado em máquina virtual. Para restaurar ou baixar arquivos e pastas, você precisa de pelo menos um ponto de recuperação e a máquina virtual precisa ter uma partição com um sistema de arquivos compatível. Atualmente, você só pode restaurar e baixar a partir do snapshot local.
+
+Os sistemas operacionais guest e suas versões incluem:
+
+* *Windows*: Windows Server 2022, Windows 10, Windows 11
+* *Linux*: Ubuntu 22.04, Red Hat Enterprise Linux 9, Fedora 39, CentOS Stream 9, openSUSE Leap 15.6
+
+
+Os sistemas de arquivos suportados incluem:
+
+* BTRFS
+* exFAT
+* ext4
+* NTFS
+* XFS
+
+
+*Função necessária do NetApp Console*
+
+Administrador avançado de backup e recuperação ou administrador de restauração de backup e recuperação. link:reference-roles.html["Saiba mais sobre as funções de acesso do NetApp Backup and Recovery"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+
+
+
+[[restore-vm-files-and-folders-from-a-vm-based-application]]
+== Restaurar arquivos e pastas de uma máquina virtual a partir de um aplicativo baseado em máquina virtual
+
+Restaure arquivos e pastas baseados em máquina virtual a partir de um ponto de recuperação quando você precisar recuperar arquivos ou pastas específicos para um aplicativo baseado em máquina virtual sem restaurar todo o aplicativo. Os arquivos existentes são sobrescritos por padrão.
+
+.Antes de começar
+Antes de restaurar arquivos e pastas de um aplicativo baseado em máquina virtual, verifique se a máquina virtual de destino atende aos seguintes requisitos:
+
+* A máquina virtual de destino está em execução e possui um endereço IP.
+* O usuário pode escrever no destino de restauração.
+* O SSH está habilitado e utiliza autenticação por senha (o login somente com chave não é suportado). Verifique se o serviço SSH está habilitado nos hosts de destino Linux e se um servidor OpenSSH está instalado e habilitado nos hosts de destino Windows.
+
+
+.Passos
+. No menu NetApp Backup e Recuperação, selecione *Restaurar*.
+. Escolha um aplicativo Kubernetes da lista e selecione *Visualizar e restaurar* para esse aplicativo.
++
+A lista de pontos de restauração é exibida.
+
+. Selecione o ícone image:icon-action.png["Ícone de ações"]*Ações* para um ponto de restauração e abra o menu *Restaurar arquivos e pastas*.
+. Selecione o local de origem do qual deseja restaurar (no momento, apenas snapshot é compatível).
+. Selecione uma máquina virtual a partir do ponto de recuperação para navegar pelos seus arquivos e pastas.
+. Selecione *Avançar*.
++
+O navegador de arquivos é exibido.
+
+. Navegue pela lista de arquivos e pastas e selecione arquivos e pastas para restaurar.
++
+Abra uma partição para navegar pelos seus arquivos e pastas. Quando você seleciona um arquivo ou pasta para restaurar, marcando a caixa de seleção correspondente, ele é adicionado à lista "selecionados" à direita.
+
+. Ao terminar, selecione *Próximo*.
+. Selecione o modo de transferência *Transfer to VM*.
+. Escolha as configurações de destino:
++
+** *Restaurar para a máquina virtual original*: habilite esta opção para restaurar para a máquina virtual original.
++
+*** *Restaurar para o mesmo caminho do backup*: habilite esta opção para restaurar para o mesmo caminho usado no backup.
+*** *Caminho alternativo*: Para restaurar para um caminho diferente, habilite esta opção e insira o caminho preferido.
+
+
+** *Restaurar para VM alternativa*: Habilite esta opção para restaurar em uma máquina virtual diferente no cluster. Selecione uma VM na lista e insira um caminho de destino para os arquivos ou pastas restaurados.
+
+
+. Na seção *Credenciais da máquina virtual convidada*, selecione as credenciais da máquina virtual convidada.
++
+Se você ainda não adicionou credenciais para esta máquina virtual convidada, selecione *Adicionar credencial* para adicionar uma nova credencial para a máquina virtual convidada. Depois de adicionar uma credencial de máquina virtual convidada, a nova credencial aparecerá na lista de credenciais e você poderá selecioná-la. Essas credenciais são exclusivas para máquinas virtuais convidadas e podem ser reutilizadas por qualquer cluster que utilize o mesmo agente do Console.
+
+. Selecione *Avançar*.
+. Revise e confirme as configurações de restauração de arquivo ou pasta.
+. Selecione *Restaurar*.
+
+
+
+
+[[download-kubernetes-vm-files-and-folders]]
+== Baixe os arquivos e pastas da máquina virtual do Kubernetes
+
+Baixe arquivos e pastas de um ponto de recuperação quando você não quiser restaurar os arquivos e pastas para um aplicativo baseado em máquina virtual, mas sim salvá-los no seu computador local. Os arquivos e pastas baixados são salvos como um único arquivo .tar. O download de arquivos e pastas não requer credencial para uma máquina virtual convidada.
+
+.Passos
+. No menu NetApp Backup e Recuperação, selecione *Restaurar*.
+. Escolha um aplicativo Kubernetes da lista e selecione *Visualizar e restaurar* para esse aplicativo.
++
+A lista de pontos de restauração é exibida.
+
+. Selecione o ícone image:icon-action.png["Ícone de ações"]*Ações* para um ponto de restauração e abra o menu *Restaurar arquivos e pastas*.
+. Selecione o local de origem para fazer o download (no momento, apenas snapshot é compatível).
+. Selecione uma máquina virtual a partir do ponto de recuperação para navegar pelos seus arquivos e pastas.
+. Selecione *Avançar*.
++
+O navegador de arquivos é exibido.
+
+. Navegue pela lista de arquivos e pastas e selecione os arquivos e pastas para baixar.
++
+Abra uma partição para navegar pelos seus arquivos e pastas. Ao selecionar um arquivo ou pasta para download, marcando a caixa de seleção correspondente, ele é adicionado à lista "selecionados" à direita.
+
+. Ao terminar, selecione *Próximo*.
+. Selecione o modo de transferência *Download file*.
+. Selecione *Avançar*.
+. Revise e confirme as configurações de download do arquivo ou pasta.
+. Selecione *Restaurar*.
++
+Seu navegador web cuida do download; salve o arquivo .tar em sua máquina local.
+
+

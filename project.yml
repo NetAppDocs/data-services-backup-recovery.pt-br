@@ -241,10 +241,15 @@ sidebar:
         - title: Modifique recursos durante operações de restauração usando recursos
             personalizados
           url: "/br-use-modify-resources-kubernetes-cr.html"
+        - title: Restaurar ou baixar arquivos e pastas de um aplicativo baseado em
+            máquina virtual
+          url: "/br-use-restore-kubernetes-files-folders.html"
       - title: Gerenciar clusters do Kubernetes
         url: "/br-use-manage-kubernetes-clusters.html"
       - title: Gerenciar aplicativos Kubernetes
         url: "/br-use-manage-kubernetes-applications.html"
+      - title: Gerencie o acesso a recursos do Kubernetes
+        url: "/br-use-manage-kubernetes-access-control.html"
       - title: Gerenciar modelos de ganchos de execução para cargas de trabalho do
           Kubernetes
         url: "/br-use-manage-execution-hook-templates.html"

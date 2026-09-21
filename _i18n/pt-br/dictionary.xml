@@ -3160,20 +3160,7 @@
   <block id="956f7db1760826e0d78fce0504e6bc36" category="paragraph">*Arquivo de configuração para ONTAP e StorageGRID*</block>
   <block id="6787850a4ea9b3a4dba07fdb711fb596" category="summary">Saiba o que há de novo no NetApp Backup and Recovery.</block>
   <block id="441af08fd33d210b079342896edf5070" category="doc">Novidades no NetApp Backup and Recovery</block>
-  <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">06 de outubro de 2025</block>
   <block id="b3f4950f8261377915f43d28700ec58c" category="paragraph">Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.</block>
-  <block id="0428e48e7f58929099e52febd0558232" category="section-title">25 de agosto de 2025</block>
-  <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">12 de agosto de 2025</block>
-  <block id="67c66b3b8df7b2dee0354dd9f9fcec17" category="section-title">28 de julho de 2025</block>
-  <block id="f2673d4a3fe0162a501d43f5168ae950" category="section-title">14 de julho de 2025</block>
-  <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">09 de junho de 2025</block>
-  <block id="71df7d09aaee8e6796df0c3d10989fbd" category="section-title">13 de maio de 2025</block>
-  <block id="801c0fa0d304ca22d8afec06189bcf93" category="section-title">16 de abril de 2025</block>
-  <block id="499d067ffbbd553e23809aa38aa67bfa" category="section-title">17 de março de 2025</block>
-  <block id="09d7c2dac047caa965175fead07159aa" category="section-title">21 de fevereiro de 2025</block>
-  <block id="6cdd743b39af79062eb92fec70569354" category="section-title">13 de fevereiro de 2025</block>
-  <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">22 de novembro de 2024</block>
-  <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">27 de setembro de 2024</block>
   <block id="bef219d35a4468480b0ce759221cdceb" category="sidebar">Documentação do NetApp Backup and Recovery</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Começar</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">O que há de novo</block>
@@ -3434,7 +3421,6 @@
   <block id="fd6f2a9c82421585e9dfe5f8820c97c0" category="list-text">*FQDN ou endereço IP do vCenter*: Selecione o servidor vCenter onde deseja restaurar o snapshot.</block>
   <block id="a239cc572a24441f1bb1a7abc259ccab" category="list-text">*Host ESXi*: Selecione o host onde deseja restaurar o snapshot.</block>
   <block id="c2942751152cd0449e1de7861200bde4" category="list-text">*Rede*: Selecione a rede na qual deseja restaurar o snapshot.</block>
-  <block id="2727f68982ff25e8b3c57e026120561d" category="section-title">08 de dezembro de 2025</block>
   <block id="14a4fd4957d1a547c2b4ccadbaed0a90" category="inline-link-macro">Saiba mais sobre como restaurar VMs do VMware com o NetApp Backup and Recovery.</block>
   <block id="6dc955af209317a9d714156228721ed4" category="paragraph"><block ref="dd7466c8c4dbfb4163f16106a1d7f80c" category="inline-link-macro-rx"></block>.</block>
   <block id="01f07264521662850e2d8465c322c978" category="inline-link-macro">Saiba mais sobre como restaurar discos virtuais do VMware com o NetApp Backup and Recovery.</block>
@@ -3648,7 +3634,6 @@
   <block id="b49e83f9693b48c2788f78f6c47d5a38" category="paragraph">Você pode ativar ou desativar as verificações de ransomware no nível do provedor usando a página de configurações do provedor. As configurações desta página são relevantes para o bucket que você selecionar na parte superior da página.</block>
   <block id="ac960be8ab0dada73edd8073df004280" category="list-text">Na parte superior da página resultante, selecione o bucket para o qual você precisa alterar as configurações.</block>
   <block id="9255ea030351a8ee8402a7708baf0223" category="list-text">Expanda a seção *Verificação de ransomware*.</block>
-  <block id="194a29c3464a05de3c32434145c0b5d6" category="section-title">19 de janeiro de 2026</block>
   <block id="b2c5a3b35bd8f72bf653aa42e54cc06c" category="list-text">O sistema operacional convidado Windows deve estar executando o Windows Server 2008 R2 ou posterior.</block>
   <block id="367aa9be05b109b226ffbefe3981ac88" category="list-text">Se você restaurar um arquivo ou pasta criptografado, o atributo de criptografia não será mantido.</block>
   <block id="34454c78e4e96cfe4c311b8ba072f6cd" category="list-text">Você não pode restaurar arquivos ou pastas para uma pasta criptografada.</block>
@@ -3751,8 +3736,6 @@
   <block id="0e8d553f80f80eac9e99c265bf9f4d72" category="list-text">Adicionar usuários aos projetos.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="section-title">Informações relacionadas</block>
   <block id="728d17e7146dcd6218a24c46a1de8943" category="inline-link-macro">Saiba mais sobre o gerenciamento de identidade e acesso do NetApp Console</block>
-  <block id="d612358528f4a89a703f161a8c3e4a9e" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block>.</block>
-  <block id="aedba1ff218d6d25f9aefebf5dfdff4f" category="list-text"><block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>.</block>
   <block id="509c51772921c8ab860f75456880683f" category="list-text"><block ref="a16a606232229e0e62a5010aaabec2ae" category="inline-xref-macro-rx"></block> para executar scripts antes e depois dos trabalhos de backup. (Apenas cargas de trabalho do Kubernetes)</block>
   <block id="1d74d204f5274b499e41d2e0238b7bdd" category="inline-link-macro">crie uma nova política de proteção</block>
   <block id="dff3994b6daee1be81638e1c4964af92" category="doc">Descubra as cargas de trabalho do Oracle Database em NetApp Backup and Recovery</block>
@@ -3911,7 +3894,6 @@
   <block id="4a6440cf633ba5f9e68b3e722f3a2bdd" category="paragraph">Para cargas de trabalho do Kubernetes, você é cobrado com base no tamanho combinado de todos os volumes persistentes.</block>
   <block id="ac48592f4b6ad81597a3d86209bce635" category="section-title">Requisitos para proteger cargas de trabalho do Oracle Database</block>
   <block id="5254dbe16e57a413455e2c5f7d5e70a1" category="list-text">Certifique-se de que a porta TCP 443 esteja desbloqueada na direção de saída entre o cluster Kubernetes, o Trident Protect Connector e o proxy Trident Protect.</block>
-  <block id="c9d872b23d54864ab58551a55106a3db" category="section-title">09 de fevereiro de 2026</block>
   <block id="e45770f83b5d2c438c00dea64c505ce7" category="sidebar">Limitações conhecidas para cargas de trabalho do Oracle Database</block>
   <block id="c33d3729ba9e6e1c1dd6ccc4b6c7f949" category="sidebar">Proteger cargas de trabalho do Oracle Database (Prévia)</block>
   <block id="1e6021824e75d382885d2bb2e945f719" category="sidebar">Restaurar aplicativos Kubernetes usando recursos personalizados</block>
@@ -3947,7 +3929,6 @@
   <block id="7e6254a3c499887f0d500958fc6584ed" category="paragraph">Edite um grupo de proteção se precisar alterar detalhes do grupo de proteção sem excluí-lo e recriá-lo.</block>
   <block id="78fa67c28bf09a9555618080f725243c" category="list-text">Faça as alterações necessárias nos detalhes gerais e VMs do grupo de proteção.</block>
   <block id="3573adc4fce66bc7bb13c8f35b9d7e90" category="list-text">Se necessário, altere a política associada ao grupo de proteção.</block>
-  <block id="8b3c75a910501c009c7e86f190f1825d" category="section-title">23 de fevereiro de 2026</block>
   <block id="175ddb68a640ea3daeb84c25a2402e6f" category="sidebar">Criar e gerenciar relatórios de proteção</block>
   <block id="1d30989467a5dda6a77c2158034a190b" category="paragraph">O suporte para cargas de trabalho KVM agora está geralmente disponível (GA) em NetApp Backup and Recovery.</block>
   <block id="403eb7104337d3b7cb0c9cbd6a28b588" category="section-title">Cargas de trabalho do Kubernetes suportadas em General Availability (GA)</block>
@@ -4007,7 +3988,6 @@
   <block id="9e2d6035ec7a18aa99db06aab17683c8" category="list-text">ONTAP 9.13.1 ou posterior</block>
   <block id="84926f15fa96e5fbcf319691a6c909e3" category="list-text">Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior</block>
   <block id="d683472bc4b099b7787d3a9d8df4673e" category="admonition">Se você selecionar *Traga seu próprio bucket*, certifique-se de que o contêiner que você criar como destino de backup tenha o mesmo nome da conta de armazenamento do Azure.</block>
-  <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">09 de março de 2026</block>
   <block id="e0ec2dc076093e707f6f4a129c330a5e" category="paragraph">Nesta versão, VMware workloads apresenta as seguintes melhorias:</block>
   <block id="c951c234678bc7ac8d60ec274364552c" category="paragraph">*Suporte à consistência de VM por nível de agendamento*: Agora você pode habilitar backups consistentes com a VM e com o aplicativo para níveis de agendamento específicos ao configurar políticas de proteção para cargas de trabalho VMware. Os níveis anual, mensal e semanal são suportados.</block>
   <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">Requisito</block>
@@ -4047,7 +4027,6 @@
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144 (NetApp Plug-in para Hyper-V)</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145 (NetApp Plug-in para Windows)</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Execute o comando *ls* para garantir que a pasta "catalogdb1" foi criada e que contém as subpastas<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>, e<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>.</block>
-  <block id="69b1a964078d5301a2aa9822cb2304f2" category="section-title">16 de março de 2026</block>
   <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 ou posterior</block>
   <block id="0fd3e1f73fc71151c33e67909039dd88" category="paragraph">Nesta versão, as cargas de trabalho do Oracle Database introduzem a seguinte melhoria:</block>
   <block id="b77d45fa1e71e6bf913df1f7680aa70c" category="list-text">*Suporte a hosts em cluster*: Agora você pode descobrir e proteger bancos de dados Oracle Real Application Clusters (RAC) que usam Oracle Automatic Storage Management (ASM) e são implantados usando VMDK em sistemas de arquivos VMFS. Para mais informações, consulte<block ref="d0dab0542f96585a18cc2e536da75fd6" category="inline-link-rx"></block>.</block>
@@ -4086,7 +4065,6 @@
   <block id="019fba30868c655ee8cc940ae99cd3cd" category="inline-link">Funções de backup e recuperação no NetApp Console</block>
   <block id="80afdb34bdd1565998c40515197f31b9" category="paragraph">Para obter mais informações sobre as funções de backup e recuperação, consulte <block ref="6de1818932cff795152c5395660d33a2" category="inline-link-rx"></block>.</block>
   <block id="40462b3520e204c56d496704b2197731" category="list-text">RAC sobre ASM (VMDK em VMFS)</block>
-  <block id="d8fdc2681cdec613a02ac551c44a6e8c" category="section-title">31 de março de 2026</block>
   <block id="e2ff2fbe928113326186485b8655d712" category="sidebar">Montar, desmontar e catalogar pontos de recuperação</block>
   <block id="db1da6f84847ade23be98a17bc4b5b1e" category="paragraph">Nesta versão, as cargas de trabalho do ONTAP Volumes introduzem a seguinte melhoria:</block>
   <block id="a83b3bb31eda1beff171bab61e67aa23" category="paragraph">*NetApp MetroCluster configurações ativo-ativo suportadas*: NetApp Backup and Recovery para cargas de trabalho de Volumes agora suporta MetroCluster na configuração ativo-ativo.</block>
@@ -4192,7 +4170,6 @@
   <block id="1873f6028647ed72cee9a7bccf68c491" category="summary">Com NetApp Backup and Recovery, restaure os dados do ONTAP usando Navegar e Restaurar.</block>
   <block id="9b0b495cd3a28a2977dbab61bc1cbce8" category="summary">Você pode usar a função Pesquisar e Restaurar para recuperar volumes, pastas ou arquivos de backup do ONTAP.</block>
   <block id="13805175d1bc9d9656654bec32406f98" category="admonition">O recurso de Backup and Recovery não indexa nenhum snapshot cujo carimbo de data/hora de criação corresponda exatamente a outro snapshot do mesmo volume.</block>
-  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">13 de abril de 2026</block>
   <block id="462fcd2b84c5fc16f3d89522a2068baa" category="sidebar">Solucionar problemas de restauração de arquivos e pastas</block>
   <block id="12dc36f8332118bd4fe7f1b4633c0a17" category="list-text">*Suporte a VM proxy na restauração de arquivos e pastas* - Agora você pode restaurar arquivos e pastas de discos virtuais usando uma VM proxy quando preferir não conectar o disco virtual à VM original. Para obter mais informações, consulte <block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>.</block>
   <block id="ddd4881e88c799f792de41fafe0a11d7" category="list-text">*Pesquisa recursiva de arquivos e pastas* - Agora você pode pesquisar um arquivo ou pasta específico em todo um disco virtual. Para obter mais informações, consulte <block ref="d14b743b42535a5def60386aae0617f3" category="inline-link-rx"></block>.</block>
@@ -4239,7 +4216,6 @@
   <block id="c7ac12b44e81f24dcab5d6e8675df0a1" category="paragraph">Nesta versão, VMware workloads apresenta a seguinte melhoria:</block>
   <block id="4f06e500210ecec059ecf486106df9e6" category="list-text">*ASA r2 suporte a SAN*: As cargas de trabalho do VMware agora oferecem suporte à proteção de VMs em datastores VMFS hospedados em ambientes NetApp ASA r2 somente SAN.</block>
   <block id="fe6a65d4e5dee2ab8e25b78186c2fa25" category="list-text">ASA r2 sistemas somente SAN (ONTAP 9.17.1 ou posterior necessário)</block>
-  <block id="6dba6d956d3e495df0c0575cd1b23218" category="section-title">20 de abril de 2026</block>
   <block id="15c76b732e7da21111f18374ed2e9ae6" category="list-text">*metadata.annotations.protect.trident.netapp.io/skip-vm-freeze*: (_Opcional_) Esta anotação só se aplica a aplicações definidas a partir de máquinas virtuais, como em KubeVirt ambientes, onde o congelamento do sistema de arquivos ocorre antes dos snapshots. Especifique se esta aplicação pode gravar no sistema de arquivos durante um snapshot. Se definida como true, a aplicação ignora a configuração global e pode gravar no sistema de arquivos durante um snapshot. Se definida como false, a aplicação ignora a configuração global e o sistema de arquivos é congelado durante um snapshot. Se especificada, mas a aplicação não tiver máquinas virtuais na definição da aplicação, a anotação será ignorada. Se não especificada, a aplicação segue a <block ref="3047941e3fa7c2760a995edc5fae820b" category="inline-link-rx"></block>.</block>
   <block id="238d7a2bebc2cf898422ec1dbda4a73b" category="paragraph">Uma carga de trabalho é um agrupamento lógico de recursos dentro de um sistema, gerenciado como uma única unidade para proteção, governança, detecção e recuperação. Em Backup e Recovery, uma carga de trabalho é a unidade que você protege. Seu significado depende da fonte de dados: para Kubernetes uma carga de trabalho é um aplicativo, para ambientes de máquina virtual é uma máquina virtual, e para ambientes de banco de dados é um banco de dados.</block>
   <block id="eb0aff97ddec7b6894c0ea9cc7a6b66c" category="list-text">No Google Cloud, um novo bucket é implantado e os <block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block> são provisionados no nível da conta/projeto.</block>
@@ -4423,7 +4399,6 @@
   <block id="a1ff2aac5244b20dc12ea8c0b87d23d5" category="list-text">Um sistema ONTAP primário (sistemas ASA r2 não são suportados)</block>
   <block id="9b6a034e6854c5f27feb3ac185829f8d" category="inline-link">Trident Protect</block>
   <block id="d02c2883bbfa212e02daa2b45bd11760" category="list-text">Um cluster Kubernetes - As distribuições e versões do Kubernetes suportadas incluem aquelas suportadas por<block ref="f56ec4bb79bf67d191baea2a353be3ab" category="inline-link-rx"></block>.</block>
-  <block id="2966006d3447f3363606a7ddf7d88713" category="section-title">05 de maio de 2026</block>
   <block id="bfddb9cc303489a14cbf9520a59e6d1b" category="sidebar">Modifique recursos durante operações de restauração usando recursos personalizados</block>
   <block id="dd95d3f26c14232d5637a6e4d3472711" category="paragraph">Para clusters Kubernetes executando Trident Protect 26.05 ou posterior, você pode atualizar Trident Protect diretamente do NetApp Backup and Recovery. A opção de atualização só aparece se uma versão mais recente estiver disponível.</block>
   <block id="2177f4b8385663763a55092409fcf96d" category="list-text">*Proteja VMs em armazenamento SAN*: Agora você pode proteger VMs em armazenamento SAN de objetos.</block>
@@ -4543,7 +4518,6 @@
   <block id="29760f5766da0c4d6a0ac770b454e9d0" category="paragraph">É exibida uma lista de sessões de montagem VMDK abertas. Você pode ver o backup associado, a VM de origem, o caminho de montagem e outras informações.</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Banco de dados Oracle AI 26ai</block>
   <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">Pacote de hospedagem 8.0.24 (e todos os patches 8.0.x subsequentes)</block>
-  <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">11 de maio de 2026</block>
   <block id="5b94860a42a3f19b0fba83e9b7d762f3" category="sidebar">Clonar cargas de trabalho do VMware</block>
   <block id="beb76bddbaec1f03042fdde3ce87a100" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho KVM</block>
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho do Hyper-V</block>
@@ -4678,7 +4652,6 @@
   <block id="796522f5baf9f759608770ab7ad25640" category="list-text">Modificar a proteção panorâmica em um sistema</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="section-title">Mais informações</block>
   <block id="0714572f5e60fbb935fc53015369f585" category="list-text"><block ref="0714572f5e60fbb935fc53015369f585" category="inline-link-rx"></block></block>
-  <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">08 de junho de 2026</block>
   <block id="248bbbcb51ef3ddd3bd9dc8e6ef8b5a1" category="list-text">*Trident Protect 26.06*: Esta versão inclui Trident Protect 26.06.</block>
   <block id="a322829a7429e3dce13d41945775197c" category="list-text">*Ignorar a criação de aplicativos durante a restauração*: Agora você pode ignorar a criação automática de objetos de recursos personalizados de aplicativos durante as operações de restauração. Isso reduz entradas desnecessárias no inventário de aplicativos.</block>
   <block id="b6e7f9bbbf3d504dc4f264292161745a" category="list-text">*Restaure os persistent volume claims da máquina virtual*: Ao restaurar aplicativos baseados em máquina virtual, agora você pode restaurar persistent volume claims individuais sem restaurar toda a máquina virtual, tornando a recuperação mais rápida quando discos ou volumes específicos são afetados por corrupção ou perda de dados.</block>
@@ -4690,7 +4663,6 @@
   <block id="928e9cbce0c62c73be1d4bd0799f3a7a" category="list-text">Para restaurar máquinas virtuais inteiras, selecione a guia *Máquinas virtuais*.</block>
   <block id="d7b53b986ac236d7156eb62ccb254f74" category="list-text">Para restaurar reivindicações de volume persistente individuais, selecione a guia *Persistent volume claims*.</block>
   <block id="dbdc850e2c6c701a4218daf5d558b642" category="paragraph">Backup e Recovery lista todas as persistent volume claims no ponto de recuperação. Você pode selecionar quais persistent volume claims incluir na operação de restauração.</block>
-  <block id="15957f5a10d7c37b0a0a1daa1c46013a" category="section-title">15 de junho de 2026</block>
   <block id="11cb5552207ff0aa19a1682353b76f93" category="list-text">*Os grupos de proteção agora usam o agendamento de fuso horário do host*: Os grupos de proteção agora usam o fuso horário do host Hyper-V. Os grupos de proteção criados antes da introdução do agendamento de fuso horário do host continuam usando o horário configurado anteriormente (normalmente UTC). Para atualizar esses grupos de proteção para usar o fuso horário do host Hyper-V, você deve recriar os agendamentos. Consulte <block ref="d7b709a60ba856948f2de1f387e47906" category="inline-link-rx"></block> para obter mais informações.</block>
   <block id="327e5e3e392a7cf832926cb52870097c" category="list-text">*Os grupos de proteção agora usam o agendamento pelo fuso horário do host*: Os grupos de proteção agora usam o fuso horário do servidor VMware vCenter que os hospeda. Os grupos de proteção criados antes da introdução do agendamento pelo fuso horário do host continuam a ser executados no fuso horário configurado anteriormente (normalmente UTC). Para usar o fuso horário do vCenter, você deve recriar os agendamentos. Consulte <block ref="5181f9a713551c0880da1b785cb2e8f3" category="inline-link-rx"></block> para mais informações.</block>
   <block id="2c1cd28b4c922c58abcbcf35e3928c82" category="paragraph">O assistente Edit protection group orienta você nas configurações do grupo de proteção.</block>
@@ -4740,7 +4712,6 @@
   <block id="6dd3c7c1ba8e65da85c3e2fe08fa8a94" category="paragraph">*Função necessária do NetApp Console* superadministrador de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais sobre <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
   <block id="44371de0a029c248f1a90987cb1f4534" category="paragraph">*Função necessária do NetApp Console*: Backup and Recovery super admin, Backup and Recovery backup admin ou Backup and Recovery restore admin. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função Cloud Volumes ONTAP Admin também é necessária. Saiba mais <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
   <block id="52d42f2d4b51510352e6a5d5264a2324" category="paragraph">*Função necessária do NetApp Console* Superadministrador de backup e recuperação ou administrador de restauração de backup e recuperação. Se você estiver protegendo dados armazenados em um cluster Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. <block ref="0f393d0ed3fe42bcd53eff5ef49bfe77" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
-  <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">13 de julho de 2026</block>
   <block id="66591c0e71be05bd24e1869944b92db6" category="doc">Suporte aprimorado para múltiplos buckets em todas as cargas de trabalho</block>
   <block id="9bf2c1ebc9be74ae2e995a0a4dab1fec" category="paragraph">Para obter detalhes sobre NetApp Backup and Recovery, consulte <block ref="a026c5bec08ff7bb5b963e48c0daa63e" category="inline-link-rx"></block>.</block>
   <block id="528479df4d34d5d63a688250da8bc886" category="list-text">O SVM-DR e o backup e recuperação funcionam de forma totalmente independente quando o backup é feito tanto no sistema de origem quanto no destino. A única restrição é que o SVM-DR não replica o relacionamento SnapMirror cloud. No cenário de DR, quando a máquina virtual de armazenamento entra em operação no local secundário, você deve atualizar manualmente o relacionamento SnapMirror cloud.</block>
@@ -4782,8 +4753,6 @@
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">Limitação da prévia do Backup and Recovery para implantação local do NetApp Console</block>
   <block id="32e1c572f7e144c1646e5a596a5a1451" category="admonition">NetApp Console usa projetos para organizar recursos em pastas, enquanto NetApp Console implantação local se refere a projetos como frotas.</block>
   <block id="c9f1fbd3541e041c7aefce17e569d706" category="list-text">Escolha um tipo de instalação para visualizar as instruções para instalar o Trident Protect no seu cluster Kubernetes:</block>
-  <block id="eb91a7499802a37e3cd48fa310c15a57" category="list-text">Selecione *Conectado* para descobrir clusters que possuem conectividade de rede externa.</block>
-  <block id="42549739c293d276ceebe73a196959c7" category="list-text">Selecione *Isolado da rede* para descobrir clusters que não possuem conectividade de rede externa.</block>
   <block id="c81c81c33dcdd7c4d24b501795cfae12" category="open-title">Descoberta conectada</block>
   <block id="b2e76d956d1446ebd1dc9cf7262e7a73" category="list-text">Siga as instruções da linha de comando que aparecem no NetApp Backup and Recovery. Essas etapas garantem que o NetApp Backup and Recovery possa interagir com o cluster.</block>
   <block id="2b7add97385bfd3948413e32d55ea9b3" category="open-title">Descoberta air-gapped</block>
@@ -4899,7 +4868,6 @@
   <block id="aafe04b5477e90484ecb5a97ab35b2e5" category="list-text">*Política de recuperação<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>:* excluir o PVC não apagará os dados do ONTAP; o PV liberado deverá ser limpo manualmente caso você precise reprovisionar.</block>
   <block id="0ca13922f073b075ebe35843a4741a65" category="list-text">*Mantenha o Helm sincronizado:* como o PVC é normalmente renderizado pelo gráfico, uma versão futura <block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> pode tentar recriá-lo ou modificá-lo. Para manter este PVC ONTAP manual, aponte o gráfico para os mesmos valores <block ref="da653f0609e1ee5bf4ad3210bbae68f7" prefix="(" category="inline-code"></block> (com tamanho/modo de acesso correspondentes) ou exclua o PVC compartilhado da versão.</block>
   <block id="718879a57c5479ddc9d8c13719835aa2" category="list-text">Se você executar manualmente <block ref="547d17b0589ba1ba53549f8ddb830b62" prefix=" " category="inline-code"></block> e depois tentar reinstalar, o PV será instalado com o mesmo nome e causará um conflito de nomenclatura.</block>
-  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">10 de agosto de 2026</block>
   <block id="4d92224f9798401488621039f9e4cfa9" category="list-text">Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado "Microsoft.Synapse") em sua assinatura.<block ref="c0f87c4b35b6d93246175aae02f70afd" category="inline-link-rx"></block> Você deve ser o *Proprietário* ou *Colaborador* da assinatura para registrar o provedor de recursos.</block>
   <block id="309ab91ccf975daed364d3636f21792a" category="paragraph">Você pode restaurar os dados do ONTAP a partir de um arquivo de backup que reside em um sistema secundário (um volume replicado) ou em storage de objetos (um arquivo de backup) para os seguintes sistemas.</block>
   <block id="e9a171dcb6f5a1441f086b12be8cbc6b" category="cell">Storages de objetos compatíveis com S3</block>
@@ -5013,7 +4981,6 @@
   <block id="26d43fe933dfc83c3004371ec611ca0f" category="list-text">*Restauração de Pluggable Database (PDB)*: Agora você pode restaurar pluggable databases (PDBs) e tablespaces de PDBs individuais, incluindo recuperação para um ponto no tempo.</block>
   <block id="ba1d750ea9570e1e14902f85cdd21fbd" category="list-text">*Clonagem de banco de dados plugável (PDB)*: Agora você pode clonar um único PDB em um banco de dados de contêiner (CDB) de destino existente e, opcionalmente, excluir PDBs ao clonar um banco de dados de contêiner completo.</block>
   <block id="f771ab6fc3300e0b07bde061e3f606f7" category="list-text">*Alterar local de armazenamento padrão*: habilite esta opção para restaurar um backup de armazenamento de objetos em um local diferente caso o local de armazenamento de origem esteja inacessível ou cheio. Escolha um cluster, VM de armazenamento ou agregado diferente para usar.</block>
-  <block id="7c3780c8bbc09e634d77ec9249acfb5c" category="section-title">17 de agosto de 2026</block>
   <block id="6319d2a187c14a056a2451e457680ac9" category="section-title">Reconectar um cluster Kubernetes a um agente de Console</block>
   <block id="ba2444c182512882ef30cd6d790a989d" category="paragraph">Após a conclusão do comando, seu cluster deverá se reconectar automaticamente.</block>
   <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">Selecione *Fechar*.</block>
@@ -5096,7 +5063,6 @@
   <block id="dcaa1fd2ba2b942a77e609b9816f21a0" category="paragraph">Como administrador da organização, configure a estrutura de pastas e projetos onde as cargas de trabalho vão residir.</block>
   <block id="d3a956cbe0bf78268d257899952f08c7" category="list-text">*Administrador da organização* e *superadministrador de Backup and Recovery*: um usuário com essas funções pode visualizar todos os recursos em todas as organizações, além de descobrir cargas de trabalho do Backup and Recovery e atribuí-las a projetos (por exemplo, US East ou US West).</block>
   <block id="57b7754010d1d0d98e95e4196832fff4" category="list-text">*Administrador de pasta ou projeto* e *superadministrador de NetApp Backup and Recovery*: Um usuário com essas funções pode visualizar apenas os recursos em sua pasta ou projeto atribuído, mas pode descobrir cargas de trabalho do NetApp Backup and Recovery e atribuí-las a esse projeto.</block>
-  <block id="af37ef011f9bdec40c83d72a69ed1d79" category="paragraph">Os administradores da organização, de pastas ou de projetos descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado.</block>
   <block id="3b4277556de7d3613194280e020b6065" category="paragraph">Administradores da organização, de pastas ou de projetos adicionam usuários do NetApp Console a projetos com cargas de trabalho. Atribua aos usuários a função de visualizador da organização e uma função de Backup and Recovery com base nas necessidades de acesso deles. Usuários com a função apropriada de Backup and Recovery obtêm acesso automaticamente a novas cargas de trabalho nesses projetos.</block>
   <block id="88fc0613362536e4ff2a625c2d60a42f" category="paragraph">Analise estas limitações antes de usar o NetApp Backup and Recovery para volumes ONTAP.</block>
   <block id="d04c100aa8e9be0aa91497c899b0ae70" category="list-text">Você pode selecionar apenas um FlexGroup volume por vez para replicação. Você precisa ativar os backups separadamente para cada FlexGroup volume.</block>
@@ -6006,5 +5972,202 @@
   <block id="92e781ed9b2cbb1d2bb902abf023729d" category="list-text">Marque a caixa "Deseja continuar com a migração?" e selecione *Gerenciar*.</block>
   <block id="8ec423cb544f5a4931b35174a601686c" category="cell"><block ref="a1eba06bd1db60b0b7acd47a98fdd405" prefix="" category="inline-code"></block></block>
   <block id="def96a092a0c6947fcdadafb96edb659" category="cell">Habilita o relatório diário de transferência de dados de backup na guia Relatórios em NetApp Backup and Recovery para Volumes. O relatório fornece informações diárias sobre a atividade de transferência de dados de backup e replicação em todo o seu ambiente.</block>
-  <block id="9d26347bf9049c082d482aa87b79d702" category="section-title">16 de setembro de 2026</block>
+  <block id="200e15de6a3939fa4dda17a8836f5233" category="list-text">*Trident Protect 26.09*: Esta versão inclui Trident Protect 26.09.</block>
+  <block id="6e2d39e3670c746bf336eaad2e07b214" category="list-text">*Controle de acesso baseado em funções com granularidade de cluster e namespace*: Durante a descoberta de clusters do Kubernetes, você pode controlar o acesso a recursos selecionando um projeto ou pasta para associar ao novo cluster. Você também pode registrar namespaces específicos para controle de acesso. Isso permite um controle de acesso mais granular no nível do cluster ou do namespace.</block>
+  <block id="bc9e0a0c6dd42dbca705164e269a3b81" category="list-text">*Restaurar arquivos e pastas*: Agora você pode restaurar ou baixar arquivos e pastas específicos de backups de aplicativos baseados em máquinas virtuais do Kubernetes.</block>
+  <block id="0eae5eefe564ecf4ccbc3e8d5990e3e5" category="list-text">*Outras funções de Backup and Recovery*: Atribua aos usuários as funções específicas de Backup and Recovery de que precisam, como visualizador de Backup and Recovery ou administrador de clonagem de Backup and Recovery. Essas funções permitem que os usuários executem tarefas diárias, como visualizar recursos, proteger cargas de trabalho, realizar clonagem e restaurar. Atribua as funções de Backup and Recovery separadamente das funções de nível de plataforma. Para mais informações, consulte <block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block>.</block>
+  <block id="495d694fb4e6c9ffefefeddb8fb2c749" category="paragraph">Os administradores da organização, pasta ou projeto descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado. Para clusters Kubernetes, você pode opcionalmente selecionar uma pasta ou projeto para associar ao cluster durante a descoberta.</block>
+  <block id="22de56c086dedbed6837db4613efda62" category="list-text"><block ref="22de56c086dedbed6837db4613efda62" category="inline-link-macro-rx"></block></block>
+  <block id="8432e361253dad22d74ca5fd3ad3c136" category="list-text"><block ref="8432e361253dad22d74ca5fd3ad3c136" category="inline-link-macro-rx"></block></block>
+  <block id="a0ed7f6901b0fa563476381ac02c5fdd" category="inline-link-macro">NetApp Backup and Recovery funções e privilégios</block>
+  <block id="efd1ef2dfea85f5a31d9e2fc1f131047" category="list-text"><block ref="efd1ef2dfea85f5a31d9e2fc1f131047" category="inline-link-macro-rx"></block></block>
+  <block id="bdf340f843cf54500673f62df22d5070" category="list-text"><block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block></block>
+  <block id="2f182ee5a43e6c6dc214ef81f7251184" category="inline-link-macro">Gerencie o acesso a recursos do Kubernetes</block>
+  <block id="37e6dfa5777dc09bb4c2e4c7884016ff" category="list-text"><block ref="37e6dfa5777dc09bb4c2e4c7884016ff" category="inline-link-macro-rx"></block></block>
+  <block id="93271e162b88d172b5cadb4ddf29fb49" category="list-text">Opcionalmente, selecione uma pasta ou projeto para determinar onde o controle de acesso se aplica a este cluster. Se você não selecionar uma pasta ou projeto, o recurso IAM do cluster será adicionado no nível da organização:</block>
+  <block id="fc5ed78b10a812d83248bfff2b8e881f" category="list-text">*Pasta*: Selecione esta opção para controlar o acesso do usuário aos recursos do cluster no nível da pasta e selecione uma pasta da lista.</block>
+  <block id="e3323a98b50075a63b8655e49ac72e7d" category="inline-link-macro">Gerencie o acesso a recursos do Kubernetes</block>
+  <block id="93c529af699a439fc0e5e8e70977c821" category="admonition">Se um cluster ou namespace do Kubernetes estiver associado a uma pasta, os usuários também precisam da função *Backup and Recovery viewer* para o projeto selecionado no seletor de projetos no canto superior direito. Esse acesso em nível de projeto permite que os usuários abram a página inicial do Backup and Recovery. As funções atribuídas no nível da pasta (por exemplo, Backup and Recovery backup admin) determinam o que os usuários podem fazer depois de acessar a página da carga de trabalho, mas não concedem acesso à página por si só. Consulte <block ref="17af126829c2ac673dadbf66b3ca81a6" category="inline-link-macro-rx"></block> para obter mais informações.</block>
+  <block id="425c5e1d5b2a1b7c6406da748e0a6cf5" category="list-text">*Projeto*: Selecione esta opção para controlar o acesso do usuário aos recursos do cluster no nível do projeto e selecione um projeto da lista.</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link">Saiba mais</block>
+  <block id="e7f0b09d872c9908a498674ac7069792" category="paragraph"><block ref="6db86c27b2838fd430440b019c90138a" category="inline-link-rx"></block> sobre componentes organizacionais no NetApp Console.</block>
+  <block id="3609af7d9defc496224366e3fef50789" category="list-text">Selecione *Gerar comandos de instalação*.</block>
+  <block id="78efce191e6d9562ad72513dce59ca51" category="list-text">Selecione *Conectado* para descobrir clusters que possuem conectividade de rede externa. As instruções são específicas para clusters conectados.</block>
+  <block id="bbac6cce69b1bb1012f5da735a289d03" category="list-text">Selecione *Isolado da rede* para descobrir clusters que não possuem conectividade de rede externa. As instruções são específicas para clusters isolados da rede (offline).</block>
+  <block id="580142060a9954ae5488debb677bc46e" category="summary">Gerencie o acesso a recursos do Kubernetes no NetApp Backup and Recovery usando pastas, projetos e funções do NetApp Console.</block>
+  <block id="c827795d71aa34830a11baeba937e5bd" category="paragraph">Gerencie o acesso a recursos do Kubernetes no NetApp Backup and Recovery no nível do cluster ou do recurso. Você gerencia o acesso a recursos do cluster associando clusters a pastas ou projetos durante a descoberta no NetApp Console e atribuindo aos usuários as funções apropriadas. Gerencie o acesso a recursos no nível do namespace registrando um namespace como um recurso do IAM associado a um projeto ou pasta.</block>
+  <block id="23d13b19980c443939926faded845a53" category="paragraph">Para obter informações sobre como associar um cluster a uma pasta ou projeto do IAM, consulte <block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block>.</block>
+  <block id="54ad8aa702898857aedb0facda67c135" category="paragraph">O acesso a recursos no nível do namespace de Backup and Recovery para recursos do Kubernetes é controlado pela pasta ou projeto que você associa ao namespace ao registrar o namespace para controle de acesso. Após o namespace ser associado a uma pasta ou projeto, os usuários que têm as funções apropriadas de NetApp Console e Backup and Recovery para esse escopo podem acessar o namespace e seus recursos protegidos.</block>
+  <block id="195ea40d5634fc17d345a5c892092f0a" category="section-title">Funções de backup e recuperação e o que elas permitem com cargas de trabalho do Kubernetes</block>
+  <block id="ed7ea849689893305cae598cea7265e7" category="paragraph">Para um cluster ou namespace do Kubernetes associado a uma pasta ou projeto, a função específica de Backup and Recovery que um usuário possui nessa pasta ou projeto determina o que ele pode fazer. Para obter mais informações sobre funções de Backup and Recovery, consulte <block ref="f55b71b751fe717510c56a41e984b079" category="inline-link-rx"></block>.</block>
+  <block id="f2bb6a30654091f1cba2e566189f690d" category="admonition">A função de administrador de clones do Backup and Recovery não é usada com cargas de trabalho do Kubernetes.</block>
+  <block id="bbbabdbe1b262f75d99d62880b953be1" category="cell">Papel</block>
+  <block id="da42cf0edba62f56e81875e924e3c78b" category="cell">Escopo de acesso à visualização</block>
+  <block id="0c2e18b9972ed183d88593947ef05e5d" category="cell">Ações permitidas</block>
+  <block id="8f009cd92a4b6da25ea7b3059639fe4e" category="cell">Super Admin de Backup and Recovery</block>
+  <block id="13550537e1382adb038faef7c546f48b" category="cell">Visão completa dos clusters, namespaces e aplicações no escopo</block>
+  <block id="dec28c4000e843c2269cc3e88feff4fb" category="cell">Visualizar, criar aplicativo, proteger (criar/remover proteção) e restaurar</block>
+  <block id="d6ff081a3e1c30875e7fb24ab7e4e15a" category="cell">Visualizador de Backup and Recovery</block>
+  <block id="8c4280136a75abd6cab33d28ba6cd02e" category="cell">Visualização apenas para clusters e namespaces no escopo</block>
+  <block id="c02259ce9dbed60671eab40b82cd017f" category="cell">Somente para visualização. Não é possível criar, proteger ou restaurar.</block>
+  <block id="90d523cb757563efcd84dc6425dc9d01" category="cell">Backup and Recovery Administrador de backup</block>
+  <block id="44faaab3311362e460e8f4f957efcff2" category="cell">Visualizar, criar aplicativo e proteger (criar/remover proteção). Não é possível restaurar.</block>
+  <block id="fc4fa889144fd4052061a4a8d6410db8" category="cell">Backup and Recovery Restore Admin</block>
+  <block id="e7fd15009ee3d846574ee3db8bab25d4" category="cell">Visualizar e restaurar apenas. Não é possível criar aplicativos ou políticas de proteção.</block>
+  <block id="7c057dbf95ea8c30b85e23f24e2cae7e" category="section-title">Associe um namespace do Kubernetes a uma pasta ou projeto</block>
+  <block id="e72dfde96c3cd9e509553b2bd6223890" category="paragraph">Associe um namespace a uma pasta ou projeto para que o controle de acesso se aplique a esse escopo.</block>
+  <block id="e8ff62b3b55b9f1a1ac704c07d3819d9" category="list-text">Em *Cargas de trabalho*, selecione o bloco *Kubernetes*.</block>
+  <block id="7ba042fbdea83050c1ec05d56a3eb90c" category="list-text">No inventário, selecione o menu *Namespaces*.</block>
+  <block id="1e4952567f1c733fa2cde586eb2e29d1" category="list-text">Selecione um ou mais namespaces que você deseja registrar para controle de acesso e marque a caixa de seleção correspondente a cada um.</block>
+  <block id="933b95131eccb242da896691f1704454" category="list-text">Selecione *Registrar para controle de acesso*.</block>
+  <block id="de21d2954640c941c854adbc9fbff238" category="list-text">Opcionalmente, selecione uma pasta ou projeto para determinar onde o controle de acesso se aplica a este namespace. Se você não selecionar uma pasta ou projeto, o recurso IAM do namespace será registrado, mas não adicionado a uma pasta ou projeto.</block>
+  <block id="249f4d8ef2e3c21088f2d692337852eb" category="list-text">*Pasta*: Selecione esta opção para controlar o acesso do usuário aos recursos do namespace no nível da pasta e selecione uma pasta da lista.</block>
+  <block id="85cfe295441a118228c5947473d95cd9" category="admonition">Se um cluster ou namespace do Kubernetes estiver associado a uma pasta, os usuários também precisam da função *Backup and Recovery viewer* para o projeto selecionado no seletor de projetos no canto superior direito. Esse acesso em nível de projeto permite que os usuários abram a página inicial do NetApp Backup and Recovery. As funções atribuídas no nível da pasta (por exemplo, Backup and Recovery backup admin) determinam o que os usuários podem fazer depois de acessar a página da carga de trabalho, mas não concedem acesso à página por si só.</block>
+  <block id="c10b0a35d64b39232e2eeaf3e67390e7" category="list-text">*Projeto*: selecione esta opção para controlar o acesso do usuário aos recursos do namespace no nível do projeto e selecione um projeto da lista.</block>
+  <block id="b5249314aff5fae6b6de54ce7f13f16b" category="list-text">Selecione *Registrar*.</block>
+  <block id="8ba2cf9862af3d92cf32305f886b2a4d" category="list-text"><block ref="8ba2cf9862af3d92cf32305f886b2a4d" category="inline-link-macro-rx"></block></block>
+  <block id="8bed02d5d9878aee332f623205c5d526" category="paragraph">*Função necessária do NetApp Console* Você precisa de ambos os seguintes:</block>
+  <block id="5a137dfd8e1002c02d75cf78c7aa5004" category="list-text">*Administrador da organização*</block>
+  <block id="44ea26f6d09ae5df5d4b40424b104dda" category="list-text">*Backup and Recovery super admin* ou *Backup and Recovery backup admin*</block>
+  <block id="1e25ae0f49fd67602c09646617bac353" category="paragraph">Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais <block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
+  <block id="bb0b10b46d2d778edc1cd56c518291cf" category="summary">NetApp Backup and Recovery permite que você restaure e baixe arquivos e pastas que foram copiados de backup de um aplicativo baseado em máquina virtual.</block>
+  <block id="3565d4d1aca4f00bfcdd5927155b9ab5" category="doc">Restaure ou baixe arquivos e pastas de aplicativos baseados em máquinas virtuais usando o NetApp Backup and Recovery</block>
+  <block id="43042deb7bbe6eb1432003dbad65d967" category="paragraph">Restaure ou baixe arquivos e pastas que foram copiados de um aplicativo Kubernetes baseado em máquina virtual. Para restaurar ou baixar arquivos e pastas, você precisa de pelo menos um ponto de recuperação e a máquina virtual precisa ter uma partição com um sistema de arquivos compatível. Atualmente, você só pode restaurar e baixar a partir do snapshot local.</block>
+  <block id="f0d9ff2e6b6e458d25ea0fb82e886006" category="paragraph">Os sistemas operacionais guest e suas versões incluem:</block>
+  <block id="f560c4bab47e3fdd6e055c8ba851a71f" category="list-text">*Windows*: Windows Server 2022, Windows 10, Windows 11</block>
+  <block id="c7aeeda1cb860e0f676db638dff62917" category="list-text">*Linux*: Ubuntu 22.04, Red Hat Enterprise Linux 9, Fedora 39, CentOS Stream 9, openSUSE Leap 15.6</block>
+  <block id="1bd2fe9357af291c015aa5f7c5ff33b1" category="paragraph">Os sistemas de arquivos suportados incluem:</block>
+  <block id="039fbd3033a21713f2e0fdc4e762b9bc" category="list-text">BTRFS</block>
+  <block id="92a6de4a80c0d4ea27945f030eea0767" category="list-text">exFAT</block>
+  <block id="40d1d2ce03569076bd0dc1e0ff90aa4c" category="list-text">ext4</block>
+  <block id="bead6bebc11dade4ccad97fa037b72a6" category="list-text">NTFS</block>
+  <block id="dd14e072799a4190c8a23c13403384ec" category="list-text">XFS</block>
+  <block id="3968d706c9a7376c6798c03d5eafb0c8" category="section-title">Restaurar arquivos e pastas de uma máquina virtual a partir de um aplicativo baseado em máquina virtual</block>
+  <block id="4f2f6eed39a927db2b88247ef1e430bc" category="paragraph">Restaure arquivos e pastas baseados em máquina virtual a partir de um ponto de recuperação quando você precisar recuperar arquivos ou pastas específicos para um aplicativo baseado em máquina virtual sem restaurar todo o aplicativo. Os arquivos existentes são sobrescritos por padrão.</block>
+  <block id="57b8b19e52facf1ccf9ef783350502d7" category="paragraph">Antes de restaurar arquivos e pastas de um aplicativo baseado em máquina virtual, verifique se a máquina virtual de destino atende aos seguintes requisitos:</block>
+  <block id="c3cbcce12a0f0ed95ac831fb6555681f" category="list-text">A máquina virtual de destino está em execução e possui um endereço IP.</block>
+  <block id="481de9febfadbe43e61b978e28e168f8" category="list-text">O usuário pode escrever no destino de restauração.</block>
+  <block id="c43c413b2c2b397d7c270282a0275743" category="list-text">O SSH está habilitado e utiliza autenticação por senha (o login somente com chave não é suportado). Verifique se o serviço SSH está habilitado nos hosts de destino Linux e se um servidor OpenSSH está instalado e habilitado nos hosts de destino Windows.</block>
+  <block id="4b5a2317f0618353c11a3f1ffa2558f9" category="list-text">Selecione o ícone <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block>*Ações* para um ponto de restauração e abra o menu *Restaurar arquivos e pastas*.</block>
+  <block id="1e9b86df7abd756ebde066966464cc8a" category="list-text">Selecione o local de origem do qual deseja restaurar (no momento, apenas snapshot é compatível).</block>
+  <block id="fdc1ff6c8204cf3811b65cf31bb3bc6c" category="list-text">Selecione uma máquina virtual a partir do ponto de recuperação para navegar pelos seus arquivos e pastas.</block>
+  <block id="505df9e186c271a92e85fd3d6664493a" category="paragraph">O navegador de arquivos é exibido.</block>
+  <block id="f888c9293d5d87423215636a82372b54" category="list-text">Navegue pela lista de arquivos e pastas e selecione arquivos e pastas para restaurar.</block>
+  <block id="41e3c8f4d6f35779b3a79a982bf16ef3" category="paragraph">Abra uma partição para navegar pelos seus arquivos e pastas. Quando você seleciona um arquivo ou pasta para restaurar, marcando a caixa de seleção correspondente, ele é adicionado à lista "selecionados" à direita.</block>
+  <block id="ca5b787bb136dc29684273092f1bbc27" category="list-text">Selecione o modo de transferência *Transfer to VM*.</block>
+  <block id="1ba7f008d075bf6aa27569b75c5ab37d" category="list-text">Escolha as configurações de destino:</block>
+  <block id="eed0acc0218be52c2110afdd12787f0b" category="list-text">*Restaurar para a máquina virtual original*: habilite esta opção para restaurar para a máquina virtual original.</block>
+  <block id="70ab6cc7b7b30b521f74eada18aace98" category="list-text">*Restaurar para o mesmo caminho do backup*: habilite esta opção para restaurar para o mesmo caminho usado no backup.</block>
+  <block id="c0fcfd13a4ff3eef9148c32d72ac73e6" category="list-text">*Caminho alternativo*: Para restaurar para um caminho diferente, habilite esta opção e insira o caminho preferido.</block>
+  <block id="10cc1a393c57ba15ce5d59b0b3f1e0e8" category="list-text">*Restaurar para VM alternativa*: Habilite esta opção para restaurar em uma máquina virtual diferente no cluster. Selecione uma VM na lista e insira um caminho de destino para os arquivos ou pastas restaurados.</block>
+  <block id="4704941d18680c0d32b98127b5d88c7d" category="list-text">Na seção *Credenciais da máquina virtual convidada*, selecione as credenciais da máquina virtual convidada.</block>
+  <block id="e85022e94ffa373d60fbaf26f3c57666" category="paragraph">Se você ainda não adicionou credenciais para esta máquina virtual convidada, selecione *Adicionar credencial* para adicionar uma nova credencial para a máquina virtual convidada. Depois de adicionar uma credencial de máquina virtual convidada, a nova credencial aparecerá na lista de credenciais e você poderá selecioná-la. Essas credenciais são exclusivas para máquinas virtuais convidadas e podem ser reutilizadas por qualquer cluster que utilize o mesmo agente do Console.</block>
+  <block id="f1909125ce64e521e79a7641e08d48da" category="list-text">Revise e confirme as configurações de restauração de arquivo ou pasta.</block>
+  <block id="c02a4bdfcdc2131aa377528a4398d159" category="section-title">Baixe os arquivos e pastas da máquina virtual do Kubernetes</block>
+  <block id="34ebb5a598f281203301675be0be5a48" category="paragraph">Baixe arquivos e pastas de um ponto de recuperação quando você não quiser restaurar os arquivos e pastas para um aplicativo baseado em máquina virtual, mas sim salvá-los no seu computador local. Os arquivos e pastas baixados são salvos como um único arquivo .tar. O download de arquivos e pastas não requer credencial para uma máquina virtual convidada.</block>
+  <block id="a97b14e84f3ae0b7a96c76cbee068fd0" category="list-text">Selecione o local de origem para fazer o download (no momento, apenas snapshot é compatível).</block>
+  <block id="9f1402b737c560a2a6c99f05f3c47879" category="list-text">Navegue pela lista de arquivos e pastas e selecione os arquivos e pastas para baixar.</block>
+  <block id="2dc5e815ee060155a84b67a09dcf7fa6" category="paragraph">Abra uma partição para navegar pelos seus arquivos e pastas. Ao selecionar um arquivo ou pasta para download, marcando a caixa de seleção correspondente, ele é adicionado à lista "selecionados" à direita.</block>
+  <block id="78088a4541d653c86a72059b62c6efb2" category="list-text">Selecione o modo de transferência *Download file*.</block>
+  <block id="ec893dccc7ac6d8784a958bfecf4c77c" category="list-text">Revise e confirme as configurações de download do arquivo ou pasta.</block>
+  <block id="7f23c16aa83f6a964740b81d87655f97" category="paragraph">Seu navegador web cuida do download; salve o arquivo .tar em sua máquina local.</block>
+  <block id="90ca43420c8056d84e6e779edc155a8e" category="list-text">Para restaurar arquivos e pastas de aplicativos baseados em máquinas virtuais, é necessário o SSH. Verifique se o serviço SSH está habilitado nos hosts de destino Linux e se um servidor OpenSSH está instalado e habilitado nos hosts de destino Windows.</block>
+  <block id="d4184d6f2694971a164a302498e466fd" category="paragraph">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD == 16 de setembro de 2026</block>
+  <block id="70a78291e1631b6cde41e3ade59523c8" category="paragraph">== 21 de setembro de 2026</block>
+  <block id="a407b07e11f8594de68b112c2830fda6" category="paragraph">=== Melhorias nas cargas de trabalho do Kubernetes Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias:</block>
+  <block id="89b0b0973ed7d73d233126a750ddfd6b" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte<block ref="1288e5e7d4fc4b4cb3f5e18b91f79147" category="inline-link-rx"></block>. &gt;&gt;&gt;&gt;&gt;&gt;&gt; 13d089e3cffcfba837d21c436e1c43e2f3068e74</block>
+  <block id="8c728109c4958c7277d43ffe29c8ef0a" category="paragraph">== 17 de agosto de 2026</block>
+  <block id="6d069869f2c6037ee8457ac4c7624330" category="paragraph">=== Melhorias nas cargas de trabalho do Hyper-V Nesta versão, as cargas de trabalho do Hyper-V apresentam a seguinte melhoria:</block>
+  <block id="c3c5707bca281a527a83cf55e71d695a" category="paragraph">=== Aprimoramento das cargas de trabalho do Oracle Database Nesta versão, as cargas de trabalho do Oracle Database apresentam os seguintes aprimoramentos:</block>
+  <block id="b54e959e87bb5698a736e59d6f5a002d" category="paragraph">== 10 de agosto de 2026</block>
+  <block id="f287b5654466c3abdeb336ac00d4d8f1" category="paragraph">=== Melhorias gerais em NetApp Backup and Recovery</block>
+  <block id="a82be18251af529c0b49e572ccfd11f9" category="paragraph">=== Melhorias nos workloads VMware Nesta versão, os workloads VMware apresentam as seguintes melhorias:</block>
+  <block id="ac971325f67b7b3a698cbc8351dcde0b" category="paragraph">=== Melhorias nas cargas de trabalho do ONTAP Volumes Nesta versão, as cargas de trabalho do ONTAP Volumes apresentam as seguintes melhorias:</block>
+  <block id="d09d785bf301546672ec03c2b0c11bfa" category="paragraph">== 13 de julho de 2026</block>
+  <block id="53f516dbc86d14a7304ee1e88bd3b704" category="paragraph">=== Suporte aprimorado para múltiplos buckets em todas as cargas de trabalho NetApp Backup and Recovery agora oferece suporte à proteção das cargas de trabalho em um sistema com até 100 buckets em diferentes provedores de nuvem. O ONTAP 9.19.1 ou posterior é necessário para suportar mais de 6 buckets por sistema.</block>
+  <block id="6c6621b112cd44e3f19750e5a39791d9" category="paragraph">== 15 de junho de 2026</block>
+  <block id="40b307f05c7032c9f85e40d510400893" category="paragraph">== 08 de junho de 2026</block>
+  <block id="f8ec275b7730fc2e595ba65b1c058574" category="paragraph">=== Melhorias nas cargas de trabalho do ONTAP Volumes Nesta versão, as cargas de trabalho do ONTAP Volumes apresentam a seguinte melhoria:</block>
+  <block id="4ec67842f40ea54ea5b438a562453cf1" category="paragraph">=== Melhorias nas cargas de trabalho do Hyper-V Nesta versão, as cargas de trabalho do Hyper-V apresentam as seguintes melhorias:</block>
+  <block id="dce1d5e7ae21e20ee89f0b1f101c9427" category="paragraph">=== Melhorias no VMware Workloads Nesta versão, o VMware Workloads apresenta a seguinte melhoria:</block>
+  <block id="b1a3c2a41bb4bb53c561a85ae0cf1248" category="paragraph">== 11 de maio de 2026</block>
+  <block id="6f53909f8036ed38d1032aa4b3944e9e" category="paragraph">=== Melhorias nas cargas de trabalho KVM Nesta versão, as cargas de trabalho KVM introduzem a seguinte melhoria:</block>
+  <block id="ccc91e40b552042057b233583604db54" category="paragraph">=== Melhorias nas cargas de trabalho do Oracle Database Nesta versão, as cargas de trabalho do Oracle Database apresentam as seguintes melhorias:</block>
+  <block id="17be7a4c323a9fc3fab615c02397fd9f" category="paragraph">== 05 de maio de 2026</block>
+  <block id="f16933ec3d316d5e96a1236163dfb36d" category="paragraph">== 20 de abril de 2026</block>
+  <block id="b72d8649b2b356cbe5babbf6579add93" category="paragraph">== 13 de abril de 2026</block>
+  <block id="9126c21d90c9d7085f75c4d7f247aab6" category="paragraph">=== Melhorias nas cargas de trabalho do Kubernetes Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias na política de proteção:</block>
+  <block id="7e78fd6a69cbbc1247db21cd6c8e13e5" category="paragraph">=== Melhorias nas cargas de trabalho KVM Nesta versão, as cargas de trabalho KVM introduzem as seguintes melhorias:</block>
+  <block id="f337e8ca08eaa583042989c10ca7899d" category="paragraph">== 31 de março de 2026</block>
+  <block id="0815409b15848adeffaa0d8a922efd2f" category="paragraph">=== Melhorias nas cargas de trabalho do Oracle Database Nesta versão, as cargas de trabalho do Oracle Database introduzem a seguinte melhoria:</block>
+  <block id="4ae8b6ebbea1364ad8203f39139a37d8" category="paragraph">== 16 de março de 2026</block>
+  <block id="51bb72becbf87859f54a607272e1a89b" category="paragraph">== 09 de março de 2026</block>
+  <block id="67c4fddfe3106e9875c00dbee11011c7" category="paragraph">=== Melhorias nas cargas de trabalho do ONTAP Volumes Nesta versão, as cargas de trabalho do ONTAP Volumes apresentam os seguintes recursos aprimorados:</block>
+  <block id="cfb83f51d6065f322a228e358fc2f05c" category="paragraph">=== Melhorias no VMware Workloads Nesta versão, o VMware Workloads apresenta os seguintes recursos aprimorados:</block>
+  <block id="fba7dd747540d75dba48cab698c23888" category="paragraph">== 23 de fevereiro de 2026</block>
+  <block id="ec22006b7033685da69327f9cacc8d52" category="paragraph">=== Cargas de trabalho KVM suportadas na Disponibilidade Geral (GA) O suporte a cargas de trabalho KVM agora está disponível para o público em geral (GA) no NetApp Backup and Recovery.</block>
+  <block id="c5722c71a913190d380bf04e7a6ed4c8" category="paragraph">=== Cargas de trabalho do Kubernetes suportadas na Disponibilidade Geral (GA) O suporte a cargas de trabalho do Kubernetes agora está disponível para o público em geral (GA) no NetApp Backup and Recovery. Esta versão das cargas de trabalho do Kubernetes também introduz os seguintes recursos aprimorados:</block>
+  <block id="af3efc79adefb74a231f94f276e2ba5a" category="paragraph">== 09 de fevereiro de 2026</block>
+  <block id="216eef97ecaa45079d18b2d34115bf4f" category="paragraph">=== Cargas de trabalho do Microsoft Hyper-V suportadas na Disponibilidade Geral (GA) O suporte para cargas de trabalho do Microsoft Hyper-V agora está disponível para o público em geral (GA) no NetApp Backup and Recovery.</block>
+  <block id="11e010e32e419136b508c8eef8c92091" category="paragraph">=== Cargas de trabalho VMware suportadas na Disponibilidade Geral (GA) O suporte para cargas de trabalho VMware agora está disponível para o público em geral (GA) no NetApp Backup and Recovery.</block>
+  <block id="8dd0df63c0a95649c686776beb799237" category="paragraph">=== Melhorias nas cargas de trabalho do Kubernetes Esta versão das cargas de trabalho do Kubernetes introduz as seguintes funcionalidades aprimoradas:</block>
+  <block id="9cc5423dda6fd5f38f97ac0bdeff0f58" category="paragraph">=== Melhorias nas cargas de trabalho do Oracle Database Esta versão das cargas de trabalho do Oracle Database introduz os seguintes recursos aprimorados:</block>
+  <block id="2d659e9a280c65c8deb8cc284fe3e14b" category="paragraph">== 19 de janeiro de 2026</block>
+  <block id="6fe165085cb2c3700be8e33e42e78a4a" category="paragraph">=== Melhorias nas cargas de trabalho de volume do ONTAP Esta versão das cargas de trabalho de volume do ONTAP introduz a seguinte funcionalidade aprimorada:</block>
+  <block id="31297f3613c2e7b4115c474b28b1bff4" category="paragraph">=== Melhorias nas cargas de trabalho da VMware Esta versão das cargas de trabalho da VMware introduz as seguintes funcionalidades aprimoradas:</block>
+  <block id="cd89288e9d9f0858cc62aea350694825" category="paragraph">=== Melhorias na versão prévia das cargas de trabalho do Hyper-V Esta versão das cargas de trabalho do Hyper-V introduz as seguintes funcionalidades aprimoradas:</block>
+  <block id="17587842376df599ec875a3e9d797fdb" category="paragraph">=== Melhorias de pré-visualização de cargas de trabalho KVM</block>
+  <block id="6e9768faae23340967eb21cf6919a719" category="paragraph">== 08 de dezembro de 2025</block>
+  <block id="a67d7f93f01478c246c7ca4cf3e556f8" category="paragraph">=== Melhorias na versão prévia do VMware workloads A versão prévia do VMware workloads introduz os seguintes recursos aprimorados:</block>
+  <block id="c39569cae750214b7a10df9d4fc733c8" category="paragraph">== 06 de outubro de 2025</block>
+  <block id="442a41c8c8e85223fb05ea3c47074d13" category="paragraph">=== O BlueXP backup e recuperação agora é o NetApp Backup and Recovery</block>
+  <block id="803d3c219b80ad02de97580ab3a0aa72" category="paragraph">=== O BlueXP agora é o NetApp Console</block>
+  <block id="9c1f0b5f236d9f3bfe8051ad4f458d03" category="paragraph">=== Suporte para cargas de trabalho Hyper-V como uma prévia privada</block>
+  <block id="6ed94356caa3f2763b710210e9cc58e0" category="paragraph">=== Suporte a cargas de trabalho KVM como uma prévia privada</block>
+  <block id="a1c0d1219a2e15147d875bb6a67849c4" category="paragraph">=== Melhorias na versão prévia do Kubernetes A versão prévia das cargas de trabalho do Kubernetes introduz os seguintes recursos aprimorados:</block>
+  <block id="a618eb256af85c299727bbfbd2b6522d" category="paragraph">=== Melhorias na versão prévia do VMware A versão prévia das cargas de trabalho do VMware introduz os seguintes recursos aprimorados:</block>
+  <block id="f5cdc7264c2c276ec322a71e23b24df2" category="paragraph">=== Suporte a cargas de trabalho do Oracle Database como uma prévia privada</block>
+  <block id="b474bc0b0a63b4bbc898ae1fe117f1ba" category="paragraph">=== Melhorias nas cargas de trabalho de volume do ONTAP Esta versão das cargas de trabalho de volume do ONTAP introduz a seguinte funcionalidade aprimorada:</block>
+  <block id="d637bd8fac0a994563b26e03c7073dca" category="paragraph">== 25 de agosto de 2025</block>
+  <block id="ada048348a523ff085b1b54571c32450" category="paragraph">=== Suporte para proteção de cargas de trabalho VMware em versão prévia</block>
+  <block id="dcda6e92dec31087dfd18abb09cd8a8b" category="paragraph">=== A indexação de alto desempenho para AWS, Azure e GCP está geralmente disponível</block>
+  <block id="473aeee1269d3ae3a032ccecc98b140a" category="paragraph">== 12 de agosto de 2025</block>
+  <block id="25a29f850eda37d86174a804209256e7" category="paragraph">=== Carga de trabalho do Microsoft SQL Server suportada na Disponibilidade Geral (GA)</block>
+  <block id="19e2d12956734eb717874b0c2525f1c7" category="paragraph">=== Melhorias na carga de trabalho de volume do ONTAP</block>
+  <block id="80762cca91d062aa19d9ba117f7bcb02" category="paragraph">== 28 de julho de 2025</block>
+  <block id="b35d6e4fcd3ada17b29bd076e8712792" category="paragraph">=== Suporte a cargas de trabalho do Kubernetes como versão prévia</block>
+  <block id="0795a0a6340a6317bcf372e5b47219ff" category="paragraph">== 14 de julho de 2025</block>
+  <block id="22789abec35e37054d455eb8859c6d1a" category="paragraph">=== Painel de controle de volume ONTAP aprimorado</block>
+  <block id="f28686752015d1a89012da407bfdf2d9" category="paragraph">=== Suporte para cargas de trabalho do Microsoft SQL Server como uma Prévia de Tecnologia Pública</block>
+  <block id="922f0a9687942be7fb7e984a6cc141e9" category="paragraph">== 09 de junho de 2025</block>
+  <block id="a172b36c5c5acfe05abd9a21e1ab4eb8" category="paragraph">=== Atualizações de suporte ao catálogo indexado Em fevereiro de 2025, introduzimos o recurso de indexação atualizado (Catálogo Indexado v2) que você usa durante o método de Busca e Restauração para restaurar dados. A versão anterior melhorou significativamente o desempenho da indexação de dados em ambientes locais. Com esta versão, o catálogo de indexação agora está disponível em ambientes da Amazon Web Services, Microsoft Azure e Google Cloud Platform (GCP).</block>
+  <block id="92735fea630fde61126769d266fe2cce" category="paragraph">=== Pontos de extremidade de link privado do Azure e pontos de extremidade de serviço do Azure</block>
+  <block id="28a95f34107e73fb05adcb4edd7a11f4" category="paragraph">=== Suporte para SnapMirror para ressincronização na nuvem no ONTAP S3</block>
+  <block id="6cc3d130f68a0ffb5aaf8589cce54a9f" category="paragraph">=== Traga seu próprio bucket para o StorageGRID</block>
+  <block id="a9b1fae739f7787ee78ddd66bdcf424d" category="paragraph">== 13 de maio de 2025</block>
+  <block id="b14f61a5b0ebc487f0fd465e2c49e32e" category="paragraph">=== SnapMirror to Cloud Resync para migrações de volume</block>
+  <block id="b8236f82b43383e75b5279f12c6f169f" category="paragraph">=== Suporte para armazenamento de objetos de terceiro (Prévia)</block>
+  <block id="ace15ffb1c420f4e688c4d753c91abc2" category="paragraph">== 16 de abril de 2025</block>
+  <block id="0070d3e95ff1aae8d3ffc352f20de8de" category="paragraph">=== Melhorias na interface do usuário</block>
+  <block id="bdb4578e43eced02c733a769b0983420" category="paragraph">=== Painel de Volume Aprimorado (Prévia)</block>
+  <block id="5815b41fc4b0b5fc6628f93e7610da48" category="paragraph">=== Suporte para armazenamento de objetos de terceiro Wasabi (Prévia)</block>
+  <block id="8db98b381aa8810a494943784a20424c" category="paragraph">==== Primeiros passos com o Wasabi</block>
+  <block id="bd3ba1c2e4596f28a9cd1ca91aedd3b4" category="paragraph">==== Limitações do modo de pré-visualização</block>
+  <block id="452567068925868042d7a22e17ca9307" category="paragraph">== 17 de março de 2025</block>
+  <block id="0cb3dbd97c09eff0ce8678fb64b0f0a2" category="paragraph">=== Navegação de snapshots SMB</block>
+  <block id="01498e8e7a0ef73ed93903ae97697e76" category="paragraph">=== Atualização do ambiente AWS GovCloud</block>
+  <block id="97ce2736e4c8bd5731515aa43edd75cb" category="paragraph">=== Limites de retenção da política de backup</block>
+  <block id="7c58d26e0365b4a83e4f1d9c7e4ccc46" category="paragraph">=== SnapMirror Cloud ressinc</block>
+  <block id="bfaeb1fd694cc75589ab779429dcc4ff" category="paragraph">== 21 de fevereiro de 2025</block>
+  <block id="9c585448431d433a9610826f9f851c10" category="paragraph">=== Indexação de alto desempenho</block>
+  <block id="6010004be43684b47a6d391957d245a8" category="paragraph">=== Melhorias no desempenho da pesquisa global</block>
+  <block id="aa58847eb73583c7e7eb13db78ec9fb7" category="paragraph">== 13 de fevereiro de 2025</block>
+  <block id="08b91ed20ac84659f4ba722f1d440782" category="paragraph">=== NetApp Backup and Recovery Versão de pré-visualização</block>
+  <block id="43c88f32a9f03a6d424d2ab921e0bd52" category="paragraph">== 22 de novembro de 2024</block>
+  <block id="c53ce5def215e3c47008afa5fc69244c" category="paragraph">=== Modos de proteção SnapLock Compliance e SnapLock Enterprise</block>
+  <block id="b86cd1f26c5daf16ef31b85dc0ee88fd" category="paragraph">=== Indexação para o processo de Search &amp; Restore na página Volumes Antes de você poder usar o Search &amp; Restore, é necessário habilitar a "Indexação" em cada sistema de origem do qual você deseja restaurar dados de volume. Isso permite que o Catálogo Indexado rastreie os arquivos de backup de cada volume. A página Volumes agora exibe o status da indexação:</block>
+  <block id="79a2e1e9f6f67a669beec92e025f60e3" category="paragraph">== 27 de setembro de 2024</block>
+  <block id="40df578728b85125ad87761e419299c8" category="paragraph">=== Suporte ao Podman no RHEL 8 ou 9 com Navegação e Restauração NetApp Backup and Recovery agora oferece suporte à restauração de arquivos e pastas nas versões 8 e 9 do Red Hat Enterprise Linux (RHEL) usando o mecanismo Podman. Isso se aplica ao método de Navegação e Restauração do NetApp Backup and Recovery.</block>
+  <block id="58d5a4dc289b7f40dd73921b8409511a" category="paragraph">=== Indexação de catálogo mais rápida aprimora a Busca e Restauração. Esta versão inclui um índice de catálogo aprimorado que conclui a indexação básica muito mais rapidamente. A indexação mais rápida permite que você use o recurso de Busca e Restauração mais rapidamente.</block>
+  <block id="b551b4701a9ff2b5829b492b9fb53e09" category="sidebar">Restaurar ou baixar arquivos e pastas de um aplicativo baseado em máquina virtual</block>
 </blocks>

@@ -36,6 +36,7 @@ Adicione usuários a cada projeto designado para cargas de trabalho e atribua a 
 +
 *** *Administrador da organização* e *superadministrador de Backup and Recovery*: um usuário com essas funções pode visualizar todos os recursos em todas as organizações, além de descobrir cargas de trabalho do Backup and Recovery e atribuí-las a projetos (por exemplo, US East ou US West).
 *** *Administrador de pasta ou projeto* e *superadministrador de NetApp Backup and Recovery*: Um usuário com essas funções pode visualizar apenas os recursos em sua pasta ou projeto atribuído, mas pode descobrir cargas de trabalho do NetApp Backup and Recovery e atribuí-las a esse projeto.
+*** *Outras funções de Backup and Recovery*: Atribua aos usuários as funções específicas de Backup and Recovery de que precisam, como visualizador de Backup and Recovery ou administrador de clonagem de Backup and Recovery. Essas funções permitem que os usuários executem tarefas diárias, como visualizar recursos, proteger cargas de trabalho, realizar clonagem e restaurar. Atribua as funções de Backup and Recovery separadamente das funções de nível de plataforma. Para mais informações, consulte link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de NetApp Backup and Recovery no ​​NetApp Console"^].
 
 
 .. Opção alternativa:
@@ -46,7 +47,7 @@ Em vez de conceder a um usuário acesso administrativo completo ao Backup and Re
 
 . Descubra cargas de trabalho em Backup and Recovery.
 +
-Os administradores da organização, de pastas ou de projetos descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado.
+Os administradores da organização, pasta ou projeto descobrem as cargas de trabalho disponíveis e selecionam o projeto apropriado (como US East ou US West). Cada carga de trabalho é automaticamente associada ao projeto selecionado. Para clusters Kubernetes, você pode opcionalmente selecionar uma pasta ou projeto para associar ao cluster durante a descoberta.
 
 . Adicionar usuários aos projetos.
 +
@@ -59,6 +60,9 @@ Administradores da organização, de pastas ou de projetos adicionam usuários d
 [[related-information]]
 == Informações relacionadas
 
-* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Saiba mais sobre o gerenciamento de identidade e acesso do NetApp Console"^].
-* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de NetApp Backup and Recovery no ​​NetApp Console"^].
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-identity-and-access-management.html["Saiba mais sobre o gerenciamento de identidade e acesso do NetApp Console"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-backup-rec-roles.html["Funções de NetApp Backup and Recovery no ​​NetApp Console"^]
+* link:reference-roles.html["NetApp Backup and Recovery funções e privilégios"]
+* link:br-start-discover-kubernetes.html["Descubra as cargas de trabalho do Kubernetes"]
+* link:br-use-manage-kubernetes-access-control.html["Gerencie o acesso a recursos do Kubernetes"]
 
