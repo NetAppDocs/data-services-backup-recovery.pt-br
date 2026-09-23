@@ -1,20 +1,20 @@
-= Melhorias gerais em NetApp Backup and Recovery
+= Melhoria geral em NetApp Backup and Recovery
 :allow-uri-read: 
 
 
 
 
-[[general-netapp-backup-and-recovery-enhancements]]
-=== Melhorias gerais em NetApp Backup and Recovery
+[[general-netapp-backup-and-recovery-enhancement]]
+=== Melhoria geral em NetApp Backup and Recovery
 
 Nesta versão, as cargas de trabalho KVM, Hyper-V e VMware introduzem a seguinte melhoria:
 
-*Seleção de credencial durante a descoberta do host da máquina virtual*: Ao registrar um host KVM, Hyper-V ou VMware, agora você pode usar a credencial que já adicionou ao NetApp Backup and Recovery.
+*Seleção de credenciais durante a descoberta de hosts de máquinas virtuais*: Ao descobrir um host KVM, Hyper-V ou VMware, agora você pode usar as credenciais que já adicionou ao NetApp Backup and Recovery.
 
 
 
-[[hyper-v-workloads-enhancements]]
-=== Aprimoramentos nas cargas de trabalho do Hyper-V
+[[hyper-v-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do Hyper-V
 
 Nesta versão, o Hyper-V introduz a seguinte melhoria:
 

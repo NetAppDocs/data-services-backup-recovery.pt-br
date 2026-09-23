@@ -5921,7 +5921,6 @@
   <block id="6c2c266ca065311d4804d34cd534ac61" category="paragraph">Restaurar um volume ou arquivo do armazenamento de arquivo morto pode levar mais tempo. A tarefa permanece *Em andamento* no Monitor de Tarefas enquanto o Backup e Recovery tenta novamente a restauração com base na prioridade selecionada. Monitore a restauração no *Monitor de Tarefas*; ela será concluída quando a tarefa atingir um status final, como *Concluído* ou *Falha*, após todas as tentativas. Não inicie outra restauração a menos que a tarefa falhe definitivamente.</block>
   <block id="534cf708a73e1e3ff80e4b70322d78d6" category="paragraph"><block ref="534cf708a73e1e3ff80e4b70322d78d6" category="inline-link-rx"></block></block>
   <block id="6c302dca9120d9212ecda9d1ad1f74c9" category="paragraph">Nesta versão, as cargas de trabalho KVM, Hyper-V e VMware introduzem a seguinte melhoria:</block>
-  <block id="0898522d58ded515e98cbdbeae0b2894" category="paragraph">*Seleção de credencial durante a descoberta do host da máquina virtual*: Ao registrar um host KVM, Hyper-V ou VMware, agora você pode usar a credencial que já adicionou ao NetApp Backup and Recovery.</block>
   <block id="51b1f28526e9e7dfdb39548a8b5d4ac0" category="paragraph">*Proteção de disco abrangente para VMs*: Para configurações CIFS, o NetApp Backup and Recovery agora oferece suporte à proteção de cada disco conectado a cada VM em um grupo de proteção. Isso inclui arquivos distribuídos em vários volumes ONTAP ou sistemas de armazenamento ONTAP (discos abrangentes) e arquivos limitados a um único local.</block>
   <block id="1e62d1b5255654e86ebb8b223345252a" category="section-title">Aprimoramento das cargas de trabalho do ONTAP Volumes</block>
   <block id="705eb27960b89edebb2b2269e939009b" category="paragraph">Nesta versão, o ONTAP Volumes introduz a seguinte melhoria em versão prévia para cargas de trabalho:</block>
@@ -6104,4 +6103,7 @@
   <block id="6cdd743b39af79062eb92fec70569354" category="section-title">13 de fevereiro de 2025</block>
   <block id="008c6d012aabba0e44e2b94f8259635c" category="section-title">22 de novembro de 2024</block>
   <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">27 de setembro de 2024</block>
+  <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">Melhoria geral em NetApp Backup and Recovery</block>
+  <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*Seleção de credenciais durante a descoberta de hosts de máquinas virtuais*: Ao descobrir um host KVM, Hyper-V ou VMware, agora você pode usar as credenciais que já adicionou ao NetApp Backup and Recovery.</block>
+  <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Aprimoramento das cargas de trabalho do Hyper-V</block>
 </blocks>
