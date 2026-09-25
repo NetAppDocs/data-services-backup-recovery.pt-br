@@ -4747,7 +4747,6 @@
   <block id="b7bfbf5f47aa4163507ae71ed18f8b9f" category="list-text">*Suporte para exclusão de vários backups*: Agora você pode excluir vários backups de uma só vez.</block>
   <block id="c67660fa166ae58260874bbf6f9c5e4a" category="list-text">*Suporte prévio para recursos isolados da internet*: Se você estiver executando o NetApp Backup and Recovery em uma implantação local do NetApp Console, você pode descobrir, proteger e restaurar recursos do Kubernetes isolados da internet. Este recurso está em prévia para este lançamento.</block>
   <block id="d1c241263c19a21db56b6d9aaeb83ca1" category="paragraph">Nesta versão, as cargas de trabalho do ONTAP Volumes introduzem as seguintes melhorias:</block>
-  <block id="a33b2a8cf6a943c4ae96728143fee277" category="list-text">*Priorizar tarefas de restauração em relação aos backups*: Agora você pode priorizar tarefas de restauração em relação às tarefas de backup ao restaurar máquinas virtuais ou arquivos.</block>
   <block id="3c8fad259371a43b707a7a3c64b147f6" category="list-text">*Descubra os sistemas ONTAP e volumes sem ativar o NetApp Backup and Recovery*: Agora você pode descobrir sistemas e volumes sem ativar o NetApp Backup and Recovery.</block>
   <block id="2c6cc6886b730f35083997c1321dcc78" category="list-text">Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.</block>
   <block id="5c09edc1ed9afb140af2607f91da29e1" category="section-title">Limitação da prévia do Backup and Recovery para implantação local do NetApp Console</block>
@@ -6106,4 +6105,5 @@
   <block id="1f5228fb8e4d751814a84ea17a1c4929" category="doc">Melhoria geral em NetApp Backup and Recovery</block>
   <block id="36d329847d8e5ae441cfdb0f4e5f6e2f" category="paragraph">*Seleção de credenciais durante a descoberta de hosts de máquinas virtuais*: Ao descobrir um host KVM, Hyper-V ou VMware, agora você pode usar as credenciais que já adicionou ao NetApp Backup and Recovery.</block>
   <block id="ffe23fba63447ec89bcdd7bc0c48257f" category="section-title">Aprimoramento das cargas de trabalho do Hyper-V</block>
+  <block id="8dbaebd91b282de2115c0933e53cc8b1" category="list-text">*Priorize tarefas de restauração em relação ao backup*: agora você pode priorizar tarefas de restauração em relação às tarefas de backup ao restaurar volumes, arquivos ou pastas.</block>
 </blocks>

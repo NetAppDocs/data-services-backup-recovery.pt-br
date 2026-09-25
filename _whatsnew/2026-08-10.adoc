@@ -43,7 +43,7 @@ Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consul
 
 Nesta versão, as cargas de trabalho do ONTAP Volumes introduzem as seguintes melhorias:
 
-* *Priorizar tarefas de restauração em relação aos backups*: Agora você pode priorizar tarefas de restauração em relação às tarefas de backup ao restaurar máquinas virtuais ou arquivos.
+* *Priorize tarefas de restauração em relação ao backup*: agora você pode priorizar tarefas de restauração em relação às tarefas de backup ao restaurar volumes, arquivos ou pastas.
 * *Descubra os sistemas ONTAP e volumes sem ativar o NetApp Backup and Recovery*: Agora você pode descobrir sistemas e volumes sem ativar o NetApp Backup and Recovery.
 
 
