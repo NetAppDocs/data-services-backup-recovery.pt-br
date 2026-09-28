@@ -1,0 +1,25 @@
+= Melhoria geral em NetApp Backup and Recovery
+:allow-uri-read: 
+
+
+
+
+[[general-netapp-backup-and-recovery-enhancement]]
+=== Melhoria geral em NetApp Backup and Recovery
+
+Nesta versão, as cargas de trabalho KVM, Hyper-V e VMware introduzem a seguinte melhoria:
+
+*Suporte à estrutura de controle de acesso baseado em função (RBAC) do Console*: as cargas de trabalho Hyper-V, KVM e VMware agora oferecem suporte à estrutura do Console da NetApp para RBAC, permitindo que você gerencie o acesso a hosts Hyper-V, KVM ou VMware individuais.
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["Saiba mais sobre como usar o RBAC no NetApp Backup and Recovery"].
+
+
+
+[[vmware-workloads-enhancements]]
+=== Aprimoramentos de cargas de trabalho da VMware
+
+Nesta versão, VMware workloads apresenta a seguinte melhoria:
+
+*Suporte ao Flex Unified do Google Cloud NetApp Volumes*: o NetApp Backup and Recovery para cargas de trabalho do VMware agora é compatível com o nível de serviço Flex Unified para o Google Cloud NetApp Volumes. O Flex Unified é compatível apenas no modo ONTAP.
+
+Para obter detalhes sobre como proteger cargas de trabalho VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Proteja as cargas de trabalho do VMware com o NetApp Backup and Recovery"].

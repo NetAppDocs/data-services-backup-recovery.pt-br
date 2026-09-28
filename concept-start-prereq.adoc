@@ -277,8 +277,9 @@ Você precisa de requisitos específicos para descobrir e proteger suas cargas d
 
 | Armazenamento conectado  a| 
 * ONTAP 9.13.1 ou posterior (ONTAP 9.19.1 ou posterior é necessário para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem; até 100 buckets no máximo)
-* Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior
 * ASA r2 sistemas somente SAN (ONTAP 9.17.1 ou posterior necessário)
+* Amazon FSx for NetApp ONTAP storage systems executando a versão 9.13.1 ou posterior
+* Google Cloud NetApp Volumes (modo ONTAP e nível de serviço Flex Unified)
 
 
 |===

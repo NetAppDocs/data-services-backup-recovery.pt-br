@@ -18,10 +18,50 @@ Saiba mais sobre os novos recursos, melhorias e correções no NetApp Backup and
 
 
 
+[[28-september-2026]]
+== 28 de setembro de 2026
+
+Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
+
+
+
+[[general-netapp-backup-and-recovery-enhancement]]
+=== Melhoria geral em NetApp Backup and Recovery
+
+Nesta versão, as cargas de trabalho KVM, Hyper-V e VMware introduzem a seguinte melhoria:
+
+*Suporte à estrutura de controle de acesso baseado em função (RBAC) do Console*: as cargas de trabalho Hyper-V, KVM e VMware agora oferecem suporte à estrutura do Console da NetApp para RBAC, permitindo que você gerencie o acesso a hosts Hyper-V, KVM ou VMware individuais.
+
+https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["Saiba mais sobre como usar o RBAC no NetApp Backup and Recovery"].
+
+
+
+[[vmware-workloads-enhancements]]
+=== Aprimoramentos de cargas de trabalho da VMware
+
+Nesta versão, VMware workloads apresenta a seguinte melhoria:
+
+*Suporte ao Flex Unified do Google Cloud NetApp Volumes*: o NetApp Backup and Recovery para cargas de trabalho do VMware agora é compatível com o nível de serviço Flex Unified para o Google Cloud NetApp Volumes. O Flex Unified é compatível apenas no modo ONTAP.
+
+Para obter detalhes sobre como proteger cargas de trabalho VMware, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-vmware-protect-overview.html["Proteja as cargas de trabalho do VMware com o NetApp Backup and Recovery"].
+
+
+
 [[21-september-2026]]
 == 21 de setembro de 2026
 
 Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
+
+
+
+[[ontap-volumes-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do ONTAP Volumes
+
+Nesta versão, o ONTAP Volumes introduz a seguinte melhoria em versão prévia para cargas de trabalho:
+
+*Suporte aprimorado para dark sites*: o NetApp Backup and Recovery para dark sites agora oferece os mesmos recursos de proteção de dados do ONTAP Volumes que o NetApp Backup and Recovery. Esse aprimoramento inclui serviços atualizados de backup, restauração e gerenciamento de tarefas, além de um novo banco de dados de metadados. Durante uma atualização, os dados existentes do banco de dados são preservados e migrados automaticamente. Após a atualização, revise os logs de auditoria para verificar se a migração foi concluída com sucesso. O NetApp Backup and Recovery para dark sites oferece suporte apenas a cargas de trabalho do ONTAP Volumes.
+
+Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Saiba mais sobre a proteção de volumes do ONTAP com NetApp Backup e Recuperação"].
 
 
 
@@ -31,7 +71,7 @@ Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
 Nesta versão, as cargas de trabalho do Kubernetes introduzem as seguintes melhorias:
 
 * *Trident Protect 26.09*: Esta versão inclui Trident Protect 26.09.
-* *Controle de acesso baseado em funções com granularidade de cluster e namespace*: Durante a descoberta de clusters do Kubernetes, você pode controlar o acesso a recursos selecionando um projeto ou pasta para associar ao novo cluster. Você também pode registrar namespaces específicos para controle de acesso. Isso permite um controle de acesso mais granular no nível do cluster ou do namespace.
+* *Controle de acesso baseado em funções (RBAC) granular por cluster e namespace*: durante a descoberta de clusters do Kubernetes, você pode controlar o acesso aos recursos selecionando um projeto ou pasta para associar ao novo cluster. Você também pode registrar namespaces específicos para controle de acesso. Isso permite um controle de acesso mais granular no nível do cluster ou do namespace.
 * *Restaurar arquivos e pastas*: Agora você pode restaurar ou baixar arquivos e pastas específicos de backups de aplicativos baseados em máquinas virtuais do Kubernetes.
 
 
