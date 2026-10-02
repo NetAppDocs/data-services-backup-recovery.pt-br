@@ -1704,10 +1704,7 @@
   <block id="c261701c0a638fff16b256b7172f9ad8" category="list-text">*Instantâneo local*: escolha uma política de instantâneo existente ou crie uma.</block>
   <block id="b18210e92f4a87b1f7c6722188562864" category="admonition">Para criar uma política personalizada antes de ativar a replicação, consulte<block ref="d9904d3bd7927987056edc09c02007e9" category="inline-link-macro-rx"></block> .</block>
   <block id="af14ed236e1187cb69e6b99e4332efba" category="list-text">*Provedor*: Selecione *Microsoft Azure*.</block>
-  <block id="308ae624df45c66718b6d2cb73b83d14" category="list-text">*Configurações do provedor*: insira os detalhes do provedor.</block>
-  <block id="e850b416e9c74abb2c30ff149c33b965" category="paragraph">Insira a região onde os backups serão armazenados.  Esta pode ser uma região diferente daquela onde o sistema Cloud Volumes ONTAP reside.</block>
   <block id="e90f61567d45b4aa5a1f884395480afd" category="paragraph">Crie uma nova conta de armazenamento ou selecione uma existente.</block>
-  <block id="fbbde4256c2fb5bda7558a46213f5d5a" category="paragraph">Insira a assinatura do Azure usada para armazenar os backups.  Esta pode ser uma assinatura diferente daquela em que o sistema Cloud Volumes ONTAP reside.</block>
   <block id="4516b0da13e1509d57f15deb85fd4416" category="paragraph">Crie seu próprio grupo de recursos que gerencia o contêiner Blob ou selecione o tipo de grupo de recursos e o grupo.</block>
   <block id="933cc9e4a85b592d8fa25352508f2035" category="admonition">Se você quiser proteger seus arquivos de backup contra modificações ou exclusão, certifique-se de que a conta de armazenamento foi criada com armazenamento imutável habilitado usando um período de retenção de 30 dias.</block>
   <block id="fea7328886ae797091b7afcd97768302" category="admonition">Se você quiser colocar arquivos de backup mais antigos no Armazenamento de Arquivos do Azure para otimizar ainda mais os custos, certifique-se de que a conta de armazenamento tenha a regra de ciclo de vida apropriada.</block>
@@ -4572,8 +4569,6 @@
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">Consulte <block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block> para obter detalhes sobre as funções e permissões necessárias para executar operações em NetApp Backup and Recovery.</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">Requisitos para backups em storage de objetos</block>
   <block id="fc0cba16e06b834a59ea2732ce15d74a" category="section-title">Requisitos para proteger cargas de trabalho de volume do ONTAP</block>
-  <block id="0b0bee32bf0c7158fbba14e4b17f1e23" category="paragraph">Para usar NetApp Backup and Recovery para cargas de trabalho de volume ONTAP, você precisa dos seguintes pré-requisitos de sistema host, espaço e dimensionamento.</block>
-  <block id="f17da14a026a5974537cf1303ac53974" category="list-text">É necessário o ONTAP 9.8 ou posterior.</block>
   <block id="45b096193f4470968c1063df19d1c253" category="list-text">Uma licença ONTAP One deve estar habilitada na instância ONTAP local.</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>.</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">Host do banco de dados</block>
@@ -4683,8 +4678,6 @@
   <block id="ea5b48c7d3f8b0a9e0a12672ffc2b29a" category="list-text">Selecione *Exibir* no item de linha da carga de trabalho para visualizar os recursos do Kubernetes.</block>
   <block id="a7ffc4809e4a33a20f30769fc3e62703" category="list-text">Armazenamento compatível com S3 (somente para cargas de trabalho de volumes ONTAP)</block>
   <block id="7229e78ecf33d07a5618d54695f22e2b" category="list-text">Armazenamento de Blobs do Microsoft Azure</block>
-  <block id="df9ce829d97bcaaccefd13ad9443c5fe" category="list-text">ONTAP 9.12.1 ou posterior é necessário para a proteção de volumes FlexGroup. Consulte <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> para mais informações.</block>
-  <block id="bc75b0ab08d9eba6d835f75a9dc3780f" category="list-text">ONTAP 9.17.1 ou posterior é necessário para fazer backup ou restaurar em storage de objetos compatível com S3.</block>
   <block id="6e61da6259c2e5766003325feb7a477a" category="list-text">Ao selecionar os volumes de origem que você deseja proteger, só é possível selecionar volumes que tenham configurações de SnapLock correspondentes. Os volumes que você selecionar devem ter todos o recurso SnapLock ativado ou todos o recurso SnapLock desativado.</block>
   <block id="fa428977bbfd079a1a152d734ac0da9a" category="list-text">*Usar relacionamento secundário existente do SnapMirror e SyncMirror*: habilite esta opção para usar o relacionamento existente do SnapMirror ou SyncMirror para transferir snapshots para o cluster de destino.</block>
   <block id="2d86afc1dea874d04cb6b44f9329cb39" category="list-text">*Cargas de trabalho VMware*:</block>
@@ -6140,4 +6133,43 @@
   <block id="30144384865c9bc036707d99163c215c" category="cell">Restauração de arquivos e pastas de um snapshot local para o mesmo volume</block>
   <block id="b6a5b73bc90d7aa324c49f4f91a911c2" category="list-text">Escolha uma tarefa da lista, selecione o menu Ações <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block>, e selecione a ação *Cancelar restauração*.</block>
   <block id="67221d952a3dfa81a9eee1d6fc312266" category="list-text">Na caixa de diálogo de confirmação, selecione *Cancelar restauração*.</block>
+  <block id="2ae03161c414273a2c4ef1fbfecc2c18" category="paragraph">Para usar o NetApp Backup and Recovery para cargas de trabalho de volumes do ONTAP, você precisa dos seguintes pré-requisitos.</block>
+  <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Recurso</block>
+  <block id="35d371dfd4ffcaa6df33332c8e851cb6" category="cell">Versão do ONTAP necessária</block>
+  <block id="041dd7a51404fc5dc5a87c2a0bc90b15" category="cell">9.8 ou posterior</block>
+  <block id="5d373d06bd6c55f7acd2cd162140309b" category="cell">Proteja os volumes FlexGroup (consulte <block ref="a1845bf1ef98236015caabc5bbd8f351" category="inline-link-macro-rx"></block> para obter mais informações)</block>
+  <block id="384264f87c50753f2eb17ca87ee9effa" category="cell">9.12.1 ou posterior</block>
+  <block id="7302e093b366701b61b9e7ea1cf0d501" category="cell">Use a autenticação do Microsoft Entra ID para buckets do Azure ao proteger o Cloud Volumes ONTAP</block>
+  <block id="5d4f2555064c941936a870946b60b493" category="cell">9.16.1 ou posterior</block>
+  <block id="a3f248f0b42b591c55de4315dfe33cbf" category="cell">Faça backup ou restaure para o storage de objetos compatível com S3</block>
+  <block id="a48a0937fc12df9714feb4f90708686d" category="cell">9.17.1 ou posterior</block>
+  <block id="8e8029d7ebad3152861cb8a5f298ff52" category="cell">Utilize mais de 6 buckets por sistema em diferentes provedores de nuvem (máximo de 100 buckets)</block>
+  <block id="33bb0fb1eb1d7544e65ed467aa0cf274" category="cell">9.19.1 ou posterior</block>
+  <block id="9ca7107af6688cc44a1bcc2ce2046b03" category="cell"><block ref="85f823e464828e8803d4ef0669c47bde" prefix="" category="inline-code"></block></block>
+  <block id="f4d8d86297c910edd07515360629dc8b" category="inline-link-macro">Faça backup do Cloud Volumes ONTAP no armazenamento de Blobs do Azure</block>
+  <block id="afdef63d55a31f83b0472ea15938d9cd" category="cell">Habilita a opção de usar a autenticação de identidade gerenciada do Microsoft Entra ID para o storage de objetos do Azure em vez de usar uma chave de acesso da conta de armazenamento. Compatível com o Cloud Volumes ONTAP em sistemas Azure que executam o ONTAP 9.16.1 ou mais recente. Para obter mais informações, consulte <block ref="233a4aa6c0a23fa528a31eee71ed15ac" category="inline-link-macro-rx"></block>.</block>
+  <block id="abe72bc586e5883f1af04cf80727dc68" category="list-text">Mínimo de ONTAP 9.8; recomenda-se o ONTAP 9.8P13 ou posterior. O ONTAP 9.16.1 ou posterior é necessário se você usar autenticação do Microsoft Entra ID para o storage de objetos do Azure.</block>
+  <block id="0c4cf99159d4cd1b532e2ab5e24174cb" category="section-title">Requisitos para usar a autenticação do Microsoft Entra ID com armazenamentos de objetos do Azure</block>
+  <block id="42920e377000a5bd5c1d6ca781abb0d8" category="paragraph">Você pode habilitar a autenticação do Microsoft Entra ID para o storage de objetos do Azure ao criar um bucket de storage de objetos do Azure ou ao editar a configuração de um bucket existente do Azure, caso não queira usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas Azure que executam ONTAP 9.16.1 ou posterior.</block>
+  <block id="19491804ac62048a8e851071df62ae81" category="admonition">Você pode usar diferentes métodos de autenticação para diferentes configurações de armazenamento de objetos no mesmo sistema Cloud Volumes ONTAP, mas, depois que alterar uma configuração de armazenamento de objetos para usar o Microsoft Entra ID, não poderá voltar a usar a chave da conta de armazenamento.</block>
+  <block id="f423e3045bb39879808f640f6d3edc7a" category="list-text">Verifique se o sinalizador de recurso "use-azure-msi-cvo" está habilitado no sistema Cloud Volumes ONTAP. Para obter mais informações, consulte <block ref="6da975d9d27e80cef2a7d63b105961f2" category="inline-link-macro-rx"></block>.</block>
+  <block id="393b26469137541bfe97a83dd8809ccc" category="list-text">Somente a opção de estratégia de backup "Traga seu próprio bucket" é compatível. Verifique se a conta de armazenamento do Azure já existe e contém um contêiner com o mesmo nome da conta.</block>
+  <block id="c25166e827f3d8e40a7dc77175109dd0" category="list-text">Nas configurações de IAM da conta de armazenamento do Azure, verifique se a função<block ref="43a75a85e4a5f4ca31d88a3753adbcea" prefix=" " category="inline-code"></block> está atribuída tanto ao Azure Agent quanto ao sistema Cloud Volumes ONTAP. Se você usar a opção de política<block ref="7a97177198173bd0b74d0f70c9d953e3" prefix=" " category="inline-code"></block>, também habilite o versionamento na conta de armazenamento e atribua a função<block ref="74d42a47b950c356be555335ad7b2450" prefix=" " category="inline-code"></block> tanto ao Azure Agent quanto ao sistema Cloud Volumes ONTAP.</block>
+  <block id="61368bcd5b5179392ffa4405c00d249e" category="inline-link-macro">alternar para o Entra ID em um bucket do Azure já configurado</block>
+  <block id="958d06d551680ecc2de50098779cabaf" category="inline-xref">definir a estratégia de backup</block>
+  <block id="1334bf370e99b217dfa24707a8013ec8" category="paragraph">Se o seu ambiente atender a esses requisitos, você poderá selecionar<block ref="0248eceb183034c82899c7bc91d5d37c" prefix=" " category="inline-code"></block> como o tipo de autenticação em qualquer novo bucket de storage de objetos do Azure quando <block ref="d43a54f1761f010f98e5f729a40650ea" category="inline-xref-macro-rx"></block>. Você também pode <block ref="6d99e488f0e600fabd6ff47eb61bcf0f" category="inline-link-macro-rx"></block> na página *Configurações de backup* do ONTAP Volumes.</block>
+  <block id="77811f9b1ddfb0aa2879a2000b2513b6" category="section-title">Requisitos para o uso de chaves gerenciadas pelo cliente para criptografia de dados</block>
+  <block id="e1517d7086bafd3d92eae75445613f32" category="list-text">Na página *Definir estratégia de backup*, escolha uma ou todas as opções a seguir. As três estão selecionadas por padrão:</block>
+  <block id="5741e8ce61ad7e2079c4958447deef4f" category="list-text">*Configurações do destino de backup*: escolha usar um destino de backup existente e selecione um na lista, ou escolha configurar um novo destino de backup.</block>
+  <block id="aa67358cced63c3ab92e847061153bda" category="list-text">*Configurações do provedor*: insira os detalhes do provedor, como as opções de criação de bucket e autenticação:</block>
+  <block id="f3c92ea169084b24ee7f57949a25e6bc" category="list-text">*Criar novo bucket*: o NetApp Backup and Recovery cria o bucket no ambiente do seu provedor.</block>
+  <block id="9dfa550facaa156053152c7480a78e8a" category="list-text">*Traga seu próprio bucket*: use um bucket existente que você já criou.</block>
+  <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-xref">requisitos</block>
+  <block id="760f22cd63d8ba2af5510c6c9a156865" category="list-text">*Método de autenticação*: escolha usar a chave de acesso da conta de armazenamento ou o Microsoft Entra ID para autenticar com o Azure. Você só pode selecionar *Entra ID* se o seu ambiente atender aos requisitos do Entra ID <block ref="ddbcf24f8793bd718ad1413287a068f4" category="inline-xref-macro-rx"></block>. Se você selecionar *Storage account access key*, selecione o seguinte:</block>
+  <block id="03628d2a24f98121695c37a42df64ac7" category="list-text">Selecione a assinatura do Azure usada para armazenar os backups. Essa assinatura pode ser diferente daquela em que o sistema Cloud Volumes ONTAP reside.</block>
+  <block id="2b6fad0bbaa44587d9b5ac0ac2031ce4" category="section-title">Altere a configuração de armazenamento de objetos do Azure para a autenticação do Microsoft Entra ID</block>
+  <block id="53a4f9c26971c8e33aa0fba4358ddb67" category="paragraph">Você pode alternar para a autenticação do Microsoft Entra ID para o storage de objetos do Azure ao editar uma configuração de bucket do Azure existente, caso não queira usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas do Azure que executam o ONTAP 9.16.1 ou posterior.</block>
+  <block id="969defc1889ccc6f8ee630d878ad0cf6" category="paragraph">Certifique-se de que seu ambiente atenda aos <block ref="fea8710e19d17f9dcce7cbc75ce18f8b" category="inline-link-macro-rx"></block> para usar o Entra ID.</block>
+  <block id="b7653fde2d6e0a6d514915930b0db4bd" category="list-text">Expanda a seção *Método de autenticação*.</block>
+  <block id="68bc12754c0710946a9eaa7fa64fb06b" category="list-text">Selecione *Entra ID (identidade gerenciada)*.</block>
 </blocks>

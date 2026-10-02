@@ -38,6 +38,9 @@ Você pode ativar os seguintes recursos de pré-visualização para NetApp Backu
 
 
 | `"data-transfer-report": true` | Habilita o relatório diário de transferência de dados de backup na guia Relatórios em NetApp Backup and Recovery para Volumes. O relatório fornece informações diárias sobre a atividade de transferência de dados de backup e replicação em todo o seu ambiente. 
+
+
+| `"use-azure-msi-cvo": true` | Habilita a opção de usar a autenticação de identidade gerenciada do Microsoft Entra ID para o storage de objetos do Azure em vez de usar uma chave de acesso da conta de armazenamento. Compatível com o Cloud Volumes ONTAP em sistemas Azure que executam o ONTAP 9.16.1 ou mais recente. Para obter mais informações, consulte link:prev-ontap-backup-cvo-azure.html["Faça backup do Cloud Volumes ONTAP no armazenamento de Blobs do Azure"]. 
 |===
 
 

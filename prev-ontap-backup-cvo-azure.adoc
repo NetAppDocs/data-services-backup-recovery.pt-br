@@ -32,7 +32,7 @@ Opcionalmente, você pode se conectar a um sistema ONTAP secundário para volume
 
 image:diagram_cloud_backup_cvo_azure.png["Um diagrama mostrando como o NetApp Backup and Recovery se comunica com os volumes nos sistemas de origem e no armazenamento de destino onde os arquivos de backup estão localizados."]
 
-Versões ONTAP suportadas:: Mínimo de ONTAP 9.8; ONTAP 9.8P13 e posterior é recomendado.
+Versões ONTAP suportadas:: Mínimo de ONTAP 9.8; recomenda-se o ONTAP 9.8P13 ou posterior. O ONTAP 9.16.1 ou posterior é necessário se você usar autenticação do Microsoft Entra ID para o storage de objetos do Azure.
 Regiões do Azure com suporte:: O NetApp Backup and Recovery tem suporte em todas as regiões do Azure, incluindo regiões governamentais do Azure.
 +
 --
@@ -52,6 +52,24 @@ Para o licenciamento PAYGO do NetApp Backup and Recovery , é necessária uma as
 Para o licenciamento BYOL do NetApp Backup and Recovery , você precisa do número de série da NetApp que lhe permite usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].  Você deve usar uma licença BYOL quando o agente do Console e o sistema Cloud Volumes ONTAP forem implantados em um site escuro ("modo privado").
 
 Você também precisa de uma assinatura do Azure para o espaço de storage onde seus backups serão armazenados.
+
+
+
+[[requirements-for-using-microsoft-entra-id-authentication-with-azure-object-stores]]
+[[anchor-entraid]]
+== Requisitos para usar a autenticação do Microsoft Entra ID com armazenamentos de objetos do Azure
+
+Você pode habilitar a autenticação do Microsoft Entra ID para o storage de objetos do Azure ao criar um bucket de storage de objetos do Azure ou ao editar a configuração de um bucket existente do Azure, caso não queira usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas Azure que executam ONTAP 9.16.1 ou posterior.
+
+
+NOTE: Você pode usar diferentes métodos de autenticação para diferentes configurações de armazenamento de objetos no mesmo sistema Cloud Volumes ONTAP, mas, depois que alterar uma configuração de armazenamento de objetos para usar o Microsoft Entra ID, não poderá voltar a usar a chave da conta de armazenamento.
+
+* Verifique se o sinalizador de recurso "use-azure-msi-cvo" está habilitado no sistema Cloud Volumes ONTAP. Para obter mais informações, consulte link:enable-preview-features.html["Ativar recursos de pré-visualização"].
+* Somente a opção de estratégia de backup "Traga seu próprio bucket" é compatível. Verifique se a conta de armazenamento do Azure já existe e contém um contêiner com o mesmo nome da conta.
+* Nas configurações de IAM da conta de armazenamento do Azure, verifique se a função `Storage Blob Data Contributor` está atribuída tanto ao Azure Agent quanto ao sistema Cloud Volumes ONTAP. Se você usar a opção de política `Object lock`, também habilite o versionamento na conta de armazenamento e atribua a função `Storage Blob Data Owner` tanto ao Azure Agent quanto ao sistema Cloud Volumes ONTAP.
+
+
+Se o seu ambiente atender a esses requisitos, você poderá selecionar `Entra ID` como o tipo de autenticação em qualquer novo bucket de storage de objetos do Azure quando <<Defina a estratégia de backup,definir a estratégia de backup>>. Você também pode link:prev-ontap-policy-object-advanced-settings.html#switch-an-azure-object-store-configuration-to-microsoft-entra-id-authentication["alternar para o Entra ID em um bucket do Azure já configurado"] na página *Configurações de backup* do ONTAP Volumes.
 
 
 
@@ -146,8 +164,8 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.ht
 
 
 
-[[required-information-for-using-customer-managed-keys-for-data-encryption]]
-=== Informações necessárias para usar chaves gerenciadas pelo cliente para criptografia de dados
+[[requirements-for-using-customer-managed-keys-for-data-encryption]]
+=== Requisitos para o uso de chaves gerenciadas pelo cliente para criptografia de dados
 
 Você pode usar suas próprias chaves gerenciadas pelo cliente para criptografia de dados no assistente de ativação em vez de usar as chaves de criptografia padrão gerenciadas pela Microsoft.  Nesse caso, você precisará ter a Assinatura do Azure, o nome do Key Vault e a Chave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Veja como usar suas próprias chaves"^] .
 
@@ -321,7 +339,7 @@ NOTE: Se os volumes escolhidos tiverem políticas de snapshot e replicação dif
 
 
 .Passos
-. Na página Definir estratégia de backup, escolha uma ou todas as opções a seguir.  Todos os três são selecionados por padrão:
+. Na página *Definir estratégia de backup*, escolha uma ou todas as opções a seguir. As três estão selecionadas por padrão:
 +
 ** *Instantâneos locais*: se você estiver executando replicação ou backup no armazenamento de objetos, instantâneos locais deverão ser criados.
 ** *Replicação*: Cria volumes replicados em outro sistema de armazenamento ONTAP .
@@ -370,25 +388,26 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 
-. *Fazer backup no objeto*: Se você selecionou *Backup*, defina as seguintes opções:
+. *Backup*: Defina as seguintes opções:
 +
+** *Configurações do destino de backup*: escolha usar um destino de backup existente e selecione um na lista, ou escolha configurar um novo destino de backup.
 ** *Provedor*: Selecione *Microsoft Azure*.
-** *Configurações do provedor*: insira os detalhes do provedor.
+** *Configurações do provedor*: insira os detalhes do provedor, como as opções de criação de bucket e autenticação:
 +
-Insira a região onde os backups serão armazenados.  Esta pode ser uma região diferente daquela onde o sistema Cloud Volumes ONTAP reside.
-
+*** *Criar novo bucket*: o NetApp Backup and Recovery cria o bucket no ambiente do seu provedor.
+*** *Traga seu próprio bucket*: use um bucket existente que você já criou.
+*** *Método de autenticação*: escolha usar a chave de acesso da conta de armazenamento ou o Microsoft Entra ID para autenticar com o Azure. Você só pode selecionar *Entra ID* se o seu ambiente atender aos requisitos do Entra ID <<anchor-entraid,requisitos>>. Se você selecionar *Storage account access key*, selecione o seguinte:
 +
-Crie uma nova conta de armazenamento ou selecione uma existente.
-
-+
-Insira a assinatura do Azure usada para armazenar os backups.  Esta pode ser uma assinatura diferente daquela em que o sistema Cloud Volumes ONTAP reside.
-
-+
-Crie seu próprio grupo de recursos que gerencia o contêiner Blob ou selecione o tipo de grupo de recursos e o grupo.
-
+**** Selecione a assinatura do Azure usada para armazenar os backups. Essa assinatura pode ser diferente daquela em que o sistema Cloud Volumes ONTAP reside.
+**** Selecione a região onde os backups serão armazenados.  Esta pode ser uma região diferente daquela onde o sistema Cloud Volumes ONTAP reside.
+**** Crie seu próprio grupo de recursos que gerencia o contêiner Blob ou selecione o tipo de grupo de recursos e o grupo.
 +
 
 TIP: Se você quiser proteger seus arquivos de backup contra modificações ou exclusão, certifique-se de que a conta de armazenamento foi criada com armazenamento imutável habilitado usando um período de retenção de 30 dias.
+
+
+
+
 
 ** *Chave de criptografia*: se você criou uma nova conta de armazenamento do Azure, insira as informações da chave de criptografia fornecidas pelo provedor.  Escolha se você usará as chaves de criptografia padrão do Azure ou escolherá suas próprias chaves gerenciadas pelo cliente na sua conta do Azure para gerenciar a criptografia dos seus dados.
 +

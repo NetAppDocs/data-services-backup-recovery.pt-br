@@ -155,14 +155,29 @@ Para usar storage de objetos como destinos de backup, você precisa de uma conta
 [[requirements-for-protecting-ontap-volume-workloads]]
 == Requisitos para proteger cargas de trabalho de volume do ONTAP
 
-Para usar NetApp Backup and Recovery para cargas de trabalho de volume ONTAP, você precisa dos seguintes pré-requisitos de sistema host, espaço e dimensionamento.
+Para usar o NetApp Backup and Recovery para cargas de trabalho de volumes do ONTAP, você precisa dos seguintes pré-requisitos.
 
-* É necessário o ONTAP 9.8 ou posterior.
-* ONTAP 9.12.1 ou posterior é necessário para a proteção de volumes FlexGroup. Consulte link:br-reference-limitations.html["Limitações conhecidas com o NetApp Backup and Recovery para volumes ONTAP"] para mais informações.
-* ONTAP 9.17.1 ou posterior é necessário para fazer backup ou restaurar em storage de objetos compatível com S3.
-* É necessário o ONTAP 9.19.1 ou posterior para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem (até 100 buckets no máximo).
-* Uma licença ONTAP One deve estar habilitada na instância ONTAP local.
+[cols="2,1"]
+|===
+| Recurso | Versão do ONTAP necessária 
 
+
+| Proteger volumes ONTAP | 9.8 ou posterior 
+
+
+| Proteja os volumes FlexGroup (consulte link:br-reference-limitations.html["Limitações conhecidas com o NetApp Backup and Recovery para volumes ONTAP"] para obter mais informações) | 9.12.1 ou posterior 
+
+
+| Use a autenticação do Microsoft Entra ID para buckets do Azure ao proteger o Cloud Volumes ONTAP | 9.16.1 ou posterior 
+
+
+| Faça backup ou restaure para o storage de objetos compatível com S3 | 9.17.1 ou posterior 
+
+
+| Utilize mais de 6 buckets por sistema em diferentes provedores de nuvem (máximo de 100 buckets) | 9.19.1 ou posterior 
+|===
+
+NOTE: Uma licença ONTAP One deve estar habilitada na instância ONTAP local.
 
 Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte link:prev-ontap-protect-overview.html["Proteja seus dados de volume ONTAP"].
 

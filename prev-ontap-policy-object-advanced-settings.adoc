@@ -154,3 +154,22 @@ Você pode ativar ou desativar as verificações de ransomware no nível do prov
 . Defina a frequência em dias ou semanas em que a verificação deve ser executada.
 . Selecione *Aplicar*.
 
+
+
+
+[[switch-an-azure-object-store-configuration-to-microsoft-entra-id-authentication]]
+== Altere a configuração de armazenamento de objetos do Azure para a autenticação do Microsoft Entra ID
+
+Você pode alternar para a autenticação do Microsoft Entra ID para o storage de objetos do Azure ao editar uma configuração de bucket do Azure existente, caso não queira usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas do Azure que executam o ONTAP 9.16.1 ou posterior.
+
+.Antes de começar
+Certifique-se de que seu ambiente atenda aos link:prev-ontap-backup-cvo-azure.html#anchor-entraid["requisitos"^] para usar o Entra ID.
+
+.Passos
+. Na aba *Volumes*, selecione *Configurações de backup*.
+. Na página _Configurações de backup_, selecione image:icon-actions-horizontal.gif["Mais ícone"] para o sistema e selecione *Configurar configurações avançadas > Configurações do provedor*.
+. Na parte superior da página resultante, selecione o bucket para o qual você precisa alterar as configurações.
+. Expanda a seção *Método de autenticação*.
+. Selecione *Entra ID (identidade gerenciada)*.
+. Selecione *Aplicar*.
+
