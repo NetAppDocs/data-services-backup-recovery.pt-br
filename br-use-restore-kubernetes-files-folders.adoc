@@ -113,6 +113,10 @@ O navegador de arquivos é exibido.
 +
 Abra uma partição para navegar pelos seus arquivos e pastas. Ao selecionar um arquivo ou pasta para download, marcando a caixa de seleção correspondente, ele é adicionado à lista "selecionados" à direita.
 
++
+
+NOTE: O tamanho total combinado dos arquivos e pastas selecionados não pode exceder 5 MB.
+
 . Ao terminar, selecione *Próximo*.
 . Selecione o modo de transferência *Download file*.
 . Selecione *Avançar*.

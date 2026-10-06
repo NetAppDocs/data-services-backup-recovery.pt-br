@@ -4023,7 +4023,6 @@
   <block id="d213948679817ac06e8c20f73a6d5e50" category="list-text">TCP 8144 (NetApp Plug-in para Hyper-V)</block>
   <block id="eb24ddd0422049219f581858a9ae2714" category="list-text">TCP 8145 (NetApp Plug-in para Windows)</block>
   <block id="72edcbdd4436f32d101a83a36dd2d1db" category="list-text">Execute o comando *ls* para garantir que a pasta "catalogdb1" foi criada e que contém as subpastas<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>,<block ref="b17be6650251f2e6c7d4e90209beb4e0" prefix=" " category="inline-code"></block>, e<block ref="695633290d050f31cec0c9d4bd4a57fe" prefix=" " category="inline-code"></block>.</block>
-  <block id="5896522d63454009d1844a27f9e16972" category="cell">7.4.13 ou posterior</block>
   <block id="0fd3e1f73fc71151c33e67909039dd88" category="paragraph">Nesta versão, as cargas de trabalho do Oracle Database introduzem a seguinte melhoria:</block>
   <block id="b77d45fa1e71e6bf913df1f7680aa70c" category="list-text">*Suporte a hosts em cluster*: Agora você pode descobrir e proteger bancos de dados Oracle Real Application Clusters (RAC) que usam Oracle Automatic Storage Management (ASM) e são implantados usando VMDK em sistemas de arquivos VMFS. Para mais informações, consulte<block ref="d0dab0542f96585a18cc2e536da75fd6" category="inline-link-rx"></block>.</block>
   <block id="cb7dc55d43e841bfb3cf4e114d10c93d" category="inline-link">Configurar um banco de dados Oracle</block>
@@ -4227,7 +4226,6 @@
   <block id="1eb5bc9aed171393a1b9575017d9efef" category="cell"><block ref="ff10ff95bc79c857a9d612d300c756c9" prefix="" category="inline-code"></block></block>
   <block id="bad5ef63ec2094c6d84831f4e77806a0" category="cell">Torna a opção *Priorizar restauração em relação à fila de tarefas existente* selecionável durante o fluxo de trabalho de restauração na interface web de NetApp Backup and Recovery. Ao selecionar esta opção durante o fluxo de trabalho de restauração, as operações de restauração são priorizadas em relação a outras tarefas na fila, para que sejam executadas mesmo quando a fila estiver ocupada.</block>
   <block id="5760817f42cfdcd9c310ec63890ecb27" category="section-title">Ativar recursos de pré-visualização</block>
-  <block id="72493bb7c79c6733ffc1d16ee7c7d104" category="paragraph">Habilite as opções de pré-visualização para usar funcionalidades que ainda não estão disponíveis ao público em geral. Use recursos de pré-visualização com cautela em ambientes de produção.</block>
   <block id="eb7643c8d813a09c07f2d8076b2befd1" category="list-text">Altere para o usuário raiz:</block>
   <block id="9ba4f57294fda814dbab7cbda4e897fa" category="list-text">Localize o volume de Backup and Recovery no Docker:</block>
   <block id="a68c3c53417789e724bdb983d1b29d52" category="paragraph">O resultado deverá ser semelhante ao seguinte:</block>
@@ -4513,7 +4511,6 @@
   <block id="aefd2cbeb423f608e4e14dc18e7cda38" category="section-title">Visualizar sessões de montagem VMDK ativas</block>
   <block id="29760f5766da0c4d6a0ac770b454e9d0" category="paragraph">É exibida uma lista de sessões de montagem VMDK abertas. Você pode ver o backup associado, a VM de origem, o caminho de montagem e outras informações.</block>
   <block id="9e75b63d575b523917aa9e47b41b52fb" category="list-text">Banco de dados Oracle AI 26ai</block>
-  <block id="f9fe5abdb3368e0236fd36a21bb8f840" category="cell">Pacote de hospedagem 8.0.24 (e todos os patches 8.0.x subsequentes)</block>
   <block id="5b94860a42a3f19b0fba83e9b7d762f3" category="sidebar">Clonar cargas de trabalho do VMware</block>
   <block id="beb76bddbaec1f03042fdde3ce87a100" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho KVM</block>
   <block id="d4989fe657e38f56766b05260a139da1" category="sidebar">Criar e gerenciar políticas de backup de cargas de trabalho do Hyper-V</block>
@@ -4529,8 +4526,6 @@
   <block id="17ee1e3baa1892c1f3d00118ea446fca" category="section-title">Desativar indexação para volumes</block>
   <block id="9d0f404c5a1959bdade3f7db9b0dfed5" category="paragraph">Desative a indexação para volumes específicos ou para todos os volumes pertencentes a uma ou mais storage VMs usando as seguintes flags de opção:</block>
   <block id="99d6bb7f841b0ddd33dd9e23fe42b4e8" category="list-text"><block ref="2f0729ea8ff63f23144ca016d097072b" prefix="" category="inline-code"></block>: Uma lista separada por vírgulas de máquinas virtuais de armazenamento cujos volumes não devem ser indexados</block>
-  <block id="a4c2ad915aa7ffe7e12eaa0ec56e0fcb" category="list-text"><block ref="2e56f3828d4fc676b207b81b442eafdd" prefix="" category="inline-code"></block>: Uma lista de volumes individuais, separados por vírgulas, que não devem ser indexados</block>
-  <block id="2e7ba7a2addeb2881d5673ae4329306b" category="list-text">Crie um arquivo chamado <block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> e personalize os nomes da storage VM e dos volumes para corresponder ao seu ambiente:</block>
   <block id="48be46e5153e88189d804da13793e42d" category="list-text">A restauração de pastas a partir de snapshots locais não é suportada.</block>
   <block id="637d209786fc6476ac3ed36c800de343" category="summary">No modo privado (sem acesso à internet), NetApp Backup and Recovery armazena seus dados de configuração no mesmo bucket StorageGRID ou ONTAP S3 usado para seus backups. Se o sistema host do agente do Console falhar, você pode implantar um novo agente do Console e restaurar esses dados.</block>
   <block id="7bc0231d1aacc728e66087d46a205aab" category="paragraph">No modo privado (sem acesso à internet), NetApp Backup and Recovery armazena seus dados de configuração no mesmo bucket StorageGRID ou ONTAP S3 usado para seus backups. Se o sistema host do agente do Console falhar, você pode implantar um novo agente do Console e restaurar esses dados.</block>
@@ -6146,8 +6141,6 @@
   <block id="8e8029d7ebad3152861cb8a5f298ff52" category="cell">Utilize mais de 6 buckets por sistema em diferentes provedores de nuvem (máximo de 100 buckets)</block>
   <block id="33bb0fb1eb1d7544e65ed467aa0cf274" category="cell">9.19.1 ou posterior</block>
   <block id="9ca7107af6688cc44a1bcc2ce2046b03" category="cell"><block ref="85f823e464828e8803d4ef0669c47bde" prefix="" category="inline-code"></block></block>
-  <block id="f4d8d86297c910edd07515360629dc8b" category="inline-link-macro">Faça backup do Cloud Volumes ONTAP no armazenamento de Blobs do Azure</block>
-  <block id="afdef63d55a31f83b0472ea15938d9cd" category="cell">Habilita a opção de usar a autenticação de identidade gerenciada do Microsoft Entra ID para o storage de objetos do Azure em vez de usar uma chave de acesso da conta de armazenamento. Compatível com o Cloud Volumes ONTAP em sistemas Azure que executam o ONTAP 9.16.1 ou mais recente. Para obter mais informações, consulte <block ref="233a4aa6c0a23fa528a31eee71ed15ac" category="inline-link-macro-rx"></block>.</block>
   <block id="abe72bc586e5883f1af04cf80727dc68" category="list-text">Mínimo de ONTAP 9.8; recomenda-se o ONTAP 9.8P13 ou posterior. O ONTAP 9.16.1 ou posterior é necessário se você usar autenticação do Microsoft Entra ID para o storage de objetos do Azure.</block>
   <block id="0c4cf99159d4cd1b532e2ab5e24174cb" category="section-title">Requisitos para usar a autenticação do Microsoft Entra ID com armazenamentos de objetos do Azure</block>
   <block id="42920e377000a5bd5c1d6ca781abb0d8" category="paragraph">Você pode habilitar a autenticação do Microsoft Entra ID para o storage de objetos do Azure ao criar um bucket de storage de objetos do Azure ou ao editar a configuração de um bucket existente do Azure, caso não queira usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas Azure que executam ONTAP 9.16.1 ou posterior.</block>
@@ -6172,4 +6165,13 @@
   <block id="969defc1889ccc6f8ee630d878ad0cf6" category="paragraph">Certifique-se de que seu ambiente atenda aos <block ref="fea8710e19d17f9dcce7cbc75ce18f8b" category="inline-link-macro-rx"></block> para usar o Entra ID.</block>
   <block id="b7653fde2d6e0a6d514915930b0db4bd" category="list-text">Expanda a seção *Método de autenticação*.</block>
   <block id="68bc12754c0710946a9eaa7fa64fb06b" category="list-text">Selecione *Entra ID (identidade gerenciada)*.</block>
+  <block id="0491a290496a647f9f8b7a77afbb4a59" category="admonition">O tamanho total combinado dos arquivos e pastas selecionados não pode exceder 5 MB.</block>
+  <block id="a1cf900390187e5be1460cc1f4cf8265" category="cell">Pacote de hospedagem 10.0.10</block>
+  <block id="9b237dcdc22b8d854b0c16f0a9d8b68b" category="cell">7.6.4 ou posterior</block>
+  <block id="de67e78e01941dcc9c15168df621fae8" category="cell">Habilita a opção de usar a autenticação de identidade gerenciada do Microsoft Entra ID para storage de objetos do Azure em vez de usar uma chave de acesso da conta de storage. Compatível com Cloud Volumes ONTAP em sistemas do Azure que executam ONTAP 9.16.1 ou posterior (o agente do Console também deve residir no Azure). Para obter mais informações, consulte <block ref="f363f656ffffe333619f8fa07242f366" category="inline-link-macro-rx"></block>.</block>
+  <block id="80e04227d7e4cba8f70346caa34031fa" category="paragraph">Ative os sinalizadores de recursos de pré-visualização para usar funcionalidades que ainda não estão disponíveis para o público em geral. Use recursos de pré-visualização com cautela em ambientes de produção.</block>
+  <block id="8830ede83298d61256b72a05ef889a1d" category="admonition">Estes exemplos pressupõem que você use o Docker; se você usar o Podman, execute os comandos equivalentes do Podman.</block>
+  <block id="2a3eb35eaa4bea08656e899dd4bc3c61" category="list-text"><block ref="2e56f3828d4fc676b207b81b442eafdd" prefix="" category="inline-code"></block>: uma lista separada por vírgulas dos IDs de volumes individuais que não devem ser indexados</block>
+  <block id="3a273880b40ea51e4b60121d32145e13" category="list-text">Crie um arquivo chamado<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> e personalize os nomes das máquinas virtuais de storage e os IDs dos volumes para corresponder ao seu ambiente:</block>
+  <block id="a940e8044fb83a96d0472abdc71d61e8" category="list-text">O sistema Cloud Volumes ONTAP e o agente do Console devem residir no Azure.</block>
 </blocks>

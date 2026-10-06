@@ -40,14 +40,17 @@ Você pode ativar os seguintes recursos de pré-visualização para NetApp Backu
 | `"data-transfer-report": true` | Habilita o relatório diário de transferência de dados de backup na guia Relatórios em NetApp Backup and Recovery para Volumes. O relatório fornece informações diárias sobre a atividade de transferência de dados de backup e replicação em todo o seu ambiente. 
 
 
-| `"use-azure-msi-cvo": true` | Habilita a opção de usar a autenticação de identidade gerenciada do Microsoft Entra ID para o storage de objetos do Azure em vez de usar uma chave de acesso da conta de armazenamento. Compatível com o Cloud Volumes ONTAP em sistemas Azure que executam o ONTAP 9.16.1 ou mais recente. Para obter mais informações, consulte link:prev-ontap-backup-cvo-azure.html["Faça backup do Cloud Volumes ONTAP no armazenamento de Blobs do Azure"]. 
+| `"use-azure-msi-cvo": true` | Habilita a opção de usar a autenticação de identidade gerenciada do Microsoft Entra ID para storage de objetos do Azure em vez de usar uma chave de acesso da conta de storage. Compatível com Cloud Volumes ONTAP em sistemas do Azure que executam ONTAP 9.16.1 ou posterior (o agente do Console também deve residir no Azure). Para obter mais informações, consulte link:prev-ontap-backup-cvo-azure.html#anchor-entraid["Requisitos para usar a autenticação do Microsoft Entra ID com armazenamentos de objetos do Azure"]. 
 |===
 
 
 [[enable-preview-features]]
 == Ativar recursos de pré-visualização
 
-Habilite as opções de pré-visualização para usar funcionalidades que ainda não estão disponíveis ao público em geral. Use recursos de pré-visualização com cautela em ambientes de produção.
+Ative os sinalizadores de recursos de pré-visualização para usar funcionalidades que ainda não estão disponíveis para o público em geral. Use recursos de pré-visualização com cautela em ambientes de produção.
+
+
+NOTE: Estes exemplos pressupõem que você use o Docker; se você usar o Podman, execute os comandos equivalentes do Podman.
 
 .Passos
 . Utilize SSH para fazer login no agente do Console.
@@ -131,8 +134,11 @@ NOTE: Para desativar um recurso de pré-visualização, siga os mesmos passos, m
 Desative a indexação para volumes específicos ou para todos os volumes pertencentes a uma ou mais storage VMs usando as seguintes flags de opção:
 
 * `svms-not-to-index`: Uma lista separada por vírgulas de máquinas virtuais de armazenamento cujos volumes não devem ser indexados
-* `volumes-not-to-index`: Uma lista de volumes individuais, separados por vírgulas, que não devem ser indexados
+* `volumes-not-to-index`: uma lista separada por vírgulas dos IDs de volumes individuais que não devem ser indexados
 
+
+
+NOTE: Estes exemplos pressupõem que você use o Docker; se você usar o Podman, execute os comandos equivalentes do Podman.
 
 .Passos
 . Utilize SSH para fazer login no agente do Console.
@@ -176,14 +182,14 @@ O ponto de montagem difere entre implantações em nuvem e implantações privad
 ----
 cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_catalog_config
 ----
-. Crie um arquivo chamado  `production-customer.json` e personalize os nomes da storage VM e dos volumes para corresponder ao seu ambiente:
+. Crie um arquivo chamado `production-customer.json` e personalize os nomes das máquinas virtuais de storage e os IDs dos volumes para corresponder ao seu ambiente:
 +
 [source, json]
 ----
 {
   "indexing": {
-    "svms-not-to-index": "storage_vm_1,storage_vm_2,storage_vm_3",
-    "volumes-not-to-index": "volume_1,volume_2,volume_3"
+    "svms-not-to-index": "storage_vm_name_1,storage_vm_name_2,storage_vm_name_3",
+    "volumes-not-to-index": "volume_ID_1,volume_ID_2,volume_ID_3"
   }
 }
 ----
