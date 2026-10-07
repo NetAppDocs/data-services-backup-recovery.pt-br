@@ -6174,4 +6174,5 @@
   <block id="2a3eb35eaa4bea08656e899dd4bc3c61" category="list-text"><block ref="2e56f3828d4fc676b207b81b442eafdd" prefix="" category="inline-code"></block>: uma lista separada por vírgulas dos IDs de volumes individuais que não devem ser indexados</block>
   <block id="3a273880b40ea51e4b60121d32145e13" category="list-text">Crie um arquivo chamado<block ref="f75ec94858c3cb7483e22bf2aca20589" prefix=" " category="inline-code"></block> e personalize os nomes das máquinas virtuais de storage e os IDs dos volumes para corresponder ao seu ambiente:</block>
   <block id="a940e8044fb83a96d0472abdc71d61e8" category="list-text">O sistema Cloud Volumes ONTAP e o agente do Console devem residir no Azure.</block>
+  <block id="389c52d9a18d68d9dd6a3eb24bc88982" category="list-text">*Suporte ao Azure Entra ID do Cloud Volumes ONTAP*: agora você pode usar a autenticação do Microsoft Entra ID para configurações de buckets do storage de objetos do Azure se não quiser usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas do Azure que executam o ONTAP 9.16.1 ou posterior.</block>
 </blocks>
