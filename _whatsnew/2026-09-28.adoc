@@ -20,15 +20,14 @@ https://docs.netapp.com/us-en/data-services-backup-recovery/br-rbac-setup.html["
 
 Nesta versão, o ONTAP Volumes introduz a seguinte melhoria em versão prévia para cargas de trabalho:
 
-* *Suporte ao Azure Entra ID do Cloud Volumes ONTAP*: agora você pode usar a autenticação do Microsoft Entra ID para configurações de buckets do storage de objetos do Azure se não quiser usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas do Azure que executam o ONTAP 9.16.1 ou posterior.
-
+*Suporte ao Azure Entra ID do Cloud Volumes ONTAP*: agora você pode usar a autenticação do Microsoft Entra ID para configurações de buckets do storage de objetos do Azure se não quiser usar a chave de acesso da conta de armazenamento para a autenticação do Azure. Essa opção é compatível com o Cloud Volumes ONTAP em sistemas do Azure que executam o ONTAP 9.16.1 ou posterior.
 
 Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Saiba mais sobre a proteção de volumes do ONTAP com NetApp Backup e Recuperação"].
 
 
 
-[[vmware-workloads-enhancements]]
-=== Aprimoramentos de cargas de trabalho da VMware
+[[vmware-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho da VMware
 
 Nesta versão, VMware workloads apresenta a seguinte melhoria:
 
