@@ -18,6 +18,8 @@ Configure o licenciamento para NetApp Backup and Recovery no NetApp Console ou n
 
 Algumas observações sobre como funcionam as licenças:
 
+* Ao proteger as cargas de trabalho do Microsoft SQL Server, você só paga pelos backups para storage de objetos (por exemplo, ao usar as arquiteturas de backup 3-2-1 ou de disco para storage de objetos).
+* Nenhuma licença é necessária para cargas de trabalho do Oracle Database, pois ele está em status de versão Preview.
 * Ao usar cargas de trabalho do ONTAP Volumes, você pode descobrir e restaurar volumes sem uma licença. No entanto, se você precisar proteger (fazer backup) volumes, será necessário adquirir uma licença.
 * Se você estiver usando o Backup and Recovery com NetApp Console em implantação local, só poderá adquirir uma licença bring-your-own-license (BYOL).
 * A licença BYOL (Bring Your Own License) do NetApp Backup and Recovery é uma licença flutuante que você pode usar em todos os sistemas associados à sua organização ou conta do NetApp Console .  Portanto, se você tiver capacidade de backup suficiente disponível em uma licença BYOL existente, não precisará comprar outra licença BYOL.

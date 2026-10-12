@@ -1,0 +1,38 @@
+= Aprimoramentos nas cargas de trabalho do Hyper-V
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancements]]
+=== Aprimoramentos nas cargas de trabalho do Hyper-V
+
+Nesta versão, as cargas de trabalho do Hyper-V introduzem as seguintes melhorias:
+
+* *Suporte ao NetApp MetroCluster*: o NetApp Backup and Recovery agora permite que você proteja VMs Hyper-V espelhadas pelo NetApp MetroCluster.
+* *Proteção de discos abrangentes para VMs SAN*: para configurações de CIFS e SAN, agora você pode proteger todos os discos conectados a cada VM em um grupo de proteção. Isso inclui arquivos distribuídos em vários volumes do ONTAP ou sistemas de storage do ONTAP (discos abrangentes) e arquivos limitados a um único local.
+
+
+Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do Hyper-V com o NetApp Backup and Recovery"].
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do Oracle Database
+
+Nesta versão, as cargas de trabalho do Oracle Database introduzem a seguinte melhoria:
+
+*Gerenciamento automático de logs de arquivamento*: durante as operações de restauração e clonagem de banco de dados, o NetApp Backup and Recovery detecta e monta automaticamente os logs de arquivamento necessários e os desmonta quando a operação é concluída. São suportadas fontes de log de storage primário, secundário e de storage de objetos.
+
+Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Saiba mais sobre como proteger as cargas de trabalho do Oracle Database com NetApp Backup and Recovery"].
+
+
+
+[[microsoft-sql-server-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do Microsoft SQL Server
+
+Nesta versão, as cargas de trabalho do Microsoft SQL Server apresentam a seguinte melhoria:
+
+*Alteração de licenciamento*: as cobranças não se aplicam mais a backups que usam arquiteturas de disco para disco ou de disco para disco com distribuição (fan-out). As cobranças se aplicam somente a backups para storage de objetos, incluindo backups que usam arquiteturas 3-2-1 ou de disco para storage de objetos.
+
+Para obter detalhes sobre como proteger as cargas de trabalho do Microsoft SQL Server, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do Microsoft SQL Server com NetApp Backup and Recovery"].

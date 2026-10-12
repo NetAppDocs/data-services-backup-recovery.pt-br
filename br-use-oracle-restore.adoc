@@ -42,7 +42,24 @@ Ao restaurar cargas de trabalho do Oracle Database, ocorre o seguinte:
 * Ao restaurar um backup do armazenamento de objetos, você pode restaurar os dados para o armazenamento de origem ou para um sistema ONTAP local e recuperar o banco de dados de lá.
 
 
-Na página Restaurar (também conhecida como Pesquisar e Restaurar), você pode restaurar um banco de dados, mesmo que não se lembre do nome exato, do local em que ele reside ou da data em que esteve em boas condições pela última vez.  Você pode pesquisar no banco de dados usando filtros.
+
+
+[[view-information-about-available-oracle-database-restore-points]]
+== Veja informações sobre os pontos de restauração disponíveis do Oracle Database
+
+Veja os pontos de restauração disponíveis, incluindo o número SCN e a encarnação associada do banco de dados.
+
+
+NOTE: O Oracle Database cria uma nova encarnação do banco de dados sempre que você o abre com a `RESETLOGS` opção. O NetApp Backup and Recovery lista as encarnações relevantes do banco de dados quando você revisa os pontos de restauração e quando restaura para um SCN específico.
+
+.Passos
+. No menu Backup and Recovery, selecione *Inventário*.
+. No menu NetApp Backup and Recovery , selecione *Restaurar*.
+. Selecione *View* para a carga de trabalho do Oracle Database.
+. Selecione a aba *Bancos de dados*.
+. Selecione o *Ações* image:icon-action.png["Ícone de ações"] ícone de um banco de dados cujos pontos de restauração você deseja visualizar e selecione *Exibir detalhes de proteção*.
+. Analise os pontos de restauração disponíveis e o número SCN e a encarnação do banco de dados associada a cada um deles.
+
 
 
 
@@ -60,9 +77,7 @@ Se estiver restaurando PDBs ou tablespaces para um ponto específico no tempo ou
 * Selecione apenas um PDB. A recuperação de ponto no tempo não é compatível com a restauração de vários PDBs.
 * `PDB$SEED`Não pode ser selecionado para recuperação de ponto no tempo.
 * A restauração do arquivo de controle não pode ser combinada com a recuperação de ponto no tempo de PDBs ou tablespaces de PDBs.
-* Certifique-se de que o backup de dados e os backups de log necessários estejam catalogados.
 * Os  `SYSTEM`, `SYSAUX` e  `UNDO` espaços de tabela não podem ser selecionados.
-* Verifique se o backup de dados e os backups de arquivo de log necessários estão catalogados.
 
 
 ====
@@ -87,11 +102,6 @@ Aparece uma lista de instantâneos que correspondem aos seus critérios de pesqu
 +
 O snapshot mais próximo da data e hora especificadas é exibido.
 
-.. Opcionalmente, selecione *Exibir backups de log* para ver os backups de log associados.
-+
-... Verifique se os backups de log estão montados.
-
-
 .. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
 .. Selecione *Avançar*.
 
@@ -99,17 +109,14 @@ O snapshot mais próximo da data e hora especificadas é exibido.
 --
 .Restaurar para um número de alteração do sistema (SCN) específico
 --
+.. Opcionalmente, consulte <<Veja informações sobre os pontos de restauração disponíveis do Oracle Database>> para ver os SCNs disponíveis e as encarnações associadas do banco de dados.
 .. Selecione *Restaurar para um número de alteração do sistema (SCN) específico*.
 .. Selecione *Avançar*.
 .. Digite o SCN a ser usado como ponto de restauração e selecione *Pesquisar*.
 +
-O snapshot mais próximo para o SCN especificado é exibido.
+O snapshot com correspondência mais próxima do SCN especificado é exibido. Se várias encarnações do banco de dados corresponderem ao SCN, todas as encarnações correspondentes serão exibidas.
 
-.. Opcionalmente, selecione *Exibir backups de log* para ver os backups de log associados.
-+
-... Verifique se os backups de log estão montados.
-
-
+.. Se várias encarnações do banco de dados corresponderem à pesquisa, selecione o snapshot com a encarnação correta.
 .. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
 .. Selecione *Avançar*.
 
@@ -121,11 +128,6 @@ O snapshot mais próximo para o SCN especificado é exibido.
 .. Selecione *Avançar*.
 +
 O último instantâneo é exibido. A operação de restauração recupera o último estado válido usando todos os backups de arquivo de log disponíveis.
-
-.. Opcionalmente, selecione *Exibir backups de log* para ver os backups de log associados.
-+
-... Verifique se os backups de log estão montados.
-
 
 .. Se o instantâneo estiver armazenado em mais de um local, selecione um local de origem para usar e adicione ou revise os detalhes do local.
 .. Selecione *Avançar*.
@@ -168,7 +170,7 @@ As snapshots disponíveis são exibidas.
 ... Opcionalmente, habilite a opção *Arquivos de controle* para restaurar também os arquivos de controle do banco de dados. Essa opção não pode ser selecionada para recuperação de ponto no tempo ou SCN de PDBs ou tablespaces de PDBs.
 ... Opcionalmente, habilite a opção *Alterar o estado do banco de dados, se necessário, para restauração e recuperação* para permitir que o NetApp Backup and Recovery gerencie o estado do banco de dados dependendo do tipo de recuperação.
 ... Opcionalmente, habilite a opção *Forçar restauração no local* para executar uma restauração no local quando novos arquivos de dados forem adicionados após o backup ou quando LUNs forem adicionados, excluídos ou recriados em um grupo de discos LVM. Isso substitui a verificação de arquivos externos; a recuperação de banco de dados prossegue usando a opção de restauração que você selecionou.
-... Especifique os locais dos arquivos de log de arquivamento externos no campo *Locais dos arquivos de log de arquivamento externos* se você estiver restaurando PDBs ou tablespaces para um ponto específico no tempo ou SCN e os logs de arquivamento não estiverem no local configurado. Insira um caminho de sistema de arquivos que comece com  `/` ou um grupo de discos ASM que comece com  `+`. Use os botões "mais" e "menos" ao lado do campo de entrada de texto para adicionar ou remover locais. Este campo não aparece quando você restaura a partir de snapshots sem recuperação.
+... Especifique os locais externos dos arquivos de log de arquivamento no campo *Specify external archive log files locations* se, ao restaurar PDBs ou tablespaces para um ponto específico no tempo ou SCN, os logs de arquivamento não estiverem no local configurado. Insira um caminho de sistema de arquivos que comece com `/` ou um grupo de discos ASM que comece com `+`. Use os botões "plus" e "minus" ao lado do campo de entrada de texto para adicionar ou remover locais. Este campo não aparece quando você restaura de snapshots sem recuperação.
 ... Opcionalmente, habilite a opção *Abrir o banco de dados ou o banco de dados contêiner no modo LEITURA-GRAVAÇÃO após a recuperação* e selecione uma subopção que corresponda ao escopo da restauração (essas opções não aparecem ao restaurar a partir de snapshots sem recuperação):
 +
 **** *Todos os arquivos de dados*: Abra o banco de dados ou o banco de dados contêiner no modo LEITURA-GRAVAÇÃO após a recuperação.
