@@ -372,10 +372,19 @@ Se você estiver acessando o Backup and Recovery pela primeira vez e tiver um si
 
 TIP: Se você estiver inserindo informações do vCenter, insira informações tanto para as configurações do vCenter quanto para o registro do host. Se você adicionou ou inseriu informações do vCenter aqui, também será necessário adicionar informações do plug-in em Configurações Avançadas a seguir.
 
-.. *Registro de host*: Selecione *Adicionar credenciais* e insira informações sobre os hosts que contêm as cargas de trabalho que você deseja descobrir.
+.. *Registro do host*: insira as seguintes informações:
++
+*** O FQDN ou endereço IP do host
+*** O agente do Console que o host está usando para se comunicar com o Backup and Recovery
+*** As credenciais armazenadas para o host
++
+Se você ainda não tiver adicionado credenciais desse host ao NetApp Backup and Recovery, selecione *Add credentials* e insira as informações de credencial do host.
+
 +
 
 TIP: Se você estiver adicionando um servidor autônomo e não um servidor vCenter, insira apenas as informações do host.
+
+
 
 
 
@@ -391,13 +400,13 @@ TIP: Este processo pode levar alguns minutos.
 
 ==== Defina as opções de configurações avançadas durante a descoberta e instale o plug-in
 
-Com as Configurações Avançadas, você pode instalar manualmente o agente do plug-in em todos os servidores que estão sendo registrados. Isso permite que você importe todas as cargas de trabalho do SnapCenter para o NetApp Backup and Recovery, para que possa gerenciar backups e restaurações lá. O NetApp Backup and Recovery mostra as etapas necessárias para instalar o plug-in.
+Com as Configurações Avançadas, você pode instalar manualmente o NetApp SnapCenter plug-in para Microsoft SQL Server em todos os servidores que estão sendo registrados. Isso permite que você importe todas as cargas de trabalho do SnapCenter para o NetApp Backup and Recovery, para que você possa gerenciar backups e restaurações nele. O NetApp Backup and Recovery mostra as etapas necessárias para instalar o plug-in.
 
 .Passos
 . Na página Descobrir recursos, acesse Configurações avançadas selecionando a seta para baixo à direita.
 . Na página Descobrir recursos de carga de trabalho, insira as seguintes informações.
 +
-** *Insira o número da porta do plug-in*: Insira o número da porta que o plug-in utiliza.
+** *Porta do plug-in*: insira o número da porta que o plug-in utiliza.
 ** *Caminho de instalação*: Insira o caminho onde o plug-in será instalado.
 
 

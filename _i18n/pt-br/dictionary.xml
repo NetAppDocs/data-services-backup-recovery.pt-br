@@ -584,7 +584,6 @@
   <block id="afedbe20f6822f0dee210eea973a9560" category="list-text">*Tipo de carga de trabalho*: Para esta versão, somente o Microsoft SQL Server está disponível.</block>
   <block id="8ced46662b7c39f90c1b2041834e629b" category="list-text">*Configurações do vCenter*: Selecione um vCenter existente ou adicione um novo. Para adicionar um novo vCenter, insira o FQDN ou endereço IP do vCenter, nome de usuário, senha, porta e protocolo.</block>
   <block id="757f6c0f45e5e6c857597da9d0a937d1" category="admonition">Se você estiver inserindo informações do vCenter, insira informações para as configurações do vCenter e o registro do Host.  Se você adicionou ou inseriu informações do vCenter aqui, também precisará adicionar informações do plugin em Configurações avançadas.</block>
-  <block id="2b6e241b6ca02934c3d70cbf729b2190" category="list-text">*Registro de host*: Selecione *Adicionar credenciais* e insira informações sobre os hosts que contêm as cargas de trabalho que você deseja descobrir.</block>
   <block id="9c4b59ad81bef49107c1a8eb04473a44" category="admonition">Se você estiver adicionando um servidor autônomo e não um servidor vCenter, insira apenas as informações do host.</block>
   <block id="180f20972969fa31108736a33e1febee" category="list-text">Continue com Configurações avançadas.</block>
   <block id="4f95933eb191bec1d5fda6d14b048ae9" category="list-text">Na página Descobrir recursos de carga de trabalho, insira as seguintes informações.</block>
@@ -4714,7 +4713,6 @@
   <block id="4ad36f854b6d4d49c94081fec1b29de2" category="list-text">É necessário o ONTAP 9.19.1 ou posterior para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem (até 100 buckets no máximo).</block>
   <block id="59ebd83b4c20d2b24ac46c96525c37fc" category="list-text">ONTAP 9.13.1 ou posterior (ONTAP 9.19.1 ou posterior é necessário para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem; até 100 buckets no máximo)</block>
   <block id="6a0d2c5dd8e27d910d6ff2158f8d5520" category="list-text">Um sistema ONTAP primário (ONTAP 9.14.1 ou posterior - ONTAP 9.19.1 ou posterior é necessário para suportar mais de 6 buckets por sistema em diferentes provedores de nuvem; até 100 buckets no máximo)</block>
-  <block id="d2bf4d042aabc15b9ccde353c782a6f2" category="list-text">A proteção de VMs de segunda geração armazenadas em storage SAN não é compatível com Microsoft Windows Server 2025.</block>
   <block id="b2d5ba8de92c18cbb9c45e01ad3f5509" category="list-text">Restaurar para um local alternativo (do primário, secundário e storage de objetos)</block>
   <block id="62ff0d9db122207756fd73342a3eb3ad" category="paragraph">NetApp Backup and Recovery agora oferece suporte à proteção das cargas de trabalho em um sistema com até 100 buckets em diferentes provedores de nuvem. ONTAP 9.19.1 ou posterior é necessário para oferecer suporte a mais de 6 buckets por sistema.</block>
   <block id="0d1c49b7f34131be8c6ddbc862cc359d" category="list-text">Mantenha o arquivo HelmChartConfig sob controle de alterações sempre que possível.</block>
@@ -5017,7 +5015,6 @@
   <block id="6dee314e5a8212befbbb5550bcd8c82f" category="paragraph">Analise as limitações atuais e as ações não suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery.</block>
   <block id="2320ca4680a90af67c892bc394770545" category="paragraph">As seguintes ações não são suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery:</block>
   <block id="5ef97381ee778e6a2856d655b0f66fc2" category="list-text">Criando grupos de recursos usando VMs de vários hosts Hyper-V</block>
-  <block id="4b1cae8294562e32be20bab07c14f9bc" category="list-text">Utilizando discos em vários compartilhamentos CIFS</block>
   <block id="38ac42adbbba8d3dccfd49459843843b" category="paragraph">Analise as limitações e soluções alternativas atuais para cargas de trabalho do Kubernetes em NetApp Backup and Recovery.</block>
   <block id="c5e627d3d20d62858bf75231e8a6b069" category="section-title">Limitação na prévia do NetApp Backup and Recovery para implantação local do NetApp Console</block>
   <block id="e5d90e82b6c24e7b1bf837dd1bcb3d30" category="paragraph">Se você alterar a política de proteção de um aplicativo para usar um bucket diferente ou um destino de replicação secundário, a proteção pode falhar.</block>
@@ -5130,9 +5127,7 @@
   <block id="ab01805ccfe371fe51580a961290e0c4" category="paragraph">Esta etapa é opcional se você tiver um ambiente VMware.</block>
   <block id="9b42846cd9771e997a08e3200d79e8e3" category="admonition">Se você estiver inserindo informações do vCenter, insira informações tanto para as configurações do vCenter quanto para o registro do host. Se você adicionou ou inseriu informações do vCenter aqui, também será necessário adicionar informações do plug-in em Configurações Avançadas a seguir.</block>
   <block id="6e895abe8a9bc049bbd4b4acc199426d" category="section-title">Defina as opções de configurações avançadas durante a descoberta e instale o plug-in</block>
-  <block id="b5c6b1b5218957aa87aa0f5da8f67efc" category="paragraph">Com as Configurações Avançadas, você pode instalar manualmente o agente do plug-in em todos os servidores que estão sendo registrados. Isso permite que você importe todas as cargas de trabalho do SnapCenter para o NetApp Backup and Recovery, para que possa gerenciar backups e restaurações lá. O NetApp Backup and Recovery mostra as etapas necessárias para instalar o plug-in.</block>
   <block id="05ec5e0d0ed90b0c5620cefe19c46d67" category="list-text">Na página Descobrir recursos, acesse Configurações avançadas selecionando a seta para baixo à direita.</block>
-  <block id="0a51d763335c94619b1bad74ea3fa23d" category="list-text">*Insira o número da porta do plug-in*: Insira o número da porta que o plug-in utiliza.</block>
   <block id="8cd0810025b90e56e30a8cd2c7647649" category="list-text">*Caminho de instalação*: Insira o caminho onde o plug-in será instalado.</block>
   <block id="9d0a0f1f3ed9f239f57d8c5056d68fae" category="list-text">Se você deseja instalar o agente do SnapCenter manualmente, selecione as seguintes opções:</block>
   <block id="51b2f0bb496d4976f9362c52c90bc7cb" category="list-text">*Usar instalação manual*: selecione esta opção para instalar o plug-in manualmente.</block>
@@ -6193,4 +6188,25 @@
   <block id="54ea8878308d39d6d78a01f24a278aa1" category="list-text">*Filtragem personalizada por intervalo de datas do Job Monitor*: agora você pode pesquisar tarefas dos últimos 90 dias selecionando uma data de início e término personalizada em um calendário no Job Monitor.</block>
   <block id="61065205211a8d57175713e9b45b8198" category="paragraph">Use este painel para inserir uma pesquisa de texto livre por qualquer recurso; por exemplo, "volume 1" ou "aplicação 3". Você também pode filtrar a lista de trabalhos de acordo com os itens nos menus suspensos. Você também pode pesquisar por um período.</block>
   <block id="9598a4f2b418f0c49368419070383673" category="paragraph">Ao pesquisar um período, selecione *Intervalo personalizado* para escolher uma data de início e uma data de término em um calendário.</block>
+  <block id="2b8abfeb97d865eaa0365ae5ea904375" category="list-text">*Registro do host*: insira as seguintes informações:</block>
+  <block id="2262ff21634c9674e4ff5f4c74bda8cd" category="list-text">O FQDN ou endereço IP do host</block>
+  <block id="8c212cb55c136cbf08fbff8301a57f9e" category="list-text">O agente do Console que o host está usando para se comunicar com o Backup and Recovery</block>
+  <block id="ffffc5b40a52bf8078bfaa777967b249" category="list-text">As credenciais armazenadas para o host</block>
+  <block id="ff35c388a5cbf8ae8f8807f67d1462b3" category="paragraph">Se você ainda não tiver adicionado credenciais desse host ao NetApp Backup and Recovery, selecione *Add credentials* e insira as informações de credencial do host.</block>
+  <block id="0984a9b22a15a2ae7667031dd00e4230" category="paragraph">Com as Configurações Avançadas, você pode instalar manualmente o NetApp SnapCenter plug-in para Microsoft SQL Server em todos os servidores que estão sendo registrados. Isso permite que você importe todas as cargas de trabalho do SnapCenter para o NetApp Backup and Recovery, para que você possa gerenciar backups e restaurações nele. O NetApp Backup and Recovery mostra as etapas necessárias para instalar o plug-in.</block>
+  <block id="ca670126755dcd34f80e41c964315abf" category="list-text">*Porta do plug-in*: insira o número da porta que o plug-in utiliza.</block>
+  <block id="2f613600ce95cea85557e892bb8ce093" category="section-title">Permissões necessárias para a descoberta de hosts do Microsoft SQL Server</block>
+  <block id="d39410ece499dd7cb49c6305b59c92f2" category="paragraph">Ao descobrir um host do SQL Server, o NetApp Backup and Recovery instala o plug-in do NetApp SnapCenter para Microsoft SQL Server no host. Você também pode optar por instalar o plug-in manualmente. Se você escolher a instalação automática, as credenciais do host fornecidas durante a descoberta deverão ter as seguintes associações e permissões para que o Backup and Recovery possa instalar o plug-in:</block>
+  <block id="bc6f4ea338b05255900e4b0506829f4c" category="list-text">Participação na função fixa em nível de servidor da instância do Microsoft SQL Server<block ref="48a365b4ce1e322a55ae9017f3daf0c0" prefix=" " category="inline-code"></block></block>
+  <block id="85e3de057dc6005479930eb6aa5b2f79" category="list-text">Participação no grupo local Administradores do Windows</block>
+  <block id="2ff43e2a2d5b0aa3489389af408c838a" category="list-text">Permissão para fazer login no host</block>
+  <block id="80d46fed65051869c8128d0c98118592" category="section-title">Permissões necessárias para a descoberta de hosts do Oracle Database</block>
+  <block id="79358627f2feaa4d2338391a918789ac" category="paragraph">Ao descobrir um host do Oracle Database, o NetApp Backup and Recovery instala o plug-in do Oracle Database da NetApp no host usando SSH com senha. Você também pode optar por instalar o plug-in manualmente. Você precisa de permissões específicas para a instalação do plug-in.</block>
+  <block id="168489ecd7560d51be74b06b631df49c" category="section-title">Requisitos ao usar a instalação automática do plug-in</block>
+  <block id="41727149db11b5b52863b15d5def9886" category="paragraph">As credenciais do host fornecidas durante a descoberta devem ter as seguintes permissões para que o Backup and Recovery possa instalar o plug-in do Oracle Database da NetApp:</block>
+  <block id="1da21a47453ca95a01bd9ec124a97558" category="list-text">Permissões de root ou acesso sudo para um usuário sem privilégios de root. Para conceder acesso sudo durante a descoberta de hosts, selecione as credenciais de usuário sem privilégios de root na seção *Registro de host*, depois selecione *Configurar sudoers* e siga as instruções. As credenciais de root não precisam desta etapa.</block>
+  <block id="8086df899fb70153c36c060c18be25c4" category="list-text">Permissão de execução para a JVM do Java.</block>
+  <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">Requisitos para instalar o plug-in manualmente</block>
+  <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">Se você instalar o plug-in manualmente, a conta usada para a instalação deverá ter as seguintes permissões:</block>
+  <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">Permissões de root ou permissão para usar sudo para um usuário não root.</block>
 </blocks>
