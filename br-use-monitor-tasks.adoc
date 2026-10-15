@@ -60,7 +60,10 @@ Por padrão, a página Monitoramento de tarefas mostra tarefas de proteção e r
 . Para classificar os resultados de forma diferente, selecione cada título de coluna para classificar por Status, Hora de início, Nome do recurso e muito mais.
 . Se você estiver procurando por empregos específicos, selecione a área *Pesquisa e filtragem avançadas* para abrir o painel de pesquisa.
 +
-Use este painel para inserir uma pesquisa de texto livre para qualquer recurso; por exemplo, "volume 1" ou "application 3". Você também pode filtrar a lista de trabalhos de acordo com os itens nos menus suspensos.
+Use este painel para inserir uma pesquisa de texto livre por qualquer recurso; por exemplo, "volume 1" ou "aplicação 3". Você também pode filtrar a lista de trabalhos de acordo com os itens nos menus suspensos. Você também pode pesquisar por um período.
+
++
+Ao pesquisar um período, selecione *Intervalo personalizado* para escolher uma data de início e uma data de término em um calendário.
 
 +
 A maioria dos filtros é autoexplicativa. O filtro "Carga de trabalho" permite que você visualize trabalhos nas seguintes categorias:

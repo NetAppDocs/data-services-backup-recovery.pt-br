@@ -32,7 +32,7 @@ kubectl set env deployment/trident-protect-controller-manager NEPTUNE_VM_FREEZE=
 ====
 Trident Protect 24.10 não garante automaticamente um estado consistente para os sistemas de arquivos de KubeVirt VM durante as operações de proteção de dados. Se você deseja proteger os dados da sua KubeVirt VM usando Trident Protect 24.10, precisa habilitar manualmente a funcionalidade de congelamento/descongelamento dos sistemas de arquivos antes da operação de proteção de dados. Isso garante que os sistemas de arquivos estejam em um estado consistente.
 
-Você pode configurar Trident Protect 24.10 para gerenciar o congelamento e descongelamento do sistema de arquivos da VM durante as operações de proteção de dados link:https://docs.openshift.com/container-platform/4.16/virt/install/installing-virt.html["configurando virtualização"^] e, em seguida, usar o seguinte comando:
+Você pode configurar Trident Protect 24.10 para gerenciar o congelamento e descongelamento do sistema de arquivos da VM durante as operações de proteção de dados link:https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/virtualization/installing["configurando virtualização"^] e, em seguida, usar o seguinte comando:
 
 [source, shell]
 ----
