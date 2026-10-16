@@ -157,6 +157,14 @@ Para usar storage de objetos como destinos de backup, você precisa de uma conta
 
 Para usar o NetApp Backup and Recovery para cargas de trabalho de volumes do ONTAP, você precisa dos seguintes pré-requisitos.
 
+Certifique-se de que você tenha o seguinte antes de descobrir um sistema ONTAP no Backup and Recovery:
+
+* Certifique-se de que uma licença ONTAP One esteja habilitada na instância local do ONTAP.
+* Certifique-se de que o aplicativo AMQP esteja habilitado como  `Password`método de login para o usuário do ONTAP que você usa para descobrir sistemas ONTAP. Isso permite que os trabalhos de backup agendados apareçam no Job Monitor. Consulte o https://docs.netapp.com/us-en/ontap/manage-users-groups-host-specific-task.html#manage-unix-users["Documentação do ONTAP"^] para obter instruções de gerenciamento de usuários.
+
+
+Alguns recursos do ONTAP exigem versões específicas do ONTAP:
+
 [cols="2,1"]
 |===
 | Recurso | Versão do ONTAP necessária 
@@ -176,9 +184,6 @@ Para usar o NetApp Backup and Recovery para cargas de trabalho de volumes do ONT
 
 | Utilize mais de 6 buckets por sistema em diferentes provedores de nuvem (máximo de 100 buckets) | 9.19.1 ou posterior 
 |===
-
-NOTE: Uma licença ONTAP One deve estar habilitada na instância ONTAP local.
-
 Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte link:prev-ontap-protect-overview.html["Proteja seus dados de volume ONTAP"].
 
 

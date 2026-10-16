@@ -4561,7 +4561,6 @@
   <block id="1ce75b5926383de539d27e838bd74b8a" category="paragraph">Consulte <block ref="04b01782baab49091268802b7f1423cb" category="inline-link-rx"></block> para obter detalhes sobre as funções e permissões necessárias para executar operações em NetApp Backup and Recovery.</block>
   <block id="6bb058e639cecc8051a99e8892400bd8" category="section-title">Requisitos para backups em storage de objetos</block>
   <block id="fc0cba16e06b834a59ea2732ce15d74a" category="section-title">Requisitos para proteger cargas de trabalho de volume do ONTAP</block>
-  <block id="45b096193f4470968c1063df19d1c253" category="list-text">Uma licença ONTAP One deve estar habilitada na instância ONTAP local.</block>
   <block id="ddaa1c8bd07bda0816a8b44d87c10997" category="paragraph">Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte <block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block>.</block>
   <block id="ba0f269b2bdb85161db3fe51338e6a7b" category="cell">Host do banco de dados</block>
   <block id="bff50f1947dbec1e11bc66d60ca0b1d9" category="cell">Storage suportado</block>
@@ -6209,4 +6208,8 @@
   <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">Requisitos para instalar o plug-in manualmente</block>
   <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">Se você instalar o plug-in manualmente, a conta usada para a instalação deverá ter as seguintes permissões:</block>
   <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">Permissões de root ou permissão para usar sudo para um usuário não root.</block>
+  <block id="061c095c759eb7e64dd46465f3c7a817" category="paragraph">Certifique-se de que você tenha o seguinte antes de descobrir um sistema ONTAP no Backup and Recovery:</block>
+  <block id="5df6bd1a45bdd2a4028f468e490de21e" category="list-text">Certifique-se de que uma licença ONTAP One esteja habilitada na instância local do ONTAP.</block>
+  <block id="74fbbc0e09dfc08bd2ae9fa2fa257555" category="list-text">Certifique-se de que o aplicativo AMQP esteja habilitado como <block ref="dc647eb65e6711e155375218212b3964" prefix=" " category="inline-code"></block>método de login para o usuário do ONTAP que você usa para descobrir sistemas ONTAP. Isso permite que os trabalhos de backup agendados apareçam no Job Monitor. Consulte o<block ref="08349f0e2e31cf6e59517a8789874b25" category="inline-link-rx"></block> para obter instruções de gerenciamento de usuários.</block>
+  <block id="2a6990e4544c8a19dcf0e20cd83f5c68" category="paragraph">Alguns recursos do ONTAP exigem versões específicas do ONTAP:</block>
 </blocks>
