@@ -24,6 +24,7 @@ Analise as limitações atuais e as ações não suportadas para cargas de traba
 As seguintes ações não são suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery:
 
 * Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
-* Criando grupos de recursos usando VMs de vários hosts Hyper-V
+* O NetApp Backup and Recovery atualmente não oferece suporte à proteção de LUNs do Hyper-V hospedados em volumes FlexGroup.
+* Não é possível criar grupos de recursos com máquinas virtuais de vários hosts do Hyper-V.
 * Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
 

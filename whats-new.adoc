@@ -18,6 +18,24 @@ Saiba mais sobre os novos recursos, melhorias e correções no NetApp Backup and
 
 
 
+[[19-october-2026]]
+== 19 de outubro de 2026
+
+Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
+
+
+
+[[oracle-database-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do Oracle Database
+
+Nesta versão, as cargas de trabalho do Oracle Database introduzem a seguinte melhoria:
+
+*Suporte ao Oracle Data Guard*: o NetApp Backup and Recovery agora oferece suporte ao uso de grupos de proteção para proteger bancos de dados primários e de espera que utilizam o Oracle Data Guard para alta disponibilidade.
+
+Para obter detalhes sobre como proteger cargas de trabalho do Oracle Database, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-oracle-protect-overview.html["Saiba mais sobre como proteger as cargas de trabalho do Oracle Database com NetApp Backup and Recovery"].
+
+
+
 [[12-october-2026]]
 == 12 de outubro de 2026
 

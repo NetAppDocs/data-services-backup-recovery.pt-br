@@ -5013,7 +5013,6 @@
   <block id="c234b1583acaea4fed0749d70c41d549" category="listing-title">Monitore até que &lt;code&gt;o status&lt;/code&gt; seja &lt;code&gt;CONCLUÍDO&lt;/code&gt;:</block>
   <block id="6dee314e5a8212befbbb5550bcd8c82f" category="paragraph">Analise as limitações atuais e as ações não suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery.</block>
   <block id="2320ca4680a90af67c892bc394770545" category="paragraph">As seguintes ações não são suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery:</block>
-  <block id="5ef97381ee778e6a2856d655b0f66fc2" category="list-text">Criando grupos de recursos usando VMs de vários hosts Hyper-V</block>
   <block id="38ac42adbbba8d3dccfd49459843843b" category="paragraph">Analise as limitações e soluções alternativas atuais para cargas de trabalho do Kubernetes em NetApp Backup and Recovery.</block>
   <block id="c5e627d3d20d62858bf75231e8a6b069" category="section-title">Limitação na prévia do NetApp Backup and Recovery para implantação local do NetApp Console</block>
   <block id="e5d90e82b6c24e7b1bf837dd1bcb3d30" category="paragraph">Se você alterar a política de proteção de um aplicativo para usar um bucket diferente ou um destino de replicação secundário, a proteção pode falhar.</block>
@@ -5110,7 +5109,6 @@
   <block id="0da8b01ff90ac6c56d271760e3cae180" category="list-text">Para obter instruções sobre como adicionar o usuário não root selecionado ao arquivo sudoers no host do Oracle Database, selecione *Configurar sudoers*.</block>
   <block id="91acd102eb682e81c6d3b35f15584ce9" category="paragraph">NetApp Backup e recuperação se conecta a cada host via SSH para instalar o plug-in automaticamente. Habilite *Usar instalação manual* quando qualquer uma das seguintes condições se aplicar:</block>
   <block id="f4de6ef110c2809c2cea661247d6cb3b" category="admonition">A adição de recursos pode levar vários minutos. Para ver o progresso, selecione *Acompanhar progresso* na caixa de diálogo de status na parte inferior da página de Inventário ou selecione *Monitoramento* na navegação à esquerda.</block>
-  <block id="f3436bbdd5970784a88deadec1e68fca" category="paragraph">A carga de trabalho do Oracle Database aparece na lista de cargas de trabalho na página de inventário.</block>
   <block id="967daf4999f1b34597e41a06dcbebb8d" category="list-text">Selecione um bloco de carga de trabalho (por exemplo, Oracle Database).</block>
   <block id="f23a00db51eb125b74f1083a222aa335" category="list-text">Analise o estado da proteção de dados. O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e com backup realizado.</block>
   <block id="481bf56c7b5ff0737dc345dbd4230f02" category="paragraph">Descubra as cargas de trabalho do Microsoft SQL Server no NetApp Backup and Recovery para que você possa protegê-las e restaurá-las. Se você já usa o SnapCenter, também pode importar dados de backup e políticas existentes.</block>
@@ -6201,15 +6199,29 @@
   <block id="2ff43e2a2d5b0aa3489389af408c838a" category="list-text">Permissão para fazer login no host</block>
   <block id="80d46fed65051869c8128d0c98118592" category="section-title">Permissões necessárias para a descoberta de hosts do Oracle Database</block>
   <block id="79358627f2feaa4d2338391a918789ac" category="paragraph">Ao descobrir um host do Oracle Database, o NetApp Backup and Recovery instala o plug-in do Oracle Database da NetApp no host usando SSH com senha. Você também pode optar por instalar o plug-in manualmente. Você precisa de permissões específicas para a instalação do plug-in.</block>
-  <block id="168489ecd7560d51be74b06b631df49c" category="section-title">Requisitos ao usar a instalação automática do plug-in</block>
   <block id="41727149db11b5b52863b15d5def9886" category="paragraph">As credenciais do host fornecidas durante a descoberta devem ter as seguintes permissões para que o Backup and Recovery possa instalar o plug-in do Oracle Database da NetApp:</block>
-  <block id="1da21a47453ca95a01bd9ec124a97558" category="list-text">Permissões de root ou acesso sudo para um usuário sem privilégios de root. Para conceder acesso sudo durante a descoberta de hosts, selecione as credenciais de usuário sem privilégios de root na seção *Registro de host*, depois selecione *Configurar sudoers* e siga as instruções. As credenciais de root não precisam desta etapa.</block>
   <block id="8086df899fb70153c36c060c18be25c4" category="list-text">Permissão de execução para a JVM do Java.</block>
-  <block id="3e3321c0918c1d68c43253c427d52a85" category="section-title">Requisitos para instalar o plug-in manualmente</block>
-  <block id="bd6c005addd81d8409ae4c84d588f53d" category="paragraph">Se você instalar o plug-in manualmente, a conta usada para a instalação deverá ter as seguintes permissões:</block>
-  <block id="901e5d2cf1e185b371f3c54154d4da3c" category="list-text">Permissões de root ou permissão para usar sudo para um usuário não root.</block>
   <block id="061c095c759eb7e64dd46465f3c7a817" category="paragraph">Certifique-se de que você tenha o seguinte antes de descobrir um sistema ONTAP no Backup and Recovery:</block>
   <block id="5df6bd1a45bdd2a4028f468e490de21e" category="list-text">Certifique-se de que uma licença ONTAP One esteja habilitada na instância local do ONTAP.</block>
   <block id="74fbbc0e09dfc08bd2ae9fa2fa257555" category="list-text">Certifique-se de que o aplicativo AMQP esteja habilitado como <block ref="dc647eb65e6711e155375218212b3964" prefix=" " category="inline-code"></block>método de login para o usuário do ONTAP que você usa para descobrir sistemas ONTAP. Isso permite que os trabalhos de backup agendados apareçam no Job Monitor. Consulte o<block ref="08349f0e2e31cf6e59517a8789874b25" category="inline-link-rx"></block> para obter instruções de gerenciamento de usuários.</block>
   <block id="2a6990e4544c8a19dcf0e20cd83f5c68" category="paragraph">Alguns recursos do ONTAP exigem versões específicas do ONTAP:</block>
+  <block id="b81cecd98ea4b4f80df7b99bd8f7480e" category="paragraph">*Suporte ao Oracle Data Guard*: o NetApp Backup and Recovery agora oferece suporte ao uso de grupos de proteção para proteger bancos de dados primários e de espera que utilizam o Oracle Data Guard para alta disponibilidade.</block>
+  <block id="a1f64a2f11ad0edebf465c430dceffb3" category="list-text">O NetApp Backup and Recovery atualmente não oferece suporte à proteção de LUNs do Hyper-V hospedados em volumes FlexGroup.</block>
+  <block id="2ff849b2bfb227ca5861a726eac745c4" category="list-text">Não é possível criar grupos de recursos com máquinas virtuais de vários hosts do Hyper-V.</block>
+  <block id="d4877862cff89c6cc177b4a6402a008d" category="paragraph">O host do Oracle Database aparece na lista de cargas de trabalho na página Inventory.</block>
+  <block id="0b988f352bf3178a56bb9dbb7aa6f591" category="section-title">Visualizar o inventário do banco de dados Oracle</block>
+  <block id="13b17d82aa76831194bc5fedd9ef5155" category="paragraph">Analise os detalhes sobre os recursos do Oracle Database que você descobriu no inventário do Backup and Recovery.</block>
+  <block id="ef09861f0e356e1256cc79b90af82a9c" category="list-text">Para visualizar os hosts do Oracle Database descobertos, selecione a guia *Hosts*.</block>
+  <block id="acb5a0c1d6543fd64291bcd931b0212a" category="paragraph">Você pode usar essa visualização para ver detalhes como o nome de cada host, quantos bancos de dados cada host hospeda, o modelo de implantação (por exemplo, cluster, Oracle Data Guard ou independente) e outras informações.</block>
+  <block id="5ef22a9f4e63d5ea6dccdceaf60cc129" category="list-text">Para visualizar os grupos de proteção criados para proteger os recursos do Oracle Database, selecione a guia *Protection Groups*.</block>
+  <block id="4636080fe3dd6af1a05f50e6b8612fcd" category="list-text">Para visualizar os bancos de dados hospedados por cada host do Oracle Database, selecione a guia *Bancos de Dados*.</block>
+  <block id="88b5a8e3aeecbee62ee44ae9949af352" category="paragraph">Esta visualização exibe informações detalhadas, incluindo se cada banco de dados é uma instância única ou parte de um cluster ou configuração de alta disponibilidade.</block>
+  <block id="c567e32a931e50ea00e322c45bada4f9" category="list-text">Selecione a *política de backup* que deseja aplicar ao grupo de proteção. Se estiver incluindo um banco de dados que faz parte de uma configuração do Oracle Data Guard, escolha uma política de backup com a opção Data Guard ativada.</block>
+  <block id="e07c044b43b8ab05fce956dd78928ec0" category="list-text">*Configurações do Data Guard*: selecione se deseja habilitar as configurações do Data Guard na política e selecione se deseja fazer backup do banco de dados primário, secundário ou primário e secundário ao proteger bancos de dados em uma implementação do Oracle Data Guard. Você pode proteger bancos de dados em uma implementação do Oracle Data Guard usando um grupo de proteção.</block>
+  <block id="debe14f2792fef47d8b9076e14c82cb3" category="section-title">Requisitos para a instalação do plug-in</block>
+  <block id="3cf57a2a4d07542c89b05ad643bb219e" category="list-text">A possibilidade de fazer login no host usando SSH.</block>
+  <block id="1bcf5153145f75a86a1ad16ea9b03c7a" category="list-text">Permissões de root ou acesso sudo para um usuário sem privilégios de root.</block>
+  <block id="5b82c5e93eb556ac924b1e6909752359" category="list-text">Para conceder acesso sudo durante a descoberta de hosts, selecione credenciais não root na seção *Registro de host*, depois selecione *Configurar sudoers* e siga as instruções. As credenciais root não precisam desta etapa. Esta etapa não é necessária para a instalação manual.</block>
+  <block id="41550faf0c68179011d757996fd6d047" category="list-text"><block ref="4811df2c83bee7ee3a883640cc4d80af" prefix="" category="inline-code"></block> são necessários privilégios para o usuário do banco de dados Oracle.</block>
+  <block id="5d3eb6919efa937c33d95e081b5ac2fc" category="section-title">19 de outubro de 2026</block>
 </blocks>

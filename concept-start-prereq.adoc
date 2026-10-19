@@ -437,22 +437,18 @@ Ao descobrir um host do Oracle Database, o NetApp Backup and Recovery instala o 
 
 
 
-==== Requisitos ao usar a instalação automática do plug-in
+==== Requisitos para a instalação do plug-in
 
 As credenciais do host fornecidas durante a descoberta devem ter as seguintes permissões para que o Backup and Recovery possa instalar o plug-in do Oracle Database da NetApp:
 
-* Permissões de root ou acesso sudo para um usuário sem privilégios de root. Para conceder acesso sudo durante a descoberta de hosts, selecione as credenciais de usuário sem privilégios de root na seção *Registro de host*, depois selecione *Configurar sudoers* e siga as instruções. As credenciais de root não precisam desta etapa.
+* A possibilidade de fazer login no host usando SSH.
+* Permissões de root ou acesso sudo para um usuário sem privilégios de root.
++
+** Para conceder acesso sudo durante a descoberta de hosts, selecione credenciais não root na seção *Registro de host*, depois selecione *Configurar sudoers* e siga as instruções. As credenciais root não precisam desta etapa. Esta etapa não é necessária para a instalação manual.
+
+
 * Permissão de execução para a JVM do Java.
-
-
-
-
-==== Requisitos para instalar o plug-in manualmente
-
-Se você instalar o plug-in manualmente, a conta usada para a instalação deverá ter as seguintes permissões:
-
-* Permissões de root ou permissão para usar sudo para um usuário não root.
-* Permissão de execução para a JVM do Java.
+* `SYSDBA` são necessários privilégios para o usuário do banco de dados Oracle.
 
 
 
