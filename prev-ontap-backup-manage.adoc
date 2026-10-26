@@ -295,7 +295,7 @@ CAUTION: Se você planeja excluir um sistema ou cluster que tenha backups, você
 [[delete-all-backup-files-for-a-system]]
 === Excluir todos os arquivos de backup de um sistema
 
-A exclusão de todos os backups no armazenamento de objetos de um sistema não desabilita backups futuros de volumes neste sistema.  Se você quiser parar de criar backups de todos os volumes em um sistema, você pode desativar os backups<<Desativar o NetApp Backup and Recovery para um sistema,conforme descrito aqui>> .
+A exclusão de todos os backups no storage de objetos de um sistema não desativa os backups futuros de volumes nesse sistema. Se você quiser interromper a criação de backups de todos os volumes em um sistema, poderá pausar os backups <<Pausar todos os backups de um sistema,conforme descrito aqui>>.
 
 Note que esta ação não afeta snapshots ou volumes replicados - esses tipos de arquivos de backup não são excluídos.
 
@@ -386,41 +386,47 @@ NOTE: Não é possível excluir arquivos de backup de volume individuais depois 
 
 
 
-[[deactivate-netapp-backup-and-recovery-for-a-system]]
-== Desativar o NetApp Backup and Recovery para um sistema
+[[pause-all-backups-for-a-system]]
+== Pausar todos os backups de um sistema
 
-Desativar o NetApp Backup and Recovery para um sistema pausa os backups e restaurações de todos os seus volumes sem excluir os backups existentes. Isso permite pausar toda a atividade de backup e restauração por um período de tempo sem cancelar o registro do serviço de backup nesse sistema.
+Pausar todos os backups de um sistema pausa a atividade de backup de todos os volumes do sistema sem excluir os backups existentes. Pausar os backups não cancela o registro do serviço de backup neste sistema.
 
 Observe que você continuará sendo cobrado pelo seu provedor de nuvem pelos custos de armazenamento de objetos referentes à capacidade que seus backups usam, a menos que você<<Excluir backups,excluir os backups>> .
 
 .Passos
 . Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, selecioneimage:icon-actions-horizontal.gif["Ícone de ações"] para o sistema onde você deseja desabilitar backups e selecione *Desativar Backup*.
-. Na caixa de diálogo de confirmação, selecione *Desativar*.
+. Na página _Configurações de backup_, selecione image:icon-actions-horizontal.gif["Ícone de ações"] para o sistema para o qual você deseja pausar os backups e selecione *Pausar todos os backups*.
+. Na caixa de diálogo de confirmação, selecione *Pause*.
 
-
-
-NOTE: Um botão *Ativar backup* aparece para esse sistema enquanto o backup está desativado.  Você pode selecionar este botão quando quiser reativar a funcionalidade de backup para esse sistema.
 
 
 
 [[unregister-netapp-backup-and-recovery-for-a-system]]
 == Cancelar o registro do NetApp Backup and Recovery para um sistema
 
-Você pode cancelar o registro do NetApp Backup and Recovery para um sistema se não quiser mais usar a funcionalidade de backup e quiser parar de ser cobrado por backups nesse sistema.  Normalmente, esse recurso é usado quando você planeja excluir um sistema e deseja cancelar o serviço de backup.
+Cancelar o registro do NetApp Backup and Recovery de um sistema interrompe backups futuros de um sistema de storage e o remove do NetApp Backup and Recovery. Durante o processo, você pode optar por manter ou excluir os backups existentes.
 
-Você também pode usar esse recurso se quiser alterar o armazenamento de objetos de destino onde seus backups de cluster estão sendo armazenados.  Depois de cancelar o registro do NetApp Backup and Recovery para o sistema, você poderá habilitar o NetApp Backup and Recovery para esse cluster usando as novas informações do provedor de nuvem.
+.Sobre esta tarefa
+* Observe que você continuará sendo cobrado pelo seu provedor de nuvem pelos custos de armazenamento de objetos referentes à capacidade que seus backups usam, a menos que você<<Excluir backups,excluir os backups>> .
+* Para restaurar backups existentes, consulte link:prev-ontap-restore-cli.html["Restaure os dados do ONTAP usando a ONTAP CLI"^].
 
-Antes de cancelar o registro do NetApp Backup and Recovery, você deve executar as seguintes etapas, nesta ordem:
-
-* Desativar o NetApp Backup and Recovery para o sistema
-* Excluir todos os backups desse sistema
-
-
-A opção de cancelar o registro não estará disponível até que essas duas ações sejam concluídas.
 
 .Passos
-. Na aba *Volumes*, selecione *Configurações de backup*.
-. Na página _Configurações de backup_, selecioneimage:icon-actions-horizontal.gif["Ícone de ações"] para o sistema em que você deseja cancelar o registro do serviço de backup e selecione *Cancelar registro*.
-. Na caixa de diálogo de confirmação, selecione *Cancelar registro*.
+. Acesse *Proteção > NetApp Backup and Recovery*.
+. Selecione o bloco *Volumes*.
+. Selecione *Backup Settings*.
+. Na página Backup Settings, selecione o image:icon-actions-horizontal.gif["Ícone de ações"] do sistema e selecione *Unregister backups*.
+. Selecione uma das seguintes opções:
++
+** *Desativar backups*: interrompe backups futuros, exclui os relacionamentos de backup do armazenamento de objetos e mantém os backups existentes no storage de objetos. Após o sistema ser desregistrado, você só poderá restaurar esses backups usando a ONTAP CLI.
+** *Desativar e excluir backups*: interrompe backups futuros, exclui as relações de backup do armazenamento de objetos e exclui os backups existentes. Opcionalmente, selecione *Ignorar erros na desativação/exclusão de backups* se você quiser que a operação continue caso uma etapa falhe.
 
+
+. Em *Digite o nome do sistema para confirmar*, insira o nome do sistema.
+. Em *Confirmar backup do relatório de proteção*, confirme se você salvou todos os relatórios necessários.
+. Selecione *Confirm & Unregister*.
+. Acompanhe a operação no Job Monitor até que ela seja concluída.
+
+
+
+NOTE: O cancelamento do registro do sistema não altera os volumes, a configuração de snapshot ou as relações de replicação do sistema no ONTAP.

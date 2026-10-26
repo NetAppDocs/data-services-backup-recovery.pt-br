@@ -14,9 +14,6 @@ summary: No NetApp Backup and Recovery, crie suas próprias políticas que contr
 [role="lead"]
 Use o NetApp Backup and Recovery para criar políticas de backup do Kubernetes que controlem a frequência de backup, o agendamento e a retenção.
 
-
-NOTE: Algumas dessas opções e seções de configuração não estão disponíveis para todas as cargas de trabalho.
-
 Se você importar recursos do SnapCenter, poderá encontrar algumas diferenças entre as políticas usadas no SnapCenter e aquelas usadas no NetApp Backup and Recovery.  Verlink:reference-policy-differences-snapcenter.html["Diferenças de política entre SnapCenter e NetApp Backup and Recovery"] .
 
 Você pode atingir os seguintes objetivos relacionados às políticas:
