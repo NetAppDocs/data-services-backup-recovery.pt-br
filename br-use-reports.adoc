@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: br-use-reports.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: No NetApp Backup and Recovery, crie relatórios para visualizar o status dos seus backups, incluindo o número de backups, o número de backups bem-sucedidos e o número de backups com falha.  Você também pode visualizar os detalhes de cada backup, incluindo o tipo de backup, o sistema de armazenamento usado para o backup e a hora do backup. 
+keywords: reports, protection report, protection overview, usage and charges, status summary, audit report, kubernetes overview, schedule report, download report, delete report, backup status, workloads 
+summary: No NetApp Backup and Recovery, crie relatórios para sua carga de trabalho para revisar o status de proteção, o status do trabalho, o uso e os detalhes de auditoria. 
 ---
-= Crie relatórios de proteção do Microsoft SQL Server no NetApp Backup and Recovery
+= Crie e gerencie relatórios no NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,29 +12,137 @@ summary: No NetApp Backup and Recovery, crie relatórios para visualizar o statu
 
 
 [role="lead"]
-Crie relatórios para workloads do Microsoft SQL Server no NetApp Backup and Recovery para revisar o status e os detalhes do backup, incluindo contagens de backups bem-sucedidos e com falha, tipos de backup, sistemas de storage e registros de data e hora.
+Crie relatórios no NetApp Backup and Recovery para confirmar que suas cargas de trabalho estão protegidas e encontrar backups que precisam de atenção. Os relatórios mostram contagens de backups bem-sucedidos e com falha, tipos de backup, sistemas de storage, integridade do cluster e carimbos de data e hora. Execute um relatório uma vez ou de forma agendada e, em seguida, visualize, baixe ou exclua os relatórios gerados.
+
+*Função necessária do NetApp Console*: superadministrador do Backup and Recovery, administrador de backup do Backup and Recovery, administrador de restauração do Backup and Recovery ou administrador de clone do Backup and Recovery. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também será necessária. Saiba mais sobre link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
 
 
 
-[[create-a-protection-report]]
-== Criar um relatório de proteção
+[[report-types-you-can-create]]
+== Tipos de relatório que você pode criar
 
-*Função obrigatória do NetApp Console* NetApp Backup and Recovery super admin, NetApp Backup and Recovery backup admin, NetApp Backup and Recovery restore admin, NetApp Backup and Recovery clone admin. Se você estiver protegendo dados armazenados em um cluster do Cloud Volumes ONTAP, a função de administrador do Cloud Volumes ONTAP também é necessária. Saiba mais link:reference-roles.html["Funções e privilégios de backup e recuperação"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["Saiba mais sobre as funções de acesso do NetApp Console para todos os serviços"^].
+Escolha o tipo de relatório que responde à sua pergunta, por exemplo, se as cargas de trabalho estão protegidas, pelo que você está sendo cobrado ou quais trabalhos falharam.
+
+[cols="1,3"]
+|===
+| Tipo de relatório | Descrição 
+
+
+| Visão geral da proteção | Uma visão geral completa do seu status de proteção, incluindo resumos de inventário e restauração. 
+
+
+| Uso e cobranças | Detalhes de utilização e cobrança para cada carga de trabalho ou recurso. 
+
+
+| Resumo do status | O status de todos os trabalhos agendados e sob demanda, com detalhes para cada trabalho. 
+
+
+| Relatório de auditoria | Um registro de auditoria de todas as ações e eventos realizados no sistema. 
+
+
+| Visão geral do Kubernetes | Status de proteção e backup dos seus clusters, aplicativos e namespaces do Kubernetes. 
+|===
+
+
+[[create-a-report]]
+== Criar um relatório
+
+Crie um relatório para analisar o status de proteção da sua conta, de agentes específicos, de hosts específicos ou de cargas de trabalho específicas. Você pode executar o relatório uma única vez ou em uma programação recorrente.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Relatórios* e, em seguida, selecione *Ir para novos relatórios* se a página *Relatórios de proteção* for exibida.
+. Selecione *Adicionar relatório*.
+. Em *Selecionar tipo de relatório*, escolha um tipo de relatório e selecione *Continuar*.
+. Em *Nome do relatório*, insira um nome único para o relatório.
++
+O nome deve ter entre 3 e 100 caracteres, pode incluir apenas letras, números, espaços, sublinhados (_) e hífens (-), e deve começar com uma letra.
+
+. Em *Scope*, selecione o nível em que o relatório coleta dados:
++
+** *Por conta*: inclua tudo o que consta na conta. Não é necessário inserir mais nada.
+** *Por agente*: em *Agente*, selecione um ou mais agentes do Console. O relatório inclui apenas os recursos gerenciados pelos agentes selecionados.
+** *Por host*: em *Selecionar host*, escolha um ou mais hosts e selecione *Aceitar*. Use esta opção para cargas de trabalho executadas em hosts, como o Microsoft SQL Server e o Oracle Database.
+** *Por carga de trabalho*: em *Cargas de trabalho*, escolha um ou mais tipos de carga de trabalho.
++
+
+NOTE: A lista *Por carga de trabalho* não inclui os ONTAP Volumes. Para criar um relatório para os ONTAP Volumes, use o escopo *Por conta* ou *Por agente*.
+
+
+
+. Em *Frequência*, escolha com que frequência executar o relatório:
++
+** *Uma vez*: execute o relatório uma única vez. Esta é a opção padrão.
+** *Agendado*: execute o relatório repetidamente. Em *Executar a cada*, escolha uma frequência. Os relatórios agendados aparecem na guia *Relatórios agendados*.
+
+
+. Em *Opções de entrega do relatório*, opcionalmente habilite *Enviar os resultados do relatório por e-mail quando o relatório for executado*.
++
+Esta opção está desativada por padrão. Por padrão, os relatórios são enviados para todos os usuários da organização. Para enviar relatórios a destinatários específicos, configure as notificações por e-mail na página *Configurações*, em *Notificações*. Para obter detalhes sobre como configurar as notificações por e-mail, consulte link:br-start-configure.html["Configurar definições"].
+
+. Em *Retenção*, em *Manter por*, escolha por quanto tempo o relatório será mantido antes de ser excluído. 30 dias é o padrão.
+. Selecione *Adicionar*.
++
+O relatório aparece no topo da lista *Relatórios gerados*. Quando o relatório estiver pronto, uma mensagem de sucesso aparecerá e você poderá baixá-lo ou excluí-lo.
+
+
+
+A lista *Relatórios gerados* exibe o nome, o tipo, o intervalo, a hora de geração e o usuário de cada relatório. A coluna *Escopo* resume o que o relatório abrange, por exemplo, "1 Conta" ou "1 Agente". Selecione *Exibir* na coluna *Escopo* para abrir o relatório. O intervalo mostra N/A para relatórios de execução única.
+
+
+
+[[download-a-report-as-json-pdf-excel-or-csv]]
+== Baixe um relatório em formato JSON, PDF, Excel ou CSV
+
+Faça o download de um relatório gerado para analisá-lo offline ou compartilhá-lo com outras pessoas que não têm acesso ao NetApp Console.
 
 .Passos
 . No menu NetApp Backup and Recovery, selecione *Relatórios*.
-. Selecione *Criar relatório*.
-. Insira os detalhes do escopo do relatório:
+. Na aba *Relatórios gerados*, encontre o relatório que você deseja baixar.
+. Na linha do relatório, selecione *Download* e, em seguida, escolha um formato:
 +
-** *Nome do relatório*: insira um nome exclusivo para o relatório.
-** *Tipo de relatório*: Escolha se deseja um relatório por conta ou por carga de trabalho (Microsoft SQL Server).
-** *Selecionar host*: Se você selecionou por carga de trabalho, selecione o host para o qual deseja gerar o relatório.
-** *Selecionar conteúdo*: Escolha se deseja que o relatório inclua um resumo de todos os backups ou detalhes de cada backup.  (Se você escolheu "Por conta")
-
-
-. Insira o período do relatório: escolha se você deseja que o relatório inclua dados do último dia, dos últimos 7 dias, dos últimos 30 dias, do último trimestre ou do último ano.
-. Insira os detalhes de entrega do relatório: se você quiser que o relatório seja entregue por e-mail, selecione *Enviar relatório por e-mail*. Insira o endereço de e-mail para onde você deseja que o relatório seja enviado.
+** *Baixar JSON*
+** *Baixar PDF*
+** *Baixar Excel*
+** *Baixar CSV*
 +
-Configure as notificações por e-mail na página Configurações. Para obter detalhes sobre como configurar as notificações por e-mail, consulte link:br-start-configure.html["Configurar definições"].
+Você também pode usar o menu *Download* na página do relatório.
 
++
+Relatórios extensos podem levar mais tempo para ser preparados.
+
+
+
+
+
+
+
+[[view-report-details]]
+== Ver detalhes do relatório
+
+Exiba os detalhes de um relatório gerado no NetApp Backup and Recovery, incluindo um resumo, contagens de inventário e tabelas de detalhes.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Relatórios*.
+. Na aba *Relatórios gerados*, selecione o nome do relatório que deseja visualizar.
+. Expanda *Inventário* para ver a contagem de sistemas, SVMs, volumes, hosts, instâncias e buckets.
+. Deslize a tela para baixo para visualizar as tabelas do relatório. As tabelas exibidas dependem do tipo de relatório.
+. (Opcional) Para escolher quais colunas uma tabela exibe, selecione o ícone de coluna na extremidade direita da linha de cabeçalho da tabela, selecione ou desmarque as colunas e, em seguida, selecione *Aplicar*.
++
+A coluna *Nome do Recurso* permanece sempre visível. Selecione *Restaurar padrão* para retornar às colunas padrão.
+
+. Para retornar à lista de relatórios, selecione *Relatórios* na parte superior da página.
+
+
+
+
+[[delete-a-report]]
+== Excluir um relatório
+
+Exclua um relatório gerado para removê-lo da lista *Relatórios gerados*. Os relatórios também são excluídos automaticamente quando o período de retenção termina.
+
+.Passos
+. No menu NetApp Backup and Recovery, selecione *Relatórios*.
+. Na aba *Relatórios gerados*, encontre o relatório que deseja excluir.
+. Na linha do relatório, selecione o ícone de exclusão.
+. Confirme a ação selecionando *Delete*.
 

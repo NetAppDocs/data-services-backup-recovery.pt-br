@@ -18,44 +18,87 @@ Use esta referência para ver quais ações do NetApp Backup and Recovery o NetA
 
 Para cada ação auditada, o NetApp Console registra o nome do serviço, o agente, o recurso, o usuário e o status da ação.
 
-.Ações auditadas de backup e recuperação
+[cols="1,3"]
+|===
+| Categoria | Ações 
+
+
+| Restauração e recuperação  a| 
+* Restaurar arquivos a partir de um instantâneo
 * Restaurar volume ou arquivos a partir de backup
 * Reverter volume para o instantâneo
 * Iniciar explorador de arquivos
-* Restaurar arquivos a partir de um instantâneo
-* Registre credenciais de nuvem
-* Atualizar credenciais de nuvem
-* Excluir credenciais de nuvem
-* Criar bucket de storage de objetos
-* Modificar storage de objetos
-* Validar migração de backup
-* Migrar backups entre sistemas ONTAP
-* Inicializar proteção de origem
-* Clusters de pares para proteção
-* Inicializar proteção de destino
-* Iniciar replicação de volume
-* Criar sistema de cofre cibernético
-* Excluir sistema Cyber Vault
-* Habilitar o acesso ao Cyber Vault
-* Desativar o acesso ao Cyber Vault
-* Criar instantâneo ad hoc
-* Descubra volumes e relacionamentos
-* Atualizar configuração do aplicativo
-* Ative a proteção panorâmica para volumes
-* Modificar a proteção panorâmica para volumes
-* Modificar storage de objetos para o sistema
+
+
+
+
+| Operações de backup e snapshot  a| 
 * Criar backup em nuvem ad hoc
+* Criar instantâneo ad hoc
+* Excluir a política de snapshots do Azure NetApp Files
+* Ativar backup em um volume
+* Atualizar metadados de backup do volume (agendado)
+
+
+
+
+| Proteção e replicação  a| 
 * Inicializar proteção para o sistema
+* Inicializar proteção de origem
+* Inicializar proteção de destino
+* Clusters de pares para proteção
+* Iniciar replicação de volume
+
+
+
+
+| Proteção panorâmica  a| 
+* Ative a proteção panorâmica em um sistema
 * Ative a proteção panorâmica para volumes
 * Modificar a proteção panorâmica para volumes
-* Atualizar metadados de backup do volume (agendado)
-* Ativar backup em um volume
-* Modificar a proteção panorâmica para volumes
-* Excluir política de snapshot ANF
-* Ative a proteção panorâmica em um sistema
 * Modificar a proteção panorâmica em um sistema
 
 
+
+
+| Migração de backup  a| 
+* Migrar backups entre sistemas ONTAP
+* Validar migração de backup
+
+
+
+
+| Gerenciamento do Cyber Vault  a| 
+* Criar sistema de cofre cibernético
+* Excluir sistema Cyber Vault
+* Desativar o acesso ao Cyber Vault
+* Habilitar o acesso ao Cyber Vault
+
+
+
+
+| Gerenciamento de storage de objetos  a| 
+* Criar bucket de storage de objetos
+* Modificar storage de objetos
+* Modificar storage de objetos para o sistema
+
+
+
+
+| Gerenciamento de credenciais na nuvem  a| 
+* Excluir credenciais de nuvem
+* Registre credenciais de nuvem
+* Atualizar credenciais de nuvem
+
+
+
+
+| Descoberta e configuração  a| 
+* Descubra volumes e relacionamentos
+* Atualizar configuração do aplicativo
+
+
+|===
 
 
 [[more-information]]

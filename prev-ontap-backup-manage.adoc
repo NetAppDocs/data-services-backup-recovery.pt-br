@@ -406,6 +406,9 @@ Observe que você continuará sendo cobrado pelo seu provedor de nuvem pelos cus
 
 Cancelar o registro do NetApp Backup and Recovery de um sistema interrompe backups futuros de um sistema de storage e o remove do NetApp Backup and Recovery. Durante o processo, você pode optar por manter ou excluir os backups existentes.
 
+
+IMPORTANT: Antes de cancelar o registro de um sistema, baixe um relatório completo de "Visão geral da proteção". O relatório lista seus backups existentes e seus respectivos UUIDs. Se você mantiver os backups, precisará desses UUIDs para restaurá-los.
+
 .Sobre esta tarefa
 * Observe que você continuará sendo cobrado pelo seu provedor de nuvem pelos custos de armazenamento de objetos referentes à capacidade que seus backups usam, a menos que você<<Excluir backups,excluir os backups>> .
 * Para restaurar backups existentes, consulte link:prev-ontap-restore-cli.html["Restaure os dados do ONTAP usando a ONTAP CLI"^].
