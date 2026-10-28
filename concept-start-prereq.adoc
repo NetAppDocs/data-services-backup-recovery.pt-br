@@ -184,7 +184,7 @@ Alguns recursos do ONTAP exigem versões específicas do ONTAP:
 
 | Utilize mais de 6 buckets por sistema em diferentes provedores de nuvem (máximo de 100 buckets) | 9.19.1 ou posterior 
 |===
-Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte link:prev-ontap-protect-overview.html["Proteja seus dados de volume ONTAP"].
+Para obter informações sobre recursos compatíveis, tipos de volume, destinos de backup e restauração, e muito mais, consulte link:prev-ontap-protect-overview.html["Proteja as cargas de trabalho dos volumes do ONTAP com o NetApp Backup and Recovery"].
 
 
 

@@ -31,6 +31,9 @@ O NetApp Backup and Recovery permite que você crie várias políticas de backup
 
 Cada política de backup fornece uma seção para _Rótulos e Retenção_ que você pode aplicar aos seus arquivos de backup. Observe que a política de snapshot aplicada ao volume deve ser uma das políticas reconhecidas pelo NetApp Backup and Recovery ou os arquivos de backup não serão criados.
 
+
+NOTE: A política de snapshot aplicada ao volume deve ter um dos rótulos que você está usando na sua política de replicação e na sua política de backup para storage de objetos. Se não forem encontrados rótulos correspondentes, nenhum arquivo de backup será criado. Por exemplo, se você quiser criar volumes replicados e arquivos de backup "semanais", deverá usar uma política de snapshot que crie snapshots "semanais".
+
 Há duas partes do cronograma: o rótulo e o valor de retenção:
 
 * O *rótulo* define a frequência com que um arquivo de backup é criado (ou atualizado) a partir do volume.  Você pode selecionar entre os seguintes tipos de etiquetas:
@@ -51,6 +54,9 @@ Por exemplo, digamos que você crie uma política de backup que crie 7 backups *
 
 
 Os backups anuais são excluídos automaticamente do sistema de origem após serem transferidos para o armazenamento de objetos.  Esse comportamento padrão pode ser alterado na página Configurações avançadas do sistema.
+
+
+TIP: O período de retenção para backups de volumes de proteção de dados (DP) é o mesmo definido na relação do SnapMirror de origem. Você pode alterar isso usando a API.
 
 
 
@@ -150,6 +156,8 @@ As varreduras ocorrem nas seguintes situações:
 * As verificações de ransomware podem ser iniciadas quando o backup é selecionado para o processo de restauração.
 * As varreduras podem ser realizadas sob demanda a qualquer momento.
 
+
+As verificações agendadas de ransomware estão ativadas por padrão e são executadas a cada 7 dias somente no snapshot mais recente. Você pode alterar a frequência das verificações ou desativar as verificações agendadas na página de Configurações Avançadas.
 
 *Como funciona o processo de recuperação?*
 

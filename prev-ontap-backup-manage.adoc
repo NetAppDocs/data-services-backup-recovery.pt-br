@@ -412,6 +412,7 @@ IMPORTANT: Antes de cancelar o registro de um sistema, baixe um relatório compl
 .Sobre esta tarefa
 * Observe que você continuará sendo cobrado pelo seu provedor de nuvem pelos custos de armazenamento de objetos referentes à capacidade que seus backups usam, a menos que você<<Excluir backups,excluir os backups>> .
 * Para restaurar backups existentes, consulte link:prev-ontap-restore-cli.html["Restaure os dados do ONTAP usando a ONTAP CLI"^].
+* Você não pode alterar o armazenamento de objetos de destino de um sistema após ativar os backups. Para usar um armazenamento de objetos diferente, cancele o registro do NetApp Backup and Recovery para o sistema e, em seguida, ative-o novamente usando as novas informações do provedor de nuvem.
 
 
 .Passos

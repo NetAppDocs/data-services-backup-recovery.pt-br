@@ -25,6 +25,7 @@ Analisaremos as seguintes opções:
 * Qual arquitetura de backup você usará: um backup em cascata ou em fan-out dos seus volumes
 * Você usará as políticas de backup padrão ou precisará criar políticas personalizadas
 * Você quer que o serviço crie os buckets de nuvem para você ou quer criar seus contêineres de armazenamento de objetos antes de começar
+* Algum dos seus volumes está em agregados do FabricPool e como as políticas de categorização em camadas deles podem afetar seus backups
 * Qual modo de implantação do agente do Console você está usando (modo padrão, restrito ou privado)
 
 
@@ -229,6 +230,25 @@ Se você planeja mover arquivos de backup mais antigos para armazenamento de arq
 ** Para o Azure, você precisa criar a Classe de Armazenamento com suporte à imutabilidade no nível da versão.
 
 
+
+
+
+
+[[are-any-of-your-volumes-on-fabricpool-aggregates]]
+== Algum dos seus volumes está em agregados do FabricPool
+
+Há certas coisas que você precisa saber quando o volume do qual você está fazendo backup reside em um agregado FabricPool e tem uma política de camadas atribuída diferente de `none` :
+
+* O primeiro backup de um volume em camadas do FabricPool requer a leitura de todos os dados locais e em camadas (do armazenamento de objetos).  Uma operação de backup não "reaquece" os dados frios armazenados em camadas no armazenamento de objetos.
++
+Esta operação pode causar um aumento único no custo de leitura dos dados do seu provedor de nuvem.
+
++
+** Os backups subsequentes são incrementais e não têm esse efeito.
+** Se a política de hierarquização for atribuída ao volume quando ele for criado inicialmente, você não verá esse problema.
+
+
+* Considere o impacto dos backups antes de atribuir a  `all`política de hierarquização aos volumes. Como os dados são hierarquizados imediatamente, o NetApp Backup and Recovery lê os dados da camada de nuvem em vez da camada local. Como as operações simultâneas de backup compartilham o link de rede com o armazenamento de objetos na nuvem, pode ocorrer degradação do desempenho se os recursos de rede ficarem saturados. Nesse caso, talvez você queira configurar várias interfaces de rede (LIFs) para diminuir esse tipo de saturação de rede.
 
 
 

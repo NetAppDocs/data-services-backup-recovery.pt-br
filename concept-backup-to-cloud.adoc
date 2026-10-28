@@ -30,9 +30,9 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 * * Cargas de trabalho de volume ONTAP *:
 +
 ** Crie snapshots locais, replique para armazenamento secundário e faça backup de volumes ONTAP de sistemas ONTAP locais ou Cloud Volumes ONTAP para armazenamento de objetos em sua conta de nuvem pública ou privada.
+** Pesquise e restaure arquivos e pastas.
 ** Crie backups incrementais permanentes em nível de bloco que são armazenados em outro cluster ONTAP e no armazenamento de objetos na nuvem.
-** Use o NetApp Backup and Recovery junto com o SnapCenter.
-** Consultelink:prev-ontap-protect-overview.html["Proteger volumes ONTAP"] .
+** Consulte link:prev-ontap-protect-overview.html["Proteja cargas de trabalho de volumes ONTAP"].
 
 
 * *Cargas de trabalho do Microsoft SQL Server*:
@@ -85,7 +85,6 @@ Use o NetApp Backup and Recovery para atingir os seguintes objetivos:
 ** Gerencie e proteja seus aplicativos e recursos do Kubernetes em um só lugar.
 ** Use políticas de proteção para estruturar seus backups incrementais.
 ** Restaure aplicativos e recursos para os mesmos clusters e namespaces ou para clusters diferentes.
-** Use o NetApp Backup and Recovery sem o SnapCenter.
 ** Consultelink:br-use-kubernetes-protect-overview.html["Proteja as cargas de trabalho do Kubernetes"] .
 
 
@@ -128,15 +127,8 @@ As taxas de recursos são pagas ao provedor de nuvem pela capacidade de armazena
 +
 Como o NetApp Backup and Recovery preserva a eficiência de armazenamento do volume de origem, você paga os custos de armazenamento de objetos do provedor de nuvem pelos dados _após_ as eficiências do ONTAP (para a menor quantidade de dados após a aplicação da desduplicação e da compactação).
 
-* Para restaurar dados usando o Search & Restore, certos recursos são provisionados pelo seu provedor de nuvem, e há um custo por TiB associado à quantidade de dados verificados pelas suas solicitações de pesquisa.  (Esses recursos não são necessários para Navegar e Restaurar.)
-+
-** Na AWS, https://aws.amazon.com/athena/faqs/["Amazona Atena"^] e https://aws.amazon.com/glue/faqs/["Cola AWS"^] os recursos são implantados em um novo bucket S3.
-** No Azure, um https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Espaço de trabalho do Azure Synapse"^] e https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Armazenamento do Azure Data Lake"^] são provisionados em sua conta de armazenamento para armazenar e analisar seus dados.
-** No Google Cloud, um novo bucket é implantado e os  https://cloud.google.com/bigquery["Serviços do Google Cloud BigQuery"^] são provisionados no nível da conta/projeto.
-
-
 * Se você planeja restaurar dados de volume de um arquivo de backup que foi movido para um armazenamento de objetos de arquivamento, haverá uma taxa adicional de recuperação por GiB e uma taxa por solicitação do provedor de nuvem.
-* Se você planeja verificar se um arquivo de backup está infectado por ransomware durante o processo de restauração de dados do volume (caso tenha habilitado a proteção Datalock e Ransomware para seus backups na nuvem), você também incorrerá em custos adicionais de saída de dados do seu provedor de nuvem.
+* Se você planeja verificar se um arquivo de backup está infectado por ransomware durante o processo de restauração dos dados do volume (caso tenha habilitado DataLock e a proteção contra ransomware para seus backups na nuvem), você também terá custos adicionais do seu provedor de nuvem.
 
 
 *Taxas de serviço*
@@ -162,8 +154,8 @@ Para todas as cargas de trabalho, uma licença de backup é necessária apenas p
 Você pode escolher entre três opções de licenciamento:
 
 * *Traga sua própria licença (BYOL)*: Compre uma licença com prazo determinado (1, 2 ou 3 anos) e baseada em capacidade (em incrementos de 1 TiB) da NetApp.  Insira o número de série fornecido no NetApp Console para ativar.  A licença abrange todos os sistemas de origem da sua organização.  A renovação é obrigatória quando o prazo ou o limite de capacidade for atingido.
-* *Pagamento conforme o uso (PAYGO)*: assine por meio do marketplace do seu provedor de nuvem e pague por GiB de dados em backup, com cobrança por hora. Não é necessário pagamento antecipado. Um teste gratuito de 30 dias está disponível quando você se inscreve pela primeira vez. Para mais informações, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["utilize uma assinatura pré-paga do NetApp Backup and Recovery."].
-* *Contrato anual*: Disponível nos marketplaces da AWS e do Azure por 1, 2 ou 3 anos.  Estão disponíveis dois contratos anuais:
+* *Pagamento conforme o uso (PAYGO)*: assine pelo marketplace do seu provedor de nuvem e pague por GiB de dados em backup, com cobrança mensal. Não é necessário pagamento antecipado. Um teste gratuito de 30 dias está disponível quando você se inscreve pela primeira vez. Para mais informações, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html#use-a-netapp-backup-and-recovery-paygo-subscription["utilize uma assinatura pré-paga do NetApp Backup and Recovery."].
+* *Contrato por prazo determinado*: disponível nos marketplaces da AWS e do Azure para períodos de 6 meses ou anuais. Há dois contratos anuais disponíveis:
 +
 ** *Backup na Nuvem*: Faz backup de dados do Cloud Volumes ONTAP e do ONTAP local.
 ** *CVO Professional*: Inclui Cloud Volumes ONTAP e NetApp Backup and Recovery, com backups ilimitados para volumes do Cloud Volumes ONTAP (a capacidade de backup não é contabilizada na licença).
@@ -241,9 +233,13 @@ As cópias de backup são armazenadas em um armazenamento de objetos que o NetAp
 
 * Na AWS, o NetApp Console permite o https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Recurso de bloqueio de acesso público do Amazon S3"^] no bucket S3.
 * No Azure, o NetApp Console usa um grupo de recursos novo ou existente com uma conta de armazenamento para o contêiner de Blob. O Console https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["bloqueia o acesso público aos seus dados de blob"] por padrão.
-* No StorageGRID, o Console usa uma conta de armazenamento existente para o bucket de armazenamento de objetos.
+* No Google Cloud, o Console usa um projeto novo ou existente com uma conta de storage para o bucket de storage do Google Cloud.
+* No StorageGRID, o Console utiliza uma conta de locatário existente para o bucket S3.
 * No ONTAP S3, o Console usa uma conta de usuário existente para o bucket S3.
 
+
+
+CAUTION: Se você gerenciar ou alterar diretamente os arquivos de backup na nuvem no ambiente do seu provedor de nuvem, poderá corromper os arquivos e causar uma configuração sem suporte.
 
 
 
