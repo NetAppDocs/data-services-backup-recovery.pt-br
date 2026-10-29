@@ -25,6 +25,9 @@ Use o NetApp Backup and Recovery para criar clones graváveis de cargas de traba
 
 Crie um clone imediatamente a partir de um snapshot existente. Use este método para criar um clone único que não é atualizado continuamente a partir de um snapshot.
 
+
+NOTE: Nas configurações do Oracle Data Guard, você pode clonar um banco de dados primário protegido ou um banco de dados standby físico protegido. O clone é um banco de dados independente e não faz parte da configuração do Oracle Data Guard. Se você clonar um banco de dados standby, o novo banco de dados será listado como *Data Guard Standby* até você atualizar o host. Depois que você atualizar o host, ele será listado como um banco de dados normal.
+
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . Em *Cargas de trabalho*, selecione o bloco *Oracle*.
@@ -68,6 +71,9 @@ Crie um clone instantâneo e agende atualizações regulares para mantê-lo atua
 
 
 NOTE: A criação de um snapshot instantâneo e de um clone com agendamento de atualização aplica-se somente a clones completos de banco de dados. Não está disponível para um clone de PDB.
+
+
+NOTE: Nas configurações do Oracle Data Guard, você pode clonar um banco de dados primário protegido ou um banco de dados standby físico protegido. O clone é um banco de dados independente e não faz parte da configuração do Oracle Data Guard. Se você clonar um banco de dados standby, o novo banco de dados será listado como *Data Guard Standby* até você atualizar o host. Depois que você atualizar o host, ele será listado como um banco de dados normal.
 
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.

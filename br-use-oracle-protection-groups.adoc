@@ -41,8 +41,11 @@ Agrupe os recursos do Oracle Database que você deseja proteger juntos em um gru
 . Selecione *Criar grupo de proteção*.
 . Forneça um nome para o grupo de proteção.
 . Selecione os bancos de dados que você deseja incluir no grupo de proteção.
++
+Os bancos de dados em espera não são listados por padrão. Para listá-los, selecione *Mostrar bancos de dados standby do Data Guard*. Se você selecionar um banco de dados que faça parte de uma configuração do Oracle Data Guard, o NetApp Backup and Recovery também adiciona o outro banco de dados na mesma configuração. Isso só ocorre se esse banco de dados for detectado, puder ser protegido e não estiver em outro grupo de proteção.
+
 . Selecione *Avançar*.
-. Selecione a *política de backup* que deseja aplicar ao grupo de proteção. Se estiver incluindo um banco de dados que faz parte de uma configuração do Oracle Data Guard, escolha uma política de backup com a opção Data Guard ativada.
+. Selecione a *Política de backup* a ser aplicada ao grupo de proteção. Se o grupo incluir bancos de dados do Oracle Data Guard, use as *Configurações do Data Guard* na política para escolher quais bancos de dados terão backup. Consulte link:br-use-policies-oracle-create.html["Criar e gerenciar políticas de backup do Oracle Database"].
 +
 Se você quiser criar uma política, selecione *Criar nova política* e siga as instruções para criar uma política.  Verlink:br-use-policies-create.html["Criar políticas"] para mais informações.
 
@@ -50,6 +53,9 @@ Se você quiser criar uma política, selecione *Criar nova política* e siga as 
 . Revise a configuração.
 . Selecione *Criar* para criar o grupo de proteção.
 
+
+
+NOTE: Se você adicionar o host de espera depois de criar o grupo de proteção, edite o grupo de proteção e salve-o. O NetApp Backup and Recovery adiciona o host de espera automaticamente. No host de espera, adicione ao grupo apenas os bancos de dados de espera. Outro banco de dados desse host que precise de um tipo de backup diferente fará com que o backup falhe para esse host.
 
 
 

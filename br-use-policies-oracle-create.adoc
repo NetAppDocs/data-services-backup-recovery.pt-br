@@ -137,7 +137,16 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 [%collapsible]
 ====
 ** *Configurações do catálogo RMAN*: Habilite a opção *Catalogar backup com o Oracle Recovery Manager (RMAN)* para catalogar automaticamente os metadados das operações de backup e recuperação do Oracle Database. Os metadados são armazenados de acordo com as configurações de *Configurar catálogo RMAN* que você escolher para o banco de dados (no arquivo de controle de destino por padrão). Consulte link:br-start-configure-oracle-database.html["Configurar um banco de dados Oracle"] para alterar essas configurações para um banco de dados.
-** *Configurações do Data Guard*: selecione se deseja habilitar as configurações do Data Guard na política e selecione se deseja fazer backup do banco de dados primário, secundário ou primário e secundário ao proteger bancos de dados em uma implementação do Oracle Data Guard. Você pode proteger bancos de dados em uma implementação do Oracle Data Guard usando um grupo de proteção.
+** *Configurações do Data Guard*: selecione *Ativar configurações do Data Guard* para escolher de quais bancos de dados do Oracle Data Guard fazer backup:
++
+*** *Fazer backup tanto do primário quanto do standby* (padrão)
+*** *Backup somente no primário*
+*** *Somente backup em modo de espera*
++
+Se você não habilitar as *configurações do Data Guard*, tanto o banco de dados primário quanto o de espera terão backup. Depois de atribuir a política aos recursos, você não poderá desabilitar as *configurações do Data Guard*.
+
+
+
 ** *Verificação de backup*: selecione se deseja ativar a verificação de backup e se deseja que ela seja executada imediatamente ou posteriormente. Esse recurso garante que os backups sejam válidos e possam ser restaurados com sucesso. Recomendamos que você ative essa opção para garantir a integridade dos seus backups. Por padrão, a verificação de backup é executada a partir do storage secundário, se o storage secundário estiver configurado. Se o storage secundário não estiver configurado, a verificação de backup será executada a partir do storage primário.
 +
 Além disso, configure as seguintes opções:

@@ -293,6 +293,9 @@ TIP: A adição de recursos pode levar vários minutos. Para ver o progresso, se
 O host do Oracle Database aparece na lista de cargas de trabalho na página Inventory.
 
 
+NOTE: Se seus bancos de dados estiverem em uma configuração do Oracle Data Guard, adicione o host primário e o host de espera como hosts separados.
+
+
 
 [[view-oracle-database-inventory]]
 == Visualizar o inventário do banco de dados Oracle
@@ -304,12 +307,18 @@ Analise os detalhes sobre os recursos do Oracle Database que você descobriu no 
 . Em *Cargas de trabalho*, selecione o bloco *Oracle*.
 . Para visualizar os hosts do Oracle Database descobertos, selecione a guia *Hosts*.
 +
-Você pode usar essa visualização para ver detalhes como o nome de cada host, quantos bancos de dados cada host hospeda, o modelo de implantação (por exemplo, cluster, Oracle Data Guard ou independente) e outras informações.
+Você pode usar essa visualização para ver detalhes como o nome de cada host, quantos bancos de dados cada host hospeda, o modelo de implantação (por exemplo, cluster, Data Guard ou independente) e outras informações.
 
 . Para visualizar os grupos de proteção criados para proteger os recursos do Oracle Database, selecione a guia *Protection Groups*.
 . Para visualizar os bancos de dados hospedados por cada host do Oracle Database, selecione a guia *Bancos de Dados*.
 +
 Esta visualização exibe informações detalhadas, incluindo se cada banco de dados é uma instância única ou parte de um cluster ou configuração de alta disponibilidade.
+
++
+Os bancos de dados do Oracle Data Guard são identificados como *Data Guard Primary* ou *Data Guard Standby*. Os bancos de dados em espera ficam ocultos por padrão. Para exibi-los, selecione *Data Guard Standby* no filtro *Type*. O nome de cada banco de dados do Oracle Data Guard aparece como o Oracle SID seguido pelo nome do banco de dados entre colchetes, por exemplo, `ORCLSTBY (ORCL)`.
+
++
+Após um switchover ou failover, selecione a guia *Hosts* e, em seguida, selecione *Refresh* nos hosts afetados para atualizar as funções mostradas.
 
 
 

@@ -71,3 +71,6 @@ Crie um backup sob demanda antes de fazer alterações no sistema para proteger 
 . Selecione o nível de agendamento.
 . Selecione *Fazer backup*.
 
+
+
+NOTE: Para bancos de dados Oracle Data Guard, o NetApp Backup and Recovery verifica a função atual de cada banco de dados quando um backup começa e segue as *configurações do Data Guard* na política. Após um switchover ou failover, o próximo backup usa as novas funções.

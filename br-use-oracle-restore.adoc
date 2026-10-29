@@ -102,6 +102,17 @@ Se estiver restaurando PDBs ou tablespaces para um ponto específico no tempo ou
 
 
 ====
+*Observações importantes sobre a restauração de bancos de dados Oracle Data Guard*
+
+* Antes de restaurar, certifique-se de que a função do banco de dados esteja atualizada. Se ocorreu um switchover ou failover, selecione a guia *Hosts* e selecione *Refresh* para o host primeiro. As opções de restauração disponíveis dependem da função atual do banco de dados.
+* Se o banco de dados estiver atualmente em modo de espera, você não poderá restaurá-lo para o local original, independentemente da função que ele desempenhava quando o backup foi feito. Restaure-o para um local alternativo.
+* Se o banco de dados estiver atualmente em standby, você não poderá restaurar um snapshot que exista apenas no storage secundário ou no storage de objetos.
+* Você pode restaurar um backup feito enquanto o banco de dados estava como standby para o local original depois que o banco de dados se tornar o primário.
+
+
+
+CAUTION: Restaurar um banco de dados primário não altera o standby. Quando você abre o banco de dados primário com `RESETLOGS` após uma restauração para um ponto no tempo ou SCN, isso inicia uma nova encarnação do banco de dados. Se o standby já tiver aplicado redo além desse ponto, a aplicação de redo no standby para com um erro, e o standby permanece em seu estado anterior. Para retomar a proteção, restabeleça o standby após a restauração usando as ferramentas Oracle.
+
 .Passos
 . No menu do NetApp Console , selecione *Proteção > Backup e recuperação*.
 . No menu NetApp Backup and Recovery , selecione *Restaurar*.
