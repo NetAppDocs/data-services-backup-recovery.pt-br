@@ -1,0 +1,16 @@
+= Aprimoramento das cargas de trabalho do Hyper-V
+:allow-uri-read: 
+
+
+
+
+[[hyper-v-workloads-enhancement]]
+=== Aprimoramento das cargas de trabalho do Hyper-V
+
+Nesta versão, o NetApp Backup and Recovery apresenta o seguinte aprimoramento para cargas de trabalho do Hyper-V:
+
+*Melhorias no suporte ao NetApp MetroCluster*: o NetApp Backup and Recovery agora oferece suporte à proteção de hosts Hyper-V em uma configuração de NetApp MetroCluster antes e depois de operações de switchover ou switchback.
+
+Para obter mais informações sobre como proteger hosts Hyper-V em uma configuração NetApp MetroCluster, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-discover-hyperv.html["Descubra e gerencie as cargas de trabalho do Hyper-V"^].
+
+Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-hyperv-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do Hyper-V com o NetApp Backup and Recovery"^].

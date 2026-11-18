@@ -511,7 +511,6 @@
   <block id="500085ef4daa2d41e99c68f5d7ced622" category="list-text">Insira as novas credenciais para o destino de backup.  As informações variam dependendo do tipo de destino de backup selecionado.</block>
   <block id="65aa0e52587b5f59eb26af06ddeef28a" category="list-text">Selecione *Concluído*.</block>
   <block id="6d655e5ab4c22c9a5dd1c7b3cc53bcd4" category="summary">O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper-V antes que você possa protegê-las.</block>
-  <block id="ebe1fa7e8a9f4c3139f8657f10a169ee" category="doc">Descubra as cargas de trabalho do Hyper-V no NetApp Backup and Recovery</block>
   <block id="ccb99cc37b628cd3d05ccf85f8c0c579" category="section-title">Adicionar um host Hyper-V e descobrir recursos</block>
   <block id="6512c2901e9f9eae6ce40754ef6845cb" category="admonition">Quando você adiciona hosts Hyper-V e descobre recursos, o NetApp Backup and Recovery instala o plug-in NetApp Hyper-V e o plug-in NetApp SnapCenter Windows FileSystem no host Hyper-V para ajudar a gerenciar e proteger máquinas virtuais.</block>
   <block id="dd38712b98e7db15ffc7ca4ac996020c" category="list-text">No menu do NetApp Console , selecione *Proteção* &gt; *Backup e recuperação*.</block>
@@ -6296,4 +6295,17 @@
   <block id="ec521975a51b13a00e3d392d7acdf5f5" category="paragraph">Se você não habilitar as *configurações do Data Guard*, tanto o banco de dados primário quanto o de espera terão backup. Depois de atribuir a política aos recursos, você não poderá desabilitar as *configurações do Data Guard*.</block>
   <block id="ce6934326bbfd4652849311e1ed89fe6" category="paragraph">Nesta versão, o NetApp Backup and Recovery apresenta o seguinte aprimoramento de licenciamento para todas as cargas de trabalho:</block>
   <block id="83b090108fa1e810d92771b23b7b0267" category="paragraph">Para obter detalhes sobre licenciamento, consulte<block ref="aa1a103ec550203513cdef85cd5672c0" category="inline-link-rx"></block>.</block>
+  <block id="78ba94be34b62da6b3c55ab6428c64de" category="paragraph">Nesta versão, o NetApp Backup and Recovery apresenta o seguinte aprimoramento para cargas de trabalho do Hyper-V:</block>
+  <block id="5a17a39de31b7b5832a689a22a0960d3" category="paragraph">*Melhorias no suporte ao NetApp MetroCluster*: o NetApp Backup and Recovery agora oferece suporte à proteção de hosts Hyper-V em uma configuração de NetApp MetroCluster antes e depois de operações de switchover ou switchback.</block>
+  <block id="3df1770bd78ab7f279534a4bc01e8279" category="inline-link">Descubra e gerencie as cargas de trabalho do Hyper-V</block>
+  <block id="3cb8f9712223b09ad73c450e0af0ea64" category="paragraph">Para obter mais informações sobre como proteger hosts Hyper-V em uma configuração NetApp MetroCluster, consulte<block ref="665a91254fa4402bbc204875b0e6bd92" category="inline-link-rx"></block>.</block>
+  <block id="844ae54d758df29e7d829704e13ec279" category="paragraph">Para obter detalhes sobre como proteger cargas de trabalho do Hyper-V, consulte<block ref="ae9a446e0ed2e2ae49be41b424784f6c" category="inline-link-rx"></block>.</block>
+  <block id="cf675c654413dcc854cb4be52cd83dc3" category="doc">Descubra e gerencie cargas de trabalho do Hyper-V no NetApp Backup and Recovery</block>
+  <block id="d69713a2a3c453e5fbf0ea6d3400e8d8" category="section-title">Atualizar um host do Hyper-V</block>
+  <block id="41d2c48fc5de199e2d709875cf13b714" category="paragraph">Atualize um host Hyper-V para atualizar a lista de VMs no host e mapear o armazenamento conectado. Você pode querer fazer isso após um switchover ou switchback do MetroCluster, ou se tiver adicionado ou removido VMs do host recentemente.</block>
+  <block id="07a120107375b845b998da2fcc4ff1b5" category="admonition">Se um host Hyper-V estiver protegido por uma configuração NetApp MetroCluster, atualize o host após cada MetroCluster switchover ou switchback e antes do próximo backup ou snapshot agendado ou manual. Todos os backups ou snapshots executados para o host antes da atualização falham. Se você não atualizar o host manualmente, o Backup and Recovery o atualiza automaticamente em até 12 horas.</block>
+  <block id="f801f8619ab78bc2c752d1ee8fd4f92c" category="list-text">Selecione o link *View* para o tipo de carga de trabalho do Hyper-V.</block>
+  <block id="09ccb7f44019b1b4d13b4944ec04a56f" category="list-text">Escolha um host Hyper-V para atualizar e selecione o ícone Ações <block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block> &gt; *Atualizar*.</block>
+  <block id="2ed0cb11d89d0befd7096c8dfd797cf8" category="admonition">Se um host Hyper-V estiver protegido por uma configuração do NetApp MetroCluster, atualize o host após cada switchover ou switchback do MetroCluster e antes do próximo backup ou snapshot agendado ou manual. Para obter instruções, consulte <block ref="8cb2dd4b3d4a18fa676f8b0c073c9b7b" category="inline-link-macro-rx"></block>.</block>
+  <block id="e370f8f4d5db9e4f93257ac02adddec3" category="section-title">09 de novembro de 2026</block>
 </blocks>
