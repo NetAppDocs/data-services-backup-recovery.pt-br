@@ -23,7 +23,7 @@ Algumas observações sobre como funcionam as licenças:
 * Ao usar as cargas de trabalho do ONTAP Volumes, você pode descobrir e restaurar volumes sem uma licença. No entanto, se você precisar proteger volumes (backup) no storage de objetos, precisará adquirir uma licença.
 * Se você estiver usando o Backup and Recovery com NetApp Console em implantação local, só poderá adquirir uma licença bring-your-own-license (BYOL).
 * A licença BYOL (Bring Your Own License) do NetApp Backup and Recovery é uma licença flutuante que você pode usar em todos os sistemas associados à sua organização ou conta do NetApp Console .  Portanto, se você tiver capacidade de backup suficiente disponível em uma licença BYOL existente, não precisará comprar outra licença BYOL.
-* Se você estiver usando uma licença BYOL com o NetApp Console, é recomendável que você também assine uma assinatura de pagamento conforme o uso (PAYGO). Se você fizer backup de mais dados do que o permitido pela sua licença BYOL, ou se o prazo da sua licença expirar, o backup continuará por meio da sua assinatura de pagamento conforme o uso (PAYGO) – não haverá interrupção do serviço.
+* Se você usa uma licença BYOL com NetApp Console, assine também uma assinatura PAYGO. Se você fizer backup de mais dados do que o permitido pela sua licença BYOL, ou se o prazo da sua licença expirar, o backup continuará por meio da sua assinatura PAYGO de pagamento conforme o uso, sem interrupção do serviço.
 * Ao fazer backup de dados ONTAP locais para o StorageGRID, você precisa de uma licença BYOL, mas não há custo para espaço de storage do provedor de nuvem.
 
 
@@ -37,8 +37,8 @@ link:concept-backup-to-cloud.html["Saiba mais sobre os custos relacionados ao us
 Você tem três opções de licenciamento para o NetApp Backup and Recovery:
 
 * Adquira uma licença direta, também conhecida como bring-your-own-license (BYOL), da NetApp. Essa opção se aplica tanto ao NetApp Console quanto à implantação local do Console.
-* Adquira um contrato anual em um marketplace de hiperescala. Esta opção se aplica somente ao NetApp Console.
-* Assine uma licença de pagamento conforme o uso (PAYGO) de um marketplace de hiperescalador. Esta opção se aplica apenas ao NetApp Console.
+* Adquira um contrato anual em um marketplace de provedores de nuvem. Esta opção se aplica somente ao NetApp Console.
+* Assine uma licença de pagamento conforme o uso (PAYGO) em um marketplace de provedor de nuvem. Esta opção se aplica somente ao NetApp Console.
 
 
 
@@ -66,7 +66,7 @@ Você pode encerrar a avaliação gratuita de uma carga de trabalho a qualquer m
 [[use-a-byol-license]]
 === Use uma licença BYOL
 
-As licenças bring-your-own da NetApp oferecem prazos de 1, 2 ou 3 anos. Você paga apenas pelos dados que protege em storage de objetos, calculados pela capacidade lógica usada (_before_ qualquer eficiência) das cargas de trabalho de origem para as quais é feito backup em storage de objetos. Para os volumes do ONTAP, essa capacidade também é conhecida como Front-End Terabytes (FETB). Os dados protegidos apenas com snapshots locais ou replicação para o storage secundário do ONTAP não contam para a sua capacidade licenciada.
+As licenças Bring-your-own da NetApp oferecem termos de 1, 2 ou 3 anos. Você paga apenas pelos dados que protege no storage de objetos, calculados pela capacidade lógica usada (_before_ qualquer eficiência) das cargas de trabalho de origem cujo backup está sendo feito para o storage de objetos. Para volumes do ONTAP, essa capacidade também é conhecida como Front-End Terabytes (FETB). Os dados protegidos apenas com snapshots locais ou replicação para o storage secundário do ONTAP não são contabilizados na sua capacidade licenciada.
 
 A licença BYOL do NetApp Backup and Recovery é uma licença flutuante, em que a capacidade total é compartilhada entre todos os sistemas associados à sua organização ou conta do NetApp Console. Para volumes do ONTAP, você pode obter uma estimativa aproximada da capacidade de que vai precisar executando o comando da CLI `volume show -fields logical-used-by-afs` para os volumes que você planeja fazer backup no storage de objetos.
 
@@ -89,7 +89,7 @@ Observe o seguinte sobre as opções de contrato anual do marketplace:
 
 * Os contratos anuais estão disponíveis como ofertas privadas em cada marketplace.
 * Os contratos anuais permitem que você faça backup dos dados do Cloud Volumes ONTAP e dos dados do ONTAP no local.
-* Você pode assinar um contrato anual na página do Marketplace. Configure sua assinatura na página do Marketplace e, em seguida, associe a assinatura às suas credenciais da AWS https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS"^], https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["Azure"^] ou do GCP. Observe que você também precisará pagar pelos seus sistemas Cloud Volumes ONTAP usando esta assinatura de contrato anual, já que é possível atribuir apenas uma assinatura ativa às suas credenciais da AWS no Console.
+* Você pode assinar um contrato anual na página do Marketplace. Configure sua assinatura na página do Marketplace e, em seguida, associe a assinatura às suas https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["AWS"^], https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html#subscribe["Azure"^] ou credenciais do GCP. Observe que você também precisará pagar pelos seus sistemas do Cloud Volumes ONTAP usando esta assinatura de contrato anual, porque você pode atribuir apenas uma assinatura ativa às suas credenciais da AWS no Console.
 * Ao adquirir um plano "CVO Professional", ele inclui backups ilimitados para o sistema Cloud Volumes ONTAP licenciado, e esses backups não contam para a capacidade licenciada. Este plano não oferece suporte a backups de dados do ONTAP no local nem de sistemas Cloud Volumes ONTAP licenciados pelos pacotes Freemium ou Essentials; somente os sistemas Cloud Volumes ONTAP licenciados pelo pacote Professional são suportados.
 +
 Consulte  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Tópico de licenciamento do Cloud Volumes ONTAP"^] para saber mais sobre essa opção de licenciamento.

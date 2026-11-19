@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-search.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Você pode usar a função Pesquisar e Restaurar para recuperar volumes, pastas ou arquivos de backup do ONTAP. 
+summary: Pesquise e restaure volumes, pastas ou arquivos de backups do ONTAP no NetApp Backup and Recovery quando você não souber o nome exato do sistema, volume ou arquivo. 
 ---
 = Restaure os dados do ONTAP usando Pesquisar e Restaurar em NetApp Backup and Recovery
 :hardbreaks:
@@ -46,7 +46,7 @@ link:prev-reference-aws-archive-storage-tiers.html["Saiba mais sobre a restaura�
 
 
 ====
-Antes de começar, você deve ter uma ideia do nome ou da localização do volume ou arquivo que você deseja restaurar.
+Antes de começar, saiba pelo menos parte do nome ou da localização do volume ou arquivo que deseja restaurar.
 
 
 
@@ -88,7 +88,7 @@ Para Pesquisar e Restaurar, o agente do Console pode ser instalado nos seguintes
 * Para o ONTAP S3, o agente do Console pode ser implementado localmente (com ou sem acesso à internet) ou em um ambiente de provedor de nuvem
 
 
-Observe que as referências a "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select.
+As referências a "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select.
 
 
 
@@ -120,7 +120,7 @@ Os requisitos para a função Pesquisar e Restaurar ao usar a indexação legada
 +
 ** Permissões específicas do Amazon Athena, AWS Glue e AWS S3 devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-aws.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
 +
-Observe que, se você já estava usando o NetApp Backup and Recovery com um agente do Console configurado anteriormente, será necessário adicionar as permissões Athena e Glue à função de usuário do Console agora.  Eles são necessários para Pesquisar e Restaurar.
+Se você já estava usando NetApp Backup and Recovery com um agente do Console que configurou no passado, agora precisará adicionar as permissões do Athena e do Glue à função de usuário do Console. Elas são necessárias para o Search & Restore.
 
 
 
@@ -129,7 +129,7 @@ Observe que, se você já estava usando o NetApp Backup and Recovery com um agen
 ** Você deve registrar o Provedor de Recursos do Azure Synapse Analytics (chamado "Microsoft.Synapse") em sua assinatura. https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["Veja como registrar este provedor de recursos para sua assinatura"^] Você deve ser o *Proprietário* ou *Colaborador* da assinatura para registrar o provedor de recursos.
 ** Permissões específicas do Azure Synapse Workspace e da conta de armazenamento do Data Lake devem ser adicionadas à função de usuário que fornece permissões ao Console. link:prev-ontap-backup-onprem-azure.html["Certifique-se de que todas as permissões estejam configuradas corretamente"].
 +
-Observe que, se você já estava usando o NetApp Backup and Recovery com um agente do Console configurado anteriormente, será necessário adicionar as permissões da conta do Azure Synapse Workspace e do Data Lake Storage à função de usuário do Console agora.  Eles são necessários para Pesquisar e Restaurar.
+Se você já utilizava o NetApp Backup and Recovery com um agente do Console que você configurou no passado, agora precisará adicionar as permissões do Azure Synapse Workspace e do Data Lake Storage Account à função de usuário do Console. Elas são necessárias para Search & Restore.
 
 ** O agente do Console deve ser configurado *sem* um servidor proxy para comunicação HTTP com a Internet.  Se você tiver configurado um servidor proxy HTTP para seu agente do Console, não poderá usar a funcionalidade Pesquisar e Restaurar.
 
@@ -282,7 +282,7 @@ Depois de você ter<<enable-the-indexed-catalog-for-each-system,indexação habi
 . Localize o recurso que contém os dados que você deseja restaurar e selecione *Exibir todos os backups* para exibir todos os arquivos de backup que contêm o volume, pasta ou arquivo correspondente.
 . Localize o arquivo de backup que você deseja usar para restaurar os dados e selecione *Restaurar*.
 +
-Observe que os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo da sua pesquisa. Você pode escolher restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.
+Os resultados identificam snapshots de volumes locais e volumes replicados remotos que contêm o arquivo da sua pesquisa. Você pode optar por restaurar a partir do arquivo de backup na nuvem, do snapshot ou do volume replicado.
 
 . Selecione o local de destino onde você deseja que o volume, a pasta ou o(s) arquivo(s) sejam restaurados e selecione *Restaurar*.
 +

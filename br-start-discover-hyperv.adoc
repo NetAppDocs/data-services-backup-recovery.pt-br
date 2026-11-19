@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, workloads, protect 
-summary: O NetApp Backup and Recovery precisa descobrir máquinas virtuais Hyper-V antes que você possa protegê-las. 
+summary: Adicione hosts Hyper-V para que o NetApp Backup and Recovery possa descobrir máquinas virtuais, atualizar os hosts após alterações e verificar o status de proteção no painel. 
 ---
 = Descubra e gerencie cargas de trabalho do Hyper-V no NetApp Backup and Recovery
 :hardbreaks:
@@ -90,5 +90,5 @@ IMPORTANT: Se um host Hyper-V estiver protegido por uma configuração NetApp Me
 . No menu NetApp Console, selecione *Proteção* > *Backup e Recuperação*.
 . Selecione o bloco de carga de trabalho do Hyper-V.
 . No menu Backup e Recuperação, selecione *Painel*.
-. Revise a saúde da proteção de dados.  O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e armazenadas em backup.
+. Analise o estado da proteção de dados. O número de cargas de trabalho em risco ou protegidas aumenta com base nas cargas de trabalho recém-descobertas, protegidas e com backup realizado.
 

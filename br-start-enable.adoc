@@ -43,7 +43,7 @@ Ative o serviço de Backup e Recovery no NetApp Console.
 Ative o serviço de Backup e Recovery na implantação local do NetApp Console.
 
 .Antes de começar
-Certifique-se de ter obtido uma licença para o NetApp Backup and Recovery. Veja  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Obtenha uma licença"^] para mais informações.
+Confirme que você possui uma licença para o NetApp Backup and Recovery. Consulte https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html#obtain-a-license-file["Obtenha uma licença"^] para mais informações.
 
 .Passos
 . No menu NetApp Console, selecione *Armazenamento* > *Frotas*.

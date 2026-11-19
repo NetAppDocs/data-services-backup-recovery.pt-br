@@ -79,7 +79,7 @@ NOTE: A lista *Por carga de trabalho* não inclui os ONTAP Volumes. Para criar u
 +
 Esta opção está desativada por padrão. Por padrão, os relatórios são enviados para todos os usuários da organização. Para enviar relatórios a destinatários específicos, configure as notificações por e-mail na página *Configurações*, em *Notificações*. Para obter detalhes sobre como configurar as notificações por e-mail, consulte link:br-start-configure.html["Configurar definições"].
 
-. Em *Retenção*, em *Manter por*, escolha por quanto tempo o relatório será mantido antes de ser excluído. 30 dias é o padrão.
+. Em *Retenção*, no campo *Manter por*, escolha por quanto tempo manter o relatório antes que ele seja excluído. O padrão é 30 dias.
 . Selecione *Adicionar*.
 +
 O relatório aparece no topo da lista *Relatórios gerados*. Quando o relatório estiver pronto, uma mensagem de sucesso aparecerá e você poderá baixá-lo ou excluí-lo.

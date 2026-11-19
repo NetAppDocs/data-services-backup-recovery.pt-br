@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-reference-limitations.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, SAP HANA database 
-summary: Limitações conhecidas identificam funções que não são suportadas por esta versão do produto ou que não interoperam corretamente com ele. Revise essas limitações cuidadosamente. 
+summary: Analise as limitações conhecidas para o NetApp Backup and Recovery com volumes do ONTAP. 
 ---
 = Limitações conhecidas com o NetApp Backup and Recovery para volumes ONTAP
 :hardbreaks:
@@ -95,7 +95,7 @@ Para obter uma explicação sobre esses tipos de criptografia, consultehttps://d
 [[restore-limitations-for-ontap-volumes]]
 == Restaurar limitações para volumes ONTAP
 
-Essas limitações se aplicam aos métodos Pesquisar e Restaurar e Navegar e Restaurar para restaurar arquivos e pastas, a menos que sejam especificamente indicados.
+Essas limitações se aplicam tanto aos métodos Search & Restore e Browse & Restore de restauração de arquivos e pastas, a menos que especificado de outra forma.
 
 * A restauração de pastas a partir de snapshots locais não é suportada.
 * Restauração de arquivos e pastas em uma configuração de recuperação de desastres (DR): após uma falha, os volumes em uma VM de armazenamento configurada para DR mantêm os relacionamentos SnapMirror preexistentes em um estado interrompido. As tentativas de restaurar arquivos ou pastas que criam relacionamentos RST temporários SnapMirror são bloqueadas pelo ONTAP porque o volume de destino já possui um relacionamento.

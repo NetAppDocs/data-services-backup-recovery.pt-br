@@ -4,7 +4,7 @@ permalink: br-use-manage-kubernetes-access-control.html
 keywords: backup, back up, restore, recovery, kubernetes, k8s, access control, rbac, iam, folder, project 
 summary: Gerencie o acesso a recursos do Kubernetes no NetApp Backup and Recovery usando pastas, projetos e funções do NetApp Console. 
 ---
-= Gerencie o acesso a recursos do Kubernetes
+= Gerencie o acesso aos recursos do Kubernetes no NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

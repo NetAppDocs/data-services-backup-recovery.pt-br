@@ -103,7 +103,7 @@ transformations:
           "topology.kubernetes.io/zone": "us-east-1a"
           disktype: "ssd"
 ----
-Utilize o seguinte comando para executar essa transformação usando a linha de comando:
+Execute essa transformação a partir da linha de comando com o seguinte comando:
 
 [source, bash]
 ----
@@ -126,7 +126,7 @@ transformations:
         from: "/data/source-key"
         path: "/data/backup-key"
 ----
-Utilize o seguinte comando para executar essa transformação usando a linha de comando:
+Execute essa transformação a partir da linha de comando com o seguinte comando:
 
 [source, bash]
 ----
@@ -149,7 +149,7 @@ transformations:
         from: "/data/OLD_KEY"
         path: "/data/NEW_KEY"
 ----
-Utilize o seguinte comando para executar essa transformação usando a linha de comando:
+Execute essa transformação a partir da linha de comando com o seguinte comando:
 
 [source, bash]
 ----
@@ -174,7 +174,7 @@ transformations:
 
 NOTE: No caminho do exemplo acima,  `~1` é a sequência de escape do ponteiro JSON para  `/`.
 
-Utilize o seguinte comando para executar essa transformação usando a linha de comando:
+Execute essa transformação a partir da linha de comando com o seguinte comando:
 
 [source, bash]
 ----
@@ -198,7 +198,7 @@ transformations:
         path: "/spec/host"
         value: "prod.example.com"
 ----
-Utilize o seguinte comando para executar essa transformação usando a linha de comando:
+Execute essa transformação a partir da linha de comando com o seguinte comando:
 
 [source, bash]
 ----
@@ -224,7 +224,7 @@ transformations:
         path: "/data/database-host"
         value: "prod-db.example.com"
 ----
-Utilize o seguinte comando para executar essa transformação usando a linha de comando:
+Execute essa transformação a partir da linha de comando com o seguinte comando:
 
 [source, bash]
 ----

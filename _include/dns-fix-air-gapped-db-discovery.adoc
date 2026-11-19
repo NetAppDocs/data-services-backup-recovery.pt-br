@@ -14,7 +14,7 @@ IMPORTANT: Antes de fazer alterações, verifique tanto a configuração existen
 
 
 .Passos
-. Verifique a configuração existente do CoreDNS para garantir que você não esteja sobrescrevendo uma alteração já existente:
+. Verifique a configuração existente do CoreDNS para confirmar que você não está sobrescrevendo uma alteração já existente:
 +
 [source, shell]
 ----

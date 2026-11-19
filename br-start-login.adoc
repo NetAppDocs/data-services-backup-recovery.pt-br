@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-login.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Use o NetApp Console para efetuar login no serviço NetApp Backup and Recovery . 
+summary: Faça login no NetApp Backup and Recovery por meio do NetApp Console ou da implantação local do Console e, em seguida, descubra e gerencie cargas de trabalho como VMware, KVM, Oracle e Kubernetes. 
 ---
 = Efetue login no NetApp Backup and Recovery
 :hardbreaks:

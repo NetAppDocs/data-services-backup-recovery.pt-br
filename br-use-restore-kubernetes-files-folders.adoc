@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-files-folders.html 
 keywords: backing up, restoring, back up, backup, file, folder, files and folders, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: NetApp Backup and Recovery permite que você restaure e baixe arquivos e pastas que foram copiados de backup de um aplicativo baseado em máquina virtual. 
+summary: Restaure ou faça o download de arquivos e pastas a partir de um ponto de restauração de aplicativo Kubernetes baseado em VM no NetApp Backup and Recovery. 
 ---
 = Restaure ou baixe arquivos e pastas de aplicativos baseados em máquinas virtuais usando o NetApp Backup and Recovery
 :hardbreaks:

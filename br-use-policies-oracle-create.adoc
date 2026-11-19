@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-policies-oracle-create.html 
 keywords: backing up, back up, backup, backup on-premises ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
-summary: No NetApp Backup and Recovery, crie suas próprias políticas que controlam a frequência do backup, o horário em que o backup é feito e o número de arquivos de backup que são retidos. 
+summary: Crie políticas de backup do Oracle Database no NetApp Backup and Recovery que controlem a frequência de backup, o agendamento e a retenção. 
 ---
 = Crie e gerencie políticas de backup do Oracle Database no NetApp Backup and Recovery
 :hardbreaks:
@@ -129,7 +129,7 @@ NOTE: Os campos que aparecem diferem dependendo do provedor e da arquitetura sel
 ** *Cópias de retenção*: insira o número de instantâneos a serem mantidos.
 ** *Executar em*: Escolha o agendamento de transferência ONTAP para fazer backup de dados no armazenamento de objetos.
 ** *Coloque seus backups em camadas do armazenamento de objetos para o armazenamento de arquivamento*: se você optar por colocar os backups em camadas para o armazenamento de arquivamento (por exemplo, AWS Glacier), selecione a opção de camada e o número de dias para arquivamento.
-** *Habilitar verificação de integridade*: selecione se você deseja habilitar as verificações de integridade (bloqueio de snapshot) no storage de objetos. Isso garante que os backups sejam válidos e restauráveis. A frequência da verificação de integridade é definida como sete dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar as verificações de integridade no snapshot mais recente.
+** *Habilitar verificação de integridade*: selecione se você deseja habilitar verificações de integridade (bloqueio de snapshots) no storage de objetos. Isso confirma que os backups são válidos e podem ser restaurados. A frequência da verificação de integridade é definida como sete dias por padrão. Para proteger seus backups contra modificações ou exclusões, selecione a opção *Verificação de integridade*. A verificação ocorre apenas no snapshot mais recente. Você pode habilitar ou desabilitar verificações de integridade no snapshot mais recente.
 
 
 . Opcionalmente, configure as definições avançadas na política.
@@ -147,7 +147,7 @@ Se você não habilitar as *configurações do Data Guard*, tanto o banco de dad
 
 
 
-** *Verificação de backup*: selecione se deseja ativar a verificação de backup e se deseja que ela seja executada imediatamente ou posteriormente. Esse recurso garante que os backups sejam válidos e possam ser restaurados com sucesso. Recomendamos que você ative essa opção para garantir a integridade dos seus backups. Por padrão, a verificação de backup é executada a partir do storage secundário, se o storage secundário estiver configurado. Se o storage secundário não estiver configurado, a verificação de backup será executada a partir do storage primário.
+** *Verificação de backup*: selecione se você deseja ativar a verificação de backup e se deseja executá-la imediatamente ou mais tarde. Esse recurso confirma que os backups são válidos e podem ser restaurados com sucesso. Recomendamos que você ative esta opção para garantir a integridade dos seus backups. Por padrão, a verificação de backup é executada a partir do storage secundário, se o storage secundário estiver configurado. Se o storage secundário não estiver configurado, a verificação de backup será executada a partir do storage primário.
 +
 Além disso, configure as seguintes opções:
 

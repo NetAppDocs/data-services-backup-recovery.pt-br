@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-oracle-protect-overview.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: Você pode proteger máquinas virtuais Oracle de sistemas ONTAP locais até Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantindo que seus dados estejam protegidos. 
+summary: Proteja as cargas de trabalho e os logs do Oracle Database com backups consistentes com o banco de dados para o AWS S3, o StorageGRID, o Azure Blob ou o ONTAP S3 e restaure-os em um host Oracle local. 
 ---
 = Proteja as cargas de trabalho do Oracle Database com o NetApp Backup and Recovery
 :hardbreaks:
@@ -16,10 +16,10 @@ summary: Você pode proteger máquinas virtuais Oracle de sistemas ONTAP locais 
 [role="lead"]
 Use o NetApp Backup and Recovery para proteger cargas de trabalho e logs do Oracle Database com backups e restaurações rápidos, com uso eficiente de espaço, consistentes com falhas e consistentes com o banco de dados. Você pode fazer backup de cargas de trabalho no Amazon S3, StorageGRID, Azure Blob ou ONTAP S3 e restaurar os backups em um host Oracle local.
 
-Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem 3 cópias dos seus dados de origem em 2 sistemas de armazenamento diferentes, além de 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
+Use o NetApp Backup and Recovery para implementar uma estratégia de proteção 3-2-1, na qual você tem três cópias dos seus dados de origem em dois sistemas de armazenamento diferentes, além de uma cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
 * Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
-* Usar diferentes tipos de mídia ajuda na recuperação caso um tipo falhe.
+* Diferentes tipos de mídia ajudam na recuperação caso um deles falhe.
 * Você pode restaurar rapidamente a partir da cópia local e usar as cópias externas se a cópia local estiver comprometida.
 
 

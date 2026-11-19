@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-protect-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: O NetApp Backup and Recovery permite que você gerencie informações de host de carga de trabalho, informações de banco de dados e informações de instâncias.  Você pode visualizar, editar e excluir configurações de proteção do seu inventário. 
+summary: Adicione aplicações Kubernetes baseadas em namespace ou em VM ao NetApp Backup and Recovery para proteção usando a interface de usuário da Web ou arquivos de recursos personalizados. 
 ---
 = Adicione e proteja aplicativos Kubernetes em NetApp Backup and Recovery
 :hardbreaks:
@@ -39,7 +39,7 @@ Antes de poder adicionar e proteger um aplicativo Kubernetes, você precisalink:
 --
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.
-. No canto superior direito da página, certifique-se de que *Kubernetes* esteja selecionado na lista de workloads.
+. No canto superior direito da página, confirme se *Kubernetes* está selecionado na lista de cargas de trabalho.
 . Selecione *Exibir* no item de linha da carga de trabalho para visualizar os recursos do Kubernetes.
 . Selecione a aba *Aplicativos*.
 . Selecione *Criar aplicativo*.
@@ -78,7 +78,7 @@ O aplicativo é criado e aparece na lista de aplicativos na guia *Aplicativos* d
 --
 .Passos
 . No NetApp Backup and Recovery, selecione *Inventário*.
-. No canto superior direito da página, certifique-se de que *Kubernetes* esteja selecionado na lista de workloads.
+. No canto superior direito da página, confirme se *Kubernetes* está selecionado na lista de cargas de trabalho.
 . Selecione *Exibir* no item de linha da carga de trabalho para visualizar os recursos do Kubernetes.
 . Selecione a aba *Aplicativos*.
 . Selecione *Criar aplicativo*.

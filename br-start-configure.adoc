@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-configure.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Conclua algumas etapas para configurar o NetApp Backup and Recovery. 
+summary: Adicione credenciais de host, mantenha as configurações do VMware vCenter, importe recursos do SnapCenter, adicione uma plataforma de gerenciamento KVM e crie modelos no NetApp Backup and Recovery. 
 ---
 = Configurar as configurações de NetApp Backup and Recovery
 :hardbreaks:
@@ -55,7 +55,7 @@ Você precisa configurar os seguintes tipos de credenciais:
 ** *Modo de autenticação*: Selecione *Windows*, *Microsoft SQL*, *Banco de Dados Oracle* ou *Linux*.
 +
 
-TIP: Para cargas de trabalho do Microsoft SQL Server, você deve inserir credenciais tanto para o Windows quanto para o Microsoft SQL Server, o que exige dois conjuntos de credenciais.
+TIP: Para as cargas de trabalho do Microsoft SQL Server, você deve inserir dois conjuntos de credenciais: um para o Windows e outro para o Microsoft SQL Server.
 
 +
 [role="tabbed-block"]
@@ -182,7 +182,7 @@ Este é um processo de duas partes:
 Esta primeira etapa importa recursos de host do SnapCenter e exibe esses recursos na página Inventário de NetApp Backup and Recovery .  Nesse ponto, os recursos ainda não são gerenciados pelo NetApp Backup and Recovery.
 
 
-TIP: Após importar os recursos do host do SnapCenter , o NetApp Backup and Recovery não assume o gerenciamento de proteção.  Para fazer isso, você deve selecionar explicitamente gerenciar esses recursos no NetApp Backup and Recovery.
+TIP: Depois de importar os recursos de host do SnapCenter, o NetApp Backup and Recovery não assume o gerenciamento da proteção. Para transferir o gerenciamento, selecione explicitamente esses recursos para gerenciá-los no NetApp Backup and Recovery.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Configurações*.
@@ -217,10 +217,10 @@ A página Inventário mostra os recursos importados do SnapCenter .
 [[manage-snapcenter-host-resources]]
 === Gerenciar recursos do host SnapCenter
 
-Depois de importar os recursos do SnapCenter , gerencie esses recursos de host no NetApp Backup and Recovery.  Depois de selecionar o gerenciamento desses recursos importados, o NetApp Backup and Recovery pode fazer backup e recuperar os recursos que você está importando do SnapCenter.  Você não precisa mais gerenciar esses recursos no SnapCenter Server.
+Após importar os recursos do host do SnapCenter, gerencie esses recursos no NetApp Backup and Recovery. Depois de gerenciar os recursos importados, o NetApp Backup and Recovery poderá fazer backup deles e recuperá-los. Você não precisa mais gerenciar esses recursos no SnapCenter Server.
 
 .Passos
-. Depois de importar os recursos do SnapCenter , na página Inventário exibida, selecione os recursos do SnapCenter que você importou e que deseja que o NetApp Backup and Recovery gerencie a partir de agora.
+. Após importar os recursos do SnapCenter, na página Inventory, selecione os recursos importados do SnapCenter que você deseja que o NetApp Backup and Recovery gerencie.
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Gerenciar* para gerenciar os recursos.
 . Selecione *Gerenciar no NetApp Console*.
 +
@@ -307,7 +307,7 @@ NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de 
 . Expanda a seção *Modelo de gancho de execução*.
 . Selecione *Criar modelo de gancho de execução*.
 . Digite um nome para o gancho de execução.
-. Opcionalmente, escolha um tipo de gancho. Por exemplo, um gancho pós-restauração é executado após a conclusão da operação de restauração.
+. Opcionalmente, escolha um tipo de hook. Por exemplo, um hook pós-restauração é executado após a conclusão da operação de restauração.
 . Na caixa de texto *Script*, insira o script de shell executável que você deseja executar como parte do modelo de gancho de execução.  Opcionalmente, você pode selecionar *Carregar script* para carregar um arquivo de script.
 . Selecione *Criar*.
 +
@@ -342,7 +342,7 @@ Crie modelos de transformação de recursos para armazenar transformações comu
 .. Insira o caminho JSON ao qual a operação se aplica.
 .. Se aplicável, insira um valor para adicionar ou atualizar, ou um caminho JSON de onde mover.
 +
-Esses campos só aparecem para operações que os exigem.
+Esses campos aparecem apenas para operações que os exigem.
 
 .. Para adicionar outra operação a este modelo, selecione *Adicionar operação*.
 

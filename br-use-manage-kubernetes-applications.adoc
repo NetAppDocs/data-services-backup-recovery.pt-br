@@ -55,7 +55,7 @@ Exclua um aplicativo que você não precisa mais. NetApp Backup and Recovery int
 . Ative a opção *Excluir snapshots e backups* para remover todos os snapshots e backups do aplicativo.
 +
 
-CAUTION: Você não poderá mais restaurar o aplicativo usando esses snapshots e backups.
+CAUTION: Não é mais possível restaurar o aplicativo a partir desses snapshots e backups.
 
 . Confirme a ação e selecione *Excluir*.
 

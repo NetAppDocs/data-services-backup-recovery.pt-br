@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-reference-aws-archive-storage-tiers.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: O NetApp Backup and Recovery oferece suporte a duas classes de armazenamento de arquivamento S3 e à maioria das regiões. 
+summary: Escolha uma camada do AWS S3 Glacier ou do S3 Glacier Deep Archive para backups e revise as prioridades de restauração, os custos e os tempos de recuperação dos dados arquivados. 
 ---
 = Camadas de armazenamento de arquivo AWS compatíveis com o NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: O NetApp Backup and Recovery oferece suporte a duas classes de armazena
 
 
 [role="lead"]
-Use essas informações para escolher um nível de arquivamento do AWS S3 para o NetApp Backup and Recovery backups. Você também pode consultar os custos de restauração e os tempos de recuperação dos backups arquivados.
+Escolha uma camada de arquivamento do AWS S3 para os backups do NetApp Backup and Recovery e analise os custos de restauração e os tempos de recuperação dos backups arquivados.
 
 
 
@@ -25,14 +25,14 @@ Quando os arquivos de backup são criados inicialmente, eles são armazenados no
 
 Se seus clusters de origem estiverem executando o ONTAP 9.10.1 ou superior, você poderá optar por dividir os backups em camadas no armazenamento _S3 Glacier_ ou _S3 Glacier Deep Archive_ após um determinado número de dias (normalmente mais de 30 dias) para otimizar ainda mais os custos.  Você pode definir isso como "0" ou de 1 a 999 dias.  Se você definir como "0" dias, não poderá alterá-lo posteriormente para 1-999 dias.
 
-Os dados nessas camadas não podem ser acessados imediatamente quando necessário e exigirão um custo de recuperação mais alto, então você precisa considerar com que frequência precisará restaurar dados desses arquivos de backup arquivados.  Consulte a seção nesta página sobre restauração de dados do armazenamento de arquivo.
+Os dados nessas camadas não podem ser acessados imediatamente quando necessário e exigirão um custo de recuperação mais alto, portanto você precisa considerar com que frequência poderá precisar restaurar dados desses arquivos de backup arquivados. Consulte a seção sobre restauração de dados do armazenamento de arquivamento.
 
 * Se você não selecionar nenhuma camada de arquivamento em sua primeira política de backup ao ativar o NetApp Backup and Recovery, o _S3 Glacier_ será sua única opção de arquivamento para políticas futuras.
 * Se você selecionar _S3 Glacier_ na sua primeira política de backup, poderá mudar para a camada _S3 Glacier Deep Archive_ para futuras políticas de backup para esse cluster.
 * Se você selecionar _S3 Glacier Deep Archive_ na sua primeira política de backup, essa camada será a única camada de arquivamento disponível para futuras políticas de backup para esse cluster.
 
 
-Observe que, ao configurar o NetApp Backup and Recovery com esse tipo de regra de ciclo de vida, você não deve configurar nenhuma regra de ciclo de vida ao configurar o bucket na sua conta da AWS.
+Ao configurar o NetApp Backup and Recovery com esse tipo de regra de ciclo de vida, não configure nenhuma regra de ciclo de vida ao configurar o bucket na sua conta da AWS.
 
 https://aws.amazon.com/s3/storage-classes/["Saiba mais sobre as classes de armazenamento S3"^].
 
@@ -41,9 +41,9 @@ https://aws.amazon.com/s3/storage-classes/["Saiba mais sobre as classes de armaz
 [[restore-data-from-archival-storage]]
 == Restaurar dados do armazenamento de arquivo
 
-Embora armazenar arquivos de backup mais antigos em armazenamento de arquivo seja muito mais barato do que o armazenamento Standard ou Standard-IA, acessar dados de um arquivo de backup em armazenamento de arquivo para operações de restauração levará mais tempo e custará mais dinheiro.
+Embora armazenar arquivos de backup mais antigos em storage de arquivamento seja muito menos dispendioso do que o storage Standard ou Standard-IA, acessar dados de um arquivo de backup no storage de arquivamento para operações de restauração leva mais tempo e custa mais.
 
-Quanto custa restaurar dados do Amazon S3 Glacier e do Amazon S3 Glacier Deep Archive?:: Há 3 prioridades de restauração que você pode escolher ao recuperar dados do Amazon S3 Glacier e 2 prioridades de restauração ao recuperar dados do Amazon S3 Glacier Deep Archive.  O S3 Glacier Deep Archive custa menos que o S3 Glacier:
+Quanto custa restaurar dados do Amazon S3 Glacier e do Amazon S3 Glacier Deep Archive?:: Você pode escolher entre três prioridades de restauração ao recuperar dados do Amazon S3 Glacier e duas prioridades de restauração ao recuperar dados do Amazon S3 Glacier Deep Archive. O Amazon S3 Glacier Deep Archive custa menos que o Amazon S3 Glacier:
 +
 --
 [cols="25,25,25,25"]
@@ -62,10 +62,10 @@ Quanto custa restaurar dados do Amazon S3 Glacier e do Amazon S3 Glacier Deep Ar
 Cada método tem uma taxa diferente de recuperação por GB e por solicitação.  Para obter preços detalhados do S3 Glacier por região da AWS, visite o https://aws.amazon.com/s3/pricing/["Página de preços do Amazon S3"^] .
 
 --
-Quanto tempo levará para restaurar meus objetos arquivados no Amazon S3 Glacier?:: Há 2 partes que compõem o tempo total de restauração:
+Quanto tempo levará para restaurar meus objetos arquivados no Amazon S3 Glacier?:: O tempo total de restauração é composto por duas partes:
 +
 --
-* *Tempo de recuperação*: O tempo para recuperar o arquivo de backup do arquivo morto e colocá-lo no armazenamento padrão.  Às vezes, isso é chamado de período de "reidratação".  O tempo de recuperação é diferente dependendo da prioridade de restauração escolhida.
+* *Tempo de recuperação*: o tempo para recuperar o arquivo de backup do arquivamento e colocá-lo no storage Standard. Às vezes, isso é chamado de tempo de "reidratação". O tempo de recuperação varia dependendo da prioridade de restauração que você escolher.
 +
 [cols="25,20,20,20"]
 |===
@@ -80,7 +80,7 @@ Quanto tempo levará para restaurar meus objetos arquivados no Amazon S3 Glacier
 
 | *Arquivo S3 Glacier Deep* |  | 12 horas | 48 horas 
 |===
-* *Tempo de restauração*: O tempo para restaurar os dados do arquivo de backup no armazenamento padrão.  Desta vez não é diferente da operação típica de restauração diretamente do armazenamento padrão, quando não se usa uma camada de arquivamento.
+* *Tempo de restauração*: o tempo necessário para restaurar os dados do arquivo de backup no armazenamento Standard. Esse tempo não é diferente de uma operação de restauração típica diretamente do armazenamento Standard quando você não usa uma camada de arquivamento.
 +
 Para obter mais informações sobre as opções de recuperação do Amazon S3 Glacier e do S3 Glacier Deep Archive, consulte https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["Perguntas frequentes da Amazon sobre essas classes de armazenamento"^] .
 

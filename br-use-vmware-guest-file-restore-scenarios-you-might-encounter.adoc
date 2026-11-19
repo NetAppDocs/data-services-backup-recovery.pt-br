@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-guest-file-restore-scenarios-you-might-encounter.html 
 keywords:  
-summary: Ao tentar restaurar um arquivo convidado, você pode encontrar cenários em que a sessão de restauração do arquivo convidado fica em branco, a operação de anexação do disco de restauração do arquivo convidado falha ou os backups não são desanexados após a sessão de restauração do arquivo convidado ser descontinuada. 
+summary: Solucione problemas de restauração de arquivos de convidado do VMware no NetApp Backup and Recovery, incluindo uma sessão de restauração em branco, uma operação de anexação de disco com falha e backups que permanecem anexados. 
 ---
 = Solucione problemas de restauração de arquivos de convidado do VMware no NetApp Backup and Recovery
 :hardbreaks:
@@ -23,7 +23,7 @@ Se você encontrar problemas ao restaurar um arquivo de convidado, use estes cen
 
 Esse problema ocorre se você criar uma sessão de restauração de arquivos em um sistema operacional convidado e o sistema operacional convidado for reiniciado durante a sessão. Os arquivos VMDK no sistema operacional convidado podem permanecer offline, portanto, a lista de sessões de restauração de arquivos do convidado fica em branco.
 
-Para corrigir o problema, coloque manualmente os VMDKs online novamente no sistema operacional convidado. Quando os VMDKs estiverem online, a sessão de restauração do arquivo convidado exibirá o conteúdo correto.
+Para corrigir o problema, coloque manualmente os VMDKs de volta online no sistema operacional convidado. Quando os VMDKs estiverem online, a sessão de restauração de arquivos do convidado exibirá o conteúdo correto.
 
 
 

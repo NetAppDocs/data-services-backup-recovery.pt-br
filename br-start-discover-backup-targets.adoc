@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-backup-targets.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Microsoft SQL Server database, 
-summary: 'Conclua algumas etapas para descobrir alvos de backup externos no NetApp Backup and Recovery.  Esses alvos podem incluir Amazon Web Services (AWS) S3, Microsoft Azure Blob Storage, Google Cloud Storage e StorageGRID.' 
+summary: Descubra destinos de backup externos, adicione buckets e altere credenciais no NetApp Backup and Recovery. 
 ---
 = Descubra alvos de backup externos no NetApp Backup and Recovery
 :hardbreaks:
@@ -108,7 +108,7 @@ Adicione manualmente um bucket a um destino de backup externo em vez de deixar q
 +
 ** Para AWS:
 +
-*** *Nome do bucket*: insira o nome do bucket S3. O prefixo "netapp-backup" é um prefixo obrigatório e é adicionado automaticamente ao nome fornecido.
+*** *Nome do bucket*: insira o nome do bucket S3. O prefixo obrigatório "netapp-backup" é adicionado automaticamente ao nome que você fornece.
 *** *Conta AWS*: Insira o nome da conta AWS.
 *** *Região do bucket*: insira a região da AWS para o bucket.
 *** *Habilitar bloqueio de objeto S3*: selecione esta opção para habilitar o bloqueio de objeto S3 para o bucket.  O S3 Object Lock impede que objetos sejam excluídos ou substituídos por um período de retenção especificado, fornecendo uma camada adicional de proteção de dados.  Você pode habilitar isso somente quando estiver criando um bucket e não poderá desativá-lo mais tarde.

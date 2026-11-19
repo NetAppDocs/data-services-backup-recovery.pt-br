@@ -16,7 +16,7 @@ summary: Gerencie seus hosts, instâncias e bancos de dados do Microsoft SQL Ser
 [role="lead"]
 Visualize e gerencie hosts, instâncias e bancos de dados do Microsoft SQL Server, e altere ou remova suas configurações de proteção.
 
-Você pode fazer o seguinte para gerenciar seu inventário:
+Gerencie seu inventário com estas ações:
 
 * Gerenciar informações do host
 +
@@ -278,7 +278,7 @@ Para obter detalhes sobre como criar um backup ad hoc, consulte link:br-use-mssq
 [[manage-database-information]]
 == Gerenciar informações do banco de dados
 
-Você pode gerenciar informações do banco de dados das seguintes maneiras:
+Gerencie as informações do banco de dados com estas ações:
 
 * Proteger bancos de dados
 * Restaurar bancos de dados

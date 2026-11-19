@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-restore-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
-summary: O NetApp Backup and Recovery permite restaurar aplicativos que você protegeu com uma política de proteção. 
+summary: Restaure aplicativos Kubernetes protegidos por uma política no NetApp Backup and Recovery, usando todos os recursos ou um subconjunto selecionado, para os namespaces originais ou novos. 
 ---
 = Restaure aplicativos Kubernetes usando a interface web do NetApp Backup and Recovery
 :hardbreaks:
@@ -45,7 +45,7 @@ Uma lista de recursos e seus detalhes é exibida. Você pode visualizar os recur
 Você pode restaurar aplicativos baseados em namespace ou em máquinas virtuais a partir de um ponto de restauração, restaurando todos os recursos ou selecionando um subconjunto de recursos para restaurar.
 
 .Antes de começar
-Se você estiver restaurando um aplicativo que foi copiado usando Trident Protect, certifique-se de que Trident Protect esteja instalado tanto no cluster de origem quanto no cluster de destino.
+Se você estiver restaurando um aplicativo que teve backup usando o Trident Protect, verifique se o Trident Protect está instalado nos clusters de origem e de destino.
 
 *Função necessária do NetApp Console*
 
@@ -159,7 +159,7 @@ A página _Configurações de destino_ é exibida.
 
 NOTE: Se você precisar criar um AppVault em um cluster Kubernetes para facilitar a restauração de um backup ou snapshot criado usando Trident Protect, consulte  https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-appvault-custom-resources.html["Use objetos do Trident Protect AppVault para gerenciar buckets"].
 
-. Opcionalmente, expanda a seção *Scripts de restauração* e habilite a opção *Pós-script* para escolher um modelo de gancho de execução que será executado após a conclusão da operação de restauração. Se necessário, insira quaisquer argumentos que o script precise e adicione seletores de rótulo para filtrar recursos com base nos rótulos dos recursos.
+. Opcionalmente, expanda a seção *Scripts de restauração* e habilite a opção *Pós-script* para escolher um modelo de gancho de execução que é executado após a conclusão da operação de restauração. Se necessário, insira os argumentos de que o script precisa e adicione seletores de rótulo para filtrar recursos com base em seus rótulos.
 . Opcionalmente, expanda a seção *Transformações de recursos* para adicionar, remover ou modificar atributos de recursos durante o processo de restauração. Em seguida, faça o seguinte:
 +
 

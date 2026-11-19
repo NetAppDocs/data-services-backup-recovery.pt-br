@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover-kubernetes.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Kubernetes 
-summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho para que você possa usar o serviço. 
+summary: 'Descubra clusters e workloads do Kubernetes no NetApp Backup and Recovery, incluindo clusters isolados da internet (air-gapped), para que você possa proteger aplicativos com políticas.' 
 ---
 = Descubra cargas de trabalho do Kubernetes no NetApp Backup and Recovery
 :hardbreaks:
@@ -27,7 +27,7 @@ No inventário de backup e recuperação, descubra clusters e cargas de trabalho
 
 [NOTE]
 ====
-Ao descobrir um cluster atualmente protegido com o Trident Protect, quaisquer agendamentos de backup usados com o Trident Protect são desativados durante o processo de descoberta, pois os agendamentos de backup do Trident Protect não são compatíveis com o NetApp Backup and Recovery. Para proteger os aplicativos do cluster, link:br-use-policies-create.html["crie uma nova política de proteção"] ou associe os aplicativos a uma política existente. Você pode então remover os agendamentos de backup do Trident Protect, se necessário.
+Ao descobrir um cluster atualmente protegido com o Trident Protect, quaisquer agendamentos de backup usados com o Trident Protect são desativados durante o processo de descoberta, porque os agendamentos de backup do Trident Protect não são compatíveis com o Backup and Recovery. Para proteger os aplicativos do cluster, link:br-use-policies-create.html["crie uma nova política de proteção"] ou associá-los a uma política existente. Em seguida, você pode remover os agendamentos de backup do Trident Protect, se necessário.
 
 ====
 .Passos
@@ -74,7 +74,7 @@ O Backup e recuperação fornece instruções que variam de acordo com o tipo de
 ... Insira a URL do seu registro de contêineres Docker privado. Esse registro é usado para baixar as imagens do Trident Protect e do Trident Protect Connector durante a instalação.
 ... Se o seu registro de contêineres privado exigir autenticação, use um dos seguintes métodos para configurar as credenciais do registro:
 +
-**** *Autenticação no nível do nó*: Configure as credenciais de registro no ambiente de execução do contêiner em cada nó. Uma vez configurado, todos os pods podem baixar imagens sem a necessidade de configurações adicionais do Helm.
+**** *autenticação no nível do nó*: configure as credenciais do registro no runtime de contêiner em cada nó. Após configurá-las, todos os pods podem baixar imagens sem configurações adicionais do Helm.
 **** *Segredo para extrair imagens do Kubernetes*: Crie um segredo para extrair imagens do Kubernetes no  `trident-protect` namespace e, em seguida, faça referência a ele durante a etapa de atualização do Helm nas instruções de instalação do Trident Protect:
 +
 [source, console]

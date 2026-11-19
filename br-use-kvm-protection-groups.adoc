@@ -16,7 +16,7 @@ summary: Crie e gerencie grupos de proteção para cargas de trabalho KVM no Net
 [role="lead"]
 Crie e gerencie grupos de proteção para que você possa fazer backup de máquinas virtuais KVM e pools de storage relacionados em conjunto.
 
-Você pode fazer o seguinte com os grupos de proteção:
+Você pode executar essas tarefas com grupos de proteção:
 
 * Crie um grupo de proteção
 * Ver detalhes de proteção
@@ -61,7 +61,7 @@ Para mais informações, consulte link:br-use-policies-create.html["Criar e gere
 [[edit-a-protection-group]]
 == Editar um grupo de proteção
 
-Edite um grupo de proteção se precisar alterar detalhes do grupo de proteção sem excluí-lo e recriá-lo.
+Edite um grupo de proteção para alterar seus detalhes sem precisar excluí-lo e recriá-lo.
 
 .Passos
 . No menu NetApp Backup and Recovery , selecione *Inventário*.

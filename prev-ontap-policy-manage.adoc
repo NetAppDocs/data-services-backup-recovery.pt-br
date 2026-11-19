@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-policy-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
+summary: Visualize, crie, edite e exclua políticas de snapshot, replicação e backup em storage de objetos que controlam a frequência e a retenção de backup para os volumes do ONTAP. 
 ---
 = Gerencie políticas de backup para volumes ONTAP com o NetApp Backup and Recovery
 :hardbreaks:
@@ -19,7 +19,7 @@ No NetApp Backup and Recovery, você pode usar as políticas de backup padrão o
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
 
-Ao usar o assistente de ativação para habilitar o serviço de backup e recuperação para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas já existentes no sistema (Cloud Volumes ONTAP ou sistema ONTAP local). Se você quiser usar uma política diferente das políticas existentes, pode criar a política antes ou enquanto usa o assistente de ativação.
+Ao usar o assistente de ativação para habilitar o serviço Backup and Recovery para seus volumes, você pode selecionar entre as políticas padrão e quaisquer outras políticas que já existam no sistema (o Cloud Volumes ONTAP ou o sistema ONTAP local). Se você quiser uma política diferente, crie-a antes ou durante o uso do assistente de ativação.
 
 Para saber mais sobre as políticas de backup padrão fornecidas, consultelink:prev-ontap-protect-journey.html["Planeje sua jornada de proteção"] .
 
@@ -55,7 +55,7 @@ TIP: Ao usar o Gerenciador do Sistema, selecione *Assíncrono* como o tipo de po
 +
 A página Gerenciamento de políticas é exibida.  As políticas de instantâneo são exibidas por padrão.
 
-. Para visualizar outras políticas existentes no sistema, selecione *Políticas de replicação* ou *Políticas de backup*.  Se as políticas existentes puderem ser usadas para seus planos de backup, está tudo pronto.  Se você precisar ter uma apólice com características diferentes, você pode criar novas apólices nesta página.
+. Para visualizar outras políticas existentes no sistema, selecione *Políticas de Replicação* ou *Políticas de Backup*. Se as políticas existentes atenderem às suas necessidades de backup, você poderá utilizá-las. Caso precise de uma política com características diferentes, você poderá criar novas políticas nesta página.
 
 
 
@@ -87,7 +87,7 @@ A página Gerenciamento de políticas é exibida.
 
 . Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política de snapshot*.
 . Especifique o nome da política.
-. Selecione o agendamento ou agendamentos de snapshot.  Você pode ter no máximo 5 rótulos.  Ou crie uma programação.
+. Selecione a(s) programação(ões) de instantâneos. Você pode ter no máximo cinco rótulos. Ou crie uma programação.
 . Se você optar por criar uma programação:
 +
 .. Selecione a frequência: horária, diária, semanal, mensal ou anual.
@@ -129,7 +129,7 @@ Sua estratégia 3-2-1 pode incluir a replicação de um volume em um sistema de 
 .Passos
 . Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política de replicação*.
 . Na seção Detalhes da política, especifique o nome da política.
-. Especifique os rótulos do SnapMirror (máximo de 5) que indicam a retenção de cada rótulo.
+. Especifique os rótulos do SnapMirror (máximo de cinco) que indicam a retenção de cada rótulo.
 . Especifique o cronograma de transferência.
 . Selecione *Criar*.
 
@@ -150,7 +150,7 @@ Esta política de armazenamento reside em diferentes locais do sistema de armaze
 .Passos
 . Na página de gerenciamento de políticas, selecione *Criar política* > *Criar política de backup*.
 . Na seção Detalhes da política, especifique o nome da política.
-. Especifique os rótulos do SnapMirror (máximo de 5) que indicam a retenção de cada rótulo.
+. Especifique os rótulos do SnapMirror (máximo de cinco) que indicam a retenção de cada rótulo.
 . Especifique as configurações, incluindo o cronograma de transferência e quando arquivar backups.
 . (Opcional) Para mover arquivos de backup mais antigos para uma classe de armazenamento ou nível de acesso menos dispendioso após um determinado número de dias, selecione a opção *Arquivar* e indique o número de dias que devem decorrer antes que os dados sejam arquivados.  Digite *0* como "Arquivo após dias" para enviar seu arquivo de backup diretamente para o armazenamento de arquivamento.
 +

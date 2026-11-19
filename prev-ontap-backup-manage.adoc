@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-manage.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Com o NetApp Backup and Recovery, gerencie backups para seus sistemas Cloud Volumes ONTAP e ONTAP locais alterando o agendamento de backup, habilitando backups de volume, pausando backups, excluindo backups e muito mais.  Você também pode cancelar o registro do NetApp Backup and Recovery. 
+summary: Gerencie backups para o Cloud Volumes ONTAP e sistemas ONTAP locais alterando agendamentos, pausando ou excluindo backups, executando verificações de ransomware e cancelando o registro do serviço. 
 ---
 = Gerencie backups para seus sistemas ONTAP com o NetApp Backup and Recovery
 :hardbreaks:
@@ -17,7 +17,7 @@ summary: Com o NetApp Backup and Recovery, gerencie backups para seus sistemas C
 Use o NetApp Backup and Recovery para gerenciar backup de snapshot, replicação e storage de objetos para seus sistemas Cloud Volumes ONTAP e ONTAP locais. Você pode alterar agendamentos, ativar ou desativar backup de volume, pausar backups, excluir backups e cancelar o registro do serviço.
 
 
-CAUTION: Não gerencie ou altere arquivos de backup diretamente em seus sistemas de armazenamento ou no ambiente do seu provedor de nuvem.  Isso pode corromper os arquivos e resultar em uma configuração não suportada.
+CAUTION: Não gerencie nem altere arquivos de backup diretamente nos seus sistemas de armazenamento nem no ambiente do seu provedor de nuvem. Isso pode corromper os arquivos e resultar em uma configuração sem suporte.
 
 
 NOTE: Para alternar entre cargas de trabalho de NetApp Backup and Recovery , consultelink:br-start-switch-ui.html["Alterne para diferentes cargas de trabalho do NetApp Backup and Recovery"] .
@@ -83,7 +83,7 @@ Ao trabalhar com vários volumes, todos os volumes devem ter estas característi
 
 * mesmo sistema
 * mesmo estilo (volume FlexVol ou FlexGroup )
-* mesmo tipo (volume de leitura e gravação ou proteção de dados)
+* mesmo tipo (volume de leitura/gravação ou volume de proteção de dados)
 
 
 Quando mais de cinco volumes estão habilitados para backup, o NetApp Backup and Recovery inicializa apenas cinco volumes por vez. Quando essas etapas forem concluídas, o processo continua em grupos de 5 até que todos os volumes sejam inicializados.
@@ -128,7 +128,7 @@ O nome do backup inclui o registro de data e hora para que você possa identific
 
 Se você habilitou o _DataLock e a proteção contra ransomware_ ao ativar o NetApp Backup and Recovery para este cluster, o backup sob demanda também será configurado com o DataLock e o período de retenção será de 30 dias. As verificações de ransomware não são compatíveis com backups ad-hoc. link:prev-ontap-policy-object-options.html["Saiba mais sobre a proteção DataLock e Ransomware"^].
 
-Quando você cria um backup ad-hoc, um snapshot é criado no volume de origem. Como esse snapshot não faz parte de um cronograma normal de snapshots, ele não será removido automaticamente. Você pode excluir manualmente esse snapshot do volume de origem após a conclusão do backup. Isso permitirá que os blocos relacionados a esse snapshot sejam liberados. O nome do snapshot começará com  `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Veja como excluir um snapshot usando a CLI do ONTAP"^].
+Quando você cria um backup ad hoc, um snapshot é criado no volume de origem. Como esse snapshot não faz parte de um agendamento normal de snapshots, ele não será removido automaticamente. Talvez você queira excluir manualmente esse snapshot do volume de origem após a conclusão do backup. Isso permitirá liberar os blocos relacionados a esse snapshot. O nome do snapshot começará com `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Veja como excluir um snapshot usando a CLI do ONTAP"^].
 
 
 NOTE: O backup de volume sob demanda não é suportado em volumes de proteção de dados.
@@ -203,7 +203,7 @@ A tabela a seguir descreve as ações disponíveis:
 | Pausar replicação | Pause a transferência incremental de snapshots para atualizar o volume de destino. Você pode Retomar mais tarde se quiser reiniciar as atualizações incrementais. 
 
 
-| Interromper a replicação | Quebra o relacionamento entre os volumes de origem e destino e ativa o volume de destino para acesso a dados, tornando-o leitura e gravação.  Esta opção normalmente é usada quando o volume de origem não pode fornecer dados devido a eventos como corrupção de dados, exclusão acidental ou estado offline.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Aprenda como configurar um volume de destino para acesso a dados e reativar um volume de origem na documentação do ONTAP"^] 
+| Interromper a replicação | Interrompe o relacionamento entre os volumes de origem e de destino e ativa o volume de destino para acesso aos dados, tornando-o de leitura/gravação. Essa opção é normalmente usada quando o volume de origem não pode disponibilizar dados devido a eventos como corrupção de dados, exclusão acidental ou estado offline.https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.html["Aprenda como configurar um volume de destino para acesso a dados e reativar um volume de origem na documentação do ONTAP"^] 
 
 
 | Abortar replicação | Desativa backups deste volume para o sistema de destino e também desabilita a capacidade de restaurar um volume.  Nenhum backup existente será excluído.  Isso não exclui o relacionamento de proteção de dados entre os volumes de origem e destino. 
@@ -212,7 +212,7 @@ A tabela a seguir descreve as ações disponíveis:
 | Ressincronização reversa | Inverte as funções dos volumes de origem e destino. O conteúdo do volume de origem original é substituído pelo conteúdo do volume de destino. Isso é útil quando você deseja reativar um volume de origem que ficou offline. Quaisquer dados gravados no volume de origem original entre a última replicação de dados e o momento em que o volume de origem foi desabilitado não são preservados. 
 
 
-| Excluir relacionamento | Exclui o relacionamento de proteção de dados entre os volumes de origem e destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso a dados, o que significa que não o torna leitura e gravação.  Esta ação também exclui o relacionamento de pares do cluster e o relacionamento de pares da VM de armazenamento (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas. 
+| Excluir relacionamento | Exclui o relacionamento de proteção de dados entre os volumes de origem e de destino, o que significa que a replicação de dados não ocorre mais entre os volumes. Esta ação não ativa o volume de destino para acesso aos dados, ou seja, não o torna de leitura/gravação. Esta ação também exclui o relacionamento de peers de clusters e o relacionamento de peers da máquina virtual de storage (SVM), se não houver outros relacionamentos de proteção de dados entre os sistemas. 
 |===
 
 

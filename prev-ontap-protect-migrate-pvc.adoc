@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-protect-migrate-pvc.html 
 keywords: migrate, pvc, nfs, storage, performance, persistence 
-summary: Aumente o desempenho do índice do catálogo em ambientes de implantação local do NetApp Console. 
+summary: Migre o armazenamento do índice do catálogo de Search and Restore para ONTAP NFS para melhorar o desempenho nos ambientes de implantação local do NetApp Console. 
 ---
 = Migrar o armazenamento do catálogo de pesquisa e restauração para o ONTAP NFS
 :hardbreaks:
@@ -58,7 +58,7 @@ kubectl get pods -n cbs | grep cloudmanager-cbs-catalog-worker- || echo "no work
 . Copie os dados do pod coordenador em execução para o ponto de montagem do ONTAP, sem diretório intermediário. O coordenador deve estar em execução.
 +
 
-NOTE: Copie o conteúdo para a raiz do volume, não para um subdiretório. O volume ONTAP é o novo  `/opt/netapp/cbs/catalog/shared`diretório. Os dados devem estar na raiz do volume para que o aplicativo os encontre nos mesmos caminhos (por exemplo, /opt/netapp/cbs/catalog/shared/cbs/<DATASET_NAME>/...). O formato do comando tar nos comandos a seguir transmite o conteúdo do diretório (incluindo arquivos ocultos) para a raiz de montagem, evitando uma pasta  `shared`aninhada.
+NOTE: Copie o conteúdo para a raiz do volume, não para um subdiretório. O volume ONTAP é o novo `/opt/netapp/cbs/catalog/shared` diretório. Os dados devem estar na raiz do volume para que o aplicativo os encontre nos mesmos caminhos, por exemplo, /opt/netapp/cbs/catalog/shared/cbs/<DATASET_NAME>/... O formato do comando tar nos comandos a seguir transmite o conteúdo do diretório, incluindo arquivos ocultos, para a raiz de montagem, evitando uma pasta `shared` aninhada.
 
 . Monte a exportação NFS do ONTAP em um ponto de montagem local na implantação local do NetApp Console. Use o mesmo servidor/caminho que você usará posteriormente em pv.yaml:
 +
@@ -166,7 +166,7 @@ spec:
     matchLabels:
       volume: ontap-nfs-share # Forces binding to the specific PV above
 ----
-. Aplique os objetos YAML aplicando primeiro o PV e depois o PVC (o PV deve existir para que o seletor de rótulo do PVC possa ser vinculado). Em seguida, verifique se a declaração do PVC está vinculada:
+. Aplique primeiro o PV e depois o PVC (o PV deve existir para que o seletor de rótulo do PVC se vincule a ele). Em seguida, verifique se a solicitação de PVC está vinculada:
 +
 [source, shell]
 ----

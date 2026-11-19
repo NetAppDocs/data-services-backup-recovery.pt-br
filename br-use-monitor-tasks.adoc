@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-monitor-tasks.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
-summary: Com o NetApp Backup and Recovery, monitore snapshots locais, replicações e trabalhos de backup que você iniciar. 
+summary: Monitore tarefas de snapshot, replicação, backup e restauração, revise alertas no Notification Center, investigue a atividade na Console Timeline e cancele tarefas em andamento. 
 ---
 = Monitorar tarefas no NetApp Backup and Recovery
 :hardbreaks:
@@ -271,7 +271,7 @@ https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.htm
 [[cancel-an-ongoing-job]]
 == Cancelar um trabalho em andamento
 
-Algumas cargas de trabalho de backup e recuperação permitem cancelar uma tarefa em andamento caso ela esteja demorando muito para ser concluída e não tenha apresentado falhas.
+Algumas cargas de trabalho do Backup and Recovery permitem cancelar uma tarefa em andamento caso ela esteja demorando muito para ser concluída e não tenha falhado.
 
 
 NOTE: Para cancelar uma tarefa de restauração do ONTAP Volumes, consulte <<Cancelar uma tarefa de restauração do ONTAP Volumes>>.

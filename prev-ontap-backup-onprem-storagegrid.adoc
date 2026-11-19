@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-storagegrid.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Conclua algumas etapas no NetApp Backup and Recovery para começar a fazer backup de dados de volume dos seus sistemas ONTAP primários locais para um sistema de armazenamento secundário e para o armazenamento de objetos nos seus sistemas NetApp StorageGRID . 
+summary: Faça backup dos dados de volume dos sistemas ONTAP locais em um sistema de storage secundário e no storage de objetos do StorageGRID, preparando seu ambiente e ativando os backups. 
 ---
 = Faça backup de dados ONTAP locais no StorageGRID com o NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Conclua algumas etapas no NetApp Backup and Recovery para começar a fa
 
 
 [role="lead"]
-No NetApp Backup and Recovery, você pode fazer backup dos dados de volume dos seus sistemas ONTAP locais primários para um sistema de storage secundário e para o StorageGRID storage de objetos. Use esta página para preparar seu ambiente e ativar os backups.
+Use o NetApp Backup and Recovery para fazer backup dos dados de volume dos seus sistemas ONTAP locais primários em um sistema de storage secundário e no storage de objetos do StorageGRID. Prepare seu ambiente e, em seguida, ative os backups para proteger seus volumes.
 
 
 NOTE: Os "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select .
@@ -151,12 +151,12 @@ Os seguintes requisitos de rede de cluster ONTAP são necessários:
 
 * O cluster ONTAP inicia uma conexão HTTPS por meio de uma porta especificada pelo usuário do LIF intercluster para o nó do gateway StorageGRID para operações de backup e restauração.  A porta é configurável durante a configuração do backup.
 +
-ONTAP lê e grava dados de e para armazenamento de objetos. O armazenamento de objetos nunca inicia, ele apenas responde.
+O ONTAP lê e grava dados de e para o storage de objetos. O storage de objetos nunca inicia uma conexão. Ele apenas responde.
 
 * O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.  O agente do Console deve residir em suas instalações.
 * Um LIF intercluster é necessário em cada nó ONTAP que hospeda os volumes dos quais você deseja fazer backup.  O LIF deve ser associado ao _IPspace_ que o ONTAP deve usar para se conectar ao armazenamento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Saiba mais sobre IPspaces"^] .
 +
-Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o IPspace a ser usado. Você deve escolher o IPspace ao qual cada LIF está associado. Pode ser o IPspace "padrão" ou um IPspace personalizado que você criou.
+Ao configurar o NetApp Backup and Recovery, o sistema solicita que você informe o IPspace a ser usado. Escolha o IPspace ao qual cada LIF está associado. Pode ser o IPspace "Default" ou um IPspace personalizado que você criou.
 
 * Os LIFs intercluster dos nós podem acessar o armazenamento de objetos (não é necessário quando o agente do Console está instalado em um site "escuro").
 * Os servidores DNS foram configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurar serviços DNS para o SVM"^] .
@@ -178,7 +178,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 * Se o cluster estiver no local, você deverá ter uma conexão da sua rede corporativa com a sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
-Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
+Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^].
 
 
 
@@ -235,7 +235,7 @@ Controle de versão de objetos:: Você não deve habilitar o controle de versão
 [[prepare-to-archive-older-backup-files-to-public-cloud-storage]]
 === Prepare-se para arquivar arquivos de backup mais antigos no armazenamento em nuvem pública
 
-Colocar arquivos de backup mais antigos em níveis de armazenamento de arquivamento economiza dinheiro ao usar uma classe de armazenamento mais barata para backups que você talvez não precise.  O StorageGRID é uma solução local (nuvem privada) que não fornece armazenamento de arquivo, mas você pode mover arquivos de backup mais antigos para armazenamento de arquivo em nuvem pública.  Quando usado dessa forma, os dados que são colocados em camadas no armazenamento em nuvem ou restaurados do armazenamento em nuvem vão entre o StorageGRID e o armazenamento em nuvem - o Console não está envolvido nessa transferência de dados.
+Mover em camadas arquivos de backup mais antigos para armazenamento de arquivamento economiza dinheiro ao usar uma classe de storage mais barata para backups de que você talvez não precise. O StorageGRID é uma solução local (nuvem privada) que não oferece armazenamento de arquivamento, mas você pode mover arquivos de backup mais antigos para armazenamento de arquivamento em nuvem pública. Com essa configuração, os dados que você move em camadas para o storage de nuvem, ou restaura do storage de nuvem, transitam entre o StorageGRID e o storage de nuvem. O Console não participa dessa transferência de dados.
 
 O suporte atual permite arquivar backups no armazenamento AWS _S3 Glacier_/_S3 Glacier Deep Archive_ ou _Azure Archive_.
 

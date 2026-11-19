@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-dashboard.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, backup, recovery, dashboard, view, health, status, alerts, notifications 
-summary: Monitorar a integridade de suas cargas de trabalho garante que você esteja ciente dos problemas com a proteção da carga de trabalho e possa tomar medidas para resolvê-los.  Visualize o status dos seus backups e restaurações e responda a quaisquer alertas que apareçam no Painel de NetApp Backup and Recovery .  Você pode revisar o resumo de proteção, o resumo de restauração, o resumo do sistema e muito mais. 
+summary: Monitore a integridade das suas cargas de trabalho, revise o status de backup e restauração e responda a alertas no Painel do NetApp Backup and Recovery. 
 ---
 = Visualize a integridade da proteção no painel do NetApp Backup and Recovery
 :hardbreaks:

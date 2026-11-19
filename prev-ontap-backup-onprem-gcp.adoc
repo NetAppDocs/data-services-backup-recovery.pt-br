@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-gcp.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
+summary: Faça backup dos dados de volume do ONTAP no local para o Google Cloud Storage com o NetApp Backup and Recovery, incluindo a preparação do agente do Console, dos clusters do ONTAP e das permissões do bucket. 
 ---
-= Faça backup de dados ONTAP locais no Google Cloud Storage com o NetApp Backup and Recovery
+= Faça backup dos dados do ONTAP local no Google Cloud com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-No NetApp Backup and Recovery, você pode fazer backup dos dados dos volumes dos seus sistemas ONTAP locais para um sistema de storage secundário e para o Google Cloud Storage. Use esta página para preparar seu ambiente e ativar backups.
+Faça backup dos dados de volume dos seus sistemas ONTAP locais no Google Cloud Storage e em um sistema de storage secundário usando o NetApp Backup and Recovery. Prepare seu ambiente e, em seguida, ative os backups.
 
 
 NOTE: Os "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select .
@@ -33,7 +33,7 @@ Escolha qual dos dois métodos de conexão você usará ao configurar backups de
 * *Conexão privada* - Use uma VPN ou o Google Cloud Interconnect e direcione o tráfego por meio de uma interface de acesso privado do Google que usa um endereço IP privado.
 
 
-Opcionalmente, você pode se conectar a um sistema ONTAP secundário para volumes replicados usando também a conexão pública ou privada.
+Você também pode usar a conexão pública ou privada para se conectar a um sistema secundário do ONTAP para volumes replicados.
 
 O diagrama a seguir mostra o método *conexão pública* e as conexões que você precisa preparar entre os componentes. O agente do Console deve ser implantado na VPC do Google Cloud Platform.
 
@@ -57,7 +57,7 @@ O agente do Console é o software principal para a funcionalidade do NetApp Cons
 
 Se você já tiver um agente de console implantado na sua VPC do Google Cloud Platform, está tudo pronto.
 
-Caso contrário, você precisará criar um agente do Console nesse local para fazer backup dos dados do ONTAP no Google Cloud Storage.  Você não pode usar um agente do Console implantado em outro provedor de nuvem ou no local.
+Se você não tiver um, crie um agente do Console nesse local para fazer backup dos dados do ONTAP no Google Cloud Storage. Você não pode usar um agente do Console implantado em outro provedor de nuvem ou no ambiente local.
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Instalar um agente de console no GCP"^]
@@ -92,7 +92,7 @@ Para usar a funcionalidade "Pesquisar e restaurar" do NetApp Backup and Recovery
 
 .Passos
 . No https://console.cloud.google.com["Console do Google Cloud"^] , vá para a página *Funções*.
-. Usando a lista suspensa na parte superior da página, selecione o projeto ou a organização que contém a função que você deseja editar.
+. Na lista suspensa na parte superior da página, selecione o projeto ou a organização que contém a função que você deseja editar.
 . Selecione uma função personalizada.
 . Selecione *Editar função* para atualizar as permissões da função.
 . Selecione *Adicionar permissões* para adicionar as seguintes novas permissões à função.
@@ -192,19 +192,19 @@ Os seguintes requisitos de rede de cluster ONTAP são necessários:
 
 * O cluster ONTAP inicia uma conexão HTTPS pela porta 443 do LIF intercluster para o Google Cloud Storage para operações de backup e restauração.
 +
-ONTAP lê e grava dados de e para armazenamento de objetos. O armazenamento de objetos nunca inicia, ele apenas responde.
+O ONTAP lê e grava dados de e para o storage de objetos. O storage de objetos nunca inicia uma conexão. Ele apenas responde.
 
 * O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.  O agente do Console pode residir em uma VPC do Google Cloud Platform.
 * Um LIF intercluster é necessário em cada nó ONTAP que hospeda os volumes dos quais você deseja fazer backup.  O LIF deve ser associado ao _IPspace_ que o ONTAP deve usar para se conectar ao armazenamento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Saiba mais sobre IPspaces"^] .
 +
 Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o IPspace a ser usado. Você deve escolher o IPspace ao qual cada LIF está associado. Pode ser o IPspace "padrão" ou um IPspace personalizado que você criou.
 
-* Os LIFs intercluster dos nós conseguem acessar o armazenamento de objetos.
+* As LIFs de intercluster dos nós podem acessar o armazenamento de objetos.
 * Os servidores DNS foram configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurar serviços DNS para o SVM"^] .
 +
 Se você estiver usando o Private Google Access ou o Private Service Connect, certifique-se de que seus servidores DNS foram configurados para apontar `storage.googleapis.com` para o endereço IP interno (privado) correto.
 
-* Observe que, se você estiver usando um IPspace diferente do Default, talvez seja necessário criar uma rota estática para acessar o storage de objetos.
+* Se você usar um IPspace diferente de Default, talvez precise criar uma rota estática para acessar o storage de objetos.
 * Atualize as regras de firewall, se necessário, para permitir conexões do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta 443 e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).
 
 
@@ -222,7 +222,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 * Se o cluster estiver no local, você deverá ter uma conexão da sua rede corporativa com a sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
-Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
+Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^].
 
 
 
@@ -329,8 +329,8 @@ cloudkms.keyRings.setIamPolicy
 *Considerações sobre CMEK:*
 
 * Tanto chaves HSM (com suporte de hardware) quanto chaves geradas por software são suportadas.
-* Chaves do Cloud KMS recém-criadas ou importadas são suportadas.
-* Somente chaves regionais são suportadas, chaves globais não são suportadas.
+* Há suporte para chaves do Cloud KMS recém-criadas e importadas.
+* Somente chaves regionais são suportadas. Chaves globais não são suportadas.
 * Atualmente, apenas a finalidade "Criptografar/descriptografar simetricamente" é suportada.
 * O agente de serviço associado à conta de armazenamento recebe a função IAM "Criptografador/Descriptografador CryptoKey (roles/cloudkms.cryptoKeyEncrypterDecrypter)" do NetApp Backup and Recovery.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Você pode usar a função Pesquisar e Restaurar para recuperar volumes, pastas ou arquivos de backup do ONTAP. 
+summary: Compare a opção Navegar e restaurar com a opção Pesquisar e restaurar e escolha como restaurar volumes, pastas ou arquivos do ONTAP a partir de snapshots, volumes replicados ou arquivos de backup. 
 ---
 = Opções de restauração de dados do ONTAP em NetApp Backup and Recovery
 :hardbreaks:
@@ -26,7 +26,7 @@ NOTE: Ao restaurar um volume com SnapLock habilitado, o volume restaurado manté
 
 Você precisa de uma licença válida do NetApp Backup and Recovery para restaurar dados em um sistema de produção.
 
-Para resumir, estes são os fluxos válidos que você pode usar para restaurar dados de volume em um sistema ONTAP :
+Esses fluxos são válidos para restaurar dados de volume em um sistema ONTAP:
 
 * Arquivo de backup -> volume restaurado
 * Volume replicado -> volume restaurado
@@ -58,7 +58,7 @@ O Painel de Restauração oferece duas maneiras diferentes de restaurar dados de
 
 Em termos gerais, a opção _Browse & Restore_ é geralmente mais adequada quando você precisa restaurar um volume, pasta ou arquivo específico da última semana ou mês e sabe o nome, a localização e a data em que o arquivo estava em bom estado pela última vez. A opção _Search & Restore_ é geralmente mais adequada quando você precisa restaurar um volume, pasta ou arquivo, mas não se lembra do nome exato, do volume em que ele está localizado ou da data em que estava em bom estado pela última vez.
 
-Esta tabela fornece uma comparação de recursos dos dois métodos.
+A tabela compara os recursos dos dois métodos.
 
 [cols="50,50"]
 |===
@@ -73,7 +73,7 @@ Esta tabela fornece uma comparação de recursos dos dois métodos.
 
 | A restauração rápida é suportada. | A restauração rápida não é suportada. 
 |===
-Esta tabela fornece uma lista de operações de restauração válidas com base no local onde seus arquivos de backup residem.
+A tabela lista as operações de restauração válidas para cada local onde seus arquivos de backup estão armazenados.
 
 [cols="14h,14,14,14,14,14,14"]
 |===
@@ -91,7 +91,7 @@ Esta tabela fornece uma lista de operações de restauração válidas com base 
 
 | Arquivo de backup | Sim | Sim | Sim | Sim | Sim | Sim 
 |===
-Antes de usar qualquer um dos métodos de restauração, configure seu ambiente para atender aos requisitos de recursos.  Consulte as seções seguintes para obter mais detalhes.
+Antes de usar qualquer um dos métodos de restauração, configure seu ambiente para atender aos requisitos de recursos.
 
 Veja os requisitos e as etapas de restauração para o tipo de operação de restauração que você deseja usar:
 

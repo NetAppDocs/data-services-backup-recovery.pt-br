@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-restart-backup.html 
 keywords: backup restart, restart backup 
-summary: Pode haver situações em que você precisará reiniciar o NetApp Backup and Recovery. 
+summary: Reinicie o NetApp Backup and Recovery no host do agente do Console usando o comando do Docker ou do Podman para o seu tipo de implantação. 
 ---
 = Reinicie o NetApp Backup and Recovery
 :hardbreaks:

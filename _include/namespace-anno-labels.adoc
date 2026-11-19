@@ -27,7 +27,7 @@ helm upgrade trident-protect -n trident-protect netapp-trident-protect/trident-p
   --reuse-values
 ----
 
-NOTE: Durante a restauração ou failover, quaisquer anotações e rótulos de namespace especificados em `restoreSkipNamespaceAnnotations` e `restoreSkipNamespaceLabels` são excluídos da operação de restauração ou failover. Certifique-se de que essas configurações sejam definidas durante a instalação inicial do Helm. Para saber mais, consulte https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configurar configurações adicionais do helm chart do Trident Protect"].
+NOTE: Durante a restauração ou o failover, quaisquer anotações e rótulos de namespace especificados em `restoreSkipNamespaceAnnotations` e `restoreSkipNamespaceLabels` são excluídos da operação de restauração ou failover. Configure essas definições durante a instalação inicial do Helm. Para saber mais, consulte https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-customize-installation.html#configure-additional-trident-protect-helm-chart-settings["Configurar configurações adicionais do helm chart do Trident Protect"].
 
 Se você usou o Helm com a  `--create-namespace` flag para instalar o aplicativo de origem, Trident Protect copia o rótulo de nome para o namespace de destino. Se o valor do rótulo corresponder ao nome do namespace de origem, ele será substituído pelo nome do namespace de destino; caso contrário, permanecerá como está.
 
@@ -74,7 +74,7 @@ A tabela a seguir ilustra o estado dos namespaces de origem e destino do exemplo
 
 ==== Após a operação de restauração
 
-A tabela a seguir ilustra o estado do namespace de destino de exemplo após a operação de restauração ou failover. Algumas chaves foram adicionadas, outras foram sobrescritas e o  `name` rótulo foi atualizado para corresponder ao namespace de destino:
+A tabela a seguir ilustra o estado do namespace de destino de exemplo após a operação de restauração ou failover. A operação adicionou algumas chaves, sobrescreveu outras e atualizou o `name` rótulo para corresponder ao namespace de destino:
 
 [cols="1,2a,2a"]
 |===

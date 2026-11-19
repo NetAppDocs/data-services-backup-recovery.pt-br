@@ -16,7 +16,7 @@ summary: Crie e gerencie grupos de proteção para cargas de trabalho do Hyper-V
 [role="lead"]
 Crie grupos de proteção para proteger VMs Hyper-V relacionadas em conjunto e gerencie suas operações de backup no NetApp Backup and Recovery.
 
-Você pode executar as seguintes tarefas relacionadas a grupos de proteção:
+Você pode executar estas tarefas de grupo de proteção:
 
 * Crie um grupo de proteção.
 * Veja os detalhes do grupo de proteção.

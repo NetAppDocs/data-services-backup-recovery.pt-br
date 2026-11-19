@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-backup-onprem-ontaps3.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
+summary: Faça backup de dados de volume de sistemas ONTAP on-premises para o ONTAP S3, replique-os para um sistema secundário e ative os backups com o NetApp Backup and Recovery. 
 ---
 = Faça backup de dados ONTAP locais no ONTAP S3 com o NetApp Backup and Recovery
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery.
 
 
 [role="lead"]
-No NetApp Backup and Recovery, você pode fazer backup dos dados de volume dos seus sistemas ONTAP locais primários para o ONTAP S3 e, opcionalmente, para um sistema ONTAP secundário para replicação. Use esta página para preparar seu ambiente e ativar backups.
+No NetApp Backup and Recovery, você pode fazer backup dos dados de volume de seus sistemas ONTAP locais primários para o ONTAP S3 e, opcionalmente, para um sistema ONTAP secundário para replicação. Prepare seu ambiente e ative os backups.
 
 O sistema ONTAP local principal pode ser um sistema FAS, AFF ou ONTAP Select .  O sistema ONTAP secundário pode ser um sistema ONTAP local ou Cloud Volumes ONTAP .  O armazenamento de objetos pode estar em um sistema ONTAP local ou em um sistema Cloud Volumes ONTAP no qual você habilitou um servidor de armazenamento de objetos do Simple Storage Service (S3).
 
@@ -38,7 +38,7 @@ A imagem a seguir mostra cada componente ao fazer backup de um sistema ONTAP loc
 
 image:diagram_cloud_backup_onprem_ontap_s3_cloud.png["Um diagrama mostrando como o NetApp Backup and Recovery se comunica com os volumes nos sistemas de origem e no armazenamento de destino onde os arquivos de backup estão localizados."]
 
-Neste cenário, o agente do Console deve ser implantado no mesmo ambiente do provedor de nuvem em que os sistemas Cloud Volumes ONTAP são implantados.
+Nesse cenário, implante o agente do Console no mesmo ambiente do provedor de nuvem que os sistemas Cloud Volumes ONTAP.
 
 
 
@@ -86,7 +86,7 @@ Quando você usa o NetApp Backup and Recovery em um ambiente SaaS padrão, os da
 [[verify-license-requirements]]
 == Verificar requisitos de licença
 
-Antes de ativar o NetApp Backup and Recovery para seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp. A licença é para backup e restauração em armazenamento de objetos; nenhuma licença é necessária para criar snapshots ou volumes replicados. Esta licença é para a conta e pode ser usada em vários sistemas.
+Antes de ativar o NetApp Backup and Recovery para o seu cluster, você precisará comprar e ativar uma licença BYOL do NetApp Backup and Recovery da NetApp. A licença é para backup e restauração em storage de objetos. Nenhuma licença é necessária para criar snapshots ou volumes replicados. Esta licença é para a conta e pode ser usada em vários sistemas.
 
 Você precisará do número de série da NetApp que lhe permitirá usar o serviço durante a duração e a capacidade da licença. link:br-start-licensing.html["Aprenda a gerenciar suas licenças BYOL"].
 
@@ -156,20 +156,20 @@ link:prev-ontap-protect-journey.html["Saiba mais sobre os tipos de arquitetura d
 
 
 ====
-Os seguintes requisitos de rede de cluster ONTAP são necessários:
+Configure o cluster do ONTAP para atender a estes requisitos de rede:
 
 * O cluster ONTAP inicia uma conexão HTTPS por meio de uma porta especificada pelo usuário do LIF intercluster para o servidor ONTAP S3 para operações de backup e restauração.  A porta é configurável durante a configuração do backup.
 +
-ONTAP lê e grava dados de e para armazenamento de objetos. O armazenamento de objetos nunca inicia, ele apenas responde.
+O ONTAP lê e grava dados de e para o storage de objetos. O storage de objetos nunca inicia uma conexão. Ele apenas responde.
 
 * O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.
 * Um LIF intercluster é necessário em cada nó ONTAP que hospeda os volumes dos quais você deseja fazer backup.  O LIF deve ser associado ao _IPspace_ que o ONTAP deve usar para se conectar ao armazenamento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Saiba mais sobre IPspaces"^] .
 +
-Ao configurar o NetApp Backup and Recovery, você será solicitado a informar o IPspace a ser usado. Você deve escolher o IPspace ao qual cada LIF está associado. Pode ser o IPspace "padrão" ou um IPspace personalizado que você criou.
+Ao configurar o NetApp Backup and Recovery, você deverá escolher o IPspace a ser usado. Escolha o IPspace associado a cada LIF. Pode ser o IPspace "Default" ou um IPspace personalizado que você criou.
 
 * Os LIFs intercluster dos nós podem acessar o armazenamento de objetos (não é necessário quando o agente do Console está instalado em um site "escuro").
 * Os servidores DNS foram configurados para a VM de armazenamento onde os volumes estão localizados.  Veja como https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["configurar serviços DNS para o SVM"^] .
-* Se você estiver usando um IPspace diferente do Default, talvez seja necessário criar uma rota estática para acessar o storage de objetos.
+* Se você usar um IPspace diferente de Default, talvez precise criar uma rota estática para acessar o storage de objetos.
 * Atualize as regras de firewall, se necessário, para permitir conexões de serviço do NetApp Backup and Recovery do ONTAP para o armazenamento de objetos pela porta especificada (normalmente a porta 443) e tráfego de resolução de nomes da VM de armazenamento para o servidor DNS pela porta 53 (TCP/UDP).
 
 
@@ -187,7 +187,7 @@ Se você planeja criar volumes replicados em um sistema ONTAP secundário usando
 * Se o cluster estiver no local, você deverá ter uma conexão da sua rede corporativa com a sua rede virtual no provedor de nuvem. Normalmente, essa é uma conexão VPN.
 * Os clusters ONTAP devem atender a requisitos adicionais de sub-rede, porta, firewall e cluster.
 +
-Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^] .
+Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, revise os requisitos de peering para sistemas ONTAP locais. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Veja os pré-requisitos para peering de cluster na documentação do ONTAP"^].
 
 
 
@@ -205,7 +205,7 @@ Como você pode replicar para o Cloud Volumes ONTAP ou para sistemas locais, rev
 
 Você deve habilitar um servidor de armazenamento de objetos do Simple Storage Service (S3) no cluster ONTAP que você planeja usar para backups de armazenamento de objetos. Veja o https://docs.netapp.com/us-en/ontap/s3-config/index.html["Documentação do ONTAP S3"^] para mais detalhes.
 
-*Observação:* você pode adicionar este cluster à página *Sistemas* do Console, mas ele não é identificado como um servidor de armazenamento de objetos S3, e você não pode arrastar e soltar um sistema de origem neste sistema S3 para iniciar a ativação do backup.
+*Observação:* Você pode adicionar este cluster à página *Sistemas* do Console, mas o Console não o identifica como um servidor de storage de objetos S3. Você não pode arrastar e soltar um sistema de origem neste sistema S3 para iniciar a ativação do backup.
 
 Este sistema ONTAP deve atender aos seguintes requisitos.
 
@@ -263,7 +263,7 @@ A página de Introdução do assistente mostra as opções de proteção, inclui
 
 . Continue com as seguintes opções:
 +
-** Se você já tem um agente do Console, está tudo pronto.  Basta selecionar *Avançar*.
+** Se você já possui um agente Console, selecione *Avançar*.
 ** Se você não tiver um agente do Console, a opção *Adicionar um agente do Console* será exibida.  Consulte<<Prepare seu agente de console>> .
 
 
@@ -286,12 +286,12 @@ Você pode optar por proteger volumes FlexVol ou FlexGroup ; no entanto, não é
 
 ====
 .Passos
-Observe que, se os volumes escolhidos já tiverem políticas de snapshot ou replicação aplicadas, as políticas selecionadas posteriormente substituirão essas políticas existentes.
+Se os volumes que você escolher já tiverem políticas de snapshot ou replicação aplicadas, as políticas que você selecionar posteriormente substituirão essas políticas existentes.
 
 . Na página Selecionar volumes, selecione o volume ou volumes que você deseja proteger.
 +
 ** Opcionalmente, filtre as linhas para mostrar apenas volumes com determinados tipos de volume, estilos e muito mais para facilitar a seleção.
-** Depois de selecionar o primeiro volume, você pode selecionar todos os volumes FlexVol (os volumes FlexGroup podem ser selecionados apenas um de cada vez).  Para fazer backup de todos os volumes FlexVol existentes, marque primeiro um volume e depois marque a caixa na linha de título.
+** Depois que você selecionar o primeiro volume, poderá selecionar todos os volumes FlexVol (os volumes FlexGroup podem ser selecionados apenas um de cada vez). Para fazer backup de todos os volumes FlexVol existentes, primeiro marque um volume e, em seguida, marque a caixa na linha do título.
 ** Para fazer backup de volumes individuais, marque a caixa de cada volume.
 
 
@@ -396,7 +396,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 
 
 +
-** *Exportar snapshots existentes para o storage de objetos como arquivos de backup*: Se houver snapshots locais para volumes neste sistema que correspondam ao rótulo de agendamento de backup que você acabou de selecionar (por exemplo, diário, semanal etc.), esta mensagem adicional será exibida. Marque esta caixa para que todos os snapshots históricos sejam copiados para o storage de objetos como arquivos de backup, garantindo a proteção mais completa para seus volumes.
+** *Exportar snapshots existentes para storage de objetos como arquivos de backup*: se houver snapshots locais de volumes neste sistema que correspondam ao rótulo da programação de backup que você acabou de selecionar (por exemplo, diário ou semanal), o Console exibirá este aviso adicional. Marque esta caixa para que todos os snapshots históricos sejam copiados para o storage de objetos como arquivos de backup, garantindo a proteção mais completa para seus volumes.
 
 
 . Selecione *Avançar*.
@@ -407,7 +407,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 [[review-your-selections]]
 === Revise suas seleções
 
-Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
+Revise suas escolhas e faça ajustes se necessário.
 
 .Passos
 . Na página Revisão, revise suas seleções.
@@ -431,7 +431,7 @@ Você também pode monitorar o status dos trabalhos de backup e restauração us
 [[show-the-api-commands]]
 === Mostrar os comandos da API
 
-Você pode exibir e, opcionalmente, copiar os comandos da API usados no assistente de ativação do NetApp Backup and Recovery. Você pode querer fazer isso para automatizar a ativação de backup em sistemas futuros.
+Exiba e, opcionalmente, copie os comandos da API usados no assistente Activate Backup and Recovery para automatizar a ativação do backup em sistemas futuros.
 
 .Passos
 . No assistente Ativar backup e recuperação, selecione *Visualizar solicitação de API*.

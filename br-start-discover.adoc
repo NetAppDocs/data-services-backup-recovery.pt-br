@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-start-discover.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: O NetApp Backup and Recovery precisa primeiro descobrir as cargas de trabalho para que você possa usar o serviço. 
+summary: Descubra cargas de trabalho do Microsoft SQL Server no NetApp Backup and Recovery e, opcionalmente, importe recursos, hosts, credenciais e agendamentos do SnapCenter. 
 ---
 = Descubra as cargas de trabalho do Microsoft SQL Server em NetApp Backup and Recovery
 :hardbreaks:
@@ -35,7 +35,7 @@ IMPORTANT: Antes de fazer alterações, verifique tanto a configuração existen
 
 
 .Passos
-. Verifique a configuração existente do CoreDNS para garantir que você não esteja sobrescrevendo uma alteração já existente:
+. Verifique a configuração existente do CoreDNS para confirmar que você não está sobrescrevendo uma alteração já existente:
 +
 [source, shell]
 ----
@@ -250,9 +250,9 @@ A descoberta ocorre das seguintes maneiras:
 * Se você já tiver o SnapCenter, importe os recursos do SnapCenter para o NetApp Backup and Recovery usando a interface do usuário do NetApp Backup and Recovery .
 +
 
-NOTE: Se você já possui o SnapCenter, primeiro verifique se atendeu aos pré-requisitos antes de importar do SnapCenter. Por exemplo, você deve adicionar sistemas de storage em cluster locais do SnapCenter ao NetApp Console antes de importar do SnapCenter. Consulte link:concept-start-prereq-snapcenter-import.html["Pré-requisitos para importar recursos do SnapCenter"].
+NOTE: Se você já possui o SnapCenter, confirme que atendeu aos pré-requisitos antes de importar do SnapCenter. Por exemplo, adicione os sistemas de armazenamento de cluster locais do SnapCenter ao NetApp Console antes de importar do SnapCenter. Consulte link:concept-start-prereq-snapcenter-import.html["Pré-requisitos para importar recursos do SnapCenter"].
 
-* Se você ainda não possui o SnapCenter, ainda pode descobrir cargas de trabalho adicionando um vCenter manualmente e realizando a descoberta.
+* Se você ainda não tem o SnapCenter, ainda pode descobrir cargas de trabalho adicionando um vCenter manualmente e realizando a descoberta.
 
 
 
@@ -327,7 +327,7 @@ Após importar os recursos do SnapCenter, gerencie os recursos do host no NetApp
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Ver detalhes* para exibir os detalhes da carga de trabalho.
 . Na página Inventário > carga de trabalho, selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Gerenciar* para exibir a página Gerenciar host.
 . Selecione *Gerenciar*.
-. Na página Gerenciar host, selecione se deseja usar um vCenter existente ou adicionar um novo vCenter.
+. Na página Gerenciar host, selecione um vCenter existente ou adicione um novo vCenter.
 . Selecione *Gerenciar*.
 +
 A página Inventário mostra os recursos do SnapCenter recém-gerenciados.

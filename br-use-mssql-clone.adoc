@@ -16,7 +16,7 @@ summary: Clone os dados de aplicativos do Microsoft SQL Server para fins de dese
 [role="lead"]
 Crie, atualize, divida e exclua clones do Microsoft SQL Server para desenvolvimento, teste ou proteção.
 
-Escolha entre os seguintes tipos de clones:
+Escolha um destes tipos de clones:
 
 * *Snapshot e clone instantâneos*: Você pode criar um clone das suas cargas de trabalho do Microsoft SQL Server a partir de um snapshot instantâneo, que é uma cópia pontual dos dados de origem criada a partir de um backup. O clone é armazenado em um repositório de objetos na sua conta de nuvem pública ou privada. Você pode usar o clone para restaurar suas cargas de trabalho em caso de perda ou corrupção de dados.
 * *Clonar de um snapshot existente*: Você pode escolher um snapshot existente em uma lista de snapshots disponíveis para a carga de trabalho.  Esta opção é útil se você quiser criar um clone de um ponto específico no tempo.  Clonar para armazenamento primário ou secundário.
@@ -83,7 +83,7 @@ Opcionalmente, selecione *Sufixo* na lista suspensa de nomes de destino e adicio
 . Preencha a seção *Opções avançadas*.
 . Se você escolher *Instant snapshot and clone*, preencha as seguintes opções:
 +
-** *Agendamento e expiração da atualização do clone*: insira a data em que a atualização do clone deve começar. O agendamento de atualização define quando a atualização do clone terá início.
+** *Agendamento e expiração da atualização do clone*: insira a data para iniciar a atualização do clone. O agendamento de atualização define quando a atualização do clone começa.
 +
 *** *Excluir clone se o agendamento expirar*: selecione esta opção para excluir o clone quando o agendamento expirar.
 *** *Atualizar clone a cada*: selecione a frequência de atualização. Você pode optar por atualizar o clone a cada hora, diariamente, semanalmente, mensalmente ou trimestralmente. Essa opção mantém o clone sincronizado com a carga de trabalho de origem.
@@ -114,7 +114,7 @@ Você tem a opção de alterar o nome do banco de dados, usar o snapshot instant
 . Preencha a seção *Configurações avançadas*:
 +
 ** *Escopo de recuperação*: escolha se deseja recuperar todos os backups de log ou os backups de log até um momento específico.  Esta opção é útil se você quiser recuperar o clone para um ponto específico no tempo.
-** *Agendamento e expiração da atualização do clone*: insira a data em que a atualização do clone deve começar. O agendamento de atualização define quando a atualização do clone terá início.
+** *Agendamento e expiração da atualização do clone*: insira a data para iniciar a atualização do clone. O agendamento de atualização define quando a atualização do clone começa.
 +
 *** *Excluir clone se o agendamento expirar*: selecione esta opção para excluir o clone quando o agendamento expirar.
 *** *Atualizar clone a cada*: selecione a frequência de atualização. Você pode optar por atualizar o clone a cada hora, diariamente, semanalmente, mensalmente ou trimestralmente. Essa opção mantém o clone sincronizado com a carga de trabalho de origem.
@@ -178,7 +178,7 @@ Remova clones das suas cargas de trabalho do Microsoft SQL Server para liberar e
 . Selecione o ícone Açõesimage:../media/icon-action.png["Opção de ações"] > *Excluir clone*.
 . Na caixa de diálogo de confirmação de exclusão do clone, revise os detalhes da exclusão.
 +
-.. Para excluir os recursos clonados do SnapCenter , mesmo que os clones ou seu armazenamento não estejam acessíveis, selecione *Forçar exclusão*.
+.. Para excluir os recursos clonados do SnapCenter, mesmo que os clones ou seu armazenamento não estejam acessíveis, selecione *Forçar exclusão*.
 .. Selecione *Excluir*.
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-limitations-hyperv.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Hyper-V, SAP HANA database, virtual machine, vm 
-summary: Analise estas limitações do NetApp Backup and Recovery antes de usar Backup and Recovery em seu ambiente. 
+summary: Revise as limitações e as ações não suportadas para cargas de trabalho do Hyper-V antes de usar o NetApp Backup and Recovery para proteger máquinas virtuais. 
 ---
 = Limitações conhecidas com o NetApp Backup and Recovery para cargas de trabalho do Hyper-V
 :hardbreaks:
@@ -21,10 +21,10 @@ Analise as limitações atuais e as ações não suportadas para cargas de traba
 [[unsupported-actions]]
 == Ações não suportadas
 
-As seguintes ações não são suportadas para cargas de trabalho do Hyper-V em NetApp Backup and Recovery:
+O NetApp Backup and Recovery não oferece suporte a estas ações para cargas de trabalho do Hyper-V:
 
 * Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
 * O NetApp Backup and Recovery atualmente não oferece suporte à proteção de LUNs do Hyper-V hospedados em volumes FlexGroup.
 * Não é possível criar grupos de recursos com máquinas virtuais de vários hosts do Hyper-V.
-* Não é possível restaurar máquinas virtuais ou dados de máquinas virtuais entre sistemas com processadores de fornecedores diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Compatibilidade de processador" no Hyper-V. Essa configuração suporta apenas compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
+* Não é possível restaurar VMs ou dados de VM entre sistemas com fornecedores de CPU diferentes (Intel para AMD ou vice-versa), independentemente da configuração de "Processor compatibility" no Hyper-V. Essa configuração oferece suporte apenas à compatibilidade entre diferentes gerações do mesmo fornecedor (por exemplo, Intel para Intel ou AMD para AMD).
 

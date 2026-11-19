@@ -126,7 +126,7 @@ As opções de destino aparecem.
 
 
 
-[[restore-to-specific-point-in-time]]
+[[restore-to-a-specific-point-in-time]]
 === Restaurar para um ponto específico no tempo
 
 O NetApp Backup and Recovery usa logs e os snapshots mais recentes para criar uma restauração pontual dos seus dados.

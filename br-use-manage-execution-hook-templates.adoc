@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-execution-hook-templates.html 
 keywords: hooks, execution hooks, exec hooks, hook, execution, script, postscript, prescript, post, pre, run, backup, snapshot, freeze 
-summary: O NetApp Backup and Recovery permite que você gerencie ganchos de execução para agir antes ou depois das operações de proteção de aplicativos. 
+summary: Gerencie ganchos de execução para executar scripts personalizados antes ou depois das operações de proteção em aplicativos Kubernetes no NetApp Backup and Recovery. 
 ---
 = Gerencie modelos de gancho de execução do Kubernetes em NetApp Backup and Recovery
 :hardbreaks:
@@ -92,7 +92,7 @@ NOTE: Os hooks de execução podem reduzir ou desativar a funcionalidade do apli
 [[execution-hook-filters]]
 == Filtros de gancho de execução
 
-Ao adicionar ou editar um gancho de execução para um aplicativo, você pode adicionar filtros a esse gancho para controlar a quais contêineres ele corresponde. Os filtros são úteis para aplicativos que usam a mesma imagem de contêiner em todos os contêineres, mas que podem usar cada imagem para uma finalidade diferente (como Elasticsearch). Os filtros permitem criar cenários em que os ganchos de execução são executados em alguns, mas não necessariamente em todos os contêineres idênticos. Se você criar vários filtros para um único gancho de execução, eles serão combinados com um operador lógico AND. Você pode ter até 10 filtros ativos por gancho de execução.
+Ao adicionar ou editar um gancho de execução para uma aplicação, você pode adicionar filtros ao gancho de execução para controlar com quais contêineres o gancho corresponde. Os filtros são úteis para aplicações que usam a mesma imagem de contêiner em todos os contêineres, mas podem usar cada imagem para uma finalidade diferente, como o Elasticsearch. Os filtros permitem que os ganchos de execução sejam executados em alguns, mas não em todos, os contêineres idênticos. Se você criar vários filtros para um único gancho de execução, eles serão combinados com um operador lógico AND. Você pode ter até 10 filtros ativos por gancho de execução.
 
 Cada filtro que você adiciona a um gancho de execução usa uma expressão regular para corresponder contêineres no seu cluster. Quando um gancho corresponde a um contêiner, o gancho executa o script associado nesse contêiner. As expressões regulares para filtros usam a sintaxe Regular Expression 2 (RE2), que não permite criar um filtro que exclua contêineres da lista de correspondências. Para obter informações sobre a sintaxe que o NetApp Backup and Recovery oferece suporte para expressões regulares em filtros de ganchos de execução, consulte  https://github.com/google/re2/wiki/Syntax["Suporte à sintaxe de Expressão Regular 2 (RE2)"^].
 
@@ -125,7 +125,7 @@ NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de 
 . Expanda a seção *Modelo de gancho de execução*.
 . Selecione *Criar modelo de gancho de execução*.
 . Digite um nome para o gancho de execução.
-. Opcionalmente, escolha um tipo de gancho. Por exemplo, um gancho pós-restauração é executado após a conclusão da operação de restauração.
+. Opcionalmente, escolha um tipo de hook. Por exemplo, um hook pós-restauração é executado após a conclusão da operação de restauração.
 . Na caixa de texto *Script*, insira o script de shell executável que você deseja executar como parte do modelo de gancho de execução.  Opcionalmente, você pode selecionar *Carregar script* para carregar um arquivo de script.
 . Selecione *Criar*.
 +

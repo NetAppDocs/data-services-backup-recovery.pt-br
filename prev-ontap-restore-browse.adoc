@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: prev-ontap-restore-browse.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Com NetApp Backup and Recovery, restaure os dados do ONTAP usando Navegar e Restaurar. 
+summary: Restaure volumes, pastas e arquivos do ONTAP de snapshots, volumes replicados ou backups de storage de objetos usando Browse and Restore no NetApp Backup and Recovery. 
 ---
 = Restaure os dados do ONTAP usando a opção Procurar e Restaurar em NetApp Backup and Recovery
 :hardbreaks:
@@ -121,7 +121,7 @@ Para Navegar e Restaurar, o agente do Console pode ser instalado nos seguintes l
 * Para o ONTAP S3, o agente do Console pode ser implementado localmente (com ou sem acesso à internet) ou em um ambiente de provedor de nuvem
 
 
-Observe que as referências a "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select.
+As referências a "sistemas ONTAP locais" incluem os sistemas FAS, AFF e ONTAP Select.
 
 
 NOTE: Se a versão do ONTAP no seu sistema for inferior a 9.13.1, você não poderá restaurar pastas ou arquivos se o arquivo de backup tiver sido configurado com DataLock & Ransomware.  Nesse caso, você pode restaurar o volume inteiro a partir do arquivo de backup e depois acessar os arquivos necessários.
@@ -157,7 +157,7 @@ A coluna *Localização* mostra se o arquivo de backup (snapshot) é *Local* (um
 
 . Selecione *Avançar*.
 +
-Observe que, se você selecionar um arquivo de backup no storage de objetos e a proteção contra ransomware estiver ativa para esse backup (caso você tenha habilitado o DataLock e a proteção contra ransomware na política de backup), será solicitado que você execute uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique o arquivo de backup em busca de ransomware. (Você incorrerá em custos adicionais de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
+Se você selecionar um arquivo de backup no storage de objetos e a proteção contra ransomware estiver ativa para esse backup (caso você tenha habilitado DataLock e a proteção contra ransomware na política de backup), será solicitado que você execute uma verificação adicional de ransomware no arquivo de backup antes de restaurar os dados. Recomendamos que você verifique o arquivo de backup em busca de ransomware. (Você terá custos adicionais de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.)
 
 . Na página _Selecionar destino_, selecione o *sistema* onde você deseja restaurar o volume.
 . Ao restaurar um arquivo de backup do armazenamento de objetos, se você selecionar um sistema ONTAP local e ainda não tiver configurado a conexão do cluster com o armazenamento de objetos, serão solicitadas informações adicionais:
@@ -195,7 +195,7 @@ Você retorna ao Painel de Restauração para que possa revisar o progresso da o
 .Resultado
 O NetApp Backup and Recovery cria um novo volume com base no backup selecionado.
 
-Observe que restaurar um volume de um arquivo de backup que reside no armazenamento de arquivamento pode levar muitos minutos ou horas, dependendo da camada de arquivamento e da prioridade de restauração.  Você pode selecionar a aba *Monitoramento de Tarefas* para ver o progresso da restauração.
+Restaurar um volume a partir de um arquivo de backup que reside em um storage de arquivamento pode levar vários minutos ou horas, dependendo da camada de arquivamento e da prioridade da restauração. Você pode selecionar a guia *Monitoramento de Tarefas* para ver o progresso da restauração.
 
 
 

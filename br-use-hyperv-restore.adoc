@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyperv-restore.html 
 keywords: restore, vm, virtual machine, snapshots, object storage, cloud storage, backing up, back up, backup, Amazon Web services, AWS, NetApp Backup and Recovery 
-summary: Proteja suas cargas de trabalho do Hyper-V com o NetApp Backup and Recovery. 
+summary: Restaure cargas de trabalho do Hyper-V a partir de snapshots locais, storage secundário ou storage de objetos para o local original ou um local alternativo usando o NetApp Backup and Recovery. 
 ---
 = Restaure cargas de trabalho do Hyper-V com o NetApp Backup and Recovery
 :hardbreaks:
@@ -32,7 +32,7 @@ Você pode restaurar dados para estes destinos:
 
 
 .Considerações sobre restauração de armazenamento de objetos
-Se você selecionar um arquivo de backup no storage de objetos e a proteção contra ransomware estiver ativa para esse backup porque você habilitou o DataLock e a proteção contra ransomware na política de backup, será solicitado que você execute uma verificação de integridade adicional antes de restaurar os dados. Recomendamos que você execute a verificação.
+Se você habilitou DataLock e a proteção contra ransomware na política de backup, essa proteção estará ativa para o backup. Quando você seleciona esse arquivo de backup no storage de objetos, é solicitado que você execute uma verificação adicional de integridade antes de restaurar os dados. Recomendamos que você execute a verificação.
 
 
 TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para acessar o conteúdo do arquivo de backup.
@@ -42,7 +42,7 @@ TIP: Você incorrerá em custos extras de saída do seu provedor de nuvem para a
 [[how-restoring-workloads-works]]
 == Como funciona a restauração de cargas de trabalho
 
-Ao restaurar uma carga de trabalho, ocorre o seguinte:
+Ao restaurar uma carga de trabalho:
 
 * Quando você restaura uma carga de trabalho de um arquivo de backup local, o NetApp Backup and Recovery cria um _novo_ recurso usando os dados do backup.
 * Ao restaurar uma carga de trabalho replicada, você pode restaurar a carga de trabalho para o sistema original ou para um sistema ONTAP local.
@@ -84,7 +84,7 @@ Uma lista de possíveis pontos de restauração é exibida.
 .Restaurar para o local original
 --
 .. Selecione o painel *Local original*. Ao restaurar para o local original, você pode visualizar as configurações de destino expandindo a seção *Configurações de destino*, mas não poderá alterá-las.
-.. Na seção *Opções pós-restauração*, considere a seguinte opção:
+.. Na seção *Opções pós-restauração*, considere esta opção:
 +
 *** *Iniciar a máquina virtual*: Habilite esta opção para iniciar a nova máquina virtual após a restauração.
 
@@ -95,7 +95,7 @@ Uma lista de possíveis pontos de restauração é exibida.
 .Restaurar para local alternativo
 --
 .. Selecione o painel *Localização alternativa*.
-.. Na seção *Configurações de destino*, insira as seguintes informações:
+.. Na seção *Configurações de destino*, insira estas informações:
 +
 *** *Nome de domínio totalmente qualificado (FQDN) ou endereço IP do Hyper-V*: Insira o nome de domínio totalmente qualificado ou o endereço IP do host Hyper-V de destino.
 *** *Rede*: Selecione a rede de destino onde deseja restaurar o snapshot.
@@ -108,12 +108,12 @@ Uma lista de possíveis pontos de restauração é exibida.
 *** *Alterar local de armazenamento padrão*: habilite esta opção para restaurar um backup de armazenamento de objetos em um local diferente caso o local de armazenamento de origem esteja inacessível ou cheio. Escolha um cluster, uma máquina virtual de armazenamento ou um agregado diferente para usar.
 
 
-.. Na seção *Opções de pré-restauração*, considere as seguintes opções:
+.. Na seção *Opções de pré-restauração*, considere estas opções:
 +
 *** *Restauração rápida*: Ative esta opção para disponibilizar a máquina virtual restaurada imediatamente. Apenas os arquivos necessários para executar a máquina virtual são restaurados do armazenamento de objetos, em vez do volume inteiro.
 
 
-.. Na seção *Opções pós-restauração*, considere as seguintes opções:
+.. Na seção *Opções pós-restauração*, considere estas opções:
 +
 *** *Iniciar a máquina virtual*: Habilite esta opção para iniciar a nova máquina virtual após a restauração.
 

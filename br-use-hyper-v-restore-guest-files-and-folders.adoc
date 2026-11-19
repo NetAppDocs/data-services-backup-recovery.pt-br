@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-hyper-v-restore-guest-files-and-folders.html 
 keywords: restore, guest, files, folders, files and folders, Windows, VM, virtual machine, browse, mount, virtual disk, session, snapshot, backup 
-summary: Você pode restaurar um ou mais arquivos ou pastas de um snapshot de uma máquina virtual Hyper-V para uma máquina virtual convidada do Windows. 
+summary: Restaure arquivos e pastas de um snapshot de uma VM Hyper-V para a VM convidada Windows original, montando um disco virtual a partir do snapshot. 
 ---
 = Restaure arquivos e pastas do sistema convidado Hyper-V com o NetApp Backup and Recovery
 :hardbreaks:
@@ -31,7 +31,7 @@ Ao abrir uma sessão de restauração de arquivos e pastas montando um disco vir
 
 O desempenho da restauração depende tanto do tamanho quanto da quantidade de arquivos ou pastas que estão sendo restaurados. Para um determinado conjunto de dados, restaurar um grande número de arquivos pequenos geralmente leva mais tempo do que restaurar um pequeno número de arquivos grandes.
 
-Observe o seguinte ao restaurar arquivos e pastas:
+Ao restaurar arquivos e pastas, leve em consideração os seguintes pontos:
 
 [NOTE]
 ====
@@ -92,7 +92,7 @@ Os arquivos e pastas que você selecionou para restaurar são listados na área 
 +
 Caso já existam arquivos com o mesmo nome, você pode optar por sobrescrevê-los ou ignorá-los.
 
-. Na seção *Opções pós-restauração*, você pode, opcionalmente, desconectar a sessão do convidado após a conclusão da restauração, ativando a configuração *Desconectar sessão do convidado após a conclusão da restauração*. Isso desvincula o disco virtual e desmonta o datastore. Isso significa que você precisará reconectar a sessão do convidado antes de realizar quaisquer operações adicionais de restauração de arquivos e pastas.
+. Na seção *Opções pós-restauração*, você pode desconectar opcionalmente a sessão do convidado após a conclusão da restauração, ativando a configuração *Desconectar a sessão do convidado após a conclusão da restauração*. Isso desanexa o disco virtual e desmonta o datastore. Em seguida, você deve reconectar a sessão do convidado antes de executar outras operações de restauração de arquivos e pastas.
 . Selecione *Restaurar*.
 +
 Você pode visualizar o progresso da restauração na página de Monitoramento de Tarefas.

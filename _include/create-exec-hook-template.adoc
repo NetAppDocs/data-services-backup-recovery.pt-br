@@ -18,7 +18,7 @@ NOTE: Os modelos que você cria aqui só podem ser usados ao proteger cargas de 
 . Expanda a seção *Modelo de gancho de execução*.
 . Selecione *Criar modelo de gancho de execução*.
 . Digite um nome para o gancho de execução.
-. Opcionalmente, escolha um tipo de gancho. Por exemplo, um gancho pós-restauração é executado após a conclusão da operação de restauração.
+. Opcionalmente, escolha um tipo de hook. Por exemplo, um hook pós-restauração é executado após a conclusão da operação de restauração.
 . Na caixa de texto *Script*, insira o script de shell executável que você deseja executar como parte do modelo de gancho de execução.  Opcionalmente, você pode selecionar *Carregar script* para carregar um arquivo de script.
 . Selecione *Criar*.
 +

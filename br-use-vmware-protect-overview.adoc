@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-vmware-protect-overview.html 
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
-summary: Proteja suas cargas de trabalho VMware com NetApp Backup and Recovery. 
+summary: Proteja suas VMs e datastores do VMware com o NetApp Backup and Recovery, criando backups, armazenando-os em destinos compatíveis e restaurando-os em um host VMware local. 
 ---
 = Proteja as cargas de trabalho do VMware com o NetApp Backup and Recovery
 :hardbreaks:
@@ -22,11 +22,11 @@ NOTE: Esta versão do NetApp Backup and Recovery oferece suporte apenas ao VMwar
 Utilize o NetApp Backup and Recovery para implementar uma estratégia 3-2-1 com 3 cópias dos seus dados de origem em 2 sistemas de storage diferentes e 1 cópia na nuvem. Os benefícios da abordagem 3-2-1 incluem:
 
 * Várias cópias de dados protegem contra ameaças internas e externas à segurança cibernética.
-* Usar diferentes tipos de mídia ajuda na recuperação caso um tipo falhe.
+* Diferentes tipos de mídia ajudam na recuperação caso um deles falhe.
 * Você pode restaurar rapidamente a partir da cópia no local e usar as cópias externas caso a cópia no local seja comprometida.
 
 
-Você pode usar o NetApp Backup and Recovery para executar as seguintes tarefas relacionadas às cargas de trabalho do VMware:
+Use o NetApp Backup and Recovery para executar estas tarefas para cargas de trabalho do VMware:
 
 * link:br-use-vmware-discovery.html["Descubra as cargas de trabalho da VMware"]
 * link:br-use-vmware-protection-groups.html["Crie e gerencie grupos de proteção para cargas de trabalho do VMware"]
