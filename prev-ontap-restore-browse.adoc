@@ -151,9 +151,9 @@ Para restaurar um volume, você precisa do nome do sistema de origem, da máquin
 . No menu Console, selecione *Proteção > Backup e recuperação*.
 . Selecione a aba *Restaurar* para exibir o Painel de Restauração.
 . Na seção _Navegar e restaurar_, selecione *Restaurar volume*.
-. Na página _Selecionar origem_, navegue até o arquivo de backup do volume que você deseja restaurar.  Selecione o *sistema*, o *Volume* e o arquivo de *Backup* que tem o registro de data/hora do qual você deseja restaurar.
+. Na página _Selecionar Origem_, navegue até o arquivo de backup do volume que você deseja restaurar. Selecione o *sistema*, o *volume* e o *snapshot* que contém o carimbo de data/hora a partir do qual você deseja restaurar. Ao fazer uma seleção, você é automaticamente direcionado para a próxima subetapa do assistente.
 +
-A coluna *Localização* mostra se o arquivo de backup (snapshot) é *Local* (um snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Storage de Objetos* (um arquivo de backup no storage de objetos). Escolha o arquivo que você quer restaurar.
+A coluna *Location* mostra se o snapshot é *Local* (um snapshot no sistema de origem), *Secundário* (um volume replicado em um sistema ONTAP secundário) ou *Storage de objetos* (um arquivo de backup no storage de objetos). Selecione o arquivo que você deseja restaurar.
 
 . Selecione *Avançar*.
 +
@@ -241,8 +241,8 @@ image:diagram_browse_restore_file.png["Um diagrama que mostra o fluxo para execu
 . No menu Console, selecione *Proteção > Backup e recuperação*.
 . Selecione a aba *Restaurar* para exibir o Painel de Restauração.
 . Na seção _Navegar e restaurar_, selecione *Restaurar arquivos ou pastas*.
-. Na página _Selecionar origem_, navegue até o arquivo de backup do volume que contém a pasta ou os arquivos que você deseja restaurar.  Selecione o *sistema*, o *Volume* e o *Backup* que tem o registro de data/hora dos arquivos dos quais você deseja restaurar.
-. Selecione *Avançar* e a lista de pastas e arquivos do backup de volume será exibida.
+. Na página _Selecionar origem_, navegue até o arquivo de backup do volume que contém a pasta ou os arquivos que você deseja restaurar. Selecione o *sistema*, o *volume* e o *snapshot* que têm o registro de data/hora a partir do qual você deseja restaurar os arquivos. Ao fazer uma seleção, você vai automaticamente para a próxima subetapa do assistente.
+. Após selecionar um instantâneo, selecione *Avançar* e a lista de pastas e arquivos do backup do volume é exibida.
 +
 Se estiver restaurando pastas ou arquivos de um arquivo de backup que reside em uma camada de armazenamento de arquivamento, você pode selecionar a Prioridade de restauração.
 

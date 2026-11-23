@@ -14,7 +14,7 @@ summary: Analise as limitações conhecidas para o NetApp Backup and Recovery co
 
 
 [role="lead"]
-Analise estas limitações antes de usar o NetApp Backup and Recovery para volumes ONTAP.
+Antes de usar o NetApp Backup and Recovery para volumes do ONTAP, revise as limitações conhecidas que afetam as operações de backup, replicação e restauração.
 
 * O NetApp Backup and Recovery pode fazer backup do Cloud Volumes ONTAP em um armazenamento de objetos nas regiões da AWS China (incluindo Pequim e Ningxia); no entanto, talvez seja necessário modificar manualmente as políticas de identidade e acesso primeiro.
 +
@@ -23,7 +23,7 @@ Para obter detalhes sobre como criar um agente de console na AWS, consulte https
 +
 Para mais detalhes, consulte a postagem do blog https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog de recursos de NetApp Backup and Recovery , maio de 2023"^] .
 
-* O NetApp Backup and Recovery não oferece suporte às regiões do Microsoft Azure China.
+* O NetApp Backup and Recovery pode fazer backup do Cloud Volumes ONTAP e de sistemas ONTAP locais no Azure Blob storage nas regiões do Microsoft Azure China (21Vianet) somente quando o agente do Console estiver implantado em uma região do Azure China. Um agente do Console em uma região comercial do Azure, no Azure Government ou em suas instalações não pode fazer backup para o Azure China. O agente do Console também deve ser executado no modo padrão, não no modo restrito.
 +
 Para obter detalhes sobre como criar um agente de console no Azure, consulte https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-azure-bluexp.html["Instalando um agente de console no Azure"^] .
 
@@ -41,7 +41,7 @@ Os volumes FlexVol não têm essa limitação: você pode selecionar todos os vo
 
 * A seguinte funcionalidade é suportada em https://docs.netapp.com/us-en/data-services-replication/index.html["NetApp Replication"] , mas não ao usar o recurso de replicação do NetApp Backup and Recovery:
 +
-** Não há suporte para uma configuração em cascata em que a replicação ocorre do volume A para o volume B e do volume B para o volume C. O suporte inclui a replicação do volume A para o volume B.
+** Configurações em cascata, em que a replicação ocorre do volume A para o volume B e do volume B para o volume C, não são suportadas. A replicação do volume A para o volume B é suportada.
 ** Não há suporte para replicação de dados de e para o FSx para sistemas ONTAP .
 ** Não há suporte para criar uma replicação única de um volume.
 
@@ -56,7 +56,7 @@ Os volumes FlexVol não têm essa limitação: você pode selecionar todos os vo
 == Limitações de backup para objeto para volumes ONTAP
 
 * Na versão prévia de Backup and Recovery para implantação local do NetApp Console, os backups para storage de objetos são suportados apenas para destinos ONTAP S3 e StorageGRID. O arquivamento de backup não é suportado nesta versão prévia.
-* Ao fazer backup de dados, o NetApp Backup and Recovery não manterá o NetApp Volume Encryption (NVE).  Isso significa que os dados criptografados no volume NVE serão descriptografados enquanto os dados estiverem sendo transferidos para o destino e a criptografia não será mantida.
+* Ao fazer backup de dados, o NetApp Backup and Recovery não mantém a NetApp Volume Encryption (NVE). Os dados criptografados no volume NVE são descriptografados durante a transferência para o destino, e a criptografia não é mantida.
 +
 Para obter uma explicação sobre esses tipos de criptografia, consultehttps://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Visão geral da configuração da criptografia de volume do NetApp"^] .
 

@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-onprem-azure.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Prepare o seu ambiente e ative backups de volumes ONTAP on-premises para o Azure Blob Storage com o NetApp Backup and Recovery. 
 ---
-= Faça backup dos dados do ONTAP no local para o Azure Blob Storage com o NetApp Backup and Recovery
+= Faça backup dos dados do ONTAP local para o Azure Blob com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -59,6 +59,8 @@ Se você já tiver um agente do Console implantado na sua VNet do Azure ou em su
 
 Caso contrário, você precisará criar um agente de console em um desses locais para fazer backup de dados do ONTAP no armazenamento de Blobs do Azure.  Você não pode usar um agente do Console implantado em outro provedor de nuvem.
 
+Para fazer backup no Azure Blob storage no Azure China (21Vianet), você deve implantar o agente do Console em uma região do Azure China no modo padrão. Um agente do Console instalado em suas instalações, em uma região comercial do Azure ou no Azure Government não pode fazer backup no Azure China.
+
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Instalar um agente de console no Azure"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-on-prem.html["Instale um agente de console em suas instalações"^]
@@ -78,7 +80,7 @@ Certifique-se de que o agente do Console tenha as conexões de rede necessárias
 .Passos
 . Certifique-se de que a rede onde o agente do Console está instalado habilite as seguintes conexões:
 +
-** Uma conexão HTTPS pela porta 443 para o NetApp Backup and Recovery e para o armazenamento de objetos Blob(https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["veja a lista de pontos de extremidade"^] )
+** Uma conexão HTTPS pela porta 443 para o NetApp Backup and Recovery e para seu storage de objetos Blob (https://docs.netapp.com/us-en/console-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["veja a lista de pontos de extremidade"^]). Para o Azure China, o agente do Console também deve acessar `*.chinacloudapi.cn`, incluindo `login.chinacloudapi.cn` e `management.chinacloudapi.cn`.
 ** Uma conexão HTTPS pela porta 443 para seu LIF de gerenciamento de cluster ONTAP
 ** Para que o NetApp Backup and Recovery Search & Restore funcione, a porta 1433 deve estar aberta para comunicação entre o agente do Console e os serviços do Azure Synapse SQL.
 ** Regras adicionais de grupo de segurança de entrada são necessárias para implantações do Azure e do Azure Government. Ver https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["Regras para o agente do Console no Azure"^] para mais detalhes.
@@ -182,7 +184,9 @@ Você precisará verificar os requisitos de licença do Azure e do Console:
 
 *Regiões suportadas*
 
-Você pode criar backups de sistemas locais para o Azure Blob em todas as regiões, incluindo regiões do Azure Government.  Você especifica a região onde os backups serão armazenados ao configurar o serviço.
+Você pode criar backups de sistemas locais para o Azure Blob em todas as regiões comerciais do Azure e regiões do Azure Government. Você especifica a região onde os backups serão armazenados ao configurar o serviço.
+
+Você também pode criar backups para o Azure Blob nas regiões do Azure China (21Vianet) (China East, China East 2, China East 3, China North, China North 2 e China North 3) quando o agente do Console estiver implantado em uma região do Azure China. O agente do Console usa automaticamente os endpoints do Azure China com base em sua região, e a conta de storage de backup é criada na região do agente do Console.
 
 
 
@@ -243,9 +247,9 @@ Você deve configurar os seguintes requisitos no sistema que se conecta ao armaz
 
 Os seguintes requisitos de rede de cluster ONTAP são necessários:
 
-* O cluster ONTAP inicia uma conexão HTTPS pela porta 443 do LIF intercluster para o armazenamento de Blobs do Azure para operações de backup e restauração.
+* O cluster ONTAP inicia uma conexão HTTPS pela porta 443 da LIF entre clusters para o armazenamento de Blobs do Azure para operações de backup e restauração. Para o Azure China, a LIF entre clusters precisa de acesso de saída na porta 443 para `<storage_account>.blob.core.chinacloudapi.cn`. Se a LIF não tiver um caminho de saída, os backups falharão durante a verificação do armazenamento de objetos com um erro de tempo limite de conexão.
 +
-ONTAP lê e grava dados de e para armazenamento de objetos. O armazenamento de objetos nunca inicia, ele apenas responde.
+O ONTAP lê e grava dados de e para o storage de objetos. O storage de objetos nunca inicia conexões. Ele apenas responde.
 
 * O ONTAP requer uma conexão de entrada do agente do Console para o LIF de gerenciamento do cluster.  O agente do Console pode residir em uma VNet do Azure.
 * Um LIF intercluster é necessário em cada nó ONTAP que hospeda os volumes dos quais você deseja fazer backup.  O LIF deve ser associado ao _IPspace_ que o ONTAP deve usar para se conectar ao armazenamento de objetos. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["Saiba mais sobre IPspaces"^] .
@@ -508,7 +512,7 @@ Para criar uma política, selecione *Criar nova política* e faça o seguinte:
 [[review-your-selections]]
 === Revise suas seleções
 
-Esta é a oportunidade de revisar suas seleções e fazer ajustes, se necessário.
+Revise suas escolhas e faça ajustes se necessário.
 
 .Passos
 . Na página Revisão, revise suas seleções.

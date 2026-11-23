@@ -18,6 +18,47 @@ Saiba mais sobre os novos recursos, melhorias e correções no NetApp Backup and
 
 
 
+[[23-november-2026]]
+== 23 de novembro de 2026
+
+Esta versão do NetApp Backup and Recovery inclui as seguintes atualizações.
+
+
+
+[[kubernetes-workloads-enhancements]]
+=== Aprimoramentos de cargas de trabalho do Kubernetes
+
+Nesta versão, o NetApp Backup and Recovery apresenta os seguintes aprimoramentos para workloads do Kubernetes:
+
+* *Suporte do Amazon FSx for NetApp ONTAP com arquitetura de backup disco a disco*: agora você pode criar políticas de proteção do Kubernetes que usam a arquitetura de backup disco a disco com Amazon FSx for NetApp ONTAP como storage primário e outro sistema de arquivos FSx for NetApp ONTAP como storage secundário, na mesma região da AWS ou em uma região diferente da AWS. Você também pode usar o Cloud Volumes ONTAP como storage primário e o FSx for NetApp ONTAP como storage secundário.
+* *Correção para o problema de restauração de qtree*: a restauração de volume do ontap-nas-economy restaurava anteriormente diretórios qtree com proprietário e permissões incorretos. Esse problema foi resolvido nesta versão.
+
+
+Para obter mais informações sobre como criar políticas de proteção do Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-kubernetes-create.html["Crie e gerencie políticas de backup do Kubernetes em NetApp Backup and Recovery"^].
+
+Para obter detalhes sobre como proteger cargas de trabalho do Kubernetes, consulte https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-kubernetes-protect-overview.html["Saiba mais sobre como proteger cargas de trabalho do Kubernetes com NetApp Backup and Recovery"^].
+
+
+
+[[ontap-volumes-workloads-enhancements]]
+=== Aprimoramentos nas cargas de trabalho do ONTAP Volumes
+
+Nesta versão, o NetApp Backup and Recovery apresenta os seguintes aprimoramentos para cargas de trabalho do ONTAP Volumes:
+
+* *Melhorias na interface de restauração*: o assistente de restauração para volumes do ONTAP apresenta um layout renovado e navegação aprimorada:
++
+** *Tabelas de seleção aprimoradas*: as tabelas de seleção exibem mais linhas e colunas por vez. As telas de restauração utilizam espaçamento refinado e trilhas de navegação, para que você possa ver em que ponto do fluxo de trabalho está.
+** *Navegação passo a passo*: a funcionalidade dos botões *Next* e *Continue* foi aprimorada para que você não pule acidentalmente para a próxima etapa principal. O botão *Previous* retorna você à última tela concluída e mantém suas seleções anteriores, para que você não precise reiniciar a etapa.
+** *Mais detalhes ao selecionar um volume de origem*: a lista de volumes agora exibe o tipo de volume, o estilo do volume, o tipo de SnapLock, a proteção existente e a integridade da proteção. A coluna Proteção existente está mais ampla, permitindo visualizar todos os indicadores de proteção (snapshot, replicação e backup).
+
+
+* *Suporte para proteger volumes hospedados em regiões do Azure na China*: agora você pode fazer backup de volumes ONTAP no Armazenamento de Blobs do Azure no Azure China (21Vianet). Esse suporte se aplica tanto ao Cloud Volumes ONTAP quanto aos sistemas ONTAP locais. As regiões do Azure Comercial e do Azure Governamental permanecem inalteradas.
+
+
+Para obter detalhes sobre como proteger as cargas de trabalho do ONTAP Volumes, consulte  https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-protect-overview.html["Saiba mais sobre a proteção de volumes do ONTAP com NetApp Backup e Recuperação"^].
+
+
+
 [[09-november-2026]]
 == 09 de novembro de 2026
 

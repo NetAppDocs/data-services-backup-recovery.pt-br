@@ -4,7 +4,7 @@ permalink: prev-ontap-backup-cvo-azure.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, NetApp Backup and Recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Faça backup dos volumes do Cloud Volumes ONTAP no Azure Blob storage com o NetApp Backup and Recovery, verifique os requisitos, habilite o serviço e ative os backups nos volumes. 
 ---
-= Faça backup do Cloud Volumes ONTAP para o Azure Blob Storage com o NetApp Backup and Recovery
+= Faça backup do Cloud Volumes ONTAP no Azure Blob com o NetApp Backup and Recovery
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -32,10 +32,12 @@ Opcionalmente, você pode se conectar a um sistema ONTAP secundário para volume
 
 image:diagram_cloud_backup_cvo_azure.png["Um diagrama mostrando como o NetApp Backup and Recovery se comunica com os volumes nos sistemas de origem e no armazenamento de destino onde os arquivos de backup estão localizados."]
 
-Versões ONTAP suportadas:: Mínimo de ONTAP 9.8; recomenda-se o ONTAP 9.8P13 ou posterior. O ONTAP 9.16.1 ou posterior é necessário se você usar autenticação do Microsoft Entra ID para o storage de objetos do Azure.
-Regiões do Azure com suporte:: O NetApp Backup and Recovery tem suporte em todas as regiões do Azure, incluindo regiões governamentais do Azure.
+Versões ONTAP suportadas:: É necessário no mínimo o ONTAP 9.8; recomenda-se o ONTAP 9.8P13 ou posterior. O ONTAP 9.16.1 ou posterior é obrigatório se você usar autenticação do Microsoft Entra ID para o storage de objetos do Azure.
+Regiões do Azure com suporte:: O NetApp Backup and Recovery é compatível com todas as regiões comerciais do Azure e com as regiões governamentais do Azure.
 +
 --
+O NetApp Backup and Recovery também é compatível com as regiões do Azure China (21Vianet) quando o agente do Console é implantado em uma região do Azure China (China East, China East 2, China East 3, China North, China North 2 ou China North 3). O agente do Console usa automaticamente os endpoints de gerenciamento, sign-in e armazenamento de Blob do Azure China com base na sua região. Um agente do Console em outra nuvem do Azure não pode fazer backup no Azure China. Para obter detalhes sobre os requisitos do agente do Console no Azure China, consulte <<Prepare seu agente de console>>.
+
 Por padrão, o NetApp Backup and Recovery provisiona o contêiner Blob com redundância local (LRS) para otimização de custos.  Você pode alterar essa configuração para Redundância de zona (ZRS) depois que o NetApp Backup and Recovery for ativado se quiser garantir que seus dados sejam replicados entre diferentes zonas.  Veja as instruções da Microsoft para https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["alterando como sua conta de armazenamento é replicada"^] .
 
 --
@@ -78,6 +80,8 @@ Se o seu ambiente atender a esses requisitos, você poderá selecionar `Entra ID
 == Prepare seu agente de console
 
 O agente do Console pode ser instalado em uma região do Azure com acesso total ou limitado à Internet (modo "padrão" ou "restrito"). https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html["Consulte os modos de implantação do NetApp Console para obter detalhes"^] .
+
+Para fazer backup no Azure China, implante o agente do Console em uma região do Azure China no modo padrão (o modo restrito não é suportado). Permita conexões HTTPS de saída (porta 443) do agente do Console para  `*.chinacloudapi.cn`, incluindo  `login.chinacloudapi.cn` e  `management.chinacloudapi.cn`, além dos outros endpoints que o agente do Console exige.
 
 * https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Saiba mais sobre os agentes do Console"^]
 * https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Implantar um agente de console no Azure no modo padrão (acesso total à Internet)"^]
@@ -278,7 +282,7 @@ Você também pode<<Mostrar os comandos da API>> na etapa de revisão, para que 
 +
 Se o destino do Azure para seus backups existir como um sistema na página *Sistemas*, você poderá arrastar o cluster ONTAP para o armazenamento de objetos do Azure Blob.
 
-** Selecione *Volumes* na barra Backup e Recuperação.  Na aba Volumes, selecione *Ações*image:icon-action.png["Ícone de ações"] ícone e selecione *Ativar backup* para um único volume (que ainda não tenha replicação ou backup para armazenamento de objetos habilitado).
+** Selecione *Volumes* na barra do Backup and Recovery. Na guia Volumes, selecione o ícone *Ações* image:icon-action.png["Ícone de ações"] e selecione *Ativar Backup* para um único volume (que ainda não tenha replicação ou backup para storage de objetos ativado).
 
 
 +
@@ -314,7 +318,7 @@ Se os volumes escolhidos já tiverem políticas de snapshot ou replicação apli
 . Na página Selecionar volumes, selecione o volume ou volumes que você deseja proteger.
 +
 ** Opcionalmente, filtre as linhas para mostrar apenas volumes com determinados tipos de volume, estilos e muito mais para facilitar a seleção.
-** Depois de selecionar o primeiro volume, você pode selecionar todos os volumes do FlexVol .  (Os volumes do FlexGroup podem ser selecionados apenas um de cada vez.)  Para fazer backup de todos os volumes FlexVol existentes, marque primeiro um volume e depois marque a caixa na linha de título.
+** Após selecionar o primeiro volume, você poderá selecionar todos os volumes FlexVol. (Os volumes FlexGroup só podem ser selecionados um de cada vez.) Para fazer backup de todos os volumes FlexVol existentes, selecione um volume primeiro e, em seguida, marque a caixa na linha de título.
 ** Para fazer backup de volumes individuais, marque a caixa de cada volume.
 
 
@@ -342,7 +346,7 @@ NOTE: Se os volumes escolhidos tiverem políticas de snapshot e replicação dif
 .Passos
 . Na página *Definir estratégia de backup*, escolha uma ou todas as opções a seguir. As três estão selecionadas por padrão:
 +
-** *Instantâneos locais*: se você estiver executando replicação ou backup no armazenamento de objetos, instantâneos locais deverão ser criados.
+** *Instantâneos locais*: se você estiver realizando replicação ou backup para storage de objetos, será preciso criar instantâneos locais.
 ** *Replicação*: Cria volumes replicados em outro sistema de armazenamento ONTAP .
 ** *Backup*: Faz backup de volumes no armazenamento de objetos.
 
@@ -410,7 +414,7 @@ TIP: Se você deseja proteger seus arquivos de backup contra modificações ou e
 
 
 
-** *Chave de criptografia*: se você criou uma nova conta de armazenamento do Azure, insira as informações da chave de criptografia fornecidas pelo provedor.  Escolha se você usará as chaves de criptografia padrão do Azure ou escolherá suas próprias chaves gerenciadas pelo cliente na sua conta do Azure para gerenciar a criptografia dos seus dados.
+** *Chave de criptografia*: se você criou uma nova conta de armazenamento do Azure, insira as informações da chave de criptografia fornecidas a você pelo provedor. Escolha se deseja usar as chaves de criptografia padrão do Azure ou selecionar suas próprias chaves gerenciadas pelo cliente na sua conta do Azure para gerenciar a criptografia dos seus dados.
 +
 Se você optar por usar suas próprias chaves gerenciadas pelo cliente, insira o cofre de chaves e as informações da chave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Aprenda a usar suas próprias chaves"^] .
 
@@ -457,7 +461,7 @@ Revise suas escolhas e faça ajustes se necessário.
 
 .Passos
 . Na página Revisão, revise suas seleções.
-. Opcionalmente, marque a caixa para *Sincronizar automaticamente os rótulos da política de snapshot com os rótulos das políticas de replicação e de backup*. Isso cria snapshots com um rótulo que corresponde aos rótulos nas políticas de replicação e de backup.
+. Opcionalmente, marque a caixa para *sincronizar automaticamente os rótulos da política de snapshot com os rótulos das políticas de replicação e backup*. Isso cria snapshots com um rótulo que corresponde aos rótulos nas políticas de replicação e backup.
 . Selecione *Ativar Backup*.
 
 
